@@ -94,6 +94,7 @@
 .city {
   width: 30px;
   height: 30px;
-  background-color: red; }
+  background-image: url("img/England_key.svg");
+  background-size: 30px; }
 
 /*# sourceMappingURL=hereistand.css.map */
