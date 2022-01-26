@@ -2,7 +2,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistand.board', null, {
 
     setupBoard() {
-      this.place('tplPlayerHand', this.gamedatas.board, 'main-container');
+      this.place('tplBoard', this.gamedatas.board, 'main-container');
       this.place('tplNode', null, 'map');
     },
 
