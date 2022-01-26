@@ -47,5 +47,6 @@ CREATE TABLE IF NOT EXISTS `tokens` (
   `token_state` int(10) DEFAULT 0,
   `value` int(10) NOT NULL,
   `faction` int(10) NOT NULL,
+  `side` int(10) NOT NULL,
   PRIMARY KEY (`token_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

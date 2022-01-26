@@ -7,7 +7,7 @@ namespace HIS\Managers;
 class Tokens extends \HIS\Helpers\Pieces {
 	protected static $table = 'tokens';
 	protected static $prefix = 'token_';
-	protected static $customFields = ['value', 'faction'];
+	protected static $customFields = ['value', 'faction', 'side'];
 	protected static $autoreshuffle = false;
 	protected static function cast($token) {
 		$locations = explode('_', $card['location']);
@@ -15,6 +15,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			'id' => $card['id'],
 			'board' => $locations[0],
 			'value' => $card['value'],
+			'side' => $card['side'],
 			'faction' => $card['faction'],
 			'location' => $locations[1] ?? null,
 		];
