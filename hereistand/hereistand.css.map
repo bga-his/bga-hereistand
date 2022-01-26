@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA;;;;;;;;;;;;;GAaG;ACbH,MAAO;EACL,QAAQ,EAAE,QAAQ;EAClB,gBAAgB,EAAE,QAAQ;EAC1B,MAAM,EAAE,MAAM;EACd,KAAK,EAAE,GAAG;;AAGZ,IAAK;EACH,QAAQ,EAAE,QAAQ;EAElB,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;EAEhB,gBAAgB,EAAE,oBAAoB;EACtC,eAAe,EAAE,IAAI;EACrB,iBAAiB,EAAE,SAAS;EAC5B,MAAM,EAAE,8BAA8B;EACtC,cAAc,EAAE,8BAA8B",
+"sources": ["hereistand.scss","modules/css/board.scss"],
+"names": [],
+"file": "hereistand.css"
+}

@@ -1,2 +1,4 @@
 sync.sh
 dl.sh
+.sass-cache
+.prettierrc

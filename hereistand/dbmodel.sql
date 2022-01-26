@@ -1,8 +1,8 @@
 
 -- ------
 -- BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
--- HereIStand implementation : © <Your name here> <Your email address here>
--- 
+-- foogame implementation :  © Timothée Pecatte <tim.pecatte@gmail.com>, Vincent Toper <vincent.toper@gmail.com>
+--
 -- This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
 -- See http://en.boardgamearena.com/#!doc/Studio for more information.
 -- -----
@@ -18,18 +18,26 @@
 -- Note: The database schema is created from this file when the game starts. If you modify this file,
 --       you have to restart a game to see your changes in database.
 
--- Example 1: create a standard "card" table to be used with the "Deck" tools (see example game "hearts"):
 
--- CREATE TABLE IF NOT EXISTS `card` (
---   `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
---   `card_type` varchar(16) NOT NULL,
---   `card_type_arg` int(11) NOT NULL,
---   `card_location` varchar(16) NOT NULL,
---   `card_location_arg` int(11) NOT NULL,
---   PRIMARY KEY (`card_id`)
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+CREATE TABLE IF NOT EXISTS `global_variables` (
+  `name` varchar(255) NOT NULL,
+  `value` JSON,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE IF NOT EXISTS `user_preferences` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `player_id` int(10) NOT NULL,
+  `pref_id` int(10) NOT NULL,
+  `pref_value` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Example 2: add a custom field to the standard "player" table
--- ALTER TABLE `player` ADD `player_my_custom_field` INT UNSIGNED NOT NULL DEFAULT '0';
-
+CREATE TABLE IF NOT EXISTS `cards` (
+  `card_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `card_location` varchar(32) NOT NULL,
+  `card_state` int(10) DEFAULT 0,
+  `value` int(10) NOT NULL,
+  `color` int(10) NOT NULL,
+  PRIMARY KEY (`card_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

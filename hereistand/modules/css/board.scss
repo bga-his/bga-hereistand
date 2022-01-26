@@ -1,0 +1,19 @@
+#board {
+  position: relative;
+  transform-origin: top left;
+  height: 1544px;
+  width: max;
+}
+
+#map {
+  position: relative;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  background-image: url('img/board.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  filter: drop-shadow(2px 1px 10px #333);
+  -webkit-filter: drop-shadow(2px 1px 10px #333);
+}
