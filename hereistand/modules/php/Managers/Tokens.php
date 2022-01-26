@@ -2,21 +2,21 @@
 namespace HIS\Managers;
 
 /**
- * Cards: id, type
- *  pId is stored as second part of the location, eg : table_2322020
+ * Tokens: id, value, faction
  */
-class Cards extends \HIS\Helpers\Pieces {
-	protected static $table = 'cards';
-	protected static $prefix = 'card_';
-	protected static $customFields = ['type'];
+class Tokens extends \HIS\Helpers\Pieces {
+	protected static $table = 'tokens';
+	protected static $prefix = 'token_';
+	protected static $customFields = ['value', 'faction'];
 	protected static $autoreshuffle = false;
-	protected static function cast($card) {
+	protected static function cast($token) {
 		$locations = explode('_', $card['location']);
 		return [
 			'id' => $card['id'],
-			'location' => $locations[0],
-			'type' => $card['type'],
-			'pId' => $locations[1] ?? null,
+			'board' => $locations[0],
+			'value' => $card['value'],
+			'faction' => $card['faction'],
+			'location' => $locations[1] ?? null,
 		];
 	}
 
@@ -26,13 +26,6 @@ class Cards extends \HIS\Helpers\Pieces {
 	//////////////////////////////////
 	//////////////////////////////////
 
-	/**
-	 * getOfPlayer: return the cards in the hand of given player
-	 */
-	public static function getOfPlayer($pId) {
-		return self::getInLocation(['hand', $pId]);
-	}
-
 	//////////////////////////////////
 	//////////////////////////////////
 	///////////// SETTERS //////////////
@@ -40,7 +33,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	//////////////////////////////////
 
 	/**
-	 * setupNewGame: create the deck of cards
+	 * setupNewGame: create the tokens
 	 */
 	public function setupNewGame($players, $options) {
 	}

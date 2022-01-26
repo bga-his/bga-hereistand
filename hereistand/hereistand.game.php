@@ -36,6 +36,7 @@ use HIS\Core\Globals;
 use HIS\Core\Preferences;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
+use HIS\Managers\Tokens;
 
 class hereistand extends Table {
 	use HIS\DebugTrait;
@@ -65,6 +66,7 @@ class hereistand extends Table {
 		Globals::setupNewGame($players, $options);
 		Preferences::setupNewGame($players, $options);
 		Players::setupNewGame($players, $options);
+		Tokens::setupNewGame($players, $options);
 		Cards::setupNewGame($players, $options);
 
 		$this->activeNextPlayer();
