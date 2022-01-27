@@ -28,8 +28,9 @@ define([
   g_gamethemeurl + 'modules/js/Core/modal.js',
   g_gamethemeurl + 'modules/js/Players.js',
   g_gamethemeurl + 'modules/js/Board.js',
+  g_gamethemeurl + 'modules/js/Cards.js',
 ], function (dojo, declare, noUiSlider) {
-  return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board], {
+  return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board, hereistand.cards], {
     constructor() {
       this._activeStates = [];
       this._notifications = [
@@ -52,6 +53,7 @@ define([
       debug('SETUP', gamedatas);
       this.setupPlayers();
       this.setupBoard();
+      this.setupCards();
       this.inherited(arguments);
       this.setupDone = true;
     },

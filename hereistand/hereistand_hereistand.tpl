@@ -11,6 +11,7 @@
 			</div>
 		</div>
 	</div>
+	<div id="player-hand"></div>
 	<div id="other-boards-wrapper">
 		<div id="other-boards">
 			<div id="religious-struggle"></div>

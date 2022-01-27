@@ -1,0 +1,23 @@
+.card {
+	background-size: 200px;
+	height: 280px;
+	width: 200px;
+}
+
+.card-wrapper {
+
+}
+
+#player-hand {
+	margin-top: 1em;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.Janissaries { background-image: url('img/svg/HIS-001.svg'); }
+.HolyRomanEmperor { background-image: url('img/svg/HIS-002.svg'); }
+.SixWives { background-image: url('img/svg/HIS-003.svg'); }
+.PatronArts { background-image: url('img/svg/HIS-004.svg'); }
+.PapalBull { background-image: url('img/svg/HIS-005.svg'); }
+.LeipzigDebate { background-image: url('img/svg/HIS-006.svg'); }
+.HereIStand { background-image: url('img/svg/HIS-007.svg'); }

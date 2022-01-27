@@ -81,6 +81,7 @@ class hereistand extends Table {
 			'prefs' => Preferences::getUiData($pId),
 			'players' => Players::getUiData($pId),
 			'tokens' => Tokens::getAll(),
+			'hand' => Cards::getOfPlayer($pId),
 		];
 	}
 

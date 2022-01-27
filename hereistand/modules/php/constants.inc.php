@@ -14,6 +14,9 @@ const ST_END_GAME = 99;
 const FRANCE = 'france';
 const HAPSBURG = 'hapsburg';
 const OTTOMAN = 'ottoman';
+const ENGLAND = 'english';
+const PAPAL = 'papal';
+const PROTESTANT = 'protestant';
 
 /*
  * City constants
@@ -37,6 +40,11 @@ const BACK = 1;
  */
 const CARD_JANISSARIES = 1;
 const CARD_HOLY_ROMAN_EMPEROR = 2;
+const CARD_SIX_WIVES_OF_HENRY_VIII = 3;
+const CARD_PATRON_OF_THE_ARTS = 4;
+const CARD_PAPAL_BULL = 5;
+const CARD_LEIPZIG_DEBATE = 6;
+const CARD_HERE_I_STAND = 7;
 
 /*
  * Card type constants

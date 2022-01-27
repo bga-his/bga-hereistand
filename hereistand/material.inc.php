@@ -63,10 +63,44 @@ $this->cards = [
 	],
 	CARD_HOLY_ROMAN_EMPEROR => [
 		'cp' => 5,
-		'class_name' => 'Holy Roman Emperor',
+		'class_name' => 'HolyRomanEmperor',
 		'name' => clienttranslate('Holy Roman Emperor'),
 		'type' => HOME_CARD,
 		'power' => HAPSBURG,
 	],
-
+	CARD_SIX_WIVES_OF_HENRY_VIII => [
+		'cp' => 5,
+		'class_name' => 'SixWives',
+		'name' => clienttranslate('Six Wives of Henry VIII'),
+		'type' => HOME_CARD,
+		'power' => ENGLAND,
+	],
+	CARD_PATRON_OF_THE_ARTS => [
+		'cp' => 5,
+		'class_name' => 'PatronArts',
+		'name' => clienttranslate('Patron of the Arts'),
+		'type' => HOME_CARD,
+		'power' => FRANCE,
+	],
+	CARD_PAPAL_BULL => [
+		'cp' => 4,
+		'class_name' => 'PapalBull',
+		'name' => clienttranslate('Papal Bull'),
+		'type' => HOME_CARD,
+		'power' => PAPAL,
+	],
+	CARD_LEIPZIG_DEBATE => [
+		'cp' => 3,
+		'class_name' => 'LeipzigDebate',
+		'name' => clienttranslate('LeipzigDebate'),
+		'type' => HOME_CARD,
+		'power' => PAPAL,
+	],
+	CARD_HERE_I_STAND => [
+		'cp' => 5,
+		'class_name' => 'HereIStand',
+		'name' => clienttranslate('Here I Stand'),
+		'type' => HOME_CARD,
+		'power' => PROTESTANT,
+	],
 ];
