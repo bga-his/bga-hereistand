@@ -13,6 +13,7 @@ const ST_END_GAME = 99;
  */
 const FRONT = 0;
 const BACK = 1;
+const SCM = 0;
 
 /*
  * Game options

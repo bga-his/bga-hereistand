@@ -9,19 +9,18 @@ use HIS\Core\Game;
 class Tokens extends \HIS\Helpers\Pieces {
 	protected static $table = 'tokens';
 	protected static $prefix = 'token_';
-	protected static $customFields = ['value', 'faction', 'side', 'type'];
+	protected static $customFields = ['type'];
 	protected static $autoreshuffle = false;
 	protected static function cast($token) {
 		$locations = explode('_', $token['location']);
-		return [
+		$token = [
 			'id' => $token['id'],
 			'board' => $locations[0],
 			'type' => $token['type'],
-			'value' => $token['value'],
-			'side' => $token['side'],
-			'faction' => $token['faction'],
-			'location' => $locations[1] ?? null,
+			'location_type' => $locations[1] ?? null,
+			'location_name' => $locations[2] ?? null,
 		];
+		return array_merge($token, Game::get()->tokens[$token['type']]);
 	}
 
 	//////////////////////////////////
@@ -45,10 +44,10 @@ class Tokens extends \HIS\Helpers\Pieces {
 				$tokens = [];
 				foreach ($city as $unit) {
 					if ($unit == 'SCM') {
-						$tokens[] = ['value' => 0, 'faction' => $power, 'type' => 'SCM', 'side' => FRONT];
+						$tokens[] = ['type' => SCM];
 					}
 				}
-				self::create($tokens, ['city', $city_name]);
+				self::create($tokens, ['board', 'city', $city_name]);
 			}
 		}
 	}

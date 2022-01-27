@@ -29,6 +29,13 @@ $this->cities = [
 	],
 ];
 
+$this->tokens = [
+	SCM => [
+		'style' => 'France_key',
+	],
+
+];
+
 $this->setup_base = [
 	'france' => [
 		'lyon' => [
