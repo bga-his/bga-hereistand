@@ -53,6 +53,7 @@ define([
       this.setupPlayers();
       this.setupBoard();
       this.inherited(arguments);
+      this.setupDone = true;
     },
   });
 });

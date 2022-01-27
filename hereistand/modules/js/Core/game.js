@@ -22,6 +22,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
         height: '100vh',
         position: 'fixed',
       });
+      this.setupDone = false;
     },
 
     showMessage(msg, type) {
@@ -66,14 +67,22 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
     onLoadingComplete() {
       debug('Loading complete');
 //      this.cancelLogs(this.gamedatas.canceledNotifIds);
-      sizeBoard();
+      this.sizeBoard();
     },
 
     sizeBoard() {
-      if(this.isLoadingComplete == false){
+      if(this.isLoadingComplete == false || this.setupDone == false){
         return;
       }
       // set transform scale on board
+      let gamePlayArea = dojo.byId('game_play_area');
+      let rect = gamePlayArea.getBoundingClientRect();
+
+      let board_width = 5100;
+      let board_height = 3300;
+
+      this.scalingFactor = rect.width / board_width;
+      dojo.style('board', 'transform', `scale(${this.scalingFactor}`);
     },
 
     /*

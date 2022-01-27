@@ -21,11 +21,10 @@
   background-image: url("img/sprites.png");
   filter: drop-shadow(3px 3px 2px #111);
   -webkit-filter: drop-shadow(3px 3px 2px #111);
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: -0px;
+  margin-left: -0px;
   z-index: 4;
-  pointer-events: none;
-}
+  pointer-events: none; }
 
 .echo {
   width: 40px;
@@ -35,42 +34,33 @@
   margin-left: 0px;
   margin-right: -10px;
   filter: drop-shadow(1px 1px 2px #111);
-  -webkit-filter: drop-shadow(1px 1px 2px #111);
-}
+  -webkit-filter: drop-shadow(1px 1px 2px #111); }
 
 .meeple.c009d4c {
-  background-position-x: 67%;
-}
+  background-position-x: 67%; }
 
 .meeple.cfbe559 {
-  background-position-x: 33%;
-}
+  background-position-x: 33%; }
 
 .meeple.ce54640 {
-  background-position-x: 0%;
-}
+  background-position-x: 0%; }
 
 .meeple.c0090cf {
-  background-position-x: 17%;
-}
+  background-position-x: 17%; }
 
 .meeple.c7b4d96 {
-  background-position-x: 50%;
-}
+  background-position-x: 50%; }
 
 .meeple.ca0744f {
-  background-position-x: 83%;
-}
+  background-position-x: 83%; }
 
 .player_score {
   display: flex;
-  vertical-align: center;
-}
+  vertical-align: center; }
 
 .player_score span {
   margin-top: auto;
-  margin-bottom: auto;
-}
+  margin-bottom: auto; }
 
 .iconScore {
   width: 25px;
@@ -80,16 +70,14 @@
   margin-right: 5px;
   margin-left: 1px;
   filter: drop-shadow(3px 3px 3px #333);
-  -webkit-filter: drop-shadow(2px 2px 2px #333);
-}
+  -webkit-filter: drop-shadow(2px 2px 2px #333); }
 
 #overall-content {
-  image-rendering: -webkit-optimize-contrast;
-}
+  image-rendering: -webkit-optimize-contrast; }
 
 #board {
   position: relative;
-}
+  transform-origin: 0 0; }
 
 #map {
   position: relative;
@@ -97,18 +85,15 @@
   height: 3300px;
   background-image: url("img/board.jpg");
   background-size: 5100px;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 .map_node {
-  position: absolute;
-}
+  position: absolute; }
 
 .city {
   width: 30px;
   height: 30px;
   background-image: url("img/England_key.svg");
-  background-size: 30px;
-}
+  background-size: 30px; }
 
 /*# sourceMappingURL=hereistand.css.map */
