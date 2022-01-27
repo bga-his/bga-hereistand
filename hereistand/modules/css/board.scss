@@ -53,12 +53,33 @@
   position: relative;
 }
 
+.city:hover {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  .token {
+    position: relative;
+  }
+}
+
 .token {
   position: absolute;
   top: -50px;
   left: -50px;
   height: 100px;
   width: 100px;
+}
+
+.control{
+  z-index: 1;
+}
+
+.unit {
+  z-index: 2;
+}
+
+.leader {
+  z-index: 3;
 }
 
 .France_key {
