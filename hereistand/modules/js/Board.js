@@ -1,8 +1,24 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistand.board', null, {
 
+    titleCase(string){
+      if(string.length == 1){
+        return string.toUpperCase();
+      }
+      if(string.length == 0){
+        return string;
+      }
+      return string.substr(0, 1).toUpperCase() + string.substr(1);
+    },
+
     getStyle(token){
-      return 'France_key';
+      if(token.type == 'SCM'){
+        return `${this.titleCase(token.faction)}_key`
+      }
+      if(token.type == 'regular'){
+        // do something else
+      }
+      return 'Placeholder';
     },
 
     setupBoard() {
