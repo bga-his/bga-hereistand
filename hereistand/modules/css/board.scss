@@ -17,6 +17,34 @@
   background-repeat: no-repeat;
 }
 
+#other-boards {
+  position: relative;
+  transform-origin: 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 5000px;
+}
+
+#other-boards-wrapper{
+  margin-top: 1em;
+}
+
+#religious-struggle {
+  position: relative;
+  width: 1100px;
+  height: 1424px;
+  background-image: url('img/religious.jpg');
+  background-repeat: no-repeat;
+}
+
+#player-boards {
+  position: relative;
+  width: 3825px;
+  height: 1650px;
+  background-image: url('img/referencetotal.jpg');
+  background-repeat: no-repeat;
+}
+
 .map_node{
   position: absolute;
 }
