@@ -66,6 +66,14 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
     onLoadingComplete() {
       debug('Loading complete');
 //      this.cancelLogs(this.gamedatas.canceledNotifIds);
+      sizeBoard();
+    },
+
+    sizeBoard() {
+      if(this.isLoadingComplete == false){
+        return;
+      }
+      // set transform scale on board
     },
 
     /*
@@ -333,6 +341,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
       dojo.style('page-content', 'zoom', '');
       dojo.style('page-title', 'zoom', '');
       dojo.style('right-side-first-part', 'zoom', '');
+      this.sizeBoard();
     },
 
     /*
