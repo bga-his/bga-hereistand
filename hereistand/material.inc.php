@@ -52,3 +52,21 @@ $this->setup_base = [
 		],
 	],
 ];
+
+$this->cards = [
+	CARD_JANISSARIES => [
+		'cp' => 5,
+		'class_name' => 'Janissaries',
+		'name' => clienttranslate('Janissaries'),
+		'type' => HOME_CARD,
+		'power' => OTTOMAN,
+	],
+	CARD_HOLY_ROMAN_EMPEROR => [
+		'cp' => 5,
+		'class_name' => 'Holy Roman Emperor',
+		'name' => clienttranslate('Holy Roman Emperor'),
+		'type' => HOME_CARD,
+		'power' => HAPSBURG,
+	],
+
+];

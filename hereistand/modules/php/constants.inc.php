@@ -9,9 +9,11 @@ const ST_HIS = 2;
 const ST_END_GAME = 99;
 
 /*
- * Faction constants
+ * Powers constants
  */
 const FRANCE = 'france';
+const HAPSBURG = 'hapsburg';
+const OTTOMAN = 'ottoman';
 
 /*
  * City constants
@@ -29,6 +31,17 @@ const FRANCE_REGULAR_1 = 1;
  */
 const FRONT = 0;
 const BACK = 1;
+
+/*
+ * Card constants
+ */
+const CARD_JANISSARIES = 1;
+const CARD_HOLY_ROMAN_EMPEROR = 2;
+
+/*
+ * Card type constants
+ */
+const HOME_CARD = 0;
 
 /*
  * Game options
