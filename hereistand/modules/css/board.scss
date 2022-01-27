@@ -18,12 +18,22 @@
 }
 
 .map_node{
-    position: absolute;
+  position: absolute;
 }
 
- .city {
-    width: 30px;
-    height: 30px;
-    background-image: url('img/England_key.svg');
-    background-size: 30px;
-  }
+.city {
+  position: relative;
+}
+
+.token {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  height: 100px;
+  width: 100px;
+}
+
+.France_key {
+  background-image: url('img/svg/France_key.svg');
+  background-size: 100px;
+}

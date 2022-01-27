@@ -20,3 +20,20 @@
  */
 
 require_once 'modules/php/constants.inc.php';
+
+$this->cities = [
+	'lyon' => [
+		'name' => 'Lyon',
+		'x' => 2430,
+		'y' => 1567,
+	],
+];
+
+$this->setup_base = [
+	'france' => [
+		'lyon' => [
+			'1 regular',
+			'SCM',
+		],
+	],
+];
