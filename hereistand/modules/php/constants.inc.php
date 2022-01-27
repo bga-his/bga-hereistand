@@ -9,6 +9,16 @@ const ST_HIS = 2;
 const ST_END_GAME = 99;
 
 /*
+ * Faction constants
+ */
+FRANCE = 'france';
+
+/*
+ * City constants
+ */
+LYON = 'lyon';
+
+/*
  * Token type constants
  */
 const FRONT = 0;

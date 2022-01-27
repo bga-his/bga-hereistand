@@ -45,8 +45,8 @@ $this->starting_token_counts = [
 ];
 
 $this->setup_base = [
-	'france' => [
-		'lyon' => [
+	FRANCE => [
+		LYON => [
 			FRANCE_REGULAR_1,
 			FRANCE_SCM,
 		],
