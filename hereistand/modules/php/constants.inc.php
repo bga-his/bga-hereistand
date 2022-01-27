@@ -11,12 +11,12 @@ const ST_END_GAME = 99;
 /*
  * Faction constants
  */
-FRANCE = 'france';
+const FRANCE = 'france';
 
 /*
  * City constants
  */
-LYON = 'lyon';
+const LYON = 'lyon';
 
 /*
  * Token type constants

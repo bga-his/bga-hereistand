@@ -22,8 +22,8 @@
 require_once 'modules/php/constants.inc.php';
 
 $this->cities = [
-	'lyon' => [
-		'name' => 'Lyon',
+	LYON => [
+		'name' => clienttranslate('Lyon'),
 		'x' => 2430,
 		'y' => 1567,
 	],
