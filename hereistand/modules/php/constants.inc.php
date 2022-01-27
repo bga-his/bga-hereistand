@@ -21,10 +21,14 @@ LYON = 'lyon';
 /*
  * Token type constants
  */
-const FRONT = 0;
-const BACK = 1;
 const FRANCE_SCM = 0;
 const FRANCE_REGULAR_1 = 1;
+
+/*
+ * Token state constants
+ */
+const FRONT = 0;
+const BACK = 1;
 
 /*
  * Game options
