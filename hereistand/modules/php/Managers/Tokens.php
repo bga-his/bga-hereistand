@@ -39,15 +39,15 @@ class Tokens extends \HIS\Helpers\Pieces {
 	 * setupNewGame: create the tokens
 	 */
 	public function setupNewGame($players, $options) {
-		foreach (Game::get()->setup_base as $power => $cities) {
+		foreach (Game::get()->starting_token_counts as $token_type => $num) {
+			$tokens = array_fill(0, $num, ['type' => $token_type]);
+			self::create($tokens, ['supply', 'supply', $token_type]);
+		}
+		foreach (Game::get()->setup_base as $faction => $cities) {
 			foreach ($cities as $city_name => $city) {
-				$tokens = [];
 				foreach ($city as $unit) {
-					if ($unit == 'SCM') {
-						$tokens[] = ['type' => SCM];
-					}
+					self::pickForLocation(1, ['supply', 'supply', $unit], ['board', 'city', $city_name]);
 				}
-				self::create($tokens, ['board', 'city', $city_name]);
 			}
 		}
 	}

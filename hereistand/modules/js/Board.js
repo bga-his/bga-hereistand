@@ -5,11 +5,10 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       for(let token_id in this.gamedatas.tokens){
         let token = this.gamedatas.tokens[token_id];
         console.log(token);
-        if(token.board != 'board'){
-          return;
-        }
-        if(token.location_type == 'city'){
-          this.place('tplToken', token, `city_${token.location_name}`);
+        if(token.board == 'board'){
+          if(token.location_type == 'city'){
+            this.place('tplToken', token, `city_${token.location_name}`);
+          }
         }
       }
     },

@@ -13,7 +13,8 @@ const ST_END_GAME = 99;
  */
 const FRONT = 0;
 const BACK = 1;
-const SCM = 0;
+const FRANCE_SCM = 0;
+const FRANCE_REGULAR_1 = 1;
 
 /*
  * Game options

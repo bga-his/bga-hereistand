@@ -30,17 +30,25 @@ $this->cities = [
 ];
 
 $this->tokens = [
-	SCM => [
+	FRANCE_SCM => [
 		'style' => 'France_key',
 	],
+	FRANCE_REGULAR_1 => [
+		'style' => 'French_regular_1',
+	],
 
+];
+
+$this->starting_token_counts = [
+	FRANCE_SCM => 5,
+	FRANCE_REGULAR_1 => 5,
 ];
 
 $this->setup_base = [
 	'france' => [
 		'lyon' => [
-			'1 regular',
-			'SCM',
+			FRANCE_REGULAR_1,
+			FRANCE_SCM,
 		],
 	],
 ];
