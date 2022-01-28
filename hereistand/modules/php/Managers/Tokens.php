@@ -11,6 +11,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 	protected static $prefix = 'token_';
 	protected static $customFields = ['type'];
 	protected static $autoreshuffle = false;
+	protected static $autoIncrement = false;
 	protected static function cast($token) {
 		$locations = explode('_', $token['location']);
 		$token = [
@@ -40,13 +41,18 @@ class Tokens extends \HIS\Helpers\Pieces {
 	 */
 	public function setupNewGame($players, $options) {
 		foreach (Game::get()->starting_token_counts as $token_type => $num) {
-			$tokens = array_fill(0, $num, ['type' => $token_type]);
-			self::create($tokens, ['supply', 'supply', $token_type]);
+			$tokens = Game::get()->tokens;
+			$piece = [
+				"id" => $tokens[$token_type]['db_id'],
+				"nbr" => $num,
+				"type" => $token_type,
+			];
+			self::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
 		}
-		foreach (Game::get()->setup_base as $faction => $cities) {
+		foreach (Game::get()->setup_base as $power => $cities) {
 			foreach ($cities as $city_name => $city) {
 				foreach ($city as $unit) {
-					self::pickForLocation(1, ['supply', 'supply', $unit], ['board', 'city', $city_name]);
+					self::pickForLocation(1, ['supply', $power, $unit], ['board', 'city', $city_name]);
 				}
 			}
 		}

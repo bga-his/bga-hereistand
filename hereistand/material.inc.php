@@ -32,9 +32,13 @@ $this->cities = [
 $this->tokens = [
 	FRANCE_SCM => [
 		'style' => 'control France_key',
+		'power' => FRANCE,
+		'db_id' => "france_scm_{INDEX}",
 	],
 	FRANCE_REGULAR_1 => [
 		'style' => 'military unit French_regular_1',
+		'power' => FRANCE,
+		'db_id' => "france_regular_1_{INDEX}",
 	],
 
 ];

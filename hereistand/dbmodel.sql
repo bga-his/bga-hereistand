@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `cards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `tokens` (
-  `token_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `token_id` varchar(32) NOT NULL,
   `token_location` varchar(32) NOT NULL,
   `token_state` int(10) DEFAULT 0,
   `type` int(10) NOT NULL,
