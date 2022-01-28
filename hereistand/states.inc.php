@@ -21,16 +21,33 @@ $machinestates = [
 		'description' => '',
 		'type' => 'manager',
 		'action' => 'stGameSetup',
-		'transitions' => ['' => ST_HIS],
+		'transitions' => ['' => ST_PICK_CARD],
 	],
 
-	ST_HIS => [
-		'name' => 'playerTurn',
+	ST_PICK_CARD => [
+		'name' => 'pickCard',
 		'description' => clienttranslate('${actplayer} must play a card or pass'),
 		'descriptionmyturn' => clienttranslate('${you} must play a card or pass'),
 		'type' => 'activeplayer',
 		'possibleactions' => ['actPlayCard', 'actPass'],
-		'transitions' => ['done' => ST_HIS],
+		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER],
+	],
+
+	ST_IMPULSE_ACTIONS => [
+		'name' => 'impulseActions',
+		'description' => clienttranslate('${actplayer} must take actions'),
+		'descriptionmyturn' => clienttranslate('${you} must take actions'),
+		'type' => 'activeplayer',
+		'possibleactions' => ['actMoveInClear', 'actPass'],
+		'transitions' => ['pass' => ST_NEXT_PLAYER],
+	],
+
+	ST_NEXT_PLAYER => [
+		'name' => 'nextPlayer',
+		'description' => 'End a players impulse and move to next',
+		'type' => 'manager',
+		'action' => 'stNextPlayer',
+		'transitions' => ['nextPlayer' => ST_PICK_CARD],
 	],
 
 	// Final state.

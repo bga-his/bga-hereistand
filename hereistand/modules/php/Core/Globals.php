@@ -7,6 +7,7 @@ namespace HIS\Core;
 class Globals extends \HIS\Helpers\DB_Manager {
 	protected static $initialized = false;
 	protected static $variables = [
+		"remainingCP" => "int",
 
 	];
 

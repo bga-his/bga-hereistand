@@ -33,4 +33,18 @@ class action_hereistand extends APP_GameAction {
 		$this->game->actChangePreference($pref, $value);
 		self::ajaxResponse();
 	}
+
+	public function actPass() {
+		self::setAjaxMode();
+		$this->game->actPass();
+		self::ajaxResponse();
+	}
+
+	public function actPlayCard() {
+		self::setAjaxMode();
+		$cardId = self::getArg('cardId', AT_posint, false);
+		$asEvent = self::getArg('asEvent', AT_bool, false);
+		$this->game->actPlayCard($cardId, $asEvent);
+		self::ajaxResponse();
+	}
 }

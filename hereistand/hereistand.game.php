@@ -32,6 +32,7 @@ spl_autoload_register($swdNamespaceAutoload, true, true);
 
 require_once APP_GAMEMODULE_PATH . 'module/table/table.game.php';
 
+use HIS\Core\Actions;
 use HIS\Core\Globals;
 use HIS\Core\Preferences;
 use HIS\Managers\Cards;
@@ -40,7 +41,8 @@ use HIS\Managers\Tokens;
 
 class hereistand extends Table {
 	use HIS\DebugTrait;
-	use HIS\States\DrawCardTrait;
+	use HIS\States\NextPlayerTrait;
+	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
 
 	public static $instance = null;
@@ -95,6 +97,14 @@ class hereistand extends Table {
 
 	function actChangePreference($pref, $value) {
 		Preferences::set($this->getCurrentPId(), $pref, $value);
+	}
+
+	function actPass() {
+		Actions::pass();
+	}
+
+	function actPlayCard($cardId, $asEvent) {
+		Actions::play($cardId, $asEvent);
 	}
 
 	/////////////////////////////////////////////////////////////
