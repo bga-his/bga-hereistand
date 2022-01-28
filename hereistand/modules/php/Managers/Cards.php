@@ -47,7 +47,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	public function setupNewGame($players, $options) {
 		$card_nums = count(Game::get()->cards);
 		$cards = array_fill(0, $card_nums, 0);
-		self::create($cards, ['deck']);
+		self::create($cards, ['deck'], 0);
 		foreach ($players as $pId => $player) {
 			self::pickForLocation(1, ['deck'], ['hand', $pId]);
 		}
