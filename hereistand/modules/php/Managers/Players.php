@@ -24,12 +24,23 @@ class Players extends \HIS\Helpers\DB_Manager {
 			'player_name',
 			'player_avatar',
 			'player_score',
+			'player_power',
 		]);
 
 		$values = [];
+		$i = 0;
+		$powers = [
+			OTTOMAN,
+			HAPSBURG,
+			ENGLAND,
+			FRANCE,
+			PAPAL,
+			PROTESTANT,
+		];
 		foreach ($players as $pId => $player) {
 			$color = array_shift($colors);
-			$values[] = [$pId, $color, $player['player_canal'], $player['player_name'], $player['player_avatar'], 1];
+			$values[] = [$pId, $color, $player['player_canal'], $player['player_name'], $player['player_avatar'], 0, $powers[$i]];
+			$i++;
 		}
 		$query->values($values);
 

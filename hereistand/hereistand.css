@@ -13,64 +13,35 @@
  * hereistand stylesheet
  *
  */
-.meeple {
-  position: absolute;
-  width: 96px;
-  height: 100px;
-  background-size: 600%;
-  background-image: url("img/sprites.png");
-  filter: drop-shadow(3px 3px 2px #111);
-  -webkit-filter: drop-shadow(3px 3px 2px #111);
-  margin-top: -0px;
-  margin-left: -0px;
-  z-index: 4;
-  pointer-events: none; }
+.faction-wrap {
+  width: 50px;
+  height: 55px; }
 
-.echo {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  position: relative;
-  margin-left: 0px;
-  margin-right: -10px;
-  filter: drop-shadow(1px 1px 2px #111);
-  -webkit-filter: drop-shadow(1px 1px 2px #111); }
+.faction {
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  width: 100px;
+  height: 120px;
+  background-size: 100px;
+  background-repeat: no-repeat; }
 
-.meeple.c009d4c {
-  background-position-x: 67%; }
+.faction_ottoman {
+  background-image: url("img/svg/Ottoman_hex.svg"); }
 
-.meeple.cfbe559 {
-  background-position-x: 33%; }
+.faction_hapsburg {
+  background-image: url("img/svg/Hapsburg_hex.svg"); }
 
-.meeple.ce54640 {
-  background-position-x: 0%; }
+.faction_england {
+  background-image: url("img/svg/England_hex.svg"); }
 
-.meeple.c0090cf {
-  background-position-x: 17%; }
+.faction_france {
+  background-image: url("img/svg/France_hex.svg"); }
 
-.meeple.c7b4d96 {
-  background-position-x: 50%; }
+.faction_papacy {
+  background-image: url("img/svg/Papacy_hex.svg"); }
 
-.meeple.ca0744f {
-  background-position-x: 83%; }
-
-.player_score {
-  display: flex;
-  vertical-align: center; }
-
-.player_score span {
-  margin-top: auto;
-  margin-bottom: auto; }
-
-.iconScore {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  position: relative;
-  margin-right: 5px;
-  margin-left: 1px;
-  filter: drop-shadow(3px 3px 3px #333);
-  -webkit-filter: drop-shadow(2px 2px 2px #333); }
+.faction_protestant {
+  background-image: url("img/svg/Protestant_hex.svg"); }
 
 .card {
   background-size: 200px;

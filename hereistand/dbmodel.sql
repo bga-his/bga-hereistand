@@ -18,6 +18,7 @@
 -- Note: The database schema is created from this file when the game starts. If you modify this file,
 --       you have to restart a game to see your changes in database.
 
+ALTER TABLE `player` ADD `player_power` varchar(10) NOT NULL;
 
 CREATE TABLE IF NOT EXISTS `global_variables` (
   `name` varchar(255) NOT NULL,

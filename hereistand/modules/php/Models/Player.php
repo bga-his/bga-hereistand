@@ -18,6 +18,7 @@ class Player extends \HIS\Helpers\DB_Model {
 		'eliminated' => 'player_eliminated',
 		'score' => 'player_score',
 		'zombie' => 'player_zombie',
+		'power' => 'player_power',
 	];
 
 	/*

@@ -14,8 +14,8 @@ const ST_END_GAME = 99;
 const FRANCE = 'france';
 const HAPSBURG = 'hapsburg';
 const OTTOMAN = 'ottoman';
-const ENGLAND = 'english';
-const PAPAL = 'papal';
+const ENGLAND = 'england';
+const PAPAL = 'papacy';
 const PROTESTANT = 'protestant';
 
 /*

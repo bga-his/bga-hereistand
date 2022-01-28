@@ -18,10 +18,8 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     tplPlayerScore(player){
       return `
-        <div id="globalscore_${player.id}" class="globalscore">
-          <div id="player_score_${player.id}" class="player_score">
-            <span class="meeple echo c${player.color}"></span>
-          </div>
+        <div id="player_faction_${player.id}" class="faction-wrap">
+          <div class="faction faction_${player.power}"></div>
         </div>
       `;
     },
