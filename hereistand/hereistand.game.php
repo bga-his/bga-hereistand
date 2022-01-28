@@ -41,6 +41,7 @@ use HIS\Managers\Tokens;
 class hereistand extends Table {
 	use HIS\DebugTrait;
 	use HIS\States\DrawCardTrait;
+	use HIS\SetupTrait;
 
 	public static $instance = null;
 	function __construct() {
@@ -49,14 +50,6 @@ class hereistand extends Table {
 		self::initGameStateLabels([
 			'logging' => 10,
 		]);
-		$this->setup_base = [
-			FRANCE => [
-				LYON => [
-					FRANCE_1UNIT,
-					FRANCE_KEY,
-				],
-			],
-		];
 	}
 
 	public static function get() {

@@ -49,7 +49,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			];
 			self::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
 		}
-		foreach (Game::get()->setup_base as $power => $cities) {
+		foreach (Game::get()->getSetup() as $power => $cities) {
 			foreach ($cities as $city_name => $city) {
 				foreach ($city as $unit) {
 					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['board', 'city', $city_name]);
