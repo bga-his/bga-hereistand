@@ -34,7 +34,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 			HAPSBURG,
 			ENGLAND,
 			FRANCE,
-			PAPAL,
+			PAPACY,
 			PROTESTANT,
 		];
 		foreach ($players as $pId => $player) {
