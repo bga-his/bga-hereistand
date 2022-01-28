@@ -10,6 +10,10 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     },
 
+    onUnitConstructionClick(evt){
+      dojo.stopEvent(evt);
+    },
+
     onPlayEventClick(evt){
       dojo.stopEvent(evt);
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: true});
