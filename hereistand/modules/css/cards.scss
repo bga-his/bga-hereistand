@@ -1,23 +1,24 @@
-.card {
-	background-size: 200px;
-	height: 280px;
-	width: 200px;
+.Janissaries {
+	background-image: url("img/svg/HIS-001.svg");
 }
-
-.card-wrapper {
-
+.HolyRomanEmperor {
+	background-image: url("img/svg/HIS-002.svg");
 }
-
-#player-hand {
-	margin-top: 1em;
-	display: flex;
-	justify-content: space-evenly;
+.SixWives {
+	background-image: url("img/svg/HIS-003.svg");
 }
-
-.Janissaries { background-image: url('img/svg/HIS-001.svg'); }
-.HolyRomanEmperor { background-image: url('img/svg/HIS-002.svg'); }
-.SixWives { background-image: url('img/svg/HIS-003.svg'); }
-.PatronArts { background-image: url('img/svg/HIS-004.svg'); }
-.PapalBull { background-image: url('img/svg/HIS-005.svg'); }
-.LeipzigDebate { background-image: url('img/svg/HIS-006.svg'); }
-.HereIStand { background-image: url('img/svg/HIS-007.svg'); }
+.PatronArts {
+	background-image: url("img/svg/HIS-004.svg");
+}
+.PapalBull {
+	background-image: url("img/svg/HIS-005.svg");
+}
+.LeipzigDebate {
+	background-image: url("img/svg/HIS-006.svg");
+}
+.HereIStand {
+	background-image: url("img/svg/HIS-007.svg");
+}
+.LutherTheses {
+	background-image: url("img/svg/HIS-008.svg");
+}

@@ -83,14 +83,19 @@
   z-index: 3;
 }
 
-.France_key {
-  background-image: url('img/svg/France_key.svg');
+.card {
+  background-size: 200px;
+  height: 280px;
+  width: 200px;
 }
 
-.French_regular_1 {
-  background-image: url('img/svg/FrenchReg-1.svg');
+.card-wrapper {
+
 }
 
-.Placeholder {
-  background-color: limegreen;
+#player-hand {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
 }
+

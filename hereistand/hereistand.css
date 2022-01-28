@@ -43,16 +43,6 @@
 .faction_protestant {
   background-image: url("img/svg/Protestant_hex.svg"); }
 
-.card {
-  background-size: 200px;
-  height: 280px;
-  width: 200px; }
-
-#player-hand {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-evenly; }
-
 .Janissaries {
   background-image: url("img/svg/HIS-001.svg"); }
 
@@ -73,6 +63,9 @@
 
 .HereIStand {
   background-image: url("img/svg/HIS-007.svg"); }
+
+.LutherTheses {
+  background-image: url("img/svg/HIS-008.svg"); }
 
 #overall-content {
   image-rendering: -webkit-optimize-contrast; }
@@ -143,14 +136,15 @@
 .leader {
   z-index: 3; }
 
-.France_key {
-  background-image: url("img/svg/France_key.svg"); }
+.card {
+  background-size: 200px;
+  height: 280px;
+  width: 200px; }
 
-.French_regular_1 {
-  background-image: url("img/svg/FrenchReg-1.svg"); }
-
-.Placeholder {
-  background-color: limegreen; }
+#player-hand {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly; }
 
 .england_key {
   background-image: url("img/svg/England_key.svg"); }

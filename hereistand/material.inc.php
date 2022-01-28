@@ -23,61 +23,9 @@ require_once 'modules/php/constants.inc.php';
 
 $this->cities = [
 	LYON => [
-		'name' => clienttranslate('Lyon'),
-		'x' => 2430,
-		'y' => 1567,
-	],
-];
-
-$this->cards = [
-	CARD_JANISSARIES => [
-		'cp' => 5,
-		'class_name' => 'Janissaries',
-		'name' => clienttranslate('Janissaries'),
-		'type' => HOME_CARD,
-		'power' => OTTOMAN,
-	],
-	CARD_HOLY_ROMAN_EMPEROR => [
-		'cp' => 5,
-		'class_name' => 'HolyRomanEmperor',
-		'name' => clienttranslate('Holy Roman Emperor'),
-		'type' => HOME_CARD,
-		'power' => HAPSBURG,
-	],
-	CARD_SIX_WIVES_OF_HENRY_VIII => [
-		'cp' => 5,
-		'class_name' => 'SixWives',
-		'name' => clienttranslate('Six Wives of Henry VIII'),
-		'type' => HOME_CARD,
-		'power' => ENGLAND,
-	],
-	CARD_PATRON_OF_THE_ARTS => [
-		'cp' => 5,
-		'class_name' => 'PatronArts',
-		'name' => clienttranslate('Patron of the Arts'),
-		'type' => HOME_CARD,
-		'power' => FRANCE,
-	],
-	CARD_PAPAL_BULL => [
-		'cp' => 4,
-		'class_name' => 'PapalBull',
-		'name' => clienttranslate('Papal Bull'),
-		'type' => HOME_CARD,
-		'power' => PAPACY,
-	],
-	CARD_LEIPZIG_DEBATE => [
-		'cp' => 3,
-		'class_name' => 'LeipzigDebate',
-		'name' => clienttranslate('Leipzig Debate'),
-		'type' => HOME_CARD,
-		'power' => PAPACY,
-	],
-	CARD_HERE_I_STAND => [
-		'cp' => 5,
-		'class_name' => 'HereIStand',
-		'name' => clienttranslate('Here I Stand'),
-		'type' => HOME_CARD,
-		'power' => PROTESTANT,
+		"x" => 2430,
+		"y" => 1567,
+		"name" => "Lyon",
 	],
 ];
 
@@ -1373,6 +1321,7 @@ $this->tokens = [
 		"db_id" => "tbd_214",
 	],
 ];
+
 $this->starting_token_counts = [
 	ENGLAND_KEY => 9,
 	FRANCE_KEY => 11,
@@ -1589,4 +1538,64 @@ $this->starting_token_counts = [
 	FORTRESS => 9,
 	PIRATE_HAVEN => 2,
 	JESUIT_UNIVERSITY => 1,
+];
+
+$this->board_locations = [
+	TURN_TRACK_1 => [
+		"x" => 3862,
+		"y" => 3095,
+	],
+];
+
+$this->cards = [
+	CARD_JANISSARIES => [
+		"class_name" => "Janissaries",
+		"name" => "Janissaries",
+		"type" => HOME_CARD,
+		"cp" => 5,
+	],
+	CARD_HOLY_ROMAN_EMPEROR => [
+		"class_name" => "HolyRomanEmperor",
+		"name" => "Holy Roman Emperor",
+		"type" => HOME_CARD,
+		"cp" => 5,
+	],
+	CARD_SIX_WIVES_OF_HENRY_VIII => [
+		"class_name" => "SixWives",
+		"name" => "Six Wives of Henry VIII",
+		"type" => HOME_CARD,
+		"cp" => 5,
+	],
+	CARD_PATRON_OF_THE_ARTS => [
+		"class_name" => "PatronArts",
+		"name" => "Patron of the Arts",
+		"type" => HOME_CARD,
+		"cp" => 5,
+	],
+	CARD_PAPAL_BULL => [
+		"class_name" => "PapalBull",
+		"name" => "Papal Bull",
+		"type" => HOME_CARD,
+		"cp" => 4,
+	],
+	CARD_LEIPZIG_DEBATE => [
+		"class_name" => "LeipzigDebate",
+		"name" => "Leipzig Debate",
+		"type" => HOME_CARD,
+		"cp" => 3,
+	],
+	CARD_HERE_I_STAND => [
+		"class_name" => "HereIStand",
+		"name" => "Here I Stand",
+		"type" => HOME_CARD,
+		"cp" => 5,
+	],
+	CARD_LUTHER_95_THESES => [
+		"class_name" => "LutherTheses",
+		"name" => "Luther's 95 Theses",
+		"type" => MANDATORY_CARD,
+		"cp" => 0,
+		"remove" => "Yes",
+		"scenario" => 1517,
+	],
 ];

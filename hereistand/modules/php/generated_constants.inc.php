@@ -1,13 +1,9 @@
 <?php
 
 /*
- * City constants
- */
-const LYON = 'lyon';
-
-/*
  * Token type constants
  */
+
 const ENGLAND_KEY = 0;
 const FRANCE_KEY = 1;
 const HABSBURG_KEY = 2;
@@ -224,12 +220,21 @@ const FORTRESS = 212;
 const PIRATE_HAVEN = 213;
 const JESUIT_UNIVERSITY = 214;
 /*
+ * City constants
+ */
+const LYON = 0;
+/*
+ * Location constants
+ */
+const TURN_TRACK_1 = 0;
+/*
  * Card constants
  */
-const CARD_JANISSARIES = 1;
-const CARD_HOLY_ROMAN_EMPEROR = 2;
-const CARD_SIX_WIVES_OF_HENRY_VIII = 3;
-const CARD_PATRON_OF_THE_ARTS = 4;
-const CARD_PAPAL_BULL = 5;
-const CARD_LEIPZIG_DEBATE = 6;
-const CARD_HERE_I_STAND = 7;
+const CARD_JANISSARIES = 0;
+const CARD_HOLY_ROMAN_EMPEROR = 1;
+const CARD_SIX_WIVES_OF_HENRY_VIII = 2;
+const CARD_PATRON_OF_THE_ARTS = 3;
+const CARD_PAPAL_BULL = 4;
+const CARD_LEIPZIG_DEBATE = 5;
+const CARD_HERE_I_STAND = 6;
+const CARD_LUTHER_95_THESES = 7;

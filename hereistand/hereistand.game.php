@@ -49,6 +49,14 @@ class hereistand extends Table {
 		self::initGameStateLabels([
 			'logging' => 10,
 		]);
+		$this->setup_base = [
+			FRANCE => [
+				LYON => [
+					FRANCE_1UNIT,
+					FRANCE_KEY,
+				],
+			],
+		];
 	}
 
 	public static function get() {
@@ -109,15 +117,6 @@ class hereistand extends Table {
 	public static function translate($text) {
 		return self::_($text);
 	}
-
-	$this->setup_base = [
-		FRANCE => [
-			LYON => [
-				FRANCE_1UNIT,
-				FRANCE_KEY,
-			],
-		],
-	];
 
 	////////////////////////////////////
 	////////////   Zombie   ////////////

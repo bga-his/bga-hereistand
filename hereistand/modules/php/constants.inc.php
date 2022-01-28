@@ -1,6 +1,6 @@
 <?php
 
-require_once 'modules/php/generated_constants.inc.php';
+require_once 'generated_constants.inc.php';
 /*
  * ST constants
  */
@@ -31,6 +31,7 @@ const BACK = 1;
  * Card type constants
  */
 const HOME_CARD = 0;
+const MANDATORY_CARD = 1;
 
 /*
  * Game options

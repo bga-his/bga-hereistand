@@ -91,11 +91,12 @@ card_csv.each do |row|
 	card['remove'] = row['remove'] unless row['remove'].nil?
 	card['turn_added'] = row['turn_added'] unless row['turn_added'].nil?
 	card['scenario'] = row['scenario'] unless row['scenario'].nil?
+	cards[card_name] = card
 	card_constants.push card_name 
 	css = Hash.new
-	id = row['num'].to_s.ljust(3, '0')
+	id = row['num'].to_s.rjust(3, '0')
 	css['front'] = "HIS-#{id}.svg"
-	token_css[constant_name.downcase] = css
+	card_css[row['css_class_name']] = css
 	i += 1
 end
 
@@ -176,13 +177,13 @@ File.open('../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "/*
  * Location constants
  */\n"
-	locations.each_with_index do |name, i|
+	location_constants.each_with_index do |name, i|
 		file.write print_constant(name, i) + "\n"
 	end
 	file.write "/*
  * Card constants
  */\n"
-	cards.each_with_index do |name, i|
+	card_constants.each_with_index do |name, i|
 		file.write print_constant(name, i) + "\n"
 	end
 end
