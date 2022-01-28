@@ -32,6 +32,9 @@ const BACK = 1;
  */
 const HOME_CARD = 0;
 const MANDATORY_CARD = 1;
+const COMBAT_CARD = 2;
+const RESPONSE_CARD = 3;
+const EVENT_CARD = 4;
 
 /*
  * Game options
