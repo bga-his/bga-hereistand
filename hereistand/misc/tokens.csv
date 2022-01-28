@@ -1,0 +1,216 @@
+CONSTANT_NAME,Name,Count,SVG,SVG_back,Sides,Type,Group,db_id,Valid positions,Characteristics
+ENGLAND_KEY,English Key,9,England_key.svg,England_key_back.svg,2,Keys,ENGLAND,england_scm,Any key in the map or in the English power card,
+FRANCE_KEY,French Key,11,France_key.svg,France_key_back.svg,2,Keys,FRANCE,,Any key in the map or in the French power card,
+HABSBURG_KEY,Habsburg Key,14,Hapsburg_key.svg,Hapsburg_key_back.svg,2,Keys,HAPSBURG,,Any key in the map or in the Habsburg power card,
+OTTOMAN_KEY,Ottoman Key,11,Ottoman_key.svg,Ottoman_key_back.svg,2,Keys,OTTOMAN,,Any key in the map or in the Ottoman power card,
+INDEPENDENT_KEY,Independent Key,18,Independent_key.svg,Independent_key_back.svg,2,Keys,,,Any minor power key that could be converted or any city with a port,
+PAPACY_KEY,Papacy Key,7,Papacy_key.svg,Papacy_key_back.svg,2,Keys,PAPACY,,Any key in the map or in the Papacy power card,
+ENGLAND_HEX,English Hexagonal Marker,100,England_hex.svg,England_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+FRANCE_HEX,French Hexagonal Marker,100,France_hex.svg,France_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+HABSBURG_HEX,Habsburg Hexagonal Marker,100,Hapsburg_hex.svg,Hapsburg_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+INDEPENDENT_HEX,Independent Hexagonal Marker,31,Independent_hex.svg,Independent_hex_back.svg,2,Hex Markers,,,Any city that it's not a key in an independent or minor power home space or has a port,
+OTTOMAN_HEX,Ottoman Hexagonal Marker,100,Ottoman_hex.svg,Ottoman_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+PAPACY_HEX,Papacy Hexagonal Marker,100,Papacy_hex.svg,Papacy_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+PROTESTANT_HEX,Protestant Hexagonal Marker,100,Protestant_hex.svg,Protestant_hex_back.svg,2,Hex Markers,,,Any city that it's not a key,
+ENGLAND_1UNIT,English 1 Military Unit,9,EnglandReg-1.svg,EnglandMerc-1.svg,2,Military Units,ENGLAND,england_1unit,Any city,1
+ENGLAND_2UNIT,English 2 Military Unit,5,EnglandReg-2.svg,EnglandMerc-2.svg,2,Military Units,,,Any city,2
+ENGLAND_4UNIT,English 4 Military Unit,2,EnglandReg-4.svg,EnglandMerc-4.svg,2,Military Units,,,Any city,4
+ENGLAND_6UNIT,English 6 Military Unit,1,EnglandReg-6.svg,EnglandMerc-6.svg,2,Military Units,,,Any city,6
+FRANCE_1UNIT,French 1 Military Unit,10,FrenchReg-1.svg,FrenchMerc-1.svg,2,Military Units,,,Any city,1
+FRANCE_2UNIT,French 2 Military Unit,4,FrenchReg-2.svg,FrenchMerc-2.svg,2,Military Units,,,Any city,2
+FRANCE_4UNIT,French 4 Military Unit,3,FrenchReg-4.svg,FrenchMerc-4.svg,2,Military Units,,,Any city,4
+FRANCE_6UNIT,French 6 Military Unit,1,FrenchReg-6.svg,FrenchMerc-6.svg,2,Military Units,,,Any city,6
+GENOA_1UNIT,Genoese 1 Military Unit,1,GenoaReg-1.svg,,1,Military Units,,,Any city,1
+GENOA_2UNIT,Genoese 2 Military Unit,1,GenoaReg-2.svg,,1,Military Units,,,Any city,2
+HABSBURG_1UNIT,Habsburg 1 Military Unit,12,HapsburgReg-1.svg,HapsburgMerc-1.svg,2,Military Units,,,Any city,1
+HABSBURG_2UNIT,Habsburg 2 Military Unit,7,HapsburgReg-2.svg,HapsburgMerc-2.svg,2,Military Units,,,Any city,2
+HABSBURG_4UNIT,Habsburg 4 Military Unit,4,HapsburgReg-4.svg,HapsburgMerc-4.svg,2,Military Units,,,Any city,4
+HABSBURG_6UNIT,Habsburg 6 Military Unit,1,HapsburgReg-6.svg,HapsburgMerc-6.svg,2,Military Units,,,Any city,6
+HUNGARY_1UNIT,Hungarian 1 Military Unit,3,HungaryReg-1.svg,HungaryReg-2.svg,2,Military Units,,,Any city,1 or 2 
+HUNGARY_4UNIT,Hungarian 4 Military Unit,1,HungaryReg-4.svg,HungaryReg-2.svg,2,Military Units,,,Any city,4 or 2
+INDEPENDENT_1UNIT,Independent 1 Military Unit,6,IndependentReg-1.svg,IndependentReg-2.svg,2,Military Units,,,Any independent city,1
+KNIGHTS_1UNIT,Knights of Saint John 1 Military Unit,1,Knights_St_John.svg,,1,Military Units,,,Any city with a port,1
+OTTOMAN_1UNIT,Ottoman 1 Military Unit,11,OttomanReg-1.svg,OttomanCav-1.svg,2,Military Units,,,Any city,1
+OTTOMAN_2UNIT,Ottoman 2 Military Unit,7,OttomanReg-2.svg,OttomanCav-2.svg,2,Military Units,,,Any city,2
+OTTOMAN_4UNIT,Ottoman 4 Military Unit,4,OttomanReg-4.svg,OttomanCav-4.svg,2,Military Units,,,Any city,4
+OTTOMAN_6UNIT,Ottoman 6 Military Unit,1,OttomanReg-6.svg,OttomanCav-6.svg,2,Military Units,,,Any city,6
+PAPACY_1UNIT,Papacy 1 Military Unit,7,PapacyReg-1.svg,PapacyMerc-1.svg,2,Military Units,,,Any city,1
+PAPACY_2UNIT,Papacy 2 Military Unit,4,PapacyReg-2.svg,PapacyMerc-2.svg,2,Military Units,,,Any city,2
+PAPACY_4UNIT,Papacy 4 Military Unit,2,PapacyReg-4.svg,PapacyMerc-4.svg,2,Military Units,,,Any city,4
+PROTESTANT_1UNIT,Protestant 1 Military Unit,8,ProtestantReg-1.svg,ProtestantMerc-1.svg,2,Military Units,,,Any city,1
+PROTESTANT_2UNIT,Protestant 2 Military Unit,5,ProtestantReg-2.svg,ProtestantMerc-2.svg,2,Military Units,,,Any city,2
+PROTESTANT_4UNIT,Protestant 4 Military Unit,2,ProtestantReg-4.svg,ProtestantMerc-4.svg,2,Military Units,,,Any city,4
+SCOTLAND_1UNIT,Scottish 1 Military Unit,2,ScottishReg-1.svg,,1,Military Units,,,Any city,1
+SCOTLAND_2UNIT,Scottish 2 Military Unit,1,ScottishReg-2.svg,,1,Military Units,,,Any city,2
+VENICE_1UNIT,Venetian 1 Military Unit,1,VeniceReg-1.svg,,1,Military Units,,,Any city,1
+VENICE_2UNIT,Venetian 2 Military Unit,1,VeniceReg-2.svg,,1,Military Units,,,Any city,2
+BRANDON,Brandon,1,Brandon.svg,,1,Leader,,brandon,Any city or any power card,1 - 6
+CHARLES_V,Charles V,1,Charles_V.svg,,1,Leader,,charles_v,Any city or any power card,2 - 10
+DUDLEY,Dudley,1,Dudley.svg,,1,Leader,,dudly,Any city or any power card,0 - 6
+DUKE_ALVA,Duke of Alva,1,Duke_of_Alva.svg,,1,Leader,,duke_alva,Any city or any power card,1 - 6
+FERDINAND,Ferdinand,1,Ferdinand.svg,,1,Leader,,,Any city or any power card,1 - 6
+FRANCIS_I,Francis I,1,Francis_I.svg,,1,Leader,,,Any city or any power card,1 - 8
+HENRY_II,Henry II,1,Henry_II.svg,,1,Leader,,,Any city or any power card,0 - 8
+HENRY_VIII,Henry VIII,1,Henry_VIII.svg,,1,Leader,,,Any city or any power card,1 - 8
+IBRAHIM,Ibrahim,1,Ibrahim.svg,,1,Leader,,,Any city or any power card,1 - 6
+JOHN_FREDERICK,John Frederick,1,John_Frederick.svg,,1,Leader,,,Any city or any power card,0 - 6
+MAURICE_OF_SAXONY,Maurice of Saxony,1,Maurice_Protestant.svg,Maurice_Hapsburg.svg,2,Leader,,maurice_of_saxony,Any city or any power card,1 - 6
+MONTMORENCY,Montmorency,1,Montmorency.svg,,1,Leader,,,Any city or any power card,1 - 6
+PHILIP_HESSE,Philip of Hesse,1,Philip_Hesse.svg,,1,Leader,,,Any city or any power card,0 - 6
+RENEGADE,"Charles Borbon, Renegade Leader",1,Renegade.svg,,1,Leader,,,Any city or any power card,1 - 6
+SULEIMAN,Suleiman,1,Suleiman.svg,,1,Leader,,,Any city or any power card,2 - 12
+ENGLISH_SQUADRON,English Squadron,5,English_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+FRENCH_SQUADRON,French Squadron,5,French_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+GENOESE_SQAUADRON,Genoese Squadron,1,Genoa_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+HABSBURG_SQUADRON,Habsburg Squadron,6,Hapsburg_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+OTTOMAN_SQUADRON,Ottoman Squadron,9,Ottoman_squadron.svg,Ottoman_corsair.svg,1,Naval Units,,,Any port or sea or turn score,1 or 2
+PAPACY_SQUADRON,Papacy Squadron,2,Papacy_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+SCOTTISH_SQUADRON,Scottish Squadron,1,Scottish_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+VENETIAN_SQUADRON,Venetian Squadron,4,Venice_squadron.svg,,1,Naval Units,,,Any port or sea or turn score,2
+ANDREA_DORIA,Andrea Doria,1,Andrea_Doria.svg,,1,Naval Leader,,,Any port or sea or turn score,2
+BARBAROSSA,Barbarossa,1,Barbarossa.svg,,1,Naval Leader,,,Any port or sea or turn score,2 - P1
+DRAGUT,Dragut,1,Dragut.svg,,1,Naval Leader,,,Any port or sea or turn score,1 - P2
+ALLIED,Allied,18,Allied.svg,,1,Diplomacy,,,Diplomacy board,
+AT_WAR,At War,30,AtWar.svg,,1,Diplomacy,,,Diplomacy board,
+UNREST,Unrest,100,Unrest.svg,,1,Unrest,,,Any city,
+VP_ENGLAND,English VP's,1,VP_England.svg,,1,VP Counter,,,Victory Track,
+VP_FRANCE,French VP's,1,VP_France.svg,,1,VP Counter,,,Victory Track,
+VP_HABSBURG,Habsburg VP's,1,VP_Hapsburg.svg,,1,VP Counter,,,Victory Track,
+VP_OTTOMAN,Ottoman VP's,1,VP_Ottoman.svg,,1,VP Counter,,,Victory Track,
+VP_PAPACY,Papacy VP's,1,VP_Papacy.svg,,1,VP Counter,,,Victory Track,
+VP_PROTESTANT,Protestant VP's,1,VP_Protestant.svg,,1,VP Counter,,,Victory Track,
+LOANED_ENGLAND,Loaned to England,28,Loaned_England.svg,,1,Loaned,,,In any not English squadron,
+LOANED_FRANCE,Loaned to France,28,Loaned_France.svg,,1,Loaned,,,In any not French squadron,
+LOANED_HABSBURG,Loaned to Habsburg,27,Loaned_Hapsburg.svg,,1,Loaned,,,In any not Habsburg squadron,
+LOANED_OTTOMAN,Loaned to Ottoman,22,Loaned_Ottoman.svg,,1,Loaned,,,In any not Ottoman squadron,
+LOANED_PAPACY,Loaned to Papacy,22,Loaned_Papacy.svg,,1,Loaned,,,In any not Papal squadron,
+CALVIN_REFORMER,Calvin Reformer,1,CalvinReformer.svg,,1,Reformer,,,Geneva,
+CRANMER_REFORMER,Cranmer Reformer,1,CranmerReformer.svg,,1,Reformer,,,London,
+LUTHER_REFORMER,Luther Reformer,1,LutherReformer.svg,,1,Reformer,,,Wittenberg,
+ZWINGLI_REFORMER,Zwingli Reformer,1,ZwingliReformer.svg,,1,Reformer,,,Zurich,
+ALEANDER,Aleander,1,AleanderDebater.svg,AleanderDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,2
+CAJETAN,Cajetan,1,CajetanDebater.svg,CajetanDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,1
+CAMPEGGIO,Campeggio,1,CampeggioDebater.svg,CampeggioDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,2
+CANISIUS,Canisius,1,CanisiusDebater.svg,CanisiusDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,3
+CARAFFA,Caraffa,1,CaraffaDebater.svg,CaraffaDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,2
+CONTARINI,Contarini,1,ContariniDebater.svg,ContariniDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,2
+ECK,Eck,1,EckDebater.svg,EckDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,3
+FABER,Faber,1,FaberDebater.svg,FaberDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,3
+GARDINER,Gardiner,1,GardinerDebater.svg,GardinerDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,3
+LOYOLA,Loyola,1,LoyolaDebater.svg,LoyolaDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,4
+POLE,Pole,1,PoleDebater.svg,PoleDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,3
+TETZEL,Tetzel,1,TetzelDebater.svg,TetzelDebater_back.svg,2,Debater,,,Debater board or Prot power card if disgraced,1
+BUCER,Bucer,1,BucerDebater.svg,BucerDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+BULLINGER,Bullinger,1,BullingerDebater.svg,BullingerDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+CALVIN,Calvin,1,CalvinDebater.svg,CalvinDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,4
+CARLSTADT,Carlstadt,1,CarlstadtDebater.svg,CarlstadtDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,1
+COP,Cop,1,CopDebater.svg,CopDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+COVERDALE,Coverdale,1,CoverdaleDebater.svg,CoverdaleDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+CRANMER,Cranmer,1,CranmerDebater.svg,CranmerDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,3
+FAREL,Farel,1,FarelDebater.svg,FarelDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+KNOX,Knox,1,KnoxDebater.svg,KnoxDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,3
+LATIMER,Latimer,1,LatimerDebater.svg,LatimerDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,1
+LUTHER,Luther,1,LutherDebater.svg,LutherDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,4
+MELANCHTHON,Melanchthon,1,MelanchthonDebater.svg,MelanchthonDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,3
+OEKOLAMPADIUS,Oekolampadius,1,OekolampadiusDebater.svg,OekolampadiusDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+OLIVETAN,Olivetan,1,OlivetanDebater.svg,OlivetanDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,1
+TYNDALE,Tyndale,1,TyndaleDebater.svg,TyndaleDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,2
+WISHART,Wishart,1,WishartDebater.svg,WishartDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,1
+ZWINGLI,Zwingli,1,ZwingliDebater.svg,ZwingliDebater_back.svg,2,Debater,,,Debater board or Papal power card if burned,3
+ENGLISH_EXPLORATION,English Exploration Underway,1,English_ExplorationCharted.svg,English_Exploration.svg,2,Exploration,,,Crossing Atlantic,
+FRENCH_EXPLORATION,French Exploration Underway,1,French_ExplorationCharted.svg,French_Exploration.svg,2,Exploration,,,Crossing Atlantic,
+HABSBURG_EXPLORATION,Habsburg Exploration Underway,1,Hapsburg_ExplorationCharted.svg,Hapsburg_Exploration.svg,2,Exploration,,,Crossing Atlantic,
+CABOT_ENG,Cabot English,1,Cabot_English.svg,English_Explorer_back.svg,2,Explorer,,,Any exploration,1
+CABOT_FRE,Cabot French,1,Cabot_French.svg,French_Explorer_back.svg,2,Explorer,,,Any exploration,1
+CABOT_HAB,Cabot Habsburg,1,Cabot_Hapsburg.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,1
+CARTIER,Cartier,1,Cartier.svg,French_Explorer_back.svg,2,Explorer,,,Any exploration,3
+CHANCELLOR,Chancellor,1,Chancellor.svg,English_Explorer_back.svg,2,Explorer,,,Any exploration,1
+DE_VACA,De Vaca,1,De_Vaca.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,0
+DE_SOTO,De Soto,1,DeSoto.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,2
+LEON,Leon,1,Leon.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,1
+MAGELLAN,Magellan,1,Magellan.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,4
+NARVAEZ,Narvaez,1,Narvaez.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,-1
+ORELLANA,Orellana,1,Orellana.svg,Hapsburg_Explorer_back.svg,2,Explorer,,,Any exploration,3
+ROBERVAL,Roberval,1,Roberval.svg,French_Explorer_back.svg,2,Explorer,,,Any exploration,0
+RUT,Rut,1,Rut.svg,English_Explorer_back.svg,2,Explorer,,,Any exploration,1
+VERRAZANO,Verrazano,1,Verrazano.svg,French_Explorer_back.svg,2,Explorer,,,Any exploration,2
+WILLOUGHBY,Willoughby,1,Willoughby.svg,English_Explorer_back.svg,2,Explorer,,,Any exploration,0
+CHARLESBOURG,Charlesbourg,1,Charlesbourg.svg,,1,Colony,,,French colony,
+CUBA,Cuba,1,Cuba.svg,,1,Colony,,,Habsburg colony,
+HISPANIOLA,Hispaniola,1,Hispaniola.svg,,1,Colony,,,Habsburg colony,
+JAMESTOWN,Jamestown,1,Jamestown.svg,,1,Colony,,,English colony,
+MONTREAL,Montreal,1,Montreal.svg,,1,Colony,,,French colony,
+POTOSI,Potosi Silver Mines,1,Potosi.svg,,1,Colony,,,"French, Habsburg or English colony",
+PUERTO_RICO,Puerto Rico,1,PuertoRico.svg,,1,Colony,,,Habsburg colony,
+ROANOKE,Roanoke,1,Roanoke.svg,,1,Colony,,,English colony,
+HABSBURG_CONQUEST,Habsburg Conquest Underway,1,Hapsburg_Conquest.svg,,1,Conquest,,,Crossing Atlantic,
+ENGLISH_CONQUEST,English Conquest,2,English_Conquest.svg,,1,Conquistador,,,Crossing Atlantic or any conquest,0
+FRENCH_CONQUEST,French Conquest,2,French_Conquest.svg,,1,Conquistador,,,Crossing Atlantic or any conquest,0
+CORDOVA,Cordova,1,Cordova.svg,Hapsburg_Conqueror_back.svg,2,Conquistador,,,Any conquest,1
+CORONADO,Coronado,1,Coronado.svg,Hapsburg_Conqueror_back.svg,2,Conquistador,,,Any conquest,1
+CORTEZ,Cortez,1,Cortez.svg,Hapsburg_Conqueror_back.svg,2,Conquistador,,,Any conquest,4
+MONTEJO,Montejo,1,Montejo.svg,Hapsburg_Conqueror_back.svg,2,Conquistador,,,Any conquest,2
+PIZARRO,Pizarro,1,Pizarro.svg,Hapsburg_Conqueror_back.svg,2,Conquistador,,,Any conquest,3
+ENGLISH_PROT_COUNTER,English Home Protestant Spaces,1,EnglishHomeSpaces.svg,,1,Religious counter,,,,
+PROTESTANT_SPACES,Protestant Spaces,1,ProtestantSpaces.svg,,1,Religious counter,,,,
+TURN,Turn,1,Turn.svg,,1,Turn counter,,,,
+MINUS_ONE_CARD,-1 Card,7,-1Card.svg,,1,Cards Marker,,,Any of the 6 power cards,
+GREAT_LAKES_1VP,Great Lakes 1 VP,1,GreatLakes1VP.svg,,1,VP marker,VP,,"Eng, Habs or Fra power cards",
+MISSISSIPPI_RIVER_1VP,Mississippi River 1 VP,1,MississippiRiver1VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+ST_LAWRENCE_RIVER_1VP,Saint Lawrence River 1 VP,1,StLawrenceRiver1VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+AMAZON_RIVER_2VP,Amazon River 2 VP's,1,AmazonRiver2VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+PACIFIC_STRAIT_1VP,Pacific Strait 1 VP,1,PacificStrait1VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+CIRCUMNAVIGATION_3VP,Circumnavigation 3 VP,1,Circumnavigation3VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+MAYA_1VP,Maya 1 VP,1,Maya1VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+AZTECS_2VP,Aztecs 2 VP's,1,Aztecs2VP.svg,,1,VP marker,,,"Eng, Habs or Fra power cards",
+INCA_2VP,Inca 2 VP's,1,Inca2VP.svg,,1,VP marker,,inca_2vp,"Eng, Habs or Fra power cards",
+BIBLE_ENG_1VP,Bible English Translation 1 VP,1,BibleEnglish1VP.svg,,1,VP marker,,bible_eng_1vp,Prot power card,
+BIBLE_FRE_1VP,Bible French Translation 1 VP,1,BibleFrench1VP.svg,,1,VP marker,,bible_fre_1vp,Prot power card,
+BIBLE_GER_1VP,Bible German Translation 1 VP,1,BibleGerman1VP.svg,,1,VP marker,,bible_ger_1vp,Prot power card,
+CHATEAUX_VP,Chateaux VP's,1,ChateauxVP.svg,,1,VP marker,,,French power card,
+PIRACY_VP,Piracy VP's,1,PiracyVP.svg,,1,VP marker,,,Ottoman power card,
+ST_PETERS_VP,Saint Peter's VP's,1,StPetersVP.svg,,1,VP marker,,,Papacy Home card,
+COPERNICUS_1VP,Copernicus 1 VP,1,Copernicus1VP.svg,,1,VP marker,,,Any power card,
+COPERNICUS_2VP,Copernicus 2 VP's,1,Copernicus.svg,,1,VP marker,,,Any power card,
+EDWARD_5VP,Edward VI 5 VP's,1,Edward.svg,,1,VP marker,,,English power card,
+ELIZABETH_2VP,Elizabeth 2 VP's,1,Elizabeth.svg,,1,VP marker,,,English power card,
+GONZAGA_1VP,Giulia Gonzaga 1 VP,1,Gonzaga.svg,,1,VP marker,,,Ottoman power card or the sea as a reminder,
+SERVETUS_1VP,Servetus 1 VP,1,Servetus.svg,,1,VP marker,,,Any power card,
+MASTER_OF_ITALY_1VP,Master of Italy 1 VP,9,MasterOfItaly1VP.svg,,1,VP marker,,,Any power card,
+MASTER_OF_ITALY_2VP,Master of Italy 2 VP's,9,MasterOfItaly2VP.svg,,1,VP marker,,,Any power card,
+WAR_WINNER_1VP,War Winner 1 VP,,WarWinner1VP.svg,,1,VP marker,,,Any power card,"18 for Ottoman (Egypt and Persia), 9 for England (Ireland)... +1 for each key recovered in suing for peace ,+1 for each army leader regained"
+WAR_WINNER_2VP,War Winner 2 VP's,,WarWinner2VP.svg,,1,VP marker,,,Any power card,"2 for Ottoman (Hungary), 2 for each suing for peace by Ottoman or to Ottoman"
+PHONYSCOTLAND_MINUS1,Phony War in Scotland -1 VP's,,PhonyScotland-1VP.svg,,1,VP marker,,,Any power card,
+PHONYVENICE_MINUS1,Phony War in Venice - 1 VP's,,PhonyVenice-1VP.svg,,1,VP marker,,,Any power card,
+ANNE_BOLEYN,Anne Boleyn,1,AnneBoleyn.svg,AnneBoleyn_back.svg,2,Wife,,,Wives table or English power card,
+ANNE_CLEVES,Anne of Cleves,1,AnneCleves.svg,AnneCleves_back.svg,2,Wife,,,Wives table or English power card,
+CATHERINE_ARAGON,Catherine of Aragon,1,CatherineAragon.svg,CatherineAragon_back.svg,2,Wife,,,Wives table or English power card,
+JANE_SEYMOUR,Jane Seymour,1,JaneSeymour.svg,JaneSeymour_back.svg,2,Wife,,,Wives table or English power card,
+KATHERINE_PARR,Katherine Parr,1,KatherineParr.svg,KatherineParr_back.svg,2,Wife,,,Wives table or English power card,
+KATHRYN_HOWARD,Kathryn Howard,1,KathrynHoward.svg,KathrynHoward_back.svg,2,Wife,,,Wives table or English power card,
+HENRY_MARITAL_STATUS,Henry Marital Status,1,HenryMaritalStatus.svg,,1,Wives Status,,,English power card,
+BIBLE_ENGLISH,Bible English,1,BibleEnglish.svg,,1,Translation,,,Prot power card,
+BIBLE_FRENCH,Bible French,1,BibleFrench.svg,,1,Translation,,,Prot power card,
+BIBLE_GERMAN,Bible German,1,BibleGerman.svg,,1,Translation,,,Prot power card,
+NEW_TESTAMENT_ENGLISH,New Testament English,1,NewTestament_English.svg,,1,Translation,,,Prot power card,
+NEW_TESTAMENT_FRENCH,New Testament French,1,NewTestament_French.svg,,1,Translation,,,Prot power card,
+NEW_TESTAMENT_GERMAN,New Testament German,1,NewTestament_German.svg,,1,Translation,,,Prot power card,
+ST_PETERS_CP,Saint Peter's CP Status,1,StPetersCP.svg,,1,Saint Peter's,,,Papal power card,
+AUGSBURG_CONFESSION,Augsburg Confession Active,1,AugsburgConfession.svg,,1,Event reminder,,,Prot power card,
+PRINTING_PRESS,Printing Press Active,1,PrintingPress.svg,,1,Event reminder,,,Prot power card,
+COLONIAL_GOVERNOR,Colonial Governor,3,ColonialGovernor.svg,,1,Event reminder,,,Colony board,
+GALLEONS,Galleons,3,Galleons.svg,,1,Event reminder,,,Colony board,
+PLANTATIONS,Plantations,3,Plantations.svg,,1,Event reminder,,,Colony board,
+PIRACY,Piracy Marker,,Piracy.svg,,1,Event reminder,,,Any sea,
+NATIVE_UPRISING,Native Uprising,3,NativeUprising.svg,,1,Event reminder,,,Colony board,
+RAIDER_ENGLISH,English Huguenot Raider,1,Raider_English.svg,,1,Event reminder,,,Colony board,
+RAIDER_FRENCH,French Huguenot Raider,1,Raider_French.svg,,1,Event reminder,,,Colony board,
+RAIDER_PROTESTANT,Protestant Huguenot Raider,1,Raider_Protestant.svg,,1,Event reminder,,,Colony board,
+MERCATOR_MAP,Mercator's Map,1,Mercator.svg,,1,Event reminder,,,Crossing Atlantic,
+SMALLPOX,Smallpox,1,Smallpox.svg,,1,Event reminder,,,Crossing Atlantic,
+THOMAS_MORE,Thomas More,1,ThomasMore.svg,,1,Event reminder,,,Turn Track,
+WARTBURG,Wartburg,1,Wartburg.svg,,1,Event reminder,,,Prot power card,
+EXCOMMUNICATED,Excommunicated,7,Excommunicated.svg,,1,Excommunion,,,Papal power card,
+FORTRESS,Fortress,9,Fortress.svg,,1,Fortress,,,Any city except keys or electorates,
+PIRATE_HAVEN,Pirate Haven,2,PirateHaven.svg,,1,Pirate Haven,,,Oran or Tripoli,
+JESUIT_UNIVERSITY,Jesuit University,,Jesuit_Univ.svg,,1,University,,,Any city,
