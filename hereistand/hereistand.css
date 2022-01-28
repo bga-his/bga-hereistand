@@ -179,6 +179,10 @@
   justify-content: space-evenly;
 }
 
+.selected {
+  border: 2px blue solid;
+}
+
 .england_key {
   background-image: url("img/svg/England_key.svg");
 }

@@ -54,6 +54,6 @@ class Cards extends \HIS\Helpers\Pieces {
 	}
 
 	public static function discard($card) {
-		self::move([$card->id], ['discard']);
+		self::move([$card['id']], ['discard']);
 	}
 }

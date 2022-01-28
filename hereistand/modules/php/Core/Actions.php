@@ -14,14 +14,14 @@ class Actions {
 	public static function play($cardId, $asEvent) {
 		$card = Cards::get($cardId);
 		$player = Players::getActive();
-		if ($card->pId != $player->id) {
+		if ($card['pId'] != $player->id) {
 			throw new UserException("Attempt to play card you do not have");
 		}
-		if ($card->location != 'hand') {
+		if ($card['location'] != 'hand') {
 			throw new UserException("Attempt to play card not from hand");
 		}
 		PlayCard::playCardCP($player, $card);
-		Globals::setRemainingCP($card->cp);
+		Globals::setRemainingCP($card['cp']);
 		Cards::discard($card);
 		Game::get()->gamestate->nextState("playCP");
 	}

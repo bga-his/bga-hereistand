@@ -175,6 +175,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
       var methodName = 'onLeavingState' + stateName.charAt(0).toUpperCase() + stateName.slice(1);
       if (this[methodName] !== undefined) this[methodName]();
     },
+    
     clearPossible() {
       this.removeActionButtons();
       dojo.empty('customActions');
