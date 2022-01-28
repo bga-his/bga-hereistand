@@ -29,12 +29,20 @@ define([
   g_gamethemeurl + 'modules/js/Players.js',
   g_gamethemeurl + 'modules/js/Board.js',
   g_gamethemeurl + 'modules/js/Cards.js',
+  g_gamethemeurl + 'modules/js/Notifications.js',
+  g_gamethemeurl + 'modules/js/States.js',
+  g_gamethemeurl + 'modules/js/ActionButtons.js',
+  g_gamethemeurl + 'modules/js/Actions.js',
 ], function (dojo, declare, noUiSlider) {
-  return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board, hereistand.cards], {
+  return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board,
+                                        hereistand.cards, hereistand.actionbuttons, hereistand.notifications,
+                                        hereistand.states, hereistand.actions], {
     constructor() {
-      this._activeStates = [];
+      this._activeStates = [
+        'impulseActions',
+      ];
       this._notifications = [
-        //['revealActionCard', 1100],
+        ['playCardCP', 1000],
       ];
 
       // Fix mobile viewport (remove CSS zoom)

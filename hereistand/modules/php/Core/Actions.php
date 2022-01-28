@@ -8,7 +8,7 @@ use HIS\Notifications\PlayCard;
 class Actions {
 
 	public static function pass() {
-
+		Game::get()->gamestate->nextState("pass");
 	}
 
 	public static function play($cardId, $asEvent) {
