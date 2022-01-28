@@ -35,6 +35,7 @@ const MANDATORY_CARD = 1;
 const COMBAT_CARD = 2;
 const RESPONSE_CARD = 3;
 const EVENT_CARD = 4;
+const DIPLOMACY_CARD = 5;
 
 /*
  * Game options
