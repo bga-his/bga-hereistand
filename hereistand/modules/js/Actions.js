@@ -5,7 +5,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.takeAction('actPass');
     },
 
-    onMoveInClearClick(evt){
+    onMoveClick(evt){
       dojo.stopEvent(evt);
 
     },

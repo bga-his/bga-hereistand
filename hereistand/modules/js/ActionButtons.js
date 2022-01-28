@@ -5,7 +5,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     onUpdateActivityImpulseActions(args, status){
-      this.addPrimaryActionButton('move_in_clear', _('Move in the Clear'), 'onMoveInClearClick');
+      this.addPrimaryActionButton('move_in_clear', _('Move (1 or 2CP)'), 'onMoveClick');
       this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
     },
   });

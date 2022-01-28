@@ -35,10 +35,11 @@ $machinestates = [
 
 	ST_IMPULSE_ACTIONS => [
 		'name' => 'impulseActions',
-		'description' => clienttranslate('${actplayer} must take actions'),
-		'descriptionmyturn' => clienttranslate('${you} must take actions'),
+		'description' => clienttranslate('${actplayer} must take actions with ${remainingCP}CP'),
+		'descriptionmyturn' => clienttranslate('${you} must take actions with ${remainingCP}CP'),
 		'type' => 'activeplayer',
-		'possibleactions' => ['actMoveInClear', 'actPass'],
+		'args' => 'argImpulseActions',
+		'possibleactions' => ['actMove', 'actPass'],
 		'transitions' => ['pass' => ST_NEXT_PLAYER],
 	],
 
