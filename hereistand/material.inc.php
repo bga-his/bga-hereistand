@@ -96,7 +96,7 @@ $this->cards = [
 	CARD_LEIPZIG_DEBATE => [
 		'cp' => 3,
 		'class_name' => 'LeipzigDebate',
-		'name' => clienttranslate('LeipzigDebate'),
+		'name' => clienttranslate('Leipzig Debate'),
 		'type' => HOME_CARD,
 		'power' => PAPAL,
 	],
