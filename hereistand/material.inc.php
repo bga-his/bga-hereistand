@@ -29,15 +29,6 @@ $this->cities = [
 	],
 ];
 
-$this->setup_base = [
-	FRANCE => [
-		LYON => [
-			FRANCE_1UNIT,
-			FRANCE_KEY,
-		],
-	],
-];
-
 $this->cards = [
 	CARD_JANISSARIES => [
 		'cp' => 5,

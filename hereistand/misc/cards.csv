@@ -1,0 +1,9 @@
+num,CONSTANT_NAME,css_class_name,name,type,cp,remove,turn_added,scenario
+1,CARD_JANISSARIES,Janissaries,Janissaries,HOME_CARD,5,,,
+2,CARD_HOLY_ROMAN_EMPEROR,HolyRomanEmperor,Holy Roman Emperor,HOME_CARD,5,,,
+3,CARD_SIX_WIVES_OF_HENRY_VIII,SixWives,Six Wives of Henry VIII,HOME_CARD,5,,,
+4,CARD_PATRON_OF_THE_ARTS,PatronArts,Patron of the Arts,HOME_CARD,5,,,
+5,CARD_PAPAL_BULL,PapalBull,Papal Bull,HOME_CARD,4,,,
+6,CARD_LEIPZIG_DEBATE,LeipzigDebate,Leipzig Debate,HOME_CARD,3,,,
+7,CARD_HERE_I_STAND,HereIStand,Here I Stand,HOME_CARD,5,,,
+8,CARD_LUTHER_95_THESES,LutherTheses,Luther's 95 Theses,MANDATORY_CARD,0,Yes,,1517

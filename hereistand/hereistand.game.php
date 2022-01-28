@@ -110,6 +110,15 @@ class hereistand extends Table {
 		return self::_($text);
 	}
 
+	$this->setup_base = [
+		FRANCE => [
+			LYON => [
+				FRANCE_1UNIT,
+				FRANCE_KEY,
+			],
+		],
+	];
+
 	////////////////////////////////////
 	////////////   Zombie   ////////////
 	////////////////////////////////////

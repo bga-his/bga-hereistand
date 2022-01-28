@@ -8,6 +8,11 @@
 				        <div id="city_{NAME}" class="map_node city" style="left: {X}px; top: {Y}px;"></div>
 				    <!-- END city -->
 				</div>
+				<div id='locations'>
+				    <!-- BEGIN location -->
+				        <div id="{ID}" class="map_node location" style="left: {X}px; top: {Y}px;"></div>
+				    <!-- END location -->
+				</div>
 			</div>
 		</div>
 	</div>
