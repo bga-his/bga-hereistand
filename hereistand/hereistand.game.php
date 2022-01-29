@@ -42,6 +42,7 @@ use HIS\Managers\Tokens;
 class hereistand extends Table {
 	use HIS\DebugTrait;
 	use HIS\States\NextPlayerTrait;
+	use HIS\States\MovementTrait;
 	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
 
@@ -103,8 +104,36 @@ class hereistand extends Table {
 		Actions::pass();
 	}
 
+	function actUndo() {
+		Actions::undo();
+	}
+
 	function actPlayCard($cardId, $asEvent) {
 		Actions::play($cardId, $asEvent);
+	}
+
+	function actMove() {
+		Actions::move();
+	}
+
+	function actWithdraw() {
+		Actions::withdraw();
+	}
+
+	function actDeclareDestination($destination_id) {
+		Actions::declareDestination($destination_id);
+	}
+
+	function actDeclareFormation($token_ids) {
+		Actions::declareFormation($token_ids);
+	}
+
+	function actDeclareIntercept($token_ids) {
+		Actions::declareIntercept($token_ids);
+	}
+
+	function actDeclareAvoid($token_ids) {
+		Actions::declareAvoid($token_ids);
 	}
 
 	/////////////////////////////////////////////////////////////

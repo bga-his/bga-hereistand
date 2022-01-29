@@ -40,7 +40,279 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argImpulseActions',
 		'possibleactions' => ['actMove', 'actPass'],
-		'transitions' => ['pass' => ST_NEXT_PLAYER],
+		'transitions' => ['pass' => ST_NEXT_PLAYER, 'move' => ST_DECLARE_FORMATION],
+	],
+
+	ST_DECLARE_FORMATION => [
+		'name' => 'declareFormation',
+		'description' => clienttranslate('${actplayer} must declare formation'),
+		'descriptionmyturn' => clienttranslate('${you} must declare formation'),
+		'type' => 'activeplayer',
+		'args' => 'argDeclareFormation',
+		'possibleactions' => ['actDeclareFormation'],
+		'transitions' => ['declare' => ST_DECLARE_DESTINATION, 'undo' => ST_IMPULSE_ACTIONS],
+	],
+
+	ST_DECLARE_DESTINATION => [
+		'name' => 'declareDestination',
+		'description' => clienttranslate('${actplayer} must declare destination'),
+		'descriptionmyturn' => clienttranslate('${you} must declare destination'),
+		'type' => 'activeplayer',
+		'args' => 'argDeclareDestination',
+		'possibleactions' => ['actDeclareDestination'],
+		'transitions' => ['declare' => ST_FIND_MOVEMENT_RESPONSES, 'undo' => ST_IMPULSE_ACTIONS],
+	],
+
+	ST_FIND_MOVEMENT_RESPONSES => [
+		'name' => 'findMovementResponses',
+		'description' => clienttranslate('Finding movement responses...'),
+		'type' => 'manager',
+		'action' => 'stFindMovementResponses',
+		'transitions' => ['found' => ST_MOVEMENT_RESPONSE, 'none' => ST_FIND_INTERCEPTIONS],
+	],
+
+	ST_FIND_INTERCEPTIONS => [
+		'name' => 'findInterceptions',
+		'description' => clienttranslate('Finding possible interceptions...'),
+		'type' => 'manager',
+		'action' => 'stFindInterceptions',
+		'transitions' => ['found' => ST_INTERCEPT_INTENT, 'done' => ST_MOVE_FORMATION],
+	],
+
+	ST_INTERCEPT_INTENT => [
+		'name' => 'interceptIntent',
+		'description' => clienttranslate('${actplayer} may pick formation to intercept'),
+		'descriptionmyturn' => clienttranslate('${you} may pick formatin to intercept'),
+		'type' => 'activeplayer',
+		'args' => 'argInterceptIntent',
+		'possibleactions' => ['actDeclareIntercept', 'actPass'],
+		'transitions' => ['declare' => ST_ROLL_INTERCEPTION, 'pass' => ST_FIND_INTERCEPTIONS],
+	],
+
+	ST_ROLL_INTERCEPTION => [
+		'name' => 'rollInterception',
+		'description' => clienttranslate('Attempting interception...'),
+		'type' => 'manager',
+		'action' => 'stRollInterception',
+		'transitions' => ['done' => ST_INTERCEPT_INTENT],
+	],
+
+	ST_MOVE_FORMATION => [
+		'name' => 'moveFormation',
+		'description' => clienttranslate('Moving formation...'),
+		'type' => 'manager',
+		'action' => 'stMoveFormation',
+		'transitions' => ['interception' => ST_FIND_BATTLE, 'done' => ST_FIND_AVOID],
+	],
+
+	ST_FIND_AVOID => [
+		'name' => 'findAvoid',
+		'description' => clienttranslate('Finding possible avoid battles...'),
+		'type' => 'manager',
+		'action' => 'stFindAvoid',
+		'transitions' => ['found' => ST_AVOID_INTENT, 'none' => ST_FIND_WITHDRAW],
+	],
+
+	ST_AVOID_INTENT => [
+		'name' => 'avoidIntent',
+		'description' => clienttranslate('${actplayer} may pick formation to avoid'),
+		'descriptionmyturn' => clienttranslate('${you} may pick formatin to avoid'),
+		'type' => 'activeplayer',
+		'args' => 'argDeclareAvoid',
+		'possibleactions' => ['actDeclareAvoid', 'actPass'],
+		'transitions' => ['declare' => ST_DECLARE_AVOID_DESTINATION, 'pass' => ST_FIND_AVOID],
+	],
+
+	ST_DECLARE_AVOID_DESTINATION => [
+		'name' => 'declareAvoidDestination',
+		'description' => clienttranslate('${actplayer} must declare destination'),
+		'descriptionmyturn' => clienttranslate('${you} must declare destination'),
+		'type' => 'activeplayer',
+		'args' => 'argDeclareAvoidDestination',
+		'possibleactions' => ['actDeclareDestination'],
+		'transitions' => ['declare' => ST_ROLL_AVOID],
+	],
+
+	ST_ROLL_AVOID => [
+		'name' => 'rollAvoid',
+		'description' => clienttranslate('Attempting to avoid battle...'),
+		'type' => 'manager',
+		'action' => 'stRollAvoid',
+		'transitions' => ['done' => ST_AVOID_INTENT],
+	],
+
+	ST_FIND_WITHDRAW => [
+		'name' => 'findWithdraw',
+		'description' => clienttranslate('Finding possible withdraws...'),
+		'type' => 'manager',
+		'action' => 'stFindWithdraw',
+		'transitions' => ['found' => ST_WITHDRAW_INTENT, 'none' => ST_FIND_BATTLE],
+	],
+
+	ST_WITHDRAW_INTENT => [
+		'name' => 'withdrawIntent',
+		'description' => clienttranslate('${actplayer} may withdraw into fortress'),
+		'descriptionmyturn' => clienttranslate('${you} may withdraw into fortress'),
+		'type' => 'activeplayer',
+		'args' => 'argWithdrawIntent',
+		'possibleactions' => ['actWithdraw', 'actPass'],
+		'transitions' => ['actWithdraw' => ST_FIND_SIEGE, 'pass' => ST_FIND_BATTLE],
+	],
+
+	ST_FIND_BATTLE => [
+		'name' => 'findBattle',
+		'description' => clienttranslate('Finding possible field battle...'),
+		'type' => 'manager',
+		'action' => 'stFindBattle',
+		'transitions' => ['found' => ST_FIELD_BATTLE, 'none' => ST_NEXT_PLAYER],
+	],
+
+	ST_FIELD_BATTLE => [
+		'name' => 'fieldBattle',
+		'description' => clienttranslate('Starting field battle...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattle',
+		'transitions' => ['next' => ST_FIND_FIELD_BATTLE_RESPONSES],
+	],
+
+	ST_FIND_FIELD_BATTLE_RESPONSES => [
+		'name' => 'findFieldBattleResponses',
+		'description' => clienttranslate('Finding field battle responses...'),
+		'type' => 'manager',
+		'action' => 'stFindFieldBattleResponses',
+		'transitions' => ['found' => ST_FIELD_BATTLE_RESPONSE, 'none' => ST_FIELD_BATTLE_DICE],
+	],
+
+	ST_FIELD_BATTLE_DICE => [
+		'name' => 'fieldBattleDice',
+		'description' => clienttranslate('Declaring field battle dice...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleDice',
+		'transitions' => ['next' => ST_FIELD_BATTLE_CARD],
+	],
+
+	ST_FIELD_BATTLE_CARD => [
+		'name' => 'fieldBattleCard',
+		'description' => clienttranslate('field battle cards...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleCard',
+		'transitions' => ['attacker' => ST_PLAY_FIELD_BATTLE_CARD, 'defender' => ST_ROLL_FIELD_BATTLE_DICE],
+	],
+
+	ST_PLAY_FIELD_BATTLE_CARD => [
+		'name' => 'playFieldBattleCard',
+		'description' => clienttranslate('${actplayer} may play battle card'),
+		'descriptionmyturn' => clienttranslate('${you} may play battle card'),
+		'type' => 'activeplayer',
+		'args' => 'argFieldBattleCard',
+		'possibleactions' => ['actPlayCard', 'actPass'],
+		'transitions' => ['play' => ST_PLAY_FIELD_BATTLE_CARD, 'pass' => ST_FIELD_BATTLE_CARD],
+	],
+
+	ST_ROLL_FIELD_BATTLE_DICE => [
+		'name' => 'fieldBattleDice',
+		'description' => clienttranslate('Declaring field battle dice...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleDice',
+		'transitions' => ['janissaries' => ST_PLAY_JANISSARIES, 'next' => ST_DECLARE_FIELD_BATTLE_WINNER],
+	],
+
+	ST_PLAY_JANISSARIES => [
+		'name' => 'playJanissaries',
+		'description' => clienttranslate('${actplayer} may play Janissaries'),
+		'descriptionmyturn' => clienttranslate('${you} may play Janissaries'),
+		'type' => 'activeplayer',
+		'args' => 'argPlayJanissaries',
+		'possibleactions' => ['actPlayCard'],
+		'transitions' => ['next' => ST_DECLARE_FIELD_BATTLE_WINNER],
+	],
+
+	ST_DECLARE_FIELD_BATTLE_WINNER => [
+		'name' => 'declareFieldBattleWinner',
+		'description' => clienttranslate('Declaring field battle winner...'),
+		'type' => 'manager',
+		'action' => 'stDeclareFieldBattleWinner',
+		'transitions' => ['next' => ST_FIELD_BATTLE_CASUALTIES],
+	],
+
+	ST_FIELD_BATTLE_CASUALTIES => [
+		'name' => 'fieldBattleCasualties',
+		'description' => clienttranslate('Field battle casualties...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleCasualties',
+		'transitions' => ['attacker' => ST_TAKE_FIELD_BATTLE_CASUALTIES, 'defender' => ST_FIELD_BATTLE_CAPTURE_LEADERS],
+	],
+
+	ST_TAKE_FIELD_BATTLE_CASUALTIES => [
+		'name' => 'takeFieldBattleCasualties',
+		'description' => clienttranslate('${actplayer} must take casualties'),
+		'descriptionmyturn' => clienttranslate('${you} must take casualtie'),
+		'type' => 'activeplayer',
+		'args' => 'argTakeFieldBattleCasualties',
+		'possibleactions' => ['actTakeCasualties'],
+		'transitions' => ['next' => ST_FIELD_BATTLE_CASUALTIES],
+	],
+
+	ST_FIELD_BATTLE_CAPTURE_LEADERS => [
+		'name' => 'fieldBattleCaptureLeaders',
+		'description' => clienttranslate('Field battle capture leaders...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleCaptureLeaders',
+		'transitions' => ['next' => ST_FIELD_BATTLE_RETREATS],
+	],
+
+	ST_FIELD_BATTLE_RETREATS => [
+		'name' => 'fieldBattleRetreats',
+		'description' => clienttranslate('Field battle retreats...'),
+		'type' => 'manager',
+		'action' => 'stFieldBattleRetreats',
+		'transitions' => ['fortress' => ST_FIELD_BATTLE_RETREATS, 'found' => ST_DECLARE_RETREAT_DESTINATION, 'none' => ST_FIND_SIEGE],
+	],
+
+	ST_DECLARE_RETREAT_DESTINATION => [
+		'name' => 'declareRetreatDestination',
+		'description' => clienttranslate('${actplayer} must declare retreat destination'),
+		'descriptionmyturn' => clienttranslate('${you} must declare retreat destination'),
+		'type' => 'activeplayer',
+		'args' => 'argDeclareRetreatDestination',
+		'possibleactions' => ['actDeclareDestination'],
+		'transitions' => ['next' => ST_FIELD_BATTLE_RETREATS],
+	],
+
+	ST_FIND_SIEGE => [
+		'name' => 'findSiege',
+		'description' => clienttranslate('Checking for siege...'),
+		'type' => 'manager',
+		'action' => 'stFindSiege',
+		'transitions' => ['next' => ST_CONCLUDE_FIELD_BATTLE, 'retreat' => ST_DECLARE_RETREAT_DESTINATION],
+	],
+
+	ST_CONCLUDE_FIELD_BATTLE => [
+		'name' => 'concludeFieldBattle',
+		'description' => clienttranslate('Concluding field battle...'),
+		'type' => 'manager',
+		'action' => 'stConcludeFieldBattle',
+		'transitions' => ['done' => ST_NEXT_PLAYER],
+	],
+
+	ST_MOVEMENT_RESPONSE => [
+		'name' => 'responseMovement',
+		'description' => clienttranslate('${actplayer} may play response'),
+		'descriptionmyturn' => clienttranslate('${you} may play response'),
+		'type' => 'activeplayer',
+		'args' => 'argResponseMovement',
+		'possibleactions' => ['actPlayCard'],
+		'transitions' => ['next' => ST_NEXT_PLAYER],
+	],
+
+	ST_FIELD_BATTLE_RESPONSE => [
+		'name' => 'fieldBattleResponse',
+		'description' => clienttranslate('${actplayer} may play response'),
+		'descriptionmyturn' => clienttranslate('${you} may play response'),
+		'type' => 'activeplayer',
+		'args' => 'argResponseFieldBattle',
+		'possibleactions' => ['actPlayCard'],
+		'transitions' => ['next' => ST_NEXT_PLAYER],
 	],
 
 	ST_NEXT_PLAYER => [

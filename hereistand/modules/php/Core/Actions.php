@@ -11,6 +11,10 @@ class Actions {
 		Game::get()->gamestate->nextState("pass");
 	}
 
+	public static function undo() {
+		Game::get()->gamestate->nextState("undo");
+	}
+
 	public static function play($cardId, $asEvent) {
 		$card = Cards::get($cardId);
 		$player = Players::getActive();
@@ -24,6 +28,35 @@ class Actions {
 		Globals::setRemainingCP($card['cp']);
 		Cards::discard($card);
 		Game::get()->gamestate->nextState("playCP");
+	}
+
+	public static function move() {
+		Game::get()->gamestate->nextState("move");
+	}
+
+	public static function withdraw() {
+		// TODO: fix
+		Game::get()->gamestate->nextState("move");
+	}
+
+	public static function declareDestination($destination_id) {
+		// TODO: fix
+		Game::get()->gamestate->nextState("move");
+	}
+
+	public static function declareFormation($token_ids) {
+		// TODO: fix
+		Game::get()->gamestate->nextState("move");
+	}
+
+	public static function declareIntercept($token_ids) {
+		// TODO: fix
+		Game::get()->gamestate->nextState("move");
+	}
+
+	public static function declareAvoid($token_ids) {
+		// TODO: fix
+		Game::get()->gamestate->nextState("move");
 	}
 
 }

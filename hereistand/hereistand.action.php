@@ -26,6 +26,21 @@ class action_hereistand extends APP_GameAction {
 		}
 	}
 
+	public function getIDArray($ids_raw) {
+		$ids_raw = trim($ids_raw);
+
+		if (substr($ids_raw, -1) == ',') {
+			$ids_raw = substr($ids_raw, 0, -1);
+		}
+
+		if ($ids_raw == '') {
+			$ids = array();
+		} else {
+			$ids = explode(',', $ids_raw);
+		}
+		return $ids;
+	}
+
 	public function actChangePref() {
 		self::setAjaxMode();
 		$pref = self::getArg('pref', AT_posint, false);
@@ -40,6 +55,12 @@ class action_hereistand extends APP_GameAction {
 		self::ajaxResponse();
 	}
 
+	public function actUndo() {
+		self::setAjaxMode();
+		$this->game->actUndo();
+		self::ajaxResponse();
+	}
+
 	public function actPlayCard() {
 		self::setAjaxMode();
 		$cardId = self::getArg('cardId', AT_posint, false);
@@ -47,4 +68,48 @@ class action_hereistand extends APP_GameAction {
 		$this->game->actPlayCard($cardId, $asEvent);
 		self::ajaxResponse();
 	}
+
+	public function actMove() {
+		self::setAjaxMode();
+		$this->game->actMove();
+		self::ajaxResponse();
+	}
+
+	public function actWithdraw() {
+		self::setAjaxMode();
+		$this->game->actWithdraw();
+		self::ajaxResponse();
+	}
+
+	public function actDeclareFormation() {
+		self::setAjaxMode();
+		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids = self::getIDArray($token_ids_raw);
+		$this->game->actDeclareFormation($token_ids);
+		self::ajaxResponse();
+	}
+
+	public function actDeclareDestination() {
+		self::setAjaxMode();
+		$destination_id = self::getArg('destination_id', AT_posint, false);
+		$this->game->actDeclareDestination($destination_id);
+		self::ajaxResponse();
+	}
+
+	public function actDeclareIntercept() {
+		self::setAjaxMode();
+		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids = self::getIDArray($token_ids_raw);
+		$this->game->actDeclareIntercept($token_ids);
+		self::ajaxResponse();
+	}
+
+	public function actDeclareAvoid() {
+		self::setAjaxMode();
+		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids = self::getIDArray($token_ids_raw);
+		$this->game->actDeclareAvoid($token_ids);
+		self::ajaxResponse();
+	}
+
 }
