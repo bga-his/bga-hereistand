@@ -63,7 +63,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actPlayCard() {
 		self::setAjaxMode();
-		$cardId = self::getArg('cardId', AT_posint, false);
+		$cardId = self::getArg('cardId', AT_posint, true);
 		$asEvent = self::getArg('asEvent', AT_bool, false);
 		$this->game->actPlayCard($cardId, $asEvent);
 		self::ajaxResponse();
@@ -83,7 +83,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareFormation() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, true);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareFormation($token_ids);
 		self::ajaxResponse();
@@ -91,14 +91,14 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareDestination() {
 		self::setAjaxMode();
-		$destination_id = self::getArg('destination_id', AT_posint, false);
+		$destination_id = self::getArg('destination_id', AT_posint, true);
 		$this->game->actDeclareDestination($destination_id);
 		self::ajaxResponse();
 	}
 
 	public function actDeclareIntercept() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, true);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareIntercept($token_ids);
 		self::ajaxResponse();
@@ -106,7 +106,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareAvoid() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, true);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareAvoid($token_ids);
 		self::ajaxResponse();

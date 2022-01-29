@@ -2,7 +2,9 @@
 namespace HIS\States;
 use HIS\Core\Game;
 use HIS\Core\Globals;
+use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Notifications\Move;
 
 trait MovementTrait {
 	function argDeclareFormation() {
@@ -15,7 +17,9 @@ trait MovementTrait {
 		if ($formation->empty()) {
 			throw new UserException("Game error: no formation selected.");
 		}
-		$city = $cities[$formation->first()['location_id']];
+		$city_id = $formation->first()['location_id'];
+		$city = $cities[$city_id];
+		Globals::setOrigin($city_id);
 		$connections = array_merge($city['connections'], $city['passes']);
 		return [
 			"city" => $city,
@@ -41,6 +45,17 @@ trait MovementTrait {
 	}
 
 	function stMoveFormation() {
+		$player = Players::getActive();
+		$cities = Game::get()->cities;
+		$formation = Globals::getFormation();
+		$destination = Globals::getDestination();
+		$origin = Globals::getOrigin();
+		$from_city = $cities[$origin];
+		$from_city['id'] = $origin;
+		$to_city = $cities[$destination];
+		$to_city['id'] = $destination;
+		Tokens::move($formation, ['board', 'city', $destination]);
+		Move::moveFormation($player, $formation, $from_city, $to_city);
 		$this->gamestate->nextState("done");
 	}
 

@@ -45,6 +45,12 @@ class Notifications {
 			$args['card_name'] = $c['name']; // The substitution will be done in JS format_string_recursive function
 		}
 
+		if (isset($args['city'])) {
+			$c = $args['city'];
+
+			$args['city_name'] = $c['name'];
+		}
+
 		// if (isset($args['task'])) {
 		//   $c = $args['task'];
 		//   $args['task_desc'] = $c->getText();

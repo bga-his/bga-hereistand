@@ -461,6 +461,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
           beforeBrother: null,
 
           phantom: false,
+          scale: null,
         },
         options,
       );
@@ -490,6 +491,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
         mobile = dojo.clone(mobileElt);
         dojo.attr(mobile, 'id', mobileElt.id + '_animated');
         dojo.place(mobile, 'game_play_area');
+        if (config.scale != null) dojo.style(mobile, 'transform', `scale(${config.scale})`);
         this.placeOnObject(mobile, mobileElt);
         dojo.addClass(mobileElt, 'phantom');
         config.from = mobileElt;
