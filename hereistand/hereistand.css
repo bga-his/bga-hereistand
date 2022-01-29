@@ -184,6 +184,10 @@
 }
 
 .selectable {
+  cursor: pointer;
+}
+
+.city-selector.selectable {
   border: 15px solid green;
   z-index: 100;
 }

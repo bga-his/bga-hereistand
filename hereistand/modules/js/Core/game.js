@@ -740,7 +740,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
       let safeCallback = (evt) => {
         if (this.isInterfaceLocked()) return false;
         if (this._helpMode) return false;
-        callback(evt);
+        callback(evt, this);
       };
 
       if (temporary) {

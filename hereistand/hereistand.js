@@ -40,6 +40,9 @@ define([
     constructor() {
       this._activeStates = [
         'impulseActions',
+        'declareFormation',
+        'declareDestination',
+        'pickCard',
       ];
       this._notifications = [
         ['playCardCP', 1000],

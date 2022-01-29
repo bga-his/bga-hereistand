@@ -3,7 +3,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     onEnteringStatePickCard(args){
       this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
       this.selectedCardId = null;
-      dojo.query('#player-hand .card-wrapper').connect('onclick', this, 'onCardClick');
+      dojo.query('#player-hand .card-wrapper').forEach((node) => 
+        this.onClick(node, this.onCardClick)
+      );
     },
 
     onEnteringStateImpulseActions(args){
@@ -16,15 +18,16 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('declare_formation', _('Declare Formation'), 'onDeclareFormationClick');
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       this.selectedFormation = [];
-      dojo.query('.city .Military').connect('onclick', this, 'onUnitClick');
+      dojo.query('.city .Military').forEach((node) =>
+        this.onClick(node, this.onUnitClick)
+      );
     },
 
     onEnteringStateDeclareDestination(args){
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       for(const city_id in args.valid_city_ids){
         const city_node = dojo.byId(`cityselector_${city_id}`);
-        dojo.addClass(city_node, 'selectable');
-        dojo.connect(city_node, 'onclick', this, 'onDestinationClick');
+        this.onClick(city_node, this.onDestinationClick);
       }
     },
   });
