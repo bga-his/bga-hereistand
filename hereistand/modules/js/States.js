@@ -25,7 +25,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onEnteringStateDeclareDestination(args){
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
-      for(const city_id in args.valid_city_ids){
+      for(const city_id of args.valid_city_ids){
         const city_node = dojo.byId(`cityselector_${city_id}`);
         console.log(city_node);
         this.onClick(city_node, this.onDestinationClick);

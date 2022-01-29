@@ -1,5 +1,8 @@
 <?php
 namespace HIS\States;
+use HIS\Core\Game;
+use HIS\Core\Globals;
+use HIS\Managers\Tokens;
 
 trait MovementTrait {
 	function argDeclareFormation() {
@@ -7,8 +10,17 @@ trait MovementTrait {
 	}
 
 	function argDeclareDestination() {
+		$cities = Game::get()->cities;
+		$formation = Tokens::getMany(Globals::getFormation());
+		if ($formation->empty()) {
+			throw new UserException("Game error: no formation selected.");
+		}
+		$city = $cities[$formation->first()['location_id']];
+		$connections = array_merge($city['connections'], $city['passes']);
 		return [
-			"valid_city_ids" => [LYON],
+			"city" => $city,
+			"valid_city_ids" => $connections,
+			"formation" => $formation,
 		];
 	}
 
@@ -57,7 +69,11 @@ trait MovementTrait {
 	}
 
 	function stFindBattle() {
-		$this->gamestate->nextState("none");
+		if (Globals::getRemainingCP() > 0) {
+			$this->gamestate->nextState("more");
+		} else {
+			$this->gamestate->nextState("none");
+		}
 	}
 
 	function stFindFieldBattleResponses() {

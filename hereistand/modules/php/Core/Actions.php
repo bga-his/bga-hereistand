@@ -39,14 +39,18 @@ class Actions {
 	}
 
 	public static function declareDestination($destination_id) {
+		Globals::setDestination($destination_id);
+		Globals::incRemainingCP(-1);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareFormation($token_ids) {
+		Globals::setFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareIntercept($token_ids) {
+		Globals::setInterceptFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 

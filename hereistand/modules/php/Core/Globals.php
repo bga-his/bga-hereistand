@@ -8,6 +8,9 @@ class Globals extends \HIS\Helpers\DB_Manager {
 	protected static $initialized = false;
 	protected static $variables = [
 		"remainingCP" => "int",
+		"destination" => "int",
+		"formation" => "obj",
+		"interceptFormation" => "obj",
 
 	];
 

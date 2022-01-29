@@ -6,7 +6,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         let token = this.gamedatas.tokens[token_id];
         if(token.board == 'board'){
           if(token.location_type == 'city'){
-            this.place('tplToken', token, `city_${token.location_name}`);
+            this.place('tplToken', token, `city_${token.location_id}`);
           }
         }
       }
@@ -18,7 +18,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     tplToken(token){
       return `
-        <div id="token_${token.id}" class="token ${token.style}">
+        <div id="${token.id}" class="token ${token.style}" data-name="${token.name}">
         </div>
       `;
     },

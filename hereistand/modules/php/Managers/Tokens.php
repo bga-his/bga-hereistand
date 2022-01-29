@@ -19,7 +19,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			'board' => $locations[0],
 			'type' => $token['type'],
 			'location_type' => $locations[1] ?? null,
-			'location_name' => $locations[2] ?? null,
+			'location_id' => $locations[2] ?? null,
 		];
 		return array_merge($token, Game::get()->tokens[$token['type']]);
 	}

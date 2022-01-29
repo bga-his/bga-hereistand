@@ -164,7 +164,7 @@ $machinestates = [
 		'description' => clienttranslate('Finding possible field battle...'),
 		'type' => 'manager',
 		'action' => 'stFindBattle',
-		'transitions' => ['found' => ST_FIELD_BATTLE, 'none' => ST_NEXT_PLAYER],
+		'transitions' => ['found' => ST_FIELD_BATTLE, 'none' => ST_NEXT_PLAYER, 'more' => ST_IMPULSE_ACTIONS],
 	],
 
 	ST_FIELD_BATTLE => [

@@ -83,7 +83,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareFormation() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareFormation($token_ids);
 		self::ajaxResponse();
@@ -98,7 +98,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareIntercept() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareIntercept($token_ids);
 		self::ajaxResponse();
@@ -106,7 +106,7 @@ class action_hereistand extends APP_GameAction {
 
 	public function actDeclareAvoid() {
 		self::setAjaxMode();
-		$token_ids_raw = self::getArg('cardId', AT_alphanum, false);
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, false);
 		$token_ids = self::getIDArray($token_ids_raw);
 		$this->game->actDeclareAvoid($token_ids);
 		self::ajaxResponse();
