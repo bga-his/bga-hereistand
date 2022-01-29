@@ -22,10 +22,1494 @@
 require_once 'modules/php/constants.inc.php';
 
 $this->cities = [
+	WITTENBERG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Wittenberg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRANDENBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Brandenburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MAINZ => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Mainz",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	COLOGNE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Cologne",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TRIER => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Trier",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	AUGSBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Augsburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	STETTIN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Stettin",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LUBECK => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Lübeck",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MAGDEBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Magdeburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	HAMBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Hamburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRUNSWICK => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Brunswick",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BREMEN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bremen",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MUNSTER => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Münster",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	KASSEL => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Kassel",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ERFURT => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Erfurt",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LEIPZIG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Leipzig",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NUREMBERG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Nuremberg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	WORMS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Worms",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	REGENSBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Regensburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	STRASBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Strasburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SALZBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Salzburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	VIENNA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Vienna",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LINZ => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Linz",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GRAZ => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Graz",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	INNSBRUCK => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Innsbruck",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ZURICH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Zürich",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BASEL => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Basel",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LONDON => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "London",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRISTOL => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bristol",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	YORK => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "York",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NORWICH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Norwich",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PORTSMOUTH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Portsmouth",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PLYMOUTH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Plymouth",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LINCOLN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Lincoln",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	WALES => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Wales",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SHREWSBURY => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Shrewsbury",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CARLISLE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Carlisle",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BERWICK => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Berwick",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	EDINBURGH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Edinburgh",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	STIRLING => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Stirling",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GLASGOW => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Glasgow",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PARIS => [
+		"x" => 2128,
+		"y" => 1188,
+		"name" => "Paris",
+		"connections" => [
+			ROUEN,
+			BOULOGNE,
+			ST_QUENTIN,
+			ST_DIZIER,
+			DIJON,
+		],
+		"passes" => [
+
+		],
+	],
 	LYON => [
 		"x" => 2430,
 		"y" => 1567,
 		"name" => "Lyon",
+		"connections" => [
+			GENEVA,
+			ORLEANS,
+			DIJON,
+			LIMOGES,
+			AVIGNON,
+		],
+		"passes" => [
+
+		],
+	],
+	ROUEN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Rouen",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MARSEILLE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Marseille",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BORDEAUX => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bordeaux",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GRENOBLE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Grenoble",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	DIJON => [
+		"x" => 2321,
+		"y" => 1332,
+		"name" => "Dijon",
+		"connections" => [
+			ORLEANS,
+			LYON,
+			BESANCON,
+		],
+		"passes" => [
+
+		],
+	],
+	ST_DIZIER => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "St. Dizier",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ST_QUENTIN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "St. Quentin",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BOULOGNE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Boulogne",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ORLEANS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Orleans",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	AVIGNON => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Avignon",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TOULOUSE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Toulouse",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LIMOGES => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Limoges",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TOURS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Tours",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NANTES => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Nantes",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BREST => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Brest",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRUSSELS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Brussels",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BESANCON => [
+		"x" => 2510,
+		"y" => 1292,
+		"name" => "Besançon",
+		"connections" => [
+			DIJON,
+			BASEL,
+			GENEVA,
+		],
+		"passes" => [
+
+		],
+	],
+	CALAIS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Calais",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	METZ => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Metz",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LIEGE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Liege",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GENEVA => [
+		"x" => 2593,
+		"y" => 1491,
+		"name" => "Geneva",
+		"connections" => [
+			LYON,
+			BESANCON,
+			BASEL,
+			GRENOBLE,
+		],
+		"passes" => [
+			TURIN,
+		],
+	],
+	NICE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Nice",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ROME => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Rome",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	RAVENNA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Ravenna",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ANCONA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Ancona",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NAPLES => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Naples",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TRIESTE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Trieste",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CERIGNOLA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Cerignola",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TARANTO => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Taranto",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MESSINA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Messina",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PALERMO => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Palermo",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GENOA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Genoa",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	VENICE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Venice",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MILAN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Milan",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	FLORENCE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Florence",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TURIN => [
+		"x" => 2702,
+		"y" => 1655,
+		"name" => "Turin",
+		"connections" => [
+			MILAN,
+		],
+		"passes" => [
+			GENEVA,
+		],
+	],
+	TRENT => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Trent",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MODENA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Modena",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PAVIA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Pavia",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SIENA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Siena",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	VALLADOLID => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Valladolid",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NAVARRE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Navarre",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BARCELONA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Barcelona",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SEVILLE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Seville",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GIBRALTAR => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Gibraltar",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CORUNNA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Corunna",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BILBAO => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bilbao",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ZARAGOZA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Zaragoza",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MADRID => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Madrid",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	VALENCIA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Valencia",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PALMA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Palma",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CORDOBA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Cordoba",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	GRANADA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Granada",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CARTAGENA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Cartagena",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ISTANBUL => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Istanbul",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	EDIRNE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Edirne",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SALONIKA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Salonika",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ATHENS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Athens",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SCUTARI => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Scutari",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	VARNA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Varna",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BUCHAREST => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bucharest",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NICOPOLIS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Nicopolis",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SOFIA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Sofia",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LARISSA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Larissa",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	LEPANTO => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Lepanto",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CORON => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Coron",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	NEZH => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Nezh",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	DURAZZO => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Durazzo",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ALGIERS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Algiers",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ORAN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Oran",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TRIPOLI => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Tripoli",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BELGRADE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Belgrade",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BUDA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Buda",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PRAGUE => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Prague",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	SZEGEDIN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Szegedin",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	PRESSBURG => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Pressburg",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MOHACS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Mohacs",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	AGRAM => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Agram",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRUNN => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Brunn",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BRESLAU => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Breslau",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ANTWERP => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Antwerp",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	MALTA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Malta",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CAGLIARI => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Cagliari",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	AMSTERDAM => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Amsterdam",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CANDIA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Candia",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	CORFU => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Corfu",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	ZARA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Zara",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	BASTIA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Bastia",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	TUNIS => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Tunis",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	RHODES => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Rhodes",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
+	],
+	RAGUSA => [
+		"x" => 0,
+		"y" => 0,
+		"name" => "Ragusa",
+		"connections" => [
+
+		],
+		"passes" => [
+
+		],
 	],
 ];
 

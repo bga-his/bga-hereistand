@@ -5,7 +5,7 @@
 			<div id='map'>
 				<div id='cities'>
 				    <!-- BEGIN city -->
-				        <div id="city_{NAME}" class="map_node city" style="left: {X}px; top: {Y}px;"></div>
+				        <div id="city_{ID}" class="map_node city" style="left: {X}px; top: {Y}px;" data-name="{NAME}"></div>
 				    <!-- END city -->
 				</div>
 				<div id='locations'>

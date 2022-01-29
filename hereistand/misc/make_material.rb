@@ -6,6 +6,9 @@ def php_print_value(value)
 	if value.class == Hash then
 		return "[\n#{php_print_obj value}\n]"
 	end
+	if value.class == Array then
+		return "[\n#{php_print_array value}\n]"
+	end
 	if value.class == String then
 		if value.upcase == value then
 			return value
@@ -16,6 +19,14 @@ def php_print_value(value)
 	if value.class == Integer then
 		return value
 	end
+end
+
+def php_print_array(arr)
+	ret = Array.new
+	arr.each do |value|
+		ret.push php_print_value value
+	end
+	ret.join ",\n"
 end
 
 def php_print_obj(obj)
@@ -107,9 +118,17 @@ city_constants = Array.new
 city_csv.each do |row|
 	city_id = row['CITY_ID']
 	city = Hash.new
-	city['x'] = row['posX']
-	city['y'] = row['posY']
-	city['name'] = row['name']
+	city['x'] = row['posX'] || 0
+	city['y'] = row['posY'] || 0
+	city['name'] = row['name'] || 'tbd'
+	city['connections'] = Array.new
+	6.times do |i|
+		city['connections'].push row["connection_#{i}"] unless row["connection_#{i}"].nil?
+	end
+	city['passes'] = Array.new
+	2.times do |i|
+		city['passes'].push row["pass_#{i}"] unless row["pass_#{i}"].nil?
+	end
 	cities[city_id] = city
 	city_constants.push city_id
 end
