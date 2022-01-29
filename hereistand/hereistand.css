@@ -13,201 +13,6 @@
  * hereistand stylesheet
  *
  */
-.faction-wrap {
-  width: 50px;
-  height: 55px;
-}
-
-.faction {
-  transform: scale(0.5);
-  transform-origin: 0 0;
-  width: 100px;
-  height: 120px;
-  background-size: 100px;
-  background-repeat: no-repeat;
-}
-
-.faction_ottoman {
-  background-image: url("img/svg/Ottoman_hex.svg");
-}
-
-.faction_hapsburg {
-  background-image: url("img/svg/Hapsburg_hex.svg");
-}
-
-.faction_england {
-  background-image: url("img/svg/England_hex.svg");
-}
-
-.faction_france {
-  background-image: url("img/svg/France_hex.svg");
-}
-
-.faction_papacy {
-  background-image: url("img/svg/Papacy_hex.svg");
-}
-
-.faction_protestant {
-  background-image: url("img/svg/Protestant_hex.svg");
-}
-
-.Janissaries {
-  background-image: url("img/svg/HIS-001.svg");
-}
-
-.HolyRomanEmperor {
-  background-image: url("img/svg/HIS-002.svg");
-}
-
-.SixWives {
-  background-image: url("img/svg/HIS-003.svg");
-}
-
-.PatronArts {
-  background-image: url("img/svg/HIS-004.svg");
-}
-
-.PapalBull {
-  background-image: url("img/svg/HIS-005.svg");
-}
-
-.LeipzigDebate {
-  background-image: url("img/svg/HIS-006.svg");
-}
-
-.HereIStand {
-  background-image: url("img/svg/HIS-007.svg");
-}
-
-.LutherTheses {
-  background-image: url("img/svg/HIS-008.svg");
-}
-
-#overall-content {
-  image-rendering: -webkit-optimize-contrast;
-}
-
-#board {
-  position: relative;
-  transform-origin: 0 0;
-}
-
-#map {
-  position: relative;
-  width: 5100px;
-  height: 3300px;
-  background-image: url("img/board.jpg");
-  background-size: 5100px;
-  background-repeat: no-repeat;
-}
-
-#other-boards {
-  position: relative;
-  transform-origin: 0 0;
-  display: flex;
-  justify-content: space-evenly;
-  width: 5000px;
-}
-
-#other-boards-wrapper {
-  margin-top: 1em;
-}
-
-#religious-struggle {
-  position: relative;
-  width: 1100px;
-  height: 1424px;
-  background-image: url("img/religious.jpg");
-  background-repeat: no-repeat;
-}
-
-#player-boards {
-  position: relative;
-  width: 3825px;
-  height: 1650px;
-  background-image: url("img/referencetotal.jpg");
-  background-repeat: no-repeat;
-}
-
-.map_node {
-  position: absolute;
-}
-
-.city {
-  position: relative;
-}
-
-.city:hover {
-  display: flex;
-  width: 300px;
-  flex-wrap: wrap;
-}
-.city:hover .token {
-  position: relative;
-}
-
-.token {
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  height: 100px;
-  width: 100px;
-  background-size: 100px;
-  background-repeat: no-repeat;
-}
-
-.Hex {
-  top: -55px;
-  left: -45px;
-  height: 110px;
-}
-
-.Keys {
-  z-index: 1;
-}
-
-.Units {
-  z-index: 2;
-}
-
-.leader {
-  z-index: 3;
-}
-
-.card {
-  background-size: 200px;
-  height: 280px;
-  width: 200px;
-}
-
-#player-hand {
-  margin-top: 1em;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.selected {
-  border: 5px blue solid;
-}
-
-.selectable {
-  cursor: pointer;
-}
-
-.city-selector.selectable {
-  border: 15px solid green;
-  z-index: 100;
-}
-
-.city-selector {
-  position: absolute;
-  top: -70px;
-  left: -70px;
-  height: 110px;
-  width: 110px;
-  border-radius: 25px;
-}
-
 .england_key {
   background-image: url("img/svg/England_key.svg");
 }
@@ -1360,6 +1165,205 @@
 
 .jesuit_university {
   background-image: url("img/svg/Jesuit_Univ.svg");
+}
+
+.Janissaries {
+  background-image: url("img/svg/HIS-001.svg");
+}
+
+.HolyRomanEmperor {
+  background-image: url("img/svg/HIS-002.svg");
+}
+
+.SixWives {
+  background-image: url("img/svg/HIS-003.svg");
+}
+
+.PatronArts {
+  background-image: url("img/svg/HIS-004.svg");
+}
+
+.PapalBull {
+  background-image: url("img/svg/HIS-005.svg");
+}
+
+.LeipzigDebate {
+  background-image: url("img/svg/HIS-006.svg");
+}
+
+.HereIStand {
+  background-image: url("img/svg/HIS-007.svg");
+}
+
+.LutherTheses {
+  background-image: url("img/svg/HIS-008.svg");
+}
+
+.faction-wrap {
+  width: 50px;
+  height: 55px;
+}
+
+.faction {
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  width: 100px;
+  height: 120px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.faction_ottoman {
+  background-image: url("img/svg/Ottoman_hex.svg");
+}
+
+.faction_hapsburg {
+  background-image: url("img/svg/Hapsburg_hex.svg");
+}
+
+.faction_england {
+  background-image: url("img/svg/England_hex.svg");
+}
+
+.faction_france {
+  background-image: url("img/svg/France_hex.svg");
+}
+
+.faction_papacy {
+  background-image: url("img/svg/Papacy_hex.svg");
+}
+
+.faction_protestant {
+  background-image: url("img/svg/Protestant_hex.svg");
+}
+
+#overall-content {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#board {
+  position: relative;
+  transform-origin: 0 0;
+}
+
+#map {
+  position: relative;
+  width: 5100px;
+  height: 3300px;
+  background-image: url("img/board.jpg");
+  background-size: 5100px;
+  background-repeat: no-repeat;
+}
+
+#other-boards {
+  position: relative;
+  transform-origin: 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 5000px;
+}
+
+#other-boards-wrapper {
+  margin-top: 1em;
+}
+
+#religious-struggle {
+  position: relative;
+  width: 1100px;
+  height: 1424px;
+  background-image: url("img/religious.jpg");
+  background-repeat: no-repeat;
+}
+
+#player-boards {
+  position: relative;
+  width: 3825px;
+  height: 1650px;
+  background-image: url("img/referencetotal.jpg");
+  background-repeat: no-repeat;
+}
+
+.map_node {
+  position: absolute;
+}
+
+.city {
+  position: relative;
+}
+
+.city:hover {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+}
+.city:hover .token {
+  position: relative;
+}
+
+.token {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  height: 100px;
+  width: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.Hex {
+  top: -55px;
+  left: -45px;
+  height: 110px;
+}
+
+.Keys {
+  z-index: 1;
+}
+
+.Units {
+  z-index: 2;
+}
+
+.leader {
+  z-index: 3;
+}
+
+.card {
+  background-size: 200px;
+  height: 280px;
+  width: 200px;
+}
+
+#player-hand {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selected {
+  border: 5px blue solid;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.city-selector.selectable {
+  border: 15px solid green;
+  z-index: 100;
+}
+
+.city-selector {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  height: 110px;
+  width: 110px;
+  border-radius: 25px;
+}
+
+.phantomm {
+  background-image: none;
 }
 
 /*# sourceMappingURL=hereistand.css.map */

@@ -10,7 +10,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const formation = args.args.formation;
       const from_id = `city_${args.args.from_id}`;
       for(let token of formation){
-        this.slide(token, dest, {scale: this.scalingFactor, phantom: true});
+        this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});
       }
     },
   });

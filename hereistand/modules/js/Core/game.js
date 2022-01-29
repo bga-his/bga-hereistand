@@ -486,12 +486,12 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
         });
       }
 
+      if (config.scale != null) dojo.style(mobile, 'transform', `scale(${config.scale})`);
       // Handle phantom at start
       if (config.phantomStart) {
         mobile = dojo.clone(mobileElt);
         dojo.attr(mobile, 'id', mobileElt.id + '_animated');
         dojo.place(mobile, 'game_play_area');
-        if (config.scale != null) dojo.style(mobile, 'transform', `scale(${config.scale})`);
         this.placeOnObject(mobile, mobileElt);
         dojo.addClass(mobileElt, 'phantom');
         config.from = mobileElt;
@@ -521,6 +521,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
 
         dojo.connect(animation, 'onEnd', () => {
           dojo.style(mobile, 'zIndex', null);
+          if (config.scale != null) dojo.style(mobile, 'transform', null);
           dojo.removeClass(mobile, config.className);
           if (config.phantomStart) {
             dojo.place(mobileElt, mobile, 'replace');
