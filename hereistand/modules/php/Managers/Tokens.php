@@ -2,6 +2,7 @@
 namespace HIS\Managers;
 
 use HIS\Core\Game;
+use HIS\Helpers\UserException;
 
 /**
  * Tokens: id, value, faction
@@ -30,6 +31,19 @@ class Tokens extends \HIS\Helpers\Pieces {
 	//////////// GETTERS //////////////
 	//////////////////////////////////
 	//////////////////////////////////
+
+	public static function checkFormation($token_ids) {
+		$formation = self::getMany($token_ids);
+		if ($formation->empty()) {
+			throw new UserException("Game error: no formation selected.");
+		}
+		$city_id = $formation->first()['location_id'];
+		foreach ($formation as $formation_id => $formation) {
+			if ($formation['location_id'] != $city_id) {
+				throw new UserException("All units in formation must start in same city");
+			}
+		}
+	}
 
 	//////////////////////////////////
 	//////////////////////////////////

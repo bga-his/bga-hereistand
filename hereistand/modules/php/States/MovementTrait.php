@@ -20,7 +20,10 @@ trait MovementTrait {
 		$city_id = $formation->first()['location_id'];
 		$city = $cities[$city_id];
 		Globals::setOrigin($city_id);
-		$connections = array_merge($city['connections'], $city['passes']);
+		$connections = $city['connections'];
+		if (Globals::getRemainingCP() >= 2) {
+			$connections = array_merge($connections, $city['passes']);
+		}
 		return [
 			"city" => $city,
 			"valid_city_ids" => $connections,

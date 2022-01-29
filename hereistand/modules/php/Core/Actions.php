@@ -4,6 +4,7 @@ use HIS\Core\Globals;
 use HIS\Helpers\UserException;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
+use HIS\Managers\Tokens;
 use HIS\Notifications\PlayCard;
 
 class Actions {
@@ -40,22 +41,38 @@ class Actions {
 	}
 
 	public static function declareDestination($destination_id) {
+		$cities = Game::get()->cities;
+		$origin = Globals::getOrigin();
+		$origin_city = $cities[$origin];
+		$remainingCP = Globals::getRemainingCP();
+		if (in_array($destination_id, $origin_city['connections'])) {
+			Globals::incRemainingCP(-1);
+		} elseif (in_array($destination_id, $origin_city['passes'])) {
+			if ($remainingCP < 2) {
+				throw new UserException("Attempt to move over pass with less than 2 CP remaining");
+			}
+			Globals::incRemainingCP(-2);
+		} else {
+			throw new UserException("Attempt to move to a non-connected city");
+		}
 		Globals::setDestination($destination_id);
-		Globals::incRemainingCP(-1);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareFormation($token_ids) {
+		Tokens::checkFormation($token_ids);
 		Globals::setFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareIntercept($token_ids) {
+		Tokens::checkFormation($token_ids);
 		Globals::setInterceptFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareAvoid($token_ids) {
+		Tokens::checkFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 
