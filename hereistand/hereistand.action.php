@@ -29,14 +29,10 @@ class action_hereistand extends APP_GameAction {
 	public function getIDArray($ids_raw) {
 		$ids_raw = trim($ids_raw);
 
-		if (substr($ids_raw, -1) == ',') {
-			$ids_raw = substr($ids_raw, 0, -1);
-		}
-
 		if ($ids_raw == '') {
 			$ids = array();
 		} else {
-			$ids = explode(',', $ids_raw);
+			$ids = explode(' ', $ids_raw);
 		}
 		return $ids;
 	}

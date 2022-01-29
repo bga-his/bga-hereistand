@@ -59,7 +59,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onDeclareFormationClick(evt){
       dojo.stopEvent(evt);
-      const id_str = this.selectedFormation.join(',');
+      const id_str = this.selectedFormation.join(' ');
       this.takeAction('actDeclareFormation', {token_ids: id_str});
     },
 
