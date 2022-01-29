@@ -5,8 +5,14 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.takeAction('actPass');
     },
 
+    onUndoClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actUndo');
+    },
+
     onMoveClick(evt){
       dojo.stopEvent(evt);
+      this.takeAction('actMove');
 
     },
 
@@ -37,6 +43,31 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         this.addPrimaryActionButton('play_event', _('Play Event'), 'onPlayEventClick');
         this.addPrimaryActionButton('play_cp', _('Play for CP'), 'onPlayCPClick');
       }
+    },
+
+    onUnitClick(evt){
+      dojo.stopEvent(evt);
+      const unit_id = evt.currentTarget.id;
+      const index = this.selectedFormation.indexOf(unit_id);
+      dojo.toggleClass(unit_id, 'selected');
+      if(index >= 0){
+        this.selectedFormation.splice(index, 1);
+      } else {
+        this.selectedFormation.push(unit_id);
+      }
+      console.log(this.selectedFormation);
+    },
+
+    onDeclareFormationClick(evt){
+      dojo.stopEvent(evt);
+      const id_str = this.selectedFormation.join(',');
+      this.takeAction('actDeclareFormation', {token_ids: id_str});
+    },
+
+    onDestinationClick(evt){
+      dojo.stopEvent(evt);
+      const city_id = evt.currentTarget.id.split('_')[1];
+      this.takeAction('actDeclareDestination', {city_id: city_id});
     },
   });
 });

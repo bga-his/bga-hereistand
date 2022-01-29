@@ -49,7 +49,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('${you} must declare formation'),
 		'type' => 'activeplayer',
 		'args' => 'argDeclareFormation',
-		'possibleactions' => ['actDeclareFormation'],
+		'possibleactions' => ['actDeclareFormation', 'actUndo'],
 		'transitions' => ['declare' => ST_DECLARE_DESTINATION, 'undo' => ST_IMPULSE_ACTIONS],
 	],
 
@@ -59,7 +59,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('${you} must declare destination'),
 		'type' => 'activeplayer',
 		'args' => 'argDeclareDestination',
-		'possibleactions' => ['actDeclareDestination'],
+		'possibleactions' => ['actDeclareDestination', 'actUndo'],
 		'transitions' => ['declare' => ST_FIND_MOVEMENT_RESPONSES, 'undo' => ST_IMPULSE_ACTIONS],
 	],
 
@@ -156,7 +156,7 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argWithdrawIntent',
 		'possibleactions' => ['actWithdraw', 'actPass'],
-		'transitions' => ['actWithdraw' => ST_FIND_SIEGE, 'pass' => ST_FIND_BATTLE],
+		'transitions' => ['withdraw' => ST_FIND_SIEGE, 'pass' => ST_FIND_BATTLE],
 	],
 
 	ST_FIND_BATTLE => [

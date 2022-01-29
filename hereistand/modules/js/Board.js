@@ -4,12 +4,15 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     setupBoard() {
       for(let token_id in this.gamedatas.tokens){
         let token = this.gamedatas.tokens[token_id];
-        console.log(token);
         if(token.board == 'board'){
           if(token.location_type == 'city'){
             this.place('tplToken', token, `city_${token.location_name}`);
           }
         }
+      }
+      for(const city_node of dojo.query('.city')){
+        const city_id = city_node.id.split('_')[1];
+        this.place('tplCitySelector', city_id, city_node);
       }
     },
 
@@ -18,6 +21,14 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         <div id="token_${token.id}" class="token ${token.style}">
         </div>
       `;
+    },
+
+    tplCitySelector(city_id){
+      return `
+        <div id="cityselector_${city_id}" class="city-selector">
+        </div>
+      `;
+
     },
   });
 });

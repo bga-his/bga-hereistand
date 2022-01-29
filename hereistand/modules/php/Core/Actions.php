@@ -35,28 +35,23 @@ class Actions {
 	}
 
 	public static function withdraw() {
-		// TODO: fix
-		Game::get()->gamestate->nextState("move");
+		Game::get()->gamestate->nextState("withdraw");
 	}
 
 	public static function declareDestination($destination_id) {
-		// TODO: fix
-		Game::get()->gamestate->nextState("move");
+		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareFormation($token_ids) {
-		// TODO: fix
-		Game::get()->gamestate->nextState("move");
+		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareIntercept($token_ids) {
-		// TODO: fix
-		Game::get()->gamestate->nextState("move");
+		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareAvoid($token_ids) {
-		// TODO: fix
-		Game::get()->gamestate->nextState("move");
+		Game::get()->gamestate->nextState("declare");
 	}
 
 }

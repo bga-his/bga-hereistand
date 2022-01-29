@@ -100,6 +100,20 @@
 }
 
 .selected {
-  border: 2px blue solid;
+  border: 5px blue solid;
+}
+
+.selectable {
+  border: 15px solid green;
+  z-index: 100;
+}
+
+.city-selector {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  height: 110px;
+  width: 110px;
+  border-radius: 25px;
 }
 

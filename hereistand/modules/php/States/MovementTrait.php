@@ -7,7 +7,9 @@ trait MovementTrait {
 	}
 
 	function argDeclareDestination() {
-		return [];
+		return [
+			"valid_city_ids" => [LYON],
+		];
 	}
 
 	function stFindMovementResponses() {
