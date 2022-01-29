@@ -27,10 +27,10 @@
   background-image: url("img/svg/France_key_back.svg");
 }
 
-.habsburg_key {
+.hapsburg_key {
   background-image: url("img/svg/Hapsburg_key.svg");
 }
-.habsburg_key .flipped {
+.hapsburg_key .flipped {
   background-image: url("img/svg/Hapsburg_key_back.svg");
 }
 
@@ -69,10 +69,10 @@
   background-image: url("img/svg/France_hex_back.svg");
 }
 
-.habsburg_hex {
+.hapsburg_hex {
   background-image: url("img/svg/Hapsburg_hex.svg");
 }
-.habsburg_hex .flipped {
+.hapsburg_hex .flipped {
   background-image: url("img/svg/Hapsburg_hex_back.svg");
 }
 
@@ -168,31 +168,31 @@
   background-image: url("img/svg/GenoaReg-2.svg");
 }
 
-.habsburg_1unit {
+.hapsburg_1unit {
   background-image: url("img/svg/HapsburgReg-1.svg");
 }
-.habsburg_1unit .flipped {
+.hapsburg_1unit .flipped {
   background-image: url("img/svg/HapsburgMerc-1.svg");
 }
 
-.habsburg_2unit {
+.hapsburg_2unit {
   background-image: url("img/svg/HapsburgReg-2.svg");
 }
-.habsburg_2unit .flipped {
+.hapsburg_2unit .flipped {
   background-image: url("img/svg/HapsburgMerc-2.svg");
 }
 
-.habsburg_4unit {
+.hapsburg_4unit {
   background-image: url("img/svg/HapsburgReg-4.svg");
 }
-.habsburg_4unit .flipped {
+.hapsburg_4unit .flipped {
   background-image: url("img/svg/HapsburgMerc-4.svg");
 }
 
-.habsburg_6unit {
+.hapsburg_6unit {
   background-image: url("img/svg/HapsburgReg-6.svg");
 }
-.habsburg_6unit .flipped {
+.hapsburg_6unit .flipped {
   background-image: url("img/svg/HapsburgMerc-6.svg");
 }
 
@@ -382,7 +382,7 @@
   background-image: url("img/svg/Genoa_squadron.svg");
 }
 
-.habsburg_squadron {
+.hapsburg_squadron {
   background-image: url("img/svg/Hapsburg_squadron.svg");
 }
 
@@ -437,7 +437,7 @@
   background-image: url("img/svg/VP_France.svg");
 }
 
-.vp_habsburg {
+.vp_hapsburg {
   background-image: url("img/svg/VP_Hapsburg.svg");
 }
 
@@ -461,7 +461,7 @@
   background-image: url("img/svg/Loaned_France.svg");
 }
 
-.loaned_habsburg {
+.loaned_hapsburg {
   background-image: url("img/svg/Loaned_Hapsburg.svg");
 }
 
@@ -706,10 +706,10 @@
   background-image: url("img/svg/French_Exploration.svg");
 }
 
-.habsburg_exploration {
+.hapsburg_exploration {
   background-image: url("img/svg/Hapsburg_ExplorationCharted.svg");
 }
-.habsburg_exploration .flipped {
+.hapsburg_exploration .flipped {
   background-image: url("img/svg/Hapsburg_Exploration.svg");
 }
 
@@ -727,10 +727,10 @@
   background-image: url("img/svg/French_Explorer_back.svg");
 }
 
-.cabot_hab {
+.cabot_hap {
   background-image: url("img/svg/Cabot_Hapsburg.svg");
 }
-.cabot_hab .flipped {
+.cabot_hap .flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
@@ -850,7 +850,7 @@
   background-image: url("img/svg/Roanoke.svg");
 }
 
-.habsburg_conquest {
+.hapsburg_conquest {
   background-image: url("img/svg/Hapsburg_Conquest.svg");
 }
 
@@ -1315,22 +1315,26 @@
   top: -55px;
   left: -45px;
   height: 110px;
+  order: 1;
 }
 
 .Keys {
   z-index: 1;
   top: -48px;
   left: -46px;
+  order: 1;
 }
 
 .Units {
   z-index: 2;
   top: -54px;
   left: -48px;
+  order: 2;
 }
 
-.leader {
+.Leader {
   z-index: 3;
+  order: 3;
 }
 
 .card {

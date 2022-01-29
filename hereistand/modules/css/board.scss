@@ -77,22 +77,26 @@
   top: -55px;
   left: -45px;
   height: 110px;
+  order: 1;
 }
 
 .Keys {
   z-index: 1;
   top: -48px;
   left: -46px;
+  order: 1;
 }
 
 .Units {
   z-index: 2;
   top: -54px;
   left: -48px;
+  order: 2;
 }
 
-.leader {
+.Leader {
   z-index: 3;
+  order: 3;
 }
 
 .card {

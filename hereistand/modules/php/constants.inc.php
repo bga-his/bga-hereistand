@@ -51,6 +51,11 @@ const OTTOMAN = 'ottoman';
 const ENGLAND = 'england';
 const PAPACY = 'papacy';
 const PROTESTANT = 'protestant';
+const MINOR_VENICE = 'venice';
+const MINOR_SCOTLAND = 'scotland';
+const MINOR_HUNGARY = 'hungary';
+const MINOR_GENOA = 'genoa';
+const INDEPENDENT = 'independent';
 const OTHER = 'other';
 const VP = 'vp';
 
