@@ -48,11 +48,9 @@ end
 def print_css(name, row)
 	back = ''
 	if row['back'] != nil then
-		back = "\n\t.flipped {\n\t\tbackground-image: url(\"img/svg/#{row['back']}\");\n\t}"
+		back = ".#{name}.flipped {\n\tbackground-image: url(\"img/svg/#{row['back']}\");\n}"
 	end
-	".#{name} {
-	background-image: url(\"img/svg/#{row['front']}\");#{back}
-}"
+	".#{name} {\n\tbackground-image: url(\"img/svg/#{row['front']}\");\n}\n#{back}"
 end
 
 token_csv = CSV.read('tokens.csv', headers: true)

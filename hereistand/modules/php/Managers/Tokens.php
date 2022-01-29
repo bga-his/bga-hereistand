@@ -20,6 +20,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			'type' => $token['type'],
 			'location_type' => $locations[1] ?? null,
 			'location_id' => $locations[2] ?? null,
+			'flipped' => $token['state'] == BACK ? 'flipped' : '',
 		];
 		return array_merge($token, Game::get()->tokens[$token['type']]);
 	}
@@ -56,5 +57,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
+		// Hack to flip starting units
+		self::setState('tbd_31_1', BACK);
 	}
 }

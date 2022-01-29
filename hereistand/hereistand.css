@@ -16,147 +16,168 @@
 .england_key {
   background-image: url("img/svg/England_key.svg");
 }
-.england_key .flipped {
+
+.england_key.flipped {
   background-image: url("img/svg/England_key_back.svg");
 }
 
 .france_key {
   background-image: url("img/svg/France_key.svg");
 }
-.france_key .flipped {
+
+.france_key.flipped {
   background-image: url("img/svg/France_key_back.svg");
 }
 
 .hapsburg_key {
   background-image: url("img/svg/Hapsburg_key.svg");
 }
-.hapsburg_key .flipped {
+
+.hapsburg_key.flipped {
   background-image: url("img/svg/Hapsburg_key_back.svg");
 }
 
 .ottoman_key {
   background-image: url("img/svg/Ottoman_key.svg");
 }
-.ottoman_key .flipped {
+
+.ottoman_key.flipped {
   background-image: url("img/svg/Ottoman_key_back.svg");
 }
 
 .independent_key {
   background-image: url("img/svg/Independent_key.svg");
 }
-.independent_key .flipped {
+
+.independent_key.flipped {
   background-image: url("img/svg/Independent_key_back.svg");
 }
 
 .papacy_key {
   background-image: url("img/svg/Papacy_key.svg");
 }
-.papacy_key .flipped {
+
+.papacy_key.flipped {
   background-image: url("img/svg/Papacy_key_back.svg");
 }
 
 .england_hex {
   background-image: url("img/svg/England_hex.svg");
 }
-.england_hex .flipped {
+
+.england_hex.flipped {
   background-image: url("img/svg/England_hex_back.svg");
 }
 
 .france_hex {
   background-image: url("img/svg/France_hex.svg");
 }
-.france_hex .flipped {
+
+.france_hex.flipped {
   background-image: url("img/svg/France_hex_back.svg");
 }
 
 .hapsburg_hex {
   background-image: url("img/svg/Hapsburg_hex.svg");
 }
-.hapsburg_hex .flipped {
+
+.hapsburg_hex.flipped {
   background-image: url("img/svg/Hapsburg_hex_back.svg");
 }
 
 .independent_hex {
   background-image: url("img/svg/Independent_hex.svg");
 }
-.independent_hex .flipped {
+
+.independent_hex.flipped {
   background-image: url("img/svg/Independent_hex_back.svg");
 }
 
 .ottoman_hex {
   background-image: url("img/svg/Ottoman_hex.svg");
 }
-.ottoman_hex .flipped {
+
+.ottoman_hex.flipped {
   background-image: url("img/svg/Ottoman_hex_back.svg");
 }
 
 .papacy_hex {
   background-image: url("img/svg/Papacy_hex.svg");
 }
-.papacy_hex .flipped {
+
+.papacy_hex.flipped {
   background-image: url("img/svg/Papacy_hex_back.svg");
 }
 
 .protestant_hex {
   background-image: url("img/svg/Protestant_hex.svg");
 }
-.protestant_hex .flipped {
+
+.protestant_hex.flipped {
   background-image: url("img/svg/Protestant_hex_back.svg");
 }
 
 .england_1unit {
   background-image: url("img/svg/EnglandReg-1.svg");
 }
-.england_1unit .flipped {
+
+.england_1unit.flipped {
   background-image: url("img/svg/EnglandMerc-1.svg");
 }
 
 .england_2unit {
   background-image: url("img/svg/EnglandReg-2.svg");
 }
-.england_2unit .flipped {
+
+.england_2unit.flipped {
   background-image: url("img/svg/EnglandMerc-2.svg");
 }
 
 .england_4unit {
   background-image: url("img/svg/EnglandReg-4.svg");
 }
-.england_4unit .flipped {
+
+.england_4unit.flipped {
   background-image: url("img/svg/EnglandMerc-4.svg");
 }
 
 .england_6unit {
   background-image: url("img/svg/EnglandReg-6.svg");
 }
-.england_6unit .flipped {
+
+.england_6unit.flipped {
   background-image: url("img/svg/EnglandMerc-6.svg");
 }
 
 .france_1unit {
   background-image: url("img/svg/FrenchReg-1.svg");
 }
-.france_1unit .flipped {
+
+.france_1unit.flipped {
   background-image: url("img/svg/FrenchMerc-1.svg");
 }
 
 .france_2unit {
   background-image: url("img/svg/FrenchReg-2.svg");
 }
-.france_2unit .flipped {
+
+.france_2unit.flipped {
   background-image: url("img/svg/FrenchMerc-2.svg");
 }
 
 .france_4unit {
   background-image: url("img/svg/FrenchReg-4.svg");
 }
-.france_4unit .flipped {
+
+.france_4unit.flipped {
   background-image: url("img/svg/FrenchMerc-4.svg");
 }
 
 .france_6unit {
   background-image: url("img/svg/FrenchReg-6.svg");
 }
-.france_6unit .flipped {
+
+.france_6unit.flipped {
   background-image: url("img/svg/FrenchMerc-6.svg");
 }
 
@@ -171,49 +192,56 @@
 .hapsburg_1unit {
   background-image: url("img/svg/HapsburgReg-1.svg");
 }
-.hapsburg_1unit .flipped {
+
+.hapsburg_1unit.flipped {
   background-image: url("img/svg/HapsburgMerc-1.svg");
 }
 
 .hapsburg_2unit {
   background-image: url("img/svg/HapsburgReg-2.svg");
 }
-.hapsburg_2unit .flipped {
+
+.hapsburg_2unit.flipped {
   background-image: url("img/svg/HapsburgMerc-2.svg");
 }
 
 .hapsburg_4unit {
   background-image: url("img/svg/HapsburgReg-4.svg");
 }
-.hapsburg_4unit .flipped {
+
+.hapsburg_4unit.flipped {
   background-image: url("img/svg/HapsburgMerc-4.svg");
 }
 
 .hapsburg_6unit {
   background-image: url("img/svg/HapsburgReg-6.svg");
 }
-.hapsburg_6unit .flipped {
+
+.hapsburg_6unit.flipped {
   background-image: url("img/svg/HapsburgMerc-6.svg");
 }
 
 .hungary_1unit {
   background-image: url("img/svg/HungaryReg-1.svg");
 }
-.hungary_1unit .flipped {
+
+.hungary_1unit.flipped {
   background-image: url("img/svg/HungaryReg-2.svg");
 }
 
 .hungary_4unit {
   background-image: url("img/svg/HungaryReg-4.svg");
 }
-.hungary_4unit .flipped {
+
+.hungary_4unit.flipped {
   background-image: url("img/svg/HungaryReg-2.svg");
 }
 
 .independent_1unit {
   background-image: url("img/svg/IndependentReg-1.svg");
 }
-.independent_1unit .flipped {
+
+.independent_1unit.flipped {
   background-image: url("img/svg/IndependentReg-2.svg");
 }
 
@@ -224,70 +252,80 @@
 .ottoman_1unit {
   background-image: url("img/svg/OttomanReg-1.svg");
 }
-.ottoman_1unit .flipped {
+
+.ottoman_1unit.flipped {
   background-image: url("img/svg/OttomanCav-1.svg");
 }
 
 .ottoman_2unit {
   background-image: url("img/svg/OttomanReg-2.svg");
 }
-.ottoman_2unit .flipped {
+
+.ottoman_2unit.flipped {
   background-image: url("img/svg/OttomanCav-2.svg");
 }
 
 .ottoman_4unit {
   background-image: url("img/svg/OttomanReg-4.svg");
 }
-.ottoman_4unit .flipped {
+
+.ottoman_4unit.flipped {
   background-image: url("img/svg/OttomanCav-4.svg");
 }
 
 .ottoman_6unit {
   background-image: url("img/svg/OttomanReg-6.svg");
 }
-.ottoman_6unit .flipped {
+
+.ottoman_6unit.flipped {
   background-image: url("img/svg/OttomanCav-6.svg");
 }
 
 .papacy_1unit {
   background-image: url("img/svg/PapacyReg-1.svg");
 }
-.papacy_1unit .flipped {
+
+.papacy_1unit.flipped {
   background-image: url("img/svg/PapacyMerc-1.svg");
 }
 
 .papacy_2unit {
   background-image: url("img/svg/PapacyReg-2.svg");
 }
-.papacy_2unit .flipped {
+
+.papacy_2unit.flipped {
   background-image: url("img/svg/PapacyMerc-2.svg");
 }
 
 .papacy_4unit {
   background-image: url("img/svg/PapacyReg-4.svg");
 }
-.papacy_4unit .flipped {
+
+.papacy_4unit.flipped {
   background-image: url("img/svg/PapacyMerc-4.svg");
 }
 
 .protestant_1unit {
   background-image: url("img/svg/ProtestantReg-1.svg");
 }
-.protestant_1unit .flipped {
+
+.protestant_1unit.flipped {
   background-image: url("img/svg/ProtestantMerc-1.svg");
 }
 
 .protestant_2unit {
   background-image: url("img/svg/ProtestantReg-2.svg");
 }
-.protestant_2unit .flipped {
+
+.protestant_2unit.flipped {
   background-image: url("img/svg/ProtestantMerc-2.svg");
 }
 
 .protestant_4unit {
   background-image: url("img/svg/ProtestantReg-4.svg");
 }
-.protestant_4unit .flipped {
+
+.protestant_4unit.flipped {
   background-image: url("img/svg/ProtestantMerc-4.svg");
 }
 
@@ -350,7 +388,8 @@
 .maurice_of_saxony {
   background-image: url("img/svg/Maurice_Protestant.svg");
 }
-.maurice_of_saxony .flipped {
+
+.maurice_of_saxony.flipped {
   background-image: url("img/svg/Maurice_Hapsburg.svg");
 }
 
@@ -389,7 +428,8 @@
 .ottoman_squadron {
   background-image: url("img/svg/Ottoman_squadron.svg");
 }
-.ottoman_squadron .flipped {
+
+.ottoman_squadron.flipped {
   background-image: url("img/svg/Ottoman_corsair.svg");
 }
 
@@ -492,329 +532,376 @@
 .aleander {
   background-image: url("img/svg/AleanderDebater.svg");
 }
-.aleander .flipped {
+
+.aleander.flipped {
   background-image: url("img/svg/AleanderDebater_back.svg");
 }
 
 .cajetan {
   background-image: url("img/svg/CajetanDebater.svg");
 }
-.cajetan .flipped {
+
+.cajetan.flipped {
   background-image: url("img/svg/CajetanDebater_back.svg");
 }
 
 .campeggio {
   background-image: url("img/svg/CampeggioDebater.svg");
 }
-.campeggio .flipped {
+
+.campeggio.flipped {
   background-image: url("img/svg/CampeggioDebater_back.svg");
 }
 
 .canisius {
   background-image: url("img/svg/CanisiusDebater.svg");
 }
-.canisius .flipped {
+
+.canisius.flipped {
   background-image: url("img/svg/CanisiusDebater_back.svg");
 }
 
 .caraffa {
   background-image: url("img/svg/CaraffaDebater.svg");
 }
-.caraffa .flipped {
+
+.caraffa.flipped {
   background-image: url("img/svg/CaraffaDebater_back.svg");
 }
 
 .contarini {
   background-image: url("img/svg/ContariniDebater.svg");
 }
-.contarini .flipped {
+
+.contarini.flipped {
   background-image: url("img/svg/ContariniDebater_back.svg");
 }
 
 .eck {
   background-image: url("img/svg/EckDebater.svg");
 }
-.eck .flipped {
+
+.eck.flipped {
   background-image: url("img/svg/EckDebater_back.svg");
 }
 
 .faber {
   background-image: url("img/svg/FaberDebater.svg");
 }
-.faber .flipped {
+
+.faber.flipped {
   background-image: url("img/svg/FaberDebater_back.svg");
 }
 
 .gardiner {
   background-image: url("img/svg/GardinerDebater.svg");
 }
-.gardiner .flipped {
+
+.gardiner.flipped {
   background-image: url("img/svg/GardinerDebater_back.svg");
 }
 
 .loyola {
   background-image: url("img/svg/LoyolaDebater.svg");
 }
-.loyola .flipped {
+
+.loyola.flipped {
   background-image: url("img/svg/LoyolaDebater_back.svg");
 }
 
 .pole {
   background-image: url("img/svg/PoleDebater.svg");
 }
-.pole .flipped {
+
+.pole.flipped {
   background-image: url("img/svg/PoleDebater_back.svg");
 }
 
 .tetzel {
   background-image: url("img/svg/TetzelDebater.svg");
 }
-.tetzel .flipped {
+
+.tetzel.flipped {
   background-image: url("img/svg/TetzelDebater_back.svg");
 }
 
 .bucer {
   background-image: url("img/svg/BucerDebater.svg");
 }
-.bucer .flipped {
+
+.bucer.flipped {
   background-image: url("img/svg/BucerDebater_back.svg");
 }
 
 .bullinger {
   background-image: url("img/svg/BullingerDebater.svg");
 }
-.bullinger .flipped {
+
+.bullinger.flipped {
   background-image: url("img/svg/BullingerDebater_back.svg");
 }
 
 .calvin {
   background-image: url("img/svg/CalvinDebater.svg");
 }
-.calvin .flipped {
+
+.calvin.flipped {
   background-image: url("img/svg/CalvinDebater_back.svg");
 }
 
 .carlstadt {
   background-image: url("img/svg/CarlstadtDebater.svg");
 }
-.carlstadt .flipped {
+
+.carlstadt.flipped {
   background-image: url("img/svg/CarlstadtDebater_back.svg");
 }
 
 .cop {
   background-image: url("img/svg/CopDebater.svg");
 }
-.cop .flipped {
+
+.cop.flipped {
   background-image: url("img/svg/CopDebater_back.svg");
 }
 
 .coverdale {
   background-image: url("img/svg/CoverdaleDebater.svg");
 }
-.coverdale .flipped {
+
+.coverdale.flipped {
   background-image: url("img/svg/CoverdaleDebater_back.svg");
 }
 
 .cranmer {
   background-image: url("img/svg/CranmerDebater.svg");
 }
-.cranmer .flipped {
+
+.cranmer.flipped {
   background-image: url("img/svg/CranmerDebater_back.svg");
 }
 
 .farel {
   background-image: url("img/svg/FarelDebater.svg");
 }
-.farel .flipped {
+
+.farel.flipped {
   background-image: url("img/svg/FarelDebater_back.svg");
 }
 
 .knox {
   background-image: url("img/svg/KnoxDebater.svg");
 }
-.knox .flipped {
+
+.knox.flipped {
   background-image: url("img/svg/KnoxDebater_back.svg");
 }
 
 .latimer {
   background-image: url("img/svg/LatimerDebater.svg");
 }
-.latimer .flipped {
+
+.latimer.flipped {
   background-image: url("img/svg/LatimerDebater_back.svg");
 }
 
 .luther {
   background-image: url("img/svg/LutherDebater.svg");
 }
-.luther .flipped {
+
+.luther.flipped {
   background-image: url("img/svg/LutherDebater_back.svg");
 }
 
 .melanchthon {
   background-image: url("img/svg/MelanchthonDebater.svg");
 }
-.melanchthon .flipped {
+
+.melanchthon.flipped {
   background-image: url("img/svg/MelanchthonDebater_back.svg");
 }
 
 .oekolampadius {
   background-image: url("img/svg/OekolampadiusDebater.svg");
 }
-.oekolampadius .flipped {
+
+.oekolampadius.flipped {
   background-image: url("img/svg/OekolampadiusDebater_back.svg");
 }
 
 .olivetan {
   background-image: url("img/svg/OlivetanDebater.svg");
 }
-.olivetan .flipped {
+
+.olivetan.flipped {
   background-image: url("img/svg/OlivetanDebater_back.svg");
 }
 
 .tyndale {
   background-image: url("img/svg/TyndaleDebater.svg");
 }
-.tyndale .flipped {
+
+.tyndale.flipped {
   background-image: url("img/svg/TyndaleDebater_back.svg");
 }
 
 .wishart {
   background-image: url("img/svg/WishartDebater.svg");
 }
-.wishart .flipped {
+
+.wishart.flipped {
   background-image: url("img/svg/WishartDebater_back.svg");
 }
 
 .zwingli {
   background-image: url("img/svg/ZwingliDebater.svg");
 }
-.zwingli .flipped {
+
+.zwingli.flipped {
   background-image: url("img/svg/ZwingliDebater_back.svg");
 }
 
 .english_exploration {
   background-image: url("img/svg/English_ExplorationCharted.svg");
 }
-.english_exploration .flipped {
+
+.english_exploration.flipped {
   background-image: url("img/svg/English_Exploration.svg");
 }
 
 .french_exploration {
   background-image: url("img/svg/French_ExplorationCharted.svg");
 }
-.french_exploration .flipped {
+
+.french_exploration.flipped {
   background-image: url("img/svg/French_Exploration.svg");
 }
 
 .hapsburg_exploration {
   background-image: url("img/svg/Hapsburg_ExplorationCharted.svg");
 }
-.hapsburg_exploration .flipped {
+
+.hapsburg_exploration.flipped {
   background-image: url("img/svg/Hapsburg_Exploration.svg");
 }
 
 .cabot_eng {
   background-image: url("img/svg/Cabot_English.svg");
 }
-.cabot_eng .flipped {
+
+.cabot_eng.flipped {
   background-image: url("img/svg/English_Explorer_back.svg");
 }
 
 .cabot_fre {
   background-image: url("img/svg/Cabot_French.svg");
 }
-.cabot_fre .flipped {
+
+.cabot_fre.flipped {
   background-image: url("img/svg/French_Explorer_back.svg");
 }
 
 .cabot_hap {
   background-image: url("img/svg/Cabot_Hapsburg.svg");
 }
-.cabot_hap .flipped {
+
+.cabot_hap.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .cartier {
   background-image: url("img/svg/Cartier.svg");
 }
-.cartier .flipped {
+
+.cartier.flipped {
   background-image: url("img/svg/French_Explorer_back.svg");
 }
 
 .chancellor {
   background-image: url("img/svg/Chancellor.svg");
 }
-.chancellor .flipped {
+
+.chancellor.flipped {
   background-image: url("img/svg/English_Explorer_back.svg");
 }
 
 .de_vaca {
   background-image: url("img/svg/De_Vaca.svg");
 }
-.de_vaca .flipped {
+
+.de_vaca.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .de_soto {
   background-image: url("img/svg/DeSoto.svg");
 }
-.de_soto .flipped {
+
+.de_soto.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .leon {
   background-image: url("img/svg/Leon.svg");
 }
-.leon .flipped {
+
+.leon.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .magellan {
   background-image: url("img/svg/Magellan.svg");
 }
-.magellan .flipped {
+
+.magellan.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .narvaez {
   background-image: url("img/svg/Narvaez.svg");
 }
-.narvaez .flipped {
+
+.narvaez.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .orellana {
   background-image: url("img/svg/Orellana.svg");
 }
-.orellana .flipped {
+
+.orellana.flipped {
   background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 
 .roberval {
   background-image: url("img/svg/Roberval.svg");
 }
-.roberval .flipped {
+
+.roberval.flipped {
   background-image: url("img/svg/French_Explorer_back.svg");
 }
 
 .rut {
   background-image: url("img/svg/Rut.svg");
 }
-.rut .flipped {
+
+.rut.flipped {
   background-image: url("img/svg/English_Explorer_back.svg");
 }
 
 .verrazano {
   background-image: url("img/svg/Verrazano.svg");
 }
-.verrazano .flipped {
+
+.verrazano.flipped {
   background-image: url("img/svg/French_Explorer_back.svg");
 }
 
 .willoughby {
   background-image: url("img/svg/Willoughby.svg");
 }
-.willoughby .flipped {
+
+.willoughby.flipped {
   background-image: url("img/svg/English_Explorer_back.svg");
 }
 
@@ -865,35 +952,40 @@
 .cordova {
   background-image: url("img/svg/Cordova.svg");
 }
-.cordova .flipped {
+
+.cordova.flipped {
   background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 
 .coronado {
   background-image: url("img/svg/Coronado.svg");
 }
-.coronado .flipped {
+
+.coronado.flipped {
   background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 
 .cortez {
   background-image: url("img/svg/Cortez.svg");
 }
-.cortez .flipped {
+
+.cortez.flipped {
   background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 
 .montejo {
   background-image: url("img/svg/Montejo.svg");
 }
-.montejo .flipped {
+
+.montejo.flipped {
   background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 
 .pizarro {
   background-image: url("img/svg/Pizarro.svg");
 }
-.pizarro .flipped {
+
+.pizarro.flipped {
   background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 
@@ -1024,42 +1116,48 @@
 .anne_boleyn {
   background-image: url("img/svg/AnneBoleyn.svg");
 }
-.anne_boleyn .flipped {
+
+.anne_boleyn.flipped {
   background-image: url("img/svg/AnneBoleyn_back.svg");
 }
 
 .anne_cleves {
   background-image: url("img/svg/AnneCleves.svg");
 }
-.anne_cleves .flipped {
+
+.anne_cleves.flipped {
   background-image: url("img/svg/AnneCleves_back.svg");
 }
 
 .catherine_aragon {
   background-image: url("img/svg/CatherineAragon.svg");
 }
-.catherine_aragon .flipped {
+
+.catherine_aragon.flipped {
   background-image: url("img/svg/CatherineAragon_back.svg");
 }
 
 .jane_seymour {
   background-image: url("img/svg/JaneSeymour.svg");
 }
-.jane_seymour .flipped {
+
+.jane_seymour.flipped {
   background-image: url("img/svg/JaneSeymour_back.svg");
 }
 
 .katherine_parr {
   background-image: url("img/svg/KatherineParr.svg");
 }
-.katherine_parr .flipped {
+
+.katherine_parr.flipped {
   background-image: url("img/svg/KatherineParr_back.svg");
 }
 
 .kathryn_howard {
   background-image: url("img/svg/KathrynHoward.svg");
 }
-.kathryn_howard .flipped {
+
+.kathryn_howard.flipped {
   background-image: url("img/svg/KathrynHoward_back.svg");
 }
 
@@ -1296,9 +1394,14 @@
   display: flex;
   width: 300px;
   flex-wrap: wrap;
+  z-index: 4;
 }
 .city:hover .token {
   position: relative;
+  z-index: 5;
+}
+.city:hover .Units.Naval {
+  left: -50px;
 }
 
 .token {
@@ -1312,8 +1415,8 @@
 }
 
 .Hex {
-  top: -55px;
-  left: -45px;
+  top: -57px;
+  left: -46px;
   height: 110px;
   order: 1;
 }
@@ -1326,15 +1429,25 @@
 }
 
 .Units {
-  z-index: 2;
+  z-index: 3;
   top: -54px;
   left: -48px;
+  order: 3;
+}
+
+.Units.Naval {
+  z-index: 2;
+  top: -54px;
+  left: -100px;
+  height: 100px;
+  width: 200px;
+  background-size: 200px;
   order: 2;
 }
 
 .Leader {
-  z-index: 3;
-  order: 3;
+  z-index: 4;
+  order: 4;
 }
 
 .card {

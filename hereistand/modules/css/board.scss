@@ -58,8 +58,13 @@
   display: flex;
   width: 300px;
   flex-wrap: wrap;
+  z-index: 4;
   .token {
     position: relative;
+    z-index: 5;
+  }
+  .Units.Naval {
+    left: -50px;
   }
 }
 
@@ -74,8 +79,8 @@
 }
 
 .Hex {
-  top: -55px;
-  left: -45px;
+  top: -57px;
+  left: -46px;
   height: 110px;
   order: 1;
 }
@@ -88,15 +93,25 @@
 }
 
 .Units {
-  z-index: 2;
+  z-index: 3;
   top: -54px;
   left: -48px;
+  order: 3;
+}
+
+.Units.Naval {
+  z-index: 2;
+  top: -54px;
+  left: -100px;
+  height: 100px;
+  width: 200px;
+  background-size: 200px;
   order: 2;
 }
 
 .Leader {
-  z-index: 3;
-  order: 3;
+  z-index: 4;
+  order: 4;
 }
 
 .card {

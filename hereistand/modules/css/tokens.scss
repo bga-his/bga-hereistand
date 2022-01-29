@@ -1,939 +1,1056 @@
 .england_key {
 	background-image: url("img/svg/England_key.svg");
-	.flipped {
-		background-image: url("img/svg/England_key_back.svg");
-	}
+}
+.england_key.flipped {
+	background-image: url("img/svg/England_key_back.svg");
 }
 .france_key {
 	background-image: url("img/svg/France_key.svg");
-	.flipped {
-		background-image: url("img/svg/France_key_back.svg");
-	}
+}
+.france_key.flipped {
+	background-image: url("img/svg/France_key_back.svg");
 }
 .hapsburg_key {
 	background-image: url("img/svg/Hapsburg_key.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_key_back.svg");
-	}
+}
+.hapsburg_key.flipped {
+	background-image: url("img/svg/Hapsburg_key_back.svg");
 }
 .ottoman_key {
 	background-image: url("img/svg/Ottoman_key.svg");
-	.flipped {
-		background-image: url("img/svg/Ottoman_key_back.svg");
-	}
+}
+.ottoman_key.flipped {
+	background-image: url("img/svg/Ottoman_key_back.svg");
 }
 .independent_key {
 	background-image: url("img/svg/Independent_key.svg");
-	.flipped {
-		background-image: url("img/svg/Independent_key_back.svg");
-	}
+}
+.independent_key.flipped {
+	background-image: url("img/svg/Independent_key_back.svg");
 }
 .papacy_key {
 	background-image: url("img/svg/Papacy_key.svg");
-	.flipped {
-		background-image: url("img/svg/Papacy_key_back.svg");
-	}
+}
+.papacy_key.flipped {
+	background-image: url("img/svg/Papacy_key_back.svg");
 }
 .england_hex {
 	background-image: url("img/svg/England_hex.svg");
-	.flipped {
-		background-image: url("img/svg/England_hex_back.svg");
-	}
+}
+.england_hex.flipped {
+	background-image: url("img/svg/England_hex_back.svg");
 }
 .france_hex {
 	background-image: url("img/svg/France_hex.svg");
-	.flipped {
-		background-image: url("img/svg/France_hex_back.svg");
-	}
+}
+.france_hex.flipped {
+	background-image: url("img/svg/France_hex_back.svg");
 }
 .hapsburg_hex {
 	background-image: url("img/svg/Hapsburg_hex.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_hex_back.svg");
-	}
+}
+.hapsburg_hex.flipped {
+	background-image: url("img/svg/Hapsburg_hex_back.svg");
 }
 .independent_hex {
 	background-image: url("img/svg/Independent_hex.svg");
-	.flipped {
-		background-image: url("img/svg/Independent_hex_back.svg");
-	}
+}
+.independent_hex.flipped {
+	background-image: url("img/svg/Independent_hex_back.svg");
 }
 .ottoman_hex {
 	background-image: url("img/svg/Ottoman_hex.svg");
-	.flipped {
-		background-image: url("img/svg/Ottoman_hex_back.svg");
-	}
+}
+.ottoman_hex.flipped {
+	background-image: url("img/svg/Ottoman_hex_back.svg");
 }
 .papacy_hex {
 	background-image: url("img/svg/Papacy_hex.svg");
-	.flipped {
-		background-image: url("img/svg/Papacy_hex_back.svg");
-	}
+}
+.papacy_hex.flipped {
+	background-image: url("img/svg/Papacy_hex_back.svg");
 }
 .protestant_hex {
 	background-image: url("img/svg/Protestant_hex.svg");
-	.flipped {
-		background-image: url("img/svg/Protestant_hex_back.svg");
-	}
+}
+.protestant_hex.flipped {
+	background-image: url("img/svg/Protestant_hex_back.svg");
 }
 .england_1unit {
 	background-image: url("img/svg/EnglandReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/EnglandMerc-1.svg");
-	}
+}
+.england_1unit.flipped {
+	background-image: url("img/svg/EnglandMerc-1.svg");
 }
 .england_2unit {
 	background-image: url("img/svg/EnglandReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/EnglandMerc-2.svg");
-	}
+}
+.england_2unit.flipped {
+	background-image: url("img/svg/EnglandMerc-2.svg");
 }
 .england_4unit {
 	background-image: url("img/svg/EnglandReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/EnglandMerc-4.svg");
-	}
+}
+.england_4unit.flipped {
+	background-image: url("img/svg/EnglandMerc-4.svg");
 }
 .england_6unit {
 	background-image: url("img/svg/EnglandReg-6.svg");
-	.flipped {
-		background-image: url("img/svg/EnglandMerc-6.svg");
-	}
+}
+.england_6unit.flipped {
+	background-image: url("img/svg/EnglandMerc-6.svg");
 }
 .france_1unit {
 	background-image: url("img/svg/FrenchReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/FrenchMerc-1.svg");
-	}
+}
+.france_1unit.flipped {
+	background-image: url("img/svg/FrenchMerc-1.svg");
 }
 .france_2unit {
 	background-image: url("img/svg/FrenchReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/FrenchMerc-2.svg");
-	}
+}
+.france_2unit.flipped {
+	background-image: url("img/svg/FrenchMerc-2.svg");
 }
 .france_4unit {
 	background-image: url("img/svg/FrenchReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/FrenchMerc-4.svg");
-	}
+}
+.france_4unit.flipped {
+	background-image: url("img/svg/FrenchMerc-4.svg");
 }
 .france_6unit {
 	background-image: url("img/svg/FrenchReg-6.svg");
-	.flipped {
-		background-image: url("img/svg/FrenchMerc-6.svg");
-	}
+}
+.france_6unit.flipped {
+	background-image: url("img/svg/FrenchMerc-6.svg");
 }
 .genoa_1unit {
 	background-image: url("img/svg/GenoaReg-1.svg");
 }
+
 .genoa_2unit {
 	background-image: url("img/svg/GenoaReg-2.svg");
 }
+
 .hapsburg_1unit {
 	background-image: url("img/svg/HapsburgReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/HapsburgMerc-1.svg");
-	}
+}
+.hapsburg_1unit.flipped {
+	background-image: url("img/svg/HapsburgMerc-1.svg");
 }
 .hapsburg_2unit {
 	background-image: url("img/svg/HapsburgReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/HapsburgMerc-2.svg");
-	}
+}
+.hapsburg_2unit.flipped {
+	background-image: url("img/svg/HapsburgMerc-2.svg");
 }
 .hapsburg_4unit {
 	background-image: url("img/svg/HapsburgReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/HapsburgMerc-4.svg");
-	}
+}
+.hapsburg_4unit.flipped {
+	background-image: url("img/svg/HapsburgMerc-4.svg");
 }
 .hapsburg_6unit {
 	background-image: url("img/svg/HapsburgReg-6.svg");
-	.flipped {
-		background-image: url("img/svg/HapsburgMerc-6.svg");
-	}
+}
+.hapsburg_6unit.flipped {
+	background-image: url("img/svg/HapsburgMerc-6.svg");
 }
 .hungary_1unit {
 	background-image: url("img/svg/HungaryReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/HungaryReg-2.svg");
-	}
+}
+.hungary_1unit.flipped {
+	background-image: url("img/svg/HungaryReg-2.svg");
 }
 .hungary_4unit {
 	background-image: url("img/svg/HungaryReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/HungaryReg-2.svg");
-	}
+}
+.hungary_4unit.flipped {
+	background-image: url("img/svg/HungaryReg-2.svg");
 }
 .independent_1unit {
 	background-image: url("img/svg/IndependentReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/IndependentReg-2.svg");
-	}
+}
+.independent_1unit.flipped {
+	background-image: url("img/svg/IndependentReg-2.svg");
 }
 .knights_1unit {
 	background-image: url("img/svg/Knights_St_John.svg");
 }
+
 .ottoman_1unit {
 	background-image: url("img/svg/OttomanReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/OttomanCav-1.svg");
-	}
+}
+.ottoman_1unit.flipped {
+	background-image: url("img/svg/OttomanCav-1.svg");
 }
 .ottoman_2unit {
 	background-image: url("img/svg/OttomanReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/OttomanCav-2.svg");
-	}
+}
+.ottoman_2unit.flipped {
+	background-image: url("img/svg/OttomanCav-2.svg");
 }
 .ottoman_4unit {
 	background-image: url("img/svg/OttomanReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/OttomanCav-4.svg");
-	}
+}
+.ottoman_4unit.flipped {
+	background-image: url("img/svg/OttomanCav-4.svg");
 }
 .ottoman_6unit {
 	background-image: url("img/svg/OttomanReg-6.svg");
-	.flipped {
-		background-image: url("img/svg/OttomanCav-6.svg");
-	}
+}
+.ottoman_6unit.flipped {
+	background-image: url("img/svg/OttomanCav-6.svg");
 }
 .papacy_1unit {
 	background-image: url("img/svg/PapacyReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/PapacyMerc-1.svg");
-	}
+}
+.papacy_1unit.flipped {
+	background-image: url("img/svg/PapacyMerc-1.svg");
 }
 .papacy_2unit {
 	background-image: url("img/svg/PapacyReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/PapacyMerc-2.svg");
-	}
+}
+.papacy_2unit.flipped {
+	background-image: url("img/svg/PapacyMerc-2.svg");
 }
 .papacy_4unit {
 	background-image: url("img/svg/PapacyReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/PapacyMerc-4.svg");
-	}
+}
+.papacy_4unit.flipped {
+	background-image: url("img/svg/PapacyMerc-4.svg");
 }
 .protestant_1unit {
 	background-image: url("img/svg/ProtestantReg-1.svg");
-	.flipped {
-		background-image: url("img/svg/ProtestantMerc-1.svg");
-	}
+}
+.protestant_1unit.flipped {
+	background-image: url("img/svg/ProtestantMerc-1.svg");
 }
 .protestant_2unit {
 	background-image: url("img/svg/ProtestantReg-2.svg");
-	.flipped {
-		background-image: url("img/svg/ProtestantMerc-2.svg");
-	}
+}
+.protestant_2unit.flipped {
+	background-image: url("img/svg/ProtestantMerc-2.svg");
 }
 .protestant_4unit {
 	background-image: url("img/svg/ProtestantReg-4.svg");
-	.flipped {
-		background-image: url("img/svg/ProtestantMerc-4.svg");
-	}
+}
+.protestant_4unit.flipped {
+	background-image: url("img/svg/ProtestantMerc-4.svg");
 }
 .scotland_1unit {
 	background-image: url("img/svg/ScottishReg-1.svg");
 }
+
 .scotland_2unit {
 	background-image: url("img/svg/ScottishReg-2.svg");
 }
+
 .venice_1unit {
 	background-image: url("img/svg/VeniceReg-1.svg");
 }
+
 .venice_2unit {
 	background-image: url("img/svg/VeniceReg-2.svg");
 }
+
 .brandon {
 	background-image: url("img/svg/Brandon.svg");
 }
+
 .charles_v {
 	background-image: url("img/svg/Charles_V.svg");
 }
+
 .dudley {
 	background-image: url("img/svg/Dudley.svg");
 }
+
 .duke_alva {
 	background-image: url("img/svg/Duke_of_Alva.svg");
 }
+
 .ferdinand {
 	background-image: url("img/svg/Ferdinand.svg");
 }
+
 .francis_i {
 	background-image: url("img/svg/Francis_I.svg");
 }
+
 .henry_ii {
 	background-image: url("img/svg/Henry_II.svg");
 }
+
 .henry_viii {
 	background-image: url("img/svg/Henry_VIII.svg");
 }
+
 .ibrahim {
 	background-image: url("img/svg/Ibrahim.svg");
 }
+
 .john_frederick {
 	background-image: url("img/svg/John_Frederick.svg");
 }
+
 .maurice_of_saxony {
 	background-image: url("img/svg/Maurice_Protestant.svg");
-	.flipped {
-		background-image: url("img/svg/Maurice_Hapsburg.svg");
-	}
+}
+.maurice_of_saxony.flipped {
+	background-image: url("img/svg/Maurice_Hapsburg.svg");
 }
 .montmorency {
 	background-image: url("img/svg/Montmorency.svg");
 }
+
 .philip_hesse {
 	background-image: url("img/svg/Philip_Hesse.svg");
 }
+
 .renegade {
 	background-image: url("img/svg/Renegade.svg");
 }
+
 .suleiman {
 	background-image: url("img/svg/Suleiman.svg");
 }
+
 .english_squadron {
 	background-image: url("img/svg/English_squadron.svg");
 }
+
 .french_squadron {
 	background-image: url("img/svg/French_squadron.svg");
 }
+
 .genoese_sqauadron {
 	background-image: url("img/svg/Genoa_squadron.svg");
 }
+
 .hapsburg_squadron {
 	background-image: url("img/svg/Hapsburg_squadron.svg");
 }
+
 .ottoman_squadron {
 	background-image: url("img/svg/Ottoman_squadron.svg");
-	.flipped {
-		background-image: url("img/svg/Ottoman_corsair.svg");
-	}
+}
+.ottoman_squadron.flipped {
+	background-image: url("img/svg/Ottoman_corsair.svg");
 }
 .papacy_squadron {
 	background-image: url("img/svg/Papacy_squadron.svg");
 }
+
 .scottish_squadron {
 	background-image: url("img/svg/Scottish_squadron.svg");
 }
+
 .venetian_squadron {
 	background-image: url("img/svg/Venice_squadron.svg");
 }
+
 .andrea_doria {
 	background-image: url("img/svg/Andrea_Doria.svg");
 }
+
 .barbarossa {
 	background-image: url("img/svg/Barbarossa.svg");
 }
+
 .dragut {
 	background-image: url("img/svg/Dragut.svg");
 }
+
 .allied {
 	background-image: url("img/svg/Allied.svg");
 }
+
 .at_war {
 	background-image: url("img/svg/AtWar.svg");
 }
+
 .unrest {
 	background-image: url("img/svg/Unrest.svg");
 }
+
 .vp_england {
 	background-image: url("img/svg/VP_England.svg");
 }
+
 .vp_france {
 	background-image: url("img/svg/VP_France.svg");
 }
+
 .vp_hapsburg {
 	background-image: url("img/svg/VP_Hapsburg.svg");
 }
+
 .vp_ottoman {
 	background-image: url("img/svg/VP_Ottoman.svg");
 }
+
 .vp_papacy {
 	background-image: url("img/svg/VP_Papacy.svg");
 }
+
 .vp_protestant {
 	background-image: url("img/svg/VP_Protestant.svg");
 }
+
 .loaned_england {
 	background-image: url("img/svg/Loaned_England.svg");
 }
+
 .loaned_france {
 	background-image: url("img/svg/Loaned_France.svg");
 }
+
 .loaned_hapsburg {
 	background-image: url("img/svg/Loaned_Hapsburg.svg");
 }
+
 .loaned_ottoman {
 	background-image: url("img/svg/Loaned_Ottoman.svg");
 }
+
 .loaned_papacy {
 	background-image: url("img/svg/Loaned_Papacy.svg");
 }
+
 .calvin_reformer {
 	background-image: url("img/svg/CalvinReformer.svg");
 }
+
 .cranmer_reformer {
 	background-image: url("img/svg/CranmerReformer.svg");
 }
+
 .luther_reformer {
 	background-image: url("img/svg/LutherReformer.svg");
 }
+
 .zwingli_reformer {
 	background-image: url("img/svg/ZwingliReformer.svg");
 }
+
 .aleander {
 	background-image: url("img/svg/AleanderDebater.svg");
-	.flipped {
-		background-image: url("img/svg/AleanderDebater_back.svg");
-	}
+}
+.aleander.flipped {
+	background-image: url("img/svg/AleanderDebater_back.svg");
 }
 .cajetan {
 	background-image: url("img/svg/CajetanDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CajetanDebater_back.svg");
-	}
+}
+.cajetan.flipped {
+	background-image: url("img/svg/CajetanDebater_back.svg");
 }
 .campeggio {
 	background-image: url("img/svg/CampeggioDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CampeggioDebater_back.svg");
-	}
+}
+.campeggio.flipped {
+	background-image: url("img/svg/CampeggioDebater_back.svg");
 }
 .canisius {
 	background-image: url("img/svg/CanisiusDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CanisiusDebater_back.svg");
-	}
+}
+.canisius.flipped {
+	background-image: url("img/svg/CanisiusDebater_back.svg");
 }
 .caraffa {
 	background-image: url("img/svg/CaraffaDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CaraffaDebater_back.svg");
-	}
+}
+.caraffa.flipped {
+	background-image: url("img/svg/CaraffaDebater_back.svg");
 }
 .contarini {
 	background-image: url("img/svg/ContariniDebater.svg");
-	.flipped {
-		background-image: url("img/svg/ContariniDebater_back.svg");
-	}
+}
+.contarini.flipped {
+	background-image: url("img/svg/ContariniDebater_back.svg");
 }
 .eck {
 	background-image: url("img/svg/EckDebater.svg");
-	.flipped {
-		background-image: url("img/svg/EckDebater_back.svg");
-	}
+}
+.eck.flipped {
+	background-image: url("img/svg/EckDebater_back.svg");
 }
 .faber {
 	background-image: url("img/svg/FaberDebater.svg");
-	.flipped {
-		background-image: url("img/svg/FaberDebater_back.svg");
-	}
+}
+.faber.flipped {
+	background-image: url("img/svg/FaberDebater_back.svg");
 }
 .gardiner {
 	background-image: url("img/svg/GardinerDebater.svg");
-	.flipped {
-		background-image: url("img/svg/GardinerDebater_back.svg");
-	}
+}
+.gardiner.flipped {
+	background-image: url("img/svg/GardinerDebater_back.svg");
 }
 .loyola {
 	background-image: url("img/svg/LoyolaDebater.svg");
-	.flipped {
-		background-image: url("img/svg/LoyolaDebater_back.svg");
-	}
+}
+.loyola.flipped {
+	background-image: url("img/svg/LoyolaDebater_back.svg");
 }
 .pole {
 	background-image: url("img/svg/PoleDebater.svg");
-	.flipped {
-		background-image: url("img/svg/PoleDebater_back.svg");
-	}
+}
+.pole.flipped {
+	background-image: url("img/svg/PoleDebater_back.svg");
 }
 .tetzel {
 	background-image: url("img/svg/TetzelDebater.svg");
-	.flipped {
-		background-image: url("img/svg/TetzelDebater_back.svg");
-	}
+}
+.tetzel.flipped {
+	background-image: url("img/svg/TetzelDebater_back.svg");
 }
 .bucer {
 	background-image: url("img/svg/BucerDebater.svg");
-	.flipped {
-		background-image: url("img/svg/BucerDebater_back.svg");
-	}
+}
+.bucer.flipped {
+	background-image: url("img/svg/BucerDebater_back.svg");
 }
 .bullinger {
 	background-image: url("img/svg/BullingerDebater.svg");
-	.flipped {
-		background-image: url("img/svg/BullingerDebater_back.svg");
-	}
+}
+.bullinger.flipped {
+	background-image: url("img/svg/BullingerDebater_back.svg");
 }
 .calvin {
 	background-image: url("img/svg/CalvinDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CalvinDebater_back.svg");
-	}
+}
+.calvin.flipped {
+	background-image: url("img/svg/CalvinDebater_back.svg");
 }
 .carlstadt {
 	background-image: url("img/svg/CarlstadtDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CarlstadtDebater_back.svg");
-	}
+}
+.carlstadt.flipped {
+	background-image: url("img/svg/CarlstadtDebater_back.svg");
 }
 .cop {
 	background-image: url("img/svg/CopDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CopDebater_back.svg");
-	}
+}
+.cop.flipped {
+	background-image: url("img/svg/CopDebater_back.svg");
 }
 .coverdale {
 	background-image: url("img/svg/CoverdaleDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CoverdaleDebater_back.svg");
-	}
+}
+.coverdale.flipped {
+	background-image: url("img/svg/CoverdaleDebater_back.svg");
 }
 .cranmer {
 	background-image: url("img/svg/CranmerDebater.svg");
-	.flipped {
-		background-image: url("img/svg/CranmerDebater_back.svg");
-	}
+}
+.cranmer.flipped {
+	background-image: url("img/svg/CranmerDebater_back.svg");
 }
 .farel {
 	background-image: url("img/svg/FarelDebater.svg");
-	.flipped {
-		background-image: url("img/svg/FarelDebater_back.svg");
-	}
+}
+.farel.flipped {
+	background-image: url("img/svg/FarelDebater_back.svg");
 }
 .knox {
 	background-image: url("img/svg/KnoxDebater.svg");
-	.flipped {
-		background-image: url("img/svg/KnoxDebater_back.svg");
-	}
+}
+.knox.flipped {
+	background-image: url("img/svg/KnoxDebater_back.svg");
 }
 .latimer {
 	background-image: url("img/svg/LatimerDebater.svg");
-	.flipped {
-		background-image: url("img/svg/LatimerDebater_back.svg");
-	}
+}
+.latimer.flipped {
+	background-image: url("img/svg/LatimerDebater_back.svg");
 }
 .luther {
 	background-image: url("img/svg/LutherDebater.svg");
-	.flipped {
-		background-image: url("img/svg/LutherDebater_back.svg");
-	}
+}
+.luther.flipped {
+	background-image: url("img/svg/LutherDebater_back.svg");
 }
 .melanchthon {
 	background-image: url("img/svg/MelanchthonDebater.svg");
-	.flipped {
-		background-image: url("img/svg/MelanchthonDebater_back.svg");
-	}
+}
+.melanchthon.flipped {
+	background-image: url("img/svg/MelanchthonDebater_back.svg");
 }
 .oekolampadius {
 	background-image: url("img/svg/OekolampadiusDebater.svg");
-	.flipped {
-		background-image: url("img/svg/OekolampadiusDebater_back.svg");
-	}
+}
+.oekolampadius.flipped {
+	background-image: url("img/svg/OekolampadiusDebater_back.svg");
 }
 .olivetan {
 	background-image: url("img/svg/OlivetanDebater.svg");
-	.flipped {
-		background-image: url("img/svg/OlivetanDebater_back.svg");
-	}
+}
+.olivetan.flipped {
+	background-image: url("img/svg/OlivetanDebater_back.svg");
 }
 .tyndale {
 	background-image: url("img/svg/TyndaleDebater.svg");
-	.flipped {
-		background-image: url("img/svg/TyndaleDebater_back.svg");
-	}
+}
+.tyndale.flipped {
+	background-image: url("img/svg/TyndaleDebater_back.svg");
 }
 .wishart {
 	background-image: url("img/svg/WishartDebater.svg");
-	.flipped {
-		background-image: url("img/svg/WishartDebater_back.svg");
-	}
+}
+.wishart.flipped {
+	background-image: url("img/svg/WishartDebater_back.svg");
 }
 .zwingli {
 	background-image: url("img/svg/ZwingliDebater.svg");
-	.flipped {
-		background-image: url("img/svg/ZwingliDebater_back.svg");
-	}
+}
+.zwingli.flipped {
+	background-image: url("img/svg/ZwingliDebater_back.svg");
 }
 .english_exploration {
 	background-image: url("img/svg/English_ExplorationCharted.svg");
-	.flipped {
-		background-image: url("img/svg/English_Exploration.svg");
-	}
+}
+.english_exploration.flipped {
+	background-image: url("img/svg/English_Exploration.svg");
 }
 .french_exploration {
 	background-image: url("img/svg/French_ExplorationCharted.svg");
-	.flipped {
-		background-image: url("img/svg/French_Exploration.svg");
-	}
+}
+.french_exploration.flipped {
+	background-image: url("img/svg/French_Exploration.svg");
 }
 .hapsburg_exploration {
 	background-image: url("img/svg/Hapsburg_ExplorationCharted.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Exploration.svg");
-	}
+}
+.hapsburg_exploration.flipped {
+	background-image: url("img/svg/Hapsburg_Exploration.svg");
 }
 .cabot_eng {
 	background-image: url("img/svg/Cabot_English.svg");
-	.flipped {
-		background-image: url("img/svg/English_Explorer_back.svg");
-	}
+}
+.cabot_eng.flipped {
+	background-image: url("img/svg/English_Explorer_back.svg");
 }
 .cabot_fre {
 	background-image: url("img/svg/Cabot_French.svg");
-	.flipped {
-		background-image: url("img/svg/French_Explorer_back.svg");
-	}
+}
+.cabot_fre.flipped {
+	background-image: url("img/svg/French_Explorer_back.svg");
 }
 .cabot_hap {
 	background-image: url("img/svg/Cabot_Hapsburg.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.cabot_hap.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .cartier {
 	background-image: url("img/svg/Cartier.svg");
-	.flipped {
-		background-image: url("img/svg/French_Explorer_back.svg");
-	}
+}
+.cartier.flipped {
+	background-image: url("img/svg/French_Explorer_back.svg");
 }
 .chancellor {
 	background-image: url("img/svg/Chancellor.svg");
-	.flipped {
-		background-image: url("img/svg/English_Explorer_back.svg");
-	}
+}
+.chancellor.flipped {
+	background-image: url("img/svg/English_Explorer_back.svg");
 }
 .de_vaca {
 	background-image: url("img/svg/De_Vaca.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.de_vaca.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .de_soto {
 	background-image: url("img/svg/DeSoto.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.de_soto.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .leon {
 	background-image: url("img/svg/Leon.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.leon.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .magellan {
 	background-image: url("img/svg/Magellan.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.magellan.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .narvaez {
 	background-image: url("img/svg/Narvaez.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.narvaez.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .orellana {
 	background-image: url("img/svg/Orellana.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Explorer_back.svg");
-	}
+}
+.orellana.flipped {
+	background-image: url("img/svg/Hapsburg_Explorer_back.svg");
 }
 .roberval {
 	background-image: url("img/svg/Roberval.svg");
-	.flipped {
-		background-image: url("img/svg/French_Explorer_back.svg");
-	}
+}
+.roberval.flipped {
+	background-image: url("img/svg/French_Explorer_back.svg");
 }
 .rut {
 	background-image: url("img/svg/Rut.svg");
-	.flipped {
-		background-image: url("img/svg/English_Explorer_back.svg");
-	}
+}
+.rut.flipped {
+	background-image: url("img/svg/English_Explorer_back.svg");
 }
 .verrazano {
 	background-image: url("img/svg/Verrazano.svg");
-	.flipped {
-		background-image: url("img/svg/French_Explorer_back.svg");
-	}
+}
+.verrazano.flipped {
+	background-image: url("img/svg/French_Explorer_back.svg");
 }
 .willoughby {
 	background-image: url("img/svg/Willoughby.svg");
-	.flipped {
-		background-image: url("img/svg/English_Explorer_back.svg");
-	}
+}
+.willoughby.flipped {
+	background-image: url("img/svg/English_Explorer_back.svg");
 }
 .charlesbourg {
 	background-image: url("img/svg/Charlesbourg.svg");
 }
+
 .cuba {
 	background-image: url("img/svg/Cuba.svg");
 }
+
 .hispaniola {
 	background-image: url("img/svg/Hispaniola.svg");
 }
+
 .jamestown {
 	background-image: url("img/svg/Jamestown.svg");
 }
+
 .montreal {
 	background-image: url("img/svg/Montreal.svg");
 }
+
 .potosi {
 	background-image: url("img/svg/Potosi.svg");
 }
+
 .puerto_rico {
 	background-image: url("img/svg/PuertoRico.svg");
 }
+
 .roanoke {
 	background-image: url("img/svg/Roanoke.svg");
 }
+
 .hapsburg_conquest {
 	background-image: url("img/svg/Hapsburg_Conquest.svg");
 }
+
 .english_conquest {
 	background-image: url("img/svg/English_Conquest.svg");
 }
+
 .french_conquest {
 	background-image: url("img/svg/French_Conquest.svg");
 }
+
 .cordova {
 	background-image: url("img/svg/Cordova.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
-	}
+}
+.cordova.flipped {
+	background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 .coronado {
 	background-image: url("img/svg/Coronado.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
-	}
+}
+.coronado.flipped {
+	background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 .cortez {
 	background-image: url("img/svg/Cortez.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
-	}
+}
+.cortez.flipped {
+	background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 .montejo {
 	background-image: url("img/svg/Montejo.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
-	}
+}
+.montejo.flipped {
+	background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 .pizarro {
 	background-image: url("img/svg/Pizarro.svg");
-	.flipped {
-		background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
-	}
+}
+.pizarro.flipped {
+	background-image: url("img/svg/Hapsburg_Conqueror_back.svg");
 }
 .english_prot_counter {
 	background-image: url("img/svg/EnglishHomeSpaces.svg");
 }
+
 .protestant_spaces {
 	background-image: url("img/svg/ProtestantSpaces.svg");
 }
+
 .turn {
 	background-image: url("img/svg/Turn.svg");
 }
+
 .minus_one_card {
 	background-image: url("img/svg/-1Card.svg");
 }
+
 .great_lakes_1vp {
 	background-image: url("img/svg/GreatLakes1VP.svg");
 }
+
 .mississippi_river_1vp {
 	background-image: url("img/svg/MississippiRiver1VP.svg");
 }
+
 .st_lawrence_river_1vp {
 	background-image: url("img/svg/StLawrenceRiver1VP.svg");
 }
+
 .amazon_river_2vp {
 	background-image: url("img/svg/AmazonRiver2VP.svg");
 }
+
 .pacific_strait_1vp {
 	background-image: url("img/svg/PacificStrait1VP.svg");
 }
+
 .circumnavigation_3vp {
 	background-image: url("img/svg/Circumnavigation3VP.svg");
 }
+
 .maya_1vp {
 	background-image: url("img/svg/Maya1VP.svg");
 }
+
 .aztecs_2vp {
 	background-image: url("img/svg/Aztecs2VP.svg");
 }
+
 .inca_2vp {
 	background-image: url("img/svg/Inca2VP.svg");
 }
+
 .bible_eng_1vp {
 	background-image: url("img/svg/BibleEnglish1VP.svg");
 }
+
 .bible_fre_1vp {
 	background-image: url("img/svg/BibleFrench1VP.svg");
 }
+
 .bible_ger_1vp {
 	background-image: url("img/svg/BibleGerman1VP.svg");
 }
+
 .chateaux_vp {
 	background-image: url("img/svg/ChateauxVP.svg");
 }
+
 .piracy_vp {
 	background-image: url("img/svg/PiracyVP.svg");
 }
+
 .st_peters_vp {
 	background-image: url("img/svg/StPetersVP.svg");
 }
+
 .copernicus_1vp {
 	background-image: url("img/svg/Copernicus1VP.svg");
 }
+
 .copernicus_2vp {
 	background-image: url("img/svg/Copernicus.svg");
 }
+
 .edward_5vp {
 	background-image: url("img/svg/Edward.svg");
 }
+
 .elizabeth_2vp {
 	background-image: url("img/svg/Elizabeth.svg");
 }
+
 .gonzaga_1vp {
 	background-image: url("img/svg/Gonzaga.svg");
 }
+
 .servetus_1vp {
 	background-image: url("img/svg/Servetus.svg");
 }
+
 .master_of_italy_1vp {
 	background-image: url("img/svg/MasterOfItaly1VP.svg");
 }
+
 .master_of_italy_2vp {
 	background-image: url("img/svg/MasterOfItaly2VP.svg");
 }
+
 .war_winner_1vp {
 	background-image: url("img/svg/WarWinner1VP.svg");
 }
+
 .war_winner_2vp {
 	background-image: url("img/svg/WarWinner2VP.svg");
 }
+
 .phonyscotland_minus1 {
 	background-image: url("img/svg/PhonyScotland-1VP.svg");
 }
+
 .phonyvenice_minus1 {
 	background-image: url("img/svg/PhonyVenice-1VP.svg");
 }
+
 .anne_boleyn {
 	background-image: url("img/svg/AnneBoleyn.svg");
-	.flipped {
-		background-image: url("img/svg/AnneBoleyn_back.svg");
-	}
+}
+.anne_boleyn.flipped {
+	background-image: url("img/svg/AnneBoleyn_back.svg");
 }
 .anne_cleves {
 	background-image: url("img/svg/AnneCleves.svg");
-	.flipped {
-		background-image: url("img/svg/AnneCleves_back.svg");
-	}
+}
+.anne_cleves.flipped {
+	background-image: url("img/svg/AnneCleves_back.svg");
 }
 .catherine_aragon {
 	background-image: url("img/svg/CatherineAragon.svg");
-	.flipped {
-		background-image: url("img/svg/CatherineAragon_back.svg");
-	}
+}
+.catherine_aragon.flipped {
+	background-image: url("img/svg/CatherineAragon_back.svg");
 }
 .jane_seymour {
 	background-image: url("img/svg/JaneSeymour.svg");
-	.flipped {
-		background-image: url("img/svg/JaneSeymour_back.svg");
-	}
+}
+.jane_seymour.flipped {
+	background-image: url("img/svg/JaneSeymour_back.svg");
 }
 .katherine_parr {
 	background-image: url("img/svg/KatherineParr.svg");
-	.flipped {
-		background-image: url("img/svg/KatherineParr_back.svg");
-	}
+}
+.katherine_parr.flipped {
+	background-image: url("img/svg/KatherineParr_back.svg");
 }
 .kathryn_howard {
 	background-image: url("img/svg/KathrynHoward.svg");
-	.flipped {
-		background-image: url("img/svg/KathrynHoward_back.svg");
-	}
+}
+.kathryn_howard.flipped {
+	background-image: url("img/svg/KathrynHoward_back.svg");
 }
 .henry_marital_status {
 	background-image: url("img/svg/HenryMaritalStatus.svg");
 }
+
 .bible_english {
 	background-image: url("img/svg/BibleEnglish.svg");
 }
+
 .bible_french {
 	background-image: url("img/svg/BibleFrench.svg");
 }
+
 .bible_german {
 	background-image: url("img/svg/BibleGerman.svg");
 }
+
 .new_testament_english {
 	background-image: url("img/svg/NewTestament_English.svg");
 }
+
 .new_testament_french {
 	background-image: url("img/svg/NewTestament_French.svg");
 }
+
 .new_testament_german {
 	background-image: url("img/svg/NewTestament_German.svg");
 }
+
 .st_peters_cp {
 	background-image: url("img/svg/StPetersCP.svg");
 }
+
 .augsburg_confession {
 	background-image: url("img/svg/AugsburgConfession.svg");
 }
+
 .printing_press {
 	background-image: url("img/svg/PrintingPress.svg");
 }
+
 .colonial_governor {
 	background-image: url("img/svg/ColonialGovernor.svg");
 }
+
 .galleons {
 	background-image: url("img/svg/Galleons.svg");
 }
+
 .plantations {
 	background-image: url("img/svg/Plantations.svg");
 }
+
 .piracy {
 	background-image: url("img/svg/Piracy.svg");
 }
+
 .native_uprising {
 	background-image: url("img/svg/NativeUprising.svg");
 }
+
 .raider_english {
 	background-image: url("img/svg/Raider_English.svg");
 }
+
 .raider_french {
 	background-image: url("img/svg/Raider_French.svg");
 }
+
 .raider_protestant {
 	background-image: url("img/svg/Raider_Protestant.svg");
 }
+
 .mercator_map {
 	background-image: url("img/svg/Mercator.svg");
 }
+
 .smallpox {
 	background-image: url("img/svg/Smallpox.svg");
 }
+
 .thomas_more {
 	background-image: url("img/svg/ThomasMore.svg");
 }
+
 .wartburg {
 	background-image: url("img/svg/Wartburg.svg");
 }
+
 .excommunicated {
 	background-image: url("img/svg/Excommunicated.svg");
 }
+
 .fortress {
 	background-image: url("img/svg/Fortress.svg");
 }
+
 .pirate_haven {
 	background-image: url("img/svg/PirateHaven.svg");
 }
+
 .jesuit_university {
 	background-image: url("img/svg/Jesuit_Univ.svg");
 }
+

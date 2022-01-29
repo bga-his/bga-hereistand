@@ -11,6 +11,8 @@ trait SetupTrait {
 					OTTOMAN_6UNIT,
 					OTTOMAN_1UNIT,
 					OTTOMAN_KEY,
+					OTTOMAN_SQUADRON,
+					OTTOMAN_1UNIT,
 				],
 				EDIRNE => [
 					OTTOMAN_1UNIT,
@@ -19,10 +21,12 @@ trait SetupTrait {
 				SALONIKA => [
 					OTTOMAN_1UNIT,
 					OTTOMAN_KEY,
+					OTTOMAN_SQUADRON,
 				],
 				ATHENS => [
 					OTTOMAN_1UNIT,
 					OTTOMAN_KEY,
+					OTTOMAN_SQUADRON,
 				],
 			],
 			HAPSBURG => [
@@ -35,10 +39,12 @@ trait SetupTrait {
 				SEVILLE => [
 					HAPSBURG_1UNIT,
 					HAPSBURG_KEY,
+					HAPSBURG_SQUADRON,
 				],
 				BARCELONA => [
 					HAPSBURG_1UNIT,
 					HAPSBURG_KEY,
+					HAPSBURG_SQUADRON,
 				],
 				NAVARRE => [
 					HAPSBURG_1UNIT,
@@ -51,6 +57,7 @@ trait SetupTrait {
 				NAPLES => [
 					HAPSBURG_2UNIT,
 					HAPSBURG_KEY,
+					HAPSBURG_SQUADRON,
 				],
 				BESANCON => [
 					HAPSBURG_1UNIT,

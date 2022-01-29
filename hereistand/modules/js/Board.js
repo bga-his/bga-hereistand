@@ -18,7 +18,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     tplToken(token){
       return `
-        <div id="${token.id}" class="token ${token.style}" data-name="${token.name}">
+        <div id="${token.id}" class="token ${token.style} ${token.flipped}" data-name="${token.name}">
         </div>
       `;
     },
