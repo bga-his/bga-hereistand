@@ -1,6 +1,7 @@
 <?php
 namespace HIS\Core;
 use HIS\Core\Globals;
+use HIS\Helpers\UserException;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Notifications\PlayCard;
