@@ -2898,7 +2898,7 @@ $this->tokens = [
 	],
 	MONTMORENCY => [
 		"name" => "Montmorency",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Leader montmorency",
 		"db_id" => "tbd_56",
 		"command_rating" => 6,

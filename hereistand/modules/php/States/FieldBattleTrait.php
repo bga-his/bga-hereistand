@@ -12,6 +12,7 @@ trait FieldBattleTrait {
 		$tokens = Tokens::getInLocation(['board', 'city', $destination]);
 		$active_power = Players::getActive()->power;
 		$field = [];
+		$powers = [];
 		$defending_powers = [];
 		foreach ($tokens as $token_id => $token) {
 			if (in_array(MILITARY, $token['types'])) {
@@ -20,24 +21,26 @@ trait FieldBattleTrait {
 					$defending_powers[] = $power;
 				}
 				if (array_key_exists($power, $field) == false) {
-					$field[$power] = [
+					$powers[$power] = [
 						'strength' => 0,
 						'battle_rating' => 0,
 						'tokens' => [],
+						'casualties' => 0,
 					];
 				}
-				$field[$power]['strength'] += array_key_exists('strength', $token) ? $token['strength'] : 0;
+				$powers[$power]['strength'] += array_key_exists('strength', $token) ? $token['strength'] : 0;
 				if (array_key_exists('battle_rating', $token)) {
-					if ($token['battle_rating'] > $field[$power]['battle_rating']) {
-						$field[$power]['battle_rating'] = $token['battle_rating'];
+					if ($token['battle_rating'] > $powers[$power]['battle_rating']) {
+						$powers[$power]['battle_rating'] = $token['battle_rating'];
 					}
 				}
-				$field[$power]['tokens'][] = $token;
+				$powers[$power]['tokens'][] = $token;
 			}
 		}
+		$field['powers'] = $powers;
 		Globals::setFieldBattle($field);
-		if (count($field) > 1) {
-			$field['attacking_powers'] = [$active_power];
+		if (count($field['powers']) > 1) {
+			$field['attacking_power'] = $active_power;
 			$field['defending_powers'] = $defending_powers;
 			Globals::setFieldBattle($field);
 			$this->gamestate->nextState("found");
@@ -60,20 +63,14 @@ trait FieldBattleTrait {
 
 	function stFieldBattleDice() {
 		$field = Globals::getFieldBattle();
-		$attacker_strength = 0;
+		$attacker_strength = $field['powers'][$field['attacking_power']]['strength'];
+		$attacker_max_power = $field['powers'][$field['attacking_power']]['battle_rating'];
 		$defender_strength = 0;
-		$attacker_max_power = 0;
 		$defender_max_power = 0;
-		foreach ($field['attacking_powers'] as $power) {
-			$attacker_strength += $field[$power]['strength'];
-			if ($field[$power]['battle_rating'] > $attacker_max_power) {
-				$attacker_max_power = $field[$power]['battle_rating'];
-			}
-		}
 		foreach ($field['defending_powers'] as $power) {
-			$defender_strength += $field[$power]['strength'];
-			if ($field[$power]['battle_rating'] > $defender_max_power) {
-				$defender_max_power = $field[$power]['battle_rating'];
+			$defender_strength += $field['powers'][$power]['strength'];
+			if ($field['powers'][$power]['battle_rating'] > $defender_max_power) {
+				$defender_max_power = $field['powers'][$power]['battle_rating'];
 			}
 		}
 		$attacker_dice_count = $attacker_strength + $attacker_max_power;
@@ -112,22 +109,47 @@ trait FieldBattleTrait {
 	}
 
 	function stFieldBattleCasualties() {
-		$this->gamestate->nextState("defender");
-	}
-
-	function argTakeFieldBattleCasualties() {
 		$field = Globals::getFieldBattle();
 		$attacker_hits = Utils::countHits($field['attacker_dice'], 5);
 		$defender_hits = Utils::countHits($field['defender_dice'], 5);
-		$current_power = Player::getActive()->power;
-		$tokens = $field[$current_power]['tokens'];
-		$hits = $attacker_hits;
-		if (in_array($current_power, $field['defenders'])) {
-			$hits = $defender_hits;
+		$field['powers'][$field['attacking_power']]['casualties'] = $defender_hits;
+		$defender_count = count($field['defending_powers']);
+		if ($defender_count > 1) {
+			$remainder_casualty = $attacker_hits % $defender_count;
+			$defender_casulaties = floor($attacker_hits / $defender_count);
+			foreach ($field['defending_powers'] as $defender) {
+				$field['powers'][$defender]['casualties'] = $defender_casulaties;
+			}
+			if ($remainder_casualty == 1) {
+				$unlucky_defender = $field['defending_powers'][bga_rand(0, $defender_count)];
+				$field['powers'][$unlucky_defender]['casualties'] += 1;
+			}
+		} else {
+			$field['powers'][$field['defending_powers'][0]]['casualties'] = $attacker_hits;
 		}
+		Globals::setFieldBattle($field);
+		$players_taking_losses = [];
+		foreach ($field['powers'] as $power => $army) {
+			if ($army['casualties'] > 0) {
+				$players_taking_losses[] = Players::getFromPower($power)->id;
+			}
+		}
+		if ($this->gamestate->setPlayersMultiactive($players_taking_losses, 'none') == false) {
+			$this->gamestate->nextState("start");
+		}
+	}
+
+	function argTakeFieldBattleCasualties() {
+		if (Players::isActive() == false) {
+			return [];
+		}
+		$field = Globals::getFieldBattle();
+		$current_power = Players::getCurrent()->power;
+		$tokens = $field['powers'][$current_power]['tokens'];
+		$casualties = $field['powers'][$current_power]['casualties'];
 		return [
 			'tokens' => $tokens,
-			'hits' => $hits,
+			'casualties' => $casualties,
 		];
 	}
 

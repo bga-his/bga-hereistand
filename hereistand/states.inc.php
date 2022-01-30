@@ -240,17 +240,17 @@ $machinestates = [
 		'description' => clienttranslate('Field battle casualties...'),
 		'type' => 'manager',
 		'action' => 'stFieldBattleCasualties',
-		'transitions' => ['attacker' => ST_TAKE_FIELD_BATTLE_CASUALTIES, 'defender' => ST_FIELD_BATTLE_CAPTURE_LEADERS],
+		'transitions' => ['start' => ST_TAKE_FIELD_BATTLE_CASUALTIES, 'none' => ST_FIELD_BATTLE_CAPTURE_LEADERS],
 	],
 
 	ST_TAKE_FIELD_BATTLE_CASUALTIES => [
 		'name' => 'takeFieldBattleCasualties',
-		'description' => clienttranslate('${actplayer} must take casualties'),
-		'descriptionmyturn' => clienttranslate('${you} must take casualtie'),
-		'type' => 'activeplayer',
+		'description' => clienttranslate('Players must take casualties'),
+		'descriptionmyturn' => clienttranslate('${you} must take ${casualties} casualties'),
+		'type' => 'multipleactiveplayer',
 		'args' => 'argTakeFieldBattleCasualties',
 		'possibleactions' => ['actTakeCasualties'],
-		'transitions' => ['next' => ST_FIELD_BATTLE_CASUALTIES],
+		'transitions' => ['done' => ST_FIELD_BATTLE_CAPTURE_LEADERS],
 	],
 
 	ST_FIELD_BATTLE_CAPTURE_LEADERS => [

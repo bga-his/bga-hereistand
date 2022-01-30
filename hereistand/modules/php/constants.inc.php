@@ -83,6 +83,12 @@ const MERC = 1;
 const SHIP = 2;
 
 /*
+ * Battle constants
+ */
+const ATTACKER = 'attacker';
+const DEFENDER = 'defender';
+
+/*
  * Card type constants
  */
 const HOME_CARD = 0;

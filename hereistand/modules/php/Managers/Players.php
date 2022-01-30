@@ -56,9 +56,19 @@ class Players extends \HIS\Helpers\DB_Manager {
 		return Game::get()->getCurrentPId();
 	}
 
+	public function isActive() {
+		return Game::get()->gamestate->isPlayerActive(self::getCurrentId());
+	}
+
 	public function getAll() {
 		$players = self::DB()->get(false);
 		return $players;
+	}
+
+	public function getFromPower($power) {
+		return self::DB()
+			->where('player_power', $power)
+			->getSingle();
 	}
 
 	/*
