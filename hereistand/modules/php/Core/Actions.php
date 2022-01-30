@@ -5,6 +5,7 @@ use HIS\Helpers\UserException;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Notifications\Buy;
 use HIS\Notifications\PlayCard;
 
 class Actions {
@@ -107,6 +108,15 @@ class Actions {
 
 	public static function pickBuyCity($city) {
 		$unit_type = Globals::getUnitBuyType();
+		$player = Players::getActive();
+		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
+		$bad_info = Game::get()->tokens[$buy_id];
+		$side = $unit_type == MERC ? BACK : FRONT;
+		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
+		if ($token == null) {
+			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
+		}
+		Buy::buyUnit($player, $token, $unit_type, $city);
 		Game::get()->gamestate->nextState("buy");
 	}
 

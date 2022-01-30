@@ -13,5 +13,11 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});
       }
     },
+
+    notif_buyUnit(args){
+      const dest = `city_${args.args.city.id}`;
+      const token = args.args.token;
+      this.place('tplToken', token, dest);
+    },
   });
 });

@@ -47,6 +47,7 @@ define([
       this._notifications = [
         ['playCardCP', 1000],
         ['moveFormation', 1000],
+        ['buyUnit', 1000],
       ];
 
       // Fix mobile viewport (remove CSS zoom)

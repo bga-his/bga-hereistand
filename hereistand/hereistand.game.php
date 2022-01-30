@@ -50,6 +50,7 @@ class hereistand extends Table {
 	use HIS\States\BuyTrait;
 	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
+	use HIS\AdditionalStaticTrait;
 
 	public static $instance = null;
 	function __construct() {
