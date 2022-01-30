@@ -1395,12 +1395,31 @@
   width: 300px;
   flex-wrap: wrap;
   z-index: 4;
+  transform-origin: 0 0;
+  transform: scale(2);
 }
 .city:hover .token {
   position: relative;
   z-index: 5;
 }
 .city:hover .Units.Naval {
+  left: -50px;
+}
+
+#city_97:hover {
+  transform: translateX(-400px) scale(2);
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
+}
+#city_97:hover .token {
+  position: relative;
+  z-index: 5;
+}
+#city_97:hover .Units.Naval {
   left: -50px;
 }
 

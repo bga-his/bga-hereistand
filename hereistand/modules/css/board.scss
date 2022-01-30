@@ -59,6 +59,25 @@
   width: 300px;
   flex-wrap: wrap;
   z-index: 4;
+  transform-origin: 0 0;
+  transform: scale(2);
+  .token {
+    position: relative;
+    z-index: 5;
+  }
+  .Units.Naval {
+    left: -50px;
+  }
+}
+
+#city_97:hover {
+  transform: translateX(-400px) scale(2);
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
   .token {
     position: relative;
     z-index: 5;
