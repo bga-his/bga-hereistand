@@ -1899,7 +1899,7 @@ $this->cities = [
 $this->tokens = [
 	ENGLAND_KEY => [
 		"name" => "English Key",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Control Keys Catholic england_key",
 		"db_id" => "england_scm_{INDEX}",
 		"types" => [
@@ -1919,7 +1919,7 @@ $this->tokens = [
 	],
 	FRANCE_KEY => [
 		"name" => "French Key",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Control Keys Catholic france_key",
 		"db_id" => "tbd_1_{INDEX}",
 		"types" => [
@@ -1939,7 +1939,7 @@ $this->tokens = [
 	],
 	HAPSBURG_KEY => [
 		"name" => "Hapsburg Key",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Control Keys Catholic hapsburg_key",
 		"db_id" => "tbd_2_{INDEX}",
 		"types" => [
@@ -1959,7 +1959,7 @@ $this->tokens = [
 	],
 	OTTOMAN_KEY => [
 		"name" => "Ottoman Key",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Control Keys Catholic ottoman_key",
 		"db_id" => "tbd_3_{INDEX}",
 		"types" => [
@@ -1979,7 +1979,7 @@ $this->tokens = [
 	],
 	INDEPENDENT_KEY => [
 		"name" => "Independent Key",
-		"power" => OTHER,
+		"power" => INDEPENDENT,
 		"style" => "Control Keys Catholic independent_key",
 		"db_id" => "tbd_4_{INDEX}",
 		"types" => [
@@ -1999,7 +1999,7 @@ $this->tokens = [
 	],
 	PAPACY_KEY => [
 		"name" => "Papacy Key",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Control Keys Catholic papacy_key",
 		"db_id" => "tbd_5_{INDEX}",
 		"types" => [
@@ -2019,7 +2019,7 @@ $this->tokens = [
 	],
 	ENGLAND_HEX => [
 		"name" => "English Hexagonal Marker",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Control Hex Catholic england_hex",
 		"db_id" => "tbd_6_{INDEX}",
 		"types" => [
@@ -2039,7 +2039,7 @@ $this->tokens = [
 	],
 	FRANCE_HEX => [
 		"name" => "French Hexagonal Marker",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Control Hex Catholic france_hex",
 		"db_id" => "tbd_7_{INDEX}",
 		"types" => [
@@ -2059,7 +2059,7 @@ $this->tokens = [
 	],
 	HAPSBURG_HEX => [
 		"name" => "Hapsburg Hexagonal Marker",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Control Hex Catholic hapsburg_hex",
 		"db_id" => "tbd_8_{INDEX}",
 		"types" => [
@@ -2079,7 +2079,7 @@ $this->tokens = [
 	],
 	INDEPENDENT_HEX => [
 		"name" => "Independent Hexagonal Marker",
-		"power" => OTHER,
+		"power" => INDEPENDENT,
 		"style" => "Control Hex Catholic independent_hex",
 		"db_id" => "tbd_9_{INDEX}",
 		"types" => [
@@ -2099,7 +2099,7 @@ $this->tokens = [
 	],
 	OTTOMAN_HEX => [
 		"name" => "Ottoman Hexagonal Marker",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Control Hex Catholic ottoman_hex",
 		"db_id" => "tbd_10_{INDEX}",
 		"types" => [
@@ -2119,7 +2119,7 @@ $this->tokens = [
 	],
 	PAPACY_HEX => [
 		"name" => "Papacy Hexagonal Marker",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Control Hex Catholic papacy_hex",
 		"db_id" => "tbd_11_{INDEX}",
 		"types" => [
@@ -2139,7 +2139,7 @@ $this->tokens = [
 	],
 	PROTESTANT_HEX => [
 		"name" => "Protestant Hexagonal Marker",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Control Hex Catholic protestant_hex",
 		"db_id" => "tbd_12_{INDEX}",
 		"types" => [
@@ -2159,7 +2159,7 @@ $this->tokens = [
 	],
 	ENGLAND_1UNIT => [
 		"name" => "English 1 Military Unit",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Units england_1unit",
 		"db_id" => "england_1unit_{INDEX}",
 		"strength" => 1,
@@ -2180,7 +2180,7 @@ $this->tokens = [
 	],
 	ENGLAND_2UNIT => [
 		"name" => "English 2 Military Unit",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Units england_2unit",
 		"db_id" => "tbd_14_{INDEX}",
 		"strength" => 2,
@@ -2201,7 +2201,7 @@ $this->tokens = [
 	],
 	ENGLAND_4UNIT => [
 		"name" => "English 4 Military Unit",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Units england_4unit",
 		"db_id" => "tbd_15_{INDEX}",
 		"strength" => 4,
@@ -2222,7 +2222,7 @@ $this->tokens = [
 	],
 	ENGLAND_6UNIT => [
 		"name" => "English 6 Military Unit",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Units england_6unit",
 		"db_id" => "tbd_16",
 		"strength" => 6,
@@ -2243,7 +2243,7 @@ $this->tokens = [
 	],
 	FRANCE_1UNIT => [
 		"name" => "French 1 Military Unit",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Units france_1unit",
 		"db_id" => "tbd_17_{INDEX}",
 		"strength" => 1,
@@ -2264,7 +2264,7 @@ $this->tokens = [
 	],
 	FRANCE_2UNIT => [
 		"name" => "French 2 Military Unit",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Units france_2unit",
 		"db_id" => "tbd_18_{INDEX}",
 		"strength" => 2,
@@ -2285,7 +2285,7 @@ $this->tokens = [
 	],
 	FRANCE_4UNIT => [
 		"name" => "French 4 Military Unit",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Units france_4unit",
 		"db_id" => "tbd_19_{INDEX}",
 		"strength" => 4,
@@ -2306,7 +2306,7 @@ $this->tokens = [
 	],
 	FRANCE_6UNIT => [
 		"name" => "French 6 Military Unit",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Units france_6unit",
 		"db_id" => "tbd_20",
 		"strength" => 6,
@@ -2327,7 +2327,7 @@ $this->tokens = [
 	],
 	GENOA_1UNIT => [
 		"name" => "Genoese 1 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_GENOA,
 		"style" => "Military Units genoa_1unit",
 		"db_id" => "tbd_21",
 		"strength" => 1,
@@ -2338,7 +2338,7 @@ $this->tokens = [
 	],
 	GENOA_2UNIT => [
 		"name" => "Genoese 2 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_GENOA,
 		"style" => "Military Units genoa_2unit",
 		"db_id" => "tbd_22",
 		"strength" => 2,
@@ -2349,7 +2349,7 @@ $this->tokens = [
 	],
 	HAPSBURG_1UNIT => [
 		"name" => "Hapsburg 1 Military Unit",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_1unit",
 		"db_id" => "tbd_23_{INDEX}",
 		"strength" => 1,
@@ -2370,7 +2370,7 @@ $this->tokens = [
 	],
 	HAPSBURG_2UNIT => [
 		"name" => "Hapsburg 2 Military Unit",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_2unit",
 		"db_id" => "tbd_24_{INDEX}",
 		"strength" => 2,
@@ -2391,7 +2391,7 @@ $this->tokens = [
 	],
 	HAPSBURG_4UNIT => [
 		"name" => "Hapsburg 4 Military Unit",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_4unit",
 		"db_id" => "tbd_25_{INDEX}",
 		"strength" => 4,
@@ -2412,7 +2412,7 @@ $this->tokens = [
 	],
 	HAPSBURG_6UNIT => [
 		"name" => "Hapsburg 6 Military Unit",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_6unit",
 		"db_id" => "tbd_26",
 		"strength" => 6,
@@ -2433,7 +2433,7 @@ $this->tokens = [
 	],
 	HUNGARY_1UNIT => [
 		"name" => "Hungarian 1 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_HUNGARY,
 		"style" => "Military Units hungary_1unit",
 		"db_id" => "tbd_27_{INDEX}",
 		"strength" => 1,
@@ -2453,7 +2453,7 @@ $this->tokens = [
 	],
 	HUNGARY_4UNIT => [
 		"name" => "Hungarian 4 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_HUNGARY,
 		"style" => "Military Units hungary_4unit",
 		"db_id" => "tbd_28",
 		"strength" => 4,
@@ -2473,7 +2473,7 @@ $this->tokens = [
 	],
 	INDEPENDENT_1UNIT => [
 		"name" => "Independent 1 Military Unit",
-		"power" => OTHER,
+		"power" => INDEPENDENT,
 		"style" => "Military Units independent_1unit",
 		"db_id" => "tbd_29_{INDEX}",
 		"strength" => 1,
@@ -2493,7 +2493,7 @@ $this->tokens = [
 	],
 	KNIGHTS_1UNIT => [
 		"name" => "Knights of Saint John 1 Military Unit",
-		"power" => OTHER,
+		"power" => INDEPENDENT,
 		"style" => "Military Units knights_1unit",
 		"db_id" => "tbd_30",
 		"strength" => 1,
@@ -2504,7 +2504,7 @@ $this->tokens = [
 	],
 	OTTOMAN_1UNIT => [
 		"name" => "Ottoman 1 Military Unit",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_1unit",
 		"db_id" => "tbd_31_{INDEX}",
 		"strength" => 1,
@@ -2525,7 +2525,7 @@ $this->tokens = [
 	],
 	OTTOMAN_2UNIT => [
 		"name" => "Ottoman 2 Military Unit",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_2unit",
 		"db_id" => "tbd_32_{INDEX}",
 		"strength" => 2,
@@ -2546,7 +2546,7 @@ $this->tokens = [
 	],
 	OTTOMAN_4UNIT => [
 		"name" => "Ottoman 4 Military Unit",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_4unit",
 		"db_id" => "tbd_33_{INDEX}",
 		"strength" => 4,
@@ -2567,7 +2567,7 @@ $this->tokens = [
 	],
 	OTTOMAN_6UNIT => [
 		"name" => "Ottoman 6 Military Unit",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_6unit",
 		"db_id" => "tbd_34",
 		"strength" => 6,
@@ -2588,7 +2588,7 @@ $this->tokens = [
 	],
 	PAPACY_1UNIT => [
 		"name" => "Papacy 1 Military Unit",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Military Units papacy_1unit",
 		"db_id" => "tbd_35_{INDEX}",
 		"strength" => 1,
@@ -2609,7 +2609,7 @@ $this->tokens = [
 	],
 	PAPACY_2UNIT => [
 		"name" => "Papacy 2 Military Unit",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Military Units papacy_2unit",
 		"db_id" => "tbd_36_{INDEX}",
 		"strength" => 2,
@@ -2630,7 +2630,7 @@ $this->tokens = [
 	],
 	PAPACY_4UNIT => [
 		"name" => "Papacy 4 Military Unit",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Military Units papacy_4unit",
 		"db_id" => "tbd_37_{INDEX}",
 		"strength" => 4,
@@ -2651,7 +2651,7 @@ $this->tokens = [
 	],
 	PROTESTANT_1UNIT => [
 		"name" => "Protestant 1 Military Unit",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Military Units protestant_1unit",
 		"db_id" => "tbd_38_{INDEX}",
 		"strength" => 1,
@@ -2672,7 +2672,7 @@ $this->tokens = [
 	],
 	PROTESTANT_2UNIT => [
 		"name" => "Protestant 2 Military Unit",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Military Units protestant_2unit",
 		"db_id" => "tbd_39_{INDEX}",
 		"strength" => 2,
@@ -2693,7 +2693,7 @@ $this->tokens = [
 	],
 	PROTESTANT_4UNIT => [
 		"name" => "Protestant 4 Military Unit",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Military Units protestant_4unit",
 		"db_id" => "tbd_40_{INDEX}",
 		"strength" => 4,
@@ -2714,7 +2714,7 @@ $this->tokens = [
 	],
 	SCOTLAND_1UNIT => [
 		"name" => "Scottish 1 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_SCOTLAND,
 		"style" => "Military Units scotland_1unit",
 		"db_id" => "tbd_41_{INDEX}",
 		"strength" => 1,
@@ -2725,7 +2725,7 @@ $this->tokens = [
 	],
 	SCOTLAND_2UNIT => [
 		"name" => "Scottish 2 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_SCOTLAND,
 		"style" => "Military Units scotland_2unit",
 		"db_id" => "tbd_42",
 		"strength" => 2,
@@ -2736,7 +2736,7 @@ $this->tokens = [
 	],
 	VENICE_1UNIT => [
 		"name" => "Venetian 1 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_VENICE,
 		"style" => "Military Units venice_1unit",
 		"db_id" => "tbd_43",
 		"strength" => 1,
@@ -2747,7 +2747,7 @@ $this->tokens = [
 	],
 	VENICE_2UNIT => [
 		"name" => "Venetian 2 Military Unit",
-		"power" => OTHER,
+		"power" => MINOR_VENICE,
 		"style" => "Military Units venice_2unit",
 		"db_id" => "tbd_44",
 		"strength" => 2,
@@ -2758,7 +2758,7 @@ $this->tokens = [
 	],
 	BRANDON => [
 		"name" => "Brandon",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Leader brandon",
 		"db_id" => "brandon",
 		"command_rating" => 6,
@@ -2770,7 +2770,7 @@ $this->tokens = [
 	],
 	CHARLES_V => [
 		"name" => "Charles V",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Leader charles_v",
 		"db_id" => "charles_v",
 		"command_rating" => 10,
@@ -2794,7 +2794,7 @@ $this->tokens = [
 	],
 	DUKE_ALVA => [
 		"name" => "Duke of Alva",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Leader duke_alva",
 		"db_id" => "duke_alva",
 		"command_rating" => 6,
@@ -2806,7 +2806,7 @@ $this->tokens = [
 	],
 	FERDINAND => [
 		"name" => "Ferdinand",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Military Leader ferdinand",
 		"db_id" => "tbd_49",
 		"command_rating" => 6,
@@ -2818,7 +2818,7 @@ $this->tokens = [
 	],
 	FRANCIS_I => [
 		"name" => "Francis I",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Military Leader francis_i",
 		"db_id" => "tbd_50",
 		"command_rating" => 8,
@@ -2830,7 +2830,7 @@ $this->tokens = [
 	],
 	HENRY_II => [
 		"name" => "Henry II",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Leader henry_ii",
 		"db_id" => "tbd_51",
 		"command_rating" => 8,
@@ -2842,7 +2842,7 @@ $this->tokens = [
 	],
 	HENRY_VIII => [
 		"name" => "Henry VIII",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Military Leader henry_viii",
 		"db_id" => "tbd_52",
 		"command_rating" => 8,
@@ -2854,7 +2854,7 @@ $this->tokens = [
 	],
 	IBRAHIM => [
 		"name" => "Ibrahim",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Leader ibrahim",
 		"db_id" => "tbd_53",
 		"command_rating" => 6,
@@ -2934,7 +2934,7 @@ $this->tokens = [
 	],
 	SULEIMAN => [
 		"name" => "Suleiman",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Military Leader suleiman",
 		"db_id" => "tbd_59",
 		"command_rating" => 12,
@@ -2946,7 +2946,7 @@ $this->tokens = [
 	],
 	ENGLISH_SQUADRON => [
 		"name" => "English Squadron",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Naval Units english_squadron",
 		"db_id" => "tbd_60_{INDEX}",
 		"strength" => 2,
@@ -2957,7 +2957,7 @@ $this->tokens = [
 	],
 	FRENCH_SQUADRON => [
 		"name" => "French Squadron",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Naval Units french_squadron",
 		"db_id" => "tbd_61_{INDEX}",
 		"strength" => 2,
@@ -2968,7 +2968,7 @@ $this->tokens = [
 	],
 	GENOESE_SQAUADRON => [
 		"name" => "Genoese Squadron",
-		"power" => OTHER,
+		"power" => MINOR_GENOA,
 		"style" => "Naval Units genoese_sqauadron",
 		"db_id" => "tbd_62",
 		"strength" => 2,
@@ -2979,7 +2979,7 @@ $this->tokens = [
 	],
 	HAPSBURG_SQUADRON => [
 		"name" => "Hapsburg Squadron",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Naval Units hapsburg_squadron",
 		"db_id" => "tbd_63_{INDEX}",
 		"strength" => 2,
@@ -2990,7 +2990,7 @@ $this->tokens = [
 	],
 	OTTOMAN_SQUADRON => [
 		"name" => "Ottoman Squadron",
-		"power" => OTHER,
+		"power" => OTTOMAN,
 		"style" => "Naval Units ottoman_squadron",
 		"db_id" => "tbd_64_{INDEX}",
 		"strength" => 2,
@@ -3001,7 +3001,7 @@ $this->tokens = [
 	],
 	PAPACY_SQUADRON => [
 		"name" => "Papacy Squadron",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Naval Units papacy_squadron",
 		"db_id" => "tbd_65_{INDEX}",
 		"strength" => 2,
@@ -3012,7 +3012,7 @@ $this->tokens = [
 	],
 	SCOTTISH_SQUADRON => [
 		"name" => "Scottish Squadron",
-		"power" => OTHER,
+		"power" => MINOR_SCOTLAND,
 		"style" => "Naval Units scottish_squadron",
 		"db_id" => "tbd_66",
 		"strength" => 2,
@@ -3023,7 +3023,7 @@ $this->tokens = [
 	],
 	VENETIAN_SQUADRON => [
 		"name" => "Venetian Squadron",
-		"power" => OTHER,
+		"power" => MINOR_VENICE,
 		"style" => "Naval Units venetian_squadron",
 		"db_id" => "tbd_67_{INDEX}",
 		"strength" => 2,
@@ -3231,7 +3231,7 @@ $this->tokens = [
 	],
 	ALEANDER => [
 		"name" => "Aleander",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater aleander",
 		"db_id" => "tbd_89",
 		"debate_value" => 2,
@@ -3249,7 +3249,7 @@ $this->tokens = [
 	],
 	CAJETAN => [
 		"name" => "Cajetan",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater cajetan",
 		"db_id" => "tbd_90",
 		"debate_value" => 1,
@@ -3267,7 +3267,7 @@ $this->tokens = [
 	],
 	CAMPEGGIO => [
 		"name" => "Campeggio",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater campeggio",
 		"db_id" => "tbd_91",
 		"debate_value" => 2,
@@ -3285,7 +3285,7 @@ $this->tokens = [
 	],
 	CANISIUS => [
 		"name" => "Canisius",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater canisius",
 		"db_id" => "tbd_92",
 		"debate_value" => 3,
@@ -3303,7 +3303,7 @@ $this->tokens = [
 	],
 	CARAFFA => [
 		"name" => "Caraffa",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater caraffa",
 		"db_id" => "tbd_93",
 		"debate_value" => 2,
@@ -3321,7 +3321,7 @@ $this->tokens = [
 	],
 	CONTARINI => [
 		"name" => "Contarini",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater contarini",
 		"db_id" => "tbd_94",
 		"debate_value" => 2,
@@ -3339,7 +3339,7 @@ $this->tokens = [
 	],
 	ECK => [
 		"name" => "Eck",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater eck",
 		"db_id" => "tbd_95",
 		"debate_value" => 3,
@@ -3357,7 +3357,7 @@ $this->tokens = [
 	],
 	FABER => [
 		"name" => "Faber",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater faber",
 		"db_id" => "tbd_96",
 		"debate_value" => 3,
@@ -3375,7 +3375,7 @@ $this->tokens = [
 	],
 	GARDINER => [
 		"name" => "Gardiner",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater gardiner",
 		"db_id" => "tbd_97",
 		"debate_value" => 3,
@@ -3393,7 +3393,7 @@ $this->tokens = [
 	],
 	LOYOLA => [
 		"name" => "Loyola",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater loyola",
 		"db_id" => "tbd_98",
 		"debate_value" => 4,
@@ -3411,7 +3411,7 @@ $this->tokens = [
 	],
 	POLE => [
 		"name" => "Pole",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater pole",
 		"db_id" => "tbd_99",
 		"debate_value" => 3,
@@ -3429,7 +3429,7 @@ $this->tokens = [
 	],
 	TETZEL => [
 		"name" => "Tetzel",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Debater tetzel",
 		"db_id" => "tbd_100",
 		"debate_value" => 1,
@@ -3447,7 +3447,7 @@ $this->tokens = [
 	],
 	BUCER => [
 		"name" => "Bucer",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater bucer",
 		"db_id" => "tbd_101",
 		"debate_value" => 2,
@@ -3465,7 +3465,7 @@ $this->tokens = [
 	],
 	BULLINGER => [
 		"name" => "Bullinger",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater bullinger",
 		"db_id" => "tbd_102",
 		"debate_value" => 2,
@@ -3483,7 +3483,7 @@ $this->tokens = [
 	],
 	CALVIN => [
 		"name" => "Calvin",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater calvin",
 		"db_id" => "tbd_103",
 		"debate_value" => 4,
@@ -3501,7 +3501,7 @@ $this->tokens = [
 	],
 	CARLSTADT => [
 		"name" => "Carlstadt",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater carlstadt",
 		"db_id" => "tbd_104",
 		"debate_value" => 1,
@@ -3519,7 +3519,7 @@ $this->tokens = [
 	],
 	COP => [
 		"name" => "Cop",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater cop",
 		"db_id" => "tbd_105",
 		"debate_value" => 2,
@@ -3537,7 +3537,7 @@ $this->tokens = [
 	],
 	COVERDALE => [
 		"name" => "Coverdale",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater coverdale",
 		"db_id" => "tbd_106",
 		"debate_value" => 2,
@@ -3555,7 +3555,7 @@ $this->tokens = [
 	],
 	CRANMER => [
 		"name" => "Cranmer",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater cranmer",
 		"db_id" => "tbd_107",
 		"debate_value" => 3,
@@ -3573,7 +3573,7 @@ $this->tokens = [
 	],
 	FAREL => [
 		"name" => "Farel",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater farel",
 		"db_id" => "tbd_108",
 		"debate_value" => 2,
@@ -3591,7 +3591,7 @@ $this->tokens = [
 	],
 	KNOX => [
 		"name" => "Knox",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater knox",
 		"db_id" => "tbd_109",
 		"debate_value" => 3,
@@ -3609,7 +3609,7 @@ $this->tokens = [
 	],
 	LATIMER => [
 		"name" => "Latimer",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater latimer",
 		"db_id" => "tbd_110",
 		"debate_value" => 1,
@@ -3627,7 +3627,7 @@ $this->tokens = [
 	],
 	LUTHER => [
 		"name" => "Luther",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater luther",
 		"db_id" => "tbd_111",
 		"debate_value" => 4,
@@ -3645,7 +3645,7 @@ $this->tokens = [
 	],
 	MELANCHTHON => [
 		"name" => "Melanchthon",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater melanchthon",
 		"db_id" => "tbd_112",
 		"debate_value" => 3,
@@ -3663,7 +3663,7 @@ $this->tokens = [
 	],
 	OEKOLAMPADIUS => [
 		"name" => "Oekolampadius",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater oekolampadius",
 		"db_id" => "tbd_113",
 		"debate_value" => 2,
@@ -3681,7 +3681,7 @@ $this->tokens = [
 	],
 	OLIVETAN => [
 		"name" => "Olivetan",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater olivetan",
 		"db_id" => "tbd_114",
 		"debate_value" => 1,
@@ -3699,7 +3699,7 @@ $this->tokens = [
 	],
 	TYNDALE => [
 		"name" => "Tyndale",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater tyndale",
 		"db_id" => "tbd_115",
 		"debate_value" => 2,
@@ -3717,7 +3717,7 @@ $this->tokens = [
 	],
 	WISHART => [
 		"name" => "Wishart",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater wishart",
 		"db_id" => "tbd_116",
 		"debate_value" => 1,
@@ -3735,7 +3735,7 @@ $this->tokens = [
 	],
 	ZWINGLI => [
 		"name" => "Zwingli",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Debater zwingli",
 		"db_id" => "tbd_117",
 		"debate_value" => 3,
@@ -3753,7 +3753,7 @@ $this->tokens = [
 	],
 	ENGLISH_EXPLORATION => [
 		"name" => "English Exploration Underway",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Exploration Charted english_exploration",
 		"db_id" => "tbd_118",
 		"types" => [
@@ -3770,7 +3770,7 @@ $this->tokens = [
 	],
 	FRENCH_EXPLORATION => [
 		"name" => "French Exploration Underway",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Exploration Charted french_exploration",
 		"db_id" => "tbd_119",
 		"types" => [
@@ -3787,7 +3787,7 @@ $this->tokens = [
 	],
 	HAPSBURG_EXPLORATION => [
 		"name" => "Hapsburg Exploration Underway",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Exploration Charted hapsburg_exploration",
 		"db_id" => "tbd_120",
 		"types" => [
@@ -3804,7 +3804,7 @@ $this->tokens = [
 	],
 	CABOT_ENG => [
 		"name" => "Cabot English",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Explorer cabot_eng",
 		"db_id" => "tbd_121",
 		"explorer_value" => 1,
@@ -3822,7 +3822,7 @@ $this->tokens = [
 	],
 	CABOT_FRE => [
 		"name" => "Cabot French",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Explorer cabot_fre",
 		"db_id" => "tbd_122",
 		"explorer_value" => 1,
@@ -3840,7 +3840,7 @@ $this->tokens = [
 	],
 	CABOT_HAP => [
 		"name" => "Cabot Hapsburg",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer cabot_hap",
 		"db_id" => "tbd_123",
 		"explorer_value" => 1,
@@ -3858,7 +3858,7 @@ $this->tokens = [
 	],
 	CARTIER => [
 		"name" => "Cartier",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Explorer cartier",
 		"db_id" => "tbd_124",
 		"explorer_value" => 3,
@@ -3876,7 +3876,7 @@ $this->tokens = [
 	],
 	CHANCELLOR => [
 		"name" => "Chancellor",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Explorer chancellor",
 		"db_id" => "tbd_125",
 		"explorer_value" => 1,
@@ -3894,7 +3894,7 @@ $this->tokens = [
 	],
 	DE_VACA => [
 		"name" => "De Vaca",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer de_vaca",
 		"db_id" => "tbd_126",
 		"explorer_value" => 0,
@@ -3912,7 +3912,7 @@ $this->tokens = [
 	],
 	DE_SOTO => [
 		"name" => "De Soto",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer de_soto",
 		"db_id" => "tbd_127",
 		"explorer_value" => 2,
@@ -3930,7 +3930,7 @@ $this->tokens = [
 	],
 	LEON => [
 		"name" => "Leon",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer leon",
 		"db_id" => "tbd_128",
 		"explorer_value" => 1,
@@ -3948,7 +3948,7 @@ $this->tokens = [
 	],
 	MAGELLAN => [
 		"name" => "Magellan",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer magellan",
 		"db_id" => "tbd_129",
 		"explorer_value" => 4,
@@ -3966,7 +3966,7 @@ $this->tokens = [
 	],
 	NARVAEZ => [
 		"name" => "Narvaez",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer narvaez",
 		"db_id" => "tbd_130",
 		"explorer_value" => -1,
@@ -3984,7 +3984,7 @@ $this->tokens = [
 	],
 	ORELLANA => [
 		"name" => "Orellana",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Explorer orellana",
 		"db_id" => "tbd_131",
 		"explorer_value" => 3,
@@ -4002,7 +4002,7 @@ $this->tokens = [
 	],
 	ROBERVAL => [
 		"name" => "Roberval",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Explorer roberval",
 		"db_id" => "tbd_132",
 		"explorer_value" => 0,
@@ -4020,7 +4020,7 @@ $this->tokens = [
 	],
 	RUT => [
 		"name" => "Rut",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Explorer rut",
 		"db_id" => "tbd_133",
 		"explorer_value" => 1,
@@ -4038,7 +4038,7 @@ $this->tokens = [
 	],
 	VERRAZANO => [
 		"name" => "Verrazano",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Explorer verrazano",
 		"db_id" => "tbd_134",
 		"explorer_value" => 2,
@@ -4056,7 +4056,7 @@ $this->tokens = [
 	],
 	WILLOUGHBY => [
 		"name" => "Willoughby",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Explorer willoughby",
 		"db_id" => "tbd_135",
 		"explorer_value" => 0,
@@ -4074,7 +4074,7 @@ $this->tokens = [
 	],
 	CHARLESBOURG => [
 		"name" => "Charlesbourg",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Colony charlesbourg",
 		"db_id" => "tbd_136",
 		"types" => [
@@ -4083,7 +4083,7 @@ $this->tokens = [
 	],
 	CUBA => [
 		"name" => "Cuba",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Colony cuba",
 		"db_id" => "tbd_137",
 		"types" => [
@@ -4092,7 +4092,7 @@ $this->tokens = [
 	],
 	HISPANIOLA => [
 		"name" => "Hispaniola",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Colony hispaniola",
 		"db_id" => "tbd_138",
 		"types" => [
@@ -4101,7 +4101,7 @@ $this->tokens = [
 	],
 	JAMESTOWN => [
 		"name" => "Jamestown",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Colony jamestown",
 		"db_id" => "tbd_139",
 		"types" => [
@@ -4110,7 +4110,7 @@ $this->tokens = [
 	],
 	MONTREAL => [
 		"name" => "Montreal",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Colony montreal",
 		"db_id" => "tbd_140",
 		"types" => [
@@ -4128,7 +4128,7 @@ $this->tokens = [
 	],
 	PUERTO_RICO => [
 		"name" => "Puerto Rico",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Colony puerto_rico",
 		"db_id" => "tbd_142",
 		"types" => [
@@ -4137,7 +4137,7 @@ $this->tokens = [
 	],
 	ROANOKE => [
 		"name" => "Roanoke",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Colony roanoke",
 		"db_id" => "tbd_143",
 		"types" => [
@@ -4146,7 +4146,7 @@ $this->tokens = [
 	],
 	HAPSBURG_CONQUEST => [
 		"name" => "Hapsburg Conquest Underway",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquest hapsburg_conquest",
 		"db_id" => "tbd_144",
 		"types" => [
@@ -4155,7 +4155,7 @@ $this->tokens = [
 	],
 	ENGLISH_CONQUEST => [
 		"name" => "English Conquest",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Conquistador english_conquest",
 		"db_id" => "tbd_145_{INDEX}",
 		"explorer_value" => 0,
@@ -4165,7 +4165,7 @@ $this->tokens = [
 	],
 	FRENCH_CONQUEST => [
 		"name" => "French Conquest",
-		"power" => OTHER,
+		"power" => FRANCE,
 		"style" => "Conquistador french_conquest",
 		"db_id" => "tbd_146_{INDEX}",
 		"explorer_value" => 0,
@@ -4175,7 +4175,7 @@ $this->tokens = [
 	],
 	CORDOVA => [
 		"name" => "Cordova",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquistador cordova",
 		"db_id" => "tbd_147",
 		"explorer_value" => 1,
@@ -4193,7 +4193,7 @@ $this->tokens = [
 	],
 	CORONADO => [
 		"name" => "Coronado",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquistador coronado",
 		"db_id" => "tbd_148",
 		"explorer_value" => 1,
@@ -4211,7 +4211,7 @@ $this->tokens = [
 	],
 	CORTEZ => [
 		"name" => "Cortez",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquistador cortez",
 		"db_id" => "tbd_149",
 		"explorer_value" => 4,
@@ -4229,7 +4229,7 @@ $this->tokens = [
 	],
 	MONTEJO => [
 		"name" => "Montejo",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquistador montejo",
 		"db_id" => "tbd_150",
 		"explorer_value" => 2,
@@ -4247,7 +4247,7 @@ $this->tokens = [
 	],
 	PIZARRO => [
 		"name" => "Pizarro",
-		"power" => OTHER,
+		"power" => HAPSBURG,
 		"style" => "Conquistador pizarro",
 		"db_id" => "tbd_151",
 		"explorer_value" => 3,
@@ -4303,7 +4303,7 @@ $this->tokens = [
 	],
 	GREAT_LAKES_1VP => [
 		"name" => "Great Lakes 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker great_lakes_1vp",
 		"db_id" => "tbd_156",
 		"types" => [
@@ -4312,7 +4312,7 @@ $this->tokens = [
 	],
 	MISSISSIPPI_RIVER_1VP => [
 		"name" => "Mississippi River 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker mississippi_river_1vp",
 		"db_id" => "tbd_157",
 		"types" => [
@@ -4321,7 +4321,7 @@ $this->tokens = [
 	],
 	ST_LAWRENCE_RIVER_1VP => [
 		"name" => "Saint Lawrence River 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker st_lawrence_river_1vp",
 		"db_id" => "tbd_158",
 		"types" => [
@@ -4330,7 +4330,7 @@ $this->tokens = [
 	],
 	AMAZON_RIVER_2VP => [
 		"name" => "Amazon River 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker amazon_river_2vp",
 		"db_id" => "tbd_159",
 		"types" => [
@@ -4339,7 +4339,7 @@ $this->tokens = [
 	],
 	PACIFIC_STRAIT_1VP => [
 		"name" => "Pacific Strait 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker pacific_strait_1vp",
 		"db_id" => "tbd_160",
 		"types" => [
@@ -4348,7 +4348,7 @@ $this->tokens = [
 	],
 	CIRCUMNAVIGATION_3VP => [
 		"name" => "Circumnavigation 3 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker circumnavigation_3vp",
 		"db_id" => "tbd_161",
 		"types" => [
@@ -4357,7 +4357,7 @@ $this->tokens = [
 	],
 	MAYA_1VP => [
 		"name" => "Maya 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker maya_1vp",
 		"db_id" => "tbd_162",
 		"types" => [
@@ -4366,7 +4366,7 @@ $this->tokens = [
 	],
 	AZTECS_2VP => [
 		"name" => "Aztecs 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker aztecs_2vp",
 		"db_id" => "tbd_163",
 		"types" => [
@@ -4375,7 +4375,7 @@ $this->tokens = [
 	],
 	INCA_2VP => [
 		"name" => "Inca 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker inca_2vp",
 		"db_id" => "inca_2vp",
 		"types" => [
@@ -4384,7 +4384,7 @@ $this->tokens = [
 	],
 	BIBLE_ENG_1VP => [
 		"name" => "Bible English Translation 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker bible_eng_1vp",
 		"db_id" => "bible_eng_1vp",
 		"types" => [
@@ -4393,7 +4393,7 @@ $this->tokens = [
 	],
 	BIBLE_FRE_1VP => [
 		"name" => "Bible French Translation 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker bible_fre_1vp",
 		"db_id" => "bible_fre_1vp",
 		"types" => [
@@ -4402,7 +4402,7 @@ $this->tokens = [
 	],
 	BIBLE_GER_1VP => [
 		"name" => "Bible German Translation 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker bible_ger_1vp",
 		"db_id" => "bible_ger_1vp",
 		"types" => [
@@ -4411,7 +4411,7 @@ $this->tokens = [
 	],
 	CHATEAUX_VP => [
 		"name" => "Chateaux VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker chateaux_vp",
 		"db_id" => "tbd_168",
 		"types" => [
@@ -4420,7 +4420,7 @@ $this->tokens = [
 	],
 	PIRACY_VP => [
 		"name" => "Piracy VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker piracy_vp",
 		"db_id" => "tbd_169",
 		"types" => [
@@ -4429,7 +4429,7 @@ $this->tokens = [
 	],
 	ST_PETERS_VP => [
 		"name" => "Saint Peter's VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker st_peters_vp",
 		"db_id" => "tbd_170",
 		"types" => [
@@ -4438,7 +4438,7 @@ $this->tokens = [
 	],
 	COPERNICUS_1VP => [
 		"name" => "Copernicus 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker copernicus_1vp",
 		"db_id" => "tbd_171",
 		"types" => [
@@ -4447,7 +4447,7 @@ $this->tokens = [
 	],
 	COPERNICUS_2VP => [
 		"name" => "Copernicus 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker copernicus_2vp",
 		"db_id" => "tbd_172",
 		"types" => [
@@ -4456,7 +4456,7 @@ $this->tokens = [
 	],
 	EDWARD_5VP => [
 		"name" => "Edward VI 5 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker edward_5vp",
 		"db_id" => "tbd_173",
 		"types" => [
@@ -4465,7 +4465,7 @@ $this->tokens = [
 	],
 	ELIZABETH_2VP => [
 		"name" => "Elizabeth 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker elizabeth_2vp",
 		"db_id" => "tbd_174",
 		"types" => [
@@ -4474,7 +4474,7 @@ $this->tokens = [
 	],
 	GONZAGA_1VP => [
 		"name" => "Giulia Gonzaga 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker gonzaga_1vp",
 		"db_id" => "tbd_175",
 		"types" => [
@@ -4483,7 +4483,7 @@ $this->tokens = [
 	],
 	SERVETUS_1VP => [
 		"name" => "Servetus 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker servetus_1vp",
 		"db_id" => "tbd_176",
 		"types" => [
@@ -4492,7 +4492,7 @@ $this->tokens = [
 	],
 	MASTER_OF_ITALY_1VP => [
 		"name" => "Master of Italy 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker master_of_italy_1vp",
 		"db_id" => "tbd_177_{INDEX}",
 		"types" => [
@@ -4501,7 +4501,7 @@ $this->tokens = [
 	],
 	MASTER_OF_ITALY_2VP => [
 		"name" => "Master of Italy 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker master_of_italy_2vp",
 		"db_id" => "tbd_178_{INDEX}",
 		"types" => [
@@ -4510,7 +4510,7 @@ $this->tokens = [
 	],
 	WAR_WINNER_1VP => [
 		"name" => "War Winner 1 VP",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker war_winner_1vp",
 		"db_id" => "tbd_179_{INDEX}",
 		"types" => [
@@ -4519,7 +4519,7 @@ $this->tokens = [
 	],
 	WAR_WINNER_2VP => [
 		"name" => "War Winner 2 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker war_winner_2vp",
 		"db_id" => "tbd_180_{INDEX}",
 		"types" => [
@@ -4528,7 +4528,7 @@ $this->tokens = [
 	],
 	PHONYSCOTLAND_MINUS1 => [
 		"name" => "Phony War in Scotland -1 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker phonyscotland_minus1",
 		"db_id" => "tbd_181",
 		"types" => [
@@ -4537,7 +4537,7 @@ $this->tokens = [
 	],
 	PHONYVENICE_MINUS1 => [
 		"name" => "Phony War in Venice - 1 VP's",
-		"power" => OTHER,
+		"power" => VP,
 		"style" => "VP_marker phonyvenice_minus1",
 		"db_id" => "tbd_182",
 		"types" => [
@@ -4546,7 +4546,7 @@ $this->tokens = [
 	],
 	ANNE_BOLEYN => [
 		"name" => "Anne Boleyn",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife anne_boleyn",
 		"db_id" => "tbd_183",
 		"types" => [
@@ -4563,7 +4563,7 @@ $this->tokens = [
 	],
 	ANNE_CLEVES => [
 		"name" => "Anne of Cleves",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife anne_cleves",
 		"db_id" => "tbd_184",
 		"types" => [
@@ -4580,7 +4580,7 @@ $this->tokens = [
 	],
 	CATHERINE_ARAGON => [
 		"name" => "Catherine of Aragon",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife catherine_aragon",
 		"db_id" => "tbd_185",
 		"types" => [
@@ -4597,7 +4597,7 @@ $this->tokens = [
 	],
 	JANE_SEYMOUR => [
 		"name" => "Jane Seymour",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife jane_seymour",
 		"db_id" => "tbd_186",
 		"types" => [
@@ -4614,7 +4614,7 @@ $this->tokens = [
 	],
 	KATHERINE_PARR => [
 		"name" => "Katherine Parr",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife katherine_parr",
 		"db_id" => "tbd_187",
 		"types" => [
@@ -4631,7 +4631,7 @@ $this->tokens = [
 	],
 	KATHRYN_HOWARD => [
 		"name" => "Kathryn Howard",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wife kathryn_howard",
 		"db_id" => "tbd_188",
 		"types" => [
@@ -4648,7 +4648,7 @@ $this->tokens = [
 	],
 	HENRY_MARITAL_STATUS => [
 		"name" => "Henry Marital Status",
-		"power" => OTHER,
+		"power" => ENGLAND,
 		"style" => "Wives Status henry_marital_status",
 		"db_id" => "tbd_189",
 		"types" => [
@@ -4658,7 +4658,7 @@ $this->tokens = [
 	],
 	BIBLE_ENGLISH => [
 		"name" => "Bible English",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation bible_english",
 		"db_id" => "tbd_190",
 		"types" => [
@@ -4667,7 +4667,7 @@ $this->tokens = [
 	],
 	BIBLE_FRENCH => [
 		"name" => "Bible French",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation bible_french",
 		"db_id" => "tbd_191",
 		"types" => [
@@ -4676,7 +4676,7 @@ $this->tokens = [
 	],
 	BIBLE_GERMAN => [
 		"name" => "Bible German",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation bible_german",
 		"db_id" => "tbd_192",
 		"types" => [
@@ -4685,7 +4685,7 @@ $this->tokens = [
 	],
 	NEW_TESTAMENT_ENGLISH => [
 		"name" => "New Testament English",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation new_testament_english",
 		"db_id" => "tbd_193",
 		"types" => [
@@ -4694,7 +4694,7 @@ $this->tokens = [
 	],
 	NEW_TESTAMENT_FRENCH => [
 		"name" => "New Testament French",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation new_testament_french",
 		"db_id" => "tbd_194",
 		"types" => [
@@ -4703,7 +4703,7 @@ $this->tokens = [
 	],
 	NEW_TESTAMENT_GERMAN => [
 		"name" => "New Testament German",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Translation new_testament_german",
 		"db_id" => "tbd_195",
 		"types" => [
@@ -4712,7 +4712,7 @@ $this->tokens = [
 	],
 	ST_PETERS_CP => [
 		"name" => "Saint Peter's CP Status",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Saint_Peters st_peters_cp",
 		"db_id" => "tbd_196",
 		"types" => [
@@ -4721,7 +4721,7 @@ $this->tokens = [
 	],
 	AUGSBURG_CONFESSION => [
 		"name" => "Augsburg Confession Active",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Event_reminder augsburg_confession",
 		"db_id" => "tbd_197",
 		"types" => [
@@ -4730,7 +4730,7 @@ $this->tokens = [
 	],
 	PRINTING_PRESS => [
 		"name" => "Printing Press Active",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Event_reminder printing_press",
 		"db_id" => "tbd_198",
 		"types" => [
@@ -4838,7 +4838,7 @@ $this->tokens = [
 	],
 	WARTBURG => [
 		"name" => "Wartburg",
-		"power" => OTHER,
+		"power" => PROTESTANT,
 		"style" => "Event_reminder wartburg",
 		"db_id" => "tbd_210",
 		"types" => [
@@ -4847,7 +4847,7 @@ $this->tokens = [
 	],
 	EXCOMMUNICATED => [
 		"name" => "Excommunicated",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "Excommunion excommunicated",
 		"db_id" => "tbd_211_{INDEX}",
 		"types" => [
@@ -4874,7 +4874,7 @@ $this->tokens = [
 	],
 	JESUIT_UNIVERSITY => [
 		"name" => "Jesuit University",
-		"power" => OTHER,
+		"power" => PAPACY,
 		"style" => "University jesuit_university",
 		"db_id" => "tbd_214_{INDEX}",
 		"types" => [

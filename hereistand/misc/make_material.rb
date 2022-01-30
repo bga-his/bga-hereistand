@@ -66,7 +66,7 @@ token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
-	token['power'] = token['power'].nil? ? 'OTHER' : row['Group']
+	token['power'] = row['Group'].nil? ? 'OTHER' : row['Group']
 	token['style'] = "#{row['type']} #{constant_name.downcase}"
 	token['db_id'] = row['db_id'].nil? ? "tbd_#{i}" : row['db_id']
 	token['strength'] = row['strength'].to_i unless row['strength'].nil?

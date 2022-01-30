@@ -3,7 +3,7 @@ namespace HIS\States;
 
 trait InterceptionTrait {
 	function stFindInterceptions() {
-		$this->gamestate->nextState("done");
+		$this->gamestate->nextState("none");
 	}
 
 	function argInterceptIntent() {

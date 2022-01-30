@@ -76,7 +76,7 @@ $machinestates = [
 		'description' => clienttranslate('Finding possible interceptions...'),
 		'type' => 'manager',
 		'action' => 'stFindInterceptions',
-		'transitions' => ['found' => ST_INTERCEPT_INTENT, 'done' => ST_MOVE_FORMATION],
+		'transitions' => ['found' => ST_INTERCEPT_INTENT, 'none' => ST_MOVE_FORMATION],
 	],
 
 	ST_INTERCEPT_INTENT => [
@@ -164,7 +164,7 @@ $machinestates = [
 		'description' => clienttranslate('Finding possible field battle...'),
 		'type' => 'manager',
 		'action' => 'stFindBattle',
-		'transitions' => ['found' => ST_FIELD_BATTLE, 'none' => ST_NEXT_PLAYER, 'more' => ST_IMPULSE_ACTIONS],
+		'transitions' => ['found' => ST_FIELD_BATTLE, 'none' => ST_IMPULSE_ACTIONS, 'more' => ST_IMPULSE_ACTIONS],
 	],
 
 	ST_FIELD_BATTLE => [
@@ -213,7 +213,7 @@ $machinestates = [
 		'name' => 'fieldBattleDice',
 		'description' => clienttranslate('Declaring field battle dice...'),
 		'type' => 'manager',
-		'action' => 'stFieldBattleDice',
+		'action' => 'stRollFieldBattleDice',
 		'transitions' => ['janissaries' => ST_PLAY_JANISSARIES, 'next' => ST_DECLARE_FIELD_BATTLE_WINNER],
 	],
 
@@ -302,7 +302,7 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argResponseMovement',
 		'possibleactions' => ['actPlayCard'],
-		'transitions' => ['next' => ST_NEXT_PLAYER],
+		'transitions' => ['next' => ST_FIND_INTERCEPTIONS],
 	],
 
 	ST_FIELD_BATTLE_RESPONSE => [
@@ -312,7 +312,7 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argResponseFieldBattle',
 		'possibleactions' => ['actPlayCard'],
-		'transitions' => ['next' => ST_NEXT_PLAYER],
+		'transitions' => ['next' => ST_FIELD_BATTLE_DICE],
 	],
 
 	ST_NEXT_PLAYER => [
