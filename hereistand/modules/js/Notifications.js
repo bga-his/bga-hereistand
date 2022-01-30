@@ -15,9 +15,11 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_buyUnit(args){
+      const start = `player_board_${args.args.player_id}`;
       const dest = `city_${args.args.city.id}`;
       const token = args.args.token;
-      this.place('tplToken', token, dest);
+      this.place('tplToken', token, start);
+      this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
     },
   });
 });
