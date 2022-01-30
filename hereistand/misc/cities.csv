@@ -73,7 +73,7 @@ CERIGNOLA,Cerignola,3444,2042,CITY_UNFORTIFIED,Hapsburg,ITALIAN,,,,,,,,,Hapsburg
 TARANTO,Taranto,3716,2205,CITY_UNFORTIFIED,Hapsburg,ITALIAN,,,,,,,,,Hapsburg
 MESSINA,Messina,3494,2553,CITY_UNFORTIFIED,Hapsburg,ITALIAN,,,,,,,,,Hapsburg
 PALERMO,Palermo,3378,2546,CITY_UNFORTIFIED,Hapsburg,ITALIAN,,,,,,,,,Hapsburg
-Minor_Genoa,Minor_Genoa,2844,1750,CITY_KEY,Minor_Genoa,ITALIAN,,,,,,,,,Minor_Genoa
+GENOA,Minor_Genoa,2844,1750,CITY_KEY,Minor_Genoa,ITALIAN,,,,,,,,,Minor_Genoa
 VENICE,Minor_Venice,3205,1524,CITY_KEY,Minor_Venice,ITALIAN,,,,,,,,,Minor_Venice
 MILAN,Milan,2864,1495,CITY_KEY,Independent,ITALIAN,,,,,,,,,France
 FLORENCE,Florence,3094,1769,CITY_KEY,Independent,ITALIAN,,,,,,,,,Independent

@@ -1,6 +1,6 @@
 <?php
 /*
- * Token type constants
+ * Token constants
  */
 const ENGLAND_KEY = 0;
 const FRANCE_KEY = 1;
@@ -218,6 +218,49 @@ const FORTRESS = 212;
 const PIRATE_HAVEN = 213;
 const JESUIT_UNIVERSITY = 214;
 /*
+ * Token type constants
+ */
+const CONTROL = 0;
+const KEYS = 1;
+const CATHOLIC = 2;
+const REFORMED = 3;
+const HEX = 4;
+const MILITARY = 5;
+const UNITS = 6;
+const MERCENARY = 7;
+const CAVALRY = 8;
+const LEADER = 9;
+const NAVAL = 10;
+const DIPLOMACY = 11;
+const UNREST_MARKER = 12;
+const VP_MARKER = 13;
+const LOANED = 14;
+const REFORMER = 15;
+const DEBATER = 16;
+const COMMITTED = 17;
+const EXPLORATION = 18;
+const CHARTED = 19;
+const EXPLORER = 20;
+const UNKNOWN = 21;
+const COLONY = 22;
+const CONQUEST = 23;
+const CONQUISTADOR = 24;
+const RELIGIOUS = 25;
+const COUNTER = 26;
+const TURN_MARKER = 27;
+const CARDS_MARKER = 28;
+const WIFE = 29;
+const BENEFIT = 30;
+const WIVES = 31;
+const STATUS = 32;
+const TRANSLATION = 33;
+const SAINT_PETERS = 34;
+const EVENT_REMINDER = 35;
+const EXCOMMUNION = 36;
+const FORTRESS_MARKER = 37;
+const PIRATEHAVEN = 38;
+const UNIVERSITY = 39;
+/*
  * City constants
  */
 const WITTENBERG = 0;
@@ -294,7 +337,7 @@ const CERIGNOLA = 70;
 const TARANTO = 71;
 const MESSINA = 72;
 const PALERMO = 73;
-const Minor_Genoa = 74;
+const GENOA = 74;
 const VENICE = 75;
 const MILAN = 76;
 const FLORENCE = 77;

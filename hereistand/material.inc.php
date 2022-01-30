@@ -1114,7 +1114,7 @@ $this->cities = [
 
 		],
 	],
-	"Minor_Genoa" => [
+	GENOA => [
 		"x" => 2844,
 		"y" => 1750,
 		"name" => "Minor_Genoa",
@@ -1899,1293 +1899,2987 @@ $this->cities = [
 $this->tokens = [
 	ENGLAND_KEY => [
 		"name" => "English Key",
-		"power" => ENGLAND,
-		"style" => "Keys england_key",
+		"power" => OTHER,
+		"style" => "Control Keys Catholic england_key",
 		"db_id" => "england_scm_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "English Key Protestant",
+			"style" => "Control Keys Reformed england_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	FRANCE_KEY => [
 		"name" => "French Key",
-		"power" => FRANCE,
-		"style" => "Keys france_key",
+		"power" => OTHER,
+		"style" => "Control Keys Catholic france_key",
 		"db_id" => "tbd_1_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "French Key Protestant",
+			"style" => "Control Keys Reformed france_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	HAPSBURG_KEY => [
 		"name" => "Hapsburg Key",
-		"power" => HAPSBURG,
-		"style" => "Keys hapsburg_key",
+		"power" => OTHER,
+		"style" => "Control Keys Catholic hapsburg_key",
 		"db_id" => "tbd_2_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Hapsburg Key Protestant",
+			"style" => "Control Keys Reformed hapsburg_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	OTTOMAN_KEY => [
 		"name" => "Ottoman Key",
-		"power" => OTTOMAN,
-		"style" => "Keys ottoman_key",
+		"power" => OTHER,
+		"style" => "Control Keys Catholic ottoman_key",
 		"db_id" => "tbd_3_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Ottoman Key Protestant",
+			"style" => "Control Keys Reformed ottoman_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	INDEPENDENT_KEY => [
 		"name" => "Independent Key",
 		"power" => OTHER,
-		"style" => "Keys independent_key",
+		"style" => "Control Keys Catholic independent_key",
 		"db_id" => "tbd_4_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Independent Key Protestant",
+			"style" => "Control Keys Reformed independent_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	PAPACY_KEY => [
 		"name" => "Papacy Key",
-		"power" => PAPACY,
-		"style" => "Keys papacy_key",
+		"power" => OTHER,
+		"style" => "Control Keys Catholic papacy_key",
 		"db_id" => "tbd_5_{INDEX}",
+		"types" => [
+			CONTROL,
+			KEYS,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Papacy Key Protestant",
+			"style" => "Control Keys Reformed papacy_key",
+			"types" => [
+				CONTROL,
+				KEYS,
+				REFORMED,
+			],
+		],
 	],
 	ENGLAND_HEX => [
 		"name" => "English Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers england_hex",
+		"style" => "Control Hex Catholic england_hex",
 		"db_id" => "tbd_6_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "English Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed england_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	FRANCE_HEX => [
 		"name" => "French Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers france_hex",
+		"style" => "Control Hex Catholic france_hex",
 		"db_id" => "tbd_7_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "French Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed france_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	HAPSBURG_HEX => [
 		"name" => "Hapsburg Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers hapsburg_hex",
+		"style" => "Control Hex Catholic hapsburg_hex",
 		"db_id" => "tbd_8_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Hapsburg Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed hapsburg_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	INDEPENDENT_HEX => [
 		"name" => "Independent Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers independent_hex",
+		"style" => "Control Hex Catholic independent_hex",
 		"db_id" => "tbd_9_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Independent Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed independent_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	OTTOMAN_HEX => [
 		"name" => "Ottoman Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers ottoman_hex",
+		"style" => "Control Hex Catholic ottoman_hex",
 		"db_id" => "tbd_10_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Ottoman Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed ottoman_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	PAPACY_HEX => [
 		"name" => "Papacy Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers papacy_hex",
+		"style" => "Control Hex Catholic papacy_hex",
 		"db_id" => "tbd_11_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Papacy Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed papacy_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	PROTESTANT_HEX => [
 		"name" => "Protestant Hexagonal Marker",
 		"power" => OTHER,
-		"style" => "Hex Markers protestant_hex",
+		"style" => "Control Hex Catholic protestant_hex",
 		"db_id" => "tbd_12_{INDEX}",
+		"types" => [
+			CONTROL,
+			HEX,
+			CATHOLIC,
+		],
+		BACK => [
+			"name" => "Protestant Hexagonal Marker Protestant",
+			"style" => "Control Hex Reformed protestant_hex",
+			"types" => [
+				CONTROL,
+				HEX,
+				REFORMED,
+			],
+		],
 	],
 	ENGLAND_1UNIT => [
 		"name" => "English 1 Military Unit",
-		"power" => ENGLAND,
+		"power" => OTHER,
 		"style" => "Military Units england_1unit",
 		"db_id" => "england_1unit_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "English 1 Mercenary Unit",
+			"style" => "Military Units Mercenary england_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	ENGLAND_2UNIT => [
 		"name" => "English 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units england_2unit",
 		"db_id" => "tbd_14_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "English 2 Mercenary Unit",
+			"style" => "Military Units Mercenary england_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	ENGLAND_4UNIT => [
 		"name" => "English 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units england_4unit",
 		"db_id" => "tbd_15_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "English 4 Mercenary Unit",
+			"style" => "Military Units Mercenary england_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	ENGLAND_6UNIT => [
 		"name" => "English 6 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units england_6unit",
 		"db_id" => "tbd_16",
+		"strength" => 6,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "English 6 Mercenary Unit",
+			"style" => "Military Units Mercenary england_6unit",
+			"strength" => 6,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	FRANCE_1UNIT => [
 		"name" => "French 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units france_1unit",
 		"db_id" => "tbd_17_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "French 1 Mercenary Unit",
+			"style" => "Military Units Mercenary france_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	FRANCE_2UNIT => [
 		"name" => "French 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units france_2unit",
 		"db_id" => "tbd_18_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "French 2 Mercenary Unit",
+			"style" => "Military Units Mercenary france_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	FRANCE_4UNIT => [
 		"name" => "French 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units france_4unit",
 		"db_id" => "tbd_19_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "French 4 Mercenary Unit",
+			"style" => "Military Units Mercenary france_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	FRANCE_6UNIT => [
 		"name" => "French 6 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units france_6unit",
 		"db_id" => "tbd_20",
+		"strength" => 6,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "French 6 Mercenary Unit",
+			"style" => "Military Units Mercenary france_6unit",
+			"strength" => 6,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	GENOA_1UNIT => [
 		"name" => "Genoese 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units genoa_1unit",
 		"db_id" => "tbd_21",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	GENOA_2UNIT => [
 		"name" => "Genoese 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units genoa_2unit",
 		"db_id" => "tbd_22",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	HAPSBURG_1UNIT => [
 		"name" => "Hapsburg 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hapsburg_1unit",
 		"db_id" => "tbd_23_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hapsburg 1 Mercenary Unit",
+			"style" => "Military Units Mercenary hapsburg_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	HAPSBURG_2UNIT => [
 		"name" => "Hapsburg 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hapsburg_2unit",
 		"db_id" => "tbd_24_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hapsburg 2 Mercenary Unit",
+			"style" => "Military Units Mercenary hapsburg_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	HAPSBURG_4UNIT => [
 		"name" => "Hapsburg 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hapsburg_4unit",
 		"db_id" => "tbd_25_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hapsburg 4 Mercenary Unit",
+			"style" => "Military Units Mercenary hapsburg_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	HAPSBURG_6UNIT => [
 		"name" => "Hapsburg 6 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hapsburg_6unit",
 		"db_id" => "tbd_26",
+		"strength" => 6,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hapsburg 6 Mercenary Unit",
+			"style" => "Military Units Mercenary hapsburg_6unit",
+			"strength" => 6,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	HUNGARY_1UNIT => [
 		"name" => "Hungarian 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hungary_1unit",
 		"db_id" => "tbd_27_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hungarian 2 Military Unit",
+			"style" => "Military Units hungary_1unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+			],
+		],
 	],
 	HUNGARY_4UNIT => [
 		"name" => "Hungarian 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units hungary_4unit",
 		"db_id" => "tbd_28",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Hungarian 2 Military Unit",
+			"style" => "Military Units hungary_4unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+			],
+		],
 	],
 	INDEPENDENT_1UNIT => [
 		"name" => "Independent 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units independent_1unit",
 		"db_id" => "tbd_29_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Independent 2 Military Unit",
+			"style" => "Military Units independent_1unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+			],
+		],
 	],
 	KNIGHTS_1UNIT => [
 		"name" => "Knights of Saint John 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units knights_1unit",
 		"db_id" => "tbd_30",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	OTTOMAN_1UNIT => [
 		"name" => "Ottoman 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units ottoman_1unit",
 		"db_id" => "tbd_31_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Ottoman 1 Cavalry Unit",
+			"style" => "Military Units Cavalry ottoman_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				CAVALRY,
+			],
+		],
 	],
 	OTTOMAN_2UNIT => [
 		"name" => "Ottoman 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units ottoman_2unit",
 		"db_id" => "tbd_32_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Ottoman 2 Cavalry Unit",
+			"style" => "Military Units Cavalry ottoman_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				CAVALRY,
+			],
+		],
 	],
 	OTTOMAN_4UNIT => [
 		"name" => "Ottoman 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units ottoman_4unit",
 		"db_id" => "tbd_33_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Ottoman 4 Cavalry Unit",
+			"style" => "Military Units Cavalry ottoman_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				CAVALRY,
+			],
+		],
 	],
 	OTTOMAN_6UNIT => [
 		"name" => "Ottoman 6 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units ottoman_6unit",
 		"db_id" => "tbd_34",
+		"strength" => 6,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Ottoman 6 Cavalry Unit",
+			"style" => "Military Units Cavalry ottoman_6unit",
+			"strength" => 6,
+			"types" => [
+				MILITARY,
+				UNITS,
+				CAVALRY,
+			],
+		],
 	],
 	PAPACY_1UNIT => [
 		"name" => "Papacy 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units papacy_1unit",
 		"db_id" => "tbd_35_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Papacy 1 Mercenary Unit",
+			"style" => "Military Units Mercenary papacy_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	PAPACY_2UNIT => [
 		"name" => "Papacy 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units papacy_2unit",
 		"db_id" => "tbd_36_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Papacy 2 Mercenary Unit",
+			"style" => "Military Units Mercenary papacy_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	PAPACY_4UNIT => [
 		"name" => "Papacy 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units papacy_4unit",
 		"db_id" => "tbd_37_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Papacy 4 Mercenary Unit",
+			"style" => "Military Units Mercenary papacy_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	PROTESTANT_1UNIT => [
 		"name" => "Protestant 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units protestant_1unit",
 		"db_id" => "tbd_38_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Protestant 1 Mercenary Unit",
+			"style" => "Military Units Mercenary protestant_1unit",
+			"strength" => 1,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	PROTESTANT_2UNIT => [
 		"name" => "Protestant 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units protestant_2unit",
 		"db_id" => "tbd_39_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Protestant 2 Mercenary Unit",
+			"style" => "Military Units Mercenary protestant_2unit",
+			"strength" => 2,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	PROTESTANT_4UNIT => [
 		"name" => "Protestant 4 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units protestant_4unit",
 		"db_id" => "tbd_40_{INDEX}",
+		"strength" => 4,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
+		BACK => [
+			"name" => "Protestant 4 Mercenary Unit",
+			"style" => "Military Units Mercenary protestant_4unit",
+			"strength" => 4,
+			"types" => [
+				MILITARY,
+				UNITS,
+				MERCENARY,
+			],
+		],
 	],
 	SCOTLAND_1UNIT => [
 		"name" => "Scottish 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units scotland_1unit",
 		"db_id" => "tbd_41_{INDEX}",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	SCOTLAND_2UNIT => [
 		"name" => "Scottish 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units scotland_2unit",
 		"db_id" => "tbd_42",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	VENICE_1UNIT => [
 		"name" => "Venetian 1 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units venice_1unit",
 		"db_id" => "tbd_43",
+		"strength" => 1,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	VENICE_2UNIT => [
 		"name" => "Venetian 2 Military Unit",
 		"power" => OTHER,
 		"style" => "Military Units venice_2unit",
 		"db_id" => "tbd_44",
+		"strength" => 2,
+		"types" => [
+			MILITARY,
+			UNITS,
+		],
 	],
 	BRANDON => [
 		"name" => "Brandon",
 		"power" => OTHER,
 		"style" => "Military Leader brandon",
 		"db_id" => "brandon",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	CHARLES_V => [
 		"name" => "Charles V",
 		"power" => OTHER,
 		"style" => "Military Leader charles_v",
 		"db_id" => "charles_v",
+		"command_rating" => 10,
+		"battle_rating" => 2,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	DUDLEY => [
 		"name" => "Dudley",
 		"power" => OTHER,
 		"style" => "Military Leader dudley",
 		"db_id" => "dudly",
+		"command_rating" => 6,
+		"battle_rating" => 0,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	DUKE_ALVA => [
 		"name" => "Duke of Alva",
 		"power" => OTHER,
 		"style" => "Military Leader duke_alva",
 		"db_id" => "duke_alva",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	FERDINAND => [
 		"name" => "Ferdinand",
 		"power" => OTHER,
 		"style" => "Military Leader ferdinand",
 		"db_id" => "tbd_49",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	FRANCIS_I => [
 		"name" => "Francis I",
 		"power" => OTHER,
 		"style" => "Military Leader francis_i",
 		"db_id" => "tbd_50",
+		"command_rating" => 8,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	HENRY_II => [
 		"name" => "Henry II",
 		"power" => OTHER,
 		"style" => "Military Leader henry_ii",
 		"db_id" => "tbd_51",
+		"command_rating" => 8,
+		"battle_rating" => 0,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	HENRY_VIII => [
 		"name" => "Henry VIII",
 		"power" => OTHER,
 		"style" => "Military Leader henry_viii",
 		"db_id" => "tbd_52",
+		"command_rating" => 8,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	IBRAHIM => [
 		"name" => "Ibrahim",
 		"power" => OTHER,
 		"style" => "Military Leader ibrahim",
 		"db_id" => "tbd_53",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	JOHN_FREDERICK => [
 		"name" => "John Frederick",
 		"power" => OTHER,
 		"style" => "Military Leader john_frederick",
 		"db_id" => "tbd_54",
+		"command_rating" => 6,
+		"battle_rating" => 0,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	MAURICE_OF_SAXONY => [
 		"name" => "Maurice of Saxony",
 		"power" => OTHER,
 		"style" => "Military Leader maurice_of_saxony",
 		"db_id" => "maurice_of_saxony",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
+		BACK => [
+			"name" => "Maurice of Saxony",
+			"style" => "Military Leader maurice_of_saxony",
+			"types" => [
+				MILITARY,
+				LEADER,
+			],
+		],
 	],
 	MONTMORENCY => [
 		"name" => "Montmorency",
 		"power" => OTHER,
 		"style" => "Military Leader montmorency",
 		"db_id" => "tbd_56",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	PHILIP_HESSE => [
 		"name" => "Philip of Hesse",
 		"power" => OTHER,
 		"style" => "Military Leader philip_hesse",
 		"db_id" => "tbd_57",
+		"command_rating" => 6,
+		"battle_rating" => 0,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	RENEGADE => [
 		"name" => "Charles Borbon, Renegade Leader",
 		"power" => OTHER,
 		"style" => "Military Leader renegade",
 		"db_id" => "tbd_58",
+		"command_rating" => 6,
+		"battle_rating" => 1,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	SULEIMAN => [
 		"name" => "Suleiman",
 		"power" => OTHER,
 		"style" => "Military Leader suleiman",
 		"db_id" => "tbd_59",
+		"command_rating" => 12,
+		"battle_rating" => 2,
+		"types" => [
+			MILITARY,
+			LEADER,
+		],
 	],
 	ENGLISH_SQUADRON => [
 		"name" => "English Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units english_squadron",
 		"db_id" => "tbd_60_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	FRENCH_SQUADRON => [
 		"name" => "French Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units french_squadron",
 		"db_id" => "tbd_61_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	GENOESE_SQAUADRON => [
 		"name" => "Genoese Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units genoese_sqauadron",
 		"db_id" => "tbd_62",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	HAPSBURG_SQUADRON => [
 		"name" => "Hapsburg Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units hapsburg_squadron",
 		"db_id" => "tbd_63_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	OTTOMAN_SQUADRON => [
 		"name" => "Ottoman Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units ottoman_squadron",
 		"db_id" => "tbd_64_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	PAPACY_SQUADRON => [
 		"name" => "Papacy Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units papacy_squadron",
 		"db_id" => "tbd_65_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	SCOTTISH_SQUADRON => [
 		"name" => "Scottish Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units scottish_squadron",
 		"db_id" => "tbd_66",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	VENETIAN_SQUADRON => [
 		"name" => "Venetian Squadron",
 		"power" => OTHER,
 		"style" => "Naval Units venetian_squadron",
 		"db_id" => "tbd_67_{INDEX}",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			UNITS,
+		],
 	],
 	ANDREA_DORIA => [
 		"name" => "Andrea Doria",
 		"power" => OTHER,
 		"style" => "Naval Leader andrea_doria",
 		"db_id" => "tbd_68",
+		"strength" => 2,
+		"types" => [
+			NAVAL,
+			LEADER,
+		],
 	],
 	BARBAROSSA => [
 		"name" => "Barbarossa",
 		"power" => OTHER,
 		"style" => "Naval Leader barbarossa",
 		"db_id" => "tbd_69",
+		"battle_rating" => 2,
+		"piracy_rating" => 1,
+		"types" => [
+			NAVAL,
+			LEADER,
+		],
 	],
 	DRAGUT => [
 		"name" => "Dragut",
 		"power" => OTHER,
 		"style" => "Naval Leader dragut",
 		"db_id" => "tbd_70",
+		"battle_rating" => 1,
+		"piracy_rating" => 2,
+		"types" => [
+			NAVAL,
+			LEADER,
+		],
 	],
 	ALLIED => [
 		"name" => "Allied",
 		"power" => OTHER,
 		"style" => "Diplomacy allied",
 		"db_id" => "tbd_71_{INDEX}",
+		"types" => [
+			DIPLOMACY,
+		],
 	],
 	AT_WAR => [
 		"name" => "At War",
 		"power" => OTHER,
 		"style" => "Diplomacy at_war",
 		"db_id" => "tbd_72_{INDEX}",
+		"types" => [
+			DIPLOMACY,
+		],
 	],
 	UNREST => [
 		"name" => "Unrest",
 		"power" => OTHER,
-		"style" => "Unrest unrest",
+		"style" => "Unrest_marker unrest",
 		"db_id" => "tbd_73_{INDEX}",
+		"types" => [
+			UNREST_MARKER,
+		],
 	],
 	VP_ENGLAND => [
 		"name" => "English VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_england",
+		"style" => "VP_marker vp_england",
 		"db_id" => "tbd_74",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	VP_FRANCE => [
 		"name" => "French VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_france",
+		"style" => "VP_marker vp_france",
 		"db_id" => "tbd_75",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	VP_HAPSBURG => [
 		"name" => "Hapsburg VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_hapsburg",
+		"style" => "VP_marker vp_hapsburg",
 		"db_id" => "tbd_76",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	VP_OTTOMAN => [
 		"name" => "Ottoman VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_ottoman",
+		"style" => "VP_marker vp_ottoman",
 		"db_id" => "tbd_77",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	VP_PAPACY => [
 		"name" => "Papacy VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_papacy",
+		"style" => "VP_marker vp_papacy",
 		"db_id" => "tbd_78",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	VP_PROTESTANT => [
 		"name" => "Protestant VP's",
 		"power" => OTHER,
-		"style" => "VP Counter vp_protestant",
+		"style" => "VP_marker vp_protestant",
 		"db_id" => "tbd_79",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	LOANED_ENGLAND => [
 		"name" => "Loaned to England",
 		"power" => OTHER,
 		"style" => "Loaned loaned_england",
 		"db_id" => "tbd_80_{INDEX}",
+		"types" => [
+			LOANED,
+		],
 	],
 	LOANED_FRANCE => [
 		"name" => "Loaned to France",
 		"power" => OTHER,
 		"style" => "Loaned loaned_france",
 		"db_id" => "tbd_81_{INDEX}",
+		"types" => [
+			LOANED,
+		],
 	],
 	LOANED_HAPSBURG => [
 		"name" => "Loaned to Hapsburg",
 		"power" => OTHER,
 		"style" => "Loaned loaned_hapsburg",
 		"db_id" => "tbd_82_{INDEX}",
+		"types" => [
+			LOANED,
+		],
 	],
 	LOANED_OTTOMAN => [
 		"name" => "Loaned to Ottoman",
 		"power" => OTHER,
 		"style" => "Loaned loaned_ottoman",
 		"db_id" => "tbd_83_{INDEX}",
+		"types" => [
+			LOANED,
+		],
 	],
 	LOANED_PAPACY => [
 		"name" => "Loaned to Papacy",
 		"power" => OTHER,
 		"style" => "Loaned loaned_papacy",
 		"db_id" => "tbd_84_{INDEX}",
+		"types" => [
+			LOANED,
+		],
 	],
 	CALVIN_REFORMER => [
 		"name" => "Calvin Reformer",
 		"power" => OTHER,
 		"style" => "Reformer calvin_reformer",
 		"db_id" => "tbd_85",
+		"types" => [
+			REFORMER,
+		],
 	],
 	CRANMER_REFORMER => [
 		"name" => "Cranmer Reformer",
 		"power" => OTHER,
 		"style" => "Reformer cranmer_reformer",
 		"db_id" => "tbd_86",
+		"types" => [
+			REFORMER,
+		],
 	],
 	LUTHER_REFORMER => [
 		"name" => "Luther Reformer",
 		"power" => OTHER,
 		"style" => "Reformer luther_reformer",
 		"db_id" => "tbd_87",
+		"types" => [
+			REFORMER,
+		],
 	],
 	ZWINGLI_REFORMER => [
 		"name" => "Zwingli Reformer",
 		"power" => OTHER,
 		"style" => "Reformer zwingli_reformer",
 		"db_id" => "tbd_88",
+		"types" => [
+			REFORMER,
+		],
 	],
 	ALEANDER => [
 		"name" => "Aleander",
 		"power" => OTHER,
 		"style" => "Debater aleander",
 		"db_id" => "tbd_89",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Aleander",
+			"style" => "Debater Committed aleander",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CAJETAN => [
 		"name" => "Cajetan",
 		"power" => OTHER,
 		"style" => "Debater cajetan",
 		"db_id" => "tbd_90",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Cajetan",
+			"style" => "Debater Committed cajetan",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CAMPEGGIO => [
 		"name" => "Campeggio",
 		"power" => OTHER,
 		"style" => "Debater campeggio",
 		"db_id" => "tbd_91",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Campeggio",
+			"style" => "Debater Committed campeggio",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CANISIUS => [
 		"name" => "Canisius",
 		"power" => OTHER,
 		"style" => "Debater canisius",
 		"db_id" => "tbd_92",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Canisius",
+			"style" => "Debater Committed canisius",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CARAFFA => [
 		"name" => "Caraffa",
 		"power" => OTHER,
 		"style" => "Debater caraffa",
 		"db_id" => "tbd_93",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Caraffa",
+			"style" => "Debater Committed caraffa",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CONTARINI => [
 		"name" => "Contarini",
 		"power" => OTHER,
 		"style" => "Debater contarini",
 		"db_id" => "tbd_94",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Contarini",
+			"style" => "Debater Committed contarini",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	ECK => [
 		"name" => "Eck",
 		"power" => OTHER,
 		"style" => "Debater eck",
 		"db_id" => "tbd_95",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Eck",
+			"style" => "Debater Committed eck",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	FABER => [
 		"name" => "Faber",
 		"power" => OTHER,
 		"style" => "Debater faber",
 		"db_id" => "tbd_96",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Faber",
+			"style" => "Debater Committed faber",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	GARDINER => [
 		"name" => "Gardiner",
 		"power" => OTHER,
 		"style" => "Debater gardiner",
 		"db_id" => "tbd_97",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Gardiner",
+			"style" => "Debater Committed gardiner",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	LOYOLA => [
 		"name" => "Loyola",
 		"power" => OTHER,
 		"style" => "Debater loyola",
 		"db_id" => "tbd_98",
+		"debate_value" => 4,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Loyola",
+			"style" => "Debater Committed loyola",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	POLE => [
 		"name" => "Pole",
 		"power" => OTHER,
 		"style" => "Debater pole",
 		"db_id" => "tbd_99",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Pole",
+			"style" => "Debater Committed pole",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	TETZEL => [
 		"name" => "Tetzel",
 		"power" => OTHER,
 		"style" => "Debater tetzel",
 		"db_id" => "tbd_100",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Tetzel",
+			"style" => "Debater Committed tetzel",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	BUCER => [
 		"name" => "Bucer",
 		"power" => OTHER,
 		"style" => "Debater bucer",
 		"db_id" => "tbd_101",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Bucer",
+			"style" => "Debater Committed bucer",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	BULLINGER => [
 		"name" => "Bullinger",
 		"power" => OTHER,
 		"style" => "Debater bullinger",
 		"db_id" => "tbd_102",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Bullinger",
+			"style" => "Debater Committed bullinger",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CALVIN => [
 		"name" => "Calvin",
 		"power" => OTHER,
 		"style" => "Debater calvin",
 		"db_id" => "tbd_103",
+		"debate_value" => 4,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Calvin",
+			"style" => "Debater Committed calvin",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CARLSTADT => [
 		"name" => "Carlstadt",
 		"power" => OTHER,
 		"style" => "Debater carlstadt",
 		"db_id" => "tbd_104",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Carlstadt",
+			"style" => "Debater Committed carlstadt",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	COP => [
 		"name" => "Cop",
 		"power" => OTHER,
 		"style" => "Debater cop",
 		"db_id" => "tbd_105",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Cop",
+			"style" => "Debater Committed cop",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	COVERDALE => [
 		"name" => "Coverdale",
 		"power" => OTHER,
 		"style" => "Debater coverdale",
 		"db_id" => "tbd_106",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Coverdale",
+			"style" => "Debater Committed coverdale",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	CRANMER => [
 		"name" => "Cranmer",
 		"power" => OTHER,
 		"style" => "Debater cranmer",
 		"db_id" => "tbd_107",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Cranmer",
+			"style" => "Debater Committed cranmer",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	FAREL => [
 		"name" => "Farel",
 		"power" => OTHER,
 		"style" => "Debater farel",
 		"db_id" => "tbd_108",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Farel",
+			"style" => "Debater Committed farel",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	KNOX => [
 		"name" => "Knox",
 		"power" => OTHER,
 		"style" => "Debater knox",
 		"db_id" => "tbd_109",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Knox",
+			"style" => "Debater Committed knox",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	LATIMER => [
 		"name" => "Latimer",
 		"power" => OTHER,
 		"style" => "Debater latimer",
 		"db_id" => "tbd_110",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Latimer",
+			"style" => "Debater Committed latimer",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	LUTHER => [
 		"name" => "Luther",
 		"power" => OTHER,
 		"style" => "Debater luther",
 		"db_id" => "tbd_111",
+		"debate_value" => 4,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Luther",
+			"style" => "Debater Committed luther",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	MELANCHTHON => [
 		"name" => "Melanchthon",
 		"power" => OTHER,
 		"style" => "Debater melanchthon",
 		"db_id" => "tbd_112",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Melanchthon",
+			"style" => "Debater Committed melanchthon",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	OEKOLAMPADIUS => [
 		"name" => "Oekolampadius",
 		"power" => OTHER,
 		"style" => "Debater oekolampadius",
 		"db_id" => "tbd_113",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Oekolampadius",
+			"style" => "Debater Committed oekolampadius",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	OLIVETAN => [
 		"name" => "Olivetan",
 		"power" => OTHER,
 		"style" => "Debater olivetan",
 		"db_id" => "tbd_114",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Olivetan",
+			"style" => "Debater Committed olivetan",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	TYNDALE => [
 		"name" => "Tyndale",
 		"power" => OTHER,
 		"style" => "Debater tyndale",
 		"db_id" => "tbd_115",
+		"debate_value" => 2,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Tyndale",
+			"style" => "Debater Committed tyndale",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	WISHART => [
 		"name" => "Wishart",
 		"power" => OTHER,
 		"style" => "Debater wishart",
 		"db_id" => "tbd_116",
+		"debate_value" => 1,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Wishart",
+			"style" => "Debater Committed wishart",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	ZWINGLI => [
 		"name" => "Zwingli",
 		"power" => OTHER,
 		"style" => "Debater zwingli",
 		"db_id" => "tbd_117",
+		"debate_value" => 3,
+		"types" => [
+			DEBATER,
+		],
+		BACK => [
+			"name" => "Zwingli",
+			"style" => "Debater Committed zwingli",
+			"types" => [
+				DEBATER,
+				COMMITTED,
+			],
+		],
 	],
 	ENGLISH_EXPLORATION => [
 		"name" => "English Exploration Underway",
 		"power" => OTHER,
-		"style" => "Exploration english_exploration",
+		"style" => "Exploration Charted english_exploration",
 		"db_id" => "tbd_118",
+		"types" => [
+			EXPLORATION,
+			CHARTED,
+		],
+		BACK => [
+			"name" => "English Exploration",
+			"style" => "Exploration english_exploration",
+			"types" => [
+				EXPLORATION,
+			],
+		],
 	],
 	FRENCH_EXPLORATION => [
 		"name" => "French Exploration Underway",
 		"power" => OTHER,
-		"style" => "Exploration french_exploration",
+		"style" => "Exploration Charted french_exploration",
 		"db_id" => "tbd_119",
+		"types" => [
+			EXPLORATION,
+			CHARTED,
+		],
+		BACK => [
+			"name" => "French Exploratinon",
+			"style" => "Exploration french_exploration",
+			"types" => [
+				EXPLORATION,
+			],
+		],
 	],
 	HAPSBURG_EXPLORATION => [
 		"name" => "Hapsburg Exploration Underway",
 		"power" => OTHER,
-		"style" => "Exploration hapsburg_exploration",
+		"style" => "Exploration Charted hapsburg_exploration",
 		"db_id" => "tbd_120",
+		"types" => [
+			EXPLORATION,
+			CHARTED,
+		],
+		BACK => [
+			"name" => "Hapsburg Exploration",
+			"style" => "Exploration hapsburg_exploration",
+			"types" => [
+				EXPLORATION,
+			],
+		],
 	],
 	CABOT_ENG => [
 		"name" => "Cabot English",
 		"power" => OTHER,
 		"style" => "Explorer cabot_eng",
 		"db_id" => "tbd_121",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "English Explorer",
+			"style" => "Explorer Unknown cabot_eng",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	CABOT_FRE => [
 		"name" => "Cabot French",
 		"power" => OTHER,
 		"style" => "Explorer cabot_fre",
 		"db_id" => "tbd_122",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "French Explorer",
+			"style" => "Explorer Unknown cabot_fre",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	CABOT_HAP => [
 		"name" => "Cabot Hapsburg",
 		"power" => OTHER,
 		"style" => "Explorer cabot_hap",
 		"db_id" => "tbd_123",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown cabot_hap",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	CARTIER => [
 		"name" => "Cartier",
 		"power" => OTHER,
 		"style" => "Explorer cartier",
 		"db_id" => "tbd_124",
+		"explorer_value" => 3,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "French Explorer",
+			"style" => "Explorer Unknown cartier",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	CHANCELLOR => [
 		"name" => "Chancellor",
 		"power" => OTHER,
 		"style" => "Explorer chancellor",
 		"db_id" => "tbd_125",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "English Explorer",
+			"style" => "Explorer Unknown chancellor",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	DE_VACA => [
 		"name" => "De Vaca",
 		"power" => OTHER,
 		"style" => "Explorer de_vaca",
 		"db_id" => "tbd_126",
+		"explorer_value" => 0,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown de_vaca",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	DE_SOTO => [
 		"name" => "De Soto",
 		"power" => OTHER,
 		"style" => "Explorer de_soto",
 		"db_id" => "tbd_127",
+		"explorer_value" => 2,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown de_soto",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	LEON => [
 		"name" => "Leon",
 		"power" => OTHER,
 		"style" => "Explorer leon",
 		"db_id" => "tbd_128",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown leon",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	MAGELLAN => [
 		"name" => "Magellan",
 		"power" => OTHER,
 		"style" => "Explorer magellan",
 		"db_id" => "tbd_129",
+		"explorer_value" => 4,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown magellan",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	NARVAEZ => [
 		"name" => "Narvaez",
 		"power" => OTHER,
 		"style" => "Explorer narvaez",
 		"db_id" => "tbd_130",
+		"explorer_value" => -1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown narvaez",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	ORELLANA => [
 		"name" => "Orellana",
 		"power" => OTHER,
 		"style" => "Explorer orellana",
 		"db_id" => "tbd_131",
+		"explorer_value" => 3,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "Hapsburg Explorer",
+			"style" => "Explorer Unknown orellana",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	ROBERVAL => [
 		"name" => "Roberval",
 		"power" => OTHER,
 		"style" => "Explorer roberval",
 		"db_id" => "tbd_132",
+		"explorer_value" => 0,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "French Explorer",
+			"style" => "Explorer Unknown roberval",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	RUT => [
 		"name" => "Rut",
 		"power" => OTHER,
 		"style" => "Explorer rut",
 		"db_id" => "tbd_133",
+		"explorer_value" => 1,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "English Explorer",
+			"style" => "Explorer Unknown rut",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	VERRAZANO => [
 		"name" => "Verrazano",
 		"power" => OTHER,
 		"style" => "Explorer verrazano",
 		"db_id" => "tbd_134",
+		"explorer_value" => 2,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "French Explorer",
+			"style" => "Explorer Unknown verrazano",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	WILLOUGHBY => [
 		"name" => "Willoughby",
 		"power" => OTHER,
 		"style" => "Explorer willoughby",
 		"db_id" => "tbd_135",
+		"explorer_value" => 0,
+		"types" => [
+			EXPLORER,
+		],
+		BACK => [
+			"name" => "English Explorer",
+			"style" => "Explorer Unknown willoughby",
+			"types" => [
+				EXPLORER,
+				UNKNOWN,
+			],
+		],
 	],
 	CHARLESBOURG => [
 		"name" => "Charlesbourg",
 		"power" => OTHER,
 		"style" => "Colony charlesbourg",
 		"db_id" => "tbd_136",
+		"types" => [
+			COLONY,
+		],
 	],
 	CUBA => [
 		"name" => "Cuba",
 		"power" => OTHER,
 		"style" => "Colony cuba",
 		"db_id" => "tbd_137",
+		"types" => [
+			COLONY,
+		],
 	],
 	HISPANIOLA => [
 		"name" => "Hispaniola",
 		"power" => OTHER,
 		"style" => "Colony hispaniola",
 		"db_id" => "tbd_138",
+		"types" => [
+			COLONY,
+		],
 	],
 	JAMESTOWN => [
 		"name" => "Jamestown",
 		"power" => OTHER,
 		"style" => "Colony jamestown",
 		"db_id" => "tbd_139",
+		"types" => [
+			COLONY,
+		],
 	],
 	MONTREAL => [
 		"name" => "Montreal",
 		"power" => OTHER,
 		"style" => "Colony montreal",
 		"db_id" => "tbd_140",
+		"types" => [
+			COLONY,
+		],
 	],
 	POTOSI => [
 		"name" => "Potosi Silver Mines",
 		"power" => OTHER,
 		"style" => "Colony potosi",
 		"db_id" => "tbd_141",
+		"types" => [
+			COLONY,
+		],
 	],
 	PUERTO_RICO => [
 		"name" => "Puerto Rico",
 		"power" => OTHER,
 		"style" => "Colony puerto_rico",
 		"db_id" => "tbd_142",
+		"types" => [
+			COLONY,
+		],
 	],
 	ROANOKE => [
 		"name" => "Roanoke",
 		"power" => OTHER,
 		"style" => "Colony roanoke",
 		"db_id" => "tbd_143",
+		"types" => [
+			COLONY,
+		],
 	],
 	HAPSBURG_CONQUEST => [
 		"name" => "Hapsburg Conquest Underway",
 		"power" => OTHER,
 		"style" => "Conquest hapsburg_conquest",
 		"db_id" => "tbd_144",
+		"types" => [
+			CONQUEST,
+		],
 	],
 	ENGLISH_CONQUEST => [
 		"name" => "English Conquest",
 		"power" => OTHER,
 		"style" => "Conquistador english_conquest",
 		"db_id" => "tbd_145_{INDEX}",
+		"explorer_value" => 0,
+		"types" => [
+			CONQUISTADOR,
+		],
 	],
 	FRENCH_CONQUEST => [
 		"name" => "French Conquest",
 		"power" => OTHER,
 		"style" => "Conquistador french_conquest",
 		"db_id" => "tbd_146_{INDEX}",
+		"explorer_value" => 0,
+		"types" => [
+			CONQUISTADOR,
+		],
 	],
 	CORDOVA => [
 		"name" => "Cordova",
 		"power" => OTHER,
 		"style" => "Conquistador cordova",
 		"db_id" => "tbd_147",
+		"explorer_value" => 1,
+		"types" => [
+			CONQUISTADOR,
+		],
+		BACK => [
+			"name" => "Hapsburg Conqueror",
+			"style" => "Conquistador Unknown cordova",
+			"types" => [
+				CONQUISTADOR,
+				UNKNOWN,
+			],
+		],
 	],
 	CORONADO => [
 		"name" => "Coronado",
 		"power" => OTHER,
 		"style" => "Conquistador coronado",
 		"db_id" => "tbd_148",
+		"explorer_value" => 1,
+		"types" => [
+			CONQUISTADOR,
+		],
+		BACK => [
+			"name" => "Hapsburg Conqueror",
+			"style" => "Conquistador Unknown coronado",
+			"types" => [
+				CONQUISTADOR,
+				UNKNOWN,
+			],
+		],
 	],
 	CORTEZ => [
 		"name" => "Cortez",
 		"power" => OTHER,
 		"style" => "Conquistador cortez",
 		"db_id" => "tbd_149",
+		"explorer_value" => 4,
+		"types" => [
+			CONQUISTADOR,
+		],
+		BACK => [
+			"name" => "Hapsburg Conqueror",
+			"style" => "Conquistador Unknown cortez",
+			"types" => [
+				CONQUISTADOR,
+				UNKNOWN,
+			],
+		],
 	],
 	MONTEJO => [
 		"name" => "Montejo",
 		"power" => OTHER,
 		"style" => "Conquistador montejo",
 		"db_id" => "tbd_150",
+		"explorer_value" => 2,
+		"types" => [
+			CONQUISTADOR,
+		],
+		BACK => [
+			"name" => "Hapsburg Conqueror",
+			"style" => "Conquistador Unknown montejo",
+			"types" => [
+				CONQUISTADOR,
+				UNKNOWN,
+			],
+		],
 	],
 	PIZARRO => [
 		"name" => "Pizarro",
 		"power" => OTHER,
 		"style" => "Conquistador pizarro",
 		"db_id" => "tbd_151",
+		"explorer_value" => 3,
+		"types" => [
+			CONQUISTADOR,
+		],
+		BACK => [
+			"name" => "Hapsburg Conqueror",
+			"style" => "Conquistador Unknown pizarro",
+			"types" => [
+				CONQUISTADOR,
+				UNKNOWN,
+			],
+		],
 	],
 	ENGLISH_PROT_COUNTER => [
 		"name" => "English Home Protestant Spaces",
 		"power" => OTHER,
 		"style" => "Religious counter english_prot_counter",
 		"db_id" => "tbd_152",
+		"types" => [
+			RELIGIOUS,
+			COUNTER,
+		],
 	],
 	PROTESTANT_SPACES => [
 		"name" => "Protestant Spaces",
 		"power" => OTHER,
 		"style" => "Religious counter protestant_spaces",
 		"db_id" => "tbd_153",
+		"types" => [
+			RELIGIOUS,
+			COUNTER,
+		],
 	],
 	TURN => [
 		"name" => "Turn",
 		"power" => OTHER,
-		"style" => "Turn counter turn",
+		"style" => "Turn_marker turn",
 		"db_id" => "tbd_154",
+		"types" => [
+			TURN_MARKER,
+		],
 	],
 	MINUS_ONE_CARD => [
 		"name" => "-1 Card",
 		"power" => OTHER,
-		"style" => "Cards Marker minus_one_card",
+		"style" => "Cards_marker minus_one_card",
 		"db_id" => "tbd_155_{INDEX}",
+		"types" => [
+			CARDS_MARKER,
+		],
 	],
 	GREAT_LAKES_1VP => [
 		"name" => "Great Lakes 1 VP",
-		"power" => VP,
-		"style" => "VP marker great_lakes_1vp",
+		"power" => OTHER,
+		"style" => "VP_marker great_lakes_1vp",
 		"db_id" => "tbd_156",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	MISSISSIPPI_RIVER_1VP => [
 		"name" => "Mississippi River 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker mississippi_river_1vp",
+		"style" => "VP_marker mississippi_river_1vp",
 		"db_id" => "tbd_157",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	ST_LAWRENCE_RIVER_1VP => [
 		"name" => "Saint Lawrence River 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker st_lawrence_river_1vp",
+		"style" => "VP_marker st_lawrence_river_1vp",
 		"db_id" => "tbd_158",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	AMAZON_RIVER_2VP => [
 		"name" => "Amazon River 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker amazon_river_2vp",
+		"style" => "VP_marker amazon_river_2vp",
 		"db_id" => "tbd_159",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	PACIFIC_STRAIT_1VP => [
 		"name" => "Pacific Strait 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker pacific_strait_1vp",
+		"style" => "VP_marker pacific_strait_1vp",
 		"db_id" => "tbd_160",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	CIRCUMNAVIGATION_3VP => [
 		"name" => "Circumnavigation 3 VP",
 		"power" => OTHER,
-		"style" => "VP marker circumnavigation_3vp",
+		"style" => "VP_marker circumnavigation_3vp",
 		"db_id" => "tbd_161",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	MAYA_1VP => [
 		"name" => "Maya 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker maya_1vp",
+		"style" => "VP_marker maya_1vp",
 		"db_id" => "tbd_162",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	AZTECS_2VP => [
 		"name" => "Aztecs 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker aztecs_2vp",
+		"style" => "VP_marker aztecs_2vp",
 		"db_id" => "tbd_163",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	INCA_2VP => [
 		"name" => "Inca 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker inca_2vp",
+		"style" => "VP_marker inca_2vp",
 		"db_id" => "inca_2vp",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	BIBLE_ENG_1VP => [
 		"name" => "Bible English Translation 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker bible_eng_1vp",
+		"style" => "VP_marker bible_eng_1vp",
 		"db_id" => "bible_eng_1vp",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	BIBLE_FRE_1VP => [
 		"name" => "Bible French Translation 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker bible_fre_1vp",
+		"style" => "VP_marker bible_fre_1vp",
 		"db_id" => "bible_fre_1vp",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	BIBLE_GER_1VP => [
 		"name" => "Bible German Translation 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker bible_ger_1vp",
+		"style" => "VP_marker bible_ger_1vp",
 		"db_id" => "bible_ger_1vp",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	CHATEAUX_VP => [
 		"name" => "Chateaux VP's",
 		"power" => OTHER,
-		"style" => "VP marker chateaux_vp",
+		"style" => "VP_marker chateaux_vp",
 		"db_id" => "tbd_168",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	PIRACY_VP => [
 		"name" => "Piracy VP's",
 		"power" => OTHER,
-		"style" => "VP marker piracy_vp",
+		"style" => "VP_marker piracy_vp",
 		"db_id" => "tbd_169",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	ST_PETERS_VP => [
 		"name" => "Saint Peter's VP's",
 		"power" => OTHER,
-		"style" => "VP marker st_peters_vp",
+		"style" => "VP_marker st_peters_vp",
 		"db_id" => "tbd_170",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	COPERNICUS_1VP => [
 		"name" => "Copernicus 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker copernicus_1vp",
+		"style" => "VP_marker copernicus_1vp",
 		"db_id" => "tbd_171",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	COPERNICUS_2VP => [
 		"name" => "Copernicus 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker copernicus_2vp",
+		"style" => "VP_marker copernicus_2vp",
 		"db_id" => "tbd_172",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	EDWARD_5VP => [
 		"name" => "Edward VI 5 VP's",
 		"power" => OTHER,
-		"style" => "VP marker edward_5vp",
+		"style" => "VP_marker edward_5vp",
 		"db_id" => "tbd_173",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	ELIZABETH_2VP => [
 		"name" => "Elizabeth 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker elizabeth_2vp",
+		"style" => "VP_marker elizabeth_2vp",
 		"db_id" => "tbd_174",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	GONZAGA_1VP => [
 		"name" => "Giulia Gonzaga 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker gonzaga_1vp",
+		"style" => "VP_marker gonzaga_1vp",
 		"db_id" => "tbd_175",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	SERVETUS_1VP => [
 		"name" => "Servetus 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker servetus_1vp",
+		"style" => "VP_marker servetus_1vp",
 		"db_id" => "tbd_176",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	MASTER_OF_ITALY_1VP => [
 		"name" => "Master of Italy 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker master_of_italy_1vp",
+		"style" => "VP_marker master_of_italy_1vp",
 		"db_id" => "tbd_177_{INDEX}",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	MASTER_OF_ITALY_2VP => [
 		"name" => "Master of Italy 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker master_of_italy_2vp",
+		"style" => "VP_marker master_of_italy_2vp",
 		"db_id" => "tbd_178_{INDEX}",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	WAR_WINNER_1VP => [
 		"name" => "War Winner 1 VP",
 		"power" => OTHER,
-		"style" => "VP marker war_winner_1vp",
+		"style" => "VP_marker war_winner_1vp",
 		"db_id" => "tbd_179_{INDEX}",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	WAR_WINNER_2VP => [
 		"name" => "War Winner 2 VP's",
 		"power" => OTHER,
-		"style" => "VP marker war_winner_2vp",
+		"style" => "VP_marker war_winner_2vp",
 		"db_id" => "tbd_180_{INDEX}",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	PHONYSCOTLAND_MINUS1 => [
 		"name" => "Phony War in Scotland -1 VP's",
 		"power" => OTHER,
-		"style" => "VP marker phonyscotland_minus1",
+		"style" => "VP_marker phonyscotland_minus1",
 		"db_id" => "tbd_181",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	PHONYVENICE_MINUS1 => [
 		"name" => "Phony War in Venice - 1 VP's",
 		"power" => OTHER,
-		"style" => "VP marker phonyvenice_minus1",
+		"style" => "VP_marker phonyvenice_minus1",
 		"db_id" => "tbd_182",
+		"types" => [
+			VP_MARKER,
+		],
 	],
 	ANNE_BOLEYN => [
 		"name" => "Anne Boleyn",
 		"power" => OTHER,
 		"style" => "Wife anne_boleyn",
 		"db_id" => "tbd_183",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Anne Boleyn",
+			"style" => "Wife Benefit anne_boleyn",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	ANNE_CLEVES => [
 		"name" => "Anne of Cleves",
 		"power" => OTHER,
 		"style" => "Wife anne_cleves",
 		"db_id" => "tbd_184",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Anne of Cleves",
+			"style" => "Wife Benefit anne_cleves",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	CATHERINE_ARAGON => [
 		"name" => "Catherine of Aragon",
 		"power" => OTHER,
 		"style" => "Wife catherine_aragon",
 		"db_id" => "tbd_185",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Catherine of Aragon",
+			"style" => "Wife Benefit catherine_aragon",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	JANE_SEYMOUR => [
 		"name" => "Jane Seymour",
 		"power" => OTHER,
 		"style" => "Wife jane_seymour",
 		"db_id" => "tbd_186",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Jane Seymour",
+			"style" => "Wife Benefit jane_seymour",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	KATHERINE_PARR => [
 		"name" => "Katherine Parr",
 		"power" => OTHER,
 		"style" => "Wife katherine_parr",
 		"db_id" => "tbd_187",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Katherine Parr",
+			"style" => "Wife Benefit katherine_parr",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	KATHRYN_HOWARD => [
 		"name" => "Kathryn Howard",
 		"power" => OTHER,
 		"style" => "Wife kathryn_howard",
 		"db_id" => "tbd_188",
+		"types" => [
+			WIFE,
+		],
+		BACK => [
+			"name" => "Kathryn Howard",
+			"style" => "Wife Benefit kathryn_howard",
+			"types" => [
+				WIFE,
+				BENEFIT,
+			],
+		],
 	],
 	HENRY_MARITAL_STATUS => [
 		"name" => "Henry Marital Status",
 		"power" => OTHER,
 		"style" => "Wives Status henry_marital_status",
 		"db_id" => "tbd_189",
+		"types" => [
+			WIVES,
+			STATUS,
+		],
 	],
 	BIBLE_ENGLISH => [
 		"name" => "Bible English",
 		"power" => OTHER,
 		"style" => "Translation bible_english",
 		"db_id" => "tbd_190",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	BIBLE_FRENCH => [
 		"name" => "Bible French",
 		"power" => OTHER,
 		"style" => "Translation bible_french",
 		"db_id" => "tbd_191",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	BIBLE_GERMAN => [
 		"name" => "Bible German",
 		"power" => OTHER,
 		"style" => "Translation bible_german",
 		"db_id" => "tbd_192",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	NEW_TESTAMENT_ENGLISH => [
 		"name" => "New Testament English",
 		"power" => OTHER,
 		"style" => "Translation new_testament_english",
 		"db_id" => "tbd_193",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	NEW_TESTAMENT_FRENCH => [
 		"name" => "New Testament French",
 		"power" => OTHER,
 		"style" => "Translation new_testament_french",
 		"db_id" => "tbd_194",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	NEW_TESTAMENT_GERMAN => [
 		"name" => "New Testament German",
 		"power" => OTHER,
 		"style" => "Translation new_testament_german",
 		"db_id" => "tbd_195",
+		"types" => [
+			TRANSLATION,
+		],
 	],
 	ST_PETERS_CP => [
 		"name" => "Saint Peter's CP Status",
 		"power" => OTHER,
-		"style" => "Saint Peter's st_peters_cp",
+		"style" => "Saint_Peters st_peters_cp",
 		"db_id" => "tbd_196",
+		"types" => [
+			SAINT_PETERS,
+		],
 	],
 	AUGSBURG_CONFESSION => [
 		"name" => "Augsburg Confession Active",
 		"power" => OTHER,
-		"style" => "Event reminder augsburg_confession",
+		"style" => "Event_reminder augsburg_confession",
 		"db_id" => "tbd_197",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	PRINTING_PRESS => [
 		"name" => "Printing Press Active",
 		"power" => OTHER,
-		"style" => "Event reminder printing_press",
+		"style" => "Event_reminder printing_press",
 		"db_id" => "tbd_198",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	COLONIAL_GOVERNOR => [
 		"name" => "Colonial Governor",
 		"power" => OTHER,
-		"style" => "Event reminder colonial_governor",
+		"style" => "Event_reminder colonial_governor",
 		"db_id" => "tbd_199_{INDEX}",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	GALLEONS => [
 		"name" => "Galleons",
 		"power" => OTHER,
-		"style" => "Event reminder galleons",
+		"style" => "Event_reminder galleons",
 		"db_id" => "tbd_200_{INDEX}",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	PLANTATIONS => [
 		"name" => "Plantations",
 		"power" => OTHER,
-		"style" => "Event reminder plantations",
+		"style" => "Event_reminder plantations",
 		"db_id" => "tbd_201_{INDEX}",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	PIRACY => [
 		"name" => "Piracy Marker",
 		"power" => OTHER,
-		"style" => "Event reminder piracy",
+		"style" => "Event_reminder piracy",
 		"db_id" => "tbd_202_{INDEX}",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	NATIVE_UPRISING => [
 		"name" => "Native Uprising",
 		"power" => OTHER,
-		"style" => "Event reminder native_uprising",
+		"style" => "Event_reminder native_uprising",
 		"db_id" => "tbd_203_{INDEX}",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	RAIDER_ENGLISH => [
 		"name" => "English Huguenot Raider",
 		"power" => OTHER,
-		"style" => "Event reminder raider_english",
+		"style" => "Event_reminder raider_english",
 		"db_id" => "tbd_204",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	RAIDER_FRENCH => [
 		"name" => "French Huguenot Raider",
 		"power" => OTHER,
-		"style" => "Event reminder raider_french",
+		"style" => "Event_reminder raider_french",
 		"db_id" => "tbd_205",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	RAIDER_PROTESTANT => [
 		"name" => "Protestant Huguenot Raider",
 		"power" => OTHER,
-		"style" => "Event reminder raider_protestant",
+		"style" => "Event_reminder raider_protestant",
 		"db_id" => "tbd_206",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	MERCATOR_MAP => [
 		"name" => "Mercator's Map",
 		"power" => OTHER,
-		"style" => "Event reminder mercator_map",
+		"style" => "Event_reminder mercator_map",
 		"db_id" => "tbd_207",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	SMALLPOX => [
 		"name" => "Smallpox",
 		"power" => OTHER,
-		"style" => "Event reminder smallpox",
+		"style" => "Event_reminder smallpox",
 		"db_id" => "tbd_208",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	THOMAS_MORE => [
 		"name" => "Thomas More",
 		"power" => OTHER,
-		"style" => "Event reminder thomas_more",
+		"style" => "Event_reminder thomas_more",
 		"db_id" => "tbd_209",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	WARTBURG => [
 		"name" => "Wartburg",
 		"power" => OTHER,
-		"style" => "Event reminder wartburg",
+		"style" => "Event_reminder wartburg",
 		"db_id" => "tbd_210",
+		"types" => [
+			EVENT_REMINDER,
+		],
 	],
 	EXCOMMUNICATED => [
 		"name" => "Excommunicated",
 		"power" => OTHER,
 		"style" => "Excommunion excommunicated",
 		"db_id" => "tbd_211_{INDEX}",
+		"types" => [
+			EXCOMMUNION,
+		],
 	],
 	FORTRESS => [
 		"name" => "Fortress",
 		"power" => OTHER,
-		"style" => "Fortress fortress",
+		"style" => "Fortress_marker fortress",
 		"db_id" => "tbd_212_{INDEX}",
+		"types" => [
+			FORTRESS_MARKER,
+		],
 	],
 	PIRATE_HAVEN => [
 		"name" => "Pirate Haven",
 		"power" => OTHER,
-		"style" => "Pirate Haven pirate_haven",
+		"style" => "PirateHaven pirate_haven",
 		"db_id" => "tbd_213_{INDEX}",
+		"types" => [
+			PIRATEHAVEN,
+		],
 	],
 	JESUIT_UNIVERSITY => [
 		"name" => "Jesuit University",
 		"power" => OTHER,
 		"style" => "University jesuit_university",
 		"db_id" => "tbd_214_{INDEX}",
+		"types" => [
+			UNIVERSITY,
+		],
 	],
 ];
 

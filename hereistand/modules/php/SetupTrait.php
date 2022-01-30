@@ -75,71 +75,71 @@ trait SetupTrait {
 					HAPSBURG_1UNIT,
 					HAPSBURG_KEY,
 				],
-			],
-			PROTESTANT => [
 				WITTENBERG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				BRANDENBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				MAINZ => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				COLOGNE => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				TRIER => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				AUGSBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				STETTIN => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				LUBECK => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				MAGDEBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				HAMBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				BRUNSWICK => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				BREMEN => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				MUNSTER => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				KASSEL => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				ERFURT => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				LEIPZIG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				NUREMBERG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				WORMS => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				REGENSBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				STRASBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
 				SALZBURG => [
-					PROTESTANT_HEX,
+					HAPSBURG_HEX,
 				],
+			],
+			PROTESTANT => [
 			],
 			ENGLAND => [
 				LONDON => [
@@ -247,9 +247,6 @@ trait SetupTrait {
 					SCOTLAND_2UNIT,
 					SCOTLAND_1UNIT,
 					SCOTTISH_SQUADRON,
-				],
-				STIRLING => [
-					FORTRESS,
 				],
 			],
 			INDEPENDENT => [

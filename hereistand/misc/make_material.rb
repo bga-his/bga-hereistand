@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "csv"
+require "set"
 
 def php_print_value(value)
 	if value.class == Hash then
@@ -59,21 +60,38 @@ tokens = Hash.new
 token_counts = Hash.new
 token_css = Hash.new
 token_constants = Array.new
+type_constants = Set.new
 i = 0
 token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
-	token['power'] = row['Group']
-	token['power'] = 'OTHER' if token['power'].nil?
-	token['style'] = "#{row['Type']} #{constant_name.downcase}"
-	row['db_id'] = "tbd_#{i}" if row['db_id'].nil?
-	token['db_id'] = row['db_id']
-	if row['Count'].to_i > 1 then
-		token['db_id'] = "#{token['db_id']}_{INDEX}"
-	end
+	token['power'] = token['power'].nil? ? 'OTHER' : row['Group']
+	token['style'] = "#{row['type']} #{constant_name.downcase}"
+	token['db_id'] = row['db_id'].nil? ? "tbd_#{i}" : row['db_id']
+	token['strength'] = row['strength'].to_i unless row['strength'].nil?
+	token['command_rating'] = row['command_rating'].to_i unless row['command_rating'].nil?
+	token['battle_rating'] = row['battle_rating'].to_i unless row['battle_rating'].nil?
+	token['piracy_rating'] = row['piracy_rating'].to_i unless row['piracy_rating'].nil?
+	token['debate_value'] = row['debate_value'].to_i unless row['debate_value'].nil?
+	token['explorer_value'] = row['explorer_value'].to_i unless row['explorer_value'].nil?
+	token['types'] = row['type'].upcase.split
+	type_constants.merge token['types'] 
 	count = row['Count'].to_i
 	count = 1 if count == nil or count < 1
+	if count > 1 then
+		token['db_id'] = "#{token['db_id']}_{INDEX}"
+	end
+	sides = row['Sides'].to_i
+	if sides == 2 then
+		back = Hash.new
+		back['name'] = row['back_name']
+		back['style'] = "#{row['back_type']} #{constant_name.downcase}"
+		back['strength'] = row['back_strength'].to_i unless row['back_strength'].nil?
+		back['types'] = row['back_type'].upcase.split
+		type_constants.merge back['types'] 
+		token['BACK'] = back
+	end
 	token_counts[constant_name] = count
 	tokens[constant_name] = token
 	token_constants.push constant_name 
@@ -182,9 +200,15 @@ end
 File.open('../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
 	file.write "/*
- * Token type constants
+ * Token constants
  */\n"
 	token_constants.each_with_index do |name, i|
+		file.write print_constant(name, i) + "\n"
+	end
+	file.write "/*
+ * Token type constants
+ */\n"
+	type_constants.to_a.each_with_index do |name, i|
 		file.write print_constant(name, i) + "\n"
 	end
 	file.write "/*

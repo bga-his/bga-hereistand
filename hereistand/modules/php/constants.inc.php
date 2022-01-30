@@ -80,7 +80,7 @@ const BACK = 1;
  */
 const REGULAR = 0;
 const MERC = 1;
-const NAVAL = 2;
+const SHIP = 2;
 
 /*
  * Card type constants
