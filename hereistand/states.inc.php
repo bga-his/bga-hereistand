@@ -39,8 +39,8 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('${you} must take actions with ${remainingCP}CP'),
 		'type' => 'activeplayer',
 		'args' => 'argImpulseActions',
-		'possibleactions' => ['actMove', 'actPass'],
-		'transitions' => ['pass' => ST_NEXT_PLAYER, 'move' => ST_DECLARE_FORMATION],
+		'possibleactions' => ['actMove', 'actPass', 'actBuyUnit'],
+		'transitions' => ['pass' => ST_NEXT_PLAYER, 'move' => ST_DECLARE_FORMATION, 'buy' => ST_BUY_UNIT],
 	],
 
 	ST_DECLARE_FORMATION => [
@@ -59,7 +59,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('${you} must declare destination'),
 		'type' => 'activeplayer',
 		'args' => 'argDeclareDestination',
-		'possibleactions' => ['actDeclareDestination', 'actUndo'],
+		'possibleactions' => ['actPickCity', 'actUndo'],
 		'transitions' => ['declare' => ST_FIND_MOVEMENT_RESPONSES, 'undo' => ST_IMPULSE_ACTIONS],
 	],
 
@@ -321,6 +321,16 @@ $machinestates = [
 		'type' => 'manager',
 		'action' => 'stNextPlayer',
 		'transitions' => ['nextPlayer' => ST_PICK_CARD],
+	],
+
+	ST_BUY_UNIT => [
+		'name' => 'buyUnit',
+		'description' => clienttranslate('${actplayer} must select location to construct unit'),
+		'descriptionmyturn' => clienttranslate('${you} must select location to construct unit'),
+		'type' => 'activeplayer',
+		'args' => 'argBuyUnit',
+		'possibleactions' => ['actPickCity', 'actUndo'],
+		'transitions' => ['buy' => ST_IMPULSE_ACTIONS, 'undo' => ST_IMPULSE_ACTIONS],
 	],
 
 	// Final state.

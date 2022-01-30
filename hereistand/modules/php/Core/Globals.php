@@ -12,6 +12,7 @@ class Globals extends \HIS\Helpers\DB_Manager {
 		"formation" => "obj",
 		"interceptFormation" => "obj",
 		"origin" => "int",
+		"unitBuyType" => "int",
 	];
 
 	protected static $table = 'global_variables';

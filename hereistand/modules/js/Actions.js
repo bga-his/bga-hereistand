@@ -16,8 +16,19 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     },
 
-    onUnitConstructionClick(evt){
+    onRegularUnitBuildClick(evt){
       dojo.stopEvent(evt);
+      this.takeAction('actBuyUnit', {unit_type: 0});
+    },
+
+    onMercUnitBuildClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actBuyUnit', {unit_type: 1});
+    },
+
+    onNavalUnitBuildClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actBuyUnit', {unit_type: 2});
     },
 
     onPlayEventClick(evt){
@@ -66,7 +77,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     onDestinationClick(evt, _this){
       dojo.stopEvent(evt);
       const city_id = evt.currentTarget.id.split('_')[1];
-      _this.takeAction('actDeclareDestination', {destination_id: city_id});
+      _this.takeAction('actPickCity', {city_id: city_id});
     },
   });
 });

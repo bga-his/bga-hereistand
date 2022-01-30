@@ -10,7 +10,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onEnteringStateImpulseActions(args){
       this.addPrimaryActionButton('move_in_clear', _('Move (1 - 2CP)'), 'onMoveClick');
-      this.addPrimaryActionButton('unit_construction', _('Unit Construction (1 - 2CP)'), 'onUnitConstructionClick');
+      this.addPrimaryActionButton('regular_unit_construction', _('Build Regular Unit (2CP)'), 'onRegularUnitBuildClick');
+      this.addPrimaryActionButton('merc_unit_construction', _('Build Merc/Cav Unit (1CP)'), 'onMercUnitBuildClick');
+      this.addPrimaryActionButton('naval_unit_construction', _('Build Naval Unit (2CP)'), 'onNavalUnitBuildClick');
       this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
     },
 
@@ -27,7 +29,14 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       for(const city_id of args.valid_city_ids){
         const city_node = dojo.byId(`cityselector_${city_id}`);
-        console.log(city_node);
+        this.onClick(city_node, this.onDestinationClick);
+      }
+    },
+
+    onEnteringStateBuyUnit(args){
+      this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
+      for(const city_id of args.valid_city_ids){
+        const city_node = dojo.byId(`cityselector_${city_id}`);
         this.onClick(city_node, this.onDestinationClick);
       }
     },

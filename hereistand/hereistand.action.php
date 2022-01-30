@@ -108,4 +108,18 @@ class action_hereistand extends APP_GameAction {
 		self::ajaxResponse();
 	}
 
+	public function actBuyUnit() {
+		self::setAjaxMode();
+		$unit_type = self::getArg('unit_type', AT_posint, true);
+		$this->game->actBuyUnit($unit_type);
+		self::ajaxResponse();
+	}
+
+	public function actPickCity() {
+		self::setAjaxMode();
+		$city_id = self::getArg('city_id', AT_posint, true);
+		$this->game->actPickCity($city_id);
+		self::ajaxResponse();
+	}
+
 }

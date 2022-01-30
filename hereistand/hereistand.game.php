@@ -43,6 +43,11 @@ class hereistand extends Table {
 	use HIS\DebugTrait;
 	use HIS\States\NextPlayerTrait;
 	use HIS\States\MovementTrait;
+	use HIS\States\FieldBattleTrait;
+	use HIS\States\InterceptionTrait;
+	use HIS\States\AvoidBattleTrait;
+	use HIS\States\WithdrawBattleTrait;
+	use HIS\States\BuyTrait;
 	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
 
@@ -61,6 +66,11 @@ class hereistand extends Table {
 
 	protected function getGameName() {
 		return 'hereistand';
+	}
+
+	public function getStateName() {
+		$state = $this->gamestate->state();
+		return $state['name'];
 	}
 
 	/*
@@ -134,6 +144,14 @@ class hereistand extends Table {
 
 	function actDeclareAvoid($token_ids) {
 		Actions::declareAvoid($token_ids);
+	}
+
+	function actPickCity($city_id) {
+		Actions::pickCity($city_id, self::getStateName());
+	}
+
+	function actBuyUnit($unit_type) {
+		Actions::buyUnit($unit_type);
 	}
 
 	/////////////////////////////////////////////////////////////

@@ -40,7 +40,25 @@ class Actions {
 		Game::get()->gamestate->nextState("withdraw");
 	}
 
-	public static function declareDestination($destination_id) {
+	public static function pickCity($city_id, $statename) {
+		$cities = Game::get()->cities;
+		$city = $cities[$city_id];
+		$city['id'] = $city_id;
+		switch ($statename) {
+		case 'declareDestination':
+			self::declareDestination($city);
+			break;
+		case 'buyUnit':
+			self::pickBuyCity($city);
+			break;
+		default:
+			throw new UserException("Picking city in wrong state: " . $statename);
+			break;
+		}
+	}
+
+	public static function declareDestination($city) {
+		$destination_id = $city['id'];
 		$cities = Game::get()->cities;
 		$origin = Globals::getOrigin();
 		$origin_city = $cities[$origin];
@@ -59,6 +77,17 @@ class Actions {
 		Game::get()->gamestate->nextState("declare");
 	}
 
+	public static function pickLocation($location_id) {
+		$cities = Game::get()->cities;
+		$remainingCP = Globals::getRemainingCP();
+		Game::get()->gamestate->nextState("declare");
+	}
+
+	public static function buyUnit($unit_type) {
+		Globals::setUnitBuyType($unit_type);
+		Game::get()->gamestate->nextState("buy");
+	}
+
 	public static function declareFormation($token_ids) {
 		Tokens::checkFormation($token_ids);
 		Globals::setFormation($token_ids);
@@ -74,6 +103,11 @@ class Actions {
 	public static function declareAvoid($token_ids) {
 		Tokens::checkFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
+	}
+
+	public static function pickBuyCity($city) {
+		$unit_type = Globals::getUnitBuyType();
+		Game::get()->gamestate->nextState("buy");
 	}
 
 }

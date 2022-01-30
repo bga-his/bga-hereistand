@@ -39,6 +39,7 @@ const ST_CONCLUDE_FIELD_BATTLE = 32;
 const ST_MOVEMENT_RESPONSE = 33;
 const ST_FIELD_BATTLE_RESPONSE = 34;
 const ST_NEXT_PLAYER = 35;
+const ST_BUY_UNIT = 36;
 
 const ST_END_GAME = 99;
 
@@ -64,6 +65,13 @@ const VP = 'vp';
  */
 const FRONT = 0;
 const BACK = 1;
+
+/*
+ * Token Type constants
+ */
+const REGULAR = 0;
+const MERC = 1;
+const NAVAL = 2;
 
 /*
  * Card type constants

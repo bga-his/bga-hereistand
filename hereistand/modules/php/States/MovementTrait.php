@@ -35,18 +35,6 @@ trait MovementTrait {
 		$this->gamestate->nextState("none");
 	}
 
-	function stFindInterceptions() {
-		$this->gamestate->nextState("done");
-	}
-
-	function argInterceptIntent() {
-		return [];
-	}
-
-	function stRollInterception() {
-		$this->gamestate->nextState("done");
-	}
-
 	function stMoveFormation() {
 		$player = Players::getActive();
 		$cities = Game::get()->cities;
@@ -62,95 +50,8 @@ trait MovementTrait {
 		$this->gamestate->nextState("done");
 	}
 
-	function stFindAvoid() {
-		$this->gamestate->nextState("none");
-	}
-
-	function argDeclareAvoid() {
-		return [];
-	}
-
-	function argDeclareAvoidDestination() {
-		return [];
-	}
-
-	function stRollAvoid() {
-		$this->gamestate->nextState("done");
-	}
-
-	function stFindWithdraw() {
-		$this->gamestate->nextState("none");
-	}
-
-	function argWithdrawIntent() {
-		return [];
-	}
-
-	function stFindBattle() {
-		if (Globals::getRemainingCP() > 0) {
-			$this->gamestate->nextState("more");
-		} else {
-			$this->gamestate->nextState("none");
-		}
-	}
-
-	function stFindFieldBattleResponses() {
-		$this->gamestate->nextState("none");
-	}
-
-	function stFieldBattleDice() {
-		$this->gamestate->nextState("next");
-	}
-
-	function stFieldBattleCard() {
-		$this->gamestate->nextState("defender");
-	}
-
-	function argFieldBattleCard() {
-		return [];
-	}
-
-	function argPlayJanissaries() {
-		return [];
-	}
-
-	function stDeclareFieldBattleWinner() {
-		$this->gamestate->nextState("next");
-	}
-
-	function stFieldBattleCasualties() {
-		$this->gamestate->nextState("defender");
-	}
-
-	function argTakeFieldBattleCasualties() {
-		return [];
-	}
-
-	function stFieldBattleCaptureLeaders() {
-		$this->gamestate->nextState("next");
-	}
-
-	function stFieldBattleRetreats() {
-		$this->gamestate->nextState("none");
-	}
-
-	function argDeclareRetreatDestination() {
-		return [];
-	}
-
-	function stFindSiege() {
-		$this->gamestate->nextState("next");
-	}
-
-	function stConcludeFieldBattle() {
-		$this->gamestate->nextState("done");
-	}
-
 	function argResponseMovement() {
 		return [];
 	}
 
-	function argResponseFieldBattle() {
-		return [];
-	}
 }
