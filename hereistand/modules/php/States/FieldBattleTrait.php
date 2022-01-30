@@ -16,7 +16,7 @@ trait FieldBattleTrait {
 		foreach ($tokens as $token_id => $token) {
 			if (in_array(MILITARY, $token['types'])) {
 				$power = $token['power'];
-				if ($power != $active_power && in_array($power, $defending_powers)) {
+				if ($power != $active_power && in_array($power, $defending_powers) == false) {
 					$defending_powers[] = $power;
 				}
 				if (array_key_exists($power, $field) == false) {
@@ -67,13 +67,13 @@ trait FieldBattleTrait {
 		foreach ($field['attacking_powers'] as $power) {
 			$attacker_strength += $field[$power]['strength'];
 			if ($field[$power]['battle_rating'] > $attacker_max_power) {
-				$attacker_max_power = $field[$power['battle_rating']];
+				$attacker_max_power = $field[$power]['battle_rating'];
 			}
 		}
 		foreach ($field['defending_powers'] as $power) {
 			$defender_strength += $field[$power]['strength'];
 			if ($field[$power]['battle_rating'] > $defender_max_power) {
-				$defender_max_power = $field[$power['battle_rating']];
+				$defender_max_power = $field[$power]['battle_rating'];
 			}
 		}
 		$attacker_dice_count = $attacker_strength + $attacker_max_power;
