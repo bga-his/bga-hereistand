@@ -20,7 +20,7 @@ trait FieldBattleTrait {
 				if ($power != $active_power && in_array($power, $defending_powers) == false) {
 					$defending_powers[] = $power;
 				}
-				if (array_key_exists($power, $field) == false) {
+				if (array_key_exists($power, $powers) == false) {
 					$powers[$power] = [
 						'strength' => 0,
 						'battle_rating' => 0,

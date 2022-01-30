@@ -40,5 +40,13 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         this.onClick(city_node, this.onDestinationClick);
       }
     },
+
+    onEnteringStateTakeFieldBattleCasualties(args){
+      this.addPrimaryActionButton('declare_casualties', _('Declare Casulaties'), 'onDeclareCasualtiesClick');
+      this.selectedFormation = [];
+      for(const token of args.tokens){
+        this.onClick(token.id, this.onUnitClick);
+      }
+    },
   });
 });

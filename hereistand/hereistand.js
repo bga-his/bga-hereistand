@@ -43,11 +43,13 @@ define([
         'declareFormation',
         'declareDestination',
         'pickCard',
+        'takeFieldBattleCasualties',
       ];
       this._notifications = [
         ['playCardCP', 1000],
         ['moveFormation', 1000],
         ['buyUnit', 1000],
+        ['destroyUnits', 1000],
       ];
 
       // Fix mobile viewport (remove CSS zoom)

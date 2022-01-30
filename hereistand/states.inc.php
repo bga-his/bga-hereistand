@@ -249,7 +249,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('${you} must take ${casualties} casualties'),
 		'type' => 'multipleactiveplayer',
 		'args' => 'argTakeFieldBattleCasualties',
-		'possibleactions' => ['actTakeCasualties'],
+		'possibleactions' => ['actDeclareCasualties'],
 		'transitions' => ['done' => ST_FIELD_BATTLE_CAPTURE_LEADERS],
 	],
 

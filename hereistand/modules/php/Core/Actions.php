@@ -5,6 +5,7 @@ use HIS\Helpers\UserException;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Notifications\Battle;
 use HIS\Notifications\Buy;
 use HIS\Notifications\PlayCard;
 
@@ -104,6 +105,16 @@ class Actions {
 	public static function declareAvoid($token_ids) {
 		Tokens::checkFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
+	}
+
+	public static function declareCasualties($token_ids) {
+		$player = Players::getCurrent();
+		$tokens = Tokens::getMany($token_ids);
+		foreach ($tokens as $token) {
+			Tokens::move([$token['id']], ['supply', $token['power'], $token['type']]);
+		}
+		Battle::destroyUnits($player, $tokens);
+		Game::get()->gamestate->setPlayerNonMultiactive($player->id, 'done');
 	}
 
 	public static function pickBuyCity($city) {

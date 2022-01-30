@@ -147,6 +147,10 @@ class hereistand extends Table {
 		Actions::declareAvoid($token_ids);
 	}
 
+	function actDeclareCasualties($token_ids) {
+		Actions::declareCasualties($token_ids);
+	}
+
 	function actPickCity($city_id) {
 		Actions::pickCity($city_id, self::getStateName());
 	}

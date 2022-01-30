@@ -9,4 +9,11 @@ class Battle extends \HIS\Core\Notifications {
 			"defender_rolls" => implode(',', $defender_dice),
 		]);
 	}
+
+	public static function destroyUnits($player, $tokens) {
+		self::notifyAll('destroyUnits', '${player_name} took casualties', [
+			"player" => $player,
+			"tokens" => $tokens,
+		]);
+	}
 }

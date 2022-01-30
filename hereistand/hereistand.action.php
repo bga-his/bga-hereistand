@@ -108,6 +108,14 @@ class action_hereistand extends APP_GameAction {
 		self::ajaxResponse();
 	}
 
+	public function actDeclareCasualties() {
+		self::setAjaxMode();
+		$token_ids_raw = self::getArg('token_ids', AT_alphanum, true);
+		$token_ids = self::getIDArray($token_ids_raw);
+		$this->game->actDeclareCasualties($token_ids);
+		self::ajaxResponse();
+	}
+
 	public function actBuyUnit() {
 		self::setAjaxMode();
 		$unit_type = self::getArg('unit_type', AT_posint, true);

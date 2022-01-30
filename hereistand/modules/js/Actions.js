@@ -79,5 +79,11 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const city_id = evt.currentTarget.id.split('_')[1];
       _this.takeAction('actPickCity', {city_id: city_id});
     },
+
+    onDeclareCasualtiesClick(evt){
+      dojo.stopEvent(evt);
+      const id_str = this.selectedFormation.join(' ');
+      this.takeAction('actDeclareCasualties', {token_ids: id_str});
+    }
   });
 });

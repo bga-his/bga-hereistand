@@ -8,7 +8,6 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     notif_moveFormation(args){
       const dest = `city_${args.args.city.id}`;
       const formation = args.args.formation;
-      const from_id = `city_${args.args.from_id}`;
       for(let token of formation){
         this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});
       }
@@ -20,6 +19,15 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const token = args.args.token;
       this.place('tplToken', token, start);
       this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
+    },
+
+    notif_destroyUnits(args){
+      const dest = `player_board_${args.args.player_id}`;
+      const tokens = args.args.tokens;
+      for(let token_id in tokens){
+        let token = tokens[token_id];
+        this.slide(token.id, dest, {destroy: true, scale: this.scalingFactor, phantomEnd: true});
+      }
     },
   });
 });
