@@ -112,12 +112,27 @@ class Actions {
 		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
 		$bad_info = Game::get()->tokens[$buy_id];
 		$side = $unit_type == MERC ? BACK : FRONT;
+		$remainingCP = Globals::getRemainingCP();
+		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type != MERC)) {
+			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
+		}
 		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
 		}
+		if ($unit_type == MERC) {
+			$remainingCP -= 1;
+			Globals::incRemainingCP(-1);
+		} else {
+			$remainingCP -= 2;
+			Globals::incRemainingCP(-2);
+		}
 		Buy::buyUnit($player, $token, $unit_type, $city);
-		Game::get()->gamestate->nextState("buy");
+		if ($remainingCP == 0) {
+			Game::get()->gamestate->nextState("next");
+		} else {
+			Game::get()->gamestate->nextState("buy");
+		}
 	}
 
 }

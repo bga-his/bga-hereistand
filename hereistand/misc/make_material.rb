@@ -119,6 +119,8 @@ city_csv.each do |row|
 	city['x'] = row['posX'] || 0
 	city['y'] = row['posY'] || 0
 	city['name'] = row['name'] || 'tbd'
+	city['home_power'] = row['home_power'].upcase
+	city['language'] = row['language'].upcase
 	city['connections'] = Array.new
 	6.times do |i|
 		city['connections'].push row["connection_#{i}"] unless row["connection_#{i}"].nil?

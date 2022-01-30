@@ -60,7 +60,7 @@ trait FieldBattleTrait {
 	}
 
 	function stConcludeFieldBattle() {
-		$this->gamestate->nextState("done");
+		$this->gamestate->nextState("more");
 	}
 
 	function argResponseFieldBattle() {

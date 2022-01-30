@@ -292,7 +292,7 @@ $machinestates = [
 		'description' => clienttranslate('Concluding field battle...'),
 		'type' => 'manager',
 		'action' => 'stConcludeFieldBattle',
-		'transitions' => ['done' => ST_NEXT_PLAYER],
+		'transitions' => ['more' => ST_IMPULSE_ACTIONS, 'done' => ST_NEXT_PLAYER],
 	],
 
 	ST_MOVEMENT_RESPONSE => [
@@ -330,7 +330,7 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argBuyUnit',
 		'possibleactions' => ['actPickCity', 'actUndo'],
-		'transitions' => ['buy' => ST_IMPULSE_ACTIONS, 'undo' => ST_IMPULSE_ACTIONS],
+		'transitions' => ['buy' => ST_IMPULSE_ACTIONS, 'undo' => ST_IMPULSE_ACTIONS, 'next' => ST_NEXT_PLAYER],
 	],
 
 	// Final state.

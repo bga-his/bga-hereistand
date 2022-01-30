@@ -61,6 +61,15 @@ const OTHER = 'other';
 const VP = 'vp';
 
 /*
+ * Language constants
+ */
+const SPANISH = 0;
+const ENGLISH = 1;
+const FRENCH = 2;
+const GERMAN = 3;
+const ITALIAN = 4;
+
+/*
  * Token state constants
  */
 const FRONT = 0;

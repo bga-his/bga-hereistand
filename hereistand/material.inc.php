@@ -26,6 +26,8 @@ $this->cities = [
 		"x" => 3247,
 		"y" => 731,
 		"name" => "Wittenberg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			BRANDENBURG,
 			MAGDEBURG,
@@ -41,6 +43,8 @@ $this->cities = [
 		"x" => 3196,
 		"y" => 590,
 		"name" => "Brandenburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			WITTENBERG,
 			MAGDEBURG,
@@ -56,6 +60,8 @@ $this->cities = [
 		"x" => 2783,
 		"y" => 992,
 		"name" => "Mainz",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			KASSEL,
 			NUREMBERG,
@@ -71,6 +77,8 @@ $this->cities = [
 		"x" => 2617,
 		"y" => 848,
 		"name" => "Cologne",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			MAINZ,
 			MUNSTER,
@@ -84,6 +92,8 @@ $this->cities = [
 		"x" => 2636,
 		"y" => 1018,
 		"name" => "Trier",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			MAINZ,
 			METZ,
@@ -97,6 +107,8 @@ $this->cities = [
 		"x" => 2981,
 		"y" => 1203,
 		"name" => "Augsburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			REGENSBURG,
 			NUREMBERG,
@@ -111,6 +123,8 @@ $this->cities = [
 		"x" => 3332,
 		"y" => 436,
 		"name" => "Stettin",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			BRANDENBURG,
 			LUBECK,
@@ -123,6 +137,8 @@ $this->cities = [
 		"x" => 3103,
 		"y" => 382,
 		"name" => "Lübeck",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			BRANDENBURG,
 			STETTIN,
@@ -137,6 +153,8 @@ $this->cities = [
 		"x" => 3052,
 		"y" => 660,
 		"name" => "Magdeburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			WITTENBERG,
 			BRANDENBURG,
@@ -152,6 +170,8 @@ $this->cities = [
 		"x" => 2877,
 		"y" => 471,
 		"name" => "Hamburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			LUBECK,
 			BRUNSWICK,
@@ -165,6 +185,8 @@ $this->cities = [
 		"x" => 2842,
 		"y" => 692,
 		"name" => "Brunswick",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			HAMBURG,
 			MAGDEBURG,
@@ -179,6 +201,8 @@ $this->cities = [
 		"x" => 2714,
 		"y" => 547,
 		"name" => "Bremen",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			HAMBURG,
 			BRUNSWICK,
@@ -192,6 +216,8 @@ $this->cities = [
 		"x" => 2620,
 		"y" => 662,
 		"name" => "Münster",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			BREMEN,
 			KASSEL,
@@ -205,6 +231,8 @@ $this->cities = [
 		"x" => 2785,
 		"y" => 839,
 		"name" => "Kassel",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			MAINZ,
 			BRUNSWICK,
@@ -220,6 +248,8 @@ $this->cities = [
 		"x" => 2942,
 		"y" => 875,
 		"name" => "Erfurt",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			KASSEL,
 			MAGDEBURG,
@@ -233,6 +263,8 @@ $this->cities = [
 		"x" => 3101,
 		"y" => 813,
 		"name" => "Leipzig",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			WITTENBERG,
 			NUREMBERG,
@@ -247,6 +279,8 @@ $this->cities = [
 		"x" => 2954,
 		"y" => 1049,
 		"name" => "Nuremberg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			KASSEL,
 			REGENSBURG,
@@ -262,6 +296,8 @@ $this->cities = [
 		"x" => 2823,
 		"y" => 1133,
 		"name" => "Worms",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			MAINZ,
 			NUREMBERG,
@@ -276,6 +312,8 @@ $this->cities = [
 		"x" => 3152,
 		"y" => 1079,
 		"name" => "Regensburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			SALZBURG,
 			NUREMBERG,
@@ -290,6 +328,8 @@ $this->cities = [
 		"x" => 2698,
 		"y" => 1194,
 		"name" => "Strasburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			WORMS,
 			METZ,
@@ -304,6 +344,8 @@ $this->cities = [
 		"x" => 3267,
 		"y" => 1233,
 		"name" => "Salzburg",
+		"home_power" => PROTESTANT,
+		"language" => GERMAN,
 		"connections" => [
 			INNSBRUCK,
 			REGENSBURG,
@@ -318,6 +360,8 @@ $this->cities = [
 		"x" => 3594,
 		"y" => 1144,
 		"name" => "Vienna",
+		"home_power" => HAPSBURG,
+		"language" => GERMAN,
 		"connections" => [
 			LINZ,
 			BRUNN,
@@ -332,6 +376,8 @@ $this->cities = [
 		"x" => 3406,
 		"y" => 1172,
 		"name" => "Linz",
+		"home_power" => HAPSBURG,
+		"language" => GERMAN,
 		"connections" => [
 			VIENNA,
 			REGENSBURG,
@@ -346,6 +392,8 @@ $this->cities = [
 		"x" => 3491,
 		"y" => 1331,
 		"name" => "Graz",
+		"home_power" => HAPSBURG,
+		"language" => GERMAN,
 		"connections" => [
 			VIENNA,
 			MOHACS,
@@ -360,6 +408,8 @@ $this->cities = [
 		"x" => 3135,
 		"y" => 1295,
 		"name" => "Innsbruck",
+		"home_power" => HAPSBURG,
+		"language" => GERMAN,
 		"connections" => [
 			SALZBURG,
 			ZURICH,
@@ -372,6 +422,8 @@ $this->cities = [
 		"x" => 2830,
 		"y" => 1342,
 		"name" => "Zürich",
+		"home_power" => INDEPENDENT,
+		"language" => GERMAN,
 		"connections" => [
 			BASEL,
 			INNSBRUCK,
@@ -384,6 +436,8 @@ $this->cities = [
 		"x" => 2675,
 		"y" => 1338,
 		"name" => "Basel",
+		"home_power" => INDEPENDENT,
+		"language" => GERMAN,
 		"connections" => [
 			ZURICH,
 			STRASBURG,
@@ -398,6 +452,8 @@ $this->cities = [
 		"x" => 1904,
 		"y" => 830,
 		"name" => "London",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			NORWICH,
 			LINCOLN,
@@ -413,6 +469,8 @@ $this->cities = [
 		"x" => 1674,
 		"y" => 812,
 		"name" => "Bristol",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			LONDON,
 			WALES,
@@ -428,6 +486,8 @@ $this->cities = [
 		"x" => 1715,
 		"y" => 499,
 		"name" => "York",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			CARLISLE,
 			LINCOLN,
@@ -442,6 +502,8 @@ $this->cities = [
 		"x" => 2016,
 		"y" => 663,
 		"name" => "Norwich",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			LONDON,
 		],
@@ -453,6 +515,8 @@ $this->cities = [
 		"x" => 1784,
 		"y" => 945,
 		"name" => "Portsmouth",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			LONDON,
 			BRISTOL,
@@ -466,6 +530,8 @@ $this->cities = [
 		"x" => 1517,
 		"y" => 1023,
 		"name" => "Plymouth",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			BRISTOL,
 			PLYMOUTH,
@@ -478,6 +544,8 @@ $this->cities = [
 		"x" => 1828,
 		"y" => 658,
 		"name" => "Lincoln",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			LONDON,
 			YORK,
@@ -490,6 +558,8 @@ $this->cities = [
 		"x" => 1518,
 		"y" => 758,
 		"name" => "Wales",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			BRISTOL,
 			SHREWSBURY,
@@ -502,6 +572,8 @@ $this->cities = [
 		"x" => 1657,
 		"y" => 646,
 		"name" => "Shrewsbury",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			LONDON,
 			WALES,
@@ -517,6 +589,8 @@ $this->cities = [
 		"x" => 1569,
 		"y" => 404,
 		"name" => "Carlisle",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			BERWICK,
 			YORK,
@@ -531,6 +605,8 @@ $this->cities = [
 		"x" => 1692,
 		"y" => 308,
 		"name" => "Berwick",
+		"home_power" => ENGLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			CARLISLE,
 			YORK,
@@ -544,6 +620,8 @@ $this->cities = [
 		"x" => 1540,
 		"y" => 254,
 		"name" => "Edinburgh",
+		"home_power" => MINOR_SCOTLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			BERWICK,
 			STIRLING,
@@ -557,6 +635,8 @@ $this->cities = [
 		"x" => 1382,
 		"y" => 204,
 		"name" => "Stirling",
+		"home_power" => MINOR_SCOTLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			EDINBURGH,
 			GLASGOW,
@@ -569,6 +649,8 @@ $this->cities = [
 		"x" => 1403,
 		"y" => 362,
 		"name" => "Glasgow",
+		"home_power" => MINOR_SCOTLAND,
+		"language" => ENGLISH,
 		"connections" => [
 			CARLISLE,
 			STIRLING,
@@ -582,6 +664,8 @@ $this->cities = [
 		"x" => 2128,
 		"y" => 1188,
 		"name" => "Paris",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			ROUEN,
 			BOULOGNE,
@@ -597,6 +681,8 @@ $this->cities = [
 		"x" => 2430,
 		"y" => 1567,
 		"name" => "Lyon",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			GENEVA,
 			ORLEANS,
@@ -612,6 +698,8 @@ $this->cities = [
 		"x" => 1926,
 		"y" => 1123,
 		"name" => "Rouen",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			PARIS,
 			BOULOGNE,
@@ -626,6 +714,8 @@ $this->cities = [
 		"x" => 2506,
 		"y" => 1905,
 		"name" => "Marseille",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			AVIGNON,
 			NICE,
@@ -638,6 +728,8 @@ $this->cities = [
 		"x" => 1899,
 		"y" => 1690,
 		"name" => "Bordeaux",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			NANTES,
 			TOURS,
@@ -652,6 +744,8 @@ $this->cities = [
 		"x" => 2556,
 		"y" => 1716,
 		"name" => "Grenoble",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			LYON,
 			GENEVA,
@@ -664,6 +758,8 @@ $this->cities = [
 		"x" => 2321,
 		"y" => 1332,
 		"name" => "Dijon",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 			ORLEANS,
 			LYON,
@@ -679,6 +775,8 @@ $this->cities = [
 		"x" => 2322,
 		"y" => 1170,
 		"name" => "St. Dizier",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -690,6 +788,8 @@ $this->cities = [
 		"x" => 2211,
 		"y" => 1059,
 		"name" => "St. Quentin",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -701,6 +801,8 @@ $this->cities = [
 		"x" => 2075,
 		"y" => 1005,
 		"name" => "Boulogne",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -712,6 +814,8 @@ $this->cities = [
 		"x" => 2138,
 		"y" => 1345,
 		"name" => "Orleans",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -723,6 +827,8 @@ $this->cities = [
 		"x" => 2410,
 		"y" => 1771,
 		"name" => "Avignon",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -734,6 +840,8 @@ $this->cities = [
 		"x" => 2110,
 		"y" => 1862,
 		"name" => "Toulouse",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -745,6 +853,8 @@ $this->cities = [
 		"x" => 2094,
 		"y" => 1522,
 		"name" => "Limoges",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -756,6 +866,8 @@ $this->cities = [
 		"x" => 1969,
 		"y" => 1403,
 		"name" => "Tours",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -767,6 +879,8 @@ $this->cities = [
 		"x" => 1770,
 		"y" => 1434,
 		"name" => "Nantes",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -778,6 +892,8 @@ $this->cities = [
 		"x" => 1528,
 		"y" => 1299,
 		"name" => "Brest",
+		"home_power" => FRANCE,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -789,6 +905,8 @@ $this->cities = [
 		"x" => 2320,
 		"y" => 947,
 		"name" => "Brussels",
+		"home_power" => HAPSBURG,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -800,6 +918,8 @@ $this->cities = [
 		"x" => 2510,
 		"y" => 1292,
 		"name" => "Besançon",
+		"home_power" => HAPSBURG,
+		"language" => FRENCH,
 		"connections" => [
 			DIJON,
 			BASEL,
@@ -813,6 +933,8 @@ $this->cities = [
 		"x" => 2142,
 		"y" => 869,
 		"name" => "Calais",
+		"home_power" => ENGLAND,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -824,6 +946,8 @@ $this->cities = [
 		"x" => 2503,
 		"y" => 1118,
 		"name" => "Metz",
+		"home_power" => INDEPENDENT,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -835,6 +959,8 @@ $this->cities = [
 		"x" => 2471,
 		"y" => 908,
 		"name" => "Liege",
+		"home_power" => INDEPENDENT,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -846,6 +972,8 @@ $this->cities = [
 		"x" => 2593,
 		"y" => 1491,
 		"name" => "Geneva",
+		"home_power" => INDEPENDENT,
+		"language" => FRENCH,
 		"connections" => [
 			LYON,
 			BESANCON,
@@ -860,6 +988,8 @@ $this->cities = [
 		"x" => 2700,
 		"y" => 1858,
 		"name" => "Nice",
+		"home_power" => INDEPENDENT,
+		"language" => FRENCH,
 		"connections" => [
 
 		],
@@ -871,6 +1001,8 @@ $this->cities = [
 		"x" => 3241,
 		"y" => 2045,
 		"name" => "Rome",
+		"home_power" => PAPACY,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -882,6 +1014,8 @@ $this->cities = [
 		"x" => 3247,
 		"y" => 1720,
 		"name" => "Ravenna",
+		"home_power" => PAPACY,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -893,6 +1027,8 @@ $this->cities = [
 		"x" => 3357,
 		"y" => 1878,
 		"name" => "Ancona",
+		"home_power" => PAPACY,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -904,6 +1040,8 @@ $this->cities = [
 		"x" => 3475,
 		"y" => 2213,
 		"name" => "Naples",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -915,6 +1053,8 @@ $this->cities = [
 		"x" => 3337,
 		"y" => 1514,
 		"name" => "Trieste",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -926,6 +1066,8 @@ $this->cities = [
 		"x" => 3444,
 		"y" => 2042,
 		"name" => "Cerignola",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -937,6 +1079,8 @@ $this->cities = [
 		"x" => 3716,
 		"y" => 2205,
 		"name" => "Taranto",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -948,6 +1092,8 @@ $this->cities = [
 		"x" => 3494,
 		"y" => 2553,
 		"name" => "Messina",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -959,6 +1105,8 @@ $this->cities = [
 		"x" => 3378,
 		"y" => 2546,
 		"name" => "Palermo",
+		"home_power" => HAPSBURG,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -966,10 +1114,12 @@ $this->cities = [
 
 		],
 	],
-	GENOA => [
+	"Minor_Genoa" => [
 		"x" => 2844,
 		"y" => 1750,
-		"name" => "Genoa",
+		"name" => "Minor_Genoa",
+		"home_power" => MINOR_GENOA,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -980,7 +1130,9 @@ $this->cities = [
 	VENICE => [
 		"x" => 3205,
 		"y" => 1524,
-		"name" => "Venice",
+		"name" => "Minor_Venice",
+		"home_power" => MINOR_VENICE,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -992,6 +1144,8 @@ $this->cities = [
 		"x" => 2864,
 		"y" => 1495,
 		"name" => "Milan",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1003,6 +1157,8 @@ $this->cities = [
 		"x" => 3094,
 		"y" => 1769,
 		"name" => "Florence",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1014,6 +1170,8 @@ $this->cities = [
 		"x" => 2702,
 		"y" => 1655,
 		"name" => "Turin",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 			MILAN,
 		],
@@ -1025,6 +1183,8 @@ $this->cities = [
 		"x" => 3051,
 		"y" => 1436,
 		"name" => "Trent",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1036,6 +1196,8 @@ $this->cities = [
 		"x" => 3069,
 		"y" => 1613,
 		"name" => "Modena",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1047,6 +1209,8 @@ $this->cities = [
 		"x" => 2917,
 		"y" => 1630,
 		"name" => "Pavia",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1058,6 +1222,8 @@ $this->cities = [
 		"x" => 3106,
 		"y" => 1932,
 		"name" => "Siena",
+		"home_power" => INDEPENDENT,
+		"language" => ITALIAN,
 		"connections" => [
 
 		],
@@ -1069,6 +1235,8 @@ $this->cities = [
 		"x" => 1514,
 		"y" => 2180,
 		"name" => "Valladolid",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1080,6 +1248,8 @@ $this->cities = [
 		"x" => 1822,
 		"y" => 1939,
 		"name" => "Navarre",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1091,6 +1261,8 @@ $this->cities = [
 		"x" => 2227,
 		"y" => 2186,
 		"name" => "Barcelona",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1102,6 +1274,8 @@ $this->cities = [
 		"x" => 1442,
 		"y" => 2766,
 		"name" => "Seville",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1113,6 +1287,8 @@ $this->cities = [
 		"x" => 1494,
 		"y" => 2945,
 		"name" => "Gibraltar",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1124,6 +1300,8 @@ $this->cities = [
 		"x" => 1136,
 		"y" => 1996,
 		"name" => "Corunna",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1135,6 +1313,8 @@ $this->cities = [
 		"x" => 1653,
 		"y" => 1950,
 		"name" => "Bilbao",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1146,6 +1326,8 @@ $this->cities = [
 		"x" => 1897,
 		"y" => 2150,
 		"name" => "Zaragoza",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1157,6 +1339,8 @@ $this->cities = [
 		"x" => 1670,
 		"y" => 2358,
 		"name" => "Madrid",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1168,6 +1352,8 @@ $this->cities = [
 		"x" => 1992,
 		"y" => 2457,
 		"name" => "Valencia",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1179,6 +1365,8 @@ $this->cities = [
 		"x" => 2341,
 		"y" => 2392,
 		"name" => "Palma",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1190,6 +1378,8 @@ $this->cities = [
 		"x" => 1566,
 		"y" => 2654,
 		"name" => "Cordoba",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1201,6 +1391,8 @@ $this->cities = [
 		"x" => 1676,
 		"y" => 2781,
 		"name" => "Granada",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1212,6 +1404,8 @@ $this->cities = [
 		"x" => 1949,
 		"y" => 2716,
 		"name" => "Cartagena",
+		"home_power" => HAPSBURG,
+		"language" => SPANISH,
 		"connections" => [
 
 		],
@@ -1223,6 +1417,8 @@ $this->cities = [
 		"x" => 4892,
 		"y" => 2014,
 		"name" => "Istanbul",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1234,6 +1430,8 @@ $this->cities = [
 		"x" => 4651,
 		"y" => 1964,
 		"name" => "Edirne",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1245,6 +1443,8 @@ $this->cities = [
 		"x" => 4283,
 		"y" => 2134,
 		"name" => "Salonika",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1256,6 +1456,8 @@ $this->cities = [
 		"x" => 4404,
 		"y" => 2470,
 		"name" => "Athens",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1267,6 +1469,8 @@ $this->cities = [
 		"x" => 3937,
 		"y" => 1984,
 		"name" => "Scutari",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1278,6 +1482,8 @@ $this->cities = [
 		"x" => 4772,
 		"y" => 1747,
 		"name" => "Varna",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1289,6 +1495,8 @@ $this->cities = [
 		"x" => 4576,
 		"y" => 1552,
 		"name" => "Bucharest",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1300,6 +1508,8 @@ $this->cities = [
 		"x" => 4454,
 		"y" => 1694,
 		"name" => "Nicopolis",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1311,6 +1521,8 @@ $this->cities = [
 		"x" => 4392,
 		"y" => 1890,
 		"name" => "Sofia",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1322,6 +1534,8 @@ $this->cities = [
 		"x" => 4249,
 		"y" => 2307,
 		"name" => "Larissa",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1333,6 +1547,8 @@ $this->cities = [
 		"x" => 4177,
 		"y" => 2446,
 		"name" => "Lepanto",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1344,6 +1560,8 @@ $this->cities = [
 		"x" => 4264,
 		"y" => 2634,
 		"name" => "Coron",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1355,6 +1573,8 @@ $this->cities = [
 		"x" => 4188,
 		"y" => 1777,
 		"name" => "Nezh",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1366,6 +1586,8 @@ $this->cities = [
 		"x" => 3963,
 		"y" => 2164,
 		"name" => "Durazzo",
+		"home_power" => OTTOMAN,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1377,6 +1599,8 @@ $this->cities = [
 		"x" => 2394,
 		"y" => 2779,
 		"name" => "Algiers",
+		"home_power" => OTHER,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1388,6 +1612,8 @@ $this->cities = [
 		"x" => 2041,
 		"y" => 2944,
 		"name" => "Oran",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1399,6 +1625,8 @@ $this->cities = [
 		"x" => 3435,
 		"y" => 3135,
 		"name" => "Tripoli",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1410,6 +1638,8 @@ $this->cities = [
 		"x" => 4010,
 		"y" => 1574,
 		"name" => "Belgrade",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1421,6 +1651,8 @@ $this->cities = [
 		"x" => 3865,
 		"y" => 1232,
 		"name" => "Buda",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1432,6 +1664,8 @@ $this->cities = [
 		"x" => 3346,
 		"y" => 912,
 		"name" => "Prague",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1443,6 +1677,8 @@ $this->cities = [
 		"x" => 3964,
 		"y" => 1393,
 		"name" => "Szegedin",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1454,6 +1690,8 @@ $this->cities = [
 		"x" => 3731,
 		"y" => 1207,
 		"name" => "Pressburg",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1465,6 +1703,8 @@ $this->cities = [
 		"x" => 3829,
 		"y" => 1477,
 		"name" => "Mohacs",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1476,6 +1716,8 @@ $this->cities = [
 		"x" => 3578,
 		"y" => 1496,
 		"name" => "Agram",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1487,6 +1729,8 @@ $this->cities = [
 		"x" => 3645,
 		"y" => 966,
 		"name" => "Brunn",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1498,6 +1742,8 @@ $this->cities = [
 		"x" => 3585,
 		"y" => 765,
 		"name" => "Breslau",
+		"home_power" => MINOR_HUNGARY,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1509,6 +1755,8 @@ $this->cities = [
 		"x" => 2287,
 		"y" => 795,
 		"name" => "Antwerp",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1520,6 +1768,8 @@ $this->cities = [
 		"x" => 3498,
 		"y" => 2839,
 		"name" => "Malta",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1531,6 +1781,8 @@ $this->cities = [
 		"x" => 2949,
 		"y" => 2448,
 		"name" => "Cagliari",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1542,6 +1794,8 @@ $this->cities = [
 		"x" => 2363,
 		"y" => 672,
 		"name" => "Amsterdam",
+		"home_power" => HAPSBURG,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1553,6 +1807,8 @@ $this->cities = [
 		"x" => 4603,
 		"y" => 2791,
 		"name" => "Candia",
+		"home_power" => MINOR_VENICE,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1564,6 +1820,8 @@ $this->cities = [
 		"x" => 3987,
 		"y" => 2333,
 		"name" => "Corfu",
+		"home_power" => MINOR_VENICE,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1575,6 +1833,8 @@ $this->cities = [
 		"x" => 3492,
 		"y" => 1696,
 		"name" => "Zara",
+		"home_power" => MINOR_VENICE,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1586,6 +1846,8 @@ $this->cities = [
 		"x" => 2903,
 		"y" => 1951,
 		"name" => "Bastia",
+		"home_power" => MINOR_GENOA,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1597,6 +1859,8 @@ $this->cities = [
 		"x" => 3064,
 		"y" => 2720,
 		"name" => "Tunis",
+		"home_power" => INDEPENDENT,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1608,6 +1872,8 @@ $this->cities = [
 		"x" => 4851,
 		"y" => 2646,
 		"name" => "Rhodes",
+		"home_power" => INDEPENDENT,
+		"language" => OTHER,
 		"connections" => [
 
 		],
@@ -1619,6 +1885,8 @@ $this->cities = [
 		"x" => 3779,
 		"y" => 1874,
 		"name" => "Ragusa",
+		"home_power" => INDEPENDENT,
+		"language" => OTHER,
 		"connections" => [
 
 		],
