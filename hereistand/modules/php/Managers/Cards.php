@@ -12,8 +12,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	protected static $table = 'cards';
 	protected static $prefix = 'card_';
 	protected static $customFields = [];
-	protected static $autosuffle = true;
-	protected static $autoreshuffle = false;
+	protected static $autoreshuffle = true;
 	protected static $autoIncrement = false;
 	protected static function cast($card) {
 		$locations = explode('_', $card['location']);

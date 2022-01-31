@@ -126,7 +126,7 @@ class Actions {
 		$player = Players::getActive();
 		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
 		$bad_info = Game::get()->tokens[$buy_id];
-		$side = $unit_type == MERC ? BACK : FRONT;
+		$side = $unit_type == MERC ? FLIPPED : FRONT;
 		$remainingCP = Globals::getRemainingCP();
 		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type != MERC)) {
 			throw new UserException("You cannot afford " . $bad_info['name'] . ".");

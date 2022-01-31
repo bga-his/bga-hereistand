@@ -73,6 +73,7 @@ const ITALIAN = 4;
  * Token state constants
  */
 const BACK = 'back';
+const FRONT = 0;
 const FLIPPED = 1;
 
 /*

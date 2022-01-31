@@ -19,8 +19,8 @@
 	<div id="player-hand"></div>
 	<div id="other-boards-wrapper">
 		<div id="other-boards">
-			<div id="religious-struggle"></div>
 			<div id="player-boards"></div>
+			<div id="religious-struggle"></div>
 		</div>
 	</div>
 </div>

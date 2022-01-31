@@ -1169,8 +1169,8 @@ $this->cities = [
 		],
 	],
 	TRIESTE => [
-		"x" => 3337,
-		"y" => 1514,
+		"x" => 3375,
+		"y" => 1515,
 		"name" => "Trieste",
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
@@ -1186,7 +1186,7 @@ $this->cities = [
 		],
 	],
 	CERIGNOLA => [
-		"x" => 3444,
+		"x" => 3544,
 		"y" => 2042,
 		"name" => "Cerignola",
 		"home_power" => HAPSBURG,
@@ -1218,7 +1218,7 @@ $this->cities = [
 		],
 	],
 	MESSINA => [
-		"x" => 3494,
+		"x" => 3594,
 		"y" => 2553,
 		"name" => "Messina",
 		"home_power" => HAPSBURG,
@@ -1844,7 +1844,7 @@ $this->cities = [
 		],
 	],
 	ORAN => [
-		"x" => 2041,
+		"x" => 2021,
 		"y" => 2944,
 		"name" => "Oran",
 		"home_power" => HAPSBURG,
@@ -1859,7 +1859,7 @@ $this->cities = [
 	],
 	TRIPOLI => [
 		"x" => 3435,
-		"y" => 3135,
+		"y" => 3153,
 		"name" => "Tripoli",
 		"home_power" => HAPSBURG,
 		"language" => OTHER,
