@@ -76,9 +76,6 @@ class Cards extends \HIS\Helpers\Pieces {
 				case CARD_HERE_I_STAND:
 					$location = ['hand', Players::getFromPower(PROTESTANT)->id];
 					break;
-				case CARD_LUTHER_95_THESES:
-					$location = ['hand', Players::getFromPower(PROTESTANT)->id];
-					break;
 				case 'default':
 					break;
 				}
@@ -86,6 +83,9 @@ class Cards extends \HIS\Helpers\Pieces {
 				$location = ['diplomacy'];
 			} elseif ($card['turn_added'] == 1) {
 				$location = ['deck'];
+			}
+			if ($card_id == CARD_LUTHER_95_THESES) {
+				$location = ['hand', Players::getFromPower(PROTESTANT)->id];
 			}
 			self::create([$piece], $location);
 		}
