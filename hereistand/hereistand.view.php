@@ -40,7 +40,7 @@ class view_hereistand_hereistand extends game_view {
 		}
 		$this->page->begin_block("hereistand_hereistand", "power_card_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
-			if ($location['board'] == 'power_cards') {
+			if ($location['board'] == 'powercards') {
 				$this->page->insert_block("power_card_location", array(
 					'X' => $location['x'],
 					'Y' => $location['y'],
@@ -50,7 +50,7 @@ class view_hereistand_hereistand extends game_view {
 		}
 		$this->page->begin_block("hereistand_hereistand", "religious_struggle_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
-			if ($location['board'] == 'religious_struggle') {
+			if ($location['board'] == 'religiousstruggle') {
 				$this->page->insert_block("religious_struggle_location", array(
 					'X' => $location['x'],
 					'Y' => $location['y'],

@@ -5,6 +5,7 @@ trait SetupTrait {
 	public function getTokenSetup() {
 		return [
 			[VP_OTTOMAN, VICTORY_TRACK_8],
+			[PIRACY_VP, PIRACY_0],
 			[VP_HAPSBURG, VICTORY_TRACK_9],
 			[VP_ENGLAND, VICTORY_TRACK_9],
 			[VP_FRANCE, VICTORY_TRACK_12],
