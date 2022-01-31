@@ -35,6 +35,7 @@ $this->cities = [
 			PRAGUE,
 			BRESLAU,
 		],
+		"id" => WITTENBERG,
 		"passes" => [
 
 		],
@@ -52,6 +53,7 @@ $this->cities = [
 			LUBECK,
 			STETTIN,
 		],
+		"id" => BRANDENBURG,
 		"passes" => [
 
 		],
@@ -69,6 +71,7 @@ $this->cities = [
 			TRIER,
 			WORMS,
 		],
+		"id" => MAINZ,
 		"passes" => [
 
 		],
@@ -84,6 +87,7 @@ $this->cities = [
 			MUNSTER,
 			LIEGE,
 		],
+		"id" => COLOGNE,
 		"passes" => [
 
 		],
@@ -99,6 +103,7 @@ $this->cities = [
 			METZ,
 			LIEGE,
 		],
+		"id" => TRIER,
 		"passes" => [
 
 		],
@@ -115,6 +120,7 @@ $this->cities = [
 			SALZBURG,
 			WORMS,
 		],
+		"id" => AUGSBURG,
 		"passes" => [
 			INNSBRUCK,
 		],
@@ -129,6 +135,7 @@ $this->cities = [
 			BRANDENBURG,
 			LUBECK,
 		],
+		"id" => STETTIN,
 		"passes" => [
 
 		],
@@ -145,6 +152,7 @@ $this->cities = [
 			MAGDEBURG,
 			HAMBURG,
 		],
+		"id" => LUBECK,
 		"passes" => [
 
 		],
@@ -162,6 +170,7 @@ $this->cities = [
 			BRUNSWICK,
 			ERFURT,
 		],
+		"id" => MAGDEBURG,
 		"passes" => [
 
 		],
@@ -177,6 +186,7 @@ $this->cities = [
 			BRUNSWICK,
 			BREMEN,
 		],
+		"id" => HAMBURG,
 		"passes" => [
 
 		],
@@ -193,6 +203,7 @@ $this->cities = [
 			BREMEN,
 			KASSEL,
 		],
+		"id" => BRUNSWICK,
 		"passes" => [
 
 		],
@@ -208,6 +219,7 @@ $this->cities = [
 			BRUNSWICK,
 			MUNSTER,
 		],
+		"id" => BREMEN,
 		"passes" => [
 
 		],
@@ -223,6 +235,7 @@ $this->cities = [
 			KASSEL,
 			AMSTERDAM,
 		],
+		"id" => MUNSTER,
 		"passes" => [
 
 		],
@@ -240,6 +253,7 @@ $this->cities = [
 			NUREMBERG,
 			ERFURT,
 		],
+		"id" => KASSEL,
 		"passes" => [
 
 		],
@@ -255,6 +269,7 @@ $this->cities = [
 			MAGDEBURG,
 			LEIPZIG,
 		],
+		"id" => ERFURT,
 		"passes" => [
 
 		],
@@ -271,6 +286,7 @@ $this->cities = [
 			ERFURT,
 			PRAGUE,
 		],
+		"id" => LEIPZIG,
 		"passes" => [
 
 		],
@@ -288,6 +304,7 @@ $this->cities = [
 			AUGSBURG,
 			WORMS,
 		],
+		"id" => NUREMBERG,
 		"passes" => [
 
 		],
@@ -304,6 +321,7 @@ $this->cities = [
 			AUGSBURG,
 			STRASBURG,
 		],
+		"id" => WORMS,
 		"passes" => [
 
 		],
@@ -320,6 +338,7 @@ $this->cities = [
 			AUGSBURG,
 			LINZ,
 		],
+		"id" => REGENSBURG,
 		"passes" => [
 
 		],
@@ -336,6 +355,7 @@ $this->cities = [
 			BESANCON,
 			BASEL,
 		],
+		"id" => STRASBURG,
 		"passes" => [
 
 		],
@@ -352,6 +372,7 @@ $this->cities = [
 			AUGSBURG,
 			LINZ,
 		],
+		"id" => SALZBURG,
 		"passes" => [
 			GRAZ,
 		],
@@ -368,6 +389,7 @@ $this->cities = [
 			PRESSBURG,
 			GRAZ,
 		],
+		"id" => VIENNA,
 		"passes" => [
 
 		],
@@ -384,6 +406,7 @@ $this->cities = [
 			SALZBURG,
 			PRAGUE,
 		],
+		"id" => LINZ,
 		"passes" => [
 
 		],
@@ -400,6 +423,7 @@ $this->cities = [
 			TRIESTE,
 			AGRAM,
 		],
+		"id" => GRAZ,
 		"passes" => [
 			SALZBURG,
 		],
@@ -414,6 +438,7 @@ $this->cities = [
 			SALZBURG,
 			ZURICH,
 		],
+		"id" => INNSBRUCK,
 		"passes" => [
 			AUGSBURG,
 		],
@@ -428,6 +453,7 @@ $this->cities = [
 			BASEL,
 			INNSBRUCK,
 		],
+		"id" => ZURICH,
 		"passes" => [
 
 		],
@@ -444,6 +470,7 @@ $this->cities = [
 			GENEVA,
 			BESANCON,
 		],
+		"id" => BASEL,
 		"passes" => [
 
 		],
@@ -461,6 +488,7 @@ $this->cities = [
 			BRISTOL,
 			PORTSMOUTH,
 		],
+		"id" => LONDON,
 		"passes" => [
 
 		],
@@ -478,6 +506,7 @@ $this->cities = [
 			PLYMOUTH,
 			PORTSMOUTH,
 		],
+		"id" => BRISTOL,
 		"passes" => [
 
 		],
@@ -494,6 +523,7 @@ $this->cities = [
 			SHREWSBURY,
 			BERWICK,
 		],
+		"id" => YORK,
 		"passes" => [
 
 		],
@@ -507,6 +537,7 @@ $this->cities = [
 		"connections" => [
 			LONDON,
 		],
+		"id" => NORWICH,
 		"passes" => [
 
 		],
@@ -522,6 +553,7 @@ $this->cities = [
 			BRISTOL,
 			PLYMOUTH,
 		],
+		"id" => PORTSMOUTH,
 		"passes" => [
 
 		],
@@ -536,6 +568,7 @@ $this->cities = [
 			BRISTOL,
 			PLYMOUTH,
 		],
+		"id" => PLYMOUTH,
 		"passes" => [
 
 		],
@@ -550,6 +583,7 @@ $this->cities = [
 			LONDON,
 			YORK,
 		],
+		"id" => LINCOLN,
 		"passes" => [
 
 		],
@@ -564,6 +598,7 @@ $this->cities = [
 			BRISTOL,
 			SHREWSBURY,
 		],
+		"id" => WALES,
 		"passes" => [
 
 		],
@@ -581,6 +616,7 @@ $this->cities = [
 			YORK,
 			CARLISLE,
 		],
+		"id" => SHREWSBURY,
 		"passes" => [
 
 		],
@@ -597,6 +633,7 @@ $this->cities = [
 			SHREWSBURY,
 			GLASGOW,
 		],
+		"id" => CARLISLE,
 		"passes" => [
 
 		],
@@ -612,6 +649,7 @@ $this->cities = [
 			YORK,
 			EDINBURGH,
 		],
+		"id" => BERWICK,
 		"passes" => [
 
 		],
@@ -627,6 +665,7 @@ $this->cities = [
 			STIRLING,
 			GLASGOW,
 		],
+		"id" => EDINBURGH,
 		"passes" => [
 
 		],
@@ -641,6 +680,7 @@ $this->cities = [
 			EDINBURGH,
 			GLASGOW,
 		],
+		"id" => STIRLING,
 		"passes" => [
 
 		],
@@ -656,6 +696,7 @@ $this->cities = [
 			STIRLING,
 			EDINBURGH,
 		],
+		"id" => GLASGOW,
 		"passes" => [
 
 		],
@@ -673,6 +714,7 @@ $this->cities = [
 			ST_DIZIER,
 			DIJON,
 		],
+		"id" => PARIS,
 		"passes" => [
 
 		],
@@ -690,6 +732,7 @@ $this->cities = [
 			LIMOGES,
 			AVIGNON,
 		],
+		"id" => LYON,
 		"passes" => [
 
 		],
@@ -706,6 +749,7 @@ $this->cities = [
 			TOURS,
 			NANTES,
 		],
+		"id" => ROUEN,
 		"passes" => [
 
 		],
@@ -720,6 +764,7 @@ $this->cities = [
 			AVIGNON,
 			NICE,
 		],
+		"id" => MARSEILLE,
 		"passes" => [
 
 		],
@@ -736,6 +781,7 @@ $this->cities = [
 			LIMOGES,
 			TOULOUSE,
 		],
+		"id" => BORDEAUX,
 		"passes" => [
 			NAVARRE,
 		],
@@ -750,6 +796,7 @@ $this->cities = [
 			LYON,
 			GENEVA,
 		],
+		"id" => GRENOBLE,
 		"passes" => [
 			TURIN,
 		],
@@ -767,6 +814,7 @@ $this->cities = [
 			PARIS,
 			ST_DIZIER,
 		],
+		"id" => DIJON,
 		"passes" => [
 
 		],
@@ -784,6 +832,7 @@ $this->cities = [
 			METZ,
 			DIJON,
 		],
+		"id" => ST_DIZIER,
 		"passes" => [
 
 		],
@@ -800,6 +849,7 @@ $this->cities = [
 			BRUSSELS,
 			ST_DIZIER,
 		],
+		"id" => ST_QUENTIN,
 		"passes" => [
 
 		],
@@ -816,6 +866,7 @@ $this->cities = [
 			ROUEN,
 			CALAIS,
 		],
+		"id" => BOULOGNE,
 		"passes" => [
 
 		],
@@ -832,6 +883,7 @@ $this->cities = [
 			DIJON,
 			LYON,
 		],
+		"id" => ORLEANS,
 		"passes" => [
 
 		],
@@ -847,6 +899,7 @@ $this->cities = [
 			MARSEILLE,
 			TOULOUSE,
 		],
+		"id" => AVIGNON,
 		"passes" => [
 			BARCELONA,
 		],
@@ -861,6 +914,7 @@ $this->cities = [
 			BORDEAUX,
 			AVIGNON,
 		],
+		"id" => TOULOUSE,
 		"passes" => [
 			BARCELONA,
 		],
@@ -876,6 +930,7 @@ $this->cities = [
 			TOURS,
 			BORDEAUX,
 		],
+		"id" => LIMOGES,
 		"passes" => [
 
 		],
@@ -893,6 +948,7 @@ $this->cities = [
 			LIMOGES,
 			NANTES,
 		],
+		"id" => TOURS,
 		"passes" => [
 
 		],
@@ -909,6 +965,7 @@ $this->cities = [
 			BORDEAUX,
 			BREST,
 		],
+		"id" => NANTES,
 		"passes" => [
 
 		],
@@ -922,6 +979,7 @@ $this->cities = [
 		"connections" => [
 			NANTES,
 		],
+		"id" => BREST,
 		"passes" => [
 
 		],
@@ -939,6 +997,7 @@ $this->cities = [
 			ST_QUENTIN,
 			ST_DIZIER,
 		],
+		"id" => BRUSSELS,
 		"passes" => [
 
 		],
@@ -956,6 +1015,7 @@ $this->cities = [
 			METZ,
 			STRASBURG,
 		],
+		"id" => BESANCON,
 		"passes" => [
 
 		],
@@ -971,6 +1031,7 @@ $this->cities = [
 			ANTWERP,
 			BRUSSELS,
 		],
+		"id" => CALAIS,
 		"passes" => [
 
 		],
@@ -988,6 +1049,7 @@ $this->cities = [
 			STRASBURG,
 			ST_DIZIER,
 		],
+		"id" => METZ,
 		"passes" => [
 
 		],
@@ -1005,6 +1067,7 @@ $this->cities = [
 			METZ,
 			COLOGNE,
 		],
+		"id" => LIEGE,
 		"passes" => [
 
 		],
@@ -1021,6 +1084,7 @@ $this->cities = [
 			BASEL,
 			GRENOBLE,
 		],
+		"id" => GENEVA,
 		"passes" => [
 			TURIN,
 		],
@@ -1034,6 +1098,7 @@ $this->cities = [
 		"connections" => [
 			MARSEILLE,
 		],
+		"id" => NICE,
 		"passes" => [
 			GENOA,
 		],
@@ -1050,6 +1115,7 @@ $this->cities = [
 			ANCONA,
 			CERIGNOLA,
 		],
+		"id" => ROME,
 		"passes" => [
 
 		],
@@ -1065,6 +1131,7 @@ $this->cities = [
 			VENICE,
 			MODENA,
 		],
+		"id" => RAVENNA,
 		"passes" => [
 
 		],
@@ -1080,6 +1147,7 @@ $this->cities = [
 			ROME,
 			CERIGNOLA,
 		],
+		"id" => ANCONA,
 		"passes" => [
 
 		],
@@ -1095,6 +1163,7 @@ $this->cities = [
 			ROME,
 			MESSINA,
 		],
+		"id" => NAPLES,
 		"passes" => [
 
 		],
@@ -1111,6 +1180,7 @@ $this->cities = [
 			AGRAM,
 			ZARA,
 		],
+		"id" => TRIESTE,
 		"passes" => [
 
 		],
@@ -1126,6 +1196,7 @@ $this->cities = [
 			ROME,
 			TARANTO,
 		],
+		"id" => CERIGNOLA,
 		"passes" => [
 
 		],
@@ -1141,6 +1212,7 @@ $this->cities = [
 			CERIGNOLA,
 			MESSINA,
 		],
+		"id" => TARANTO,
 		"passes" => [
 
 		],
@@ -1156,6 +1228,7 @@ $this->cities = [
 			PALERMO,
 			TARANTO,
 		],
+		"id" => MESSINA,
 		"passes" => [
 
 		],
@@ -1169,6 +1242,7 @@ $this->cities = [
 		"connections" => [
 			MESSINA,
 		],
+		"id" => PALERMO,
 		"passes" => [
 
 		],
@@ -1185,6 +1259,7 @@ $this->cities = [
 			FLORENCE,
 			SIENA,
 		],
+		"id" => GENOA,
 		"passes" => [
 			NICE,
 		],
@@ -1201,6 +1276,7 @@ $this->cities = [
 			RAVENNA,
 			TRIESTE,
 		],
+		"id" => VENICE,
 		"passes" => [
 
 		],
@@ -1217,6 +1293,7 @@ $this->cities = [
 			PAVIA,
 			TURIN,
 		],
+		"id" => MILAN,
 		"passes" => [
 
 		],
@@ -1232,6 +1309,7 @@ $this->cities = [
 			GENOA,
 			SIENA,
 		],
+		"id" => FLORENCE,
 		"passes" => [
 
 		],
@@ -1247,6 +1325,7 @@ $this->cities = [
 			PAVIA,
 			GENOA,
 		],
+		"id" => TURIN,
 		"passes" => [
 			GENEVA,
 		],
@@ -1262,6 +1341,7 @@ $this->cities = [
 			VENICE,
 			MILAN,
 		],
+		"id" => TRENT,
 		"passes" => [
 			INNSBRUCK,
 		],
@@ -1279,6 +1359,7 @@ $this->cities = [
 			PAVIA,
 			FLORENCE,
 		],
+		"id" => MODENA,
 		"passes" => [
 
 		],
@@ -1295,6 +1376,7 @@ $this->cities = [
 			GENOA,
 			TURIN,
 		],
+		"id" => PAVIA,
 		"passes" => [
 
 		],
@@ -1310,6 +1392,7 @@ $this->cities = [
 			ROME,
 			GENOA,
 		],
+		"id" => SIENA,
 		"passes" => [
 
 		],
@@ -1325,6 +1408,7 @@ $this->cities = [
 			BILBAO,
 			CORUNNA,
 		],
+		"id" => VALLADOLID,
 		"passes" => [
 
 		],
@@ -1339,6 +1423,7 @@ $this->cities = [
 			BILBAO,
 			ZARAGOZA,
 		],
+		"id" => NAVARRE,
 		"passes" => [
 			BORDEAUX,
 		],
@@ -1353,6 +1438,7 @@ $this->cities = [
 			ZARAGOZA,
 			VALENCIA,
 		],
+		"id" => BARCELONA,
 		"passes" => [
 			TOULOUSE,
 		],
@@ -1367,6 +1453,7 @@ $this->cities = [
 			CORDOBA,
 			GIBRALTAR,
 		],
+		"id" => SEVILLE,
 		"passes" => [
 
 		],
@@ -1381,6 +1468,7 @@ $this->cities = [
 			SEVILLE,
 			GRANADA,
 		],
+		"id" => GIBRALTAR,
 		"passes" => [
 
 		],
@@ -1395,6 +1483,7 @@ $this->cities = [
 			BILBAO,
 			VALLADOLID,
 		],
+		"id" => CORUNNA,
 		"passes" => [
 
 		],
@@ -1411,6 +1500,7 @@ $this->cities = [
 			NAVARRE,
 			ZARAGOZA,
 		],
+		"id" => BILBAO,
 		"passes" => [
 
 		],
@@ -1427,6 +1517,7 @@ $this->cities = [
 			NAVARRE,
 			BARCELONA,
 		],
+		"id" => ZARAGOZA,
 		"passes" => [
 
 		],
@@ -1443,6 +1534,7 @@ $this->cities = [
 			VALENCIA,
 			CORDOBA,
 		],
+		"id" => MADRID,
 		"passes" => [
 
 		],
@@ -1458,6 +1550,7 @@ $this->cities = [
 			BARCELONA,
 			CARTAGENA,
 		],
+		"id" => VALENCIA,
 		"passes" => [
 
 		],
@@ -1471,6 +1564,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => PALMA,
 		"passes" => [
 
 		],
@@ -1486,6 +1580,7 @@ $this->cities = [
 			GRANADA,
 			MADRID,
 		],
+		"id" => CORDOBA,
 		"passes" => [
 
 		],
@@ -1501,6 +1596,7 @@ $this->cities = [
 			GIBRALTAR,
 			CARTAGENA,
 		],
+		"id" => GRANADA,
 		"passes" => [
 
 		],
@@ -1515,6 +1611,7 @@ $this->cities = [
 			VALENCIA,
 			GRANADA,
 		],
+		"id" => CARTAGENA,
 		"passes" => [
 
 		],
@@ -1529,6 +1626,7 @@ $this->cities = [
 			EDIRNE,
 			VARNA,
 		],
+		"id" => ISTANBUL,
 		"passes" => [
 
 		],
@@ -1545,6 +1643,7 @@ $this->cities = [
 			SOFIA,
 			SALONIKA,
 		],
+		"id" => EDIRNE,
 		"passes" => [
 
 		],
@@ -1559,6 +1658,7 @@ $this->cities = [
 			EDIRNE,
 			LARISSA,
 		],
+		"id" => SALONIKA,
 		"passes" => [
 			SOFIA,
 		],
@@ -1574,6 +1674,7 @@ $this->cities = [
 			LEPANTO,
 			CORON,
 		],
+		"id" => ATHENS,
 		"passes" => [
 
 		],
@@ -1588,6 +1689,7 @@ $this->cities = [
 			DURAZZO,
 			RAGUSA,
 		],
+		"id" => SCUTARI,
 		"passes" => [
 			NEZH,
 		],
@@ -1603,6 +1705,7 @@ $this->cities = [
 			EDIRNE,
 			ISTANBUL,
 		],
+		"id" => VARNA,
 		"passes" => [
 
 		],
@@ -1617,6 +1720,7 @@ $this->cities = [
 			NICOPOLIS,
 			VARNA,
 		],
+		"id" => BUCHAREST,
 		"passes" => [
 
 		],
@@ -1631,6 +1735,7 @@ $this->cities = [
 			BUCHAREST,
 			BELGRADE,
 		],
+		"id" => NICOPOLIS,
 		"passes" => [
 			SOFIA,
 		],
@@ -1645,6 +1750,7 @@ $this->cities = [
 			EDIRNE,
 			NEZH,
 		],
+		"id" => SOFIA,
 		"passes" => [
 			NICOPOLIS,
 		],
@@ -1660,6 +1766,7 @@ $this->cities = [
 			LEPANTO,
 			ATHENS,
 		],
+		"id" => LARISSA,
 		"passes" => [
 			DURAZZO,
 		],
@@ -1674,6 +1781,7 @@ $this->cities = [
 			LARISSA,
 			ATHENS,
 		],
+		"id" => LEPANTO,
 		"passes" => [
 
 		],
@@ -1687,6 +1795,7 @@ $this->cities = [
 		"connections" => [
 			ATHENS,
 		],
+		"id" => CORON,
 		"passes" => [
 
 		],
@@ -1701,6 +1810,7 @@ $this->cities = [
 			BELGRADE,
 			SOFIA,
 		],
+		"id" => NEZH,
 		"passes" => [
 			SCUTARI,
 		],
@@ -1714,6 +1824,7 @@ $this->cities = [
 		"connections" => [
 			SCUTARI,
 		],
+		"id" => DURAZZO,
 		"passes" => [
 			LARISSA,
 		],
@@ -1727,6 +1838,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => ALGIERS,
 		"passes" => [
 
 		],
@@ -1740,6 +1852,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => ORAN,
 		"passes" => [
 
 		],
@@ -1753,6 +1866,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => TRIPOLI,
 		"passes" => [
 
 		],
@@ -1770,6 +1884,7 @@ $this->cities = [
 			MOHACS,
 			AGRAM,
 		],
+		"id" => BELGRADE,
 		"passes" => [
 			RAGUSA,
 		],
@@ -1785,6 +1900,7 @@ $this->cities = [
 			MOHACS,
 			PRESSBURG,
 		],
+		"id" => BUDA,
 		"passes" => [
 
 		],
@@ -1801,6 +1917,7 @@ $this->cities = [
 			WITTENBERG,
 			LEIPZIG,
 		],
+		"id" => PRAGUE,
 		"passes" => [
 
 		],
@@ -1815,6 +1932,7 @@ $this->cities = [
 			BUDA,
 			BELGRADE,
 		],
+		"id" => SZEGEDIN,
 		"passes" => [
 			NICOPOLIS,
 		],
@@ -1829,6 +1947,7 @@ $this->cities = [
 			BUDA,
 			VIENNA,
 		],
+		"id" => PRESSBURG,
 		"passes" => [
 
 		],
@@ -1845,6 +1964,7 @@ $this->cities = [
 			GRAZ,
 			AGRAM,
 		],
+		"id" => MOHACS,
 		"passes" => [
 
 		],
@@ -1861,6 +1981,7 @@ $this->cities = [
 			MOHACS,
 			BELGRADE,
 		],
+		"id" => AGRAM,
 		"passes" => [
 			ZARA,
 		],
@@ -1876,6 +1997,7 @@ $this->cities = [
 			PRAGUE,
 			VIENNA,
 		],
+		"id" => BRUNN,
 		"passes" => [
 
 		],
@@ -1891,6 +2013,7 @@ $this->cities = [
 			WITTENBERG,
 			BRANDENBURG,
 		],
+		"id" => BRESLAU,
 		"passes" => [
 
 		],
@@ -1907,6 +2030,7 @@ $this->cities = [
 			BRUSSELS,
 			AMSTERDAM,
 		],
+		"id" => ANTWERP,
 		"passes" => [
 
 		],
@@ -1920,6 +2044,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => MALTA,
 		"passes" => [
 
 		],
@@ -1933,6 +2058,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => CAGLIARI,
 		"passes" => [
 
 		],
@@ -1947,6 +2073,7 @@ $this->cities = [
 			ANTWERP,
 			MUNSTER,
 		],
+		"id" => AMSTERDAM,
 		"passes" => [
 
 		],
@@ -1960,6 +2087,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => CANDIA,
 		"passes" => [
 
 		],
@@ -1973,6 +2101,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => CORFU,
 		"passes" => [
 
 		],
@@ -1987,6 +2116,7 @@ $this->cities = [
 			TRIESTE,
 			RAGUSA,
 		],
+		"id" => ZARA,
 		"passes" => [
 			AGRAM,
 		],
@@ -2000,6 +2130,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => BASTIA,
 		"passes" => [
 
 		],
@@ -2013,6 +2144,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => TUNIS,
 		"passes" => [
 
 		],
@@ -2026,6 +2158,7 @@ $this->cities = [
 		"connections" => [
 
 		],
+		"id" => RHODES,
 		"passes" => [
 
 		],
@@ -2040,6 +2173,7 @@ $this->cities = [
 			ZARA,
 			SCUTARI,
 		],
+		"id" => RAGUSA,
 		"passes" => [
 			BELGRADE,
 		],

@@ -42,9 +42,7 @@ trait MovementTrait {
 		$destination = Globals::getDestination();
 		$origin = Globals::getOrigin();
 		$from_city = $cities[$origin];
-		$from_city['id'] = $origin;
 		$to_city = $cities[$destination];
-		$to_city['id'] = $destination;
 		Tokens::move($formation, ['board', 'city', $destination]);
 		Move::moveFormation($player, $formation, $from_city, $to_city);
 		$this->gamestate->nextState("done");

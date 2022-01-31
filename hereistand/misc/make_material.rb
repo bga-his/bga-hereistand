@@ -140,6 +140,7 @@ city_csv.each do |row|
 	city['home_power'] = row['home_power'].upcase
 	city['language'] = row['language'].upcase
 	city['connections'] = Array.new
+	city['id'] = city_id
 	6.times do |i|
 		city['connections'].push row["connection_#{i}"] unless row["connection_#{i}"].nil?
 	end

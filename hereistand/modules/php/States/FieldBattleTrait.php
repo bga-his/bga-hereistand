@@ -177,7 +177,7 @@ trait FieldBattleTrait {
 		foreach (Tokens::getInLocation(['board', 'city', $city_id]) as $token) {
 			$destination_ids[] = $token['id'];
 		}
-		return array_intersect($starting_units, $destination_ids);
+		return array_values(array_intersect($starting_units, $destination_ids));
 	}
 
 	function stFieldBattleRetreats() {
