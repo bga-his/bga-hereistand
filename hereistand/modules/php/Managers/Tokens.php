@@ -50,6 +50,18 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 	}
 
+	public static function checkOwner($token_ids, $player) {
+		$formation = self::getMany($token_ids);
+		if ($formation->empty()) {
+			throw new UserException("Game error: no formation selected.");
+		}
+		foreach ($formation as $formation_id => $formation) {
+			if ($formation['power'] != $player->power) {
+				throw new UserException("All units in formation must be owned by player");
+			}
+		}
+	}
+
 	//////////////////////////////////
 	//////////////////////////////////
 	///////////// SETTERS //////////////

@@ -92,12 +92,14 @@ class Actions {
 
 	public static function declareFormation($token_ids) {
 		Tokens::checkFormation($token_ids);
+		Tokens::checkOwner($token_ids, Players::getActive());
 		Globals::setFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function declareIntercept($token_ids) {
 		Tokens::checkFormation($token_ids);
+		Tokens::checkOwner($token_ids, Players::getActive());
 		Globals::setInterceptFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}
@@ -110,6 +112,8 @@ class Actions {
 	public static function declareCasualties($token_ids) {
 		$player = Players::getCurrent();
 		$tokens = Tokens::getMany($token_ids);
+		Tokens::checkFormation($token_ids);
+		Tokens::checkOwner($token_ids, Players::getCurrent());
 		foreach ($tokens as $token) {
 			Tokens::move([$token['id']], ['supply', $token['power'], $token['type']]);
 		}
