@@ -72,8 +72,8 @@ const ITALIAN = 4;
 /*
  * Token state constants
  */
-const FRONT = 0;
-const BACK = 1;
+const BACK = 'back';
+const FLIPPED = 1;
 
 /*
  * Token Type constants

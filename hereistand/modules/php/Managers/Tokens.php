@@ -21,7 +21,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			'type' => $token['type'],
 			'location_type' => $locations[1] ?? null,
 			'location_id' => $locations[2] ?? null,
-			'flipped' => $token['state'] == BACK ? 'flipped' : '',
+			'flipped' => $token['state'] == FLIPPED ? 'flipped' : '',
 		];
 		$token_static = Game::get()->tokens[$token['type']];
 		$token = array_merge($token, $token_static);

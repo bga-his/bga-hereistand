@@ -16,4 +16,12 @@ class Battle extends \HIS\Core\Notifications {
 			"tokens" => $tokens,
 		]);
 	}
+
+	public static function retreatUnits($token_ids, $city) {
+		self::notifyAll('moveFormation', 'Units retreat to ${city_name}', [
+			'formation' => $token_ids,
+			'city' => $city,
+		]);
+
+	}
 }

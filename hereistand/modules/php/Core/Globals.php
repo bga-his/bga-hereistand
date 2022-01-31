@@ -14,6 +14,7 @@ class Globals extends \HIS\Helpers\DB_Manager {
 		"origin" => "int",
 		"unitBuyType" => "int",
 		"fieldBattle" => "obj",
+		"retreats" => "obj",
 	];
 
 	protected static $table = 'global_variables';

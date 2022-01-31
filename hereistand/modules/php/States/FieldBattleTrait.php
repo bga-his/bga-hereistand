@@ -1,6 +1,7 @@
 <?php
 namespace HIS\States;
 use HIS\Core\Globals;
+use HIS\Core\Notifications;
 use HIS\Helpers\Utils;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
@@ -34,7 +35,7 @@ trait FieldBattleTrait {
 						$powers[$power]['battle_rating'] = $token['battle_rating'];
 					}
 				}
-				$powers[$power]['tokens'][] = $token;
+				$powers[$power]['tokens'][$token_id] = $token;
 			}
 		}
 		$field['powers'] = $powers;
@@ -105,6 +106,16 @@ trait FieldBattleTrait {
 	}
 
 	function stDeclareFieldBattleWinner() {
+		$winner = DEFENDER;
+		$field = Globals::getFieldBattle();
+		$attacker_hits = Utils::countHits($field['attacker_dice'], 5);
+		$defender_hits = Utils::countHits($field['defender_dice'], 5);
+		if ($attacker_hits > $defender_hits) {
+			$winner = ATTACKER;
+		}
+		$field['winner'] = $winner;
+		Globals::setFieldBattle($field);
+		Notifications::message("${winner} wins.", ['winner' => $winner]);
 		$this->gamestate->nextState("next");
 	}
 
@@ -157,8 +168,47 @@ trait FieldBattleTrait {
 		$this->gamestate->nextState("next");
 	}
 
+	function getRetreatingUnits($power, $field, $city_id) {
+		$starting_units = [];
+		foreach ($field['powers'][$power]['tokens'] as $token_id => $token) {
+			$starting_units[] = $token_id;
+		}
+		$destination_ids = [];
+		foreach (Tokens::getInLocation(['board', 'city', $city_id]) as $token) {
+			$destination_ids[] = $token['id'];
+		}
+		return array_intersect($starting_units, $destination_ids);
+	}
+
 	function stFieldBattleRetreats() {
-		$this->gamestate->nextState("none");
+		$field = Globals::getFieldBattle();
+		$destination = Globals::getDestination();
+		if ($field['winner'] == DEFENDER) {
+			$origin = Globals::getOrigin();
+			$cities = $this->cities;
+			$city = $cities[$origin];
+			$retreating_units = self::getRetreatingUnits($field['attacking_power'], $field, $destination);
+			Tokens::move($retreating_units, ['board', 'city', $origin]);
+			Battle::retreatUnits($retreating_units, $city);
+			$this->gamestate->nextState("none");
+		} else {
+			$retreats = [];
+			foreach ($field['defending_powers'] as $power) {
+				$retreating_units = self::getRetreatingUnits($power, $field, $destination);
+				if (count($retreating_units) > 0) {
+					$retreats[$power] = $retreating_units;
+				}
+			}
+			if (count($retreats) == 0) {
+				$this->gamestate->nextState("none");
+				return;
+			}
+			Globals::setRetreats($retreats);
+			$next_power = array_key_first($retreats);
+			$next_player = Players::getFromPower($next_power);
+			$this->gamestate->changeActivePlayer($next_player->id);
+			$this->gamestate->nextState("found");
+		}
 	}
 
 	function argDeclareRetreatDestination() {

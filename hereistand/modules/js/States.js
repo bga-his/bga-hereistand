@@ -44,8 +44,8 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     onEnteringStateTakeFieldBattleCasualties(args){
       this.addPrimaryActionButton('declare_casualties', _('Declare Casulaties'), 'onDeclareCasualtiesClick');
       this.selectedFormation = [];
-      for(const token of args.tokens){
-        this.onClick(token.id, this.onUnitClick);
+      for(const token_id in args.tokens){
+        this.onClick(token_id, this.onUnitClick);
       }
     },
   });

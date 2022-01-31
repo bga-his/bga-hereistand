@@ -778,7 +778,11 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			PARIS,
+			ST_QUENTIN,
+			BRUSSELS,
+			METZ,
+			DIJON,
 		],
 		"passes" => [
 
@@ -791,7 +795,10 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			PARIS,
+			BOULOGNE,
+			BRUSSELS,
+			ST_DIZIER,
 		],
 		"passes" => [
 
@@ -804,7 +811,10 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			PARIS,
+			ST_QUENTIN,
+			ROUEN,
+			CALAIS,
 		],
 		"passes" => [
 
@@ -817,7 +827,10 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			PARIS,
+			TOURS,
+			DIJON,
+			LYON,
 		],
 		"passes" => [
 
@@ -830,10 +843,12 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			LYON,
+			MARSEILLE,
+			TOULOUSE,
 		],
 		"passes" => [
-
+			BARCELONA,
 		],
 	],
 	TOULOUSE => [
@@ -843,10 +858,11 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			BORDEAUX,
+			AVIGNON,
 		],
 		"passes" => [
-
+			BARCELONA,
 		],
 	],
 	LIMOGES => [
@@ -856,7 +872,9 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			LYON,
+			TOURS,
+			BORDEAUX,
 		],
 		"passes" => [
 
@@ -869,7 +887,11 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			ROUEN,
+			ORLEANS,
+			BORDEAUX,
+			LIMOGES,
+			NANTES,
 		],
 		"passes" => [
 
@@ -882,7 +904,10 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			ROUEN,
+			TOURS,
+			BORDEAUX,
+			BREST,
 		],
 		"passes" => [
 
@@ -895,7 +920,7 @@ $this->cities = [
 		"home_power" => FRANCE,
 		"language" => FRENCH,
 		"connections" => [
-
+			NANTES,
 		],
 		"passes" => [
 
@@ -908,7 +933,11 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => FRENCH,
 		"connections" => [
-
+			CALAIS,
+			ANTWERP,
+			LIEGE,
+			ST_QUENTIN,
+			ST_DIZIER,
 		],
 		"passes" => [
 
@@ -924,6 +953,8 @@ $this->cities = [
 			DIJON,
 			BASEL,
 			GENEVA,
+			METZ,
+			STRASBURG,
 		],
 		"passes" => [
 
@@ -936,7 +967,9 @@ $this->cities = [
 		"home_power" => ENGLAND,
 		"language" => FRENCH,
 		"connections" => [
-
+			BOULOGNE,
+			ANTWERP,
+			BRUSSELS,
 		],
 		"passes" => [
 
@@ -949,7 +982,11 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => FRENCH,
 		"connections" => [
-
+			TRIER,
+			BESANCON,
+			LIEGE,
+			STRASBURG,
+			ST_DIZIER,
 		],
 		"passes" => [
 
@@ -962,7 +999,11 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => FRENCH,
 		"connections" => [
-
+			TRIER,
+			ANTWERP,
+			BRUSSELS,
+			METZ,
+			COLOGNE,
 		],
 		"passes" => [
 
@@ -991,10 +1032,10 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => FRENCH,
 		"connections" => [
-
+			MARSEILLE,
 		],
 		"passes" => [
-
+			GENOA,
 		],
 	],
 	ROME => [
@@ -1004,7 +1045,10 @@ $this->cities = [
 		"home_power" => PAPACY,
 		"language" => ITALIAN,
 		"connections" => [
-
+			NAPLES,
+			SIENA,
+			ANCONA,
+			CERIGNOLA,
 		],
 		"passes" => [
 
@@ -1017,7 +1061,9 @@ $this->cities = [
 		"home_power" => PAPACY,
 		"language" => ITALIAN,
 		"connections" => [
-
+			ANCONA,
+			VENICE,
+			MODENA,
 		],
 		"passes" => [
 
@@ -1030,7 +1076,9 @@ $this->cities = [
 		"home_power" => PAPACY,
 		"language" => ITALIAN,
 		"connections" => [
-
+			RAVENNA,
+			ROME,
+			CERIGNOLA,
 		],
 		"passes" => [
 
@@ -1043,7 +1091,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			TARANTO,
+			ROME,
+			MESSINA,
 		],
 		"passes" => [
 
@@ -1056,7 +1106,10 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			VENICE,
+			GRAZ,
+			AGRAM,
+			ZARA,
 		],
 		"passes" => [
 
@@ -1069,7 +1122,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			ANCONA,
+			ROME,
+			TARANTO,
 		],
 		"passes" => [
 
@@ -1082,7 +1137,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			NAPLES,
+			CERIGNOLA,
+			MESSINA,
 		],
 		"passes" => [
 
@@ -1095,7 +1152,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			NAPLES,
+			PALERMO,
+			TARANTO,
 		],
 		"passes" => [
 
@@ -1108,7 +1167,7 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => ITALIAN,
 		"connections" => [
-
+			MESSINA,
 		],
 		"passes" => [
 
@@ -1117,24 +1176,30 @@ $this->cities = [
 	GENOA => [
 		"x" => 2844,
 		"y" => 1750,
-		"name" => "Minor_Genoa",
+		"name" => "Genoa",
 		"home_power" => MINOR_GENOA,
 		"language" => ITALIAN,
 		"connections" => [
-
+			TURIN,
+			PAVIA,
+			FLORENCE,
+			SIENA,
 		],
 		"passes" => [
-
+			NICE,
 		],
 	],
 	VENICE => [
 		"x" => 3205,
 		"y" => 1524,
-		"name" => "Minor_Venice",
+		"name" => "Venice",
 		"home_power" => MINOR_VENICE,
 		"language" => ITALIAN,
 		"connections" => [
-
+			TRENT,
+			MODENA,
+			RAVENNA,
+			TRIESTE,
 		],
 		"passes" => [
 
@@ -1147,7 +1212,10 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			TRENT,
+			MODENA,
+			PAVIA,
+			TURIN,
 		],
 		"passes" => [
 
@@ -1160,7 +1228,9 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			MODENA,
+			GENOA,
+			SIENA,
 		],
 		"passes" => [
 
@@ -1174,6 +1244,8 @@ $this->cities = [
 		"language" => ITALIAN,
 		"connections" => [
 			MILAN,
+			PAVIA,
+			GENOA,
 		],
 		"passes" => [
 			GENEVA,
@@ -1186,10 +1258,12 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			MODENA,
+			VENICE,
+			MILAN,
 		],
 		"passes" => [
-
+			INNSBRUCK,
 		],
 	],
 	MODENA => [
@@ -1199,7 +1273,11 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			MILAN,
+			VENICE,
+			RAVENNA,
+			PAVIA,
+			FLORENCE,
 		],
 		"passes" => [
 
@@ -1212,7 +1290,10 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			MILAN,
+			MODENA,
+			GENOA,
+			TURIN,
 		],
 		"passes" => [
 
@@ -1225,7 +1306,9 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => ITALIAN,
 		"connections" => [
-
+			FLORENCE,
+			ROME,
+			GENOA,
 		],
 		"passes" => [
 
@@ -1238,7 +1321,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			MADRID,
+			BILBAO,
+			CORUNNA,
 		],
 		"passes" => [
 
@@ -1251,10 +1336,11 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			BILBAO,
+			ZARAGOZA,
 		],
 		"passes" => [
-
+			BORDEAUX,
 		],
 	],
 	BARCELONA => [
@@ -1264,10 +1350,11 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			ZARAGOZA,
+			VALENCIA,
 		],
 		"passes" => [
-
+			TOULOUSE,
 		],
 	],
 	SEVILLE => [
@@ -1277,7 +1364,8 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			CORDOBA,
+			GIBRALTAR,
 		],
 		"passes" => [
 
@@ -1290,7 +1378,8 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			SEVILLE,
+			GRANADA,
 		],
 		"passes" => [
 
@@ -1303,7 +1392,8 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			BILBAO,
+			VALLADOLID,
 		],
 		"passes" => [
 
@@ -1316,7 +1406,10 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			CORUNNA,
+			VALLADOLID,
+			NAVARRE,
+			ZARAGOZA,
 		],
 		"passes" => [
 
@@ -1329,7 +1422,10 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			BILBAO,
+			MADRID,
+			NAVARRE,
+			BARCELONA,
 		],
 		"passes" => [
 
@@ -1342,7 +1438,10 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			VALLADOLID,
+			ZARAGOZA,
+			VALENCIA,
+			CORDOBA,
 		],
 		"passes" => [
 
@@ -1355,7 +1454,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			MADRID,
+			BARCELONA,
+			CARTAGENA,
 		],
 		"passes" => [
 
@@ -1381,7 +1482,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			SEVILLE,
+			GRANADA,
+			MADRID,
 		],
 		"passes" => [
 
@@ -1394,7 +1497,9 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			CORDOBA,
+			GIBRALTAR,
+			CARTAGENA,
 		],
 		"passes" => [
 
@@ -1407,7 +1512,8 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => SPANISH,
 		"connections" => [
-
+			VALENCIA,
+			GRANADA,
 		],
 		"passes" => [
 
@@ -1420,7 +1526,8 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			EDIRNE,
+			VARNA,
 		],
 		"passes" => [
 
@@ -1433,7 +1540,10 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			ISTANBUL,
+			VARNA,
+			SOFIA,
+			SALONIKA,
 		],
 		"passes" => [
 
@@ -1446,10 +1556,11 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			EDIRNE,
+			LARISSA,
 		],
 		"passes" => [
-
+			SOFIA,
 		],
 	],
 	ATHENS => [
@@ -1459,7 +1570,9 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			LARISSA,
+			LEPANTO,
+			CORON,
 		],
 		"passes" => [
 
@@ -1472,10 +1585,11 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			DURAZZO,
+			RAGUSA,
 		],
 		"passes" => [
-
+			NEZH,
 		],
 	],
 	VARNA => [
@@ -1485,7 +1599,9 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			BUCHAREST,
+			EDIRNE,
+			ISTANBUL,
 		],
 		"passes" => [
 
@@ -1498,7 +1614,8 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			NICOPOLIS,
+			VARNA,
 		],
 		"passes" => [
 
@@ -1511,10 +1628,11 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			BUCHAREST,
+			BELGRADE,
 		],
 		"passes" => [
-
+			SOFIA,
 		],
 	],
 	SOFIA => [
@@ -1524,10 +1642,11 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			EDIRNE,
+			NEZH,
 		],
 		"passes" => [
-
+			NICOPOLIS,
 		],
 	],
 	LARISSA => [
@@ -1537,10 +1656,12 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			SALONIKA,
+			LEPANTO,
+			ATHENS,
 		],
 		"passes" => [
-
+			DURAZZO,
 		],
 	],
 	LEPANTO => [
@@ -1550,7 +1671,8 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			LARISSA,
+			ATHENS,
 		],
 		"passes" => [
 
@@ -1563,7 +1685,7 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			ATHENS,
 		],
 		"passes" => [
 
@@ -1576,10 +1698,11 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			BELGRADE,
+			SOFIA,
 		],
 		"passes" => [
-
+			SCUTARI,
 		],
 	],
 	DURAZZO => [
@@ -1589,17 +1712,17 @@ $this->cities = [
 		"home_power" => OTTOMAN,
 		"language" => OTHER,
 		"connections" => [
-
+			SCUTARI,
 		],
 		"passes" => [
-
+			LARISSA,
 		],
 	],
 	ALGIERS => [
 		"x" => 2394,
 		"y" => 2779,
 		"name" => "Algiers",
-		"home_power" => OTHER,
+		"home_power" => INDEPENDENT,
 		"language" => OTHER,
 		"connections" => [
 
@@ -1641,10 +1764,14 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			NICOPOLIS,
+			NEZH,
+			SZEGEDIN,
+			MOHACS,
+			AGRAM,
 		],
 		"passes" => [
-
+			RAGUSA,
 		],
 	],
 	BUDA => [
@@ -1654,7 +1781,9 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			SZEGEDIN,
+			MOHACS,
+			PRESSBURG,
 		],
 		"passes" => [
 
@@ -1667,7 +1796,10 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BRUNN,
+			LINZ,
+			WITTENBERG,
+			LEIPZIG,
 		],
 		"passes" => [
 
@@ -1680,10 +1812,11 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BUDA,
+			BELGRADE,
 		],
 		"passes" => [
-
+			NICOPOLIS,
 		],
 	],
 	PRESSBURG => [
@@ -1693,7 +1826,8 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BUDA,
+			VIENNA,
 		],
 		"passes" => [
 
@@ -1706,7 +1840,10 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BUDA,
+			BELGRADE,
+			GRAZ,
+			AGRAM,
 		],
 		"passes" => [
 
@@ -1719,10 +1856,13 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			TRIESTE,
+			GRAZ,
+			MOHACS,
+			BELGRADE,
 		],
 		"passes" => [
-
+			ZARA,
 		],
 	],
 	BRUNN => [
@@ -1732,7 +1872,9 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BRESLAU,
+			PRAGUE,
+			VIENNA,
 		],
 		"passes" => [
 
@@ -1745,7 +1887,9 @@ $this->cities = [
 		"home_power" => MINOR_HUNGARY,
 		"language" => OTHER,
 		"connections" => [
-
+			BRUNN,
+			WITTENBERG,
+			BRANDENBURG,
 		],
 		"passes" => [
 
@@ -1758,7 +1902,10 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => OTHER,
 		"connections" => [
-
+			CALAIS,
+			LIEGE,
+			BRUSSELS,
+			AMSTERDAM,
 		],
 		"passes" => [
 
@@ -1797,7 +1944,8 @@ $this->cities = [
 		"home_power" => HAPSBURG,
 		"language" => OTHER,
 		"connections" => [
-
+			ANTWERP,
+			MUNSTER,
 		],
 		"passes" => [
 
@@ -1807,7 +1955,7 @@ $this->cities = [
 		"x" => 4603,
 		"y" => 2791,
 		"name" => "Candia",
-		"home_power" => MINOR_VENICE,
+		"home_power" => VENICE,
 		"language" => OTHER,
 		"connections" => [
 
@@ -1820,7 +1968,7 @@ $this->cities = [
 		"x" => 3987,
 		"y" => 2333,
 		"name" => "Corfu",
-		"home_power" => MINOR_VENICE,
+		"home_power" => VENICE,
 		"language" => OTHER,
 		"connections" => [
 
@@ -1833,20 +1981,21 @@ $this->cities = [
 		"x" => 3492,
 		"y" => 1696,
 		"name" => "Zara",
-		"home_power" => MINOR_VENICE,
+		"home_power" => VENICE,
 		"language" => OTHER,
 		"connections" => [
-
+			TRIESTE,
+			RAGUSA,
 		],
 		"passes" => [
-
+			AGRAM,
 		],
 	],
 	BASTIA => [
 		"x" => 2903,
 		"y" => 1951,
 		"name" => "Bastia",
-		"home_power" => MINOR_GENOA,
+		"home_power" => GENOA,
 		"language" => OTHER,
 		"connections" => [
 
@@ -1888,10 +2037,11 @@ $this->cities = [
 		"home_power" => INDEPENDENT,
 		"language" => OTHER,
 		"connections" => [
-
+			ZARA,
+			SCUTARI,
 		],
 		"passes" => [
-
+			BELGRADE,
 		],
 	],
 ];
