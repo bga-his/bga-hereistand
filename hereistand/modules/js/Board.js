@@ -4,10 +4,8 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     setupBoard() {
       for(let token_id in this.gamedatas.tokens){
         let token = this.gamedatas.tokens[token_id];
-        if(token.board == 'board'){
-          if(token.location_type == 'city'){
-            this.place('tplToken', token, `city_${token.location_id}`);
-          }
+        if(token.board != 'supply'){
+          this.place('tplToken', token, `${token.location_type}_${token.location_id}`);
         }
       }
       for(const city_node of dojo.query('.city')){

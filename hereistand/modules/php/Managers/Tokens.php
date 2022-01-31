@@ -84,11 +84,18 @@ class Tokens extends \HIS\Helpers\Pieces {
 		foreach (Game::get()->getSetup() as $power => $cities) {
 			foreach ($cities as $city_name => $city) {
 				foreach ($city as $unit) {
-					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['board', 'city', $city_name]);
+					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['map', 'city', $city_name]);
 				}
 			}
 		}
 		// Hack to flip starting units
 		self::setState('tbd_31_1', FLIPPED);
+		$locations = Game::get()->board_locations;
+		foreach (Game::get()->getTokenSetup() as $placement) {
+			$token_id = $placement[0];
+			$location_id = $placement[1];
+			$location = $locations[$location_id];
+			self::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
+		}
 	}
 }

@@ -2,6 +2,19 @@
 namespace HIS;
 
 trait SetupTrait {
+	public function getTokenSetup() {
+		return [
+			[VP_OTTOMAN, VICTORY_TRACK_8],
+			[VP_HAPSBURG, VICTORY_TRACK_9],
+			[VP_ENGLAND, VICTORY_TRACK_9],
+			[VP_FRANCE, VICTORY_TRACK_12],
+			[VP_PAPACY, VICTORY_TRACK_19],
+			[VP_PROTESTANT, VICTORY_TRACK_0],
+			[AT_WAR, DIPLO_HAP_FRA],
+			[AT_WAR, DIPLO_FRA_PAP],
+			[AT_WAR, DIPLO_OTT_HUN],
+		];
+	}
 	public function getSetup() {
 		$setup_base = [
 			OTTOMAN => [

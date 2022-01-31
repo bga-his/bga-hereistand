@@ -37,7 +37,7 @@
   background-repeat: no-repeat;
 }
 
-#player-boards {
+#power-cards {
   position: relative;
   width: 3825px;
   height: 1650px;
@@ -51,6 +51,12 @@
 
 .city {
   position: relative;
+}
+
+.location {
+  // width: 15px;
+  // height: 15px;
+  // background-color: red;
 }
 
 .city:hover {

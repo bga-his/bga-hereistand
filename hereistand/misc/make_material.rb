@@ -61,7 +61,7 @@ token_counts = Hash.new
 token_css = Hash.new
 token_constants = Array.new
 type_constants = Set.new
-i = 0
+i = 1000 
 token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
@@ -107,7 +107,7 @@ card_csv = CSV.read('cards.csv', headers: true)
 cards = Hash.new
 card_css = Hash.new
 card_constants = Array.new
-i = 0
+i = 5000
 card_csv.each do |row|
 	card = Hash.new
 	card_name = row['CONSTANT_NAME']
@@ -159,8 +159,9 @@ location_constants = Array.new
 location_csv.each do |row|
 	location_id = row['LOCATION_ID']
 	location = Hash.new
-	location['x'] = row['posX']
-	location['y'] = row['posY']
+	location['x'] = row['posX'] ||= 0
+	location['y'] = row['posY'] ||= 0
+	location['board'] = row['board']
 	locations[location_id] = location
 	location_constants.push location_id
 end

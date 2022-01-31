@@ -10,7 +10,7 @@ use HIS\Notifications\Battle;
 trait FieldBattleTrait {
 	function stFindBattle() {
 		$destination = Globals::getDestination();
-		$tokens = Tokens::getInLocation(['board', 'city', $destination]);
+		$tokens = Tokens::getInLocation(['map', 'city', $destination]);
 		$active_power = Players::getActive()->power;
 		$field = [];
 		$powers = [];
@@ -174,7 +174,7 @@ trait FieldBattleTrait {
 			$starting_units[] = $token_id;
 		}
 		$destination_ids = [];
-		foreach (Tokens::getInLocation(['board', 'city', $city_id]) as $token) {
+		foreach (Tokens::getInLocation(['map', 'city', $city_id]) as $token) {
 			$destination_ids[] = $token['id'];
 		}
 		return array_values(array_intersect($starting_units, $destination_ids));
@@ -188,7 +188,7 @@ trait FieldBattleTrait {
 			$cities = $this->cities;
 			$city = $cities[$origin];
 			$retreating_units = self::getRetreatingUnits($field['attacking_power'], $field, $destination);
-			Tokens::move($retreating_units, ['board', 'city', $origin]);
+			Tokens::move($retreating_units, ['map', 'city', $origin]);
 			Battle::retreatUnits($retreating_units, $city);
 			$this->gamestate->nextState("none");
 		} else {

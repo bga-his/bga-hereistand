@@ -2205,7 +2205,7 @@ $this->tokens = [
 		"name" => "French Key",
 		"power" => FRANCE,
 		"style" => "Control Keys Catholic france_key",
-		"db_id" => "tbd_1_{INDEX}",
+		"db_id" => "tbd_1001_{INDEX}",
 		"types" => [
 			CONTROL,
 			KEYS,
@@ -2225,7 +2225,7 @@ $this->tokens = [
 		"name" => "Hapsburg Key",
 		"power" => HAPSBURG,
 		"style" => "Control Keys Catholic hapsburg_key",
-		"db_id" => "tbd_2_{INDEX}",
+		"db_id" => "tbd_1002_{INDEX}",
 		"types" => [
 			CONTROL,
 			KEYS,
@@ -2245,7 +2245,7 @@ $this->tokens = [
 		"name" => "Ottoman Key",
 		"power" => OTTOMAN,
 		"style" => "Control Keys Catholic ottoman_key",
-		"db_id" => "tbd_3_{INDEX}",
+		"db_id" => "tbd_1003_{INDEX}",
 		"types" => [
 			CONTROL,
 			KEYS,
@@ -2265,7 +2265,7 @@ $this->tokens = [
 		"name" => "Independent Key",
 		"power" => INDEPENDENT,
 		"style" => "Control Keys Catholic independent_key",
-		"db_id" => "tbd_4_{INDEX}",
+		"db_id" => "tbd_1004_{INDEX}",
 		"types" => [
 			CONTROL,
 			KEYS,
@@ -2285,7 +2285,7 @@ $this->tokens = [
 		"name" => "Papacy Key",
 		"power" => PAPACY,
 		"style" => "Control Keys Catholic papacy_key",
-		"db_id" => "tbd_5_{INDEX}",
+		"db_id" => "tbd_1005_{INDEX}",
 		"types" => [
 			CONTROL,
 			KEYS,
@@ -2305,7 +2305,7 @@ $this->tokens = [
 		"name" => "English Hexagonal Marker",
 		"power" => ENGLAND,
 		"style" => "Control Hex Catholic england_hex",
-		"db_id" => "tbd_6_{INDEX}",
+		"db_id" => "tbd_1006_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2325,7 +2325,7 @@ $this->tokens = [
 		"name" => "French Hexagonal Marker",
 		"power" => FRANCE,
 		"style" => "Control Hex Catholic france_hex",
-		"db_id" => "tbd_7_{INDEX}",
+		"db_id" => "tbd_1007_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2345,7 +2345,7 @@ $this->tokens = [
 		"name" => "Hapsburg Hexagonal Marker",
 		"power" => HAPSBURG,
 		"style" => "Control Hex Catholic hapsburg_hex",
-		"db_id" => "tbd_8_{INDEX}",
+		"db_id" => "tbd_1008_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2365,7 +2365,7 @@ $this->tokens = [
 		"name" => "Independent Hexagonal Marker",
 		"power" => INDEPENDENT,
 		"style" => "Control Hex Catholic independent_hex",
-		"db_id" => "tbd_9_{INDEX}",
+		"db_id" => "tbd_1009_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2385,7 +2385,7 @@ $this->tokens = [
 		"name" => "Ottoman Hexagonal Marker",
 		"power" => OTTOMAN,
 		"style" => "Control Hex Catholic ottoman_hex",
-		"db_id" => "tbd_10_{INDEX}",
+		"db_id" => "tbd_1010_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2405,7 +2405,7 @@ $this->tokens = [
 		"name" => "Papacy Hexagonal Marker",
 		"power" => PAPACY,
 		"style" => "Control Hex Catholic papacy_hex",
-		"db_id" => "tbd_11_{INDEX}",
+		"db_id" => "tbd_1011_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2425,7 +2425,7 @@ $this->tokens = [
 		"name" => "Protestant Hexagonal Marker",
 		"power" => PROTESTANT,
 		"style" => "Control Hex Catholic protestant_hex",
-		"db_id" => "tbd_12_{INDEX}",
+		"db_id" => "tbd_1012_{INDEX}",
 		"types" => [
 			CONTROL,
 			HEX,
@@ -2466,7 +2466,7 @@ $this->tokens = [
 		"name" => "English 2 Military Unit",
 		"power" => ENGLAND,
 		"style" => "Military Units england_2unit",
-		"db_id" => "tbd_14_{INDEX}",
+		"db_id" => "tbd_1014_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2487,7 +2487,7 @@ $this->tokens = [
 		"name" => "English 4 Military Unit",
 		"power" => ENGLAND,
 		"style" => "Military Units england_4unit",
-		"db_id" => "tbd_15_{INDEX}",
+		"db_id" => "tbd_1015_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2508,7 +2508,7 @@ $this->tokens = [
 		"name" => "English 6 Military Unit",
 		"power" => ENGLAND,
 		"style" => "Military Units england_6unit",
-		"db_id" => "tbd_16",
+		"db_id" => "tbd_1016",
 		"strength" => 6,
 		"types" => [
 			MILITARY,
@@ -2529,7 +2529,7 @@ $this->tokens = [
 		"name" => "French 1 Military Unit",
 		"power" => FRANCE,
 		"style" => "Military Units france_1unit",
-		"db_id" => "tbd_17_{INDEX}",
+		"db_id" => "tbd_1017_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2550,7 +2550,7 @@ $this->tokens = [
 		"name" => "French 2 Military Unit",
 		"power" => FRANCE,
 		"style" => "Military Units france_2unit",
-		"db_id" => "tbd_18_{INDEX}",
+		"db_id" => "tbd_1018_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2571,7 +2571,7 @@ $this->tokens = [
 		"name" => "French 4 Military Unit",
 		"power" => FRANCE,
 		"style" => "Military Units france_4unit",
-		"db_id" => "tbd_19_{INDEX}",
+		"db_id" => "tbd_1019_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2592,7 +2592,7 @@ $this->tokens = [
 		"name" => "French 6 Military Unit",
 		"power" => FRANCE,
 		"style" => "Military Units france_6unit",
-		"db_id" => "tbd_20",
+		"db_id" => "tbd_1020",
 		"strength" => 6,
 		"types" => [
 			MILITARY,
@@ -2613,7 +2613,7 @@ $this->tokens = [
 		"name" => "Genoese 1 Military Unit",
 		"power" => MINOR_GENOA,
 		"style" => "Military Units genoa_1unit",
-		"db_id" => "tbd_21",
+		"db_id" => "tbd_1021",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2624,7 +2624,7 @@ $this->tokens = [
 		"name" => "Genoese 2 Military Unit",
 		"power" => MINOR_GENOA,
 		"style" => "Military Units genoa_2unit",
-		"db_id" => "tbd_22",
+		"db_id" => "tbd_1022",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2635,7 +2635,7 @@ $this->tokens = [
 		"name" => "Hapsburg 1 Military Unit",
 		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_1unit",
-		"db_id" => "tbd_23_{INDEX}",
+		"db_id" => "tbd_1023_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2656,7 +2656,7 @@ $this->tokens = [
 		"name" => "Hapsburg 2 Military Unit",
 		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_2unit",
-		"db_id" => "tbd_24_{INDEX}",
+		"db_id" => "tbd_1024_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2677,7 +2677,7 @@ $this->tokens = [
 		"name" => "Hapsburg 4 Military Unit",
 		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_4unit",
-		"db_id" => "tbd_25_{INDEX}",
+		"db_id" => "tbd_1025_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2698,7 +2698,7 @@ $this->tokens = [
 		"name" => "Hapsburg 6 Military Unit",
 		"power" => HAPSBURG,
 		"style" => "Military Units hapsburg_6unit",
-		"db_id" => "tbd_26",
+		"db_id" => "tbd_1026",
 		"strength" => 6,
 		"types" => [
 			MILITARY,
@@ -2719,7 +2719,7 @@ $this->tokens = [
 		"name" => "Hungarian 1 Military Unit",
 		"power" => MINOR_HUNGARY,
 		"style" => "Military Units hungary_1unit",
-		"db_id" => "tbd_27_{INDEX}",
+		"db_id" => "tbd_1027_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2739,7 +2739,7 @@ $this->tokens = [
 		"name" => "Hungarian 4 Military Unit",
 		"power" => MINOR_HUNGARY,
 		"style" => "Military Units hungary_4unit",
-		"db_id" => "tbd_28",
+		"db_id" => "tbd_1028",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2759,7 +2759,7 @@ $this->tokens = [
 		"name" => "Independent 1 Military Unit",
 		"power" => INDEPENDENT,
 		"style" => "Military Units independent_1unit",
-		"db_id" => "tbd_29_{INDEX}",
+		"db_id" => "tbd_1029_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2779,7 +2779,7 @@ $this->tokens = [
 		"name" => "Knights of Saint John 1 Military Unit",
 		"power" => INDEPENDENT,
 		"style" => "Military Units knights_1unit",
-		"db_id" => "tbd_30",
+		"db_id" => "tbd_1030",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2790,7 +2790,7 @@ $this->tokens = [
 		"name" => "Ottoman 1 Military Unit",
 		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_1unit",
-		"db_id" => "tbd_31_{INDEX}",
+		"db_id" => "tbd_1031_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2811,7 +2811,7 @@ $this->tokens = [
 		"name" => "Ottoman 2 Military Unit",
 		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_2unit",
-		"db_id" => "tbd_32_{INDEX}",
+		"db_id" => "tbd_1032_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2832,7 +2832,7 @@ $this->tokens = [
 		"name" => "Ottoman 4 Military Unit",
 		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_4unit",
-		"db_id" => "tbd_33_{INDEX}",
+		"db_id" => "tbd_1033_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2853,7 +2853,7 @@ $this->tokens = [
 		"name" => "Ottoman 6 Military Unit",
 		"power" => OTTOMAN,
 		"style" => "Military Units ottoman_6unit",
-		"db_id" => "tbd_34",
+		"db_id" => "tbd_1034",
 		"strength" => 6,
 		"types" => [
 			MILITARY,
@@ -2874,7 +2874,7 @@ $this->tokens = [
 		"name" => "Papacy 1 Military Unit",
 		"power" => PAPACY,
 		"style" => "Military Units papacy_1unit",
-		"db_id" => "tbd_35_{INDEX}",
+		"db_id" => "tbd_1035_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2895,7 +2895,7 @@ $this->tokens = [
 		"name" => "Papacy 2 Military Unit",
 		"power" => PAPACY,
 		"style" => "Military Units papacy_2unit",
-		"db_id" => "tbd_36_{INDEX}",
+		"db_id" => "tbd_1036_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2916,7 +2916,7 @@ $this->tokens = [
 		"name" => "Papacy 4 Military Unit",
 		"power" => PAPACY,
 		"style" => "Military Units papacy_4unit",
-		"db_id" => "tbd_37_{INDEX}",
+		"db_id" => "tbd_1037_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -2937,7 +2937,7 @@ $this->tokens = [
 		"name" => "Protestant 1 Military Unit",
 		"power" => PROTESTANT,
 		"style" => "Military Units protestant_1unit",
-		"db_id" => "tbd_38_{INDEX}",
+		"db_id" => "tbd_1038_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -2958,7 +2958,7 @@ $this->tokens = [
 		"name" => "Protestant 2 Military Unit",
 		"power" => PROTESTANT,
 		"style" => "Military Units protestant_2unit",
-		"db_id" => "tbd_39_{INDEX}",
+		"db_id" => "tbd_1039_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -2979,7 +2979,7 @@ $this->tokens = [
 		"name" => "Protestant 4 Military Unit",
 		"power" => PROTESTANT,
 		"style" => "Military Units protestant_4unit",
-		"db_id" => "tbd_40_{INDEX}",
+		"db_id" => "tbd_1040_{INDEX}",
 		"strength" => 4,
 		"types" => [
 			MILITARY,
@@ -3000,7 +3000,7 @@ $this->tokens = [
 		"name" => "Scottish 1 Military Unit",
 		"power" => MINOR_SCOTLAND,
 		"style" => "Military Units scotland_1unit",
-		"db_id" => "tbd_41_{INDEX}",
+		"db_id" => "tbd_1041_{INDEX}",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -3011,7 +3011,7 @@ $this->tokens = [
 		"name" => "Scottish 2 Military Unit",
 		"power" => MINOR_SCOTLAND,
 		"style" => "Military Units scotland_2unit",
-		"db_id" => "tbd_42",
+		"db_id" => "tbd_1042",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -3022,7 +3022,7 @@ $this->tokens = [
 		"name" => "Venetian 1 Military Unit",
 		"power" => MINOR_VENICE,
 		"style" => "Military Units venice_1unit",
-		"db_id" => "tbd_43",
+		"db_id" => "tbd_1043",
 		"strength" => 1,
 		"types" => [
 			MILITARY,
@@ -3033,7 +3033,7 @@ $this->tokens = [
 		"name" => "Venetian 2 Military Unit",
 		"power" => MINOR_VENICE,
 		"style" => "Military Units venice_2unit",
-		"db_id" => "tbd_44",
+		"db_id" => "tbd_1044",
 		"strength" => 2,
 		"types" => [
 			MILITARY,
@@ -3092,7 +3092,7 @@ $this->tokens = [
 		"name" => "Ferdinand",
 		"power" => HAPSBURG,
 		"style" => "Military Leader ferdinand",
-		"db_id" => "tbd_49",
+		"db_id" => "tbd_1049",
 		"command_rating" => 6,
 		"battle_rating" => 1,
 		"types" => [
@@ -3104,7 +3104,7 @@ $this->tokens = [
 		"name" => "Francis I",
 		"power" => FRANCE,
 		"style" => "Military Leader francis_i",
-		"db_id" => "tbd_50",
+		"db_id" => "tbd_1050",
 		"command_rating" => 8,
 		"battle_rating" => 1,
 		"types" => [
@@ -3116,7 +3116,7 @@ $this->tokens = [
 		"name" => "Henry II",
 		"power" => ENGLAND,
 		"style" => "Military Leader henry_ii",
-		"db_id" => "tbd_51",
+		"db_id" => "tbd_1051",
 		"command_rating" => 8,
 		"battle_rating" => 0,
 		"types" => [
@@ -3128,7 +3128,7 @@ $this->tokens = [
 		"name" => "Henry VIII",
 		"power" => ENGLAND,
 		"style" => "Military Leader henry_viii",
-		"db_id" => "tbd_52",
+		"db_id" => "tbd_1052",
 		"command_rating" => 8,
 		"battle_rating" => 1,
 		"types" => [
@@ -3140,7 +3140,7 @@ $this->tokens = [
 		"name" => "Ibrahim",
 		"power" => OTTOMAN,
 		"style" => "Military Leader ibrahim",
-		"db_id" => "tbd_53",
+		"db_id" => "tbd_1053",
 		"command_rating" => 6,
 		"battle_rating" => 1,
 		"types" => [
@@ -3152,7 +3152,7 @@ $this->tokens = [
 		"name" => "John Frederick",
 		"power" => OTHER,
 		"style" => "Military Leader john_frederick",
-		"db_id" => "tbd_54",
+		"db_id" => "tbd_1054",
 		"command_rating" => 6,
 		"battle_rating" => 0,
 		"types" => [
@@ -3184,7 +3184,7 @@ $this->tokens = [
 		"name" => "Montmorency",
 		"power" => FRANCE,
 		"style" => "Military Leader montmorency",
-		"db_id" => "tbd_56",
+		"db_id" => "tbd_1056",
 		"command_rating" => 6,
 		"battle_rating" => 1,
 		"types" => [
@@ -3196,7 +3196,7 @@ $this->tokens = [
 		"name" => "Philip of Hesse",
 		"power" => OTHER,
 		"style" => "Military Leader philip_hesse",
-		"db_id" => "tbd_57",
+		"db_id" => "tbd_1057",
 		"command_rating" => 6,
 		"battle_rating" => 0,
 		"types" => [
@@ -3208,7 +3208,7 @@ $this->tokens = [
 		"name" => "Charles Borbon, Renegade Leader",
 		"power" => OTHER,
 		"style" => "Military Leader renegade",
-		"db_id" => "tbd_58",
+		"db_id" => "tbd_1058",
 		"command_rating" => 6,
 		"battle_rating" => 1,
 		"types" => [
@@ -3220,7 +3220,7 @@ $this->tokens = [
 		"name" => "Suleiman",
 		"power" => OTTOMAN,
 		"style" => "Military Leader suleiman",
-		"db_id" => "tbd_59",
+		"db_id" => "tbd_1059",
 		"command_rating" => 12,
 		"battle_rating" => 2,
 		"types" => [
@@ -3232,7 +3232,7 @@ $this->tokens = [
 		"name" => "English Squadron",
 		"power" => ENGLAND,
 		"style" => "Naval Units english_squadron",
-		"db_id" => "tbd_60_{INDEX}",
+		"db_id" => "tbd_1060_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3243,7 +3243,7 @@ $this->tokens = [
 		"name" => "French Squadron",
 		"power" => FRANCE,
 		"style" => "Naval Units french_squadron",
-		"db_id" => "tbd_61_{INDEX}",
+		"db_id" => "tbd_1061_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3254,7 +3254,7 @@ $this->tokens = [
 		"name" => "Genoese Squadron",
 		"power" => MINOR_GENOA,
 		"style" => "Naval Units genoese_sqauadron",
-		"db_id" => "tbd_62",
+		"db_id" => "tbd_1062",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3265,7 +3265,7 @@ $this->tokens = [
 		"name" => "Hapsburg Squadron",
 		"power" => HAPSBURG,
 		"style" => "Naval Units hapsburg_squadron",
-		"db_id" => "tbd_63_{INDEX}",
+		"db_id" => "tbd_1063_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3276,7 +3276,7 @@ $this->tokens = [
 		"name" => "Ottoman Squadron",
 		"power" => OTTOMAN,
 		"style" => "Naval Units ottoman_squadron",
-		"db_id" => "tbd_64_{INDEX}",
+		"db_id" => "tbd_1064_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3287,7 +3287,7 @@ $this->tokens = [
 		"name" => "Papacy Squadron",
 		"power" => PAPACY,
 		"style" => "Naval Units papacy_squadron",
-		"db_id" => "tbd_65_{INDEX}",
+		"db_id" => "tbd_1065_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3298,7 +3298,7 @@ $this->tokens = [
 		"name" => "Scottish Squadron",
 		"power" => MINOR_SCOTLAND,
 		"style" => "Naval Units scottish_squadron",
-		"db_id" => "tbd_66",
+		"db_id" => "tbd_1066",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3309,7 +3309,7 @@ $this->tokens = [
 		"name" => "Venetian Squadron",
 		"power" => MINOR_VENICE,
 		"style" => "Naval Units venetian_squadron",
-		"db_id" => "tbd_67_{INDEX}",
+		"db_id" => "tbd_1067_{INDEX}",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3320,7 +3320,7 @@ $this->tokens = [
 		"name" => "Andrea Doria",
 		"power" => OTHER,
 		"style" => "Naval Leader andrea_doria",
-		"db_id" => "tbd_68",
+		"db_id" => "tbd_1068",
 		"strength" => 2,
 		"types" => [
 			NAVAL,
@@ -3331,7 +3331,7 @@ $this->tokens = [
 		"name" => "Barbarossa",
 		"power" => OTHER,
 		"style" => "Naval Leader barbarossa",
-		"db_id" => "tbd_69",
+		"db_id" => "tbd_1069",
 		"battle_rating" => 2,
 		"piracy_rating" => 1,
 		"types" => [
@@ -3343,7 +3343,7 @@ $this->tokens = [
 		"name" => "Dragut",
 		"power" => OTHER,
 		"style" => "Naval Leader dragut",
-		"db_id" => "tbd_70",
+		"db_id" => "tbd_1070",
 		"battle_rating" => 1,
 		"piracy_rating" => 2,
 		"types" => [
@@ -3355,7 +3355,7 @@ $this->tokens = [
 		"name" => "Allied",
 		"power" => OTHER,
 		"style" => "Diplomacy allied",
-		"db_id" => "tbd_71_{INDEX}",
+		"db_id" => "tbd_1071_{INDEX}",
 		"types" => [
 			DIPLOMACY,
 		],
@@ -3364,7 +3364,7 @@ $this->tokens = [
 		"name" => "At War",
 		"power" => OTHER,
 		"style" => "Diplomacy at_war",
-		"db_id" => "tbd_72_{INDEX}",
+		"db_id" => "tbd_1072_{INDEX}",
 		"types" => [
 			DIPLOMACY,
 		],
@@ -3373,7 +3373,7 @@ $this->tokens = [
 		"name" => "Unrest",
 		"power" => OTHER,
 		"style" => "Unrest_marker unrest",
-		"db_id" => "tbd_73_{INDEX}",
+		"db_id" => "tbd_1073_{INDEX}",
 		"types" => [
 			UNREST_MARKER,
 		],
@@ -3382,7 +3382,7 @@ $this->tokens = [
 		"name" => "English VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_england",
-		"db_id" => "tbd_74",
+		"db_id" => "tbd_1074",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3391,7 +3391,7 @@ $this->tokens = [
 		"name" => "French VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_france",
-		"db_id" => "tbd_75",
+		"db_id" => "tbd_1075",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3400,7 +3400,7 @@ $this->tokens = [
 		"name" => "Hapsburg VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_hapsburg",
-		"db_id" => "tbd_76",
+		"db_id" => "tbd_1076",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3409,7 +3409,7 @@ $this->tokens = [
 		"name" => "Ottoman VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_ottoman",
-		"db_id" => "tbd_77",
+		"db_id" => "tbd_1077",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3418,7 +3418,7 @@ $this->tokens = [
 		"name" => "Papacy VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_papacy",
-		"db_id" => "tbd_78",
+		"db_id" => "tbd_1078",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3427,7 +3427,7 @@ $this->tokens = [
 		"name" => "Protestant VP's",
 		"power" => OTHER,
 		"style" => "VP_marker vp_protestant",
-		"db_id" => "tbd_79",
+		"db_id" => "tbd_1079",
 		"types" => [
 			VP_MARKER,
 		],
@@ -3436,7 +3436,7 @@ $this->tokens = [
 		"name" => "Loaned to England",
 		"power" => OTHER,
 		"style" => "Loaned loaned_england",
-		"db_id" => "tbd_80_{INDEX}",
+		"db_id" => "tbd_1080_{INDEX}",
 		"types" => [
 			LOANED,
 		],
@@ -3445,7 +3445,7 @@ $this->tokens = [
 		"name" => "Loaned to France",
 		"power" => OTHER,
 		"style" => "Loaned loaned_france",
-		"db_id" => "tbd_81_{INDEX}",
+		"db_id" => "tbd_1081_{INDEX}",
 		"types" => [
 			LOANED,
 		],
@@ -3454,7 +3454,7 @@ $this->tokens = [
 		"name" => "Loaned to Hapsburg",
 		"power" => OTHER,
 		"style" => "Loaned loaned_hapsburg",
-		"db_id" => "tbd_82_{INDEX}",
+		"db_id" => "tbd_1082_{INDEX}",
 		"types" => [
 			LOANED,
 		],
@@ -3463,7 +3463,7 @@ $this->tokens = [
 		"name" => "Loaned to Ottoman",
 		"power" => OTHER,
 		"style" => "Loaned loaned_ottoman",
-		"db_id" => "tbd_83_{INDEX}",
+		"db_id" => "tbd_1083_{INDEX}",
 		"types" => [
 			LOANED,
 		],
@@ -3472,7 +3472,7 @@ $this->tokens = [
 		"name" => "Loaned to Papacy",
 		"power" => OTHER,
 		"style" => "Loaned loaned_papacy",
-		"db_id" => "tbd_84_{INDEX}",
+		"db_id" => "tbd_1084_{INDEX}",
 		"types" => [
 			LOANED,
 		],
@@ -3481,7 +3481,7 @@ $this->tokens = [
 		"name" => "Calvin Reformer",
 		"power" => OTHER,
 		"style" => "Reformer calvin_reformer",
-		"db_id" => "tbd_85",
+		"db_id" => "tbd_1085",
 		"types" => [
 			REFORMER,
 		],
@@ -3490,7 +3490,7 @@ $this->tokens = [
 		"name" => "Cranmer Reformer",
 		"power" => OTHER,
 		"style" => "Reformer cranmer_reformer",
-		"db_id" => "tbd_86",
+		"db_id" => "tbd_1086",
 		"types" => [
 			REFORMER,
 		],
@@ -3499,7 +3499,7 @@ $this->tokens = [
 		"name" => "Luther Reformer",
 		"power" => OTHER,
 		"style" => "Reformer luther_reformer",
-		"db_id" => "tbd_87",
+		"db_id" => "tbd_1087",
 		"types" => [
 			REFORMER,
 		],
@@ -3508,7 +3508,7 @@ $this->tokens = [
 		"name" => "Zwingli Reformer",
 		"power" => OTHER,
 		"style" => "Reformer zwingli_reformer",
-		"db_id" => "tbd_88",
+		"db_id" => "tbd_1088",
 		"types" => [
 			REFORMER,
 		],
@@ -3517,7 +3517,7 @@ $this->tokens = [
 		"name" => "Aleander",
 		"power" => PROTESTANT,
 		"style" => "Debater aleander",
-		"db_id" => "tbd_89",
+		"db_id" => "tbd_1089",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3535,7 +3535,7 @@ $this->tokens = [
 		"name" => "Cajetan",
 		"power" => PROTESTANT,
 		"style" => "Debater cajetan",
-		"db_id" => "tbd_90",
+		"db_id" => "tbd_1090",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -3553,7 +3553,7 @@ $this->tokens = [
 		"name" => "Campeggio",
 		"power" => PROTESTANT,
 		"style" => "Debater campeggio",
-		"db_id" => "tbd_91",
+		"db_id" => "tbd_1091",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3571,7 +3571,7 @@ $this->tokens = [
 		"name" => "Canisius",
 		"power" => PROTESTANT,
 		"style" => "Debater canisius",
-		"db_id" => "tbd_92",
+		"db_id" => "tbd_1092",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3589,7 +3589,7 @@ $this->tokens = [
 		"name" => "Caraffa",
 		"power" => PROTESTANT,
 		"style" => "Debater caraffa",
-		"db_id" => "tbd_93",
+		"db_id" => "tbd_1093",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3607,7 +3607,7 @@ $this->tokens = [
 		"name" => "Contarini",
 		"power" => PROTESTANT,
 		"style" => "Debater contarini",
-		"db_id" => "tbd_94",
+		"db_id" => "tbd_1094",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3625,7 +3625,7 @@ $this->tokens = [
 		"name" => "Eck",
 		"power" => PROTESTANT,
 		"style" => "Debater eck",
-		"db_id" => "tbd_95",
+		"db_id" => "tbd_1095",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3643,7 +3643,7 @@ $this->tokens = [
 		"name" => "Faber",
 		"power" => PROTESTANT,
 		"style" => "Debater faber",
-		"db_id" => "tbd_96",
+		"db_id" => "tbd_1096",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3661,7 +3661,7 @@ $this->tokens = [
 		"name" => "Gardiner",
 		"power" => PROTESTANT,
 		"style" => "Debater gardiner",
-		"db_id" => "tbd_97",
+		"db_id" => "tbd_1097",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3679,7 +3679,7 @@ $this->tokens = [
 		"name" => "Loyola",
 		"power" => PROTESTANT,
 		"style" => "Debater loyola",
-		"db_id" => "tbd_98",
+		"db_id" => "tbd_1098",
 		"debate_value" => 4,
 		"types" => [
 			DEBATER,
@@ -3697,7 +3697,7 @@ $this->tokens = [
 		"name" => "Pole",
 		"power" => PROTESTANT,
 		"style" => "Debater pole",
-		"db_id" => "tbd_99",
+		"db_id" => "tbd_1099",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3715,7 +3715,7 @@ $this->tokens = [
 		"name" => "Tetzel",
 		"power" => PROTESTANT,
 		"style" => "Debater tetzel",
-		"db_id" => "tbd_100",
+		"db_id" => "tbd_1100",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -3733,7 +3733,7 @@ $this->tokens = [
 		"name" => "Bucer",
 		"power" => PAPACY,
 		"style" => "Debater bucer",
-		"db_id" => "tbd_101",
+		"db_id" => "tbd_1101",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3751,7 +3751,7 @@ $this->tokens = [
 		"name" => "Bullinger",
 		"power" => PAPACY,
 		"style" => "Debater bullinger",
-		"db_id" => "tbd_102",
+		"db_id" => "tbd_1102",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3769,7 +3769,7 @@ $this->tokens = [
 		"name" => "Calvin",
 		"power" => PAPACY,
 		"style" => "Debater calvin",
-		"db_id" => "tbd_103",
+		"db_id" => "tbd_1103",
 		"debate_value" => 4,
 		"types" => [
 			DEBATER,
@@ -3787,7 +3787,7 @@ $this->tokens = [
 		"name" => "Carlstadt",
 		"power" => PAPACY,
 		"style" => "Debater carlstadt",
-		"db_id" => "tbd_104",
+		"db_id" => "tbd_1104",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -3805,7 +3805,7 @@ $this->tokens = [
 		"name" => "Cop",
 		"power" => PAPACY,
 		"style" => "Debater cop",
-		"db_id" => "tbd_105",
+		"db_id" => "tbd_1105",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3823,7 +3823,7 @@ $this->tokens = [
 		"name" => "Coverdale",
 		"power" => PAPACY,
 		"style" => "Debater coverdale",
-		"db_id" => "tbd_106",
+		"db_id" => "tbd_1106",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3841,7 +3841,7 @@ $this->tokens = [
 		"name" => "Cranmer",
 		"power" => PAPACY,
 		"style" => "Debater cranmer",
-		"db_id" => "tbd_107",
+		"db_id" => "tbd_1107",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3859,7 +3859,7 @@ $this->tokens = [
 		"name" => "Farel",
 		"power" => PAPACY,
 		"style" => "Debater farel",
-		"db_id" => "tbd_108",
+		"db_id" => "tbd_1108",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3877,7 +3877,7 @@ $this->tokens = [
 		"name" => "Knox",
 		"power" => PAPACY,
 		"style" => "Debater knox",
-		"db_id" => "tbd_109",
+		"db_id" => "tbd_1109",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3895,7 +3895,7 @@ $this->tokens = [
 		"name" => "Latimer",
 		"power" => PAPACY,
 		"style" => "Debater latimer",
-		"db_id" => "tbd_110",
+		"db_id" => "tbd_1110",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -3913,7 +3913,7 @@ $this->tokens = [
 		"name" => "Luther",
 		"power" => PAPACY,
 		"style" => "Debater luther",
-		"db_id" => "tbd_111",
+		"db_id" => "tbd_1111",
 		"debate_value" => 4,
 		"types" => [
 			DEBATER,
@@ -3931,7 +3931,7 @@ $this->tokens = [
 		"name" => "Melanchthon",
 		"power" => PAPACY,
 		"style" => "Debater melanchthon",
-		"db_id" => "tbd_112",
+		"db_id" => "tbd_1112",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -3949,7 +3949,7 @@ $this->tokens = [
 		"name" => "Oekolampadius",
 		"power" => PAPACY,
 		"style" => "Debater oekolampadius",
-		"db_id" => "tbd_113",
+		"db_id" => "tbd_1113",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -3967,7 +3967,7 @@ $this->tokens = [
 		"name" => "Olivetan",
 		"power" => PAPACY,
 		"style" => "Debater olivetan",
-		"db_id" => "tbd_114",
+		"db_id" => "tbd_1114",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -3985,7 +3985,7 @@ $this->tokens = [
 		"name" => "Tyndale",
 		"power" => PAPACY,
 		"style" => "Debater tyndale",
-		"db_id" => "tbd_115",
+		"db_id" => "tbd_1115",
 		"debate_value" => 2,
 		"types" => [
 			DEBATER,
@@ -4003,7 +4003,7 @@ $this->tokens = [
 		"name" => "Wishart",
 		"power" => PAPACY,
 		"style" => "Debater wishart",
-		"db_id" => "tbd_116",
+		"db_id" => "tbd_1116",
 		"debate_value" => 1,
 		"types" => [
 			DEBATER,
@@ -4021,7 +4021,7 @@ $this->tokens = [
 		"name" => "Zwingli",
 		"power" => PAPACY,
 		"style" => "Debater zwingli",
-		"db_id" => "tbd_117",
+		"db_id" => "tbd_1117",
 		"debate_value" => 3,
 		"types" => [
 			DEBATER,
@@ -4039,7 +4039,7 @@ $this->tokens = [
 		"name" => "English Exploration Underway",
 		"power" => ENGLAND,
 		"style" => "Exploration Charted english_exploration",
-		"db_id" => "tbd_118",
+		"db_id" => "tbd_1118",
 		"types" => [
 			EXPLORATION,
 			CHARTED,
@@ -4056,7 +4056,7 @@ $this->tokens = [
 		"name" => "French Exploration Underway",
 		"power" => FRANCE,
 		"style" => "Exploration Charted french_exploration",
-		"db_id" => "tbd_119",
+		"db_id" => "tbd_1119",
 		"types" => [
 			EXPLORATION,
 			CHARTED,
@@ -4073,7 +4073,7 @@ $this->tokens = [
 		"name" => "Hapsburg Exploration Underway",
 		"power" => HAPSBURG,
 		"style" => "Exploration Charted hapsburg_exploration",
-		"db_id" => "tbd_120",
+		"db_id" => "tbd_1120",
 		"types" => [
 			EXPLORATION,
 			CHARTED,
@@ -4090,7 +4090,7 @@ $this->tokens = [
 		"name" => "Cabot English",
 		"power" => ENGLAND,
 		"style" => "Explorer cabot_eng",
-		"db_id" => "tbd_121",
+		"db_id" => "tbd_1121",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4108,7 +4108,7 @@ $this->tokens = [
 		"name" => "Cabot French",
 		"power" => FRANCE,
 		"style" => "Explorer cabot_fre",
-		"db_id" => "tbd_122",
+		"db_id" => "tbd_1122",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4126,7 +4126,7 @@ $this->tokens = [
 		"name" => "Cabot Hapsburg",
 		"power" => HAPSBURG,
 		"style" => "Explorer cabot_hap",
-		"db_id" => "tbd_123",
+		"db_id" => "tbd_1123",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4144,7 +4144,7 @@ $this->tokens = [
 		"name" => "Cartier",
 		"power" => FRANCE,
 		"style" => "Explorer cartier",
-		"db_id" => "tbd_124",
+		"db_id" => "tbd_1124",
 		"explorer_value" => 3,
 		"types" => [
 			EXPLORER,
@@ -4162,7 +4162,7 @@ $this->tokens = [
 		"name" => "Chancellor",
 		"power" => ENGLAND,
 		"style" => "Explorer chancellor",
-		"db_id" => "tbd_125",
+		"db_id" => "tbd_1125",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4180,7 +4180,7 @@ $this->tokens = [
 		"name" => "De Vaca",
 		"power" => HAPSBURG,
 		"style" => "Explorer de_vaca",
-		"db_id" => "tbd_126",
+		"db_id" => "tbd_1126",
 		"explorer_value" => 0,
 		"types" => [
 			EXPLORER,
@@ -4198,7 +4198,7 @@ $this->tokens = [
 		"name" => "De Soto",
 		"power" => HAPSBURG,
 		"style" => "Explorer de_soto",
-		"db_id" => "tbd_127",
+		"db_id" => "tbd_1127",
 		"explorer_value" => 2,
 		"types" => [
 			EXPLORER,
@@ -4216,7 +4216,7 @@ $this->tokens = [
 		"name" => "Leon",
 		"power" => HAPSBURG,
 		"style" => "Explorer leon",
-		"db_id" => "tbd_128",
+		"db_id" => "tbd_1128",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4234,7 +4234,7 @@ $this->tokens = [
 		"name" => "Magellan",
 		"power" => HAPSBURG,
 		"style" => "Explorer magellan",
-		"db_id" => "tbd_129",
+		"db_id" => "tbd_1129",
 		"explorer_value" => 4,
 		"types" => [
 			EXPLORER,
@@ -4252,7 +4252,7 @@ $this->tokens = [
 		"name" => "Narvaez",
 		"power" => HAPSBURG,
 		"style" => "Explorer narvaez",
-		"db_id" => "tbd_130",
+		"db_id" => "tbd_1130",
 		"explorer_value" => -1,
 		"types" => [
 			EXPLORER,
@@ -4270,7 +4270,7 @@ $this->tokens = [
 		"name" => "Orellana",
 		"power" => HAPSBURG,
 		"style" => "Explorer orellana",
-		"db_id" => "tbd_131",
+		"db_id" => "tbd_1131",
 		"explorer_value" => 3,
 		"types" => [
 			EXPLORER,
@@ -4288,7 +4288,7 @@ $this->tokens = [
 		"name" => "Roberval",
 		"power" => FRANCE,
 		"style" => "Explorer roberval",
-		"db_id" => "tbd_132",
+		"db_id" => "tbd_1132",
 		"explorer_value" => 0,
 		"types" => [
 			EXPLORER,
@@ -4306,7 +4306,7 @@ $this->tokens = [
 		"name" => "Rut",
 		"power" => ENGLAND,
 		"style" => "Explorer rut",
-		"db_id" => "tbd_133",
+		"db_id" => "tbd_1133",
 		"explorer_value" => 1,
 		"types" => [
 			EXPLORER,
@@ -4324,7 +4324,7 @@ $this->tokens = [
 		"name" => "Verrazano",
 		"power" => FRANCE,
 		"style" => "Explorer verrazano",
-		"db_id" => "tbd_134",
+		"db_id" => "tbd_1134",
 		"explorer_value" => 2,
 		"types" => [
 			EXPLORER,
@@ -4342,7 +4342,7 @@ $this->tokens = [
 		"name" => "Willoughby",
 		"power" => ENGLAND,
 		"style" => "Explorer willoughby",
-		"db_id" => "tbd_135",
+		"db_id" => "tbd_1135",
 		"explorer_value" => 0,
 		"types" => [
 			EXPLORER,
@@ -4360,7 +4360,7 @@ $this->tokens = [
 		"name" => "Charlesbourg",
 		"power" => FRANCE,
 		"style" => "Colony charlesbourg",
-		"db_id" => "tbd_136",
+		"db_id" => "tbd_1136",
 		"types" => [
 			COLONY,
 		],
@@ -4369,7 +4369,7 @@ $this->tokens = [
 		"name" => "Cuba",
 		"power" => HAPSBURG,
 		"style" => "Colony cuba",
-		"db_id" => "tbd_137",
+		"db_id" => "tbd_1137",
 		"types" => [
 			COLONY,
 		],
@@ -4378,7 +4378,7 @@ $this->tokens = [
 		"name" => "Hispaniola",
 		"power" => HAPSBURG,
 		"style" => "Colony hispaniola",
-		"db_id" => "tbd_138",
+		"db_id" => "tbd_1138",
 		"types" => [
 			COLONY,
 		],
@@ -4387,7 +4387,7 @@ $this->tokens = [
 		"name" => "Jamestown",
 		"power" => ENGLAND,
 		"style" => "Colony jamestown",
-		"db_id" => "tbd_139",
+		"db_id" => "tbd_1139",
 		"types" => [
 			COLONY,
 		],
@@ -4396,7 +4396,7 @@ $this->tokens = [
 		"name" => "Montreal",
 		"power" => FRANCE,
 		"style" => "Colony montreal",
-		"db_id" => "tbd_140",
+		"db_id" => "tbd_1140",
 		"types" => [
 			COLONY,
 		],
@@ -4405,7 +4405,7 @@ $this->tokens = [
 		"name" => "Potosi Silver Mines",
 		"power" => OTHER,
 		"style" => "Colony potosi",
-		"db_id" => "tbd_141",
+		"db_id" => "tbd_1141",
 		"types" => [
 			COLONY,
 		],
@@ -4414,7 +4414,7 @@ $this->tokens = [
 		"name" => "Puerto Rico",
 		"power" => HAPSBURG,
 		"style" => "Colony puerto_rico",
-		"db_id" => "tbd_142",
+		"db_id" => "tbd_1142",
 		"types" => [
 			COLONY,
 		],
@@ -4423,7 +4423,7 @@ $this->tokens = [
 		"name" => "Roanoke",
 		"power" => ENGLAND,
 		"style" => "Colony roanoke",
-		"db_id" => "tbd_143",
+		"db_id" => "tbd_1143",
 		"types" => [
 			COLONY,
 		],
@@ -4432,7 +4432,7 @@ $this->tokens = [
 		"name" => "Hapsburg Conquest Underway",
 		"power" => HAPSBURG,
 		"style" => "Conquest hapsburg_conquest",
-		"db_id" => "tbd_144",
+		"db_id" => "tbd_1144",
 		"types" => [
 			CONQUEST,
 		],
@@ -4441,7 +4441,7 @@ $this->tokens = [
 		"name" => "English Conquest",
 		"power" => ENGLAND,
 		"style" => "Conquistador english_conquest",
-		"db_id" => "tbd_145_{INDEX}",
+		"db_id" => "tbd_1145_{INDEX}",
 		"explorer_value" => 0,
 		"types" => [
 			CONQUISTADOR,
@@ -4451,7 +4451,7 @@ $this->tokens = [
 		"name" => "French Conquest",
 		"power" => FRANCE,
 		"style" => "Conquistador french_conquest",
-		"db_id" => "tbd_146_{INDEX}",
+		"db_id" => "tbd_1146_{INDEX}",
 		"explorer_value" => 0,
 		"types" => [
 			CONQUISTADOR,
@@ -4461,7 +4461,7 @@ $this->tokens = [
 		"name" => "Cordova",
 		"power" => HAPSBURG,
 		"style" => "Conquistador cordova",
-		"db_id" => "tbd_147",
+		"db_id" => "tbd_1147",
 		"explorer_value" => 1,
 		"types" => [
 			CONQUISTADOR,
@@ -4479,7 +4479,7 @@ $this->tokens = [
 		"name" => "Coronado",
 		"power" => HAPSBURG,
 		"style" => "Conquistador coronado",
-		"db_id" => "tbd_148",
+		"db_id" => "tbd_1148",
 		"explorer_value" => 1,
 		"types" => [
 			CONQUISTADOR,
@@ -4497,7 +4497,7 @@ $this->tokens = [
 		"name" => "Cortez",
 		"power" => HAPSBURG,
 		"style" => "Conquistador cortez",
-		"db_id" => "tbd_149",
+		"db_id" => "tbd_1149",
 		"explorer_value" => 4,
 		"types" => [
 			CONQUISTADOR,
@@ -4515,7 +4515,7 @@ $this->tokens = [
 		"name" => "Montejo",
 		"power" => HAPSBURG,
 		"style" => "Conquistador montejo",
-		"db_id" => "tbd_150",
+		"db_id" => "tbd_1150",
 		"explorer_value" => 2,
 		"types" => [
 			CONQUISTADOR,
@@ -4533,7 +4533,7 @@ $this->tokens = [
 		"name" => "Pizarro",
 		"power" => HAPSBURG,
 		"style" => "Conquistador pizarro",
-		"db_id" => "tbd_151",
+		"db_id" => "tbd_1151",
 		"explorer_value" => 3,
 		"types" => [
 			CONQUISTADOR,
@@ -4551,7 +4551,7 @@ $this->tokens = [
 		"name" => "English Home Protestant Spaces",
 		"power" => OTHER,
 		"style" => "Religious counter english_prot_counter",
-		"db_id" => "tbd_152",
+		"db_id" => "tbd_1152",
 		"types" => [
 			RELIGIOUS,
 			COUNTER,
@@ -4561,7 +4561,7 @@ $this->tokens = [
 		"name" => "Protestant Spaces",
 		"power" => OTHER,
 		"style" => "Religious counter protestant_spaces",
-		"db_id" => "tbd_153",
+		"db_id" => "tbd_1153",
 		"types" => [
 			RELIGIOUS,
 			COUNTER,
@@ -4571,7 +4571,7 @@ $this->tokens = [
 		"name" => "Turn",
 		"power" => OTHER,
 		"style" => "Turn_marker turn",
-		"db_id" => "tbd_154",
+		"db_id" => "tbd_1154",
 		"types" => [
 			TURN_MARKER,
 		],
@@ -4580,7 +4580,7 @@ $this->tokens = [
 		"name" => "-1 Card",
 		"power" => OTHER,
 		"style" => "Cards_marker minus_one_card",
-		"db_id" => "tbd_155_{INDEX}",
+		"db_id" => "tbd_1155_{INDEX}",
 		"types" => [
 			CARDS_MARKER,
 		],
@@ -4589,7 +4589,7 @@ $this->tokens = [
 		"name" => "Great Lakes 1 VP",
 		"power" => VP,
 		"style" => "VP_marker great_lakes_1vp",
-		"db_id" => "tbd_156",
+		"db_id" => "tbd_1156",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4598,7 +4598,7 @@ $this->tokens = [
 		"name" => "Mississippi River 1 VP",
 		"power" => VP,
 		"style" => "VP_marker mississippi_river_1vp",
-		"db_id" => "tbd_157",
+		"db_id" => "tbd_1157",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4607,7 +4607,7 @@ $this->tokens = [
 		"name" => "Saint Lawrence River 1 VP",
 		"power" => VP,
 		"style" => "VP_marker st_lawrence_river_1vp",
-		"db_id" => "tbd_158",
+		"db_id" => "tbd_1158",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4616,7 +4616,7 @@ $this->tokens = [
 		"name" => "Amazon River 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker amazon_river_2vp",
-		"db_id" => "tbd_159",
+		"db_id" => "tbd_1159",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4625,7 +4625,7 @@ $this->tokens = [
 		"name" => "Pacific Strait 1 VP",
 		"power" => VP,
 		"style" => "VP_marker pacific_strait_1vp",
-		"db_id" => "tbd_160",
+		"db_id" => "tbd_1160",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4634,7 +4634,7 @@ $this->tokens = [
 		"name" => "Circumnavigation 3 VP",
 		"power" => VP,
 		"style" => "VP_marker circumnavigation_3vp",
-		"db_id" => "tbd_161",
+		"db_id" => "tbd_1161",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4643,7 +4643,7 @@ $this->tokens = [
 		"name" => "Maya 1 VP",
 		"power" => VP,
 		"style" => "VP_marker maya_1vp",
-		"db_id" => "tbd_162",
+		"db_id" => "tbd_1162",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4652,7 +4652,7 @@ $this->tokens = [
 		"name" => "Aztecs 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker aztecs_2vp",
-		"db_id" => "tbd_163",
+		"db_id" => "tbd_1163",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4697,7 +4697,7 @@ $this->tokens = [
 		"name" => "Chateaux VP's",
 		"power" => VP,
 		"style" => "VP_marker chateaux_vp",
-		"db_id" => "tbd_168",
+		"db_id" => "tbd_1168",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4706,7 +4706,7 @@ $this->tokens = [
 		"name" => "Piracy VP's",
 		"power" => VP,
 		"style" => "VP_marker piracy_vp",
-		"db_id" => "tbd_169",
+		"db_id" => "tbd_1169",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4715,7 +4715,7 @@ $this->tokens = [
 		"name" => "Saint Peter's VP's",
 		"power" => VP,
 		"style" => "VP_marker st_peters_vp",
-		"db_id" => "tbd_170",
+		"db_id" => "tbd_1170",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4724,7 +4724,7 @@ $this->tokens = [
 		"name" => "Copernicus 1 VP",
 		"power" => VP,
 		"style" => "VP_marker copernicus_1vp",
-		"db_id" => "tbd_171",
+		"db_id" => "tbd_1171",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4733,7 +4733,7 @@ $this->tokens = [
 		"name" => "Copernicus 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker copernicus_2vp",
-		"db_id" => "tbd_172",
+		"db_id" => "tbd_1172",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4742,7 +4742,7 @@ $this->tokens = [
 		"name" => "Edward VI 5 VP's",
 		"power" => VP,
 		"style" => "VP_marker edward_5vp",
-		"db_id" => "tbd_173",
+		"db_id" => "tbd_1173",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4751,7 +4751,7 @@ $this->tokens = [
 		"name" => "Elizabeth 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker elizabeth_2vp",
-		"db_id" => "tbd_174",
+		"db_id" => "tbd_1174",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4760,7 +4760,7 @@ $this->tokens = [
 		"name" => "Giulia Gonzaga 1 VP",
 		"power" => VP,
 		"style" => "VP_marker gonzaga_1vp",
-		"db_id" => "tbd_175",
+		"db_id" => "tbd_1175",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4769,7 +4769,7 @@ $this->tokens = [
 		"name" => "Servetus 1 VP",
 		"power" => VP,
 		"style" => "VP_marker servetus_1vp",
-		"db_id" => "tbd_176",
+		"db_id" => "tbd_1176",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4778,7 +4778,7 @@ $this->tokens = [
 		"name" => "Master of Italy 1 VP",
 		"power" => VP,
 		"style" => "VP_marker master_of_italy_1vp",
-		"db_id" => "tbd_177_{INDEX}",
+		"db_id" => "tbd_1177_{INDEX}",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4787,7 +4787,7 @@ $this->tokens = [
 		"name" => "Master of Italy 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker master_of_italy_2vp",
-		"db_id" => "tbd_178_{INDEX}",
+		"db_id" => "tbd_1178_{INDEX}",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4796,7 +4796,7 @@ $this->tokens = [
 		"name" => "War Winner 1 VP",
 		"power" => VP,
 		"style" => "VP_marker war_winner_1vp",
-		"db_id" => "tbd_179_{INDEX}",
+		"db_id" => "tbd_1179_{INDEX}",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4805,7 +4805,7 @@ $this->tokens = [
 		"name" => "War Winner 2 VP's",
 		"power" => VP,
 		"style" => "VP_marker war_winner_2vp",
-		"db_id" => "tbd_180_{INDEX}",
+		"db_id" => "tbd_1180_{INDEX}",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4814,7 +4814,7 @@ $this->tokens = [
 		"name" => "Phony War in Scotland -1 VP's",
 		"power" => VP,
 		"style" => "VP_marker phonyscotland_minus1",
-		"db_id" => "tbd_181",
+		"db_id" => "tbd_1181",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4823,7 +4823,7 @@ $this->tokens = [
 		"name" => "Phony War in Venice - 1 VP's",
 		"power" => VP,
 		"style" => "VP_marker phonyvenice_minus1",
-		"db_id" => "tbd_182",
+		"db_id" => "tbd_1182",
 		"types" => [
 			VP_MARKER,
 		],
@@ -4832,7 +4832,7 @@ $this->tokens = [
 		"name" => "Anne Boleyn",
 		"power" => ENGLAND,
 		"style" => "Wife anne_boleyn",
-		"db_id" => "tbd_183",
+		"db_id" => "tbd_1183",
 		"types" => [
 			WIFE,
 		],
@@ -4849,7 +4849,7 @@ $this->tokens = [
 		"name" => "Anne of Cleves",
 		"power" => ENGLAND,
 		"style" => "Wife anne_cleves",
-		"db_id" => "tbd_184",
+		"db_id" => "tbd_1184",
 		"types" => [
 			WIFE,
 		],
@@ -4866,7 +4866,7 @@ $this->tokens = [
 		"name" => "Catherine of Aragon",
 		"power" => ENGLAND,
 		"style" => "Wife catherine_aragon",
-		"db_id" => "tbd_185",
+		"db_id" => "tbd_1185",
 		"types" => [
 			WIFE,
 		],
@@ -4883,7 +4883,7 @@ $this->tokens = [
 		"name" => "Jane Seymour",
 		"power" => ENGLAND,
 		"style" => "Wife jane_seymour",
-		"db_id" => "tbd_186",
+		"db_id" => "tbd_1186",
 		"types" => [
 			WIFE,
 		],
@@ -4900,7 +4900,7 @@ $this->tokens = [
 		"name" => "Katherine Parr",
 		"power" => ENGLAND,
 		"style" => "Wife katherine_parr",
-		"db_id" => "tbd_187",
+		"db_id" => "tbd_1187",
 		"types" => [
 			WIFE,
 		],
@@ -4917,7 +4917,7 @@ $this->tokens = [
 		"name" => "Kathryn Howard",
 		"power" => ENGLAND,
 		"style" => "Wife kathryn_howard",
-		"db_id" => "tbd_188",
+		"db_id" => "tbd_1188",
 		"types" => [
 			WIFE,
 		],
@@ -4934,7 +4934,7 @@ $this->tokens = [
 		"name" => "Henry Marital Status",
 		"power" => ENGLAND,
 		"style" => "Wives Status henry_marital_status",
-		"db_id" => "tbd_189",
+		"db_id" => "tbd_1189",
 		"types" => [
 			WIVES,
 			STATUS,
@@ -4944,7 +4944,7 @@ $this->tokens = [
 		"name" => "Bible English",
 		"power" => PROTESTANT,
 		"style" => "Translation bible_english",
-		"db_id" => "tbd_190",
+		"db_id" => "tbd_1190",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4953,7 +4953,7 @@ $this->tokens = [
 		"name" => "Bible French",
 		"power" => PROTESTANT,
 		"style" => "Translation bible_french",
-		"db_id" => "tbd_191",
+		"db_id" => "tbd_1191",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4962,7 +4962,7 @@ $this->tokens = [
 		"name" => "Bible German",
 		"power" => PROTESTANT,
 		"style" => "Translation bible_german",
-		"db_id" => "tbd_192",
+		"db_id" => "tbd_1192",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4971,7 +4971,7 @@ $this->tokens = [
 		"name" => "New Testament English",
 		"power" => PROTESTANT,
 		"style" => "Translation new_testament_english",
-		"db_id" => "tbd_193",
+		"db_id" => "tbd_1193",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4980,7 +4980,7 @@ $this->tokens = [
 		"name" => "New Testament French",
 		"power" => PROTESTANT,
 		"style" => "Translation new_testament_french",
-		"db_id" => "tbd_194",
+		"db_id" => "tbd_1194",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4989,7 +4989,7 @@ $this->tokens = [
 		"name" => "New Testament German",
 		"power" => PROTESTANT,
 		"style" => "Translation new_testament_german",
-		"db_id" => "tbd_195",
+		"db_id" => "tbd_1195",
 		"types" => [
 			TRANSLATION,
 		],
@@ -4998,7 +4998,7 @@ $this->tokens = [
 		"name" => "Saint Peter's CP Status",
 		"power" => PAPACY,
 		"style" => "Saint_Peters st_peters_cp",
-		"db_id" => "tbd_196",
+		"db_id" => "tbd_1196",
 		"types" => [
 			SAINT_PETERS,
 		],
@@ -5007,7 +5007,7 @@ $this->tokens = [
 		"name" => "Augsburg Confession Active",
 		"power" => PROTESTANT,
 		"style" => "Event_reminder augsburg_confession",
-		"db_id" => "tbd_197",
+		"db_id" => "tbd_1197",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5016,7 +5016,7 @@ $this->tokens = [
 		"name" => "Printing Press Active",
 		"power" => PROTESTANT,
 		"style" => "Event_reminder printing_press",
-		"db_id" => "tbd_198",
+		"db_id" => "tbd_1198",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5025,7 +5025,7 @@ $this->tokens = [
 		"name" => "Colonial Governor",
 		"power" => OTHER,
 		"style" => "Event_reminder colonial_governor",
-		"db_id" => "tbd_199_{INDEX}",
+		"db_id" => "tbd_1199_{INDEX}",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5034,7 +5034,7 @@ $this->tokens = [
 		"name" => "Galleons",
 		"power" => OTHER,
 		"style" => "Event_reminder galleons",
-		"db_id" => "tbd_200_{INDEX}",
+		"db_id" => "tbd_1200_{INDEX}",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5043,7 +5043,7 @@ $this->tokens = [
 		"name" => "Plantations",
 		"power" => OTHER,
 		"style" => "Event_reminder plantations",
-		"db_id" => "tbd_201_{INDEX}",
+		"db_id" => "tbd_1201_{INDEX}",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5052,7 +5052,7 @@ $this->tokens = [
 		"name" => "Piracy Marker",
 		"power" => OTHER,
 		"style" => "Event_reminder piracy",
-		"db_id" => "tbd_202_{INDEX}",
+		"db_id" => "tbd_1202_{INDEX}",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5061,7 +5061,7 @@ $this->tokens = [
 		"name" => "Native Uprising",
 		"power" => OTHER,
 		"style" => "Event_reminder native_uprising",
-		"db_id" => "tbd_203_{INDEX}",
+		"db_id" => "tbd_1203_{INDEX}",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5070,7 +5070,7 @@ $this->tokens = [
 		"name" => "English Huguenot Raider",
 		"power" => OTHER,
 		"style" => "Event_reminder raider_english",
-		"db_id" => "tbd_204",
+		"db_id" => "tbd_1204",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5079,7 +5079,7 @@ $this->tokens = [
 		"name" => "French Huguenot Raider",
 		"power" => OTHER,
 		"style" => "Event_reminder raider_french",
-		"db_id" => "tbd_205",
+		"db_id" => "tbd_1205",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5088,7 +5088,7 @@ $this->tokens = [
 		"name" => "Protestant Huguenot Raider",
 		"power" => OTHER,
 		"style" => "Event_reminder raider_protestant",
-		"db_id" => "tbd_206",
+		"db_id" => "tbd_1206",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5097,7 +5097,7 @@ $this->tokens = [
 		"name" => "Mercator's Map",
 		"power" => OTHER,
 		"style" => "Event_reminder mercator_map",
-		"db_id" => "tbd_207",
+		"db_id" => "tbd_1207",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5106,7 +5106,7 @@ $this->tokens = [
 		"name" => "Smallpox",
 		"power" => OTHER,
 		"style" => "Event_reminder smallpox",
-		"db_id" => "tbd_208",
+		"db_id" => "tbd_1208",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5115,7 +5115,7 @@ $this->tokens = [
 		"name" => "Thomas More",
 		"power" => OTHER,
 		"style" => "Event_reminder thomas_more",
-		"db_id" => "tbd_209",
+		"db_id" => "tbd_1209",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5124,7 +5124,7 @@ $this->tokens = [
 		"name" => "Wartburg",
 		"power" => PROTESTANT,
 		"style" => "Event_reminder wartburg",
-		"db_id" => "tbd_210",
+		"db_id" => "tbd_1210",
 		"types" => [
 			EVENT_REMINDER,
 		],
@@ -5133,7 +5133,7 @@ $this->tokens = [
 		"name" => "Excommunicated",
 		"power" => PAPACY,
 		"style" => "Excommunion excommunicated",
-		"db_id" => "tbd_211_{INDEX}",
+		"db_id" => "tbd_1211_{INDEX}",
 		"types" => [
 			EXCOMMUNION,
 		],
@@ -5142,7 +5142,7 @@ $this->tokens = [
 		"name" => "Fortress",
 		"power" => OTHER,
 		"style" => "Fortress_marker fortress",
-		"db_id" => "tbd_212_{INDEX}",
+		"db_id" => "tbd_1212_{INDEX}",
 		"types" => [
 			FORTRESS_MARKER,
 		],
@@ -5151,7 +5151,7 @@ $this->tokens = [
 		"name" => "Pirate Haven",
 		"power" => OTHER,
 		"style" => "PirateHaven pirate_haven",
-		"db_id" => "tbd_213_{INDEX}",
+		"db_id" => "tbd_1213_{INDEX}",
 		"types" => [
 			PIRATEHAVEN,
 		],
@@ -5160,7 +5160,7 @@ $this->tokens = [
 		"name" => "Jesuit University",
 		"power" => PAPACY,
 		"style" => "University jesuit_university",
-		"db_id" => "tbd_214_{INDEX}",
+		"db_id" => "tbd_1214_{INDEX}",
 		"types" => [
 			UNIVERSITY,
 		],
@@ -5389,6 +5389,1787 @@ $this->board_locations = [
 	TURN_TRACK_1 => [
 		"x" => 3862,
 		"y" => 3095,
+		"board" => "map",
+	],
+	TURN_TRACK_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	TURN_TRACK_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	DIPLO_OTT_HAP => [
+		"x" => 4240,
+		"y" => 289,
+		"board" => "map",
+	],
+	DIPLO_OTT_ENG => [
+		"x" => 4330,
+		"y" => 289,
+		"board" => "map",
+	],
+	DIPLO_OTT_FRA => [
+		"x" => 4420,
+		"y" => 289,
+		"board" => "map",
+	],
+	DIPLO_OTT_PAP => [
+		"x" => 4510,
+		"y" => 289,
+		"board" => "map",
+	],
+	DIPLO_OTT_PRO => [
+		"x" => 4600,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_OTT_GEN => [
+		"x" => 4690,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_OTT_HUN => [
+		"x" => 4780,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_OTT_VEN => [
+		"x" => 4960,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_HAP_ENG => [
+		"x" => 4330,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_FRA => [
+		"x" => 4420,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_PAP => [
+		"x" => 4510,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_PRO => [
+		"x" => 4600,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_GEN => [
+		"x" => 4690,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_HUN => [
+		"x" => 4780,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_SCO => [
+		"x" => 4870,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_HAP_VEN => [
+		"x" => 4960,
+		"y" => 380,
+		"board" => "map",
+	],
+	DIPLO_ENG_FRA => [
+		"x" => 4420,
+		"y" => 470,
+		"board" => "map",
+	],
+	DIPLO_ENG_PAP => [
+		"x" => 4510,
+		"y" => 470,
+		"board" => "map",
+	],
+	DIPLO_ENG_PRO => [
+		"x" => 4600,
+		"y" => 470,
+		"board" => "map",
+	],
+	DIPLO_ENG_GEN => [
+		"x" => 4690,
+		"y" => 470,
+		"board" => "map",
+	],
+	DIPLO_ENG_SCO => [
+		"x" => 4870,
+		"y" => 470,
+		"board" => "map",
+	],
+	DIPLO_FRA_PAP => [
+		"x" => 4510,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_FRA_PRO => [
+		"x" => 4600,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_FRA_GEN => [
+		"x" => 4690,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_FRA_SCO => [
+		"x" => 4870,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_FRA_VEN => [
+		"x" => 4960,
+		"y" => 560,
+		"board" => "map",
+	],
+	DIPLO_PAP_PRO => [
+		"x" => 4600,
+		"y" => 650,
+		"board" => "map",
+	],
+	DIPLO_PAP_GEN => [
+		"x" => 4690,
+		"y" => 650,
+		"board" => "map",
+	],
+	DIPLO_PAP_VEN => [
+		"x" => 4960,
+		"y" => 650,
+		"board" => "map",
+	],
+	DIPLO_PRO_GEN => [
+		"x" => 4690,
+		"y" => 740,
+		"board" => "map",
+	],
+	DIPLO_PRO_VEN => [
+		"x" => 4960,
+		"y" => 740,
+		"board" => "map",
+	],
+	VICTORY_TRACK_0 => [
+		"x" => 2144,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_1 => [
+		"x" => 2258,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_2 => [
+		"x" => 2372,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_3 => [
+		"x" => 2486,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_4 => [
+		"x" => 2600,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_5 => [
+		"x" => 2714,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_6 => [
+		"x" => 2828,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_7 => [
+		"x" => 2942,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_8 => [
+		"x" => 3056,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_9 => [
+		"x" => 3172,
+		"y" => 3035,
+		"board" => "map",
+	],
+	VICTORY_TRACK_10 => [
+		"x" => 1004,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_11 => [
+		"x" => 1118,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_12 => [
+		"x" => 1232,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_13 => [
+		"x" => 1346,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_14 => [
+		"x" => 1460,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_15 => [
+		"x" => 1574,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_16 => [
+		"x" => 1688,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_17 => [
+		"x" => 1802,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_18 => [
+		"x" => 1918,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_19 => [
+		"x" => 2032,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_20 => [
+		"x" => 2146,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_21 => [
+		"x" => 2260,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_22 => [
+		"x" => 2374,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_23 => [
+		"x" => 2488,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_24 => [
+		"x" => 2602,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_25 => [
+		"x" => 2716,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_26 => [
+		"x" => 2830,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_27 => [
+		"x" => 2944,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_28 => [
+		"x" => 3057,
+		"y" => 3149,
+		"board" => "map",
+	],
+	VICTORY_TRACK_29 => [
+		"x" => 3172,
+		"y" => 3149,
+		"board" => "map",
+	],
+	ST_LAWRENCE_RIVER => [
+		"x" => 636,
+		"y" => 2010,
+		"board" => "map",
+	],
+	GREAT_LAKES => [
+		"x" => 402,
+		"y" => 2030,
+		"board" => "map",
+	],
+	MISSISSIPI_RIVER => [
+		"x" => 398,
+		"y" => 2197,
+		"board" => "map",
+	],
+	AZTEC => [
+		"x" => 291,
+		"y" => 2383,
+		"board" => "map",
+	],
+	MAYA => [
+		"x" => 424,
+		"y" => 2424,
+		"board" => "map",
+	],
+	AMAZON_RIVER => [
+		"x" => 792,
+		"y" => 2659,
+		"board" => "map",
+	],
+	INCA => [
+		"x" => 647,
+		"y" => 2783,
+		"board" => "map",
+	],
+	PACIFIC_STRAIT => [
+		"x" => 606,
+		"y" => 3119,
+		"board" => "map",
+	],
+	CIRCUMNAVIGATION => [
+		"x" => 249,
+		"y" => 2820,
+		"board" => "map",
+	],
+	COLONY_ENG_1 => [
+		"x" => 176,
+		"y" => 1132,
+		"board" => "map",
+	],
+	COLONY_ENG_2 => [
+		"x" => 176,
+		"y" => 1244,
+		"board" => "map",
+	],
+	COLONY_FRA_1 => [
+		"x" => 176,
+		"y" => 1354,
+		"board" => "map",
+	],
+	COLONY_FRA_2 => [
+		"x" => 176,
+		"y" => 1467,
+		"board" => "map",
+	],
+	COLONY_HAP_1 => [
+		"x" => 176,
+		"y" => 1580,
+		"board" => "map",
+	],
+	COLONY_HAP_2 => [
+		"x" => 176,
+		"y" => 1691,
+		"board" => "map",
+	],
+	COLONY_HAP_3 => [
+		"x" => 176,
+		"y" => 1804,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_AUG => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_TRI => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_COL => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_WIT => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_MAI => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ELECTORATE_DISPLAY_BRA => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_ENG_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_ENG_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_FRA_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_FRA_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_HAP_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_HAP_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CONQUEST_HAP_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	CROSSING_ATLANTIC_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	PREGNANCY_CHART_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "map",
+	],
+	ENGLAND_KEY_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_KEY_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_10 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_KEY_11 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_10 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_11 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_12 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_13 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_KEY_14 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_10 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_KEY_11 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_KEY_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PROTESTANT_PRISON => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_1 => [
+		"x" => 1033,
+		"y" => 684,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENG_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_1 => [
+		"x" => 1033,
+		"y" => 1507,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRA_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_1 => [
+		"x" => 2302,
+		"y" => 693,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAP_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAP_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_1 => [
+		"x" => 3575,
+		"y" => 1525,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PRO_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_1 => [
+		"x" => 2303,
+		"y" => 1519,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTT_VP_TOKEN_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_0 => [
+		"x" => 2636,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_1 => [
+		"x" => 2730,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_2 => [
+		"x" => 2823,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_3 => [
+		"x" => 2917,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_4 => [
+		"x" => 3011,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_5 => [
+		"x" => 3105,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	NT_TRANSLATION_6 => [
+		"x" => 3198,
+		"y" => 505,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_0 => [
+		"x" => 2635,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_1 => [
+		"x" => 2729,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_2 => [
+		"x" => 2823,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_3 => [
+		"x" => 2917,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_4 => [
+		"x" => 3011,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_5 => [
+		"x" => 3105,
+		"y" => 641,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_6 => [
+		"x" => 2635,
+		"y" => 735,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_7 => [
+		"x" => 2729,
+		"y" => 735,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_8 => [
+		"x" => 2823,
+		"y" => 735,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_9 => [
+		"x" => 2917,
+		"y" => 735,
+		"board" => "power_cards",
+	],
+	BIBLE_TRANSLATION_10 => [
+		"x" => 3011,
+		"y" => 735,
+		"board" => "power_cards",
+	],
+	CHATEAUX_0 => [
+		"x" => 484,
+		"y" => 1336,
+		"board" => "power_cards",
+	],
+	CHATEAUX_1 => [
+		"x" => 572,
+		"y" => 1336,
+		"board" => "power_cards",
+	],
+	CHATEAUX_2 => [
+		"x" => 661,
+		"y" => 1336,
+		"board" => "power_cards",
+	],
+	CHATEAUX_3 => [
+		"x" => 750,
+		"y" => 1336,
+		"board" => "power_cards",
+	],
+	CHATEAUX_4 => [
+		"x" => 572,
+		"y" => 1423,
+		"board" => "power_cards",
+	],
+	CHATEAUX_5 => [
+		"x" => 661,
+		"y" => 1423,
+		"board" => "power_cards",
+	],
+	CHATEAUX_6 => [
+		"x" => 750,
+		"y" => 1423,
+		"board" => "power_cards",
+	],
+	PIRACY_0 => [
+		"x" => 1457,
+		"y" => 1209,
+		"board" => "power_cards",
+	],
+	PIRACY_1 => [
+		"x" => 1551,
+		"y" => 1209,
+		"board" => "power_cards",
+	],
+	PIRACY_2 => [
+		"x" => 1645,
+		"y" => 1209,
+		"board" => "power_cards",
+	],
+	PIRACY_3 => [
+		"x" => 1739,
+		"y" => 1209,
+		"board" => "power_cards",
+	],
+	PIRACY_4 => [
+		"x" => 1833,
+		"y" => 1209,
+		"board" => "power_cards",
+	],
+	PIRACY_5 => [
+		"x" => 1363,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	PIRACY_6 => [
+		"x" => 1457,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	PIRACY_7 => [
+		"x" => 1551,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	PIRACY_8 => [
+		"x" => 1645,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	PIRACY_9 => [
+		"x" => 1739,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	PIRACY_10 => [
+		"x" => 1833,
+		"y" => 1302,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_1 => [
+		"x" => 105,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_2 => [
+		"x" => 210,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_3 => [
+		"x" => 315,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_4 => [
+		"x" => 420,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_5 => [
+		"x" => 525,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_6 => [
+		"x" => 630,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	MARITAL_STATUS_7 => [
+		"x" => 735,
+		"y" => 458,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_0 => [
+		"x" => 2636,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_1 => [
+		"x" => 2731,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_2 => [
+		"x" => 2826,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_3 => [
+		"x" => 2919,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_4 => [
+		"x" => 3013,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_CP_5 => [
+		"x" => 3106,
+		"y" => 1317,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_0 => [
+		"x" => 2636,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_1 => [
+		"x" => 2731,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_2 => [
+		"x" => 2826,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_3 => [
+		"x" => 2919,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_4 => [
+		"x" => 3013,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	SAINT_PETERS_VP_5 => [
+		"x" => 3106,
+		"y" => 1410,
+		"board" => "power_cards",
+	],
+	PROT_EVENT_REMINDER_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PROT_EVENT_REMINDER_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_1 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_2 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	EXCOMMUNICATED_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	ENGLAND_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	HAPSBURG_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PROTESTANT_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	FRANCE_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	OTTOMAN_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PAPACY_LEADER => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "power_cards",
+	],
+	PROTESTANT_SPACES_0 => [
+		"x" => 102,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_1 => [
+		"x" => 177,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_2 => [
+		"x" => 251,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_3 => [
+		"x" => 326,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_4 => [
+		"x" => 401,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_5 => [
+		"x" => 476,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_6 => [
+		"x" => 551,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_7 => [
+		"x" => 625,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_8 => [
+		"x" => 700,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_9 => [
+		"x" => 775,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_10 => [
+		"x" => 850,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_11 => [
+		"x" => 925,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_12 => [
+		"x" => 999,
+		"y" => 513,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_13 => [
+		"x" => 102,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_14 => [
+		"x" => 177,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_15 => [
+		"x" => 251,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_16 => [
+		"x" => 326,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_17 => [
+		"x" => 401,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_18 => [
+		"x" => 476,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_19 => [
+		"x" => 551,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_20 => [
+		"x" => 625,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_21 => [
+		"x" => 700,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_22 => [
+		"x" => 775,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_23 => [
+		"x" => 850,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_24 => [
+		"x" => 925,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_25 => [
+		"x" => 999,
+		"y" => 597,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_26 => [
+		"x" => 102,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_27 => [
+		"x" => 177,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_28 => [
+		"x" => 251,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_29 => [
+		"x" => 326,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_30 => [
+		"x" => 401,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_31 => [
+		"x" => 476,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_32 => [
+		"x" => 551,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_33 => [
+		"x" => 625,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_34 => [
+		"x" => 700,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_35 => [
+		"x" => 775,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_36 => [
+		"x" => 850,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_37 => [
+		"x" => 925,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_38 => [
+		"x" => 999,
+		"y" => 681,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_39 => [
+		"x" => 102,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_40 => [
+		"x" => 177,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_41 => [
+		"x" => 251,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_42 => [
+		"x" => 326,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_43 => [
+		"x" => 401,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_44 => [
+		"x" => 476,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_45 => [
+		"x" => 551,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_46 => [
+		"x" => 625,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_47 => [
+		"x" => 700,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_48 => [
+		"x" => 775,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_49 => [
+		"x" => 850,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	PROTESTANT_SPACES_50 => [
+		"x" => 925,
+		"y" => 765,
+		"board" => "religious_struggle",
+	],
+	CURRENT_DEBATER_PAP => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	CURRENT_DEBATER_PRO => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_1 => [
+		"x" => 328,
+		"y" => 196,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_2 => [
+		"x" => 516,
+		"y" => 196,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_8 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_9 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_10 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_11 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_POPE_12 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_1 => [
+		"x" => 132,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_2 => [
+		"x" => 242,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_GER_7 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_1 => [
+		"x" => 607,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_2 => [
+		"x" => 718,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_5 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_ENG_6 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_FRE_1 => [
+		"x" => 368,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_FRE_2 => [
+		"x" => 477,
+		"y" => 370,
+		"board" => "religious_struggle",
+	],
+	DEBATER_FRE_3 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
+	],
+	DEBATER_FRE_4 => [
+		"x" => 0,
+		"y" => 0,
+		"board" => "religious_struggle",
 	],
 ];
 

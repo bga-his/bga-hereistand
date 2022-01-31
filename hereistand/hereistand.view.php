@@ -28,13 +28,35 @@ class view_hereistand_hereistand extends game_view {
 				'NAME' => $city['name'],
 			));
 		}
-		$this->page->begin_block("hereistand_hereistand", "location");
+		$this->page->begin_block("hereistand_hereistand", "map_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
-			$this->page->insert_block("location", array(
-				'X' => $location['x'],
-				'Y' => $location['y'],
-				'ID' => $location_id,
-			));
+			if ($location['board'] == 'map') {
+				$this->page->insert_block("map_location", array(
+					'X' => $location['x'],
+					'Y' => $location['y'],
+					'ID' => $location_id,
+				));
+			}
+		}
+		$this->page->begin_block("hereistand_hereistand", "power_card_location");
+		foreach ($this->game->board_locations as $location_id => $location) {
+			if ($location['board'] == 'power_cards') {
+				$this->page->insert_block("power_card_location", array(
+					'X' => $location['x'],
+					'Y' => $location['y'],
+					'ID' => $location_id,
+				));
+			}
+		}
+		$this->page->begin_block("hereistand_hereistand", "religious_struggle_location");
+		foreach ($this->game->board_locations as $location_id => $location) {
+			if ($location['board'] == 'religious_struggle') {
+				$this->page->insert_block("religious_struggle_location", array(
+					'X' => $location['x'],
+					'Y' => $location['y'],
+					'ID' => $location_id,
+				));
+			}
 		}
 	}
 }
