@@ -168,6 +168,7 @@ trait SetupTrait {
 				],
 				CALAIS => [
 					ENGLAND_2UNIT,
+					ENGLAND_KEY,
 				],
 				YORK => [
 					ENGLAND_1UNIT,
