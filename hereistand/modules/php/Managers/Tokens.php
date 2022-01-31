@@ -77,6 +77,6 @@ class Tokens extends \HIS\Helpers\Pieces {
 			}
 		}
 		// Hack to flip starting units
-		self::setState('tbd_31_1', BACK);
+		self::setState('tbd_31_1', FLIPPED);
 	}
 }

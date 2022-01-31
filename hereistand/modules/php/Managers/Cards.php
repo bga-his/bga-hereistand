@@ -12,6 +12,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	protected static $prefix = 'card_';
 	protected static $customFields = [];
 	protected static $autoreshuffle = false;
+	protected static $autoIncrement = false;
 	protected static function cast($card) {
 		$locations = explode('_', $card['location']);
 		$card = [
@@ -45,9 +46,13 @@ class Cards extends \HIS\Helpers\Pieces {
 	 * setupNewGame: create the deck of cards
 	 */
 	public function setupNewGame($players, $options) {
-		$card_nums = count(Game::get()->cards);
-		$cards = array_fill(0, $card_nums, 0);
-		self::create($cards, ['deck'], 0);
+		foreach (Game::get()->cards as $card_id => $card) {
+			$piece = [
+				"id" => $card_id,
+				"nbr" => 1,
+			];
+			self::create([$piece], ['deck']);
+		}
 		foreach ($players as $pId => $player) {
 			self::pickForLocation(1, ['deck'], ['hand', $pId]);
 		}

@@ -42,8 +42,8 @@ def php_print(variable_name, obj)
 	"$this->#{variable_name} = #{php_print_value obj};"
 end
 
-def print_constant(name, i)
-	"const #{name} = #{i};"
+def print_constant(name, i, offset)
+	"const #{name} = #{offset + i};"
 end
 
 def print_css(name, row)
@@ -204,31 +204,31 @@ File.open('../modules/php/generated_constants.inc.php', 'w') do |file|
  * Token constants
  */\n"
 	token_constants.each_with_index do |name, i|
-		file.write print_constant(name, i) + "\n"
+		file.write print_constant(name, i, 1000) + "\n"
 	end
 	file.write "/*
  * Token type constants
  */\n"
 	type_constants.to_a.each_with_index do |name, i|
-		file.write print_constant(name, i) + "\n"
+		file.write print_constant(name, i, 2000) + "\n"
 	end
 	file.write "/*
  * City constants
  */\n"
 	city_constants.each_with_index do |name, i|
-		file.write print_constant(name, i) + "\n"
+		file.write print_constant(name, i, 3000) + "\n"
 	end
 	file.write "/*
  * Location constants
  */\n"
 	location_constants.each_with_index do |name, i|
-		file.write print_constant(name, i) + "\n"
+		file.write print_constant(name, i, 4000) + "\n"
 	end
 	file.write "/*
  * Card constants
  */\n"
 	card_constants.each_with_index do |name, i|
-		file.write print_constant(name, i) + "\n"
+		file.write print_constant(name, i, 5000) + "\n"
 	end
 end
 File.open('../modules/css/tokens.scss', 'w') do |file|

@@ -85,6 +85,27 @@ class hereistand extends Table {
 		Cards::setupNewGame($players, $options);
 
 		$this->activeNextPlayer();
+
+		//$this->initTables();
+	}
+
+	function initTables() {
+		$options = [];
+		try {
+			$players = $this->loadPlayersBasicInfos();
+			// ... code the function
+			Globals::setupNewGame($players, $options);
+			Preferences::setupNewGame($players, $options);
+			Players::setupNewGame($players, $options);
+			Tokens::setupNewGame($players, $options);
+			Cards::setupNewGame($players, $options);
+		} catch (Exception $e) {
+			// logging does not actually work in game init :(
+			// but if you calling from php chat it will work
+			self::dump("======EXCEPTION======", $e);
+			self::error("Fatal error while creating game");
+			var_dump($e);
+		}
 	}
 
 	/*
