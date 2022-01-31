@@ -14,6 +14,8 @@ trait SetupTrait {
 			[AT_WAR, DIPLO_HAP_FRA],
 			[AT_WAR, DIPLO_FRA_PAP],
 			[AT_WAR, DIPLO_OTT_HUN],
+			[ENGLISH_PROT_COUNTER, PROTESTANT_SPACES_0],
+			[PROTESTANT_SPACES, PROTESTANT_SPACES_0],
 		];
 	}
 	public function getSetup() {
