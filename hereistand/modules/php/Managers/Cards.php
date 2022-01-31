@@ -2,6 +2,7 @@
 namespace HIS\Managers;
 
 use HIS\Core\Game;
+use HIS\Managers\Players;
 
 /**
  * Cards: id, type
@@ -11,6 +12,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	protected static $table = 'cards';
 	protected static $prefix = 'card_';
 	protected static $customFields = [];
+	protected static $autosuffle = true;
 	protected static $autoreshuffle = false;
 	protected static $autoIncrement = false;
 	protected static function cast($card) {
@@ -51,10 +53,45 @@ class Cards extends \HIS\Helpers\Pieces {
 				"id" => $card_id,
 				"nbr" => 1,
 			];
-			self::create([$piece], ['deck']);
+			$location = ['box'];
+			if ($card['type'] == HOME_CARD) {
+				switch ($card_id) {
+				case CARD_JANISSARIES:
+					$location = ['hand', Players::getFromPower(OTTOMAN)->id];
+					break;
+				case CARD_HOLY_ROMAN_EMPEROR:
+					$location = ['hand', Players::getFromPower(HAPSBURG)->id];
+					break;
+				case CARD_SIX_WIVES_OF_HENRY_VIII:
+					$location = ['hand', Players::getFromPower(ENGLAND)->id];
+					break;
+				case CARD_PATRON_OF_THE_ARTS:
+					$location = ['hand', Players::getFromPower(FRANCE)->id];
+					break;
+				case CARD_PAPAL_BULL:
+					$location = ['hand', Players::getFromPower(PAPACY)->id];
+					break;
+				case CARD_LEIPZIG_DEBATE:
+					$location = ['hand', Players::getFromPower(PAPACY)->id];
+					break;
+				case CARD_HERE_I_STAND:
+					$location = ['hand', Players::getFromPower(PROTESTANT)->id];
+					break;
+				case CARD_LUTHER_95_THESES:
+					$location = ['hand', Players::getFromPower(PROTESTANT)->id];
+					break;
+				case 'default':
+					break;
+				}
+			} elseif ($card['type'] == DIPLOMACY_CARD) {
+				$location = ['diplomacy'];
+			} elseif ($card['turn_added'] == 1) {
+				$location = ['deck'];
+			}
+			self::create([$piece], $location);
 		}
 		foreach ($players as $pId => $player) {
-			self::pickForLocation(1, ['deck'], ['hand', $pId]);
+			self::pickForLocation(2, ['deck'], ['hand', $pId]);
 		}
 	}
 
