@@ -21,8 +21,9 @@
   position: relative;
   transform-origin: 0 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 5000px;
+  width: 3825px;
 }
 
 #other-boards-wrapper{
@@ -31,8 +32,8 @@
 
 #religious-struggle {
   position: relative;
-  width: 1100px;
-  height: 1424px;
+  width: 1467px;
+  height: 1899px;
   background-image: url('img/religious.jpg');
   background-repeat: no-repeat;
 }
@@ -90,6 +91,20 @@
   }
   .Units.Naval {
     left: -50px;
+  }
+}
+
+.location:hover {
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
+  transform: scale(2);
+  .token {
+    position: relative;
+    z-index: 5;
   }
 }
 

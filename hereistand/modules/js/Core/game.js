@@ -80,14 +80,17 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
 
       let board_width = 5100;
       let board_height = 3300;
-
       this.scalingFactor = rect.width / board_width;
-      dojo.style('board', 'transform', `scale(${this.scalingFactor}`);
-      dojo.style('other-boards', 'transform', `scale(${this.scalingFactor}`);
       let new_height = board_height * this.scalingFactor;
+      dojo.style('board', 'transform', `scale(${this.scalingFactor}`);
       dojo.style('board-wrapper', 'height', `${new_height}px`);
-      new_height = 1650 * this.scalingFactor;
-      dojo.style('other-boards-wrapper', 'height', `${new_height}px`);
+
+      let other_width = 3825;
+      let other_height = 3549;
+      let otherScale = rect.width / other_width;
+      let new_other_height = other_height * otherScale;
+      dojo.style('other-boards', 'transform', `scale(${otherScale}`);
+      dojo.style('other-boards-wrapper', 'height', `${new_other_height}px`);
     },
 
     /*
