@@ -10,7 +10,7 @@ build:
 push: build
 	lftp sftp://${BGA_SFTP_LOGIN}@1.studio.boardgamearena.com/ -e "mirror --reverse --parallel=10 ${PROJECT_NAME}/ ${PROJECT_NAME}/; exit" 
 
-buildalt:
+alt:
 	sass ${PROJECT_NAME}/${PROJECT_NAME}.scss ${PROJECT_NAME}/${PROJECT_ALT}.css
 	mv ${PROJECT_NAME}/${PROJECT_NAME}.action.php ${PROJECT_NAME}/${PROJECT_ALT}.action.php
 	mv ${PROJECT_NAME}/${PROJECT_NAME}.view.php ${PROJECT_NAME}/${PROJECT_ALT}.view.php
@@ -25,11 +25,7 @@ buildalt:
 	gsed -i "s/bgagame.${PROJECT_NAME}/bgagame.${PROJECT_ALT}/" ${PROJECT_NAME}/${PROJECT_ALT}.js
 	gsed -i "s/${PROJECT_NAME}/${PROJECT_ALT}/" ${PROJECT_NAME}/modules/php/Core/Game.php
 	gsed -i "s/game_version_${PROJECT_NAME}/game_version_${PROJECT_ALT}/" ${PROJECT_NAME}/version.php 
-
-pushalt: buildalt
-	lftp sftp://${BGA_SFTP_LOGIN}1.studio.boardgamearena.com/ -e "mirror --reverse --parallel=10 --delete ${PROJECT_NAME}/ ${PROJECT_ALT}/; exit" 
-
-alt: pushalt
+	lftp sftp://${BGA_SFTP_LOGIN}@1.studio.boardgamearena.com/ -e "mirror --reverse --parallel=10 ${PROJECT_NAME}/ ${PROJECT_ALT}/; exit" 
 	rm ${PROJECT_NAME}/${PROJECT_ALT}.css
 	rm ${PROJECT_NAME}/${PROJECT_ALT}.css.map
 	mv ${PROJECT_NAME}/${PROJECT_ALT}.action.php ${PROJECT_NAME}/${PROJECT_NAME}.action.php
