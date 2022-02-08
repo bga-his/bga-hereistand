@@ -3,3 +3,7 @@ tsync.sh
 dl.sh
 .sass-cache
 .prettierrc
+phpab
+phpunit
+autoload.php
+.phpunit.result.cache
