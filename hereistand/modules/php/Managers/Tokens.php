@@ -62,6 +62,10 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 	}
 
+	public function dbIDIndex($db_id, $id) {
+		return preg_replace('/\{INDEX\}/', $id, $db_id);
+	}
+
 	//////////////////////////////////
 	//////////////////////////////////
 	///////////// SETTERS //////////////
@@ -72,8 +76,8 @@ class Tokens extends \HIS\Helpers\Pieces {
 	 * setupNewGame: create the tokens
 	 */
 	public function setupNewGame($players, $options) {
+		$tokens = Game::get()->tokens;
 		foreach (Game::get()->starting_token_counts as $token_type => $num) {
-			$tokens = Game::get()->tokens;
 			$piece = [
 				"id" => $tokens[$token_type]['db_id'],
 				"nbr" => $num,
@@ -88,8 +92,6 @@ class Tokens extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
-		// Hack to flip starting units
-		self::setState('tbd_31_1', FLIPPED);
 		$locations = Game::get()->board_locations;
 		foreach (Game::get()->getTokenSetup() as $placement) {
 			$token_id = $placement[0];
@@ -97,5 +99,11 @@ class Tokens extends \HIS\Helpers\Pieces {
 			$location = $locations[$location_id];
 			self::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
 		}
+
+		// Hack to flip starting units
+		$id = self::dbIDIndex($tokens[OTTOMAN_1UNIT]['db_id'], 1);
+		self::setState($id, FLIPPED);
+		$id = $tokens[HAPSBURG_EXPLORATION]['db_id'];
+		self::setState($id, FLIPPED);
 	}
 }
