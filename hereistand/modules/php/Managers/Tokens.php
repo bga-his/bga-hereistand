@@ -13,7 +13,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 	protected static $customFields = ['type'];
 	protected static $autoreshuffle = false;
 	protected static $autoIncrement = false;
-	protected static function cast($token) {
+	static function cast($token) {
 		$locations = explode('_', $token['location']);
 		$token = [
 			'id' => $token['id'],
