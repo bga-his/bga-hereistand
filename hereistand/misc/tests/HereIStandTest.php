@@ -25,12 +25,27 @@ final class HereIStandTest extends TestCase {
 	}
 
 	public function testMakeToken() {
-		$token = TestingUtils::makeToken(PAPACY_4UNIT, 'map_city_' . ROME);
+		$token = TestingUtils::makeTokenInCity(PAPACY_4UNIT, ROME);
 		$this->assertEquals($token['strength'], 4);
 	}
 
 	public function testStartingTokens() {
 		$tokens = TestingUtils::makeStartingTokens();
 		$this->assertGreaterThan(50, Count($tokens));
+	}
+
+	public function testQuickTokens() {
+		$setup = [
+			ROME => [
+				PAPACY_4UNIT,
+				PAPACY_1UNIT,
+			],
+			SIENA => [
+				HAPSBURG_4UNIT,
+				CHARLES_V,
+			],
+		];
+		$tokens = TestingUtils::makeQuickTokens($setup);
+		$this->assertEquals(Count($tokens), 4);
 	}
 }
