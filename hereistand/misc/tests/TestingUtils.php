@@ -3,6 +3,15 @@
 use HIS\Core\Game;
 use HIS\Managers\Tokens;
 
+final class HereIStandMocker extends hereistand {
+
+	function __construct() {
+		include 'hereistand/material.inc.php';
+		parent::__construct();
+		$this->resources = array();
+	}
+}
+
 final class TestingUtils {
 	public static function makeToken($type, $location) {
 		return Tokens::cast([

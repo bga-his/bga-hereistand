@@ -4,15 +4,6 @@ define("APP_GAMEMODULE_PATH", "./hereistand/misc/"); // include path to mocks, t
 
 use PHPUnit\Framework\TestCase;
 
-class HereIStandMocker extends hereistand {
-
-	function __construct() {
-		include 'hereistand/material.inc.php';
-		parent::__construct();
-		$this->resources = array();
-	}
-}
-
 final class HereIStandTest extends TestCase {
 	private static $his;
 	public static function setUpBeforeClass(): void{
