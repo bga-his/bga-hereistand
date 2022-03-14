@@ -12,7 +12,7 @@ final class TokensTest extends TestCase {
 	}
 
 	public function testInCity() {
-		$token = TestingUtils::makeToken(PAPACY_4UNIT, 'location_city_' . ROME);
+		$token = TestingUtils::makeTokenInCity(PAPACY_4UNIT, ROME);
 		$this->assertTrue(Tokens::inCity($token, ROME));
 		$this->assertFalse(Tokens::inCity($token, PARIS));
 	}

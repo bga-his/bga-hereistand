@@ -25,4 +25,8 @@ final class TestingUtils {
 		}
 		return $tokens;
 	}
+
+	public static function makeTokenInCity($type, $city_id) {
+		return self::makeToken($type, 'map_city_' . $city_id);
+	}
 }
