@@ -62,8 +62,12 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 	}
 
-	public function dbIDIndex($db_id, $id) {
+	public static function dbIDIndex($db_id, $id) {
 		return preg_replace('/\{INDEX\}/', $id, $db_id);
+	}
+
+	public static function inCity($token, $city_id) {
+		return ($token['location_id'] == $city_id) && ($token['location_type'] == 'city');
 	}
 
 	//////////////////////////////////
