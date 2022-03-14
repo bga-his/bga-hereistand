@@ -2,7 +2,6 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 use HIS\Models\City;
-use HIS\Testing\TestingUtils;
 use PHPUnit\Framework\TestCase;
 
 final class CityTest extends TestCase {

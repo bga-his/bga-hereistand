@@ -2,7 +2,6 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 use HIS\Managers\Tokens;
-use HIS\Testing\TestingUtils;
 use PHPUnit\Framework\TestCase;
 
 final class TokensTest extends TestCase {

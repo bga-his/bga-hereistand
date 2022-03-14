@@ -1,5 +1,4 @@
 <?php
-namespace HIS\Testing;
 
 use HIS\Core\Game;
 use HIS\Managers\Tokens;

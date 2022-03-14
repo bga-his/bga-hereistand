@@ -2,7 +2,6 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 define("APP_GAMEMODULE_PATH", "./hereistand/misc/"); // include path to mocks, this defined "Table" and other classes
 
-use HIS\Testing\TestingUtils;
 use PHPUnit\Framework\TestCase;
 
 class HereIStandMocker extends hereistand {
