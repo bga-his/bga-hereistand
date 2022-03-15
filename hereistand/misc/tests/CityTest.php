@@ -35,4 +35,22 @@ final class CityTest extends TestCase {
 		$this->assertFalse($rome->isNeighbor($paris));
 	}
 
+	public function testControl() {
+		# test starting control
+		$rome = new City(ROME, self::$tokens);
+		$paris = new City(PARIS, self::$tokens);
+		$this->assertEquals($rome->getControl(), PAPACY);
+		$this->assertEquals($paris->getControl(), FRANCE);
+		$siena = new City(SIENA, self::$tokens);
+		$this->assertEquals($siena->getControl(), INDEPENDENT);
+
+		# test control change from control type tokens
+		$worms = new City(WORMS, self::$tokens);
+		$this->assertEquals($worms->getControl(), HAPSBURG);
+		$token = TestingUtils::makeTokenInCity(PAPACY_HEX, PAVIA);
+		self::$tokens[] = $token;
+		$pavia = new City(PAVIA, self::$tokens);
+		$this->assertEquals($pavia->getControl(), PAPACY);
+	}
+
 }

@@ -30,4 +30,14 @@ class City {
 	public function isNeighbor($neighbor) {
 		return in_array($neighbor->id, $this->attributes['connections']);
 	}
+
+	public function getControl() {
+		$control = $this->attributes['home_power'];
+		foreach ($this->tokens as $token) {
+			if (in_array(CONTROL, $token['types'])) {
+				$control = $token['power'];
+			}
+		}
+		return $control;
+	}
 }
