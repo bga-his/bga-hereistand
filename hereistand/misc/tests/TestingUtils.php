@@ -13,17 +13,21 @@ final class HereIStandMocker extends hereistand {
 }
 
 final class TestingUtils {
-	public static function makeToken($type, $location) {
+	public static function makeToken($type, $location, $state) {
 		return Tokens::cast([
 			'id' => 0,
 			'type' => $type,
 			'location' => $location,
-			'state' => null,
+			'state' => $state,
 		]);
 	}
 
 	public static function makeTokenInCity($type, $city_id) {
-		return self::makeToken($type, 'map_city_' . $city_id);
+		return self::makeToken($type, 'map_city_' . $city_id, null);
+	}
+
+	public static function makeFlippedTokenInCity($type, $city_id) {
+		return self::makeToken($type, 'map_city_' . $city_id, FLIPPED);
 	}
 
 	public static function makeStartingTokens() {

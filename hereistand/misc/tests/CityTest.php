@@ -53,4 +53,17 @@ final class CityTest extends TestCase {
 		$this->assertEquals($pavia->getControl(), PAPACY);
 	}
 
+	public function testReligion() {
+		# test starting religions
+		$rome = new City(ROME, self::$tokens);
+		$this->assertEquals($rome->getReligion(), CATHOLIC);
+		$nezh = new City(NEZH, self::$tokens);
+		$this->assertEquals($nezh->getReligion(), OTHER);
+
+		# test changing religions based on tokens
+		self::$tokens[] = TestingUtils::makeFlippedTokenInCity(PROTESTANT_HEX, TOULOUSE);
+		$toulouse = new City(TOULOUSE, self::$tokens);
+		$this->assertEquals($toulouse->getReligion(), REFORMED);
+	}
+
 }

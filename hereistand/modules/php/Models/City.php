@@ -40,4 +40,17 @@ class City {
 		}
 		return $control;
 	}
+
+	public function getReligion() {
+		$religion = CATHOLIC;
+		if ($this->attributes['home_power'] == OTTOMAN) {
+			$religion = OTHER;
+		}
+		foreach ($this->tokens as $token) {
+			if (in_array(REFORMED, $token['types'])) {
+				$religion = REFORMED;
+			}
+		}
+		return $religion;
+	}
 }
