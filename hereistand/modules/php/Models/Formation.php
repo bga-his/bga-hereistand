@@ -6,5 +6,9 @@ namespace HIS\Models;
  */
 
 class Formation {
+	public $tokens = [];
 
+	public function __construct($tokens) {
+		$this->tokens = $tokens;
+	}
 }
