@@ -64,6 +64,10 @@ final class CityTest extends TestCase {
 		self::$tokens[] = TestingUtils::makeFlippedTokenInCity(PROTESTANT_HEX, TOULOUSE);
 		$toulouse = new City(TOULOUSE, self::$tokens);
 		$this->assertEquals($toulouse->getReligion(), REFORMED);
+
+		# protestant home cities with no markers should be protestant
+		$munster = new City(MUNSTER, []);
+		$this->assertEquals($munster->getReligion(), REFORMED);
 	}
 
 }

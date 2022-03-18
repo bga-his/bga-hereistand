@@ -46,6 +46,14 @@ class City {
 		if ($this->attributes['home_power'] == OTTOMAN) {
 			$religion = OTHER;
 		}
+		if ($this->attributes['home_power'] == PROTESTANT) {
+			$religion = REFORMED;
+			foreach ($this->tokens as $token) {
+				if (in_array(CATHOLIC, $token['types'])) {
+					$religion = CATHOLIC;
+				}
+			}
+		}
 		foreach ($this->tokens as $token) {
 			if (in_array(REFORMED, $token['types'])) {
 				$religion = REFORMED;
