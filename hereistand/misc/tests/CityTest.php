@@ -33,6 +33,10 @@ final class CityTest extends TestCase {
 		$paris = new City(PARIS, self::$tokens);
 		$this->assertTrue($rome->isNeighbor($siena));
 		$this->assertFalse($rome->isNeighbor($paris));
+		# passes are still neighbors
+		$turin = new City(TURIN, self::$tokens);
+		$geneva = new City(GENEVA, self::$tokens);
+		$this->assertTrue($turin->isNeighbor($geneva));
 	}
 
 	public function testControl() {

@@ -28,7 +28,7 @@ class City {
 	}
 
 	public function isNeighbor($neighbor) {
-		return in_array($neighbor->id, $this->attributes['connections']);
+		return in_array($neighbor->id, $this->attributes['connections']) || in_array($neighbor->id, $this->attributes['passes']);
 	}
 
 	public function getControl() {
