@@ -2,14 +2,19 @@ PROJECT_NAME=hereistand
 PROJECT_ALT=hereistandt
 
 
+# set the default action to something non-destructive and fast
 default: test
 
+# compile the css from the sass scripts
 build:
 	sass ${PROJECT_NAME}/${PROJECT_NAME}.scss ${PROJECT_NAME}/${PROJECT_NAME}.css
 
+# use lftp to push the project to BGA studio
+# must have variable $BGA_SFTP_LOGIN set on your dev machine
 push: build
 	lftp sftp://${BGA_SFTP_LOGIN}@1.studio.boardgamearena.com/ -e "mirror --reverse --parallel=10 ${PROJECT_NAME}/ ${PROJECT_NAME}/; exit" 
 
+# perform a mass in-place rename of assets and push project to secondary BGA studio project
 alt:
 	sass ${PROJECT_NAME}/${PROJECT_NAME}.scss ${PROJECT_NAME}/${PROJECT_ALT}.css
 	mv ${PROJECT_NAME}/${PROJECT_NAME}.action.php ${PROJECT_NAME}/${PROJECT_ALT}.action.php
@@ -43,12 +48,12 @@ alt:
 	gsed -i "s/game_version_${PROJECT_ALT}/game_version_${PROJECT_NAME}/" ${PROJECT_NAME}/version.php 
 
 
-
 test: setup
 	./phpab -o autoload.php ${PROJECT_NAME}
 	./phpunit --bootstrap autoload.php ${PROJECT_NAME}
 	@date
 
+# download php testing utilities locally if they are missing
 setup:
 ifeq (,$(wildcard ./phpunit))
 	wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
