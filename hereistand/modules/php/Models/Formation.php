@@ -39,4 +39,11 @@ class Formation {
 
 		return true;
 	}
+
+	public function getPower() {
+		if ($this->isValid()) {
+			return $this->tokens[0]['power'];
+		}
+		return null;
+	}
 }

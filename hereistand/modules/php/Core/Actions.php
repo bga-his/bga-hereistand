@@ -5,6 +5,7 @@ use HIS\Helpers\UserException;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Models\Formation;
 use HIS\Notifications\Battle;
 use HIS\Notifications\Buy;
 use HIS\Notifications\PlayCard;
@@ -91,8 +92,13 @@ class Actions {
 	}
 
 	public static function declareFormation($token_ids) {
-		Tokens::checkFormation($token_ids);
-		Tokens::checkOwner($token_ids, Players::getActive());
+		$formation = new Formation(Tokens::getMany($token_ids)->toArray());
+		if ($formation->isValid() == false) {
+			throw new UserException("Invalid formation");
+		}
+		if ($formation->getPower() != Players::getActive()->power) {
+			throw new UserException("Formation is " . $formation->getPower() . " troops, you are: " . Players::getActive()->power);
+		}
 		Globals::setFormation($token_ids);
 		Game::get()->gamestate->nextState("declare");
 	}

@@ -57,4 +57,11 @@ final class FormationTest extends TestCase {
 		$this->assertFalse($formation->isValid());
 	}
 
+	public function testGetPower() {
+		$tokens = [];
+		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
+		$formation = new Formation($tokens);
+		$this->assertEquals($formation->getPower(), HAPSBURG);
+	}
+
 }
