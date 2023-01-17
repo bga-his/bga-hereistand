@@ -8,6 +8,7 @@ https://docs.google.com/spreadsheets/d/1v-xicaLIc2KklrPOAwlzjpm2ePVhxbEzh3HbjKy4
 
 This is a rather complex game and so the initial design tried to make room for all of it with an complex design.
 
+```
 hereistand
   \img
     \svg - All tokens are currently just SVGs, 
@@ -23,3 +24,4 @@ hereistand
       \Models - Classes representing other game concepts
       \Notifications - All notifications sent back to client
       \States - Main logic for all state-based actions held here
+```
