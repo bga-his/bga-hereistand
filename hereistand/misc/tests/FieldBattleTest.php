@@ -17,4 +17,27 @@ final class FieldBattleTest extends TestCase {
 		$this->assertInstanceOf(FieldBattle::class, $battle);
 	}
 
+	public function testFindOpposingPowers() {
+		# two opposing powers
+		$tokens = [];
+		$tokens[] = TestingUtils::makeTokenInCity(ENGLAND_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+
+		$powers = FieldBattle::findOpposingPowers(VIENNA, $tokens, ENGLAND);
+		$this->assertEquals(count($powers), 2);
+		$this->assertArrayHasKey(HAPSBURG, $powers);
+		$this->assertArrayHasKey(ENGLAND, $powers);
+	}
+
+	public function testFindOpposingPowersNone() {
+		# two opposing powers
+		$tokens = [];
+		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+
+		$powers = FieldBattle::findOpposingPowers(VIENNA, $tokens, ENGLAND);
+		$this->assertEquals(count($powers), 1);
+		$this->assertArrayHasKey(HAPSBURG, $powers);
+	}
+
 }
