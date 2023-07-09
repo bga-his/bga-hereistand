@@ -8,6 +8,7 @@ use HIS\Managers\Tokens;
 use HIS\Models\Formation;
 use HIS\Notifications\Battle;
 use HIS\Notifications\Buy;
+use HIS\Notifications\Notif_debug;
 use HIS\Notifications\Notif_PlayCard;
 use HIS\Notifications\PlayCard;
 
@@ -151,6 +152,9 @@ class Actions {
 			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
 		}
 		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
+		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
+		Notif_debug::notif("pickBuyCity: allTokens {$all_tokens_in_city}");
+		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens with one 2-unit token)
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
 		}

@@ -7,3 +7,5 @@ phpab
 phpunit
 autoload.php
 .phpunit.result.cache
+.vscode
+sftp.json

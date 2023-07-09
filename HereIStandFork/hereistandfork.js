@@ -36,8 +36,9 @@ define([
 ], function (dojo, declare, noUiSlider) {
   return declare('bgagame.hereistandfork', [customgame.game, hereistandfork.players, hereistandfork.board,
                                         hereistandfork.cards, hereistandfork.actionbuttons, hereistandfork.notifications,
-                                        hereistandfork.states, hereistandfork.actions], {
+                                        hereistandfork.states, hereistandfork.actions], {// Imports the setup[Players,Board,Cards] methods from modules/js/*,
     constructor() {
+      console.log("constructor")
       this._activeStates = [
         'impulseActions',
         'declareFormation',

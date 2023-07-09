@@ -37,7 +37,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       for(const city_id of args.valid_city_ids){
         const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onDestinationClick);
+        this.onClick(city_node, this.onDestinationClick);//onClick is defined in game.js, onDestinationClick method in Actions.js
       }
     },
 

@@ -743,6 +743,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
     },
 
     onClick(node, callback, temporary = true) {
+      console.log("add onClick method to node "+node+";")
       let safeCallback = (evt) => {
         if (this.isInterfaceLocked()) return false;
         if (this._helpMode) return false;
