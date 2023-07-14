@@ -1,6 +1,8 @@
 <?php
 namespace HIS\Helpers;
 
+use function PHPSTORM_META\type;
+
 abstract class Utils extends \APP_DbObject {
 	public static function filter(&$data, $filter) {
 		$data = array_values(array_filter($data, $filter));

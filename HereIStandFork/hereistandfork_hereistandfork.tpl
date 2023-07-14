@@ -1,6 +1,5 @@
 {OVERALL_GAME_HEADER}
 <div id="main-container">
-<h1> Soraton can make visible Changes!</h1>
 	<div id="board-wrapper">
 		<div id='board'>
 			<div id='map'>

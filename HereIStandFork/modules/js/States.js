@@ -1,7 +1,9 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistandfork.states', null, {
+    
     onEnteringStatePickCard(args){
-      this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
+      console.log("onEnteringStatePickCar: add this.onCardClick to cards on player hand.");
+      this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');//TODO only show pass button when its allowed to pass
       this.selectedCardId = null;
       dojo.query('#player-hand .card-wrapper').forEach((node) => 
         this.onClick(node, this.onCardClick)

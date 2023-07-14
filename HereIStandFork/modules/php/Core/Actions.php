@@ -155,7 +155,7 @@ class Actions {
 		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
 		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
 		Notifications::message("pickBuyCity: allTokens ".Utils::join_multi($all_tokens_in_city, array(";", ",", ".", ":")));
-		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens with one 2-unit token)
+		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
 		}

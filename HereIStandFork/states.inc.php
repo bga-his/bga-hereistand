@@ -14,6 +14,13 @@
  *
  */
 
+ /*
+ * Praefixe
+ * ST_EVT_name: State for resolving event-card name
+ * ST_CP_*: state for spending cp
+ * ST_MOV_*: state for movement or reactions to movement, including field battles
+ */
+
 $machinestates = [
 	// The initial state. Please do not modify.
 	ST_GAME_SETUP => [
@@ -21,12 +28,21 @@ $machinestates = [
 		'description' => '',
 		'type' => 'manager',
 		'action' => 'stGameSetup',
-		'transitions' => ['' => ST_PICK_CARD],// instead to Play 95 Thesis and from There to PRA_TURN_OTTO
+		//'transitions' => ['' => ST_EVT_95THESES],
+		'transitions' => ['' => ST_PICK_CARD],
+	],
+
+	ST_EVT_95THESES => [
+		'name' => '95Theses',
+		'description' => 'resolve Luthers 95 Theses	',
+		'type' => 'manager',
+		'action' => 'stEvt95Theses',//Store into DB that Protestant has 5 reformation attemps in German languge Zone with 1 extra dice
+		'transitions' => ['resolve' => ST_CP_REFORMATION_ATTEMPS],
 	],
 
 	ST_PICK_CARD => [
-		'name' => 'pickCard',
-		'description' => clienttranslate('${actplayer} must play a card or pass'),
+		'name' => 'ottoPickCard',
+		'description' => clienttranslate('${actFaction}${actplayer} must play a card or pass'),
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',
 		'possibleactions' => ['actPlayCard', 'actPass'],
@@ -315,11 +331,11 @@ $machinestates = [
 		'transitions' => ['next' => ST_FIELD_BATTLE_DICE],
 	],
 
-	ST_NEXT_PLAYER => [  // Replace by PRAE_TURN_OTTO/HAPS/ENGL/FRANK/PAPT/LUTH
+	ST_NEXT_PLAYER => [
 		'name' => 'nextPlayer',
 		'description' => 'End a players impulse and move to next',
 		'type' => 'manager',
-		'action' => 'stNextPlayer',
+		'action' => 'stNextPlayer',//TODO check for empty hand
 		'transitions' => ['nextPlayer' => ST_PICK_CARD],
 	],
 
@@ -331,6 +347,15 @@ $machinestates = [
 		'args' => 'argBuyUnit',
 		'possibleactions' => ['actPickCity', 'actUndo'],
 		'transitions' => ['buy' => ST_IMPULSE_ACTIONS, 'undo' => ST_IMPULSE_ACTIONS, 'next' => ST_NEXT_PLAYER],
+	],
+
+	ST_CP_REFORMATION_ATTEMPS => [//TODO store languge Zone(any, notset, ger, eng, frenche, ...), number of Reformation attemps, 95Theses active, Printing press active, Marburg Colloquium active and whos winning Ties somewhere
+		'name' => 'reformationAttems',
+		'description' => clienttranslate('${actplayer} must select city for reformation attempt'),
+		'descriptionmyturn' => clienttranslate('You must select city for reformation attempt'),
+		'type' => 'activeplayer',
+		'possibleactions' => ['actPickCity', 'actUndo'],
+		'transitions' => ['a' => ST_IMPULSE_ACTIONS, 'b' => ST_CP_REFORMATION_ATTEMPS],
 	],
 
 	// Final state.

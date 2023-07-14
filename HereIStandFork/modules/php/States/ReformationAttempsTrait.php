@@ -4,10 +4,10 @@ namespace HIS\States;
 use HIS\Core\Globals;
 use HIS\Managers\Players;
 
-trait NextPlayerTrait {
-	function stNextPlayer() {
-		Globals::setRemainingCP(0);
-		Players::activeNext();
+trait ReformationAttempsTrait {
+	function stEvt95Theses() {
+		Globals::setRemainingRef(5);
+		Globals::set95ThesesActive(1);
 		$this->gamestate->nextState("resolve");
 	}
 }
