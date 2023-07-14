@@ -5,7 +5,11 @@ require_once 'generated_constants.inc.php';
  * ST constants
  */
 const ST_GAME_SETUP = 1;
+const ST_EVT_95THESES = 38;
+
+const ST_NEXT_PLAYER = 35;
 const ST_PICK_CARD = 2;
+
 const ST_IMPULSE_ACTIONS = 3;
 const ST_DECLARE_FORMATION = 4;
 const ST_DECLARE_DESTINATION = 5;
@@ -38,8 +42,9 @@ const ST_FIND_SIEGE = 31;
 const ST_CONCLUDE_FIELD_BATTLE = 32;
 const ST_MOVEMENT_RESPONSE = 33;
 const ST_FIELD_BATTLE_RESPONSE = 34;
-const ST_NEXT_PLAYER = 35;
 const ST_BUY_UNIT = 36;
+
+const ST_CP_REFORMATION_ATTEMPS = 37;
 
 const ST_END_GAME = 99;
 

@@ -2,6 +2,7 @@
 namespace HIS\Core;
 use HIS\Core\Globals;
 use HIS\Helpers\UserException;
+use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
@@ -153,8 +154,8 @@ class Actions {
 		}
 		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
 		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
-		Notif_debug::notif("pickBuyCity: allTokens {$all_tokens_in_city}");
-		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens with one 2-unit token)
+		Notif_debug::message("pickBuyCity: allTokens ".Utils::arrayToString($all_tokens_in_city));//why doesnt this get executed?
+		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
 		}
