@@ -40,7 +40,7 @@ hereistand
    1. Add the States ID in php/constants.inc.php
    2. Add State to states.inc.php
    3. add args method in php/states/stateEnteringargs.php
-   4. Add the onEnteringState method in js/States.js (that recives the return value from the args method as argument)
+   4. Add the onEnteringState method in js/States.js (that recives the return value from the args method as argument). Its name gona match 'onEnteringState' + stateName.charAt(0).toUpperCase() + stateName.slice(1);
    5. Add the actions the player can take in that state to js/Actions.js as onXXXClick (the onEnteringState method adds these methods to gameelemts onClick method) The onXXClick method calls js/Actions tackeAction method, that ajaxcalls a hereistand.action.php method.
    6. Add the hereistand.action.php Method to call the php/Core/actions.php method
    7. Add the php/Core/actions.php method that finaly does the changes the player requested by clicking on the component last mention in step 4.
