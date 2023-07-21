@@ -142,6 +142,24 @@ class Actions {
 		Game::get()->gamestate->setPlayerNonMultiactive($player->id, 'done');
 	}
 
+	public static function voidMergeTokens($city){
+		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
+		Notifications::message("pickBuyCity: allTokens = ".Utils::strVarDump($all_tokens_in_city));
+		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
+		$regular_unit_count = 0;
+		$merc_unit_count = 0;
+		$naval_unit_count = 0;  //TODO
+		foreach($all_tokens_in_city As $token){
+			if($token['flipped'] = ''){
+				$regular_unit_count += $token['strength'];
+			}elseif($token['flipped'] = 'flipped'){
+				$merc_unit_count += $token['strength'];
+			}else{
+				Notifications::message("pickBuyCity: invalid flipped token = ".Utils::strVarDump($token));
+			}
+		}
+	}
+
 	public static function pickBuyCity($city) {
 		$unit_type = Globals::getUnitBuyType();
 		$player = Players::getActive();
@@ -153,9 +171,7 @@ class Actions {
 			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
 		}
 		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
-		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
-		Notifications::message("pickBuyCity: allTokens ".Utils::join_multi($all_tokens_in_city, array(";", ",", ".", ":")));
-		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
+		Actions::voidMergeTokens($city);
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
 		}

@@ -41,7 +41,7 @@ $machinestates = [
 	],
 
 	ST_PICK_CARD => [
-		'name' => 'ottoPickCard',
+		'name' => 'PickCard',
 		'description' => clienttranslate('${actFaction}${actplayer} must play a card or pass'),
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',

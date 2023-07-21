@@ -49,22 +49,10 @@ abstract class Utils extends \APP_DbObject {
 		return $hits;
 	}
 
-	function join_multidim($glue, $arr){
-        //asssumes the number of dimensions in $arr is smaler or equal to the length of $delimeter
-        if(count($glue) == 0){
-            return "err: to few glue";
-        }
-        if(!@is_array($arr)){
-            return "err: arr is no arr";
-        }
-        $res = "";
-        foreach($arr as $i=>$val){
-            if (@is_array($val)){
-                $res = "{$res}{$i}=>(".self::join_multidim(array_slice($glue, 1), $val).")$glue[0]";
-            }else{
-                $res = "{$res}{$i}:{$val}{$glue[0]}";
-            }
-        }
-        return $res;
-    }
+	public static function strVarDump($var) {
+		ob_start();
+		var_dump($var);
+		return ob_get_clean();
+
+	}
 }
