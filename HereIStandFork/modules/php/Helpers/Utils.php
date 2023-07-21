@@ -50,6 +50,6 @@ abstract class Utils extends \APP_DbObject {
 	}
 
 	public static function varToString($var){
-		return var_export($var, true)
+		return var_export($var, true);
 	}
 }
