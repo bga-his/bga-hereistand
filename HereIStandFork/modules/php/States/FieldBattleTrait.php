@@ -62,13 +62,7 @@ trait FieldBattleTrait {
 		$this->gamestate->nextState("defender");
 	}
 
-	function argFieldBattleCard() {
-		return [];
-	}
 
-	function argPlayJanissaries() {
-		return [];
-	}
 
 	function stDeclareFieldBattleWinner() {
 		$field = Globals::getFieldBattle();
@@ -91,20 +85,6 @@ trait FieldBattleTrait {
 		if ($this->gamestate->setPlayersMultiactive($players_taking_losses, 'none') == false) {
 			$this->gamestate->nextState("start");
 		}
-	}
-
-	function argTakeFieldBattleCasualties() {
-		if (Players::isActive() == false) {
-			return [];
-		}
-		$field = Globals::getFieldBattle();
-		$current_power = Players::getCurrent()->power;
-		$tokens = $field['powers'][$current_power]['tokens'];
-		$casualties = $field['powers'][$current_power]['casualties'];
-		return [
-			'tokens' => $tokens,
-			'casualties' => $casualties,
-		];
 	}
 
 	function stFieldBattleCaptureLeaders() {
@@ -142,19 +122,11 @@ trait FieldBattleTrait {
 		}
 	}
 
-	function argDeclareRetreatDestination() {
-		return [];
-	}
-
 	function stFindSiege() {
 		$this->gamestate->nextState("next");
 	}
 
 	function stConcludeFieldBattle() {
 		$this->gamestate->nextState("more");
-	}
-
-	function argResponseFieldBattle() {
-		return [];
 	}
 }

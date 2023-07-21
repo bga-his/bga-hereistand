@@ -33,11 +33,13 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onPlayEventClick(evt){
       dojo.stopEvent(evt);
+      console.log("onPlayEventClick")
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: true});
     },
 
     onPlayCPClick(evt){
       dojo.stopEvent(evt);
+      console.log("onPlayCPClick")
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: false});
     },
 
@@ -51,6 +53,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         dojo.destroy('play_cp');
       } else {
         _this.selectedCardId = cardId;
+        debug("onCardClick.addPrimaryActionButton")
         _this.addPrimaryActionButton('play_event', _('Play Event'), 'onPlayEventClick');
         _this.addPrimaryActionButton('play_cp', _('Play for CP'), 'onPlayCPClick');
       }
@@ -77,13 +80,39 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     onDestinationClick(evt, _this){
       dojo.stopEvent(evt);
       const city_id = evt.currentTarget.id.split('_')[1];
-      _this.takeAction('actPickCity', {city_id: city_id});//takeAction in game? If so, it calls actPickCity(city_id) in some .php file
+      _this.takeAction('actPickCity', {city_id: city_id});
     },
 
     onDeclareCasualtiesClick(evt){
       dojo.stopEvent(evt);
       const id_str = this.selectedFormation.join(' ');
       this.takeAction('actDeclareCasualties', {token_ids: id_str});
-    }
+    }, 
+
+    /*
+    * Make an AJAX call with automatic lock
+    */
+    takeAction(action, data, check = true, checkLock = true) {
+      if (check && !this.checkAction(action)) return false;
+      if (!check && checkLock && !this.checkLock()) return false;
+    
+      data = data || {};
+      if (data.lock === undefined) {
+        data.lock = true;
+      } else if (data.lock === false) {
+        delete data.lock;
+      }
+      return new Promise((resolve, reject) => {
+        this.ajaxcall(
+          '/' + this.game_name + '/' + this.game_name + '/' + action + '.html',
+          data,
+          this,
+          (data) => resolve(data),
+          (isError, message, code) => {
+            if (isError) reject(message, code);
+          },
+        );
+      });
+    },
   });
 });

@@ -119,32 +119,6 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
     },
 
     /*
-     * Make an AJAX call with automatic lock
-     */
-    takeAction(action, data, check = true, checkLock = true) {
-      if (check && !this.checkAction(action)) return false;
-      if (!check && checkLock && !this.checkLock()) return false;
-
-      data = data || {};
-      if (data.lock === undefined) {
-        data.lock = true;
-      } else if (data.lock === false) {
-        delete data.lock;
-      }
-      return new Promise((resolve, reject) => {
-        this.ajaxcall(
-          '/' + this.game_name + '/' + this.game_name + '/' + action + '.html',
-          data,
-          this,
-          (data) => resolve(data),
-          (isError, message, code) => {
-            if (isError) reject(message, code);
-          },
-        );
-      });
-    },
-
-    /*
      * onEnteringState:
      * 	this method is called each time we are entering into a new game state.
      *
@@ -153,7 +127,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
      *  - mixed args : additional information
      */
     onEnteringState(stateName, args) {
-      debug('Entering state: ' + stateName, args);
+      debug('game.js: Entering state: ' + stateName, args);
       if (this.isFastMode()) return;
       if (this._activeStates.includes(stateName) && !this.isCurrentPlayerActive()) return;
 
@@ -170,7 +144,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
      *  - str stateName : name of the state we are leaving
      */
     onLeavingState(stateName) {
-      debug('Leaving state: ' + stateName);
+      debug('game.js: Leaving state: ' + stateName);
       if (this.isFastMode()) return;
       this.clearPossible();
 

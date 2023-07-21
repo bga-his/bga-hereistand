@@ -41,12 +41,12 @@ $machinestates = [
 	],
 
 	ST_PICK_CARD => [
-		'name' => 'ottoPickCard',
-		'description' => clienttranslate('${actFaction}${actplayer} must play a card or pass'),
+		'name' => 'pickCard',
+		'description' => clienttranslate('${actplayer} must play a card or pass'),
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',
-		'possibleactions' => ['actPlayCard', 'actPass'],
-		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER],
+		'possibleactions' => ['actPlayCard', 'actPass', 'playEvtJanissaries'],
+		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER, 'playEvtJanissaries' => ST_EVT_Janissaries],
 	],
 
 	ST_IMPULSE_ACTIONS => [
@@ -356,6 +356,16 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'possibleactions' => ['actPickCity', 'actUndo'],
 		'transitions' => ['a' => ST_IMPULSE_ACTIONS, 'b' => ST_CP_REFORMATION_ATTEMPS],
+	],
+
+	ST_EVT_Janissaries =>[
+		'name' => 'evtJanissaries',
+		'description' => clienttranslate('${actplayer} (Ottoman) must select location to construct Janissaires (4 Regulars)'),
+		'descriptionmyturn' => clienttranslate('You must select location to construct Janissaires (4 Regulars)'),
+		'type' => 'activeplayer',
+		'args' => 'argEvtJanissaroes',
+		'possibleactions' => ['actPickCity', 'actUndo'],
+		'transitions' => ['undo' => ST_PICK_CARD, 'resolve' => ST_NEXT_PLAYER],
 	],
 
 	// Final state.

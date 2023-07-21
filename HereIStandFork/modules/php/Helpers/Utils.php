@@ -49,15 +49,7 @@ abstract class Utils extends \APP_DbObject {
 		return $hits;
 	}
 
-	public static function arrayToString($arr){
-		$strR = "";
-		if(is_array($arr)){
-			foreach($arr as $objElem){
-				$strR .= Utils::arrayToString($objElem);
-			}
-		}else{
-			$strR .= "{$arr}";
-		}
-		return $strR;
+	public static function varToString($var){
+		return var_export($var, true)
 	}
 }

@@ -38,8 +38,6 @@ class Actions {
 			Cards::playEvent($card);
 			//Pull MajorPower who played card from DB
 			//change state to nextPlayer_praeTurn
-			
-			
 		}else{
 			Notif_PlayCard::playCardCP($player, $card);
 			Globals::setRemainingCP($card['cp']);
@@ -68,6 +66,9 @@ class Actions {
 			break;
 		case 'buyUnit':
 			self::pickBuyCity($city);
+			break;
+		case 'EvtJanissaries':
+			self::BuildJanissaries($city);
 			break;
 		default:
 			throw new UserException("Picking city in wrong state: " . $statename);
@@ -152,9 +153,9 @@ class Actions {
 		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type != MERC)) {
 			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
 		}
-		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
+		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side); //THis is the line that actually changes the DB to move the token
 		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
-		Notif_debug::message("pickBuyCity: allTokens ".Utils::arrayToString($all_tokens_in_city));//why doesnt this get executed?
+		Notif_debug::message("pickBuyCity: allTokens ".Utils::varToString($all_tokens_in_city));//why doesnt this get executed?
 		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
 		if ($token == null) {
 			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
@@ -172,6 +173,19 @@ class Actions {
 		} else {
 			Game::get()->gamestate->nextState("buy");
 		}
+	}
+
+	public static function BuildJanissaries($city){
+		//TODO change somewhere to build 4 units instead of 1?
+		$unit_type = Globals::getUnitBuyType();
+		$player = Players::getActive();
+		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
+		$bad_info = Game::get()->tokens[$buy_id];
+		$side = $unit_type == MERC ? FLIPPED : FRONT;
+		$remainingCP = Globals::getRemainingCP();
+		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
+		Game::get()->gamestate->nextState("resolve");
+		//TODO add cancel option
 	}
 
 }

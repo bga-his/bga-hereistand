@@ -102,7 +102,7 @@ class Cards extends \HIS\Helpers\Pieces {
 		
 		switch($cardId){
 			case CARD_JANISSARIES:
-				//select like Ottoman Build actionc    *--*/
+				Game::get()->gamestate->nextState("playEvtJanissaries");
 				break;
 		}
 		//
