@@ -7,13 +7,7 @@ trait AvoidBattleTrait {
 		$this->gamestate->nextState("none");
 	}
 
-	function argDeclareAvoid() {
-		return [];
-	}
 
-	function argDeclareAvoidDestination() {
-		return [];
-	}
 
 	function stRollAvoid() {
 		$this->gamestate->nextState("done");

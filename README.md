@@ -18,13 +18,19 @@ hereistand
     \css - SASS is compiled into the main CSS file as part of the build process
     \js - Methods for showing Gamestate to client and setting clickables
       \hereistand.js includes all other .js files and defines the setup method
-      \States.js add methods from action.js to html-objects (using the onClick-method in game.js)
-      \Actions.js call takeAction method in game.js with string name of a ?hereistand.action.php method that should be ajax-called
-      \game.js bunch of uitl-functions? Includes onEnteringState that calls the appropriate States.js function.
+      \States.js called whenever a new state is entered/left. Adds methods from action.js to html-objects (using the onClick-method in game.js)
+      \Actions.js call takeAction method with string name of a hereistand.action.php method that should be ajax-called
+      \game.js bunch of uitl-functions?
       \ Is this circular dependency realy neccesary? I fell it could be orderd better, but then again I havent even read all methods in there
-        \ maybe move onEntering/leaving state to States.js and takeAction to Actions.js? And sort/praefix the files based on if they are used to setup the visuals (Board, Cards, Players, ?) or if they are to handle actions (game, States, Actions, game, ?)
+        \ maybe sort/praefix the files based on if they are used to setup the visuals (Board, Cards, Players, ?) or if they are to handle actions (game, States, Actions, ?)
     \php
       \Core - A few base classes for the game
+        \Actions change DB as State
+        \Game
+        \Globals
+        \Notifications
+        \Preferences
+        \Stats
       \Helpers - Utility classes, used elsewhere
       \Managers - Database managers for various objects
       \Models - Classes representing other game concepts
@@ -36,3 +42,17 @@ hereistand
         \Actions.php finaly actually does the action the user clicked on.
         \Modules/php/Core/Maneger/Tokens.php TODO
 ```
+ Adding a new State:
+   1. Add the States ID in php/constants.inc.php
+   2. Add State to states.inc.php
+   3. add args method in php/states/stateEnteringargs.php. Its name must match the 'args' => 'argStateName' of this State in states.inc.php
+   4. Add the onEnteringState method in js/States.js (that recives the return value from the args method as argument). Its name gona match 'onEnteringState' + stateName.charAt(0).toUpperCase() + stateName.slice(1);
+   5. Add the actions the player can take in that state to js/Actions.js as onXXXClick (the onEnteringState method adds these methods to gameelemts onClick method) The onXXClick method calls js/Actions tackeAction method, that ajaxcalls a hereistand.action.php method.
+   6. Add the hereistand.action.php Method to call the php/Core/actions.php method
+   7. Add the php/Core/actions.php method that finaly does the changes the player requested by clicking on the component last mention in step 4.
+   8. I forgott something, didnt I?
+  
+TODO
+  \Active player and remaining CP should be stored in DB to be recoverd after reload?
+    \CP is global, so it already is in DB?
+  Implement action for every fucking event. Including Scots raid.

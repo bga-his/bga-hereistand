@@ -49,10 +49,7 @@ abstract class Utils extends \APP_DbObject {
 		return $hits;
 	}
 
-	public static function strVarDump($var) {
-		ob_start();
-		var_dump($var);
-		return ob_get_clean();
-
+	public static function varToString($var){
+		return var_export($var, true);
 	}
 }

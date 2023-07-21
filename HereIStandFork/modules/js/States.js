@@ -2,7 +2,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistandfork.states', null, {
     
     onEnteringStatePickCard(args){
-      console.log("onEnteringStatePickCar: add this.onCardClick to cards on player hand.");
+      debug("onEnteringStatePickCar: add this.onCardClick to cards on player hand.");
       this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');//TODO only show pass button when its allowed to pass
       this.selectedCardId = null;
       dojo.query('#player-hand .card-wrapper').forEach((node) => 
@@ -50,5 +50,13 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         this.onClick(token_id, this.onUnitClick);
       }
     },
+
+    onEnteringStateEvtJanissaries(args){
+      this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
+      for(const city_id of args.valid_city_ids){
+        const city_node = dojo.byId(`cityselector_${city_id}`);
+        this.onClick(city_node, this.onDestinationClick);
+      }
+    }
   });
 });
