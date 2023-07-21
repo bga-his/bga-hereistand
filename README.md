@@ -19,9 +19,20 @@ hereistand
     \js - Client
     \php
       \Core - A few base classes for the game
+        \Actions change DB as State
+        \Game
+        \Globals
+        \Notifications
+        \Preferences
+        \Stats
       \Helpers - Utility classes, used elsewhere
       \Managers - Database managers for various objects
       \Models - Classes representing other game concepts
       \Notifications - All notifications sent back to client
       \States - Main logic for all state-based actions held here
+
+TODO
+  \Active player and remaining CP should be stored in DB to be recoverd after reload?
+    \CP is global, so it already is in DB?
+  Implement action for every fucking event. Including Scots raid.
 ```
