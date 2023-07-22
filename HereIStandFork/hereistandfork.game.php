@@ -47,7 +47,7 @@ class hereistandfork extends Table {
 	use HIS\States\InterceptionTrait;
 	use HIS\States\AvoidBattleTrait;
 	use HIS\States\WithdrawBattleTrait;
-	use HIS\States\BuyTrait;
+	use HIS\States\ArgsOnEnteringStateTrait;
 	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
 	use HIS\AdditionalStaticTrait;

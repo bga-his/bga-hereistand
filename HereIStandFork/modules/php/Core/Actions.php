@@ -12,6 +12,7 @@ use HIS\Notifications\Buy;
 use HIS\Notifications\Notif_debug;
 use HIS\Notifications\Notif_PlayCard;
 use HIS\Notifications\PlayCard;
+use HIS\AdditionalStaticTrait;
 
 class Actions {
 
@@ -57,6 +58,9 @@ class Actions {
 	}
 
 	public static function pickCity($city_id, $statename) {
+		Notifications::message("Actions::pickCity: statename = ".Utils::varToString($statename));
+		Notifications::message("pickCity: game::get()->getStateName() = ".game::get()->getStateName());
+		Notifications::message("pickCity: $statename = ".$statename);
 		$cities = Game::get()->cities;
 		$city = $cities[$city_id];
 		$city['id'] = $city_id;
@@ -67,7 +71,7 @@ class Actions {
 		case 'buyUnit':
 			self::pickBuyCity($city);
 			break;
-		case 'EvtJanissaries':
+		case 'evtJanissaries':
 			self::BuildJanissaries($city);
 			break;
 		default:
@@ -145,7 +149,7 @@ class Actions {
 
 	public static function voidMergeTokens($city){
 		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
-		Notifications::message("pickBuyCity: allTokens = ".Utils::strVarDump($all_tokens_in_city));
+		Notifications::message("pickBuyCity: allTokens = ".Utils::varToString($all_tokens_in_city));
 		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
 		$regular_unit_count = 0;
 		$merc_unit_count = 0;
@@ -156,25 +160,29 @@ class Actions {
 			}elseif($token['flipped'] = 'flipped'){
 				$merc_unit_count += $token['strength'];
 			}else{
-				Notifications::message("pickBuyCity: invalid flipped token = ".Utils::strVarDump($token));
+				Notifications::message("pickBuyCity: invalid flipped token = ".Utils::varToString($token));
 			}
 		}
 	}
 
 	public static function pickBuyCity($city) {
 		$unit_type = Globals::getUnitBuyType();
+		Notifications::message("pickBuyCity: unit_type ".Utils::varToString($unit_type));
 		$player = Players::getActive();
-		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
+		Notifications::message("pickBuyCity: player ".Utils::varToString($player));
+		$buy_id = AdditionalStaticTrait::getPowerUnits()[$player->power][$unit_type][1];
+		Notifications::message("pickBuyCity: buy_id ".Utils::varToString($buy_id));
 		$bad_info = Game::get()->tokens[$buy_id];
+		Notifications::message("pickBuyCity: bad_info ".Utils::varToString($bad_info));
 		$side = $unit_type == MERC ? FLIPPED : FRONT;
 		$remainingCP = Globals::getRemainingCP();
 		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type != MERC)) {
 			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
 		}
-		
-		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side); //THis is the line that actually changes the DB to move the token
+		Notifications::message("pickBuyCity: bad_info[power] = ".Utils::varToString($bad_info['power']));
+		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side); //This is the line that actually changes the DB to move the token
 		$all_tokens_in_city = Tokens::getInLocation(['board', 'city', $city['id']]);
-		Notif_debug::message("pickBuyCity: allTokens ".Utils::varToString($all_tokens_in_city));//why doesnt this get executed?
+		Notifications::message("pickBuyCity: allTokens ".Utils::varToString($all_tokens_in_city));
 		Actions::voidMergeTokens($city);
 		//TODO combine tokens on $city (e.g. replace to two 1-unit tokens into one 2-unit token)
 		if ($token == null) {
@@ -197,14 +205,14 @@ class Actions {
 
 	public static function BuildJanissaries($city){
 		//TODO change somewhere to build 4 units instead of 1?
-		$unit_type = Globals::getUnitBuyType();
-		$player = Players::getActive();
-		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
-		$bad_info = Game::get()->tokens[$buy_id];
-		$side = $unit_type == MERC ? FLIPPED : FRONT;
-		$remainingCP = Globals::getRemainingCP();
-		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
+		$buy_id = strval(Game::get()->getPowerUnits()[OTTOMAN][REGULAR][4]);
+		$side = strval(FRONT);
+		//TODO doesnt build a single unit, and doesnt discard Janissaries
+		Notifications::message("OTTOMAN placed ".Utils::varToString($buy_id)." On ".Utils::varToString($city['id']));
+		$token = Tokens::pickOneForLocation(['supply', 'ottoman', $buy_id], ['board', 'city', $city['id']], $side);
+		Cards::discardByID(CARD_JANISSARIES);
 		Game::get()->gamestate->nextState("resolve");
+
 		//TODO add cancel option
 	}
 

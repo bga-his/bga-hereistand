@@ -67,10 +67,8 @@ trait ArgsOnEnteringStateTrait {
 		return [];
 	}
 
-    function argEvtJanissaroes(){
+	//Unexpected error:  Invalid 'args' method for state 38: argEvtJanissaroes
+    function argEvtJanissaries(){
         return ArgsOnEnteringStateTrait::argBuyUnit();
     }
-
-
-
 }

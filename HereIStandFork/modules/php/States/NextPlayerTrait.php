@@ -8,6 +8,6 @@ trait NextPlayerTrait {
 	function stNextPlayer() {
 		Globals::setRemainingCP(0);
 		Players::activeNext();
-		$this->gamestate->nextState("resolve");
+		$this->gamestate->nextState("nextPlayer");
 	}
 }

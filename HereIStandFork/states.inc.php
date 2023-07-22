@@ -32,22 +32,9 @@ $machinestates = [
 		'transitions' => ['' => ST_PICK_CARD],
 	],
 
-	ST_EVT_95THESES => [
-		'name' => '95Theses',
-		'description' => 'resolve Luthers 95 Theses	',
-		'type' => 'manager',
-		'action' => 'stEvt95Theses',//Store into DB that Protestant has 5 reformation attemps in German languge Zone with 1 extra dice
-		'transitions' => ['resolve' => ST_CP_REFORMATION_ATTEMPS],
-	],
-
 	ST_PICK_CARD => [
-<<<<<<< HEAD
-		'name' => 'PickCard',
-		'description' => clienttranslate('${actFaction}${actplayer} must play a card or pass'),
-=======
 		'name' => 'pickCard',
 		'description' => clienttranslate('${actplayer} must play a card or pass'),
->>>>>>> 2ae7ff2527b771ab21cb8d03a8cf56224356dd95
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',
 		'possibleactions' => ['actPlayCard', 'actPass', 'playEvtJanissaries'],
@@ -368,7 +355,7 @@ $machinestates = [
 		'description' => clienttranslate('${actplayer} (Ottoman) must select location to construct Janissaires (4 Regulars)'),
 		'descriptionmyturn' => clienttranslate('You must select location to construct Janissaires (4 Regulars)'),
 		'type' => 'activeplayer',
-		'args' => 'argEvtJanissaroes',
+		'args' => 'argEvtJanissaries',
 		'possibleactions' => ['actPickCity', 'actUndo'],
 		'transitions' => ['undo' => ST_PICK_CARD, 'resolve' => ST_NEXT_PLAYER],
 	],

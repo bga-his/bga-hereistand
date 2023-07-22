@@ -2,6 +2,8 @@
 namespace HIS\Managers;
 
 use HIS\Core\Game;
+use HIS\Core\Notifications;
+use HIS\Helpers\Utils;
 use HIS\Managers\Players;
 
 /**
@@ -97,10 +99,14 @@ class Cards extends \HIS\Helpers\Pieces {
 	public static function discard($card) {
 		self::move([$card['id']], ['discard']);
 	}
+	public static function discardByID($cardId) {
+		$query = self::move([strval($cardId)], ['discard']);
+		Notifications::message("Cards::discardByID: query=".Utils::varToString($query));
+	}
 
-	public static function playEvent($cardId) {
-		
-		switch($cardId){
+	public static function playEvent($card) {
+		Notifications::message("Cards::playEvent: cardId".Utils::varToString($card));
+		switch($card['id']){
 			case CARD_JANISSARIES:
 				Game::get()->gamestate->nextState("playEvtJanissaries");
 				break;

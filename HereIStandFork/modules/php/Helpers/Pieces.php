@@ -1,6 +1,8 @@
 <?php
 namespace HIS\Helpers;
 
+use HIS\Core\Notifications;
+
 /*
  * This is a generic class to manage game pieces.
  *
@@ -40,6 +42,22 @@ class Pieces extends DB_Manager {
 	protected static $customFields = [];
 	protected static $gIndex = [];
 
+	public static function addLandunits($cityId, $power, $count, $type){
+		//Add Landunits from supply to location
+		//$cityId As ?NumericString?
+		//$power As String From {constans::FRANCE, constants::HAPSBURG, ..., constants::MINOR_VENICE, ..., constants::INDEPENDENT}
+		//$count As int, total strength of land units to add
+		//$type As int from {regular, merc, cav}//somewehre these constants have been defined, I think
+
+	}
+
+	public static function removeLandUnits($cityId, $power, $count, $type){
+
+	}
+
+	public static function moveFormation($cityIdFrom, $cityIdTo, $formation){
+
+	}
 	public static function DB($table = null) {
 		static::$primary = static::$prefix . 'id';
 		return parent::DB(static::$table);
@@ -88,13 +106,14 @@ class Pieces extends DB_Manager {
 		if (!is_null($state)) {
 			$data[static::$prefix . 'state'] = $state;
 		}
-
+		Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
 		$query = self::DB()->update($data);
 		if (!is_null($ids)) {
 			$query = $query->whereIn(static::$prefix . 'id', is_array($ids) ? $ids : [$ids]);
 		}
 
 		static::addBaseFilter($query);
+		//Notifications::message("Pieces::getUpdateQuers query=".Utils::varToString($query));// why does this line lead to error? does query contains a circular reference
 		return $query;
 	}
 
@@ -339,6 +358,7 @@ class Pieces extends DB_Manager {
 		   * Move one (or many) pieces to given location
 	*/
 	public static function move($ids, $location, $state = 0) {
+		//ids As array of numbericalStings: ids of the pices to move
 		if (!is_array($ids)) {
 			$ids = [$ids];
 		}
@@ -346,6 +366,7 @@ class Pieces extends DB_Manager {
 		self::checkLocation($location);
 		self::checkState($state);
 		self::checkIdArray($ids);
+		Notifications::message("Pieces::move(ids=".Utils::varToString($ids).",location=".Utils::varToString($location).",state=".Utils::varToString($state).")");
 		return self::getUpdateQuery($ids, $location, $state)->run();
 	}
 
