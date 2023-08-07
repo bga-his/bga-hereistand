@@ -5,6 +5,8 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\Utils;
 use HIS\Managers\Players;
+use HIS\Models\Player;
+use Random\Engine;
 
 /**
  * Cards: id, type
@@ -16,6 +18,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	protected static $customFields = [];
 	protected static $autoreshuffle = true;
 	protected static $autoIncrement = false;
+	
 	protected static function cast($card) {
 		$locations = explode('_', $card['location']);
 		$card = [
@@ -91,9 +94,19 @@ class Cards extends \HIS\Helpers\Pieces {
 			}
 			self::create([$piece], $location);
 		}
-		foreach ($players as $pId => $player) {
-			self::pickForLocation(2, ['deck'], ['hand', $pId]);
-		}
+		//TODO read number of square controll markers on board and leader to calc correct number of cards.
+		Cards::draw(OTTOMAN, 3);
+		Cards::draw(HAPSBURG, 5);
+		Cards::draw(ENGLAND, 3);
+		Cards::draw(FRANCE, 4);
+		Cards::draw(PAPACY, 2);
+		Cards::draw(PROTESTANT, 3);
+		
+	}
+
+	public static function draw($num, $power){
+		//TODO shuffle deck
+		self::pickForLocation(3, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
 	}
 
 	public static function discard($card) {
@@ -106,12 +119,21 @@ class Cards extends \HIS\Helpers\Pieces {
 
 	public static function playEvent($card) {
 		Notifications::message("Cards::playEvent: cardId".Utils::varToString($card));
+		//Notifications::notif_playCardEvent($player, $card);// the notification is done somewhere else before here. after play Card.
 		switch($card['id']){
 			case CARD_JANISSARIES:
 				Game::get()->gamestate->nextState("playEvtJanissaries");
 				break;
+			case CARD_HOLY_ROMAN_EMPEROR:
+				Game::get()->gamestate->nextState("playEvtHolyRoman");
+				break;
+			case CARD_SIX_WIVES_OF_HENRY_VIII:
+				Game::get()->gamestate->nextState("playEvtSixWives");
+				break;
+			case CARD_PATRON_OF_THE_ARTS:
+				Game::get()->gamestate->nextState("playEvtPatronOfArts");
+				break;
+				//TODO add the other 
 		}
-		//
-
 	}
 }

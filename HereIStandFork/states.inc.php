@@ -38,7 +38,8 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',
 		'possibleactions' => ['actPlayCard', 'actPass', 'playEvtJanissaries'],
-		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER, 'playEvtJanissaries' => ST_EVT_Janissaries],
+		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER, 
+		'playEvtJanissaries' => ST_EVT_Janissaries, 'playHolyRoman' => ST_EVT_HOLYROMAN, 'playSixWives' => ST_EVT_SIXWIVESOFHENRY, 'playPatronOfArts' => ST_EVT_PATRONOFARTS],
 	],
 
 	ST_IMPULSE_ACTIONS => [
@@ -358,6 +359,55 @@ $machinestates = [
 		'args' => 'argEvtJanissaries',
 		'possibleactions' => ['actPickCity', 'actUndo'],
 		'transitions' => ['undo' => ST_PICK_CARD, 'resolve' => ST_NEXT_PLAYER],
+	],
+
+	ST_EVT_HOLYROMAN =>[
+		'name' => 'evtHolyRoman',
+		'description' => clienttranslate('${actplayer} (Hapsburg) must select location to move Charles V to'),
+		'descriptionmyturn' => clienttranslate('You must select location to move Charles V to'),
+		'type' => 'activeplayer',
+		'args' => 'argHolyRoman',
+		'possibleactions' => ['actPickCity', 'actUndo'],
+		'transitions' => ['undo' => ST_PICK_CARD, 'move_Charles' => ST_IMPULSE_ACTIONS],
+	],
+
+	ST_EVT_SIXWIVESOFHENRY=>[
+		'name' => 'evtSixWives',
+		'description' => clienttranslate('${actplayer} (England) must select if to make Love or war.'),
+		'descriptionmyturn' => clienttranslate('You must select if to make Love or war.'),
+		'type' => 'activeplayer',
+		'args' => 'argSixWives',
+		'possibleactions' => ['actEvtSixWivesWar', 'actEvtSixWviesMary', 'actUndo'],
+		'transitions' => ['undo' => ST_PICK_CARD, 'make_love' => ST_NEXT_PLAYER, 'make_war' => ST_IMPULSE_ACTIONS, 'make_war_scotland' => ST_EVT_SixWIVES_FRANCE_INTERVENTION],
+	],
+
+	ST_EVT_SixWIVES_FRANCE_INTERVENTION=>[
+		'name' => 'evtSixWivesFranceIntervention',
+		'description' => clienttranslate('${actplayer} (France) may intervene against the English dow on Scotland.'),
+		'description' => clienttranslate('$You may intervene against the English dow on Scotland.'),
+		'type' => 'activeplayer',
+		'possibleactions' => ['actEvtSixWivesWarFranceIntervention'],
+		'transitions' => ['do_franceIntervention' => ST_IMPULSE_ACTIONS, 'dont_franceIntervention' => ST_IMPULSE_ACTIONS],//english impulse actions with 5 CP in any case.
+	],
+
+	ST_EVT_PATRONOFARTS =>[
+		'name' => 'evtPatronOfArts',
+		'description' => clienttranslate('${actplayer} (France) rolls on the Chatteaux table'),
+		'descriptionmyturn' => clienttranslate('You roll on the Chatteaux table'),
+		'type' => 'activeplayer',
+		'args' => 'argPatronOfArts',
+		'possibleactions' => ['actRollChatteaux', 'actUndo'],
+		'transitions' => ['undo' => ST_PICK_CARD, 'rollChatteaux' => ST_NEXT_PLAYER],
+	],
+
+	ST_EVT_PAPAL_BULL =>[
+		'name' => 'evtPapalBull',
+		'description' => clienttranslate('${actplayer} (Papacy) may excuminicate someone'),
+		'descriptionmyturn' => clienttranslate('You may excomuncate someone'),
+		'type' => 'activeplayer',
+		'args' => 'argPapalBull',
+		'possibleactions' => ['actExcomunicateReformer', 'actExcumicateLeader', 'actUndo'],
+		'transitions' => ['undo' => ST_PICK_CARD, 'rollChatteaux' => ST_NEXT_PLAYER],
 	],
 
 	// Final state.

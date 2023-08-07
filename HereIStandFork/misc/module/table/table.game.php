@@ -7,6 +7,7 @@ if ( !defined('APP_GAMEMODULE_PATH')) {
 /**
  * Collection of stub classes for testing and stubs
  */
+use HIS\Managers\Players;
 class APP_Object {
     
     function dump($v, $value) {
@@ -160,7 +161,7 @@ abstract class Table extends APP_GameClass {
     abstract protected function getGameName( );
     
     function getActivePlayerId() {
-        return 1;
+        return $player = Players::getActive();
     }
     
     function getActivePlayerName() {

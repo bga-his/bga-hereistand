@@ -1,5 +1,4 @@
 {OVERALL_GAME_HEADER}
-<h1> CHANGE </h1>
 	<div id="board-wrapper">
 		<div id='board'>
 			<div id='map'>

@@ -1,5 +1,6 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistandfork.actions', null, {
+
     onPassClick(evt){
       dojo.stopEvent(evt);
       this.takeAction('actPass');
@@ -87,7 +88,66 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       dojo.stopEvent(evt);
       const id_str = this.selectedFormation.join(' ');
       this.takeAction('actDeclareCasualties', {token_ids: id_str});
-    }, 
+    },
+    
+    onEvtHolyRomanDestClick(evt, _this){
+      dojo.stopEvent(evt);
+      const city_id = evt.currentTarget.id.split('_')[1];
+      this.selectedCityId = city_id;
+    },
+
+    onEvtHolyRomanMoveCharlesVClick(evt){
+      dojo.stopEvent(evt);
+      if(this.selectedCityId = null){
+        this.selectedCityId = -1;
+      }
+      this.takeAction('actEvtHolyRomanMoveCharlesV', {city_id: this.selectedCityId});
+      this.selectedCityId = -1;
+    },
+
+    onEvtHolyRomaMoveCharlesVAndDukeClick(evt){
+      dojo.stopEvent(evt);
+      if(this.selectedCityId = null){
+        this.selectedCityId = -1;
+      }
+      this.takeAction('actEvtHolyRomanMoveCharlesVAndDuke', {city_id: this.selectedCityId})
+      this.selectedCityId = -1;
+    },
+
+    onEvtSixWivesWarFranceClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'france'})
+    },
+
+    onEvtSixWivesWarHapsburgClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'hapsburg'})
+    },
+
+    onEvtSixWivesWarScotlandClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'Scotland'})
+    },
+
+    onEvtSixWivesMaryClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWviesMary')
+    },
+
+    onEvtSixWivesFranceInterventionDoClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesFranceIntervention', {do: True});
+    },
+
+    onEvtSixWivesFranceInterventionDontClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesFranceIntervention', {do: False});
+    },
+
+    onEvtPatronOfArtsClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction("actEvtPatronOfArts");
+    },
 
     /*
     * Make an AJAX call with automatic lock

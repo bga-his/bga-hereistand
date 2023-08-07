@@ -50,6 +50,8 @@ hereistand
    5. Add the actions the player can take in that state to js/Actions.js as onXXXClick (the onEnteringState method adds these methods to gameelemts onClick method) The onXXClick method calls js/Actions tackeAction method, that ajaxcalls a hereistand.action.php method.
    6. Add the hereistand.action.php Method to call the php/Core/actions.php method
    7. Add the php/Core/actions.php method that finaly does the changes the player requested by clicking on the component last mention in step 4.
+   6. Add transition to ST_PICKCARD that points to the States ID
+   7. Add something in Cards that triggers that transition if its card is played as event.
    8. I forgott something, didnt I?
   
 TODO

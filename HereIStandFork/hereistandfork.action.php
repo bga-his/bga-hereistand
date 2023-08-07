@@ -1,4 +1,7 @@
 <?php
+
+use HIS\Core\Notifications;
+
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
@@ -15,6 +18,7 @@
  */
 
 class action_hereistandfork extends APP_GameAction {
+
 	// Constructor: please do not modify
 	public function __default() {
 		if (self::isArg('notifwindow')) {
@@ -127,6 +131,50 @@ class action_hereistandfork extends APP_GameAction {
 		self::setAjaxMode();
 		$city_id = self::getArg('city_id', AT_posint, true);
 		$this->game->actPickCity($city_id);
+		self::ajaxResponse();
+	}
+
+	public function actEvtHolyRomanMoveCharlesV($city_id){
+		self::setAjaxMode();
+		if($city_id > 0){
+			$this->game->EvtHolyRoman($city_id, false);
+		}else{
+			Notifications::message("Evtent Holy Roman Emporer: Select a target city first.");
+		}
+		self::ajaxResponse();
+	}
+
+	public function actEvtHolyRomanMoveCharlesVAndDuke($city_id){
+		self::setAjaxMode();
+		if($city_id > 0){
+			$this->game->EvtHolyRoman($city_id, true);
+		}else{
+			Notifications::message("Evtent Holy Roman Emporer: Select a target city first.");
+		}
+		self::ajaxResponse();
+	}
+
+	public function actEvtSixWivesWar($power){
+		self::setAjaxMode();
+		$this->game->EvtSixWivesWar($power);
+		self::ajaxResponse();
+	}
+
+	public function actEvtSixWviesMary(){
+		self::setAjaxMode();
+		$this->game->EvtSixWivesMary();
+		self::ajaxResponse();
+	}
+
+	public function actEvtSixWivesFranceIntervention($do){
+		self::setAjaxMode();
+		$this->game->EvtSixWivesFranceIntervention($do);
+		self::ajaxResponse();
+	}
+
+	public function actEvtPatronOfArts(){
+		self::setAjaxMode();
+		$this->game->EvtPatronOfArts();
 		self::ajaxResponse();
 	}
 

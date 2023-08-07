@@ -14,10 +14,13 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_buyUnit(args){
+      // place token on city
+      console.log("Notifications::notif_buyUnit");
       const start = `player_board_${args.args.player_id}`;
       const dest = `city_${args.args.city.id}`;
       const token = args.args.token;
       this.place('tplToken', token, start);
+      console.log("Notifications::notif_buyUnit: token.id="+token.id+", dest="+dest)
       this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
     },
 

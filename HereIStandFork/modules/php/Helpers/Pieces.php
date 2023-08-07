@@ -42,22 +42,6 @@ class Pieces extends DB_Manager {
 	protected static $customFields = [];
 	protected static $gIndex = [];
 
-	public static function addLandunits($cityId, $power, $count, $type){
-		//Add Landunits from supply to location
-		//$cityId As ?NumericString?
-		//$power As String From {constans::FRANCE, constants::HAPSBURG, ..., constants::MINOR_VENICE, ..., constants::INDEPENDENT}
-		//$count As int, total strength of land units to add
-		//$type As int from {regular, merc, cav}//somewehre these constants have been defined, I think
-
-	}
-
-	public static function removeLandUnits($cityId, $power, $count, $type){
-
-	}
-
-	public static function moveFormation($cityIdFrom, $cityIdTo, $formation){
-
-	}
 	public static function DB($table = null) {
 		static::$primary = static::$prefix . 'id';
 		return parent::DB(static::$table);

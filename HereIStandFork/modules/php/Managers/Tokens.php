@@ -2,7 +2,9 @@
 namespace HIS\Managers;
 
 use HIS\Core\Game;
+use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
+use HIS\Helpers\Utils;
 
 /**
  * Tokens: id, value, faction
@@ -29,6 +31,47 @@ class Tokens extends \HIS\Helpers\Pieces {
 			$token = array_merge($token, $token_static[BACK]);
 		}
 		return $token;
+	}
+
+	
+	public static function addLandunits($cityId, $power, $count, $type){
+		//Add Landunits from supply to location
+		//$cityId As ?NumericString?
+		//$power As String From {constans::FRANCE, constants::HAPSBURG, ..., constants::MINOR_VENICE, ..., constants::INDEPENDENT}
+		//$count As int, total strength of land units to add
+		//$type As int from {regular, merc, cav}//somewehre these constants have been defined, I think
+
+		$buy_id = strval(Game::get()->getPowerUnits()[$power][REGULAR][$count]);
+		if($type == REGULAR){//if major power.
+			$side = strval(FRONT);
+		}elseif($type == MERC || $type == MERCENARY || $type == CAVALRY){
+			$side = strval(BACK);
+		}else{
+			throw new UserException("invalid unit type in Tokens::addLandUnits: ".Utils::varToString($type));
+		}
+		//if minor power: select front/back to match the requested count, throw error if type != REGULAR
+		//$already_there = number of units with type=$type on $cityId
+		//calculate "optimal" counter mix to represent $count + $already_there
+		//place these counters and remove the units already there.
+		$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], ['board', 'city', $cityId], $side);
+		if ($token == null) {
+			throw new UserException("You are out of buy_id=" . Utils::varToString($buy_id) . " tokens.");
+		}
+
+		//Notification
+		Notifications::notif_buyUnit(Players::getFromPower($power), $token, $type, Cities::getByID($cityId));
+	}
+
+	public static function removeLandUnits($cityId, $power, $count, $type){
+
+	}
+
+	public static function moveFormation($cityIdFrom, $cityIdTo, $formation){
+
+	}
+
+	public static function moveLeader($cityIdFrom, $cityIdTo, $leader){
+
 	}
 
 	//////////////////////////////////
@@ -68,6 +111,14 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	public static function inCity($token, $city_id) {
 		return ($token['location_id'] == $city_id) && ($token['location_type'] == 'city');
+	}
+
+	public static function bolIsSieged($city_id){
+		//return city_id contains units of two powers that are at war and current_state != field battle
+	}
+
+	public static function tokenGetLeader($leaderName){
+
 	}
 
 	//////////////////////////////////

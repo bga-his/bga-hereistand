@@ -25,6 +25,73 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
+	public static function notif_buyUnit($player, $token, $unit_type, $city) {
+		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${city_name}', [
+			"player" => $player,
+			"token" => $token,
+			"city" => $city,
+			"unit_name" => $token['name'],
+		]);
+	}
+
+	public static function notif_playCardCP($player, $card) {
+		self::notifyAll('playCard', '${player_name} played ${card_name} for ${card_cp}CP', [
+			"player" => $player,
+			"card" => $card,
+			"card_cp" => $card['cp'],
+		]);
+	}
+
+	public static function notif_playCardEvent($player, $card){
+		self::notifyAll('playCard', '${player_name} played ${card_name} as Event', [
+			"player" => $player,
+			"card" => $card,
+		]);
+	}
+
+	public static function battleRolls($attacker_dice, $defender_dice) {
+		self::notifyAll('battleRolls', 'Attacker rolls: [${attacker_rolls}], Defender rolls: [${defender_rolls}]', [
+			"attacker_rolls" => implode(',', $attacker_dice),
+			"defender_rolls" => implode(',', $defender_dice),
+		]);
+	}
+
+	public static function destroyUnits($player, $tokens) {
+		self::notifyAll('destroyUnits', '${player_name} took casualties', [
+			"player" => $player,
+			"tokens" => $tokens,
+		]);
+	}
+
+	public static function retreatUnits($token_ids, $city) {
+		self::notifyAll('moveFormation', 'Units retreat to ${city_name}', [
+			'formation' => $token_ids,
+			'city' => $city,
+		]);
+
+	}
+
+	public static function moveFormation($player, $formation, $from_city, $to_city) {
+		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${city_name}', [
+			"player" => $player,
+			"formation_count" => count($formation),
+			"formation" => $formation,
+			"from_id" => $from_city['id'],
+			"from_name" => $from_city['name'],
+			"city" => $to_city,
+		]);
+	}
+
+	public static function moveLeader($player, $leader, $from_city, $to_city){
+		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${city_name}', [
+			"player" => $player,
+			"leader" => $leader,
+			"from_id" => $from_city['id'],
+			"from_name" => $from_city['name'],
+			"city" => $to_city,
+		]);
+	}
+
 	/*********************
 		   **** UPDATE ARGS ****
 	*/
@@ -35,6 +102,7 @@ class Notifications {
 		if (isset($args['player'])) {
 			$args['player_name'] = $args['player']->getName();
 			$args['player_id'] = $args['player']->getId();
+			$args['power_name'] = $args['player']->power; //TODO
 			unset($args['player']);
 		}
 

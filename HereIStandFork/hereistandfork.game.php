@@ -74,6 +74,11 @@ class hereistandfork extends Table {
 		return $state['name'];
 	}
 
+	public function getImpulsePlayer() {
+		//TODO read from DB, as active player might be different from Impulse player during interrupts
+		return $player = Players::getActive();
+	}
+
 	/*
 		   * setupNewGame:
 	*/

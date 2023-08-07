@@ -41,8 +41,15 @@ const ST_FIELD_BATTLE_RESPONSE = 34;
 const ST_NEXT_PLAYER = 35;
 const ST_BUY_UNIT = 36;
 const ST_CP_REFORMATION_ATTEMPS = 37;
-const ST_EVT_Janissaries = 38;
+
 const ST_END_GAME = 99;
+
+const ST_EVT_Janissaries = 101;
+const ST_EVT_HOLYROMAN = 102;
+const ST_EVT_SIXWIVESOFHENRY = 103;
+const ST_EVT_SixWIVES_FRANCE_INTERVENTION = 104;
+const ST_EVT_PATRONOFARTS = 105;
+const ST_EVT_PAPAL_BULL = 106;
 
 /*
  * Powers constants
