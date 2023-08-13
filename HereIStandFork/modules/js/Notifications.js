@@ -1,5 +1,7 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistandfork.notifications', null, {
+    //TODO rename to "discard Card"
+    //TODO doesnt get called.
     notif_playCardCP(args){
       const card_id = `card_${args.args.card.id}`;
       this.fadeOutAndDestroy(card_id);

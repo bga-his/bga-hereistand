@@ -188,7 +188,7 @@ class Actions {
 			$tokenDukeOfAlva = Tokens::tokenGetLeader("DukeOfAlva");
 			if($tokenDukeOfAlva->Position = $tokenCharlsV->Position){
 				Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenDukeOfAlva);
-				Notifications::moveLeader(Players::fromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city)
+				Notifications::moveLeader(Players::getFromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
 			}else{
 				Notifications::message("DukeOfAlva must be in the same space to accompany Charles V");
 				Game::get()->gamestate->nextState("undo");
@@ -196,7 +196,7 @@ class Actions {
 		}
 		Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenCharlsV);
 		Globals::setRemainingCP(5);
-		Notifications::moveLeader(Players::fromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+		Notifications::moveLeader(Players::getFromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
 		Game::get()->gamestate->nextState("move_Charles");
 	}
 

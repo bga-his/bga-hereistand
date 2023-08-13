@@ -90,7 +90,7 @@ class Pieces extends DB_Manager {
 		if (!is_null($state)) {
 			$data[static::$prefix . 'state'] = $state;
 		}
-		Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
+		//Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
 		$query = self::DB()->update($data);
 		if (!is_null($ids)) {
 			$query = $query->whereIn(static::$prefix . 'id', is_array($ids) ? $ids : [$ids]);
