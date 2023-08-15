@@ -56,6 +56,13 @@ class Notifications {
 		]);
 	}
 
+	public static function notif_discard($player, $cardId){
+		self::notifyAll('discardCard', '${player_name} discarded ${card_name} as Event', [
+			"player" => $player,
+			"card" => $cardId,
+		]);
+	}
+
 	public static function battleRolls($attacker_dice, $defender_dice) {
 		self::notifyAll('battleRolls', 'Attacker rolls: [${attacker_rolls}], Defender rolls: [${defender_rolls}]', [
 			"attacker_rolls" => implode(',', $attacker_dice),

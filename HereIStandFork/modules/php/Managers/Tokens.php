@@ -59,6 +59,8 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 
 		//Notification
+		
+		//Notifications::message("city of id".$cityId." = ".Utils::varToString(Cities::getByID($cityId)));
 		Notifications::notif_buyUnit(Players::getFromPower($power), $token, $type, Cities::getByID($cityId));
 	}
 
@@ -144,10 +146,13 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	public static function bolIsSieged($city_id){
 		//return city_id contains units of two powers that are at war and current_state != field battle
+		return false;
 	}
 
 	public static function tokenGetLeader($leaderName){
-
+		$tokens = Game::get()->tokens;
+		Notifications::message("tokens=".Utils::varToString($tokens));
+		return $tokens["leader"]['power'];
 	}
 
 	//////////////////////////////////

@@ -99,22 +99,22 @@ class Cards extends \HIS\Helpers\Pieces {
 		Cards::draw(HAPSBURG, 5);
 		Cards::draw(ENGLAND, 3);
 		Cards::draw(FRANCE, 4);
-		Cards::draw(PAPACY, 2);
+		Cards::draw(PAPACY, 3);
 		Cards::draw(PROTESTANT, 3);
 		
 	}
 
-	public static function draw($num, $power){
+	public static function draw($power, $num){
+		//power As String element of constatns {OTTOMAN, HAPSBURG, ..., PROTESTANT}
 		//TODO shuffle deck
-		self::pickForLocation(3, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
+		self::pickForLocation($num, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
 	}
 
 	public static function discard($card) {
-		self::move([$card['id']], ['discard']);
+		self::discardByID($card['id']);
 	}
 	public static function discardByID($cardId) {
 		$query = self::move([strval($cardId)], ['discard']);
-		Notifications::message("Cards::discardByID: query=".Utils::varToString($query));
 	}
 
 	public static function playEvent($card) {

@@ -18,13 +18,15 @@ class Cities {
 	}
 
 	public static function getByID($cityId) {
-		$cities = [];
-		$tokens = Tokens::getAll();
-		foreach (Game::get()->cities as $city_id => $city) {
-			if($city_id = $cityId){
-				return new City($city, $tokens);
-			}
-		}
+		return Game::get()->cities[$cityId];
+		// //city of id3109 = HIS\Models\City::__set_state(array( 'attributes' => NULL, 'tokens' => array ( ), 'id' => array ( 'x' => 4188, 'y' => 1777, 'name' => 'Nezh', 'home_power' => 'ottoman', 'language' => 'other', 'connections' => array ( 0 => 3114, 1 => 3105, ), 'id' => 3109, 'passes' => array ( 0 => 3101, ), ), ))
+		//$cities = [];
+		//$tokens = Tokens::getAll();
+		//foreach (Game::get()->cities as $city_id => $city) {
+		//	if($city_id == $cityId){
+		//		return new City($city, $tokens);
+		//	}
+		//}
 	}
 
 	public static function getByName($name){
@@ -54,7 +56,7 @@ class Cities {
 		return Cities::getByName($name)->getControl();
 	}
 
-	public static function getControllPowerById($citiy_id){
+	public static function getControllPowerById($city_id){
 		return Cities::getByID($city_id)->getControl();
 	}
 }
