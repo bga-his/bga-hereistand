@@ -44,8 +44,12 @@ class Actions {
 			Cards::discard($card);
 			Game::get()->gamestate->nextState("playCP");
 		}
-		
+	}
 
+	public static function actDiscardCard($cardId){
+		$card = Cards::get($cardId);
+		Notifications::notif_disardCard(Players::getActive(), $card);
+		Cards::discardByID($cardId);
 	}
 
 	public static function move() {
@@ -253,6 +257,7 @@ class Actions {
 		}elseif($chateauxRoll <= 4){
 			//1VP, draw 1, discard 1
 			//Tokens::move("ChateauxVP", +1);
+			Tokens::incCounter(VP_CHATEAUX);
 			Cards::draw(FRANCE, 1);
 			Cards::discard(FRANCE, 1);
 		}elseif($chateauxRoll <= 7){
@@ -266,7 +271,6 @@ class Actions {
 			//Tokens::move("ChateauxVP", +1);
 			Cards::discard(FRANCE, 1);
 		}
-		//1VP, draw 2, keep 1
 		Game::get()->gamestate->nextState("rollChatteaux");
 	}
 

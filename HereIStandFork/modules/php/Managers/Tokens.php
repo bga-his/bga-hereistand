@@ -74,6 +74,35 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	}
 
+	public static function incCounter($counterId, $intAmount){
+		//counter 
+		//location_id: {token_id}
+		//VICTORY_TRACK_0: VP_OTTOMAN, VP_HAPSBURG, 
+		//PIRACY_0: PIRACY_VP
+		//PROTESTANT_SPACES_0: ENGLISH_PROT_COUNTER, PROTESTANT_SPACES
+		//MARITAL_STATUS_1: HENRY_MARITAL_STATUS
+		//SAINT_PETERS_CP_0: ST_PETERS_CP
+		//SAINT_PETERS_VP_0: ST_PETERS_VP
+		//NT_TRANSLATION_0: NEW_TESTAMENT_ENGLISH, NEW_TESTAMENT_FRENCH, NEW_TESTAMENT_GERMAN
+		//BIBLE_TRANSLATION_0: BIBLE_ENGLISH, BIBLE_FRENCH, BIBLE_GERMAN
+		//TURN_TRACK_1: TURN
+
+		$locations = Game::get()->board_locations;
+		$token = Tokens::get($counterId);
+		$location_id = -1;
+		if(VICTORY_TRACK_TOKENS.contains($counterId)){
+			for($i = 0; $i < VICTORY_TRACK.Length; $i++){
+				if($token['location'] == VICTORY_TRACK[$i]){
+					//TODO check for index out of bounds
+					$token['location'] = VICTORY_TRACK[$i+$intAmount];
+					Notifications::message("Position of ".$token['name']." was incremented by ".$intAmount." to the new value of ".($i+$intAmount);
+					return;
+				}
+			}
+		}
+		//if SAINT_PETERS_CP > 5 -> incCounter(SAINT_PETERS_VP, 1), set CP to 0
+	}
+
 	//////////////////////////////////
 	//////////////////////////////////
 	//////////// GETTERS //////////////

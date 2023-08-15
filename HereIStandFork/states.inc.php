@@ -37,9 +37,18 @@ $machinestates = [
 		'description' => clienttranslate('${actplayer} must play a card or pass'),
 		'descriptionmyturn' => clienttranslate('You must play a card or pass'),
 		'type' => 'activeplayer',
-		'possibleactions' => ['actPlayCard', 'actPass', 'playEvtJanissaries'],
+		'possibleactions' => ['actPlayCard', 'actPass', 'actEvtJanissaries'], //TODO actEvt*
 		'transitions' => ['playCP' => ST_IMPULSE_ACTIONS, 'pass' => ST_NEXT_PLAYER, 
 		'playEvtJanissaries' => ST_EVT_Janissaries, 'playHolyRoman' => ST_EVT_HOLYROMAN, 'playSixWives' => ST_EVT_SIXWIVESOFHENRY, 'playPatronOfArts' => ST_EVT_PATRONOFARTS],
+	],
+
+	ST_DISCARD => [
+		'name' => 'evtJanissaries',
+		'description' => clienttranslate('${actplayer} must discard one card.'),
+		'descriptionmyturn' => clienttranslate('You must select what card to discard'),
+		'type' => 'activeplayer',
+		'possibleactions' => ['actDiscardCard'],
+		'transitions' => ['PatronOfArts' => ST_NEXT_PLAYER],
 	],
 
 	ST_IMPULSE_ACTIONS => [
@@ -397,7 +406,7 @@ $machinestates = [
 		'type' => 'activeplayer',
 		'args' => 'argPatronOfArts',
 		'possibleactions' => ['actRollChatteaux', 'actUndo'],
-		'transitions' => ['undo' => ST_PICK_CARD, 'rollChatteaux' => ST_NEXT_PLAYER],
+		'transitions' => ['undo' => ST_PICK_CARD, 'rollChatteaux' => ST_NEXT_PLAYER, 'discard' => ST_DISCARD],
 	],
 
 	ST_EVT_PAPAL_BULL =>[

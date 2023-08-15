@@ -44,6 +44,12 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: false});
     },
 
+    onDiscardClick(evt){
+      dojo.stopEvent(evt);
+      console.log("onDiscardClick")
+      this.takeAction('actDiscardCard', {cardId: this.selectedCardId});
+    },
+
     onCardClick(evt, _this){
       dojo.stopEvent(evt);
       const cardId = evt.currentTarget.id.split('_')[1];

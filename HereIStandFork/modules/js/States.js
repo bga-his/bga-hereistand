@@ -10,6 +10,13 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       );
     },
 
+    onEnteringStateDiscard(args){
+      this.addPrimaryActionButton('discard', _('Discard'), 'onDiscardClick');
+    dojo.query('#player-hand .card-wrapper').forEach((node) => 
+      this.onClick(node, this.onCardClick)
+    );
+    },
+
     onEnteringStateImpulseActions(args){
       this.addPrimaryActionButton('move_in_clear', _('Move (1 - 2CP)'), 'onMoveClick');
       this.addPrimaryActionButton('regular_unit_construction', _('Build Regular Unit (2CP)'), 'onRegularUnitBuildClick');

@@ -69,6 +69,13 @@ class action_hereistandfork extends APP_GameAction {
 		self::ajaxResponse();
 	}
 
+	public function actDiscardCard(){
+		self::setAjaxMode();
+		$cardId = self::getArg('cardId', AT_posint, true);
+		$this->game->actDiscardCard($cardId);
+		self::ajaxResponse();
+	}
+
 	public function actMove() {
 		self::setAjaxMode();
 		$this->game->actMove();

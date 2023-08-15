@@ -172,7 +172,8 @@ class Players extends \HIS\Helpers\DB_Manager {
 			//if numElectrorates >= 4{retrun 5}
 			return 4;
 		}
+		$leader = 0; //TODO where is stored what leader each power has? at least in the position of the mandatoryevents.
 		$numSquareControllMarkes = Tokens::getInLocation($power);
-		return Player::cardDraws[$power][$numSquareControllMarkes] + Leader;
+		return Player::cardDraws[$power][$numSquareControllMarkes] + $leader;
 	}
 }

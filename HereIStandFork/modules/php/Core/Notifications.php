@@ -42,6 +42,13 @@ class Notifications {
 		]);
 	}
 
+	public static function notif_disardCard($player, $card){
+		self::notifyAll('discardCard', '${player_name} Discarded ${card_name}', [
+			"player" => $player,
+			"card" => $card,
+		]);
+	}
+
 	public static function notif_playCardEvent($player, $card){
 		self::notifyAll('playCard', '${player_name} played ${card_name} as Event', [
 			"player" => $player,

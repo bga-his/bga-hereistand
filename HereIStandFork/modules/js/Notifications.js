@@ -4,6 +4,10 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const card_id = `card_${args.args.card.id}`;
       this.fadeOutAndDestroy(card_id);
     },
+    notif_discardCard(args){
+      const card_id = `card_${args.args.card.id}`;
+      this.fadeOutAndDestroy(card_id);
+    },
 
     notif_moveFormation(args){
       const dest = `city_${args.args.city.id}`;
