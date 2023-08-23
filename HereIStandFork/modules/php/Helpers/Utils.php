@@ -1,6 +1,8 @@
 <?php
 namespace HIS\Helpers;
 
+use TrackTokens;
+
 use function PHPSTORM_META\type;
 
 abstract class Utils extends \APP_DbObject {

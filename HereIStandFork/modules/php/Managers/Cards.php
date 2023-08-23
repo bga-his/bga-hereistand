@@ -1,6 +1,9 @@
 <?php
 namespace HIS\Managers;
 
+use cardIds;
+use cardTypes;
+use Powers;
 use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\Utils;
@@ -26,7 +29,7 @@ class Cards extends \HIS\Helpers\Pieces {
 			'location' => $locations[0],
 			'pId' => $locations[1] ?? null,
 		];
-		return array_merge(Game::get()->cards[$card['id']], $card);
+		return array_merge(Game::get()->cards[$card['id']], $card); //no "Card" type, its only an array
 	}
 
 	//////////////////////////////////
@@ -51,86 +54,84 @@ class Cards extends \HIS\Helpers\Pieces {
 	/**
 	 * setupNewGame: create the deck of cards
 	 */
-	public function setupNewGame($players, $options) {
+	public function setupNewGame($p_players, $options) : void {
 		foreach (Game::get()->cards as $card_id => $card) {
 			$piece = [
 				"id" => $card_id,
 				"nbr" => 1,
 			];
 			$location = ['box'];
-			if ($card['type'] == HOME_CARD) {
+			if ($card['type'] == CardTypes::HOME_CARD) {
 				switch ($card_id) {
-				case CARD_JANISSARIES:
-					$location = ['hand', Players::getFromPower(OTTOMAN)->id];
+				case CardIds::JANISSARIES:
+					$location = ['hand', Players::getFromPower(Powers::OTTOMAN)->id];
 					break;
-				case CARD_HOLY_ROMAN_EMPEROR:
-					$location = ['hand', Players::getFromPower(HAPSBURG)->id];
+				case CardIds::HOLY_ROMAN_EMPEROR:
+					$location = ['hand', Players::getFromPower(Powers::HAPSBURG)->id];
 					break;
-				case CARD_SIX_WIVES_OF_HENRY_VIII:
-					$location = ['hand', Players::getFromPower(ENGLAND)->id];
+				case CardIds::SIX_WIVES_OF_HENRY_VIII:
+					$location = ['hand', Players::getFromPower(Powers::ENGLAND)->id];
 					break;
-				case CARD_PATRON_OF_THE_ARTS:
-					$location = ['hand', Players::getFromPower(FRANCE)->id];
+				case CardIds::PATRON_OF_THE_ARTS:
+					$location = ['hand', Players::getFromPower(Powers::FRANCE)->id];
 					break;
-				case CARD_PAPAL_BULL:
-					$location = ['hand', Players::getFromPower(PAPACY)->id];
+				case CardIds::PAPAL_BULL:
+					$location = ['hand', Players::getFromPower(Powers::PAPACY)->id];
 					break;
-				case CARD_LEIPZIG_DEBATE:
-					$location = ['hand', Players::getFromPower(PAPACY)->id];
+				case CardIds::LEIPZIG_DEBATE:
+					$location = ['hand', Players::getFromPower(Powers::PAPACY)->id];
 					break;
-				case CARD_HERE_I_STAND:
-					$location = ['hand', Players::getFromPower(PROTESTANT)->id];
+				case CardIds::HERE_I_STAND:
+					$location = ['hand', Players::getFromPower(Powers::PROTESTANT)->id];
 					break;
 				case 'default':
 					break;
 				}
-			} elseif ($card['type'] == DIPLOMACY_CARD) {
+			} elseif ($card['type'] == CardTypes::DIPLOMACY_CARD) {
 				$location = ['diplomacy'];
-			} elseif ($card['turn_added'] == 1) {
+			} elseif ($card['turn_added'] <= 1) { //TODO replace 1 by current turn
 				$location = ['deck'];
 			}
-			if ($card_id == CARD_LUTHER_95_THESES) {
-				$location = ['hand', Players::getFromPower(PROTESTANT)->id];
+			if ($card_id == CardIds::LUTHER_95_THESES) {
+				$location = ['hand', Players::getFromPower(Powers::PROTESTANT)->id];
 			}
 			self::create([$piece], $location);
 		}
 		//TODO read number of square controll markers on board and leader to calc correct number of cards.
-		Cards::draw(OTTOMAN, 3);
-		Cards::draw(HAPSBURG, 5);
-		Cards::draw(ENGLAND, 3);
-		Cards::draw(FRANCE, 4);
-		Cards::draw(PAPACY, 3);
-		Cards::draw(PROTESTANT, 3);
-		
+		Cards::draw(Powers::OTTOMAN, 3);
+		Cards::draw(Powers::HAPSBURG, 5);
+		Cards::draw(Powers::ENGLAND, 3);
+		Cards::draw(Powers::FRANCE, 4);
+		Cards::draw(Powers::PAPACY, 3);
+		Cards::draw(Powers::PROTESTANT, 3);
 	}
 
-	public static function draw($power, $num){
-		//power As String element of constatns {OTTOMAN, HAPSBURG, ..., PROTESTANT}
+	public static function draw(Powers $power, int $num) : void{
 		//TODO shuffle deck
 		self::pickForLocation($num, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
 	}
 
-	public static function discard($card) {
+	public static function discard($card): void {
 		self::discardByID($card['id']);
 	}
-	public static function discardByID($cardId) {
-		$query = self::move([strval($cardId)], ['discard']);
+	public static function discardByID(CardIds $card): void {
+		$query = self::move([strval($card)], ['discard']);
 	}
 
-	public static function playEvent($card) {
+	public static function playEvent($card): void { //TODO no card type?
 		Notifications::message("Cards::playEvent: cardId".Utils::varToString($card));
 		//Notifications::notif_playCardEvent($player, $card);// the notification is done somewhere else before here. after play Card.
 		switch($card['id']){
-			case CARD_JANISSARIES:
+			case CardIds::JANISSARIES:
 				Game::get()->gamestate->nextState("playEvtJanissaries");
 				break;
-			case CARD_HOLY_ROMAN_EMPEROR:
+			case CardIds::HOLY_ROMAN_EMPEROR:
 				Game::get()->gamestate->nextState("playEvtHolyRoman");
 				break;
-			case CARD_SIX_WIVES_OF_HENRY_VIII:
+			case CardIds::SIX_WIVES_OF_HENRY_VIII:
 				Game::get()->gamestate->nextState("playEvtSixWives");
 				break;
-			case CARD_PATRON_OF_THE_ARTS:
+			case CardIds::PATRON_OF_THE_ARTS:
 				Game::get()->gamestate->nextState("playEvtPatronOfArts");
 				break;
 				//TODO add the other 

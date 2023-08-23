@@ -1,20 +1,24 @@
 <?php
+declare(strict_types=1);
 namespace HIS\Managers;
 
 use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
+use TrackTokens;
 
 /**
  * Tokens: id, value, faction
  */
 class Tokens extends \HIS\Helpers\Pieces {
-	protected static $table = 'tokens';
-	protected static $prefix = 'token_';
-	protected static $customFields = ['type'];
-	protected static $autoreshuffle = false;
-	protected static $autoIncrement = false;
+	protected static string $table = 'tokens';
+	protected static string $prefix = 'token_';
+	protected static array $customFields = ['type'];
+	protected static bool $autoreshuffle = false;
+	protected static bool $autoIncrement = false;
+
+	//static function cast(Pieces $token) : Tokens {
 	static function cast($token) {
 		$locations = explode('_', $token['location']);
 		$token = [
@@ -34,7 +38,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 	}
 
 	
-	public static function addLandunits($cityId, $power, $count, $type){
+	public static function addLandunits($cityId, $power, int $count, $type){
 		//Add Landunits from supply to location
 		//$cityId As ?NumericString?
 		//$power As String From {constans::FRANCE, constants::HAPSBURG, ..., constants::MINOR_VENICE, ..., constants::INDEPENDENT}
@@ -76,7 +80,21 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	}
 
-	public static function incCounter($counterId, $intAmount){
+	public static function getTrackPosition(TrackTokens $token) : int{
+		foreach([[VICTORY_TRACK, VICTORY_TRACK_TOKENS], [PIRACY_TRACK, PIRACY_TRACK_TOKENS]] as $track_tokens){
+			if(in_array($token, $track_tokens[1], true)){
+				for($i = 0; $i < count($track_tokens[0]); $i++){
+					if($token['location'] == $track_tokens[0][$i]){
+						return $i;
+					}
+				}
+				Notifications::message("error: token ".Utils::varToString(($token))." isnt on its tarck.");
+				return -1;
+			}
+		}
+	}
+
+	public static function incCounter(TrackTokens $counterId, int $intAmount) : void{
 		//counter 
 		//location_id: {token_id}
 		//VICTORY_TRACK_0: VP_OTTOMAN, VP_HAPSBURG, 
@@ -89,19 +107,18 @@ class Tokens extends \HIS\Helpers\Pieces {
 		//BIBLE_TRANSLATION_0: BIBLE_ENGLISH, BIBLE_FRENCH, BIBLE_GERMAN
 		//TURN_TRACK_1: TURN
 
-		$locations = Game::get()->board_locations;
 		$token = Tokens::get($counterId);
-		$location_id = -1;
-		if(VICTORY_TRACK_TOKENS.contains($counterId)){
-			for($i = 0; $i < VICTORY_TRACK.Length; $i++){
+		if(in_array($counterId, VICTORY_TRACK_TOKENS, true)){
+			for($i = 0; $i < count(VICTORY_TRACK); $i++){
 				if($token['location'] == VICTORY_TRACK[$i]){
 					//TODO check for index out of bounds
-					$token['location'] = VICTORY_TRACK[$i+$intAmount];
-					Notifications::message("Position of ".$token['name']." was incremented by ".$intAmount." to the new value of ".($i+$intAmount);
+					$token['location'] = VICTORY_TRACK[min($i+$intAmount, count(VICTORY_TRACK)-1)];
+					Notifications::message("Position of ".$token['name']." was incremented by ".$intAmount." to the new value of ".($i+$intAmount));
 					return;
 				}
 			}
 		}
+
 		//if SAINT_PETERS_CP > 5 -> incCounter(SAINT_PETERS_VP, 1), set CP to 0
 	}
 
@@ -111,15 +128,17 @@ class Tokens extends \HIS\Helpers\Pieces {
 	//////////////////////////////////
 	//////////////////////////////////
 
-	public static function checkFormation($token_ids) {
+	public static function checkFormation(array $token_ids) : bool {
 		$formation = self::getMany($token_ids);
 		if ($formation->empty()) {
 			throw new UserException("Game error: no formation selected.");
+			return false;
 		}
 		$city_id = $formation->first()['location_id'];
 		foreach ($formation as $formation_id => $formation) {
 			if ($formation['location_id'] != $city_id) {
 				throw new UserException("All units in formation must start in same city");
+				return false;
 			}
 		}
 	}

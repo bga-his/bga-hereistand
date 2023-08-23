@@ -2,6 +2,7 @@
 namespace HIS\Helpers;
 
 use HIS\Core\Notifications;
+use LandUnitTokens;
 
 /*
  * This is a generic class to manage game pieces.
@@ -340,11 +341,21 @@ class Pieces extends DB_Manager {
 
 	/*
 		   * Move one (or many) pieces to given location
+		   * move
 	*/
 	public static function move($ids, $location, $state = 0) {
 		//ids As array of numbericalStings: ids of the pices to move
+		//if $ids in cardIds then location has to be in ?
+		//if $ids in LandUnitTokens then location in cityIds|?
+		// ...
+
 		if (!is_array($ids)) {
 			$ids = [$ids];
+		}
+
+		//convert to string
+		for($i =0; $i < $ids.count(); $i++){
+			$ids[$i] = "".$ids[$i];
 		}
 
 		self::checkLocation($location);

@@ -5,6 +5,7 @@ use HIS\Core\Game;
 use HIS\Core\Globals;
 use HIS\Managers\Cities;
 use HIS\Managers\Players;
+use HIS\Managers\Diplomacy;
 
 trait ArgsOnEnteringStateTrait {
 
