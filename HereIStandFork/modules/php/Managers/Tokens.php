@@ -81,32 +81,20 @@ class Tokens extends \HIS\Helpers\Pieces {
 	}
 
 	public static function getTrackPosition(TrackTokens $token) : int{
-		foreach([[VICTORY_TRACK, VICTORY_TRACK_TOKENS], [PIRACY_TRACK, PIRACY_TRACK_TOKENS]] as $track_tokens){
+		foreach([[TURN_TRACK, TURN_TRACK_TOKENS], [VICTORY_TRACK, VICTORY_TRACK_TOKENS], [PIRACY_TRACK, PIRACY_TRACK_TOKENS], [CHATEAUX_TRACK, CHATEAUX_TRACK_TOKENS], [MARITAL_STATUS_TRACK, MARTIAL_STATUS_TRACK_TOKENS], [PROTESTANT_SPACES_TRACK, PROTESTANT_SPACES_TRACK_TOKENS], [SAINT_PETERS_CP_TRACK, SAINT_PETERS_CP_TRACK_TOKENS], [SAINT_PETERS_VP_TRACK, SAINT_PETERS_VP_TRACK_TOKENS], [NT_TRANSLATION_TRACK, NT_TRANSLATION_TRACK_TOKENS], [BIBLE_TRANSLATION_TRACK, BIBLE_TRANSLATION_TRACK_TOKENS]] as $track_tokens){
 			if(in_array($token, $track_tokens[1], true)){
 				for($i = 0; $i < count($track_tokens[0]); $i++){
 					if($token['location'] == $track_tokens[0][$i]){
 						return $i;
 					}
 				}
-				Notifications::message("error: token ".Utils::varToString(($token))." isnt on its tarck.");
+				Notifications::message("error: token ".Utils::varToString(($token))." isnt on its track.");
 				return -1;
 			}
 		}
 	}
 
 	public static function incCounter(TrackTokens $counterId, int $intAmount) : void{
-		//counter 
-		//location_id: {token_id}
-		//VICTORY_TRACK_0: VP_OTTOMAN, VP_HAPSBURG, 
-		//PIRACY_0: PIRACY_VP
-		//PROTESTANT_SPACES_0: ENGLISH_PROT_COUNTER, PROTESTANT_SPACES
-		//MARITAL_STATUS_1: HENRY_MARITAL_STATUS
-		//SAINT_PETERS_CP_0: ST_PETERS_CP
-		//SAINT_PETERS_VP_0: ST_PETERS_VP
-		//NT_TRANSLATION_0: NEW_TESTAMENT_ENGLISH, NEW_TESTAMENT_FRENCH, NEW_TESTAMENT_GERMAN
-		//BIBLE_TRANSLATION_0: BIBLE_ENGLISH, BIBLE_FRENCH, BIBLE_GERMAN
-		//TURN_TRACK_1: TURN
-
 		$token = Tokens::get($counterId);
 		if(in_array($counterId, VICTORY_TRACK_TOKENS, true)){
 			for($i = 0; $i < count(VICTORY_TRACK); $i++){
@@ -118,7 +106,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
-
+		//if Piracy/Chateux track advance -> also update VP track.
 		//if SAINT_PETERS_CP > 5 -> incCounter(SAINT_PETERS_VP, 1), set CP to 0
 	}
 

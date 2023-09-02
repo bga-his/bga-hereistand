@@ -22,171 +22,171 @@
 require_once 'modules/php/constants.inc.php';
 
 $this->cities = [
-	WITTENBERG => [
+	CityIds::WITTENBERG => [
 		"x" => 3247,
 		"y" => 731,
 		"name" => "Wittenberg",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			BRANDENBURG,
-			MAGDEBURG,
-			LEIPZIG,
-			PRAGUE,
-			BRESLAU,
+			CityIds::BRANDENBURG,
+			CityIds::MAGDEBURG,
+			CityIds::LEIPZIG,
+			CityIds::PRAGUE,
+			CityIds::BRESLAU,
 		],
-		"id" => WITTENBERG,
+		"id" => CityIds::WITTENBERG,
 		"passes" => [
 
 		],
 	],
-	BRANDENBURG => [
+	CityIds::BRANDENBURG => [
 		"x" => 3196,
 		"y" => 590,
 		"name" => "Brandenburg",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			WITTENBERG,
-			MAGDEBURG,
-			BRESLAU,
-			LUBECK,
-			STETTIN,
+			CityIds::WITTENBERG,
+			CityIds::MAGDEBURG,
+			CityIds::BRESLAU,
+			CityIds::LUBECK,
+			CityIds::STETTIN,
 		],
-		"id" => BRANDENBURG,
+		"id" => CityIds::BRANDENBURG,
 		"passes" => [
 
 		],
 	],
-	MAINZ => [
+	CityIds::MAINZ => [
 		"x" => 2783,
 		"y" => 992,
 		"name" => "Mainz",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			KASSEL,
-			NUREMBERG,
-			COLOGNE,
-			TRIER,
-			WORMS,
+			CityIds::KASSEL,
+			CityIds::NUREMBERG,
+			CityIds::COLOGNE,
+			CityIds::TRIER,
+			CityIds::WORMS,
 		],
-		"id" => MAINZ,
+		"id" => CityIds::MAINZ,
 		"passes" => [
 
 		],
 	],
-	COLOGNE => [
+	CityIds::COLOGNE => [
 		"x" => 2617,
 		"y" => 848,
 		"name" => "Cologne",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			MAINZ,
-			MUNSTER,
-			LIEGE,
+			CityIds::MAINZ,
+			CityIds::MUNSTER,
+			CityIds::LIEGE,
 		],
 		"id" => COLOGNE,
 		"passes" => [
 
 		],
 	],
-	TRIER => [
+	CityIds::TRIER => [
 		"x" => 2636,
 		"y" => 1018,
 		"name" => "Trier",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			MAINZ,
-			METZ,
-			LIEGE,
+			CityIds::MAINZ,
+			CityIds::METZ,
+			CityIds::LIEGE,
 		],
-		"id" => TRIER,
+		"id" => CityIds::TRIER,
 		"passes" => [
 
 		],
 	],
-	AUGSBURG => [
+	CityIds::AUGSBURG => [
 		"x" => 2981,
 		"y" => 1203,
 		"name" => "Augsburg",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			REGENSBURG,
-			NUREMBERG,
-			SALZBURG,
-			WORMS,
+			CityIds::REGENSBURG,
+			CityIds::NUREMBERG,
+			CityIds::SALZBURG,
+			CityIds::WORMS,
 		],
-		"id" => AUGSBURG,
+		"id" => CityIds::AUGSBURG,
 		"passes" => [
-			INNSBRUCK,
+			CityIds::INNSBRUCK,
 		],
 	],
-	STETTIN => [
+	CityIds::STETTIN => [
 		"x" => 3332,
 		"y" => 436,
 		"name" => "Stettin",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			BRANDENBURG,
-			LUBECK,
-		],
-		"id" => STETTIN,
+			CityIds::BRANDENBURG,
+			CityIds::LUBECK,
+			CityIds::],
+		"id" => CityIds::STETTIN,
 		"passes" => [
 
 		],
 	],
-	LUBECK => [
+	CityIds::LUBECK => [
 		"x" => 3103,
 		"y" => 382,
 		"name" => "Lübeck",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			BRANDENBURG,
-			STETTIN,
-			MAGDEBURG,
-			HAMBURG,
+			CityIds::BRANDENBURG,
+			CityIds::STETTIN,
+			CityIds::MAGDEBURG,
+			CityIds::HAMBURG,
 		],
 		"id" => LUBECK,
 		"passes" => [
 
 		],
 	],
-	MAGDEBURG => [
+	CityIds::MAGDEBURG => [
 		"x" => 3052,
 		"y" => 660,
 		"name" => "Magdeburg",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powes::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			WITTENBERG,
-			BRANDENBURG,
-			LUBECK,
-			BRUNSWICK,
-			ERFURT,
+			CityIds::WITTENBERG,
+			CityIds::BRANDENBURG,
+			CityIds::LUBECK,
+			CityIds::BRUNSWICK,
+			CityIds::ERFURT,
 		],
-		"id" => MAGDEBURG,
+		"id" => CityIds::MAGDEBURG,
 		"passes" => [
 
 		],
 	],
-	HAMBURG => [
+	CityIds::HAMBURG => [
 		"x" => 2877,
 		"y" => 471,
 		"name" => "Hamburg",
-		"home_power" => PROTESTANT,
-		"language" => GERMAN,
+		"home_power" => powers::PROTESTANT,
+		"language" => LanguageZones::GERMAN,
 		"connections" => [
-			LUBECK,
-			BRUNSWICK,
-			BREMEN,
+			CityIds::LUBECK,
+			CityIds::BRUNSWICK,
+			CityIds::BREMEN,
 		],
-		"id" => HAMBURG,
+		"id" => CityIds::HAMBURG,
 		"passes" => [
 
 		],

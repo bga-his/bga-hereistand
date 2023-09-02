@@ -127,11 +127,9 @@
 .genoa_1unit {
 	background-image: url("img/svg/GenoaReg-1.svg");
 }
-
-.genoa_2unit {
+.genoa_1unit.flipped {
 	background-image: url("img/svg/GenoaReg-2.svg");
 }
-
 .hapsburg_1unit {
 	background-image: url("img/svg/HapsburgReg-1.svg");
 }
@@ -241,19 +239,15 @@
 .scotland_1unit {
 	background-image: url("img/svg/ScottishReg-1.svg");
 }
-
-.scotland_2unit {
+.scotland_1unit.flipped {
 	background-image: url("img/svg/ScottishReg-2.svg");
 }
-
 .venice_1unit {
 	background-image: url("img/svg/VeniceReg-1.svg");
 }
-
-.venice_2unit {
+.venice_1unit.flipped {
 	background-image: url("img/svg/VeniceReg-2.svg");
 }
-
 .brandon {
 	background-image: url("img/svg/Brandon.svg");
 }

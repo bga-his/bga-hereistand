@@ -1,0 +1,9 @@
+SEAZONE_ID,name,posX,posY,seazone_1,seazone_2,seazone_3,seazone_4,harbour_1,harbour_2,harbour_3,harbour_4,harbour_5,harbour_6,harbour_7,harbour_8
+BALTIC_SEA,Baltic Sea,0,0,NORTH_SEA,,,,,,,,,,,
+NORTH_SEA,North Sea,0,0,BALTIC_SEA,IRISH_SEA,ENGLISH_CHANNEL,,,,,,,,,,
+IRISH_SEA,Irish Sea,0,0,NORTH_SEA,ENGLISH_CHANNEL,BAY_OF_BISCAY,,,,,,,,,
+ENGLISH_CHANNEL,English Channel,0,0,NORTH_SEA,IRISH_SEA,BAY_OF_BISCAY,,,,,,,,,
+BAY_OF_BISCAY,Bay of Biscay,0,0,IRISH_SEA,ENGLISH_CHANNEL,ATLANTIC_OCEAN,,,,,,,,,
+ATLANTIC_OCEAN,Atlantic Ocean,0,0,BAY_OF_BISCAY,,,,,,,,,,,
+GULF_OF_LYON,Gulf of Lyon,BARBARY_COAST, TYRRHENIAN_SEA,,,,,,,,,,
+BARBARY_COAST

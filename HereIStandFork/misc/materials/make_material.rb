@@ -11,7 +11,7 @@ def php_print_value(value)
 		return "[\n#{php_print_array value}\n]"
 	end
 	if value.class == String then
-		if value.upcase == value then
+		if value.upcase == value or value.count(":") == 2 then
 			return value
 		else
 			return "\"#{value}\""
@@ -66,7 +66,7 @@ token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
-	token['power'] = row['Group'].nil? ? 'OTHER' : row['Group']
+	token['power'] = row['Group'].nil? ? 'OTHER' : "powers::" + row['Group']
 	token['style'] = "#{row['type']} #{constant_name.downcase}"
 	token['db_id'] = row['db_id'].nil? ? "tbd_#{i}" : row['db_id']
 	token['strength'] = row['strength'].to_i unless row['strength'].nil?
@@ -82,6 +82,7 @@ token_csv.each do |row|
 	if count > 1 then
 		token['db_id'] = "#{token['db_id']}_{INDEX}"
 	end
+	token_counts[constant_name] = count
 	sides = row['Sides'].to_i
 	if sides == 2 then
 		back = Hash.new
@@ -92,7 +93,7 @@ token_csv.each do |row|
 		type_constants.merge back['types'] 
 		token['BACK'] = back
 	end
-	token_counts[constant_name] = count
+	
 	tokens[constant_name] = token
 	token_constants.push constant_name 
 	css = Hash.new
@@ -132,21 +133,25 @@ city_csv = CSV.read('cities.csv', headers: true)
 cities = Hash.new
 city_constants = Array.new
 city_csv.each do |row|
-	city_id = row['CITY_ID']
+	city_id = "CityIds::"+row['CITY_ID']
 	city = Hash.new
 	city['x'] = row['posX'] || 0
 	city['y'] = row['posY'] || 0
 	city['name'] = row['name'] || 'tbd'
-	city['home_power'] = row['home_power'].upcase
-	city['language'] = row['language'].upcase
+	city['home_power'] = "powers::"+row['home_power'].upcase
+	city['language'] = "LanguageZones::"+row['language'].upcase
 	city['connections'] = Array.new
 	city['id'] = city_id
 	6.times do |i|
-		city['connections'].push row["connection_#{i}"] unless row["connection_#{i}"].nil?
+		city['connections'].push "CityIds::"+row["connection_#{i}"] unless row["connection_#{i}"].nil?
 	end
 	city['passes'] = Array.new
 	2.times do |i|
-		city['passes'].push row["pass_#{i}"] unless row["pass_#{i}"].nil?
+		city['passes'].push "CityIds::"+row["pass_#{i}"] unless row["pass_#{i}"].nil?
+	end
+	city['seazones'] = Array.new
+	2.times do |i|
+		city['seazones'].push "SeaZoneIds::"+row["seazone_#{i}"] unless row["seazone_#{i}"].nil?
 	end
 	cities[city_id] = city
 	city_constants.push city_id
@@ -199,7 +204,7 @@ require_once 'modules/php/constants.inc.php';\n\n"
 	file.write "\n\n"
 	file.write php_print('cards', cards)
 end
-File.open('../modules/php/generated_constants.inc.php', 'w') do |file|
+File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
 	file.write "/*
  * Token constants
@@ -232,13 +237,14 @@ File.open('../modules/php/generated_constants.inc.php', 'w') do |file|
 		file.write print_constant(name, i, 5000) + "\n"
 	end
 end
-File.open('../modules/css/tokens.scss', 'w') do |file|
+File.open('../../modules/css/tokens.scss', 'w') do |file|
 	token_css.each_pair do | key, value |
 		file.write print_css(key, value) + "\n"
 	end
 end
-File.open('../modules/css/cards.scss', 'w') do |file|
+File.open('../../modules/css/cards.scss', 'w') do |file|
 	card_css.each_pair do | key, value |
 		file.write print_css(key, value) + "\n"
 	end
 end
+puts "done"
