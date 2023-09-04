@@ -171,6 +171,36 @@ location_csv.each do |row|
 	location_constants.push location_id
 end
 
+# check that data is correct
+# if cityA is connect to cityB, then cityB should be connected to cityA.
+cities.each do |cityA|
+	6.times do |i|
+		unless cityA['connections'][i].nil?
+			if not cities[cityA['connections'][i]]['connections'].include? cityA['id'] then
+				puts "city " + cityA['id'] + " has an connection to " + cityA['connections'][i] + ", but not the other way round."
+			end
+		end
+	end
+	2.times do |i|
+		unless cityA['passes'][i].nil?
+			if not cities[cityA['passes'][i]]['passes'].include? cityA['id'] then
+				puts "city " + cityA['id'] + " has an pass to " + cityA['connections'][i] + ", but not the other way round."
+			end
+		end
+	end
+	2.times do |i|
+		unless cityA['seazones'][i].nil?
+			if not seazones[cityA['seazones'][i]]['ports'].include? cityA['id'] then
+				puts "city " + cityA['id'] + " has an port to " + cityA['seazones'][i] + ", but not the other way round."
+			end
+		end
+	end
+end
+# same for seazones
+seazones.each do |seazoneA|
+	
+end
+
 File.open('../material.inc.php', 'w') do |file|
 	file.write "<?php
 /**
