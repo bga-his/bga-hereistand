@@ -2,7 +2,8 @@
 /*
  * Token constants
  */
-const ENGLAND_KEY = 1000;
+
+ abstract class TokenIds {const ENGLAND_KEY = 1000;
 const FRANCE_KEY = 1001;
 const HAPSBURG_KEY = 1002;
 const OTTOMAN_KEY = 1003;
@@ -214,10 +215,12 @@ const EXCOMMUNICATED = 1208;
 const FORTRESS = 1209;
 const PIRATE_HAVEN = 1210;
 const JESUIT_UNIVERSITY = 1211;
+}
 /*
  * Token type constants
  */
-const CONTROL = 2000;
+
+ abstract class TokenTypeIds {const CONTROL = 2000;
 const KEYS = 2001;
 const CATHOLIC = 2002;
 const REFORMED = 2003;
@@ -257,10 +260,12 @@ const EXCOMMUNION = 2036;
 const FORTRESS_MARKER = 2037;
 const PIRATEHAVEN = 2038;
 const UNIVERSITY = 2039;
+}
 /*
  * City constants
  */
-const CityIds::WITTENBERG = 3000;
+
+ abstract class CityIds {const CityIds::WITTENBERG = 3000;
 const CityIds::BRANDENBURG = 3001;
 const CityIds::MAINZ = 3002;
 const CityIds::COLOGNE = 3003;
@@ -394,10 +399,30 @@ const CityIds::BASTIA = 3130;
 const CityIds::TUNIS = 3131;
 const CityIds::RHODES = 3132;
 const CityIds::RAGUSA = 3133;
+}
+/*
+ * seazone constants
+ */
+
+ abstract class SeazonIds {const SeazoneIds::BALTIC_SEA = 6000;
+const SeazoneIds::NORTH_SEA = 6001;
+const SeazoneIds::IRISH_SEA = 6002;
+const SeazoneIds::ENGLISH_CHANNEL = 6003;
+const SeazoneIds::BAY_OF_BISCAY = 6004;
+const SeazoneIds::ATLANTIC_OCEAN = 6005;
+const SeazoneIds::GULF_OF_LYON = 6006;
+const SeazoneIds::BARBARY_COAST = 6007;
+const SeazoneIds::TYRRHENIAN_SEA = 6008;
+const SeazoneIds::IONIAN_SEA = 6009;
+const SeazoneIds::ADRIATIC_SEA = 6010;
+const SeazoneIds::NORTH_AFRICAN_COAST = 6011;
+const SeazoneIds::AEGEAN_SEA = 6012;
+const SeazoneIds::BLACK_SEA = 6013;
+}
 /*
  * Location constants
  */
-const TURN_TRACK_1 = 4000;
+ abstract class LocationIds {nconst TURN_TRACK_1 = 4000;
 const TURN_TRACK_2 = 4001;
 const TURN_TRACK_3 = 4002;
 const TURN_TRACK_4 = 4003;
@@ -766,10 +791,12 @@ const DEBATER_FRE_1 = 4365;
 const DEBATER_FRE_2 = 4366;
 const DEBATER_FRE_3 = 4367;
 const DEBATER_FRE_4 = 4368;
+}
 /*
  * Card constants
  */
-const CARD_JANISSARIES = 5000;
+
+ abstract class CardIds {const CARD_JANISSARIES = 5000;
 const CARD_HOLY_ROMAN_EMPEROR = 5001;
 const CARD_SIX_WIVES_OF_HENRY_VIII = 5002;
 const CARD_PATRON_OF_THE_ARTS = 5003;
@@ -904,3 +931,4 @@ const CARD_DIP_OTTOMAN_INVASION = 5131;
 const CARD_DIP_SECRET_PROTESTANT_CIRCLE = 5132;
 const CARD_DIP_SIEGE_OF_VIENNA = 5133;
 const CARD_DIP_SPANISH_INQUISITION = 5134;
+}

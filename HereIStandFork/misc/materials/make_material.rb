@@ -2,7 +2,14 @@
 
 require "csv"
 require "set"
-
+IDNAMES = Hash.new
+IDNAMES["citiys"] = "CityIDs"
+IDNAMES["cards"] = "CardIDs"
+IDNAMES["tokens"] = "tokenIDs"
+IDNAMES["types"] = "tokenTypeIDs"
+IDNAMES["locations"] = "locationIDs" # TODO split into subsections
+IDNAMES["seazones"] = "SeazoneIds"
+IDNAMES["powers"] = "Powers"
 def php_print_value(value)
 	if value.class == Hash then
 		return "[\n#{php_print_obj value}\n]"
@@ -66,7 +73,7 @@ token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
-	token['power'] = row['Group'].nil? ? 'OTHER' : "powers::" + row['Group']
+	token['power'] = row['Group'].nil? ? 'OTHER' : IDNAMES["powers"] + row['Group']
 	token['style'] = "#{row['type']} #{constant_name.downcase}"
 	token['db_id'] = row['db_id'].nil? ? "tbd_#{i}" : row['db_id']
 	token['strength'] = row['strength'].to_i unless row['strength'].nil?
@@ -75,8 +82,8 @@ token_csv.each do |row|
 	token['piracy_rating'] = row['piracy_rating'].to_i unless row['piracy_rating'].nil?
 	token['debate_value'] = row['debate_value'].to_i unless row['debate_value'].nil?
 	token['explorer_value'] = row['explorer_value'].to_i unless row['explorer_value'].nil?
-	token['types'] = row['type'].upcase.split
-	type_constants.merge token['types'] 
+	token['types'] = IDNAMES["tokentypes"]+row['type'].upcase.split
+	type_constants.merge row['type'].upcase.split
 	count = row['Count'].to_i
 	count = 1 if count == nil or count < 1
 	if count > 1 then
@@ -114,13 +121,13 @@ card_csv.each do |row|
 	card_name = row['CONSTANT_NAME']
 	card['class_name'] = row['css_class_name']
 	card['name'] = row['name']
-	card['type'] = row['type']
+	card['type'] = "CardTypes::"+row['type']
 	card['cp'] = row['cp']
 	card['remove'] = row['remove'] unless row['remove'].nil?
 	card['turn_added'] = row['turn_added'] unless row['turn_added'].nil?
 	card['scenario'] = row['scenario'] unless row['scenario'].nil?
 	cards[card_name] = card
-	card_constants.push card_name 
+	card_constants.push card_name.sub! "CARD_", ""
 	css = Hash.new
 	id = row['num'].to_s.rjust(3, '0')
 	css['front'] = "HIS-#{id}.svg"
@@ -133,7 +140,7 @@ city_csv = CSV.read('cities.csv', headers: true)
 cities = Hash.new
 city_constants = Array.new
 city_csv.each do |row|
-	city_id = "CityIds::"+row['CITY_ID']
+	city_id = row['CITY_ID']
 	city = Hash.new
 	city['x'] = row['posX'] || 0
 	city['y'] = row['posY'] || 0
@@ -141,7 +148,7 @@ city_csv.each do |row|
 	city['home_power'] = "powers::"+row['home_power'].upcase
 	city['language'] = "LanguageZones::"+row['language'].upcase
 	city['connections'] = Array.new
-	city['id'] = city_id
+	city['id'] = IDNAMES["citys"]+city_id
 	6.times do |i|
 		city['connections'].push "CityIds::"+row["connection_#{i}"] unless row["connection_#{i}"].nil?
 	end
@@ -157,49 +164,69 @@ city_csv.each do |row|
 	city_constants.push city_id
 end
 
+seazones_csv = CSV.read('seazones.csv', headers: true)
+
+seazones = Hash.new
+seazones_constants = Array.new
+seazones_csv.each do |row|
+	seazone_id = IDNAMES["seazones"]+row['SEAZONE_ID']
+	seazone = Hash.new
+	seazone['x'] = row['posX'] || 0
+	seazone['y'] = row['posY'] || 0
+	seazone['name'] = row['name'] || 'tbd'
+	seazone['connections'] = Array.new
+	seazone['id'] = seazone_id
+	6.times do |i|
+		seazone['connections'].push IDNAMES["seazones"]+row["Connection_#{i}"] unless row["Connection_#{i}"].nil?
+	end
+	seazone['harbours'] = Array.new
+	9.times do |i|
+		seazone['harbours'].push IDNAMES["citys"]+row["Harbour_#{i}"] unless row["Harbour_#{i}"].nil?
+	end
+	seazones[seazone_id] = seazone
+	seazones_constants.push row['SEAZONE_ID']
+end
+
 location_csv = CSV.read('locations.csv', headers: true)
 
 locations = Hash.new
 location_constants = Array.new
 location_csv.each do |row|
-	location_id = row['LOCATION_ID']
+	location_id = IDNAMES["locations"]+row['LOCATION_ID']
 	location = Hash.new
 	location['x'] = row['posX'] ||= 0
 	location['y'] = row['posY'] ||= 0
 	location['board'] = row['board']
 	locations[location_id] = location
-	location_constants.push location_id
+	location_constants.push row['LOCATION_ID']
 end
 
 # check that data is correct
 # if cityA is connect to cityB, then cityB should be connected to cityA.
-cities.each do |cityA|
-	6.times do |i|
-		unless cityA['connections'][i].nil?
-			if not cities[cityA['connections'][i]]['connections'].include? cityA['id'] then
-				puts "city " + cityA['id'] + " has an connection to " + cityA['connections'][i] + ", but not the other way round."
-			end
-		end
-	end
-	2.times do |i|
-		unless cityA['passes'][i].nil?
-			if not cities[cityA['passes'][i]]['passes'].include? cityA['id'] then
-				puts "city " + cityA['id'] + " has an pass to " + cityA['connections'][i] + ", but not the other way round."
-			end
-		end
-	end
-	2.times do |i|
-		unless cityA['seazones'][i].nil?
-			if not seazones[cityA['seazones'][i]]['ports'].include? cityA['id'] then
-				puts "city " + cityA['id'] + " has an port to " + cityA['seazones'][i] + ", but not the other way round."
-			end
-		end
-	end
-end
+#cities.each do |cityA|
+#	6.times do |i|
+#		unless cityA['connections'][i].nil?
+#			if not cities[cityA['connections'][i]]['connections'].include? cityA['id'] then
+#				puts "city " + cityA['id'] + " has an connection to " + cityA['connections'][i] + ", but not the other way round."
+#			end
+#		end
+#	end
+#	2.times do |i|
+#		unless cityA['passes'][i].nil?
+#			if not cities[cityA['passes'][i]]['passes'].include? cityA['id'] then
+#				puts "city " + cityA['id'] + " has an pass to " + cityA['connections'][i] + ", but not the other way round."
+#			end
+#		end
+#	end
+#	2.times do |i|
+#		unless cityA['seazones'][i].nil?
+#			if not seazones[cityA['seazones'][i]]['ports'].include? cityA['id'] then
+#				puts "city " + cityA['id'] + " has an port to " + cityA['seazones'][i] + ", but not the other way round."
+#			end
+#		end
+#	end
+#end
 # same for seazones
-seazones.each do |seazoneA|
-	
-end
 
 File.open('../material.inc.php', 'w') do |file|
 	file.write "<?php
@@ -233,39 +260,55 @@ require_once 'modules/php/constants.inc.php';\n\n"
 	file.write php_print('board_locations', locations)
 	file.write "\n\n"
 	file.write php_print('cards', cards)
-end
+	file.write "\n\n"
+	file.write php_print('seazones', seazones)
+end #materials
+
 File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
 	file.write "/*
  * Token constants
- */\n"
+ */\n
+ abstract class " + IDNAMES["tokens"] + " \n{"
 	token_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 1000) + "\n"
 	end
-	file.write "/*
+	file.write "}\n/*
  * Token type constants
- */\n"
+ */\n
+ abstract class " + IDNAMES["types"] + " \n{"
 	type_constants.to_a.each_with_index do |name, i|
 		file.write print_constant(name, i, 2000) + "\n"
 	end
-	file.write "/*
+	file.write "}\n/*
  * City constants
- */\n"
+ */\n
+ abstract class " + IDNAMES["citys"] + " \n{"
 	city_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 3000) + "\n"
 	end
-	file.write "/*
+	file.write "}\n/*
+ * seazone constants
+ */\n
+ abstract class " + IDNAMES["seazones"] + " \n{"
+	seazones_constants.each_with_index do |name, i|
+		file.write print_constant(name, i, 6000) + "\n"
+	end
+	file.write "}\n/*
  * Location constants
- */\n"
+ */
+ abstract class " + IDNAMES["locations"] + " \n{"
 	location_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 4000) + "\n"
 	end
-	file.write "/*
+	file.write "}\n/*
  * Card constants
- */\n"
+ */\n
+ abstract class " + IDNAMES["cards"] + "\n {"
 	card_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 5000) + "\n"
 	end
+	file.write "}\n"
 end
 File.open('../../modules/css/tokens.scss', 'w') do |file|
 	token_css.each_pair do | key, value |

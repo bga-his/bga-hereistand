@@ -1,4 +1,4 @@
-",",name,posX,posY,type,home_power,language,connection_1,connection_2,connection_3,connection_4,connection_5,connection_6,pass_1,pass_2,seazone_1,seazone_2,control_1517
+CITY_ID,name,posX,posY,type,home_power,language,connection_1,connection_2,connection_3,connection_4,connection_5,connection_6,pass_1,pass_2,seazone_1,seazone_2,control_1517
 WITTENBERG,Wittenberg,3247,731,CITY_ELECTORATE,Protestant,GERMAN,BRANDENBURG,MAGDEBURG,LEIPZIG,PRAGUE,BRESLAU,,,,,,Hapsburg
 BRANDENBURG,Brandenburg,3196,590,CITY_ELECTORATE,Protestant,GERMAN,WITTENBERG,MAGDEBURG,BRESLAU,LUBECK,STETTIN,,,,,,Hapsburg
 MAINZ,Mainz,2783,992,CITY_ELECTORATE,Protestant,GERMAN,KASSEL,NUREMBERG,COLOGNE,TRIER,WORMS,,,,,,Hapsburg
