@@ -1,6 +1,6 @@
 <?php
 
-//require_once 'generated_constants.inc.php';
+require_once 'generated_constants.inc.php';
 
 abstract class GameStates{
     const ST_GAME_SETUP = 1;
@@ -89,7 +89,7 @@ abstract class TokenSides{
  }
 
 //what is this used for?
-abstract class TokenTypes{
+abstract class mTokenTypes{
     const FORTRESS = 1212;
     const PIRATE_HAVEN = 1213;
     const JESUIT_UNIVERSITY = 1214;
@@ -230,7 +230,7 @@ abstract class CardTypes{
     const DIPLOMACY_CARD = 5;
 }
 
-abstract class CardIds{
+abstract class mCardIds{
     const JANISSARIES = 5000;
     const HOLY_ROMAN_EMPEROR = 5001;
     const SIX_WIVES_OF_HENRY_VIII = 5002;
@@ -387,7 +387,7 @@ const PAPACY_HEX = 1011;
 const PROTESTANT_HEX = 1012;
 }
 
-abstract class CityIds{
+abstract class mCityIds{
     const WITTENBERG = 3000;
     const BRANDENBURG = 3001;
     const MAINZ = 3002;
