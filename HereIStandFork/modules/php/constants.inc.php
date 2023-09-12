@@ -1,13 +1,6 @@
 <?php
 
 //require_once 'generated_constants.inc.php';
-//TODO add seazones (each city up to two adjacend sea zone, each sea zone up to ? adjacend cities, ? seazones, a name, location for ships and piracy markers)
-/*
- * Sea zones
- * /
-abstract class SeazoneIds{
-    const 
-}
 
 abstract class GameStates{
     const ST_GAME_SETUP = 1;
@@ -85,7 +78,7 @@ abstract class LanguageZones{
     const FRENCH = 2;
     const GERMAN = 3;
     const ITALIAN = 4;
-    const Other = 5;
+    const OTHER = 5;
 }
 /*
  * Token state constants

@@ -106,7 +106,9 @@ class Cards extends \HIS\Helpers\Pieces {
 		Cards::draw(Powers::PROTESTANT, 3);
 	}
 
-	public static function draw(Powers $power, int $num) : void{
+	public static function draw(String $power, int $num) : void{
+		//$power: element of Powers
+		//$num: number of cards drawn
 		//TODO shuffle deck
 		self::pickForLocation($num, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
 	}
@@ -114,7 +116,8 @@ class Cards extends \HIS\Helpers\Pieces {
 	public static function discard($card): void {
 		self::discardByID($card['id']);
 	}
-	public static function discardByID(CardIds $card): void {
+	public static function discardByID($card): void {
+		//$card: element of CardIds
 		$query = self::move([strval($card)], ['discard']);
 	}
 
