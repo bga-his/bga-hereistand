@@ -9,8 +9,12 @@ use HIS\Managers\Tokens;
 use HIS\Managers\Diplomancy;
 use HIS\Models\Formation;
 use HIS\Core\Notifications;
-use HIS\AdditionalStaticTrait;
 use HIS\Managers\Diplomacy;
+use HIS\States\ArgsOnEnteringStateTrait;
+use Powers;
+use TrackTokens;
+use UnitTypes;
+use CardIDs;
 
 class Actions {
 
@@ -151,11 +155,11 @@ class Actions {
 		$unit_type = Globals::getUnitBuyType();
 		$player = Players::getActive();
 		$remainingCP = Globals::getRemainingCP();
-		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == REGULAR)) {
+		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == UnitTypes::REGULAR)) {
 			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
 		TOKENS::addLandunits($city['id'], $player->power, 1, $unit_type);
-		if ($unit_type == MERC) {
+		if ($unit_type == UnitTypes::MERC || $unit_type == UnitTypes::CAV) {
 			$remainingCP -= 1;
 			Globals::incRemainingCP(-1);
 		} else {
@@ -170,10 +174,9 @@ class Actions {
 	}
 
 	public static function BuildJanissaries($city){
-		$side = strval(FRONT);
 		Notifications::message("OTTOMAN placed 4 Regulars On ".Utils::varToString($city['id']));
-		Tokens::addLandunits($city['id'], OTTOMAN, 4, REGULAR);
-		Cards::discardByID(CARD_JANISSARIES);
+		Tokens::addLandunits($city['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
+		Cards::discardByID(CardIDs::JANISSARIES);
 		Game::get()->gamestate->nextState("resolve");
 
 		//TODO add cancel option
@@ -192,7 +195,7 @@ class Actions {
 			$tokenDukeOfAlva = Tokens::tokenGetLeader("DukeOfAlva");
 			if($tokenDukeOfAlva->Position = $tokenCharlsV->Position){
 				Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenDukeOfAlva);
-				Notifications::moveLeader(Players::getFromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+				Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
 			}else{
 				Notifications::message("DukeOfAlva must be in the same space to accompany Charles V");
 				Game::get()->gamestate->nextState("undo");
@@ -200,7 +203,7 @@ class Actions {
 		}
 		Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenCharlsV);
 		Globals::setRemainingCP(5);
-		Notifications::moveLeader(Players::getFromPower(HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+		Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
 		Game::get()->gamestate->nextState("move_Charles");
 	}
 
@@ -210,10 +213,10 @@ class Actions {
 		//
 		if($power="france" or $power="hapsburg"){
 			if($power="france"){
-				Diplomacy::declareWar(ENGLAND, FRANCE);
+				Diplomacy::declareWar(Powers::ENGLAND, Powers::FRANCE);
 			}
 			if($power="hapsburg"){
-				Diplomacy::declareWar(ENGLAND, HAPSBURG);
+				Diplomacy::declareWar(Powers::ENGLAND, Powers::HAPSBURG);
 			}
 			//England declares war on france
 			Globals::setRemainingCP(5);
@@ -222,14 +225,14 @@ class Actions {
 		}
 		if($power="Scotland"){
 			//TODO check if France might intervene
-			Diplomacy::declareWar(ENGLAND, MINOR_SCOTLAND);
+			Diplomacy::declareWar(Powers::ENGLAND, Powers::MINOR_SCOTLAND);
 			//set England as Impulse power
 			//set active player to France.
-			Players::setActivePlayer(FRANCE);
+			Players::setActivePlayer(Powers::FRANCE);
 			Game::get()->gamestate->nextState("make_war_scotland");
 			return;
 		}
-		Notififications::message("invalid power in Actions.php::EvtSixWivesWar(".$power.")");
+		Notifications::message("invalid power in Actions.php::EvtSixWivesWar(".$power.")");
 	}
 
 	public static function EvtSixWivesMary(){
@@ -239,10 +242,10 @@ class Actions {
 	public static function EvtSixWivesFranceIntervention($do){
 		if($do){
 			//france declares war on England, gains alience with Scotland
-			Diplomacy::declareWar(FRANCE, ENGLAND);
-			Diplomacy::addAlience(FRANCE, MINOR_SCOTLAND);
+			Diplomacy::declareWar(Powers::FRANCE, Powers::ENGLAND);
+			Diplomacy::declareAlience(Powers::FRANCE, Powers::MINOR_SCOTLAND);
 		}
-		Players::setActivePlayer(ENGLAND);
+		Players::setActivePlayer(Powers::ENGLAND);
 		Globals::setRemainingCP(5);
 		Game::get()->gamestate->nextState("make_war_scotland");
 	}
@@ -250,26 +253,25 @@ class Actions {
 	public static function EvtPatronOfArts(){
 		$modfier = ArgsOnEnteringStateTrait::argPatronOfArts()["modfier"];
 		$chateauxRoll = Utils::rollDice(1)[0]+$modfier;
+		Notifications::message("France rolled an ".($chateauxRoll-$modfier)." + ".$modfier." on the Chateaux table");
 		if($chateauxRoll <= 2){
 			//draw 2, discard 1
-			Cards::draw(FRANCE, 2);
-			Cards::discard(FRANCE, 1);
+			Cards::draw(Powers::FRANCE, 2);
+			Cards::discard(Powers::FRANCE, 1);
 		}elseif($chateauxRoll <= 4){
 			//1VP, draw 1, discard 1
-			//Tokens::move("ChateauxVP", +1);
-			Tokens::incCounter(VP_CHATEAUX);
-			Cards::draw(FRANCE, 1);
-			Cards::discard(FRANCE, 1);
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 1);
+			Cards::discard(Powers::FRANCE, 1);
 		}elseif($chateauxRoll <= 7){
 			//1VP, draw 1, discard 0
-			//Tokens::move("ChateauxVP", +1);
-			Cards::draw(FRANCE, 1);
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 1);
 		}else{
 			//1VP, draw 2, discard 1
-			//Tokens::move("ChateauxVP", +1);
-			Cards::draw(FRANCE, 2);
-			//Tokens::move("ChateauxVP", +1);
-			Cards::discard(FRANCE, 1);
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 2);
+			Cards::discard(Powers::FRANCE, 1);
 		}
 		Game::get()->gamestate->nextState("rollChatteaux");
 	}

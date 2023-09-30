@@ -3,7 +3,9 @@ namespace HIS\Models;
 
 use HIS\Core\Game;
 use HIS\Managers\Tokens;
-
+use Powers;
+use ReligionIDs;
+use mTokenTypes;
 /*
  * City: all utility functions concerning a city
  */
@@ -34,7 +36,7 @@ class City {
 	public function getControl() {
 		$control = $this->attributes['home_power'];
 		foreach ($this->tokens as $token) {
-			if (in_array(CONTROL, $token['types'])) {
+			if (in_array(mTokenTypes::CONTROL, $token['types'])) {
 				$control = $token['power'];
 			}
 		}
@@ -42,21 +44,21 @@ class City {
 	}
 
 	public function getReligion() {
-		$religion = CATHOLIC;
-		if ($this->attributes['home_power'] == OTTOMAN) {
-			$religion = OTHER;
+		$religion = ReligionIDs::CATHOLIC;
+		if ($this->attributes['home_power'] == Powers::OTTOMAN) {
+			$religion = ReligionIDs::OTHER;
 		}
-		if ($this->attributes['home_power'] == PROTESTANT) {
-			$religion = REFORMED;
+		if ($this->attributes['home_power'] == Powers::PROTESTANT) {
+			$religion = ReligionIDs::REFORMED;
 			foreach ($this->tokens as $token) {
-				if (in_array(CATHOLIC, $token['types'])) {
-					$religion = CATHOLIC;
+				if (in_array(ReligionIDs::CATHOLIC, $token['types'])) {
+					$religion = ReligionIDs::CATHOLIC;
 				}
 			}
 		}
 		foreach ($this->tokens as $token) {
-			if (in_array(REFORMED, $token['types'])) {
-				$religion = REFORMED;
+			if (in_array(ReligionIDs::REFORMED, $token['types'])) {
+				$religion = ReligionIDs::REFORMED;
 			}
 		}
 		return $religion;

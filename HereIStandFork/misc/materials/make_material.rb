@@ -70,6 +70,7 @@ tokens = Hash.new
 token_counts = Hash.new
 token_css = Hash.new
 token_constants = Array.new
+token_constants_by_type = Hash.new {|hash, key| hash[key] = Array.new}
 type_constants = Set.new
 i = 1000 
 token_csv.each do |row|
@@ -89,8 +90,13 @@ token_csv.each do |row|
 	token['piracy_rating'] = row['piracy_rating'].to_i unless row['piracy_rating'].nil?
 	token['debate_value'] = row['debate_value'].to_i unless row['debate_value'].nil?
 	token['explorer_value'] = row['explorer_value'].to_i unless row['explorer_value'].nil?
+	token['admin_rating'] = row['admin_rating'].to_i unless row['admin_rating'].nil?
+	token['card_bonus'] = row['card_bonus'].to_i unless row['card_bonus'].nil?
 	token['types'] = row['type'].upcase.split.map{|s| IDNAMES["types"]+s}
 	type_constants.merge row['type'].upcase.split
+	row['type'].upcase.split(", ") do |type|
+		token_constants_by_type[type].push constant_name
+	end
 	count = row['Count'].to_i
 	count = 1 if count == nil or count < 1
 	if count > 1 then
@@ -163,17 +169,9 @@ city_csv.each do |row|
 	if city_id.upcase.eql? "COLOGNE" then
 		puts city['id']
 	end
-	#if city_id.upcase.eql? "STETTIN" then
-	#	puts "Stettin"
-		 # what the fuck is wrong with stetion? otherwise it gets an empty value in its connections.
-	#	2.times do |i|
-	#		city['connections'].push IDNAMES["citys"]+row["connection_#{i}"] unless row["connection_#{i}"].nil?
-	#	end
-	#else
-		6.times do |i|
-			city['connections'].push IDNAMES["citys"]+row["connection_#{i}"] unless row["connection_#{i}"].nil?
-		end
-	#end
+	6.times do |i|
+		city['connections'].push IDNAMES["citys"]+row["connection_#{i}"] unless row["connection_#{i}"].nil?
+	end
 	city['passes'] = Array.new
 	2.times do |i|
 		city['passes'].push IDNAMES["citys"]+row["pass_#{i}"] unless row["pass_#{i}"].nil?
@@ -286,6 +284,8 @@ require_once 'modules/php/constants.inc.php';\n\n"
 	file.write php_print('seazones', seazones)
 end #materials
 
+intOffset = 6000
+
 File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
 	file.write "/*
@@ -296,8 +296,12 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 		file.write print_constant(name, i, 1000) + "\n"
 	end
 	file.write "}\n/*
- * Token type constants
- */\n
+ * Token constans grouped by type
+ */
+ see below
+ /*
+  * Token type constants
+*/\n
  abstract class " + IDNAMES["types"].sub("::", "") + " \n{"
 	type_constants.to_a.each_with_index do |name, i|
 		file.write print_constant(name, i, 2000) + "\n"
@@ -330,7 +334,15 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	card_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 5000) + "\n"
 	end
-	file.write "}\n"
+	file.write "}\n/* token types by type*/"
+	token_constants_by_type.each_key do |key|
+	file.write "abstract class " + IDNAMES["tokens"].sub("::", "_") + key.gsub(" ", "_") + "\n{"
+	token_constants_by_type[key].each_with_index do |name, i|
+		file.write print_constant(name, i, intOffset) + "\n"
+ 	end
+	file.write "}\n\n"
+	intOffset += 1000
+ end
 end
 File.open('../../modules/css/tokens.scss', 'w') do |file|
 	token_css.each_pair do | key, value |

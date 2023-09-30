@@ -7,7 +7,10 @@ use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use TrackTokens;
-
+use TokenSides;
+use UnitTypes;
+use LandUnitTokens;
+use newWorldTokens;
 /**
  * Tokens: id, value, faction
  */
@@ -32,7 +35,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 		$token_static = Game::get()->tokens[$token['type']];
 		$token = array_merge($token, $token_static);
 		if ($token['flipped'] == 'flipped') {
-			$token = array_merge($token, $token_static[BACK]);
+			$token = array_merge($token, $token_static[TokenSides::BACK]);
 		}
 		return $token;
 	}
@@ -45,11 +48,11 @@ class Tokens extends \HIS\Helpers\Pieces {
 		//$count As int, total strength of land units to add
 		//$type As int from {regular, merc, cav}//somewehre these constants have been defined, I think
 
-		$buy_id = strval(Game::get()->getPowerUnits()[$power][REGULAR][$count]);
-		if($type == REGULAR){//if major power.
-			$side = strval(FRONT);
-		}elseif($type == MERC || $type == MERCENARY || $type == CAVALRY){
-			$side = strval(BACK);
+		$buy_id = strval(Game::get()->getPowerUnits()[$power][UnitTypes::REGULAR][$count]); // buy_id element of LandUnitTokens or NavalUnitTokens
+		if($type == UnitTypes::REGULAR){//if major power.
+			$side = strval(TokenSides::FRONT);
+		}elseif($type == UnitTypes::MERC ||  $type == UnitTypes::CAV){
+			$side = strval(TokenSides::BACK);
 		}else{
 			throw new UserException("invalid unit type in Tokens::addLandUnits: ".Utils::varToString($type));
 		}
@@ -80,7 +83,9 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	}
 
-	public static function getTrackPosition(TrackTokens $token) : int{
+	public static function getTrackPosition(int $token) : int{
+		//token element of TrackTokens
+		//TODO dosent work for MARITAL_STATUS_TRACK. Wife locations is not always current martial status position.
 		foreach([[TURN_TRACK, TURN_TRACK_TOKENS], [VICTORY_TRACK, VICTORY_TRACK_TOKENS], [PIRACY_TRACK, PIRACY_TRACK_TOKENS], [CHATEAUX_TRACK, CHATEAUX_TRACK_TOKENS], [MARITAL_STATUS_TRACK, MARTIAL_STATUS_TRACK_TOKENS], [PROTESTANT_SPACES_TRACK, PROTESTANT_SPACES_TRACK_TOKENS], [SAINT_PETERS_CP_TRACK, SAINT_PETERS_CP_TRACK_TOKENS], [SAINT_PETERS_VP_TRACK, SAINT_PETERS_VP_TRACK_TOKENS], [NT_TRANSLATION_TRACK, NT_TRANSLATION_TRACK_TOKENS], [BIBLE_TRANSLATION_TRACK, BIBLE_TRANSLATION_TRACK_TOKENS]] as $track_tokens){
 			if(in_array($token, $track_tokens[1], true)){
 				for($i = 0; $i < count($track_tokens[0]); $i++){
@@ -94,7 +99,8 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 	}
 
-	public static function incCounter(TrackTokens $counterId, int $intAmount) : void{
+	public static function incCounter(int $counterId, int $intAmount) : void{
+		//counterId element of TrackTokens
 		$token = Tokens::get($counterId);
 		if(in_array($counterId, VICTORY_TRACK_TOKENS, true)){
 			for($i = 0; $i < count(VICTORY_TRACK); $i++){
@@ -197,9 +203,9 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 
 		// Hack to flip starting units
-		$id = self::dbIDIndex($tokens[OTTOMAN_1UNIT]['db_id'], 1);
-		self::setState($id, FLIPPED);
-		$id = $tokens[HAPSBURG_EXPLORATION]['db_id'];
-		self::setState($id, FLIPPED);
+		$id = self::dbIDIndex($tokens[LandUnitTokens::OTTOMAN_1UNIT]['db_id'], 1);
+		self::setState($id, TokenSides::BACK);
+		$id = $tokens[newWorldTokens::HAPSBURG_EXPLORATION]['db_id'];
+		self::setState($id, TokenSides::BACK);
 	}
 }

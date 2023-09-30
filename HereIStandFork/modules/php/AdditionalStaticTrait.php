@@ -1,52 +1,56 @@
 <?php
 namespace HIS;
+use Powers;
+use UnitTypes;
+use NavalUnitTokens;
+use LandUnitTokens;
 
 trait AdditionalStaticTrait {
 	function getPowerUnits() {
 		return [
-			OTTOMAN => [
-				REGULAR => [1 => OTTOMAN_1UNIT, 2 => OTTOMAN_2UNIT, 4 => OTTOMAN_4UNIT, 6 => OTTOMAN_6UNIT],
-				MERC => [1 => OTTOMAN_1UNIT, 2 => OTTOMAN_2UNIT, 4 => OTTOMAN_4UNIT, 6 => OTTOMAN_6UNIT],
-				NAVAL => OTTOMAN_SQUADRON,
+			Powers::OTTOMAN => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::OTTOMAN_1UNIT, 2 => LandUnitTokens::OTTOMAN_2UNIT, 4 => LandUnitTokens::OTTOMAN_4UNIT, 6 => LandUnitTokens::OTTOMAN_6UNIT],
+				UnitTypes::MERC => [1 => LandUnitTokens::OTTOMAN_1UNIT, 2 => LandUnitTokens::OTTOMAN_2UNIT, 4 => LandUnitTokens::OTTOMAN_4UNIT, 6 => LandUnitTokens::OTTOMAN_6UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::OTTOMAN_SQUADRON,
 			],
-			HAPSBURG => [
-				REGULAR => [1 => HAPSBURG_1UNIT, 2 => HAPSBURG_2UNIT, 4 => HAPSBURG_4UNIT, 6 => HAPSBURG_6UNIT],
-				MERC => [1 => HAPSBURG_1UNIT, 2 => HAPSBURG_2UNIT, 4 => HAPSBURG_4UNIT, 6 => HAPSBURG_6UNIT],
-				NAVAL => HAPSBURG_SQUADRON,
+			Powers::HAPSBURG => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::HAPSBURG_1UNIT, 2 => LandUnitTokens::HAPSBURG_2UNIT, 4 => LandUnitTokens::HAPSBURG_4UNIT, 6 => LandUnitTokens::HAPSBURG_6UNIT],
+				UnitTypes::MERC => [1 => LandUnitTokens::HAPSBURG_1UNIT, 2 => LandUnitTokens::HAPSBURG_2UNIT, 4 => LandUnitTokens::HAPSBURG_4UNIT, 6 => LandUnitTokens::HAPSBURG_6UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::HAPSBURG_SQUADRON,
 			],
-			ENGLAND => [
-				REGULAR => [1 => ENGLAND_1UNIT, 2 => ENGLAND_2UNIT, 4 => ENGLAND_4UNIT, 6 => ENGLAND_6UNIT],
-				MERC => [1 => ENGLAND_1UNIT, 2 => ENGLAND_2UNIT, 4 => ENGLAND_4UNIT, 6 => ENGLAND_6UNIT],
-				NAVAL => ENGLISH_SQUADRON,
+			Powers::ENGLAND => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::ENGLAND_1UNIT, 2 => LandUnitTokens::ENGLAND_2UNIT, 4 => LandUnitTokens::ENGLAND_4UNIT, 6 => LandUnitTokens::ENGLAND_6UNIT],
+				UnitTypes::MERC => [1 => LandUnitTokens::ENGLAND_1UNIT, 2 => LandUnitTokens::ENGLAND_2UNIT, 4 => LandUnitTokens::ENGLAND_4UNIT, 6 => LandUnitTokens::ENGLAND_6UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::ENGLISH_SQUADRON,
 			],
-			FRANCE => [
-				REGULAR => [1 => FRANCE_1UNIT, 2 => FRANCE_2UNIT, 4 => FRANCE_4UNIT, 6 => FRANCE_6UNIT],
-				MERC => [1 => FRANCE_1UNIT, 2 => FRANCE_2UNIT, 4 => FRANCE_4UNIT, 6 => FRANCE_6UNIT],
-				NAVAL => FRENCH_SQUADRON,
+			Powers::FRANCE => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::FRANCE_1UNIT, 2 => LandUnitTokens::FRANCE_2UNIT, 4 => LandUnitTokens::FRANCE_4UNIT, 6 => LandUnitTokens::FRANCE_6UNIT],
+				UnitTypes::MERC => [1 => LandUnitTokens::FRANCE_1UNIT, 2 => LandUnitTokens::FRANCE_2UNIT, 4 => LandUnitTokens::FRANCE_4UNIT, 6 => LandUnitTokens::FRANCE_6UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::FRENCH_SQUADRON,
 			],
-			PAPACY => [
-				REGULAR => [1 => PAPACY_1UNIT, 2 => PAPACY_2UNIT, 4 => PAPACY_4UNIT],
-				MERC => [1 => PAPACY_1UNIT, 2 => PAPACY_2UNIT, 4 => PAPACY_4UNIT],
-				NAVAL => PAPACY_SQUADRON,
+			Powers::PAPACY => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::PAPACY_1UNIT, 2 => LandUnitTokens::PAPACY_2UNIT, 4 => LandUnitTokens::PAPACY_4UNIT],
+				UnitTypes::MERC => [1 => LandUnitTokens::PAPACY_1UNIT, 2 => LandUnitTokens::PAPACY_2UNIT, 4 => LandUnitTokens::PAPACY_4UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::PAPACY_SQUADRON,
 			],
-			PROTESTANT => [
-				REGULAR => [1 =>PROTESTANT_1UNIT, 2 => PROTESTANT_2UNIT, 4 => PROTESTANT_4UNIT],
-				MERC => [1 =>PROTESTANT_1UNIT, 2 => PROTESTANT_2UNIT, 4 => PROTESTANT_4UNIT],
+			Powers::PROTESTANT => [
+				UnitTypes::REGULAR => [1 =>LandUnitTokens::PROTESTANT_1UNIT, 2 => LandUnitTokens::PROTESTANT_2UNIT, 4 => LandUnitTokens::PROTESTANT_4UNIT],
+				UnitTypes::MERC => [1 =>LandUnitTokens::PROTESTANT_1UNIT, 2 => LandUnitTokens::PROTESTANT_2UNIT, 4 => LandUnitTokens::PROTESTANT_4UNIT],
 			],
-			MINOR_SCOTLAND => [
-				REGULAR => [1 => SCOTLAND_1UNIT],
-				NAVAL => SCOTTISH_SQUADRON,
+			Powers::MINOR_SCOTLAND => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::SCOTLAND_1UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::SCOTTISH_SQUADRON,
 			],
-			MINOR_GENOA => [
-				REGULAR => [1 => GENOA_1UNIT],
-				NAVAL => GENOESE_SQAUADRON,
+			Powers::MINOR_GENOA => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::GENOA_1UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::GENOESE_SQAUADRON,
 			],
-			MINOR_VENICE => [
-				REGULAR => [1 => VENICE_1UNIT],
-				NAVAL => VENETIAN_SQUADRON
+			Powers::MINOR_VENICE => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::VENICE_1UNIT],
+				UnitTypes::SHIP => NavalUnitTokens::VENETIAN_SQUADRON
 			],
-			MINOR_HUNGARY => [
-				REGULAR => [1 => HUNGARY_1UNIT, 4 => HUNGARY_4UNIT],//placing tokens of denomination 2 will get wired
+			Powers::MINOR_HUNGARY => [
+				UnitTypes::REGULAR => [1 => LandUnitTokens::HUNGARY_1UNIT, 4 => LandUnitTokens::HUNGARY_4UNIT],//placing tokens of denomination 2 will get wired
 			]
 		];
 	}

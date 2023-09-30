@@ -34,4 +34,16 @@ class Diplomacy extends \HIS\Helpers\Pieces {
         return Pieces::get(DiploTOkens::AT_WAR, DiploLocationsArray[$powerA][$powerB]) != null;
     }
 
+    public static function IsAllied(String $powerA, String $powerB) : bool{
+        //$powerA: element of powers
+        //$powerB: element of powers
+        return Pieces::get(DiploTOkens::ALLIED, DiploLocationsArray[$powerA][$powerB]) != null;
+    }
+
+    public static function IsNeutral(String $powerA, String $powerB) : bool{
+        //$powerA: element of powers
+        //$powerB: element of powers
+        return ! Diplomacy::IsAtWar($powerA, $powerB) && !Diplomacy::IsAllied($powerA, $powerB);
+    }
+
 }

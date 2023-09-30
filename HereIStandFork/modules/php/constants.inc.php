@@ -48,6 +48,7 @@ abstract class GameStates{
     const ST_EVT_SixWIVES_FRANCE_INTERVENTION = 104;
     const ST_EVT_PATRONOFARTS = 105;
     const ST_EVT_PAPAL_BULL = 106;
+
 }
 
 
@@ -93,10 +94,8 @@ abstract class mTokenTypes{
     const FORTRESS = 1212;
     const PIRATE_HAVEN = 1213;
     const JESUIT_UNIVERSITY = 1214;
-    const CONTROL = 2000;
+    const CONTROL = 2000;//what does this even Mean? only used in City::getControl(), I think
     const KEYS = 2001;
-    const CATHOLIC = 2002;
-    const REFORMED = 2003;
     const HEX = 2004;
     const MILITARY = 2005;
     const UNITS = 2006;
@@ -135,6 +134,12 @@ abstract class mTokenTypes{
     const UNIVERSITY = 2039;
 }
 
+abstract class ReligionIDs{
+    const CATHOLIC = 2002;
+    const REFORMED = 2003;
+    const OTHER = 5;
+}
+
 /*
  * Token Type constants
  */
@@ -145,7 +150,7 @@ abstract class UnitTypes{
     const CAV = 3;
 }
 
-abstract class UnitShips{
+abstract class NavalUnitTokens{
     const ENGLISH_SQUADRON = 1060;
     const FRENCH_SQUADRON = 1061;
     const GENOESE_SQAUADRON = 1062;
@@ -598,14 +603,6 @@ abstract class DebatorLocations{
     const FRE_4 = 4356;
 }
 
-abstract class UnitTokens{
-
-}
-
-abstract class ControllMarkerTokens{
-
-}
-
 //TODO split this into reasonable named subsections
 abstract class OtherTokens{
     const UNREST = 1073;
@@ -645,7 +642,6 @@ const KATHERINE_PARR = 1187;
 const KATHRYN_HOWARD = 1188;
 }
 
-//all named positions on the, excluding cities
 abstract class TrackLocations{
     const TURN_TRACK_1 = 4000;
     const TURN_TRACK_2 = 4001;
@@ -1031,15 +1027,15 @@ abstract class ELECTORATE_DISPLAY_Locations{
     const BRA = 4091;
 }
 
-//what is this even used for?
+//The locations on the Papal playerbord where he marks who already is excomicated.
 abstract class ExkomunikationLocations{
-    const EXCOMMUNICATED_1 = 4262;
-    const EXCOMMUNICATED_2 = 4263;
-    const EXCOMMUNICATED_3 = 4264;
-    const EXCOMMUNICATED_4 = 4265;
-    const EXCOMMUNICATED_5 = 4266;
-    const EXCOMMUNICATED_6 = 4267;
-    const EXCOMMUNICATED_7 = 4268;
+    const EXCOMMUNICATED_LUTHER = 4274;
+    const EXCOMMUNICATED_ZWINGLI = 4275;
+    const EXCOMMUNICATED_CRANMER = 4276;
+    const EXCOMMUNICATED_CALVIN = 4277;
+    const EXCOMMUNICATED_HENRYVIII = 4278;
+    const EXCOMMUNICATED_FRANCISI = 4279;
+    const EXCOMMUNICATED_CHARLESV = 4280;
 }
 
 abstract class DiploTokens{

@@ -97,13 +97,13 @@ class Cards extends \HIS\Helpers\Pieces {
 			}
 			self::create([$piece], $location);
 		}
-		//TODO read number of square controll markers on board and leader to calc correct number of cards.
-		Cards::draw(Powers::OTTOMAN, 3);
-		Cards::draw(Powers::HAPSBURG, 5);
-		Cards::draw(Powers::ENGLAND, 3);
-		Cards::draw(Powers::FRANCE, 4);
-		Cards::draw(Powers::PAPACY, 3);
-		Cards::draw(Powers::PROTESTANT, 3);
+		
+		Cards::draw(Powers::OTTOMAN, Players::getCardDraw(Powers::OTTOMAN));
+		Cards::draw(Powers::HAPSBURG, Players::getCardDraw((Powers::HAPSBURG)));
+		Cards::draw(Powers::ENGLAND, Players::getCardDraw((Powers::ENGLAND)));
+		Cards::draw(Powers::FRANCE, Players::getCardDraw((Powers::FRANCE)));
+		Cards::draw(Powers::PAPACY, Players::getCardDraw(Powers::PAPACY));
+		Cards::draw(Powers::PROTESTANT, Players::getCardDraw(Powers::PROTESTANT));
 	}
 
 	public static function draw(String $power, int $num) : void{
@@ -121,7 +121,7 @@ class Cards extends \HIS\Helpers\Pieces {
 		$query = self::move([strval($card)], ['discard']);
 	}
 
-	public static function playEvent($card): void { //TODO no card type?
+	public static function playEvent($card): void {
 		Notifications::message("Cards::playEvent: cardId".Utils::varToString($card));
 		//Notifications::notif_playCardEvent($player, $card);// the notification is done somewhere else before here. after play Card.
 		switch($card['id']){
@@ -136,6 +136,12 @@ class Cards extends \HIS\Helpers\Pieces {
 				break;
 			case CardIds::PATRON_OF_THE_ARTS:
 				Game::get()->gamestate->nextState("playEvtPatronOfArts");
+				break;
+			case CardIds::PAPAL_BULL:
+				Game::get()->gamestate->nextState("playEvtPapalBull");
+				break;
+			case cardIds::LEIPZIG_DEBATE:
+				Game::get()->gamestate->nextState("playEvLeipzigDebate");
 				break;
 				//TODO add the other 
 		}

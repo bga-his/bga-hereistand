@@ -1,12 +1,18 @@
 <?php
 namespace HIS\States;
 
+use CityIDs;
 use HIS\Core\Game;
 use HIS\Core\Globals;
 use HIS\Managers\Cities;
 use HIS\Managers\Players;
 use HIS\Managers\Diplomacy;
-
+use HIS\Managers\Tokens;
+use HIS\Helpers\Pieces;
+use Powers;
+use TrackTokens;
+use Debators;
+use ExkomunikationLocations;
 trait ArgsOnEnteringStateTrait {
 
 	public static function freeHomeSpaces($power){
@@ -74,40 +80,56 @@ trait ArgsOnEnteringStateTrait {
 	}
 
     function argEvtJanissaries(){
-        return ArgsOnEnteringStateTrait::freeHomeSpaces(OTTOMAN);
+        return ArgsOnEnteringStateTrait::freeHomeSpaces(Powers::OTTOMAN);
     }
 
 	function argEvtHolyRoman(){
-		return ArgsOnEnteringStateTrait::freeHomeSpaces(HAPSBURG);
+		return ArgsOnEnteringStateTrait::freeHomeSpaces(Powers::HAPSBURG);
 	}
 
 	function argSixWives(){
 		return [
-			'can_declare_war_on_france' => !Diplomacy::IsAtWar(ENGLAND, FRANCE) && ! Diplomacy::IsAllied(ENGLAND, FRANCE), 
-			'can_declare_war_on_hapsburg' => True,
-			'can_declare_war_on_scotland' => True, 
-			'nextWive_name' => ""];
+			'can_declare_war_on_France' => Diplomacy::IsNeutral(Powers::ENGLAND, Powers::FRANCE), 
+			'can_declare_war_on_hapsburg' => Diplomacy::IsNeutral(Powers::HAPSBURG, Powers::FRANCE),
+			'can_declare_war_on_scotland' => Diplomacy::IsNeutral(Powers::MINOR_SCOTLAND, Powers::FRANCE), 
+			'nextWive_name' => Tokens::getTrackPosition(TrackTokens::ANNE_BOLEYN)];
 	}
 
 	function argPatronOfArts(){
 		$modifer = 0;
-		if(Cities::getControllPowerByName("milan") == FRANCE){
+		if(Cities::getControllPowerById(CityIDs::MILAN) == Powers::FRANCE){
 			$modifer += 2;
 		}
-		if(Cities::getControllPowerByName("florence") == FRANCE){
+		if(Cities::getControllPowerById(CityIds::FLORENCE) == Powers::FRANCE){
 			$modifer += 1;
 		}
 		//TODO 3 citys in Italy -> +2
-		$homeCities = Cities::getHomeCities(FRANCE);
+		$homeCities = Cities::getHomeCities(Powers::FRANCE);
 		foreach ($homeCities as $city_id => $city) {
 			//TODO if contains enemy units: -2
 			//TODO only one time per enemy or total, I think.
-			if(Cities::getControllPowerById($city_id) != FRANCE){
+			if(Cities::getControllPowerById($city_id) != Powers::FRANCE){
 				$modifer -= 1;
 			}
 		}
 		return [
 			'modifier' => $modifer
 		];
+	}
+
+	function argPapalBull(){
+		$debators = [];
+		$tmp = [[ExkomunikationLocations::EXCOMMUNICATED_LUTHER, Debators::LUTHER], [ExkomunikationLocations::EXCOMMUNICATED_CALVIN, Debators::CALVIN], [ExkomunikationLocations::EXCOMMUNICATED_CRANMER, DEBATORS::CRANMER], [ExkomunikationLocations::EXCOMMUNICATED_ZWINGLI, Debators::ZWINGLI], 
+			[ExkomunikationLocations::EXCOMMUNICATED_HENRYVIII, Rulers::HenryVIII], [ExkomunikationLocations::EXCOMMUNICATED_FRANCISI, Rulers::FrancisI], [ExkomunikationLocations::EXCOMMUNICATED_CHARLESV, Rulers::CHARLESV]];
+		// TODO: Rulers is undefined, but all of them are also military leaders.
+		foreach ($tmp As $tmpI) {
+			if( !Pieces::getInLocation($tupI[0]) == TokenIDs::EXCOMMUNICATED){//TODO im very certain this wont work.
+				$debators[] = $tupI[1];
+			}
+		}
+		return [
+			'debators' => [],
+			'leaders' => []
+		]
 	}
 }

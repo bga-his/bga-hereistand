@@ -2771,13 +2771,16 @@ tokenIDs::BRANDON => [
 tokenIDs::CHARLES_V => [
 "name" => "Charles V",
 "power" => Powers::OTHER,
-"style" => "Military Leader charles_v",
+"style" => "Military Leader, Ruler charles_v",
 "db_id" => "charles_v",
 "command_rating" => 10,
 "battle_rating" => 2,
+"admin_rating" => 2,
+"card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER]
+  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::RULER]
 ],
 tokenIDs::DUDLEY => [
 "name" => "Dudley",
@@ -2815,35 +2818,44 @@ tokenIDs::FERDINAND => [
 tokenIDs::FRANCIS_I => [
 "name" => "Francis I",
 "power" => Powers::OTHER,
-"style" => "Military Leader francis_i",
+"style" => "Military Leader, Ruler francis_i",
 "db_id" => "tbd_1047",
 "command_rating" => 8,
 "battle_rating" => 1,
+"admin_rating" => 1,
+"card_bonus" => 1,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER]
+  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::RULER]
 ],
 tokenIDs::HENRY_II => [
 "name" => "Henry II",
 "power" => Powers::OTHER,
-"style" => "Military Leader henry_ii",
+"style" => "Military Leader, Ruler henry_ii",
 "db_id" => "tbd_1048",
 "command_rating" => 8,
 "battle_rating" => 0,
+"admin_rating" => 1,
+"card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER]
+  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::RULER]
 ],
 tokenIDs::HENRY_VIII => [
 "name" => "Henry VIII",
 "power" => Powers::OTHER,
-"style" => "Military Leader henry_viii",
+"style" => "Military Leader, Ruler henry_viii",
 "db_id" => "tbd_1049",
 "command_rating" => 8,
 "battle_rating" => 1,
+"admin_rating" => 1,
+"card_bonus" => 1,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER]
+  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::RULER]
 ],
 tokenIDs::IBRAHIM => [
 "name" => "Ibrahim",
@@ -2921,13 +2933,16 @@ tokenIDs::RENEGADE => [
 tokenIDs::SULEIMAN => [
 "name" => "Suleiman",
 "power" => Powers::OTHER,
-"style" => "Military Leader suleiman",
+"style" => "Military Leader, Ruler suleiman",
 "db_id" => "tbd_1056",
 "command_rating" => 12,
 "battle_rating" => 2,
+"admin_rating" => 2,
+"card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER]
+  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::RULER]
 ],
 tokenIDs::ENGLISH_SQUADRON => [
 "name" => "English Squadron",
@@ -3412,11 +3427,14 @@ tokenIDs::BULLINGER => [
 tokenIDs::CALVIN => [
 "name" => "Calvin",
 "power" => Powers::OTHER,
-"style" => "Debater calvin",
+"style" => "Debater, Ruler calvin",
 "db_id" => "tbd_1100",
 "debate_value" => 4,
+"admin_rating" => 1,
+"card_bonus" => 0,
 "types" => [
-  tokenTypeIDs::DEBATER],
+  tokenTypeIDs::DEBATER,,
+  tokenTypeIDs::RULER],
 "BACK" => [
 "name" => "Calvin",
 "style" => "Debater Committed calvin",
@@ -3540,11 +3558,14 @@ tokenIDs::LATIMER => [
 tokenIDs::LUTHER => [
 "name" => "Luther",
 "power" => Powers::OTHER,
-"style" => "Debater luther",
+"style" => "Debater, Ruler luther",
 "db_id" => "tbd_1108",
 "debate_value" => 4,
+"admin_rating" => 2,
+"card_bonus" => 0,
 "types" => [
-  tokenTypeIDs::DEBATER],
+  tokenTypeIDs::DEBATER,,
+  tokenTypeIDs::RULER],
 "BACK" => [
 "name" => "Luther",
 "style" => "Debater Committed luther",
@@ -4652,6 +4673,76 @@ tokenIDs::JESUIT_UNIVERSITY => [
 "db_id" => "tbd_1211_{INDEX}",
 "types" => [
   tokenTypeIDs::UNIVERSITY]
+],
+tokenIDs::LEOX => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler leox",
+"db_id" => "tbd_1212",
+"admin_rating" => 0,
+"card_bonus" => 0,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::CLEMENTVII => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler clementvii",
+"db_id" => "tbd_1213",
+"admin_rating" => 1,
+"card_bonus" => 0,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::PAULIII => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler pauliii",
+"db_id" => "tbd_1214",
+"admin_rating" => 1,
+"card_bonus" => 1,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::EDWARDVI => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler edwardvi",
+"db_id" => "tbd_1215",
+"admin_rating" => 1,
+"card_bonus" => 0,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::MARYI => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler maryi",
+"db_id" => "tbd_1216",
+"admin_rating" => 1,
+"card_bonus" => 0,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::JULIUSIII => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler juliusiii",
+"db_id" => "tbd_1217",
+"admin_rating" => 0,
+"card_bonus" => 1,
+"types" => [
+  tokenTypeIDs::RULER]
+],
+tokenIDs::ELIZABETHI => [
+"name" => ,
+"power" => Powers::OTHER,
+"style" => "Ruler elizabethi",
+"db_id" => "tbd_1218",
+"admin_rating" => 2,
+"card_bonus" => 1,
+"types" => [
+  tokenTypeIDs::RULER]
 ]
 ];
 
@@ -4867,7 +4958,14 @@ tokenIDs::WARTBURG => 1,
 tokenIDs::EXCOMMUNICATED => 7,
 tokenIDs::FORTRESS => 9,
 tokenIDs::PIRATE_HAVEN => 2,
-tokenIDs::JESUIT_UNIVERSITY => 53
+tokenIDs::JESUIT_UNIVERSITY => 53,
+tokenIDs::LEOX => 1,
+tokenIDs::CLEMENTVII => 1,
+tokenIDs::PAULIII => 1,
+tokenIDs::EDWARDVI => 1,
+tokenIDs::MARYI => 1,
+tokenIDs::JULIUSIII => 1,
+tokenIDs::ELIZABETHI => 1
 ];
 
 $this->board_locations = [
@@ -6241,37 +6339,37 @@ locationIDs::PROT_EVENT_REMINDER_2 => [
 "y" => 69,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_1 => [
+locationIDs::EXCOMMUNICATED_LUTHER => [
 "x" => 2815,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_2 => [
+locationIDs::EXCOMMUNICATED_ZWINGLI => [
 "x" => 2898,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_3 => [
+locationIDs::EXCOMMUNICATED_CRANMER => [
 "x" => 2981,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_4 => [
+locationIDs::EXCOMMUNICATED_CALVIN => [
 "x" => 3064,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_5 => [
+locationIDs::EXCOMMUNICATED_HENRYVIII => [
 "x" => 3147,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_6 => [
+locationIDs::EXCOMMUNICATED_FRANCISI => [
 "x" => 3230,
 "y" => 925,
 "board" => "powercards"
 ],
-locationIDs::EXCOMMUNICATED_7 => [
+locationIDs::EXCOMMUNICATED_CHARLESV => [
 "x" => 3313,
 "y" => 925,
 "board" => "powercards"
