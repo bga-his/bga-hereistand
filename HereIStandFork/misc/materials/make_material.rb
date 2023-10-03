@@ -287,7 +287,7 @@ require_once 'modules/php/constants.inc.php';\n\n"
 	file.write php_print('seazones', seazones)
 end #materials
 
-intOffset = 6000
+hashTokenNameNumber = hash.new
 
 File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
@@ -296,6 +296,7 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
  */\n
  abstract class " + IDNAMES["tokens"].sub("::", "") + " \n{"
 	token_constants.each_with_index do |name, i|
+		hashTokenNameNumber[name] = 1000+i
 		file.write print_constant(name, i, 1000) + "\n"
 	end
 	file.write "}\n/*
@@ -338,14 +339,14 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	card_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 5000) + "\n"
 	end
-	file.write "}\n/* token types by type*/"
+	file.write "}\n
+/* token types by type*/"
 	token_constants_by_type.each_key do |key|
 	file.write "abstract class " + IDNAMES["tokens"].sub("::", "_") + key.gsub(" ", "_") + "\n{"
 	token_constants_by_type[key].each_with_index do |name, i|
-		file.write print_constant(name, i, intOffset) + "\n"
+		file.write print_constant(name, hashTokenNameNumber[name], 0) + "\n"
  	end
 	file.write "}\n\n"
-	intOffset += 1000
  end
 end
 File.open('../../modules/css/tokens.scss', 'w') do |file|
