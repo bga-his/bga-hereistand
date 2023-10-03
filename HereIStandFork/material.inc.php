@@ -16,7 +16,7 @@
  *
  * This file is loaded in your game logic class constructor, ie these variables
  * are available everywhere in your game logic code.
- *
+ *  2023-10-03 14:54
  */
 
 require_once 'modules/php/constants.inc.php';
@@ -1989,7 +1989,7 @@ CityIDs::RAGUSA => [
 $this->tokens = [
 tokenIDs::ENGLAND_KEY => [
 "name" => "English Key",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Control Keys Catholic england_key",
 "db_id" => "england_scm_{INDEX}",
 "types" => [
@@ -2007,7 +2007,7 @@ tokenIDs::ENGLAND_KEY => [
 ],
 tokenIDs::FRANCE_KEY => [
 "name" => "French Key",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Control Keys Catholic france_key",
 "db_id" => "tbd_1001_{INDEX}",
 "types" => [
@@ -2025,7 +2025,7 @@ tokenIDs::FRANCE_KEY => [
 ],
 tokenIDs::HAPSBURG_KEY => [
 "name" => "Hapsburg Key",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Control Keys Catholic hapsburg_key",
 "db_id" => "tbd_1002_{INDEX}",
 "types" => [
@@ -2043,7 +2043,7 @@ tokenIDs::HAPSBURG_KEY => [
 ],
 tokenIDs::OTTOMAN_KEY => [
 "name" => "Ottoman Key",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Control Keys Catholic ottoman_key",
 "db_id" => "tbd_1003_{INDEX}",
 "types" => [
@@ -2061,7 +2061,7 @@ tokenIDs::OTTOMAN_KEY => [
 ],
 tokenIDs::INDEPENDENT_KEY => [
 "name" => "Independent Key",
-"power" => Powers::OTHER,
+"power" => Powers::INDEPENDENT,
 "style" => "Control Keys Catholic independent_key",
 "db_id" => "tbd_1004_{INDEX}",
 "types" => [
@@ -2079,7 +2079,7 @@ tokenIDs::INDEPENDENT_KEY => [
 ],
 tokenIDs::PAPACY_KEY => [
 "name" => "Papacy Key",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Control Keys Catholic papacy_key",
 "db_id" => "tbd_1005_{INDEX}",
 "types" => [
@@ -2097,7 +2097,7 @@ tokenIDs::PAPACY_KEY => [
 ],
 tokenIDs::ENGLAND_HEX => [
 "name" => "English Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Control Hex Catholic england_hex",
 "db_id" => "tbd_1006_{INDEX}",
 "types" => [
@@ -2115,7 +2115,7 @@ tokenIDs::ENGLAND_HEX => [
 ],
 tokenIDs::FRANCE_HEX => [
 "name" => "French Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Control Hex Catholic france_hex",
 "db_id" => "tbd_1007_{INDEX}",
 "types" => [
@@ -2133,7 +2133,7 @@ tokenIDs::FRANCE_HEX => [
 ],
 tokenIDs::HAPSBURG_HEX => [
 "name" => "Hapsburg Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Control Hex Catholic hapsburg_hex",
 "db_id" => "tbd_1008_{INDEX}",
 "types" => [
@@ -2151,7 +2151,7 @@ tokenIDs::HAPSBURG_HEX => [
 ],
 tokenIDs::INDEPENDENT_HEX => [
 "name" => "Independent Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::INDEPENDENT,
 "style" => "Control Hex Catholic independent_hex",
 "db_id" => "tbd_1009_{INDEX}",
 "types" => [
@@ -2169,7 +2169,7 @@ tokenIDs::INDEPENDENT_HEX => [
 ],
 tokenIDs::OTTOMAN_HEX => [
 "name" => "Ottoman Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Control Hex Catholic ottoman_hex",
 "db_id" => "tbd_1010_{INDEX}",
 "types" => [
@@ -2187,7 +2187,7 @@ tokenIDs::OTTOMAN_HEX => [
 ],
 tokenIDs::PAPACY_HEX => [
 "name" => "Papacy Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Control Hex Catholic papacy_hex",
 "db_id" => "tbd_1011_{INDEX}",
 "types" => [
@@ -2205,7 +2205,7 @@ tokenIDs::PAPACY_HEX => [
 ],
 tokenIDs::PROTESTANT_HEX => [
 "name" => "Protestant Hexagonal Marker",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Control Hex Catholic protestant_hex",
 "db_id" => "tbd_1012_{INDEX}",
 "types" => [
@@ -2223,7 +2223,7 @@ tokenIDs::PROTESTANT_HEX => [
 ],
 tokenIDs::ENGLAND_1UNIT => [
 "name" => "English 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Military Units england_1unit",
 "db_id" => "england_1unit_{INDEX}",
 "strength" => 1,
@@ -2242,7 +2242,7 @@ tokenIDs::ENGLAND_1UNIT => [
 ],
 tokenIDs::ENGLAND_2UNIT => [
 "name" => "English 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Military Units england_2unit",
 "db_id" => "tbd_1014_{INDEX}",
 "strength" => 2,
@@ -2261,7 +2261,7 @@ tokenIDs::ENGLAND_2UNIT => [
 ],
 tokenIDs::ENGLAND_4UNIT => [
 "name" => "English 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Military Units england_4unit",
 "db_id" => "tbd_1015_{INDEX}",
 "strength" => 4,
@@ -2280,7 +2280,7 @@ tokenIDs::ENGLAND_4UNIT => [
 ],
 tokenIDs::ENGLAND_6UNIT => [
 "name" => "English 6 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Military Units england_6unit",
 "db_id" => "tbd_1016",
 "strength" => 6,
@@ -2299,7 +2299,7 @@ tokenIDs::ENGLAND_6UNIT => [
 ],
 tokenIDs::FRANCE_1UNIT => [
 "name" => "French 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Military Units france_1unit",
 "db_id" => "tbd_1017_{INDEX}",
 "strength" => 1,
@@ -2318,7 +2318,7 @@ tokenIDs::FRANCE_1UNIT => [
 ],
 tokenIDs::FRANCE_2UNIT => [
 "name" => "French 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Military Units france_2unit",
 "db_id" => "tbd_1018_{INDEX}",
 "strength" => 2,
@@ -2337,7 +2337,7 @@ tokenIDs::FRANCE_2UNIT => [
 ],
 tokenIDs::FRANCE_4UNIT => [
 "name" => "French 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Military Units france_4unit",
 "db_id" => "tbd_1019_{INDEX}",
 "strength" => 4,
@@ -2356,7 +2356,7 @@ tokenIDs::FRANCE_4UNIT => [
 ],
 tokenIDs::FRANCE_6UNIT => [
 "name" => "French 6 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Military Units france_6unit",
 "db_id" => "tbd_1020",
 "strength" => 6,
@@ -2375,7 +2375,7 @@ tokenIDs::FRANCE_6UNIT => [
 ],
 tokenIDs::GENOA_1UNIT => [
 "name" => "Genoese 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_GENOA,
 "style" => "Military Units genoa_1unit",
 "db_id" => "tbd_1021_{INDEX}",
 "strength" => 1,
@@ -2393,7 +2393,7 @@ tokenIDs::GENOA_1UNIT => [
 ],
 tokenIDs::HAPSBURG_1UNIT => [
 "name" => "Hapsburg 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_1unit",
 "db_id" => "tbd_1022_{INDEX}",
 "strength" => 1,
@@ -2412,7 +2412,7 @@ tokenIDs::HAPSBURG_1UNIT => [
 ],
 tokenIDs::HAPSBURG_2UNIT => [
 "name" => "Hapsburg 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_2unit",
 "db_id" => "tbd_1023_{INDEX}",
 "strength" => 2,
@@ -2431,7 +2431,7 @@ tokenIDs::HAPSBURG_2UNIT => [
 ],
 tokenIDs::HAPSBURG_4UNIT => [
 "name" => "Hapsburg 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_4unit",
 "db_id" => "tbd_1024_{INDEX}",
 "strength" => 4,
@@ -2450,7 +2450,7 @@ tokenIDs::HAPSBURG_4UNIT => [
 ],
 tokenIDs::HAPSBURG_6UNIT => [
 "name" => "Hapsburg 6 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_6unit",
 "db_id" => "tbd_1025",
 "strength" => 6,
@@ -2469,7 +2469,7 @@ tokenIDs::HAPSBURG_6UNIT => [
 ],
 tokenIDs::HUNGARY_1UNIT => [
 "name" => "Hungarian 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_HUNGARY,
 "style" => "Military Units hungary_1unit",
 "db_id" => "tbd_1026_{INDEX}",
 "strength" => 1,
@@ -2487,7 +2487,7 @@ tokenIDs::HUNGARY_1UNIT => [
 ],
 tokenIDs::HUNGARY_4UNIT => [
 "name" => "Hungarian 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_HUNGARY,
 "style" => "Military Units hungary_4unit",
 "db_id" => "tbd_1027",
 "strength" => 4,
@@ -2505,7 +2505,7 @@ tokenIDs::HUNGARY_4UNIT => [
 ],
 tokenIDs::INDEPENDENT_1UNIT => [
 "name" => "Independent 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::INDEPENDENT,
 "style" => "Military Units independent_1unit",
 "db_id" => "tbd_1028_{INDEX}",
 "strength" => 1,
@@ -2523,7 +2523,7 @@ tokenIDs::INDEPENDENT_1UNIT => [
 ],
 tokenIDs::KNIGHTS_1UNIT => [
 "name" => "Knights of Saint John 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::INDEPENDENT,
 "style" => "Military Units knights_1unit",
 "db_id" => "tbd_1029",
 "strength" => 1,
@@ -2533,7 +2533,7 @@ tokenIDs::KNIGHTS_1UNIT => [
 ],
 tokenIDs::OTTOMAN_1UNIT => [
 "name" => "Ottoman 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_1unit",
 "db_id" => "tbd_1030_{INDEX}",
 "strength" => 1,
@@ -2552,7 +2552,7 @@ tokenIDs::OTTOMAN_1UNIT => [
 ],
 tokenIDs::OTTOMAN_2UNIT => [
 "name" => "Ottoman 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_2unit",
 "db_id" => "tbd_1031_{INDEX}",
 "strength" => 2,
@@ -2571,7 +2571,7 @@ tokenIDs::OTTOMAN_2UNIT => [
 ],
 tokenIDs::OTTOMAN_4UNIT => [
 "name" => "Ottoman 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_4unit",
 "db_id" => "tbd_1032_{INDEX}",
 "strength" => 4,
@@ -2590,7 +2590,7 @@ tokenIDs::OTTOMAN_4UNIT => [
 ],
 tokenIDs::OTTOMAN_6UNIT => [
 "name" => "Ottoman 6 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_6unit",
 "db_id" => "tbd_1033",
 "strength" => 6,
@@ -2609,7 +2609,7 @@ tokenIDs::OTTOMAN_6UNIT => [
 ],
 tokenIDs::PAPACY_1UNIT => [
 "name" => "Papacy 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Military Units papacy_1unit",
 "db_id" => "tbd_1034_{INDEX}",
 "strength" => 1,
@@ -2628,7 +2628,7 @@ tokenIDs::PAPACY_1UNIT => [
 ],
 tokenIDs::PAPACY_2UNIT => [
 "name" => "Papacy 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Military Units papacy_2unit",
 "db_id" => "tbd_1035_{INDEX}",
 "strength" => 2,
@@ -2647,7 +2647,7 @@ tokenIDs::PAPACY_2UNIT => [
 ],
 tokenIDs::PAPACY_4UNIT => [
 "name" => "Papacy 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Military Units papacy_4unit",
 "db_id" => "tbd_1036_{INDEX}",
 "strength" => 4,
@@ -2666,7 +2666,7 @@ tokenIDs::PAPACY_4UNIT => [
 ],
 tokenIDs::PROTESTANT_1UNIT => [
 "name" => "Protestant 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_1unit",
 "db_id" => "tbd_1037_{INDEX}",
 "strength" => 1,
@@ -2685,7 +2685,7 @@ tokenIDs::PROTESTANT_1UNIT => [
 ],
 tokenIDs::PROTESTANT_2UNIT => [
 "name" => "Protestant 2 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_2unit",
 "db_id" => "tbd_1038_{INDEX}",
 "strength" => 2,
@@ -2704,7 +2704,7 @@ tokenIDs::PROTESTANT_2UNIT => [
 ],
 tokenIDs::PROTESTANT_4UNIT => [
 "name" => "Protestant 4 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_4unit",
 "db_id" => "tbd_1039_{INDEX}",
 "strength" => 4,
@@ -2723,7 +2723,7 @@ tokenIDs::PROTESTANT_4UNIT => [
 ],
 tokenIDs::SCOTLAND_1UNIT => [
 "name" => "Scottish 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_SCOTLAND,
 "style" => "Military Units scotland_1unit",
 "db_id" => "tbd_1040_{INDEX}",
 "strength" => 1,
@@ -2741,7 +2741,7 @@ tokenIDs::SCOTLAND_1UNIT => [
 ],
 tokenIDs::VENICE_1UNIT => [
 "name" => "Venetian 1 Military Unit",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_VENICE,
 "style" => "Military Units venice_1unit",
 "db_id" => "tbd_1041_{INDEX}",
 "strength" => 1,
@@ -2759,7 +2759,7 @@ tokenIDs::VENICE_1UNIT => [
 ],
 tokenIDs::BRANDON => [
 "name" => "Brandon",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Military Leader brandon",
 "db_id" => "brandon",
 "command_rating" => 6,
@@ -2770,8 +2770,8 @@ tokenIDs::BRANDON => [
 ],
 tokenIDs::CHARLES_V => [
 "name" => "Charles V",
-"power" => Powers::OTHER,
-"style" => "Military Leader, Ruler charles_v",
+"power" => Powers::HAPSBURG,
+"style" => "Military Leader Ruler charles_v",
 "db_id" => "charles_v",
 "command_rating" => 10,
 "battle_rating" => 2,
@@ -2795,7 +2795,7 @@ tokenIDs::DUDLEY => [
 ],
 tokenIDs::DUKE_ALVA => [
 "name" => "Duke of Alva",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Leader duke_alva",
 "db_id" => "duke_alva",
 "command_rating" => 6,
@@ -2806,7 +2806,7 @@ tokenIDs::DUKE_ALVA => [
 ],
 tokenIDs::FERDINAND => [
 "name" => "Ferdinand",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Military Leader ferdinand",
 "db_id" => "tbd_1046",
 "command_rating" => 6,
@@ -2817,8 +2817,8 @@ tokenIDs::FERDINAND => [
 ],
 tokenIDs::FRANCIS_I => [
 "name" => "Francis I",
-"power" => Powers::OTHER,
-"style" => "Military Leader, Ruler francis_i",
+"power" => Powers::FRANCE,
+"style" => "Military Leader Ruler francis_i",
 "db_id" => "tbd_1047",
 "command_rating" => 8,
 "battle_rating" => 1,
@@ -2826,13 +2826,13 @@ tokenIDs::FRANCIS_I => [
 "card_bonus" => 1,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
 tokenIDs::HENRY_II => [
 "name" => "Henry II",
-"power" => Powers::OTHER,
-"style" => "Military Leader, Ruler henry_ii",
+"power" => Powers::ENGLAND,
+"style" => "Military Leader Ruler henry_ii",
 "db_id" => "tbd_1048",
 "command_rating" => 8,
 "battle_rating" => 0,
@@ -2840,13 +2840,13 @@ tokenIDs::HENRY_II => [
 "card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
 tokenIDs::HENRY_VIII => [
 "name" => "Henry VIII",
-"power" => Powers::OTHER,
-"style" => "Military Leader, Ruler henry_viii",
+"power" => Powers::ENGLAND,
+"style" => "Military Leader Ruler henry_viii",
 "db_id" => "tbd_1049",
 "command_rating" => 8,
 "battle_rating" => 1,
@@ -2854,12 +2854,12 @@ tokenIDs::HENRY_VIII => [
 "card_bonus" => 1,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
 tokenIDs::IBRAHIM => [
 "name" => "Ibrahim",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Leader ibrahim",
 "db_id" => "tbd_1050",
 "command_rating" => 6,
@@ -2870,7 +2870,7 @@ tokenIDs::IBRAHIM => [
 ],
 tokenIDs::JOHN_FREDERICK => [
 "name" => "John Frederick",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Military Leader john_frederick",
 "db_id" => "tbd_1051",
 "command_rating" => 6,
@@ -2899,7 +2899,7 @@ tokenIDs::MAURICE_OF_SAXONY => [
 ],
 tokenIDs::MONTMORENCY => [
 "name" => "Montmorency",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Military Leader montmorency",
 "db_id" => "tbd_1053",
 "command_rating" => 6,
@@ -2910,7 +2910,7 @@ tokenIDs::MONTMORENCY => [
 ],
 tokenIDs::PHILIP_HESSE => [
 "name" => "Philip of Hesse",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Military Leader philip_hesse",
 "db_id" => "tbd_1054",
 "command_rating" => 6,
@@ -2932,7 +2932,7 @@ tokenIDs::RENEGADE => [
 ],
 tokenIDs::SULEIMAN => [
 "name" => "Suleiman",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Military Leader Ruler suleiman",
 "db_id" => "tbd_1056",
 "command_rating" => 12,
@@ -2946,7 +2946,7 @@ tokenIDs::SULEIMAN => [
 ],
 tokenIDs::ENGLISH_SQUADRON => [
 "name" => "English Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Naval Units english_squadron",
 "db_id" => "tbd_1057_{INDEX}",
 "strength" => 2,
@@ -2956,7 +2956,7 @@ tokenIDs::ENGLISH_SQUADRON => [
 ],
 tokenIDs::FRENCH_SQUADRON => [
 "name" => "French Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Naval Units french_squadron",
 "db_id" => "tbd_1058_{INDEX}",
 "strength" => 2,
@@ -2966,7 +2966,7 @@ tokenIDs::FRENCH_SQUADRON => [
 ],
 tokenIDs::GENOESE_SQAUADRON => [
 "name" => "Genoese Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_GENOA,
 "style" => "Naval Units genoese_sqauadron",
 "db_id" => "tbd_1059",
 "strength" => 2,
@@ -2976,7 +2976,7 @@ tokenIDs::GENOESE_SQAUADRON => [
 ],
 tokenIDs::HAPSBURG_SQUADRON => [
 "name" => "Hapsburg Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Naval Units hapsburg_squadron",
 "db_id" => "tbd_1060_{INDEX}",
 "strength" => 2,
@@ -2986,7 +2986,7 @@ tokenIDs::HAPSBURG_SQUADRON => [
 ],
 tokenIDs::OTTOMAN_SQUADRON => [
 "name" => "Ottoman Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Naval Units ottoman_squadron",
 "db_id" => "tbd_1061_{INDEX}",
 "strength" => 2,
@@ -2996,7 +2996,7 @@ tokenIDs::OTTOMAN_SQUADRON => [
 ],
 tokenIDs::PAPACY_SQUADRON => [
 "name" => "Papacy Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Naval Units papacy_squadron",
 "db_id" => "tbd_1062_{INDEX}",
 "strength" => 2,
@@ -3006,7 +3006,7 @@ tokenIDs::PAPACY_SQUADRON => [
 ],
 tokenIDs::SCOTTISH_SQUADRON => [
 "name" => "Scottish Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_SCOTLAND,
 "style" => "Naval Units scottish_squadron",
 "db_id" => "tbd_1063",
 "strength" => 2,
@@ -3016,7 +3016,7 @@ tokenIDs::SCOTTISH_SQUADRON => [
 ],
 tokenIDs::VENETIAN_SQUADRON => [
 "name" => "Venetian Squadron",
-"power" => Powers::OTHER,
+"power" => Powers::MINOR_VENICE,
 "style" => "Naval Units venetian_squadron",
 "db_id" => "tbd_1064_{INDEX}",
 "strength" => 2,
@@ -3130,7 +3130,7 @@ tokenIDs::VP_PROTESTANT => [
 ],
 tokenIDs::LOANED_ENGLAND => [
 "name" => "Loaned to England",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Loaned loaned_england",
 "db_id" => "tbd_1077_{INDEX}",
 "types" => [
@@ -3138,7 +3138,7 @@ tokenIDs::LOANED_ENGLAND => [
 ],
 tokenIDs::LOANED_FRANCE => [
 "name" => "Loaned to France",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Loaned loaned_france",
 "db_id" => "tbd_1078_{INDEX}",
 "types" => [
@@ -3146,7 +3146,7 @@ tokenIDs::LOANED_FRANCE => [
 ],
 tokenIDs::LOANED_HAPSBURG => [
 "name" => "Loaned to Hapsburg",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Loaned loaned_hapsburg",
 "db_id" => "tbd_1079_{INDEX}",
 "types" => [
@@ -3154,7 +3154,7 @@ tokenIDs::LOANED_HAPSBURG => [
 ],
 tokenIDs::LOANED_OTTOMAN => [
 "name" => "Loaned to Ottoman",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Loaned loaned_ottoman",
 "db_id" => "tbd_1080_{INDEX}",
 "types" => [
@@ -3162,7 +3162,7 @@ tokenIDs::LOANED_OTTOMAN => [
 ],
 tokenIDs::LOANED_PAPACY => [
 "name" => "Loaned to Papacy",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Loaned loaned_papacy",
 "db_id" => "tbd_1081_{INDEX}",
 "types" => [
@@ -3202,7 +3202,7 @@ tokenIDs::ZWINGLI_REFORMER => [
 ],
 tokenIDs::ALEANDER => [
 "name" => "Aleander",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater aleander",
 "db_id" => "tbd_1086",
 "debate_value" => 2,
@@ -3218,7 +3218,7 @@ tokenIDs::ALEANDER => [
 ],
 tokenIDs::CAJETAN => [
 "name" => "Cajetan",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater cajetan",
 "db_id" => "tbd_1087",
 "debate_value" => 1,
@@ -3234,7 +3234,7 @@ tokenIDs::CAJETAN => [
 ],
 tokenIDs::CAMPEGGIO => [
 "name" => "Campeggio",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater campeggio",
 "db_id" => "tbd_1088",
 "debate_value" => 2,
@@ -3250,7 +3250,7 @@ tokenIDs::CAMPEGGIO => [
 ],
 tokenIDs::CANISIUS => [
 "name" => "Canisius",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater canisius",
 "db_id" => "tbd_1089",
 "debate_value" => 3,
@@ -3266,7 +3266,7 @@ tokenIDs::CANISIUS => [
 ],
 tokenIDs::CARAFFA => [
 "name" => "Caraffa",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater caraffa",
 "db_id" => "tbd_1090",
 "debate_value" => 2,
@@ -3282,7 +3282,7 @@ tokenIDs::CARAFFA => [
 ],
 tokenIDs::CONTARINI => [
 "name" => "Contarini",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater contarini",
 "db_id" => "tbd_1091",
 "debate_value" => 2,
@@ -3298,7 +3298,7 @@ tokenIDs::CONTARINI => [
 ],
 tokenIDs::ECK => [
 "name" => "Eck",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater eck",
 "db_id" => "tbd_1092",
 "debate_value" => 3,
@@ -3314,7 +3314,7 @@ tokenIDs::ECK => [
 ],
 tokenIDs::FABER => [
 "name" => "Faber",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater faber",
 "db_id" => "tbd_1093",
 "debate_value" => 3,
@@ -3330,7 +3330,7 @@ tokenIDs::FABER => [
 ],
 tokenIDs::GARDINER => [
 "name" => "Gardiner",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater gardiner",
 "db_id" => "tbd_1094",
 "debate_value" => 3,
@@ -3346,7 +3346,7 @@ tokenIDs::GARDINER => [
 ],
 tokenIDs::LOYOLA => [
 "name" => "Loyola",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater loyola",
 "db_id" => "tbd_1095",
 "debate_value" => 4,
@@ -3362,7 +3362,7 @@ tokenIDs::LOYOLA => [
 ],
 tokenIDs::POLE => [
 "name" => "Pole",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater pole",
 "db_id" => "tbd_1096",
 "debate_value" => 3,
@@ -3378,7 +3378,7 @@ tokenIDs::POLE => [
 ],
 tokenIDs::TETZEL => [
 "name" => "Tetzel",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Debater tetzel",
 "db_id" => "tbd_1097",
 "debate_value" => 1,
@@ -3394,7 +3394,7 @@ tokenIDs::TETZEL => [
 ],
 tokenIDs::BUCER => [
 "name" => "Bucer",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater bucer",
 "db_id" => "tbd_1098",
 "debate_value" => 2,
@@ -3410,7 +3410,7 @@ tokenIDs::BUCER => [
 ],
 tokenIDs::BULLINGER => [
 "name" => "Bullinger",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater bullinger",
 "db_id" => "tbd_1099",
 "debate_value" => 2,
@@ -3426,14 +3426,14 @@ tokenIDs::BULLINGER => [
 ],
 tokenIDs::CALVIN => [
 "name" => "Calvin",
-"power" => Powers::OTHER,
-"style" => "Debater, Ruler calvin",
+"power" => Powers::PAPACY,
+"style" => "Debater Ruler calvin",
 "db_id" => "tbd_1100",
 "debate_value" => 4,
 "admin_rating" => 1,
 "card_bonus" => 0,
 "types" => [
-  tokenTypeIDs::DEBATER,,
+  tokenTypeIDs::DEBATER,
   tokenTypeIDs::RULER],
 "BACK" => [
 "name" => "Calvin",
@@ -3445,7 +3445,7 @@ tokenIDs::CALVIN => [
 ],
 tokenIDs::CARLSTADT => [
 "name" => "Carlstadt",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater carlstadt",
 "db_id" => "tbd_1101",
 "debate_value" => 1,
@@ -3461,7 +3461,7 @@ tokenIDs::CARLSTADT => [
 ],
 tokenIDs::COP => [
 "name" => "Cop",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater cop",
 "db_id" => "tbd_1102",
 "debate_value" => 2,
@@ -3477,7 +3477,7 @@ tokenIDs::COP => [
 ],
 tokenIDs::COVERDALE => [
 "name" => "Coverdale",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater coverdale",
 "db_id" => "tbd_1103",
 "debate_value" => 2,
@@ -3493,7 +3493,7 @@ tokenIDs::COVERDALE => [
 ],
 tokenIDs::CRANMER => [
 "name" => "Cranmer",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater cranmer",
 "db_id" => "tbd_1104",
 "debate_value" => 3,
@@ -3509,7 +3509,7 @@ tokenIDs::CRANMER => [
 ],
 tokenIDs::FAREL => [
 "name" => "Farel",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater farel",
 "db_id" => "tbd_1105",
 "debate_value" => 2,
@@ -3525,7 +3525,7 @@ tokenIDs::FAREL => [
 ],
 tokenIDs::KNOX => [
 "name" => "Knox",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater knox",
 "db_id" => "tbd_1106",
 "debate_value" => 3,
@@ -3541,7 +3541,7 @@ tokenIDs::KNOX => [
 ],
 tokenIDs::LATIMER => [
 "name" => "Latimer",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater latimer",
 "db_id" => "tbd_1107",
 "debate_value" => 1,
@@ -3557,14 +3557,14 @@ tokenIDs::LATIMER => [
 ],
 tokenIDs::LUTHER => [
 "name" => "Luther",
-"power" => Powers::OTHER,
-"style" => "Debater, Ruler luther",
+"power" => Powers::PAPACY,
+"style" => "Debater Ruler luther",
 "db_id" => "tbd_1108",
 "debate_value" => 4,
 "admin_rating" => 2,
 "card_bonus" => 0,
 "types" => [
-  tokenTypeIDs::DEBATER,,
+  tokenTypeIDs::DEBATER,
   tokenTypeIDs::RULER],
 "BACK" => [
 "name" => "Luther",
@@ -3576,7 +3576,7 @@ tokenIDs::LUTHER => [
 ],
 tokenIDs::MELANCHTHON => [
 "name" => "Melanchthon",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater melanchthon",
 "db_id" => "tbd_1109",
 "debate_value" => 3,
@@ -3592,7 +3592,7 @@ tokenIDs::MELANCHTHON => [
 ],
 tokenIDs::OEKOLAMPADIUS => [
 "name" => "Oekolampadius",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater oekolampadius",
 "db_id" => "tbd_1110",
 "debate_value" => 2,
@@ -3608,7 +3608,7 @@ tokenIDs::OEKOLAMPADIUS => [
 ],
 tokenIDs::OLIVETAN => [
 "name" => "Olivetan",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater olivetan",
 "db_id" => "tbd_1111",
 "debate_value" => 1,
@@ -3624,7 +3624,7 @@ tokenIDs::OLIVETAN => [
 ],
 tokenIDs::TYNDALE => [
 "name" => "Tyndale",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater tyndale",
 "db_id" => "tbd_1112",
 "debate_value" => 2,
@@ -3640,7 +3640,7 @@ tokenIDs::TYNDALE => [
 ],
 tokenIDs::WISHART => [
 "name" => "Wishart",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater wishart",
 "db_id" => "tbd_1113",
 "debate_value" => 1,
@@ -3656,7 +3656,7 @@ tokenIDs::WISHART => [
 ],
 tokenIDs::ZWINGLI => [
 "name" => "Zwingli",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Debater zwingli",
 "db_id" => "tbd_1114",
 "debate_value" => 3,
@@ -3672,7 +3672,7 @@ tokenIDs::ZWINGLI => [
 ],
 tokenIDs::ENGLISH_EXPLORATION => [
 "name" => "English Exploration Underway",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Exploration Charted english_exploration",
 "db_id" => "tbd_1115",
 "types" => [
@@ -3687,7 +3687,7 @@ tokenIDs::ENGLISH_EXPLORATION => [
 ],
 tokenIDs::FRENCH_EXPLORATION => [
 "name" => "French Exploration Underway",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Exploration Charted french_exploration",
 "db_id" => "tbd_1116",
 "types" => [
@@ -3702,7 +3702,7 @@ tokenIDs::FRENCH_EXPLORATION => [
 ],
 tokenIDs::HAPSBURG_EXPLORATION => [
 "name" => "Hapsburg Exploration Underway",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Exploration Charted hapsburg_exploration",
 "db_id" => "tbd_1117",
 "types" => [
@@ -3717,7 +3717,7 @@ tokenIDs::HAPSBURG_EXPLORATION => [
 ],
 tokenIDs::CABOT_ENG => [
 "name" => "Cabot English",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Explorer cabot_eng",
 "db_id" => "tbd_1118",
 "explorer_value" => 1,
@@ -3733,7 +3733,7 @@ tokenIDs::CABOT_ENG => [
 ],
 tokenIDs::CABOT_FRE => [
 "name" => "Cabot French",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Explorer cabot_fre",
 "db_id" => "tbd_1119",
 "explorer_value" => 1,
@@ -3749,7 +3749,7 @@ tokenIDs::CABOT_FRE => [
 ],
 tokenIDs::CABOT_HAP => [
 "name" => "Cabot Hapsburg",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer cabot_hap",
 "db_id" => "tbd_1120",
 "explorer_value" => 1,
@@ -3765,7 +3765,7 @@ tokenIDs::CABOT_HAP => [
 ],
 tokenIDs::CARTIER => [
 "name" => "Cartier",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Explorer cartier",
 "db_id" => "tbd_1121",
 "explorer_value" => 3,
@@ -3781,7 +3781,7 @@ tokenIDs::CARTIER => [
 ],
 tokenIDs::CHANCELLOR => [
 "name" => "Chancellor",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Explorer chancellor",
 "db_id" => "tbd_1122",
 "explorer_value" => 1,
@@ -3797,7 +3797,7 @@ tokenIDs::CHANCELLOR => [
 ],
 tokenIDs::DE_VACA => [
 "name" => "De Vaca",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer de_vaca",
 "db_id" => "tbd_1123",
 "explorer_value" => 0,
@@ -3813,7 +3813,7 @@ tokenIDs::DE_VACA => [
 ],
 tokenIDs::DE_SOTO => [
 "name" => "De Soto",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer de_soto",
 "db_id" => "tbd_1124",
 "explorer_value" => 2,
@@ -3829,7 +3829,7 @@ tokenIDs::DE_SOTO => [
 ],
 tokenIDs::LEON => [
 "name" => "Leon",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer leon",
 "db_id" => "tbd_1125",
 "explorer_value" => 1,
@@ -3845,7 +3845,7 @@ tokenIDs::LEON => [
 ],
 tokenIDs::MAGELLAN => [
 "name" => "Magellan",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer magellan",
 "db_id" => "tbd_1126",
 "explorer_value" => 4,
@@ -3861,7 +3861,7 @@ tokenIDs::MAGELLAN => [
 ],
 tokenIDs::NARVAEZ => [
 "name" => "Narvaez",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer narvaez",
 "db_id" => "tbd_1127",
 "explorer_value" => -1,
@@ -3877,7 +3877,7 @@ tokenIDs::NARVAEZ => [
 ],
 tokenIDs::ORELLANA => [
 "name" => "Orellana",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Explorer orellana",
 "db_id" => "tbd_1128",
 "explorer_value" => 3,
@@ -3893,7 +3893,7 @@ tokenIDs::ORELLANA => [
 ],
 tokenIDs::ROBERVAL => [
 "name" => "Roberval",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Explorer roberval",
 "db_id" => "tbd_1129",
 "explorer_value" => 0,
@@ -3909,7 +3909,7 @@ tokenIDs::ROBERVAL => [
 ],
 tokenIDs::RUT => [
 "name" => "Rut",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Explorer rut",
 "db_id" => "tbd_1130",
 "explorer_value" => 1,
@@ -3925,7 +3925,7 @@ tokenIDs::RUT => [
 ],
 tokenIDs::VERRAZANO => [
 "name" => "Verrazano",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Explorer verrazano",
 "db_id" => "tbd_1131",
 "explorer_value" => 2,
@@ -3941,7 +3941,7 @@ tokenIDs::VERRAZANO => [
 ],
 tokenIDs::WILLOUGHBY => [
 "name" => "Willoughby",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Explorer willoughby",
 "db_id" => "tbd_1132",
 "explorer_value" => 0,
@@ -3957,7 +3957,7 @@ tokenIDs::WILLOUGHBY => [
 ],
 tokenIDs::CHARLESBOURG => [
 "name" => "Charlesbourg",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Colony charlesbourg",
 "db_id" => "tbd_1133",
 "types" => [
@@ -3965,7 +3965,7 @@ tokenIDs::CHARLESBOURG => [
 ],
 tokenIDs::CUBA => [
 "name" => "Cuba",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Colony cuba",
 "db_id" => "tbd_1134",
 "types" => [
@@ -3973,7 +3973,7 @@ tokenIDs::CUBA => [
 ],
 tokenIDs::HISPANIOLA => [
 "name" => "Hispaniola",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Colony hispaniola",
 "db_id" => "tbd_1135",
 "types" => [
@@ -3981,7 +3981,7 @@ tokenIDs::HISPANIOLA => [
 ],
 tokenIDs::JAMESTOWN => [
 "name" => "Jamestown",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Colony jamestown",
 "db_id" => "tbd_1136",
 "types" => [
@@ -3989,7 +3989,7 @@ tokenIDs::JAMESTOWN => [
 ],
 tokenIDs::MONTREAL => [
 "name" => "Montreal",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Colony montreal",
 "db_id" => "tbd_1137",
 "types" => [
@@ -4005,7 +4005,7 @@ tokenIDs::POTOSI => [
 ],
 tokenIDs::PUERTO_RICO => [
 "name" => "Puerto Rico",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Colony puerto_rico",
 "db_id" => "tbd_1139",
 "types" => [
@@ -4013,7 +4013,7 @@ tokenIDs::PUERTO_RICO => [
 ],
 tokenIDs::ROANOKE => [
 "name" => "Roanoke",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Colony roanoke",
 "db_id" => "tbd_1140",
 "types" => [
@@ -4021,7 +4021,7 @@ tokenIDs::ROANOKE => [
 ],
 tokenIDs::HAPSBURG_CONQUEST => [
 "name" => "Hapsburg Conquest Underway",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquest hapsburg_conquest",
 "db_id" => "tbd_1141",
 "types" => [
@@ -4029,7 +4029,7 @@ tokenIDs::HAPSBURG_CONQUEST => [
 ],
 tokenIDs::ENGLISH_CONQUEST => [
 "name" => "English Conquest",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Conquistador english_conquest",
 "db_id" => "tbd_1142_{INDEX}",
 "explorer_value" => 0,
@@ -4038,7 +4038,7 @@ tokenIDs::ENGLISH_CONQUEST => [
 ],
 tokenIDs::FRENCH_CONQUEST => [
 "name" => "French Conquest",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Conquistador french_conquest",
 "db_id" => "tbd_1143_{INDEX}",
 "explorer_value" => 0,
@@ -4047,7 +4047,7 @@ tokenIDs::FRENCH_CONQUEST => [
 ],
 tokenIDs::CORDOVA => [
 "name" => "Cordova",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquistador cordova",
 "db_id" => "tbd_1144",
 "explorer_value" => 1,
@@ -4063,7 +4063,7 @@ tokenIDs::CORDOVA => [
 ],
 tokenIDs::CORONADO => [
 "name" => "Coronado",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquistador coronado",
 "db_id" => "tbd_1145",
 "explorer_value" => 1,
@@ -4079,7 +4079,7 @@ tokenIDs::CORONADO => [
 ],
 tokenIDs::CORTEZ => [
 "name" => "Cortez",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquistador cortez",
 "db_id" => "tbd_1146",
 "explorer_value" => 4,
@@ -4095,7 +4095,7 @@ tokenIDs::CORTEZ => [
 ],
 tokenIDs::MONTEJO => [
 "name" => "Montejo",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquistador montejo",
 "db_id" => "tbd_1147",
 "explorer_value" => 2,
@@ -4111,7 +4111,7 @@ tokenIDs::MONTEJO => [
 ],
 tokenIDs::PIZARRO => [
 "name" => "Pizarro",
-"power" => Powers::OTHER,
+"power" => Powers::HAPSBURG,
 "style" => "Conquistador pizarro",
 "db_id" => "tbd_1148",
 "explorer_value" => 3,
@@ -4377,7 +4377,7 @@ tokenIDs::PHONYVENICE_MINUS1 => [
 ],
 tokenIDs::ANNE_BOLEYN => [
 "name" => "Anne Boleyn",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife anne_boleyn",
 "db_id" => "tbd_1180",
 "types" => [
@@ -4392,7 +4392,7 @@ tokenIDs::ANNE_BOLEYN => [
 ],
 tokenIDs::ANNE_CLEVES => [
 "name" => "Anne of Cleves",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife anne_cleves",
 "db_id" => "tbd_1181",
 "types" => [
@@ -4407,7 +4407,7 @@ tokenIDs::ANNE_CLEVES => [
 ],
 tokenIDs::CATHERINE_ARAGON => [
 "name" => "Catherine of Aragon",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife catherine_aragon",
 "db_id" => "tbd_1182",
 "types" => [
@@ -4422,7 +4422,7 @@ tokenIDs::CATHERINE_ARAGON => [
 ],
 tokenIDs::JANE_SEYMOUR => [
 "name" => "Jane Seymour",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife jane_seymour",
 "db_id" => "tbd_1183",
 "types" => [
@@ -4437,7 +4437,7 @@ tokenIDs::JANE_SEYMOUR => [
 ],
 tokenIDs::KATHERINE_PARR => [
 "name" => "Katherine Parr",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife katherine_parr",
 "db_id" => "tbd_1184",
 "types" => [
@@ -4452,7 +4452,7 @@ tokenIDs::KATHERINE_PARR => [
 ],
 tokenIDs::KATHRYN_HOWARD => [
 "name" => "Kathryn Howard",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wife kathryn_howard",
 "db_id" => "tbd_1185",
 "types" => [
@@ -4467,7 +4467,7 @@ tokenIDs::KATHRYN_HOWARD => [
 ],
 tokenIDs::HENRY_MARITAL_STATUS => [
 "name" => "Henry Marital Status",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Wives Status henry_marital_status",
 "db_id" => "tbd_1186",
 "types" => [
@@ -4476,7 +4476,7 @@ tokenIDs::HENRY_MARITAL_STATUS => [
 ],
 tokenIDs::BIBLE_ENGLISH => [
 "name" => "Bible English",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation bible_english",
 "db_id" => "tbd_1187",
 "types" => [
@@ -4484,7 +4484,7 @@ tokenIDs::BIBLE_ENGLISH => [
 ],
 tokenIDs::BIBLE_FRENCH => [
 "name" => "Bible French",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation bible_french",
 "db_id" => "tbd_1188",
 "types" => [
@@ -4492,7 +4492,7 @@ tokenIDs::BIBLE_FRENCH => [
 ],
 tokenIDs::BIBLE_GERMAN => [
 "name" => "Bible German",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation bible_german",
 "db_id" => "tbd_1189",
 "types" => [
@@ -4500,7 +4500,7 @@ tokenIDs::BIBLE_GERMAN => [
 ],
 tokenIDs::NEW_TESTAMENT_ENGLISH => [
 "name" => "New Testament English",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_english",
 "db_id" => "tbd_1190",
 "types" => [
@@ -4508,7 +4508,7 @@ tokenIDs::NEW_TESTAMENT_ENGLISH => [
 ],
 tokenIDs::NEW_TESTAMENT_FRENCH => [
 "name" => "New Testament French",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_french",
 "db_id" => "tbd_1191",
 "types" => [
@@ -4516,7 +4516,7 @@ tokenIDs::NEW_TESTAMENT_FRENCH => [
 ],
 tokenIDs::NEW_TESTAMENT_GERMAN => [
 "name" => "New Testament German",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_german",
 "db_id" => "tbd_1192",
 "types" => [
@@ -4524,7 +4524,7 @@ tokenIDs::NEW_TESTAMENT_GERMAN => [
 ],
 tokenIDs::ST_PETERS_CP => [
 "name" => "Saint Peter's CP Status",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Saint_Peters st_peters_cp",
 "db_id" => "tbd_1193",
 "types" => [
@@ -4532,7 +4532,7 @@ tokenIDs::ST_PETERS_CP => [
 ],
 tokenIDs::AUGSBURG_CONFESSION => [
 "name" => "Augsburg Confession Active",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Event_reminder augsburg_confession",
 "db_id" => "tbd_1194",
 "types" => [
@@ -4540,7 +4540,7 @@ tokenIDs::AUGSBURG_CONFESSION => [
 ],
 tokenIDs::PRINTING_PRESS => [
 "name" => "Printing Press Active",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Event_reminder printing_press",
 "db_id" => "tbd_1195",
 "types" => [
@@ -4572,7 +4572,7 @@ tokenIDs::PLANTATIONS => [
 ],
 tokenIDs::PIRACY => [
 "name" => "Piracy Marker",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Event_reminder piracy",
 "db_id" => "tbd_1199_{INDEX}",
 "types" => [
@@ -4588,7 +4588,7 @@ tokenIDs::NATIVE_UPRISING => [
 ],
 tokenIDs::RAIDER_ENGLISH => [
 "name" => "English Huguenot Raider",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Event_reminder raider_english",
 "db_id" => "tbd_1201",
 "types" => [
@@ -4596,7 +4596,7 @@ tokenIDs::RAIDER_ENGLISH => [
 ],
 tokenIDs::RAIDER_FRENCH => [
 "name" => "French Huguenot Raider",
-"power" => Powers::OTHER,
+"power" => Powers::FRANCE,
 "style" => "Event_reminder raider_french",
 "db_id" => "tbd_1202",
 "types" => [
@@ -4604,7 +4604,7 @@ tokenIDs::RAIDER_FRENCH => [
 ],
 tokenIDs::RAIDER_PROTESTANT => [
 "name" => "Protestant Huguenot Raider",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Event_reminder raider_protestant",
 "db_id" => "tbd_1203",
 "types" => [
@@ -4636,7 +4636,7 @@ tokenIDs::THOMAS_MORE => [
 ],
 tokenIDs::WARTBURG => [
 "name" => "Wartburg",
-"power" => Powers::OTHER,
+"power" => Powers::PROTESTANT,
 "style" => "Event_reminder wartburg",
 "db_id" => "tbd_1207",
 "types" => [
@@ -4644,7 +4644,7 @@ tokenIDs::WARTBURG => [
 ],
 tokenIDs::EXCOMMUNICATED => [
 "name" => "Excommunicated",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Excommunion excommunicated",
 "db_id" => "tbd_1208_{INDEX}",
 "types" => [
@@ -4660,7 +4660,7 @@ tokenIDs::FORTRESS => [
 ],
 tokenIDs::PIRATE_HAVEN => [
 "name" => "Pirate Haven",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "PirateHaven pirate_haven",
 "db_id" => "tbd_1210_{INDEX}",
 "types" => [
@@ -4668,7 +4668,7 @@ tokenIDs::PIRATE_HAVEN => [
 ],
 tokenIDs::JESUIT_UNIVERSITY => [
 "name" => "Jesuit University",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "University jesuit_university",
 "db_id" => "tbd_1211_{INDEX}",
 "types" => [
@@ -4676,7 +4676,7 @@ tokenIDs::JESUIT_UNIVERSITY => [
 ],
 tokenIDs::LEOX => [
 "name" => "Leo X",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Ruler leox",
 "db_id" => "tbd_1212",
 "admin_rating" => 0,
@@ -4685,8 +4685,8 @@ tokenIDs::LEOX => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::CLEMENTVII => [
-"name" => "Clement VII",
-"power" => Powers::OTHER,
+"name" => "Celement VII",
+"power" => Powers::PAPACY,
 "style" => "Ruler clementvii",
 "db_id" => "tbd_1213",
 "admin_rating" => 1,
@@ -4696,7 +4696,7 @@ tokenIDs::CLEMENTVII => [
 ],
 tokenIDs::PAULIII => [
 "name" => "Paul III",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Ruler pauliii",
 "db_id" => "tbd_1214",
 "admin_rating" => 1,
@@ -4706,7 +4706,7 @@ tokenIDs::PAULIII => [
 ],
 tokenIDs::EDWARDVI => [
 "name" => "Edward VI",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Ruler edwardvi",
 "db_id" => "tbd_1215",
 "admin_rating" => 1,
@@ -4716,7 +4716,7 @@ tokenIDs::EDWARDVI => [
 ],
 tokenIDs::MARYI => [
 "name" => "Mary I",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Ruler maryi",
 "db_id" => "tbd_1216",
 "admin_rating" => 1,
@@ -4726,7 +4726,7 @@ tokenIDs::MARYI => [
 ],
 tokenIDs::JULIUSIII => [
 "name" => "Julius III",
-"power" => Powers::OTHER,
+"power" => Powers::PAPACY,
 "style" => "Ruler juliusiii",
 "db_id" => "tbd_1217",
 "admin_rating" => 0,
@@ -4736,7 +4736,7 @@ tokenIDs::JULIUSIII => [
 ],
 tokenIDs::ELIZABETHI => [
 "name" => "Elizabeth I",
-"power" => Powers::OTHER,
+"power" => Powers::ENGLAND,
 "style" => "Ruler elizabethi",
 "db_id" => "tbd_1218",
 "admin_rating" => 2,

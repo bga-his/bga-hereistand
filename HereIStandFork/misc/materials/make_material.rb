@@ -77,10 +77,10 @@ token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
-	if constant_name = 'SULEIMAN'
-		puts constant_name+row['Group']
+	if constant_name == 'SULEIMAN'
+		puts constant_name+" "+row['Group']
 	end
-	if row['Group'] = "VP" or row['Group'].nil? then
+	if row['Group'] == 'VP' or row['Group'].nil? then
 			token['power'] =  IDNAMES["powers"]+'OTHER'
 		else
 			token['power'] = IDNAMES["powers"] + row['Group']
@@ -270,7 +270,7 @@ File.open('../../material.inc.php', 'w') do |file|
  *
  * This file is loaded in your game logic class constructor, ie these variables
  * are available everywhere in your game logic code.
- *
+ *  2023-10-03 14:54
  */
 
 require_once 'modules/php/constants.inc.php';\n\n"
@@ -300,8 +300,9 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	end
 	file.write "}\n/*
  * Token constans grouped by type
+ * see below
  */
- see below
+
  /*
   * Token type constants
 */\n
