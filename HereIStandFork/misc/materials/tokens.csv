@@ -42,20 +42,20 @@ PROTESTANT_4UNIT,2,Protestant 4 Military Unit,Protestant 4 Mercenary Unit,2,Prot
 SCOTLAND_1UNIT,3,Scottish 1 Military Unit,Scottish 2 Military Unit,2,ScottishReg-1.svg,ScottishReg-2.svg,Military Units,Military Units,MINOR_SCOTLAND,,Any city,1,2,,,,,,,
 VENICE_1UNIT,4,Venetian 1 Military Unit,Venetian 2 Military Unit,2,VeniceReg-1.svg,VeniceReg-2.svg,Military Units,Military Units,MINOR_VENICE,,Any city,1,2,,,,,,,
 BRANDON,1,Brandon,,1,Brandon.svg,,Military Leader,,ENGLAND,brandon,Any city or any power card,,,1,6,,,,,
-CHARLES_V,1,Charles V,,1,Charles_V.svg,,"Military Leader, Ruler",,HAPSBURG,charles_v,Any city or any power card,,,2,10,,,,2,0
+CHARLES_V,1,Charles V,,1,Charles_V.svg,,Military Leader Ruler,,HAPSBURG,charles_v,Any city or any power card,,,2,10,,,,2,0
 DUDLEY,1,Dudley,,1,Dudley.svg,,Military Leader,,,dudly,Any city or any power card,,,0,6,,,,,
 DUKE_ALVA,1,Duke of Alva,,1,Duke_of_Alva.svg,,Military Leader,,HAPSBURG,duke_alva,Any city or any power card,,,1,6,,,,,
 FERDINAND,1,Ferdinand,,1,Ferdinand.svg,,Military Leader,,HAPSBURG,,Any city or any power card,,,1,6,,,,,
-FRANCIS_I,1,Francis I,,1,Francis_I.svg,,"Military Leader, Ruler",,FRANCE,,Any city or any power card,,,1,8,,,,1,1
-HENRY_II,1,Henry II,,1,Henry_II.svg,,"Military Leader, Ruler",,ENGLAND,,Any city or any power card,,,0,8,,,,1,0
-HENRY_VIII,1,Henry VIII,,1,Henry_VIII.svg,,"Military Leader, Ruler",,ENGLAND,,Any city or any power card,,,1,8,,,,1,1
+FRANCIS_I,1,Francis I,,1,Francis_I.svg,,Military Leader Ruler,,FRANCE,,Any city or any power card,,,1,8,,,,1,1
+HENRY_II,1,Henry II,,1,Henry_II.svg,,Military Leader Ruler,,ENGLAND,,Any city or any power card,,,0,8,,,,1,0
+HENRY_VIII,1,Henry VIII,,1,Henry_VIII.svg,,Military Leader Ruler,,ENGLAND,,Any city or any power card,,,1,8,,,,1,1
 IBRAHIM,1,Ibrahim,,1,Ibrahim.svg,,Military Leader,,OTTOMAN,,Any city or any power card,,,1,6,,,,,
-JOHN_FREDERICK,1,John Frederick,,1,John_Frederick.svg,,Military Leader,,,,Any city or any power card,,,0,6,,,,,
+JOHN_FREDERICK,1,John Frederick,,1,John_Frederick.svg,,Military Leader,,PROTESTANT,,Any city or any power card,,,0,6,,,,,
 MAURICE_OF_SAXONY,1,Maurice of Saxony,Maurice of Saxony,2,Maurice_Protestant.svg,Maurice_Hapsburg.svg,Military Leader,Military Leader,,maurice_of_saxony,Any city or any power card,,,1,6,,,,,
 MONTMORENCY,1,Montmorency,,1,Montmorency.svg,,Military Leader,,FRANCE,,Any city or any power card,,,1,6,,,,,
-PHILIP_HESSE,1,Philip of Hesse,,1,Philip_Hesse.svg,,Military Leader,,,,Any city or any power card,,,0,6,,,,,
+PHILIP_HESSE,1,Philip of Hesse,,1,Philip_Hesse.svg,,Military Leader,,PROTESTANT,,Any city or any power card,,,0,6,,,,,
 RENEGADE,1,"Charles Borbon, Renegade Leader",,1,Renegade.svg,,Military Leader,,,,Any city or any power card,,,1,6,,,,,
-SULEIMAN,1,Suleiman,,1,Suleiman.svg,,"Military Leader, Ruler",,OTTOMAN,,Any city or any power card,,,2,12,,,,2,0
+SULEIMAN,1,Suleiman,,1,Suleiman.svg,,Military Leader Ruler,,OTTOMAN,,Any city or any power card,,,2,12,,,,2,0
 ENGLISH_SQUADRON,5,English Squadron,,1,English_squadron.svg,,Naval Units,,ENGLAND,,Any port or sea or turn score,2,,,,,,,,
 FRENCH_SQUADRON,5,French Squadron,,1,French_squadron.svg,,Naval Units,,FRANCE,,Any port or sea or turn score,2,,,,,,,,
 GENOESE_SQAUADRON,1,Genoese Squadron,,1,Genoa_squadron.svg,,Naval Units,,MINOR_GENOA,,Any port or sea or turn score,2,,,,,,,,
@@ -76,11 +76,11 @@ VP_HAPSBURG,1,Hapsburg VP's,,1,VP_Hapsburg.svg,,VP_marker,,,,Victory Track,,,,,,
 VP_OTTOMAN,1,Ottoman VP's,,1,VP_Ottoman.svg,,VP_marker,,,,Victory Track,,,,,,,,,
 VP_PAPACY,1,Papacy VP's,,1,VP_Papacy.svg,,VP_marker,,,,Victory Track,,,,,,,,,
 VP_PROTESTANT,1,Protestant VP's,,1,VP_Protestant.svg,,VP_marker,,,,Victory Track,,,,,,,,,
-LOANED_ENGLAND,28,Loaned to England,,1,Loaned_England.svg,,Loaned,,,,In any not English squadron,,,,,,,,,
-LOANED_FRANCE,28,Loaned to France,,1,Loaned_France.svg,,Loaned,,,,In any not French squadron,,,,,,,,,
-LOANED_HAPSBURG,27,Loaned to Hapsburg,,1,Loaned_Hapsburg.svg,,Loaned,,,,In any not Hapsburg squadron,,,,,,,,,
-LOANED_OTTOMAN,22,Loaned to Ottoman,,1,Loaned_Ottoman.svg,,Loaned,,,,In any not Ottoman squadron,,,,,,,,,
-LOANED_PAPACY,22,Loaned to Papacy,,1,Loaned_Papacy.svg,,Loaned,,,,In any not Papal squadron,,,,,,,,,
+LOANED_ENGLAND,28,Loaned to England,,1,Loaned_England.svg,,Loaned,,ENGLAND,,In any not English squadron,,,,,,,,,
+LOANED_FRANCE,28,Loaned to France,,1,Loaned_France.svg,,Loaned,,FRANCE,,In any not French squadron,,,,,,,,,
+LOANED_HAPSBURG,27,Loaned to Hapsburg,,1,Loaned_Hapsburg.svg,,Loaned,,HAPSBURG,,In any not Hapsburg squadron,,,,,,,,,
+LOANED_OTTOMAN,22,Loaned to Ottoman,,1,Loaned_Ottoman.svg,,Loaned,,OTTOMAN,,In any not Ottoman squadron,,,,,,,,,
+LOANED_PAPACY,22,Loaned to Papacy,,1,Loaned_Papacy.svg,,Loaned,,PAPACY,,In any not Papal squadron,,,,,,,,,
 CALVIN_REFORMER,1,Calvin Reformer,,1,CalvinReformer.svg,,Reformer,,,,Geneva,,,,,,,,,
 CRANMER_REFORMER,1,Cranmer Reformer,,1,CranmerReformer.svg,,Reformer,,,,London,,,,,,,,,
 LUTHER_REFORMER,1,Luther Reformer,,1,LutherReformer.svg,,Reformer,,,,Wittenberg,,,,,,,,,
@@ -99,7 +99,7 @@ POLE,1,Pole,Pole,2,PoleDebater.svg,PoleDebater_back.svg,Debater,Debater Committe
 TETZEL,1,Tetzel,Tetzel,2,TetzelDebater.svg,TetzelDebater_back.svg,Debater,Debater Committed,PROTESTANT,,Debater board or Prot power card if disgraced,,,,,,1,,,
 BUCER,1,Bucer,Bucer,2,BucerDebater.svg,BucerDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
 BULLINGER,1,Bullinger,Bullinger,2,BullingerDebater.svg,BullingerDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
-CALVIN,1,Calvin,Calvin,2,CalvinDebater.svg,CalvinDebater_back.svg,"Debater, Ruler",Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,4,,1,0
+CALVIN,1,Calvin,Calvin,2,CalvinDebater.svg,CalvinDebater_back.svg,Debater Ruler,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,4,,1,0
 CARLSTADT,1,Carlstadt,Carlstadt,2,CarlstadtDebater.svg,CarlstadtDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,1,,,
 COP,1,Cop,Cop,2,CopDebater.svg,CopDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
 COVERDALE,1,Coverdale,Coverdale,2,CoverdaleDebater.svg,CoverdaleDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
@@ -107,7 +107,7 @@ CRANMER,1,Cranmer,Cranmer,2,CranmerDebater.svg,CranmerDebater_back.svg,Debater,D
 FAREL,1,Farel,Farel,2,FarelDebater.svg,FarelDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
 KNOX,1,Knox,Knox,2,KnoxDebater.svg,KnoxDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,3,,,
 LATIMER,1,Latimer,Latimer,2,LatimerDebater.svg,LatimerDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,1,,,
-LUTHER,1,Luther,Luther,2,LutherDebater.svg,LutherDebater_back.svg,"Debater, Ruler",Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,4,,2,0
+LUTHER,1,Luther,Luther,2,LutherDebater.svg,LutherDebater_back.svg,Debater Ruler,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,4,,2,0
 MELANCHTHON,1,Melanchthon,Melanchthon,2,MelanchthonDebater.svg,MelanchthonDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,3,,,
 OEKOLAMPADIUS,1,Oekolampadius,Oekolampadius,2,OekolampadiusDebater.svg,OekolampadiusDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,2,,,
 OLIVETAN,1,Olivetan,Olivetan,2,OlivetanDebater.svg,OlivetanDebater_back.svg,Debater,Debater Committed,PAPACY,,Debater board or Papal power card if burned,,,,,,1,,,
@@ -198,23 +198,23 @@ PRINTING_PRESS,1,Printing Press Active,,1,PrintingPress.svg,,Event_reminder,,PRO
 COLONIAL_GOVERNOR,3,Colonial Governor,,1,ColonialGovernor.svg,,Event_reminder,,,,Colony board,,,,,,,,,
 GALLEONS,3,Galleons,,1,Galleons.svg,,Event_reminder,,,,Colony board,,,,,,,,,
 PLANTATIONS,3,Plantations,,1,Plantations.svg,,Event_reminder,,,,Colony board,,,,,,,,,
-PIRACY,4,Piracy Marker,,1,Piracy.svg,,Event_reminder,,,,Any sea,,,,,,,,,
+PIRACY,4,Piracy Marker,,1,Piracy.svg,,Event_reminder,,OTTOMAN,,Any sea,,,,,,,,,
 NATIVE_UPRISING,3,Native Uprising,,1,NativeUprising.svg,,Event_reminder,,,,Colony board,,,,,,,,,
-RAIDER_ENGLISH,1,English Huguenot Raider,,1,Raider_English.svg,,Event_reminder,,,,Colony board,,,,,,,,,
-RAIDER_FRENCH,1,French Huguenot Raider,,1,Raider_French.svg,,Event_reminder,,,,Colony board,,,,,,,,,
-RAIDER_PROTESTANT,1,Protestant Huguenot Raider,,1,Raider_Protestant.svg,,Event_reminder,,,,Colony board,,,,,,,,,
+RAIDER_ENGLISH,1,English Huguenot Raider,,1,Raider_English.svg,,Event_reminder,,ENGLAND,,Colony board,,,,,,,,,
+RAIDER_FRENCH,1,French Huguenot Raider,,1,Raider_French.svg,,Event_reminder,,FRANCE,,Colony board,,,,,,,,,
+RAIDER_PROTESTANT,1,Protestant Huguenot Raider,,1,Raider_Protestant.svg,,Event_reminder,,PROTESTANT,,Colony board,,,,,,,,,
 MERCATOR_MAP,1,Mercator's Map,,1,Mercator.svg,,Event_reminder,,,,Crossing Atlantic,,,,,,,,,
 SMALLPOX,1,Smallpox,,1,Smallpox.svg,,Event_reminder,,,,Crossing Atlantic,,,,,,,,,
 THOMAS_MORE,1,Thomas More,,1,ThomasMore.svg,,Event_reminder,,,,Turn Track,,,,,,,,,
 WARTBURG,1,Wartburg,,1,Wartburg.svg,,Event_reminder,,PROTESTANT,,Prot power card,,,,,,,,,
 EXCOMMUNICATED,7,Excommunicated,,1,Excommunicated.svg,,Excommunion,,PAPACY,,Papal power card,,,,,,,,,
 FORTRESS,9,Fortress,,1,Fortress.svg,,Fortress_marker,,,,Any city except keys or electorates,,,,,,,,,
-PIRATE_HAVEN,2,Pirate Haven,,1,PirateHaven.svg,,PirateHaven,,,,Oran or Tripoli,,,,,,,,,
+PIRATE_HAVEN,2,Pirate Haven,,1,PirateHaven.svg,,PirateHaven,,OTTOMAN,,Oran or Tripoli,,,,,,,,,
 JESUIT_UNIVERSITY,53,Jesuit University,,1,Jesuit_Univ.svg,,University,,PAPACY,,Any city,,,,,,,,,
-LEOX,0,,,,,,Ruler,,PAPACY,,,,,,,,,,0,0
-CLEMENTVII,0,,,,,,Ruler,,PAPACY,,,,,,,,,,1,0
-PAULIII,0,,,,,,Ruler,,PAPACY,,,,,,,,,,1,1
-EDWARDVI,0,,,,,,Ruler,,ENGLAND,,,,,,,,,,1,0
-MARYI,0,,,,,,Ruler,,ENGLAND,,,,,,,,,,1,0
-JULIUSIII,0,,,,,,Ruler,,PAPACY,,,,,,,,,,0,1
-ELIZABETHI,0,,,,,,Ruler,,ENGLAND,,,,,,,,,,2,1
+LEOX,0,Leo X,,,,,Ruler,,PAPACY,,,,,,,,,,0,0
+CLEMENTVII,0,Celement VII,,,,,Ruler,,PAPACY,,,,,,,,,,1,0
+PAULIII,0,Paul III,,,,,Ruler,,PAPACY,,,,,,,,,,1,1
+EDWARDVI,0,Edward VI,,,,,Ruler,,ENGLAND,,,,,,,,,,1,0
+MARYI,0,Mary I,,,,,Ruler,,ENGLAND,,,,,,,,,,1,0
+JULIUSIII,0,Julius III,,,,,Ruler,,PAPACY,,,,,,,,,,0,1
+ELIZABETHI,0,Elizabeth I,,,,,Ruler,,ENGLAND,,,,,,,,,,2,1

@@ -77,8 +77,11 @@ token_csv.each do |row|
 	token = Hash.new
 	constant_name = row['CONSTANT_NAME']
 	token['name'] = row['Name']
+	if constant_name = 'SULEIMAN'
+		puts constant_name+row['Group']
+	end
 	if row['Group'] = "VP" or row['Group'].nil? then
-		token['power'] =  IDNAMES["powers"]+'OTHER'
+			token['power'] =  IDNAMES["powers"]+'OTHER'
 		else
 			token['power'] = IDNAMES["powers"] + row['Group']
 	end
@@ -94,7 +97,7 @@ token_csv.each do |row|
 	token['card_bonus'] = row['card_bonus'].to_i unless row['card_bonus'].nil?
 	token['types'] = row['type'].upcase.split.map{|s| IDNAMES["types"]+s}
 	type_constants.merge row['type'].upcase.split
-	row['type'].upcase.split(", ") do |type|
+	row['type'].upcase.split do |type|
 		token_constants_by_type[type].push constant_name
 	end
 	count = row['Count'].to_i

@@ -2779,7 +2779,7 @@ tokenIDs::CHARLES_V => [
 "card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
 tokenIDs::DUDLEY => [
@@ -2933,7 +2933,7 @@ tokenIDs::RENEGADE => [
 tokenIDs::SULEIMAN => [
 "name" => "Suleiman",
 "power" => Powers::OTHER,
-"style" => "Military Leader, Ruler suleiman",
+"style" => "Military Leader Ruler suleiman",
 "db_id" => "tbd_1056",
 "command_rating" => 12,
 "battle_rating" => 2,
@@ -2941,7 +2941,7 @@ tokenIDs::SULEIMAN => [
 "card_bonus" => 0,
 "types" => [
   tokenTypeIDs::MILITARY,
-  tokenTypeIDs::LEADER,,
+  tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
 tokenIDs::ENGLISH_SQUADRON => [
@@ -4675,7 +4675,7 @@ tokenIDs::JESUIT_UNIVERSITY => [
   tokenTypeIDs::UNIVERSITY]
 ],
 tokenIDs::LEOX => [
-"name" => ,
+"name" => "Leo X",
 "power" => Powers::OTHER,
 "style" => "Ruler leox",
 "db_id" => "tbd_1212",
@@ -4685,7 +4685,7 @@ tokenIDs::LEOX => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::CLEMENTVII => [
-"name" => ,
+"name" => "Clement VII",
 "power" => Powers::OTHER,
 "style" => "Ruler clementvii",
 "db_id" => "tbd_1213",
@@ -4695,7 +4695,7 @@ tokenIDs::CLEMENTVII => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::PAULIII => [
-"name" => ,
+"name" => "Paul III",
 "power" => Powers::OTHER,
 "style" => "Ruler pauliii",
 "db_id" => "tbd_1214",
@@ -4705,7 +4705,7 @@ tokenIDs::PAULIII => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::EDWARDVI => [
-"name" => ,
+"name" => "Edward VI",
 "power" => Powers::OTHER,
 "style" => "Ruler edwardvi",
 "db_id" => "tbd_1215",
@@ -4715,7 +4715,7 @@ tokenIDs::EDWARDVI => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::MARYI => [
-"name" => ,
+"name" => "Mary I",
 "power" => Powers::OTHER,
 "style" => "Ruler maryi",
 "db_id" => "tbd_1216",
@@ -4725,7 +4725,7 @@ tokenIDs::MARYI => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::JULIUSIII => [
-"name" => ,
+"name" => "Julius III",
 "power" => Powers::OTHER,
 "style" => "Ruler juliusiii",
 "db_id" => "tbd_1217",
@@ -4735,7 +4735,7 @@ tokenIDs::JULIUSIII => [
   tokenTypeIDs::RULER]
 ],
 tokenIDs::ELIZABETHI => [
-"name" => ,
+"name" => "Elizabeth I",
 "power" => Powers::OTHER,
 "style" => "Ruler elizabethi",
 "db_id" => "tbd_1218",
