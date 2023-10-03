@@ -287,7 +287,7 @@ require_once 'modules/php/constants.inc.php';\n\n"
 	file.write php_print('seazones', seazones)
 end #materials
 
-hashTokenNameNumber = hash.new
+hashTokenNameNumber = Hash.new
 
 File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 	file.write "<?php\n"
