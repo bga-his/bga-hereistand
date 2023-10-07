@@ -1,6 +1,8 @@
 <?php
 namespace HIS\Core;
 
+use HIS\Managers\Players;
+
 class Notifications {
 	/*************************
 		   **** GENERIC METHODS ****
@@ -53,6 +55,13 @@ class Notifications {
 		self::notifyAll('playCard', '${player_name} played ${card_name} as Event', [
 			"player" => $player,
 			"card" => $card,
+		]);
+	}
+
+	public static function notif_drawCards($power, $num){
+		self::notifyAll('drawCard', '${player_name} drew ${num} cards', [
+			"player" => Players::getFromPower($power),
+			"num" => $num,
 		]);
 	}
 
@@ -132,6 +141,7 @@ class Notifications {
 
 			$args['city_name'] = $c['name'];
 		}
+	
 
 		// if (isset($args['task'])) {
 		//   $c = $args['task'];

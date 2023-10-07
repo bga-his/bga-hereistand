@@ -11,12 +11,14 @@ use HIS\Managers\Tokens;
 use HIS\Helpers\Pieces;
 use Powers;
 use TrackTokens;
-use Debators;
+use tokenIDs_DEBATER;
 use ExkomunikationLocations;
+use tokenIDs_RULER;
+use TokenIDs;
 trait ArgsOnEnteringStateTrait {
 
 	public static function freeHomeSpaces($power){
-		$cities = Game::get()->cities;//This works (Game::get() is a reference to the game object), but VScode underlines it as wrong.
+		$cities = Game::get()->cities;
 		$home_cities = [];
 		foreach ($cities as $city_id => $city) {
 			
@@ -119,17 +121,17 @@ trait ArgsOnEnteringStateTrait {
 
 	function argPapalBull(){
 		$debators = [];
-		$tmp = [[ExkomunikationLocations::EXCOMMUNICATED_LUTHER, Debators::LUTHER], [ExkomunikationLocations::EXCOMMUNICATED_CALVIN, Debators::CALVIN], [ExkomunikationLocations::EXCOMMUNICATED_CRANMER, DEBATORS::CRANMER], [ExkomunikationLocations::EXCOMMUNICATED_ZWINGLI, Debators::ZWINGLI], 
-			[ExkomunikationLocations::EXCOMMUNICATED_HENRYVIII, Rulers::HenryVIII], [ExkomunikationLocations::EXCOMMUNICATED_FRANCISI, Rulers::FrancisI], [ExkomunikationLocations::EXCOMMUNICATED_CHARLESV, Rulers::CHARLESV]];
+		$tmp = [[ExkomunikationLocations::EXCOMMUNICATED_LUTHER, tokenIDs_DEBATER::LUTHER], [ExkomunikationLocations::EXCOMMUNICATED_CALVIN, tokenIDs_DEBATER::CALVIN], [ExkomunikationLocations::EXCOMMUNICATED_CRANMER, tokenIDs_DEBATER::CRANMER], [ExkomunikationLocations::EXCOMMUNICATED_ZWINGLI, tokenIDs_DEBATER::ZWINGLI], 
+			[ExkomunikationLocations::EXCOMMUNICATED_HENRYVIII, tokenIDs_RULER::HENRY_VIII], [ExkomunikationLocations::EXCOMMUNICATED_FRANCISI, tokenIDs_RULER::FRANCIS_I], [ExkomunikationLocations::EXCOMMUNICATED_CHARLESV, tokenIDs_RULER::CHARLES_V]];
 		// TODO: Rulers is undefined, but all of them are also military leaders.
 		foreach ($tmp As $tmpI) {
-			if( !Pieces::getInLocation($tupI[0]) == TokenIDs::EXCOMMUNICATED){//TODO im very certain this wont work.
-				$debators[] = $tupI[1];
+			if( !Pieces::getInLocation($tmpI[0]) == TokenIDs::EXCOMMUNICATED){//TODO im very certain this wont work.
+				$debators[] = $tmpI[1];
 			}
 		}
 		return [
 			'debators' => [],
 			'leaders' => []
-		]
+		];
 	}
 }

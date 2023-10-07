@@ -6,23 +6,24 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
-use TrackTokens;
-use TokenSides;
+use TokenAttributs;
+use tokenIDs_EXPLORATION;
 use UnitTypes;
-use LandUnitTokens;
-use newWorldTokens;
+use tokenIDs_UNITS;
+use TokenSides;
 /**
  * Tokens: id, value, faction
  */
 class Tokens extends \HIS\Helpers\Pieces {
-	protected static string $table = 'tokens';
-	protected static string $prefix = 'token_';
-	protected static array $customFields = ['type'];
-	protected static bool $autoreshuffle = false;
-	protected static bool $autoIncrement = false;
+	protected static $table = 'tokens';
+	protected static $prefix = 'token_';
+	protected static $customFields = ['type'];
+	protected static $autoreshuffle = false;
+	protected static $autoIncrement = false;
 
 	//static function cast(Pieces $token) : Tokens {
 	static function cast($token) {
+		//$token = array ( 'id' => 'tbd_1156', 'location' => 'map_location_4075', 'state' => '0', 'type' => '1156', )
 		$locations = explode('_', $token['location']);
 		$token = [
 			'id' => $token['id'],
@@ -30,12 +31,12 @@ class Tokens extends \HIS\Helpers\Pieces {
 			'type' => $token['type'],
 			'location_type' => $locations[1] ?? null,
 			'location_id' => $locations[2] ?? null,
-			'flipped' => $token['state'] == FLIPPED ? 'flipped' : '',
+			'flipped' => $token['state'] == TokenSides::BACK ? 'flipped' : '',
 		];
 		$token_static = Game::get()->tokens[$token['type']];
 		$token = array_merge($token, $token_static);
 		if ($token['flipped'] == 'flipped') {
-			$token = array_merge($token, $token_static[TokenSides::BACK]);
+			$token = array_merge($token, $token_static[TokenAttributs::back]);
 		}
 		return $token;
 	}
@@ -190,7 +191,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 		foreach (Game::get()->getSetup() as $power => $cities) {
 			foreach ($cities as $city_name => $city) {
 				foreach ($city as $unit) {
-					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['map', 'city', $city_name]);
+					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['map', 'city', $city_name]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
 		}
@@ -203,9 +204,9 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 
 		// Hack to flip starting units
-		$id = self::dbIDIndex($tokens[LandUnitTokens::OTTOMAN_1UNIT]['db_id'], 1);
+		$id = self::dbIDIndex($tokens[tokenIDs_UNITS::OTTOMAN_1UNIT]['db_id'], 1);
 		self::setState($id, TokenSides::BACK);
-		$id = $tokens[newWorldTokens::HAPSBURG_EXPLORATION]['db_id'];
+		$id = $tokens[tokenIDs_EXPLORATION::HAPSBURG_EXPLORATION]['db_id'];
 		self::setState($id, TokenSides::BACK);
 	}
 }

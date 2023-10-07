@@ -2,7 +2,7 @@
 namespace HIS\Models;
 use HIS\Helpers\Utils;
 use HIS\Managers\Tokens;
-use mTokenTypes;
+use tokenTypeIDs;
 /*
  * Formation: all utility functions concerning a formation
  */
@@ -15,7 +15,7 @@ class FieldBattle {
 	public static function findOpposingPowers($destination, $tokens, $active_power) {
 		$powers = [];
 		foreach ($tokens as $token_id => $token) {
-			if (in_array(mTokenTypes::MILITARY, $token['types'])) {
+			if (in_array(tokenTypeIDs::MILITARY, $token['types'])) {
 				$power = $token['power'];
 				if (array_key_exists($power, $powers) == false) {
 					$powers[$power] = [
@@ -40,7 +40,7 @@ class FieldBattle {
 	public static function getDefendingPowers($destination, $tokens, $active_power) {
 		$defending_powers = [];
 		foreach ($tokens as $token_id => $token) {
-			if (in_array(mTokenTypes::MILITARY, $token['types'])) {
+			if (in_array(tokenTypeIDs::MILITARY, $token['types'])) {
 				$power = $token['power'];
 				if ($power != $active_power && in_array($power, $defending_powers) == false) {
 					$defending_powers[] = $power;

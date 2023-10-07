@@ -4,12 +4,11 @@ namespace HIS;
 use TokenIDs;
 use LocationIDs;
 use CityIDs;
-use ControllMarkerTokens;
 use Powers;
-use MilitaryLeadersToken;
-use LandUnitTokens;
-use NavalUnitTokens;
-use SpaceControllTokens;
+use tokenIDs_LEADER;
+use tokenIDs_UNITS;
+use tokenIDs_NAVAL;
+use tokenIDs_CONTROL;
 
 trait SetupTrait {
 	public function getTokenSetup() {
@@ -98,259 +97,262 @@ trait SetupTrait {
 		$setup_base = [
 			Powers::OTTOMAN => [
 				cityIds::ISTANBUL => [
-					MilitaryLeadersToken::SULEIMAN,
-					MilitaryLeadersToken::IBRAHIM,
-					LandUnitTokens::OTTOMAN_6UNIT,
-					LandUnitTokens::OTTOMAN_1UNIT,
-					SpaceControllTokens::OTTOMAN_KEY,
-					NavalUnitTokens::OTTOMAN_SQUADRON,
-					LandUnitTokens::OTTOMAN_1UNIT,
+					tokenIDs_LEADER::SULEIMAN,
+					tokenIDs_LEADER::IBRAHIM,
+					tokenIDs_UNITS::OTTOMAN_6UNIT,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
 				],
 				cityIds::EDIRNE => [
-					LandUnitTokens::OTTOMAN_1UNIT,
-					SpaceControllTokens::OTTOMAN_KEY,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
 				],
 				cityIds::SALONIKA => [
-					LandUnitTokens::OTTOMAN_1UNIT,
-					SpaceControllTokens::OTTOMAN_KEY,
-					NavalUnitTokens::OTTOMAN_SQUADRON,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
 				cityIds::ATHENS => [
-					LandUnitTokens::OTTOMAN_1UNIT,
-					SpaceControllTokens::OTTOMAN_KEY,
-					NavalUnitTokens::OTTOMAN_SQUADRON,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
 			],
 			Powers::HAPSBURG => [
 				cityIds::VALLADOLID => [
-					MilitaryLeadersToken::CHARLES_V,
-					MilitaryLeadersToken::DUKE_ALVA,
-					LandUnitTokens::HAPSBURG_4UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
+					tokenIDs_LEADER::CHARLES_V,
+					tokenIDs_LEADER::DUKE_ALVA,
+					tokenIDs_UNITS::HAPSBURG_4UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
 				cityIds::SEVILLE => [
-					LandUnitTokens::HAPSBURG_1UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
-					NavalUnitTokens::HAPSBURG_SQUADRON,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
 				cityIds::BARCELONA => [
-					LandUnitTokens::HAPSBURG_1UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
-					NavalUnitTokens::HAPSBURG_SQUADRON,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
 				cityIds::NAVARRE => [
-					LandUnitTokens::HAPSBURG_1UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
 				cityIds::TUNIS => [
-					LandUnitTokens::HAPSBURG_1UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
 				cityIds::NAPLES => [
-					LandUnitTokens::HAPSBURG_2UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
-					NavalUnitTokens::HAPSBURG_SQUADRON,
+					tokenIDs_UNITS::HAPSBURG_2UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
 				cityIds::BESANCON => [
-					LandUnitTokens::HAPSBURG_1UNIT,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
 				],
 				cityIds::BRUSSELS => [
-					LandUnitTokens::HAPSBURG_1UNIT,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
 				],
 				cityIds::VIENNA => [
-					MilitaryLeadersToken::FERDINAND,
-					LandUnitTokens::HAPSBURG_4UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
+					tokenIDs_LEADER::FERDINAND,
+					tokenIDs_UNITS::HAPSBURG_4UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
 				cityIds::ANTWERP => [
-					LandUnitTokens::HAPSBURG_2UNIT,
-					LandUnitTokens::HAPSBURG_1UNIT,
-					SpaceControllTokens::HAPSBURG_KEY,
+					tokenIDs_UNITS::HAPSBURG_2UNIT,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
 				cityIds::WITTENBERG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::BRANDENBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::MAINZ => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::COLOGNE => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::TRIER => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::AUGSBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::STETTIN => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::LUBECK => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::MAGDEBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::HAMBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::BRUNSWICK => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::BREMEN => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::MUNSTER => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::KASSEL => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::ERFURT => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::LEIPZIG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::NUREMBERG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::WORMS => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::REGENSBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::STRASBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 				cityIds::SALZBURG => [
-					SpaceControllTokens::HAPSBURG_HEX,
+					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 			],
 			Powers::PROTESTANT => [
 			],
 			Powers::ENGLAND => [
 				cityIds::LONDON => [
-					MilitaryLeadersToken::HENRY_VIII,
-					MilitaryLeadersToken::BRANDON,
-					LandUnitTokens::ENGLAND_1UNIT,
-					LandUnitTokens::ENGLAND_2UNIT,
-					SpaceControllTokens::ENGLAND_KEY,
-					NavalUnitTokens::ENGLISH_SQUADRON,
+					tokenIDs_LEADER::HENRY_VIII,
+					tokenIDs_LEADER::BRANDON,
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_UNITS::ENGLAND_2UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
+					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
 				cityIds::PORTSMOUTH => [
-					NavalUnitTokens::ENGLISH_SQUADRON,
+					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
 				cityIds::CALAIS => [
-					LandUnitTokens::ENGLAND_2UNIT,
-					SpaceControllTokens::ENGLAND_KEY,
+					tokenIDs_UNITS::ENGLAND_2UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
 				cityIds::YORK => [
-					LandUnitTokens::ENGLAND_1UNIT,
-					SpaceControllTokens::ENGLAND_KEY,
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
 				cityIds::BRISTOL => [
-					LandUnitTokens::ENGLAND_1UNIT,
-					SpaceControllTokens::ENGLAND_KEY,
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
 			],
 			Powers::FRANCE => [
 				cityIds::PARIS => [
-					MilitaryLeadersToken::FRANCIS_I,
-					MilitaryLeadersToken::MONTMORENCY,
-					LandUnitTokens::FRANCE_4UNIT,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_LEADER::FRANCIS_I,
+					tokenIDs_LEADER::MONTMORENCY,
+					tokenIDs_UNITS::FRANCE_4UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 				cityIds::ROUEN => [
-					LandUnitTokens::FRANCE_1UNIT,
-					NavalUnitTokens::FRENCH_SQUADRON,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_NAVAL::FRENCH_SQUADRON,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 				cityIds::BORDEAUX => [
-					LandUnitTokens::FRANCE_2UNIT,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_UNITS::FRANCE_2UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 				cityIds::LYON => [
-					LandUnitTokens::FRANCE_1UNIT,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 				cityIds::MARSEILLE => [
-					LandUnitTokens::FRANCE_1UNIT,
-					NavalUnitTokens::FRENCH_SQUADRON,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_NAVAL::FRENCH_SQUADRON,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 				cityIds::TURIN => [
-					SpaceControllTokens::FRANCE_HEX,
+					tokenIDs_CONTROL::FRANCE_HEX,
 				],
 				cityIds::MILAN => [
-					LandUnitTokens::FRANCE_2UNIT,
-					SpaceControllTokens::FRANCE_KEY,
+					tokenIDs_UNITS::FRANCE_2UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 			],
 			Powers::PAPACY => [
 				cityIds::ROME => [
-					LandUnitTokens::PAPACY_1UNIT,
-					NavalUnitTokens::PAPACY_SQUADRON,
-					SpaceControllTokens::PAPACY_KEY,
+					tokenIDs_UNITS::PAPACY_1UNIT,
+					tokenIDs_NAVAL::PAPACY_SQUADRON,
+					tokenIDs_CONTROL::PAPACY_KEY,
 				],
 				cityIds::RAVENNA => [
-					LandUnitTokens::PAPACY_1UNIT,
-					SpaceControllTokens::PAPACY_KEY,
+					tokenIDs_UNITS::PAPACY_1UNIT,
+					tokenIDs_CONTROL::PAPACY_KEY,
 				],
 			],
 			Powers::MINOR_VENICE => [
 				cityIds::VENICE => [
-					LandUnitTokens::VENICE_2UNIT,
-					NavalUnitTokens::VENETIAN_SQUADRON,
-					NavalUnitTokens::VENETIAN_SQUADRON,
-					NavalUnitTokens::VENETIAN_SQUADRON,
+					tokenIDs_UNITS::VENICE_1UNIT,
+					tokenIDs_UNITS::VENICE_1UNIT,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
 				],
 				cityIds::CORFU => [
-					LandUnitTokens::VENICE_1UNIT,
+					tokenIDs_UNITS::VENICE_1UNIT,
 				],
 				cityIds::CANDIA => [
-					LandUnitTokens::VENICE_1UNIT,
+					tokenIDs_UNITS::VENICE_1UNIT,
 				],
 			],
 			Powers::MINOR_GENOA => [
 				cityIds::GENOA => [
-					MilitaryLeadersToken::ANDREA_DORIA,
-					LandUnitTokens::GENOA_2UNIT,
-					NavalUnitTokens::GENOESE_SQAUADRON,
+					tokenIDs_LEADER::ANDREA_DORIA,
+					tokenIDs_UNITS::GENOA_1UNIT,
+					tokenIDs_UNITS::GENOA_1UNIT,
+					tokenIDs_NAVAL::GENOESE_SQAUADRON,
 				],
 			],
 			Powers::MINOR_HUNGARY => [
 				cityIds::BELGRADE => [
-					LandUnitTokens::HUNGARY_1UNIT,
+					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
 				cityIds::BUDA => [
-					LandUnitTokens::HUNGARY_4UNIT,
-					LandUnitTokens::HUNGARY_1UNIT,
+					tokenIDs_UNITS::HUNGARY_4UNIT,
+					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
 				cityIds::PRAGUE => [
-					LandUnitTokens::HUNGARY_1UNIT,
+					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
 			],
 			Powers::MINOR_SCOTLAND => [
 				cityIds::EDINBURGH => [
-					LandUnitTokens::SCOTLAND_2UNIT,
-					LandUnitTokens::SCOTLAND_1UNIT,
-					NavalUnitTokens::SCOTTISH_SQUADRON,
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_NAVAL::SCOTTISH_SQUADRON,
 				],
 			],
 			Powers::INDEPENDENT => [
 				cityIds::RHODES => [
-					LandUnitTokens::KNIGHTS_1UNIT,
+					tokenIDs_UNITS::KNIGHTS_1UNIT,
 				],
 				cityIds::METZ => [
-					LandUnitTokens::INDEPENDENT_1UNIT,
+					tokenIDs_UNITS::INDEPENDENT_1UNIT,
 				],
 				cityIds::FLORENCE => [
-					LandUnitTokens::INDEPENDENT_1UNIT,
+					tokenIDs_UNITS::INDEPENDENT_1UNIT,
 				],
 			],
 

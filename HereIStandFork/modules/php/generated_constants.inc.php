@@ -1335,6 +1335,7 @@ const NEW_TESTAMENT_GERMAN = 1192;
 
 abstract class tokenIDs_SAINT_PETERS
 {const ST_PETERS_CP = 1193;
+const ST_PETERS_VP = 1167;
 }
 
 abstract class tokenIDs_EVENT_REMINDER

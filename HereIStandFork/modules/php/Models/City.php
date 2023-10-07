@@ -5,7 +5,8 @@ use HIS\Core\Game;
 use HIS\Managers\Tokens;
 use Powers;
 use ReligionIDs;
-use mTokenTypes;
+use tokenTypeIDs;
+
 /*
  * City: all utility functions concerning a city
  */
@@ -36,7 +37,7 @@ class City {
 	public function getControl() {
 		$control = $this->attributes['home_power'];
 		foreach ($this->tokens as $token) {
-			if (in_array(mTokenTypes::CONTROL, $token['types'])) {
+			if (in_array(tokenTypeIDs::CONTROL, $token['types'])) {
 				$control = $token['power'];
 			}
 		}

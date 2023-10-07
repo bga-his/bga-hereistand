@@ -34,7 +34,9 @@ require_once APP_GAMEMODULE_PATH . 'module/table/table.game.php';
 
 use HIS\Core\Actions;
 use HIS\Core\Globals;
+use HIS\Core\Notifications;
 use HIS\Core\Preferences;
+use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
@@ -77,6 +79,21 @@ class hereistandfork extends Table {
 	public function getImpulsePlayer() {
 		//TODO read from DB, as active player might be different from Impulse player during interrupts
 		return $player = Players::getActive();
+	}
+
+	public function mdebug($keyLocations) {
+		//TODO Tokens::getInLocation doesnt function as I would assume it does.
+		Notifications::message("keyLocation=".getType($keyLocations)." ".$keyLocations);
+		//$keyLocations = $keyLocations;
+		//powercards_location_
+		//map_city_
+		//supply_england_
+		//supply_other_
+		$tmp = Tokens::getInLocation($keyLocations);
+		Notifications::message("Count of tokens in ".$keyLocations." = ".count($tmp));
+		foreach($tmp as $i){
+			Notifications::message("Tokens in Location ".$keyLocations." :".Utils::varToString($i));
+		}
 	}
 
 	/*

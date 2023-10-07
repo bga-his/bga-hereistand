@@ -354,7 +354,7 @@ class Pieces extends DB_Manager {
 		}
 
 		//convert to string
-		for($i =0; $i < $ids.count(); $i++){
+		for($i =0; $i < count($ids); $i++){
 			$ids[$i] = "".$ids[$i];
 		}
 

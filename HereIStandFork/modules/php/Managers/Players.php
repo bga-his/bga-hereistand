@@ -2,19 +2,20 @@
 namespace HIS\Managers;
 use HIS\Core\Game;
 use HIS\Core\Notifications;
-use HIS\Models\Player;
 use powers;
+use Locationtypes;
+
 /*
  * Players manager : allows to easily access players ...
  *  a player is an instance of Player class
  */
 class Players extends \HIS\Helpers\DB_Manager {
 	const cardDraws = [
-		Powers::OTTOMAN => [0=>99, 1=>6, 2=>6, 3=>5, 4=>5, 5=>4, 6=>4, 7=>3, 8=>3, 9=>2, 10=>2, 11=>0],
-		Powers::HAPSBURG => [0=>99, 1=>7, 2=>7, 3=>6, 4=>6, 5=>5, 6=>5, 7=>4, 8=>4, 9=>3, 10=>3, 11=>2, 12=>2, 13=>1, 14=>0],
-		Powers::ENGLAND => [0=>99, 1=>4, 2=>4, 3=>3, 4=>3, 5=>2, 6=>2, 7=>1, 8=>1, 9=>0],
-		Powers::FRANCE => [0=>99, 1=>5, 2=>4, 3=>4, 4=>3, 5=>3, 6=>2, 7=>2, 8=>1, 9=>1, 10=>1, 11=>0],
-		Powers::PAPACY => [0=>99, 1=>4, 2=>4, 3=>4, 4=>3, 5=>3, 6=>2, 7=>0]
+		Powers::OTTOMAN => [0=>15, 1=>6, 2=>6, 3=>5, 4=>5, 5=>4, 6=>4, 7=>3, 8=>3, 9=>2, 10=>2, 11=>0],
+		Powers::HAPSBURG => [0=>15, 1=>7, 2=>7, 3=>6, 4=>6, 5=>5, 6=>5, 7=>4, 8=>4, 9=>3, 10=>3, 11=>2, 12=>2, 13=>1, 14=>0],
+		Powers::ENGLAND => [0=>15, 1=>4, 2=>4, 3=>3, 4=>3, 5=>2, 6=>2, 7=>1, 8=>1, 9=>0],
+		Powers::FRANCE => [0=>15, 1=>5, 2=>4, 3=>4, 4=>3, 5=>3, 6=>2, 7=>2, 8=>1, 9=>1, 10=>1, 11=>0],
+		Powers::PAPACY => [0=>15, 1=>4, 2=>4, 3=>4, 4=>3, 5=>3, 6=>2, 7=>0]
 	];//[power][SquareControllMarkers on player board] = cards drawn in winter
 	const vpFromKeys = [
 		Powers::OTTOMAN => [0=>99, 1=>20, 2=>18, 3=>16, 4=>14, 5=>12, 6=>10, 7=>8, 8=>6, 9=>4, 10=>2, 11=>0],
@@ -178,7 +179,12 @@ class Players extends \HIS\Helpers\DB_Manager {
 		if($power == Powers::FRANCE or $power == Powers::ENGLAND){
 			$leader = 1;
 		}
-		$numSquareControllMarkes = Tokens::getInLocation($power);
+
+		$numSquareControllMarkes = 0;//count(Tokens::getInLocation($power)); //TODO returns 0 at setup.
+		foreach (HomeCard_key_locations[$power] as $keyLocations) {
+			$numSquareControllMarkes += count(Tokens::getInLocation(Locationtypes::powercards."_".$keyLocations));
+		}
+		Notifications::message("Power ".$power." has ".$numSquareControllMarkes."  Keys on playerboard.");
 		return Players::cardDraws[$power][$numSquareControllMarkes] + $leader;
 	}
 }

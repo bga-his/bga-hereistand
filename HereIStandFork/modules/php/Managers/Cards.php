@@ -8,8 +8,6 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\Utils;
 use HIS\Managers\Players;
-use HIS\Models\Player;
-use Random\Engine;
 
 /**
  * Cards: id, type
@@ -98,6 +96,10 @@ class Cards extends \HIS\Helpers\Pieces {
 			self::create([$piece], $location);
 		}
 		
+		Cards::winterCardDraw();
+	}
+
+	public static function winterCardDraw() : void{
 		Cards::draw(Powers::OTTOMAN, Players::getCardDraw(Powers::OTTOMAN));
 		Cards::draw(Powers::HAPSBURG, Players::getCardDraw((Powers::HAPSBURG)));
 		Cards::draw(Powers::ENGLAND, Players::getCardDraw((Powers::ENGLAND)));
@@ -110,6 +112,7 @@ class Cards extends \HIS\Helpers\Pieces {
 		//$power: element of Powers
 		//$num: number of cards drawn
 		//TODO shuffle deck
+		Notifications::notif_drawCards($power, $num);
 		self::pickForLocation($num, ['deck'], ['hand', Players::getFromPower($power)->getId()]);
 	}
 
@@ -143,7 +146,7 @@ class Cards extends \HIS\Helpers\Pieces {
 			case cardIds::LEIPZIG_DEBATE:
 				Game::get()->gamestate->nextState("playEvLeipzigDebate");
 				break;
-				//TODO add the other 
+				//TODO add the other events
 		}
 	}
 }

@@ -3,7 +3,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     setupBoard() {
       for(let token_id in this.gamedatas.tokens){
+        print("token_id=" + token_id);
         let token = this.gamedatas.tokens[token_id];
+        print("token=" + token);
         if(token.board != 'supply'){
           this.place('tplToken', token, `${token.location_type}_${token.location_id}`);// This somehow includes tokens on player boards.
         }
@@ -15,6 +17,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     tplToken(token){
+      print("Board.tplToken("+token+")")
       return `
         <div id="${token.id}" class="token ${token.style} ${token.flipped}" data-name="${token.name}">
         </div>
