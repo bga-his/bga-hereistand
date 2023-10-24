@@ -1,5 +1,5 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistandfork.notifications', null, {
+  return declare('hereistand.notifications', null, {
     //TODO rename to "discard Card"
     //TODO doesnt get called.
     notif_playCardCP(args){

@@ -1,5 +1,5 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistandfork.states', null, {
+  return declare('hereistand.states', null, {
     
     onEnteringStatePickCard(args){
       debug("onEnteringStatePickCar: add this.onCardClick to cards on player hand.");

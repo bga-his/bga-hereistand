@@ -1,5 +1,5 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistandfork.board', null, {
+  return declare('hereistand.board', null, {
 
     setupBoard() {
       for(let token_id in this.gamedatas.tokens){

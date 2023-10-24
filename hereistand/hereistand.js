@@ -1,15 +1,15 @@
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
- * hereistandfork implementation : © CONTRIBUTORS
+ * hereistand implementation : © CONTRIBUTORS
  *
  * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
  * See http://en.boardgamearena.com/#!doc/Studio for more information.
  * -----
  *
- * hereistandfork.js
+ * hereistand.js
  *
- * hereistandfork user interface script
+ * hereistand user interface script
  *
  * In this file, you are describing the logic of your user interface, in Javascript language.
  *
@@ -34,9 +34,9 @@ define([
   g_gamethemeurl + 'modules/js/ActionButtons.js',
   g_gamethemeurl + 'modules/js/Actions.js',
 ], function (dojo, declare, noUiSlider) {
-  return declare('bgagame.hereistandfork', [customgame.game, hereistandfork.players, hereistandfork.board,
-                                        hereistandfork.cards, hereistandfork.actionbuttons, hereistandfork.notifications,
-                                        hereistandfork.states, hereistandfork.actions], {// Imports the setup[Players,Board,Cards] methods from modules/js/*,
+  return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board,
+                                        hereistand.cards, hereistand.actionbuttons, hereistand.notifications,
+                                        hereistand.states, hereistand.actions], {// Imports the setup[Players,Board,Cards] methods from modules/js/*,
     constructor() {
       console.log("constructor")
       this._activeStates = [

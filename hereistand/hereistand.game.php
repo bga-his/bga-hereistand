@@ -2,13 +2,13 @@
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
- * hereistandfork implementation : © CONTRIBUTORS
+ * hereistand implementation : © CONTRIBUTORS
  *
  * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
  * See http://en.boardgamearena.com/#!doc/Studio for more information.
  * -----
  *
- * hereistandfork.game.php
+ * hereistand.game.php
  *
  * This is the main file for your game logic.
  *
@@ -41,7 +41,7 @@ use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
 
-class hereistandfork extends Table {
+class hereistand extends Table {
 	use HIS\DebugTrait;
 	use HIS\States\NextPlayerTrait;
 	use HIS\States\MovementTrait;
@@ -68,7 +68,7 @@ class hereistandfork extends Table {
 	}
 
 	protected function getGameName() {
-		return 'hereistandfork';
+		return 'hereistand';
 	}
 
 	public function getStateName() {

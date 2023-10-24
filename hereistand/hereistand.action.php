@@ -5,19 +5,19 @@ use HIS\Core\Notifications;
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
- * hereistandfork implementation : ©  CONTRIBUTORS
+ * hereistand implementation : ©  CONTRIBUTORS
  *
  * This code has been produced on the BGA studio platform for use on https://boardgamearena.com.
  * See http://en.doc.boardgamearena.com/Studio for more information.
  * -----
  *
- * hereistandfork.action.php
+ * hereistand.action.php
  *
- * hereistandfork main action entry point
+ * hereistand main action entry point
  *
  */
 
-class action_hereistandfork extends APP_GameAction {
+class action_hereistand extends APP_GameAction {
 
 	// Constructor: please do not modify
 	public function __default() {
@@ -25,7 +25,7 @@ class action_hereistandfork extends APP_GameAction {
 			$this->view = 'common_notifwindow';
 			$this->viewArgs['table'] = self::getArg('table', AT_posint, true);
 		} else {
-			$this->view = 'hereistandfork_hereistandfork';
+			$this->view = 'hereistand_hereistand';
 			self::trace('Complete reinitialization of board game');
 		}
 	}

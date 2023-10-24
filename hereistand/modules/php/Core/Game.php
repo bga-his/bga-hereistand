@@ -1,6 +1,6 @@
 <?php
 namespace HIS\Core;
-use hereistandfork;
+use hereistand;
 
 /*
  * Game: a wrapper over table object to allow more generic modules
@@ -8,6 +8,6 @@ use hereistandfork;
 class Game {
 	public static function get() {
 		//Game::get()->cities = {cityID:City for all citiys in game}
-		return hereistandfork::get();
+		return hereistand::get();
 	}
 }

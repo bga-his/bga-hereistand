@@ -2,24 +2,24 @@
 /**
  *------
  * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
- * hereistandfork implementation : © CONTRIBUTORS
+ * hereistand implementation : © CONTRIBUTORS
  *
  * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
  * See http://en.boardgamearena.com/#!doc/Studio for more information.
  * -----
  *
- * hereistandfork.view.php
+ * hereistand.view.php
  *
  */
 
 require_once APP_BASE_PATH . 'view/common/game.view.php';
 
-class view_hereistandfork_hereistandfork extends game_view {
+class view_hereistand_hereistand extends game_view {
 	function getGameName() {
-		return 'hereistandfork';
+		return 'hereistand';
 	}
 	function build_page($viewArgs) {
-		$this->page->begin_block("hereistandfork_hereistandfork", "city");
+		$this->page->begin_block("hereistand_hereistand", "city");
 		foreach ($this->game->cities as $city_id => $city) {
 			$this->page->insert_block("city", array(
 				'X' => $city['x'],
@@ -28,7 +28,7 @@ class view_hereistandfork_hereistandfork extends game_view {
 				'NAME' => $city['name'],
 			));
 		}
-		$this->page->begin_block("hereistandfork_hereistandfork", "map_location");
+		$this->page->begin_block("hereistand_hereistand", "map_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
 			if ($location['board'] == 'map') {
 				$this->page->insert_block("map_location", array(
@@ -38,7 +38,7 @@ class view_hereistandfork_hereistandfork extends game_view {
 				));
 			}
 		}
-		$this->page->begin_block("hereistandfork_hereistandfork", "power_card_location");
+		$this->page->begin_block("hereistand_hereistand", "power_card_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
 			if ($location['board'] == 'powercards') {
 				$this->page->insert_block("power_card_location", array(
@@ -48,7 +48,7 @@ class view_hereistandfork_hereistandfork extends game_view {
 				));
 			}
 		}
-		$this->page->begin_block("hereistandfork_hereistandfork", "religious_struggle_location");
+		$this->page->begin_block("hereistand_hereistand", "religious_struggle_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
 			if ($location['board'] == 'religiousstruggle') {
 				$this->page->insert_block("religious_struggle_location", array(

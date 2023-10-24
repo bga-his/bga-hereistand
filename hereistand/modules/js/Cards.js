@@ -1,5 +1,5 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistandfork.cards', null, {
+  return declare('hereistand.cards', null, {
 
     setupCards() {
       console.log("setupCards")
