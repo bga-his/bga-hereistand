@@ -1,346 +1,358 @@
 <?php
 namespace HIS;
 
+use TokenIDs;
+use LocationIDs;
+use CityIDs;
+use Powers;
+use tokenIDs_LEADER;
+use tokenIDs_UNITS;
+use tokenIDs_NAVAL;
+use tokenIDs_CONTROL;
+
 trait SetupTrait {
 	public function getTokenSetup() {
 		return [
-			[VP_OTTOMAN, VICTORY_TRACK_8],
-			[PIRACY_VP, PIRACY_0],
-			[VP_HAPSBURG, VICTORY_TRACK_9],
-			[VP_ENGLAND, VICTORY_TRACK_9],
-			[VP_FRANCE, VICTORY_TRACK_12],
-			[VP_PAPACY, VICTORY_TRACK_19],
-			[VP_PROTESTANT, VICTORY_TRACK_0],
-			[AT_WAR, DIPLO_HAP_FRA],
-			[AT_WAR, DIPLO_FRA_PAP],
-			[AT_WAR, DIPLO_OTT_HUN],
-			[ENGLISH_PROT_COUNTER, PROTESTANT_SPACES_0],
-			[PROTESTANT_SPACES, PROTESTANT_SPACES_0],
-			[PROTESTANT_2UNIT, ELECTORATE_DISPLAY_WIT],
-			[PROTESTANT_2UNIT, ELECTORATE_DISPLAY_AUG],
-			[PROTESTANT_1UNIT, ELECTORATE_DISPLAY_COL],
-			[PROTESTANT_1UNIT, ELECTORATE_DISPLAY_TRI],
-			[PROTESTANT_1UNIT, ELECTORATE_DISPLAY_MAI],
-			[PROTESTANT_1UNIT, ELECTORATE_DISPLAY_BRA],
-			[BUCER, DEBATER_GER_1],
-			[LUTHER, DEBATER_GER_3],
-			[MELANCHTHON, DEBATER_GER_2],
-			[CARLSTADT, DEBATER_GER_4],
-			[ECK, DEBATER_POPE_1],
-			[CAMPEGGIO, DEBATER_POPE_2],
-			[ALEANDER, DEBATER_POPE_3],
-			[TETZEL, DEBATER_POPE_4],
-			[CAJETAN, DEBATER_POPE_5],
-			[OTTOMAN_KEY, OTTOMAN_KEY_11],
-			[OTTOMAN_KEY, OTTOMAN_KEY_10],
-			[OTTOMAN_KEY, OTTOMAN_KEY_9],
-			[OTTOMAN_KEY, OTTOMAN_KEY_8],
-			[OTTOMAN_KEY, OTTOMAN_KEY_7],
-			[OTTOMAN_KEY, OTTOMAN_KEY_6],
-			[OTTOMAN_KEY, OTTOMAN_KEY_5],
-			[HAPSBURG_KEY, HAPSBURG_KEY_14],
-			[HAPSBURG_KEY, HAPSBURG_KEY_13],
-			[HAPSBURG_KEY, HAPSBURG_KEY_12],
-			[HAPSBURG_KEY, HAPSBURG_KEY_11],
-			[HAPSBURG_KEY, HAPSBURG_KEY_10],
-			[HAPSBURG_KEY, HAPSBURG_KEY_9],
-			[ENGLAND_KEY, ENGLAND_KEY_9],
-			[ENGLAND_KEY, ENGLAND_KEY_8],
-			[ENGLAND_KEY, ENGLAND_KEY_7],
-			[ENGLAND_KEY, ENGLAND_KEY_6],
-			[ENGLAND_KEY, ENGLAND_KEY_5],
-			[HENRY_MARITAL_STATUS, MARITAL_STATUS_1],
-			[FRANCE_KEY, FRANCE_KEY_11],
-			[FRANCE_KEY, FRANCE_KEY_10],
-			[FRANCE_KEY, FRANCE_KEY_9],
-			[FRANCE_KEY, FRANCE_KEY_8],
-			[FRANCE_KEY, FRANCE_KEY_7],
-			[CHATEAUX_VP, CHATEAUX_0],
-			[PAPACY_KEY, PAPACY_KEY_7],
-			[PAPACY_KEY, PAPACY_KEY_6],
-			[PAPACY_KEY, PAPACY_KEY_5],
-			[PAPACY_KEY, PAPACY_KEY_4],
-			[PAPACY_KEY, PAPACY_KEY_3],
-			[ST_PETERS_VP, SAINT_PETERS_VP_0],
-			[ST_PETERS_CP, SAINT_PETERS_CP_0],
-			[NEW_TESTAMENT_ENGLISH, NT_TRANSLATION_0],
-			[BIBLE_ENGLISH, BIBLE_TRANSLATION_0],
-			[NEW_TESTAMENT_FRENCH, NT_TRANSLATION_0],
-			[BIBLE_FRENCH, BIBLE_TRANSLATION_0],
-			[NEW_TESTAMENT_GERMAN, NT_TRANSLATION_0],
-			[BIBLE_GERMAN, BIBLE_TRANSLATION_0],
-			[TURN, TURN_TRACK_1],
-			[ST_LAWRENCE_RIVER_1VP, ST_LAWRENCE_RIVER],
-			[GREAT_LAKES_1VP, GREAT_LAKES],
-			[MISSISSIPPI_RIVER_1VP, MISSISSIPI_RIVER],
-			[AZTECS_2VP, AZTEC],
-			[MAYA_1VP, MAYA],
-			[AMAZON_RIVER_2VP, AMAZON_RIVER],
-			[INCA_2VP, INCA],
-			[CIRCUMNAVIGATION_3VP, CIRCUMNAVIGATION],
-			[PACIFIC_STRAIT_1VP, PACIFIC_STRAIT],
-			[HAPSBURG_CONQUEST, CROSSING_ATLANTIC_1],
-			[HAPSBURG_EXPLORATION, CROSSING_ATLANTIC_2],
+			[TokenIds::VP_OTTOMAN, LocationIDS::VICTORY_TRACK_8],
+			[TokenIds::PIRACY_VP, LocationIDs::PIRACY_0],
+			[TokenIds::VP_HAPSBURG, LocationIDs::VICTORY_TRACK_9],
+			[TokenIds::VP_ENGLAND, LocationIDs::VICTORY_TRACK_9],
+			[TokenIds::VP_FRANCE, LocationIDs::VICTORY_TRACK_12],
+			[TokenIds::VP_PAPACY, LocationIDs::VICTORY_TRACK_19],
+			[TokenIds::VP_PROTESTANT, LocationIDs::VICTORY_TRACK_0],
+			[TokenIds::AT_WAR, LocationIDs::DIPLO_HAP_FRA],
+			[TokenIds::AT_WAR, LocationIDs::DIPLO_FRA_PAP],
+			[TokenIds::AT_WAR, LocationIDs::DIPLO_OTT_HUN],
+			[TokenIds::ENGLISH_PROT_COUNTER, LocationIDs::PROTESTANT_SPACES_0],
+			[TokenIds::PROTESTANT_SPACES, LocationIDs::PROTESTANT_SPACES_0],
+			[TokenIds::PROTESTANT_2UNIT, LocationIDs::ELECTORATE_DISPLAY_WIT],
+			[TokenIds::PROTESTANT_2UNIT, LocationIDs::ELECTORATE_DISPLAY_AUG],
+			[TokenIds::PROTESTANT_1UNIT, LocationIDs::ELECTORATE_DISPLAY_COL],
+			[TokenIds::PROTESTANT_1UNIT, LocationIDs::ELECTORATE_DISPLAY_TRI],
+			[TokenIds::PROTESTANT_1UNIT, LocationIDs::ELECTORATE_DISPLAY_MAI],
+			[TokenIds::PROTESTANT_1UNIT, LocationIDs::ELECTORATE_DISPLAY_BRA],
+			[TokenIds::BUCER, LocationIDs::DEBATER_GER_1],
+			[TokenIds::LUTHER, LocationIDs::DEBATER_GER_3],
+			[TokenIds::MELANCHTHON, LocationIDs::DEBATER_GER_2],
+			[TokenIds::CARLSTADT, LocationIDs::DEBATER_GER_4],
+			[TokenIds::ECK, LocationIDs::DEBATER_POPE_1],
+			[TokenIds::CAMPEGGIO, LocationIDs::DEBATER_POPE_2],
+			[TokenIds::ALEANDER, LocationIDs::DEBATER_POPE_3],
+			[TokenIds::TETZEL, LocationIDs::DEBATER_POPE_4],
+			[TokenIds::CAJETAN, LocationIDs::DEBATER_POPE_5],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_11],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_10],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_9],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_8],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_7],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_6],
+			[TokenIds::OTTOMAN_KEY, LocationIDs::OTTOMAN_KEY_5],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_14],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_13],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_12],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_11],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_10],
+			[TokenIds::HAPSBURG_KEY, LocationIDs::HAPSBURG_KEY_9],
+			[TokenIds::ENGLAND_KEY, LocationIDs::ENGLAND_KEY_9],
+			[TokenIds::ENGLAND_KEY, LocationIDs::ENGLAND_KEY_8],
+			[TokenIds::ENGLAND_KEY, LocationIDs::ENGLAND_KEY_7],
+			[TokenIds::ENGLAND_KEY, LocationIDs::ENGLAND_KEY_6],
+			[TokenIds::ENGLAND_KEY, LocationIDs::ENGLAND_KEY_5],
+			[TokenIds::HENRY_MARITAL_STATUS, LocationIDs::MARITAL_STATUS_1],
+			[TokenIds::FRANCE_KEY, LocationIDs::FRANCE_KEY_11],
+			[TokenIds::FRANCE_KEY, LocationIDs::FRANCE_KEY_10],
+			[TokenIds::FRANCE_KEY, LocationIDs::FRANCE_KEY_9],
+			[TokenIds::FRANCE_KEY, LocationIDs::FRANCE_KEY_8],
+			[TokenIds::FRANCE_KEY, LocationIDs::FRANCE_KEY_7],
+			[TokenIds::CHATEAUX_VP, LocationIDs::CHATEAUX_0],
+			[TokenIds::PAPACY_KEY, LocationIDs::PAPACY_KEY_7],
+			[TokenIds::PAPACY_KEY, LocationIDs::PAPACY_KEY_6],
+			[TokenIds::PAPACY_KEY, LocationIDs::PAPACY_KEY_5],
+			[TokenIds::PAPACY_KEY, LocationIDs::PAPACY_KEY_4],
+			[TokenIds::PAPACY_KEY, LocationIDs::PAPACY_KEY_3],
+			[TokenIds::ST_PETERS_VP, LocationIDs::SAINT_PETERS_VP_0],
+			[TokenIds::ST_PETERS_CP, LocationIDs::SAINT_PETERS_CP_0],
+			[TokenIds::NEW_TESTAMENT_ENGLISH, LocationIDs::NT_TRANSLATION_0],
+			[TokenIds::BIBLE_ENGLISH, LocationIDs::BIBLE_TRANSLATION_0],
+			[TokenIds::NEW_TESTAMENT_FRENCH, LocationIDs::NT_TRANSLATION_0],
+			[TokenIds::BIBLE_FRENCH, LocationIDs::BIBLE_TRANSLATION_0],
+			[TokenIds::NEW_TESTAMENT_GERMAN, LocationIDs::NT_TRANSLATION_0],
+			[TokenIds::BIBLE_GERMAN, LocationIDs::BIBLE_TRANSLATION_0],
+			[TokenIds::TURN, LocationIDs::TURN_TRACK_1],
+			[TokenIds::ST_LAWRENCE_RIVER_1VP, LocationIDs::ST_LAWRENCE_RIVER],
+			[TokenIds::GREAT_LAKES_1VP, LocationIDs::GREAT_LAKES],
+			[TokenIds::MISSISSIPPI_RIVER_1VP, LocationIDs::MISSISSIPI_RIVER],
+			[TokenIds::AZTECS_2VP, LocationIDs::AZTEC],
+			[TokenIds::MAYA_1VP, LocationIDs::MAYA],
+			[TokenIds::AMAZON_RIVER_2VP, LocationIDs::AMAZON_RIVER],
+			[TokenIds::INCA_2VP, LocationIDs::INCA],
+			[TokenIds::CIRCUMNAVIGATION_3VP, LocationIDs::CIRCUMNAVIGATION],
+			[TokenIds::PACIFIC_STRAIT_1VP, LocationIDs::PACIFIC_STRAIT],
+			[TokenIds::HAPSBURG_CONQUEST, LocationIDs::CROSSING_ATLANTIC_1],
+			[TokenIds::HAPSBURG_EXPLORATION, LocationIDs::CROSSING_ATLANTIC_2],
 		];
 	}
 
 	public function getSetup() {
 		$setup_base = [
-			OTTOMAN => [
-				ISTANBUL => [
-					SULEIMAN,
-					IBRAHIM,
-					OTTOMAN_6UNIT,
-					OTTOMAN_1UNIT,
-					OTTOMAN_KEY,
-					OTTOMAN_SQUADRON,
-					OTTOMAN_1UNIT,
+			Powers::OTTOMAN => [
+				cityIds::ISTANBUL => [
+					tokenIDs_LEADER::SULEIMAN,
+					tokenIDs_LEADER::IBRAHIM,
+					tokenIDs_UNITS::OTTOMAN_6UNIT,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
 				],
-				EDIRNE => [
-					OTTOMAN_1UNIT,
-					OTTOMAN_KEY,
+				cityIds::EDIRNE => [
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
 				],
-				SALONIKA => [
-					OTTOMAN_1UNIT,
-					OTTOMAN_KEY,
-					OTTOMAN_SQUADRON,
+				cityIds::SALONIKA => [
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
-				ATHENS => [
-					OTTOMAN_1UNIT,
-					OTTOMAN_KEY,
-					OTTOMAN_SQUADRON,
-				],
-			],
-			HAPSBURG => [
-				VALLADOLID => [
-					CHARLES_V,
-					DUKE_ALVA,
-					HAPSBURG_4UNIT,
-					HAPSBURG_KEY,
-				],
-				SEVILLE => [
-					HAPSBURG_1UNIT,
-					HAPSBURG_KEY,
-					HAPSBURG_SQUADRON,
-				],
-				BARCELONA => [
-					HAPSBURG_1UNIT,
-					HAPSBURG_KEY,
-					HAPSBURG_SQUADRON,
-				],
-				NAVARRE => [
-					HAPSBURG_1UNIT,
-					HAPSBURG_KEY,
-				],
-				TUNIS => [
-					HAPSBURG_1UNIT,
-					HAPSBURG_KEY,
-				],
-				NAPLES => [
-					HAPSBURG_2UNIT,
-					HAPSBURG_KEY,
-					HAPSBURG_SQUADRON,
-				],
-				BESANCON => [
-					HAPSBURG_1UNIT,
-				],
-				BRUSSELS => [
-					HAPSBURG_1UNIT,
-				],
-				VIENNA => [
-					FERDINAND,
-					HAPSBURG_4UNIT,
-					HAPSBURG_KEY,
-				],
-				ANTWERP => [
-					HAPSBURG_2UNIT,
-					HAPSBURG_1UNIT,
-					HAPSBURG_KEY,
-				],
-				WITTENBERG => [
-					HAPSBURG_HEX,
-				],
-				BRANDENBURG => [
-					HAPSBURG_HEX,
-				],
-				MAINZ => [
-					HAPSBURG_HEX,
-				],
-				COLOGNE => [
-					HAPSBURG_HEX,
-				],
-				TRIER => [
-					HAPSBURG_HEX,
-				],
-				AUGSBURG => [
-					HAPSBURG_HEX,
-				],
-				STETTIN => [
-					HAPSBURG_HEX,
-				],
-				LUBECK => [
-					HAPSBURG_HEX,
-				],
-				MAGDEBURG => [
-					HAPSBURG_HEX,
-				],
-				HAMBURG => [
-					HAPSBURG_HEX,
-				],
-				BRUNSWICK => [
-					HAPSBURG_HEX,
-				],
-				BREMEN => [
-					HAPSBURG_HEX,
-				],
-				MUNSTER => [
-					HAPSBURG_HEX,
-				],
-				KASSEL => [
-					HAPSBURG_HEX,
-				],
-				ERFURT => [
-					HAPSBURG_HEX,
-				],
-				LEIPZIG => [
-					HAPSBURG_HEX,
-				],
-				NUREMBERG => [
-					HAPSBURG_HEX,
-				],
-				WORMS => [
-					HAPSBURG_HEX,
-				],
-				REGENSBURG => [
-					HAPSBURG_HEX,
-				],
-				STRASBURG => [
-					HAPSBURG_HEX,
-				],
-				SALZBURG => [
-					HAPSBURG_HEX,
+				cityIds::ATHENS => [
+					tokenIDs_UNITS::OTTOMAN_1UNIT,
+					tokenIDs_CONTROL::OTTOMAN_KEY,
+					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
 			],
-			PROTESTANT => [
+			Powers::HAPSBURG => [
+				cityIds::VALLADOLID => [
+					tokenIDs_LEADER::CHARLES_V,
+					tokenIDs_LEADER::DUKE_ALVA,
+					tokenIDs_UNITS::HAPSBURG_4UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+				],
+				cityIds::SEVILLE => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
+				],
+				cityIds::BARCELONA => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
+				],
+				cityIds::NAVARRE => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+				],
+				cityIds::TUNIS => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+				],
+				cityIds::NAPLES => [
+					tokenIDs_UNITS::HAPSBURG_2UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
+				],
+				cityIds::BESANCON => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+				],
+				cityIds::BRUSSELS => [
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+				],
+				cityIds::VIENNA => [
+					tokenIDs_LEADER::FERDINAND,
+					tokenIDs_UNITS::HAPSBURG_4UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+				],
+				cityIds::ANTWERP => [
+					tokenIDs_UNITS::HAPSBURG_2UNIT,
+					tokenIDs_UNITS::HAPSBURG_1UNIT,
+					tokenIDs_CONTROL::HAPSBURG_KEY,
+				],
+				cityIds::WITTENBERG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::BRANDENBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::MAINZ => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::COLOGNE => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::TRIER => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::AUGSBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::STETTIN => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::LUBECK => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::MAGDEBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::HAMBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::BRUNSWICK => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::BREMEN => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::MUNSTER => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::KASSEL => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::ERFURT => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::LEIPZIG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::NUREMBERG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::WORMS => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::REGENSBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::STRASBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
+				cityIds::SALZBURG => [
+					tokenIDs_CONTROL::HAPSBURG_HEX,
+				],
 			],
-			ENGLAND => [
-				LONDON => [
-					HENRY_VIII,
-					BRANDON,
-					ENGLAND_1UNIT,
-					ENGLAND_2UNIT,
-					ENGLAND_KEY,
-					ENGLISH_SQUADRON,
+			Powers::PROTESTANT => [
+			],
+			Powers::ENGLAND => [
+				cityIds::LONDON => [
+					tokenIDs_LEADER::HENRY_VIII,
+					tokenIDs_LEADER::BRANDON,
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_UNITS::ENGLAND_2UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
+					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
-				PORTSMOUTH => [
-					ENGLISH_SQUADRON,
+				cityIds::PORTSMOUTH => [
+					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
-				CALAIS => [
-					ENGLAND_2UNIT,
-					ENGLAND_KEY,
+				cityIds::CALAIS => [
+					tokenIDs_UNITS::ENGLAND_2UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
-				YORK => [
-					ENGLAND_1UNIT,
-					ENGLAND_KEY,
+				cityIds::YORK => [
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
-				BRISTOL => [
-					ENGLAND_1UNIT,
-					ENGLAND_KEY,
+				cityIds::BRISTOL => [
+					tokenIDs_UNITS::ENGLAND_1UNIT,
+					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
 			],
-			FRANCE => [
-				PARIS => [
-					FRANCIS_I,
-					MONTMORENCY,
-					FRANCE_4UNIT,
-					FRANCE_KEY,
+			Powers::FRANCE => [
+				cityIds::PARIS => [
+					tokenIDs_LEADER::FRANCIS_I,
+					tokenIDs_LEADER::MONTMORENCY,
+					tokenIDs_UNITS::FRANCE_4UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				ROUEN => [
-					FRANCE_1UNIT,
-					FRENCH_SQUADRON,
-					FRANCE_KEY,
+				cityIds::ROUEN => [
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_NAVAL::FRENCH_SQUADRON,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				BORDEAUX => [
-					FRANCE_2UNIT,
-					FRANCE_KEY,
+				cityIds::BORDEAUX => [
+					tokenIDs_UNITS::FRANCE_2UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				LYON => [
-					FRANCE_1UNIT,
-					FRANCE_KEY,
+				cityIds::LYON => [
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				MARSEILLE => [
-					FRANCE_1UNIT,
-					FRENCH_SQUADRON,
-					FRANCE_KEY,
+				cityIds::MARSEILLE => [
+					tokenIDs_UNITS::FRANCE_1UNIT,
+					tokenIDs_NAVAL::FRENCH_SQUADRON,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				TURIN => [
-					FRANCE_HEX,
+				cityIds::TURIN => [
+					tokenIDs_CONTROL::FRANCE_HEX,
 				],
-				MILAN => [
-					FRANCE_2UNIT,
-					FRANCE_KEY,
-				],
-			],
-			PAPACY => [
-				ROME => [
-					PAPACY_1UNIT,
-					PAPACY_SQUADRON,
-					PAPACY_KEY,
-				],
-				RAVENNA => [
-					PAPACY_1UNIT,
-					PAPACY_KEY,
+				cityIds::MILAN => [
+					tokenIDs_UNITS::FRANCE_2UNIT,
+					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 			],
-			MINOR_VENICE => [
-				VENICE => [
-					VENICE_2UNIT,
-					VENETIAN_SQUADRON,
-					VENETIAN_SQUADRON,
-					VENETIAN_SQUADRON,
+			Powers::PAPACY => [
+				cityIds::ROME => [
+					tokenIDs_UNITS::PAPACY_1UNIT,
+					tokenIDs_NAVAL::PAPACY_SQUADRON,
+					tokenIDs_CONTROL::PAPACY_KEY,
 				],
-				CORFU => [
-					VENICE_1UNIT,
-				],
-				CANDIA => [
-					VENICE_1UNIT,
+				cityIds::RAVENNA => [
+					tokenIDs_UNITS::PAPACY_1UNIT,
+					tokenIDs_CONTROL::PAPACY_KEY,
 				],
 			],
-			MINOR_GENOA => [
-				GENOA => [
-					ANDREA_DORIA,
-					GENOA_2UNIT,
-					GENOESE_SQAUADRON,
+			Powers::MINOR_VENICE => [
+				cityIds::VENICE => [
+					tokenIDs_UNITS::VENICE_1UNIT,
+					tokenIDs_UNITS::VENICE_1UNIT,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
+					tokenIDs_NAVAL::VENETIAN_SQUADRON,
+				],
+				cityIds::CORFU => [
+					tokenIDs_UNITS::VENICE_1UNIT,
+				],
+				cityIds::CANDIA => [
+					tokenIDs_UNITS::VENICE_1UNIT,
 				],
 			],
-			MINOR_HUNGARY => [
-				BELGRADE => [
-					HUNGARY_1UNIT,
-				],
-				BUDA => [
-					HUNGARY_4UNIT,
-					HUNGARY_1UNIT,
-				],
-				PRAGUE => [
-					HUNGARY_1UNIT,
+			Powers::MINOR_GENOA => [
+				cityIds::GENOA => [
+					tokenIDs_LEADER::ANDREA_DORIA,
+					tokenIDs_UNITS::GENOA_1UNIT,
+					tokenIDs_UNITS::GENOA_1UNIT,
+					tokenIDs_NAVAL::GENOESE_SQAUADRON,
 				],
 			],
-			MINOR_SCOTLAND => [
-				EDINBURGH => [
-					SCOTLAND_2UNIT,
-					SCOTLAND_1UNIT,
-					SCOTTISH_SQUADRON,
+			Powers::MINOR_HUNGARY => [
+				cityIds::BELGRADE => [
+					tokenIDs_UNITS::HUNGARY_1UNIT,
+				],
+				cityIds::BUDA => [
+					tokenIDs_UNITS::HUNGARY_4UNIT,
+					tokenIDs_UNITS::HUNGARY_1UNIT,
+				],
+				cityIds::PRAGUE => [
+					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
 			],
-			INDEPENDENT => [
-				RHODES => [
-					KNIGHTS_1UNIT,
+			Powers::MINOR_SCOTLAND => [
+				cityIds::EDINBURGH => [
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_UNITS::SCOTLAND_1UNIT,
+					tokenIDs_NAVAL::SCOTTISH_SQUADRON,
 				],
-				METZ => [
-					INDEPENDENT_1UNIT,
+			],
+			Powers::INDEPENDENT => [
+				cityIds::RHODES => [
+					tokenIDs_UNITS::KNIGHTS_1UNIT,
 				],
-				FLORENCE => [
-					INDEPENDENT_1UNIT,
+				cityIds::METZ => [
+					tokenIDs_UNITS::INDEPENDENT_1UNIT,
+				],
+				cityIds::FLORENCE => [
+					tokenIDs_UNITS::INDEPENDENT_1UNIT,
 				],
 			],
 

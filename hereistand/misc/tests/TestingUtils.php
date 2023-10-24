@@ -3,10 +3,10 @@
 use HIS\Core\Game;
 use HIS\Managers\Tokens;
 
-final class HereIStandMocker extends hereistand {
+final class HereIStandMocker extends hereistandfork {
 
 	function __construct() {
-		include 'hereistand/material.inc.php';
+		include 'hereistandfork/material.inc.php';
 		parent::__construct();
 		$this->resources = array();
 	}

@@ -2,7 +2,7 @@
 namespace HIS\Models;
 use HIS\Helpers\Utils;
 use HIS\Managers\Tokens;
-
+use tokenTypeIDs;
 /*
  * Formation: all utility functions concerning a formation
  */
@@ -12,10 +12,10 @@ class FieldBattle {
 	public function __construct() {
 	}
 
-	public function findOpposingPowers($destination, $tokens, $active_power) {
+	public static function findOpposingPowers($destination, $tokens, $active_power) {
 		$powers = [];
 		foreach ($tokens as $token_id => $token) {
-			if (in_array(MILITARY, $token['types'])) {
+			if (in_array(tokenTypeIDs::MILITARY, $token['types'])) {
 				$power = $token['power'];
 				if (array_key_exists($power, $powers) == false) {
 					$powers[$power] = [
@@ -37,10 +37,10 @@ class FieldBattle {
 		return $powers;
 	}
 
-	public function getDefendingPowers($destination, $tokens, $active_power) {
+	public static function getDefendingPowers($destination, $tokens, $active_power) {
 		$defending_powers = [];
 		foreach ($tokens as $token_id => $token) {
-			if (in_array(MILITARY, $token['types'])) {
+			if (in_array(tokenTypeIDs::MILITARY, $token['types'])) {
 				$power = $token['power'];
 				if ($power != $active_power && in_array($power, $defending_powers) == false) {
 					$defending_powers[] = $power;
@@ -50,7 +50,7 @@ class FieldBattle {
 		return $defending_powers;
 	}
 
-	public function defenderDiceCount($field) {
+	public static function defenderDiceCount($field) {
 		$defender_strength = 0;
 		$defender_max_power = 0;
 		foreach ($field['defending_powers'] as $power) {
@@ -63,14 +63,14 @@ class FieldBattle {
 		return $defender_dice_count;
 	}
 
-	public function attackerDiceCount($field) {
+	public static function attackerDiceCount($field) {
 		$attacker_strength = $field['powers'][$field['attacking_power']]['strength'];
 		$attacker_max_power = $field['powers'][$field['attacking_power']]['battle_rating'];
 		$attacker_dice_count = $attacker_strength + $attacker_max_power;
 		return $attacker_dice_count;
 	}
 
-	public function declareWinner($field) {
+	public static function declareWinner($field) {
 		$winner = DEFENDER;
 		$attacker_hits = Utils::countHits($field['attacker_dice'], 5);
 		$defender_hits = Utils::countHits($field['defender_dice'], 5);
@@ -80,7 +80,7 @@ class FieldBattle {
 		return $winner;
 	}
 
-	public function battleCasualties($field) {
+	public static function battleCasualties($field) {
 		$attacker_hits = Utils::countHits($field['attacker_dice'], 5);
 		$defender_hits = Utils::countHits($field['defender_dice'], 5);
 		$field['powers'][$field['attacking_power']]['casualties'] = $defender_hits;
@@ -101,7 +101,7 @@ class FieldBattle {
 		return $field;
 	}
 
-	public function getRetreatingUnits($power, $field, $city_id) {
+	public static function getRetreatingUnits($power, $field, $city_id) {
 		$starting_units = [];
 		foreach ($field['powers'][$power]['tokens'] as $token_id => $token) {
 			$starting_units[] = $token_id;

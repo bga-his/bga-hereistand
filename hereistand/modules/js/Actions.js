@@ -1,5 +1,6 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistand.actions', null, {
+  return declare('hereistandfork.actions', null, {
+
     onPassClick(evt){
       dojo.stopEvent(evt);
       this.takeAction('actPass');
@@ -33,12 +34,20 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onPlayEventClick(evt){
       dojo.stopEvent(evt);
+      console.log("onPlayEventClick")
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: true});
     },
 
     onPlayCPClick(evt){
       dojo.stopEvent(evt);
+      console.log("onPlayCPClick")
       this.takeAction('actPlayCard', {cardId: this.selectedCardId, asEvent: false});
+    },
+
+    onDiscardClick(evt){
+      dojo.stopEvent(evt);
+      console.log("onDiscardClick")
+      this.takeAction('actDiscardCard', {cardId: this.selectedCardId});
     },
 
     onCardClick(evt, _this){
@@ -51,6 +60,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         dojo.destroy('play_cp');
       } else {
         _this.selectedCardId = cardId;
+        debug("onCardClick.addPrimaryActionButton")
         _this.addPrimaryActionButton('play_event', _('Play Event'), 'onPlayEventClick');
         _this.addPrimaryActionButton('play_cp', _('Play for CP'), 'onPlayCPClick');
       }
@@ -84,6 +94,91 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       dojo.stopEvent(evt);
       const id_str = this.selectedFormation.join(' ');
       this.takeAction('actDeclareCasualties', {token_ids: id_str});
-    }
+    },
+    
+    onEvtHolyRomanDestClick(evt, _this){
+      dojo.stopEvent(evt);
+      const city_id = evt.currentTarget.id.split('_')[1];
+      this.selectedCityId = city_id;
+    },
+
+    onEvtHolyRomanMoveCharlesVClick(evt){
+      dojo.stopEvent(evt);
+      if(this.selectedCityId = null){
+        this.selectedCityId = -1;
+      }
+      this.takeAction('actEvtHolyRomanMoveCharlesV', {city_id: this.selectedCityId});
+      this.selectedCityId = -1;
+    },
+
+    onEvtHolyRomaMoveCharlesVAndDukeClick(evt){
+      dojo.stopEvent(evt);
+      if(this.selectedCityId = null){
+        this.selectedCityId = -1;
+      }
+      this.takeAction('actEvtHolyRomanMoveCharlesVAndDuke', {city_id: this.selectedCityId})
+      this.selectedCityId = -1;
+    },
+
+    onEvtSixWivesWarFranceClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'france'})
+    },
+
+    onEvtSixWivesWarHapsburgClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'hapsburg'})
+    },
+
+    onEvtSixWivesWarScotlandClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesWar', {power: 'Scotland'})
+    },
+
+    onEvtSixWivesMaryClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWviesMary')
+    },
+
+    onEvtSixWivesFranceInterventionDoClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesFranceIntervention', {do: True});
+    },
+
+    onEvtSixWivesFranceInterventionDontClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction('actEvtSixWivesFranceIntervention', {do: False});
+    },
+
+    onEvtPatronOfArtsClick(evt){
+      dojo.stopEvent(evt);
+      this.takeAction("actEvtPatronOfArts");
+    },
+
+    /*
+    * Make an AJAX call with automatic lock
+    */
+    takeAction(action, data, check = true, checkLock = true) {
+      if (check && !this.checkAction(action)) return false;
+      if (!check && checkLock && !this.checkLock()) return false;
+    
+      data = data || {};
+      if (data.lock === undefined) {
+        data.lock = true;
+      } else if (data.lock === false) {
+        delete data.lock;
+      }
+      return new Promise((resolve, reject) => {
+        this.ajaxcall(
+          '/' + this.game_name + '/' + this.game_name + '/' + action + '.html',
+          data,
+          this,
+          (data) => resolve(data),
+          (isError, message, code) => {
+            if (isError) reject(message, code);
+          },
+        );
+      });
+    },
   });
 });

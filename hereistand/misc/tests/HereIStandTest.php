@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
-define("APP_GAMEMODULE_PATH", "./hereistand/misc/"); // include path to mocks, this defined "Table" and other classes
+define("APP_GAMEMODULE_PATH", "./hereistandfork/misc/"); // include path to mocks, this defined "Table" and other classes
 
 use PHPUnit\Framework\TestCase;
 

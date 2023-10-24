@@ -1,6 +1,9 @@
 <?php
 namespace HIS\Helpers;
 
+use HIS\Core\Notifications;
+use LandUnitTokens;
+
 /*
  * This is a generic class to manage game pieces.
  *
@@ -88,13 +91,14 @@ class Pieces extends DB_Manager {
 		if (!is_null($state)) {
 			$data[static::$prefix . 'state'] = $state;
 		}
-
+		//Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
 		$query = self::DB()->update($data);
 		if (!is_null($ids)) {
 			$query = $query->whereIn(static::$prefix . 'id', is_array($ids) ? $ids : [$ids]);
 		}
 
 		static::addBaseFilter($query);
+		//Notifications::message("Pieces::getUpdateQuers query=".Utils::varToString($query));// why does this line lead to error? does query contains a circular reference
 		return $query;
 	}
 
@@ -337,15 +341,27 @@ class Pieces extends DB_Manager {
 
 	/*
 		   * Move one (or many) pieces to given location
+		   * move
 	*/
 	public static function move($ids, $location, $state = 0) {
+		//ids As array of numbericalStings: ids of the pices to move
+		//if $ids in cardIds then location has to be in ?
+		//if $ids in LandUnitTokens then location in cityIds|?
+		// ...
+
 		if (!is_array($ids)) {
 			$ids = [$ids];
+		}
+
+		//convert to string
+		for($i =0; $i < count($ids); $i++){
+			$ids[$i] = "".$ids[$i];
 		}
 
 		self::checkLocation($location);
 		self::checkState($state);
 		self::checkIdArray($ids);
+		Notifications::message("Pieces::move(ids=".Utils::varToString($ids).",location=".Utils::varToString($location).",state=".Utils::varToString($state).")");
 		return self::getUpdateQuery($ids, $location, $state)->run();
 	}
 

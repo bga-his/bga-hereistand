@@ -1,5 +1,5 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
-  return declare('hereistand.chat', null, {
+  return declare('hereistandfork.chat', null, {
 
     setupChat() {
       

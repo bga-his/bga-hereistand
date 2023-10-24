@@ -2,13 +2,19 @@
 namespace HIS\Core;
 use HIS\Core\Globals;
 use HIS\Helpers\UserException;
+use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Managers\Diplomancy;
 use HIS\Models\Formation;
-use HIS\Notifications\Battle;
-use HIS\Notifications\Buy;
-use HIS\Notifications\PlayCard;
+use HIS\Core\Notifications;
+use HIS\Managers\Diplomacy;
+use HIS\States\ArgsOnEnteringStateTrait;
+use Powers;
+use TrackTokens;
+use UnitTypes;
+use CardIDs;
 
 class Actions {
 
@@ -21,6 +27,7 @@ class Actions {
 	}
 
 	public static function play($cardId, $asEvent) {
+		Notifications::message("play Card id=".$cardId.", evt=".$asEvent);
 		$card = Cards::get($cardId);
 		$player = Players::getActive();
 		if ($card['pId'] != $player->id) {
@@ -29,10 +36,24 @@ class Actions {
 		if ($card['location'] != 'hand') {
 			throw new UserException("Attempt to play card not from hand");
 		}
-		PlayCard::playCardCP($player, $card);
-		Globals::setRemainingCP($card['cp']);
-		Cards::discard($card);
-		Game::get()->gamestate->nextState("playCP");
+		if( $asEvent){
+			Notifications::notif_playCardEvent($player, $card);
+			//Push MajorPower who played card to DB
+			Cards::playEvent($card);
+			
+			//discard in event, as player might cancel
+		}else{
+			Notifications::notif_playCardCP($player, $card);
+			Globals::setRemainingCP($card['cp']);
+			Cards::discard($card);
+			Game::get()->gamestate->nextState("playCP");
+		}
+	}
+
+	public static function actDiscardCard($cardId){
+		$card = Cards::get($cardId);
+		Notifications::notif_disardCard(Players::getActive(), $card);
+		Cards::discardByID($cardId);
 	}
 
 	public static function move() {
@@ -44,15 +65,18 @@ class Actions {
 	}
 
 	public static function pickCity($city_id, $statename) {
+		Notifications::message("Actions::pickCity: statename = ".$statename." = game.get() ".game::get()->getStateName());
 		$cities = Game::get()->cities;
 		$city = $cities[$city_id];
-		$city['id'] = $city_id;
 		switch ($statename) {
 		case 'declareDestination':
 			self::declareDestination($city);
 			break;
 		case 'buyUnit':
 			self::pickBuyCity($city);
+			break;
+		case 'evtJanissaries':
+			self::BuildJanissaries($city);
 			break;
 		default:
 			throw new UserException("Picking city in wrong state: " . $statename);
@@ -123,37 +147,133 @@ class Actions {
 		foreach ($tokens as $token) {
 			Tokens::move([$token['id']], ['supply', $token['power'], $token['type']]);
 		}
-		Battle::destroyUnits($player, $tokens);
+		Notifications::destroyUnits($player, $tokens);
 		Game::get()->gamestate->setPlayerNonMultiactive($player->id, 'done');
 	}
 
 	public static function pickBuyCity($city) {
 		$unit_type = Globals::getUnitBuyType();
 		$player = Players::getActive();
-		$buy_id = Game::get()->getPowerUnits()[$player->power][$unit_type];
-		$bad_info = Game::get()->tokens[$buy_id];
-		$side = $unit_type == MERC ? FLIPPED : FRONT;
 		$remainingCP = Globals::getRemainingCP();
-		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type != MERC)) {
-			throw new UserException("You cannot afford " . $bad_info['name'] . ".");
+		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == UnitTypes::REGULAR)) {
+			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
-		$token = Tokens::pickOneForLocation(['supply', $bad_info['power'], $buy_id], ['board', 'city', $city['id']], $side);
-		if ($token == null) {
-			throw new UserException("You are out of " . $bad_info['name'] . " tokens.");
-		}
-		if ($unit_type == MERC) {
+		TOKENS::addLandunits($city['id'], $player->power, 1, $unit_type);
+		if ($unit_type == UnitTypes::MERC || $unit_type == UnitTypes::CAV) {
 			$remainingCP -= 1;
 			Globals::incRemainingCP(-1);
 		} else {
 			$remainingCP -= 2;
 			Globals::incRemainingCP(-2);
 		}
-		Buy::buyUnit($player, $token, $unit_type, $city);
 		if ($remainingCP == 0) {
 			Game::get()->gamestate->nextState("next");
 		} else {
 			Game::get()->gamestate->nextState("buy");
 		}
+	}
+
+	public static function BuildJanissaries($city){
+		Notifications::message("OTTOMAN placed 4 Regulars On ".Utils::varToString($city['id']));
+		Tokens::addLandunits($city['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
+		Cards::discardByID(CardIDs::JANISSARIES);
+		Game::get()->gamestate->nextState("resolve");
+
+		//TODO add cancel option
+		//TODO by the rules the units may be build in any combination of spaces, not only in one.
+	}
+
+	public static function EvtHolyRoman($city, $bolBoth){
+		$tokenCharlsV = Tokens::tokenGetLeader("CharlesV");
+		//TODO check that CharlsV is not captured or under siege.
+		if($tokenCharlsV['location_type'] != 'city' Or Tokens::bolIsSieged($tokenCharlsV['location_id'])){
+			Notifications::message("Charles V must not be captured or under siege");
+			Game::get()->gamestate->nextState("undo");
+			return;
+		}
+		if($bolBoth){
+			$tokenDukeOfAlva = Tokens::tokenGetLeader("DukeOfAlva");
+			if($tokenDukeOfAlva->Position = $tokenCharlsV->Position){
+				Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenDukeOfAlva);
+				Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+			}else{
+				Notifications::message("DukeOfAlva must be in the same space to accompany Charles V");
+				Game::get()->gamestate->nextState("undo");
+			}
+		}
+		Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenCharlsV);
+		Globals::setRemainingCP(5);
+		Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+		Game::get()->gamestate->nextState("move_Charles");
+	}
+
+	public static function EvtSixWivesWar($power){
+		//check that action is possible
+		//England declares war on power
+		//
+		if($power="france" or $power="hapsburg"){
+			if($power="france"){
+				Diplomacy::declareWar(Powers::ENGLAND, Powers::FRANCE);
+			}
+			if($power="hapsburg"){
+				Diplomacy::declareWar(Powers::ENGLAND, Powers::HAPSBURG);
+			}
+			//England declares war on france
+			Globals::setRemainingCP(5);
+			Game::get()->gamestate->nextState("make_war");
+			return;
+		}
+		if($power="Scotland"){
+			//TODO check if France might intervene
+			Diplomacy::declareWar(Powers::ENGLAND, Powers::MINOR_SCOTLAND);
+			//set England as Impulse power
+			//set active player to France.
+			Players::setActivePlayer(Powers::FRANCE);
+			Game::get()->gamestate->nextState("make_war_scotland");
+			return;
+		}
+		Notifications::message("invalid power in Actions.php::EvtSixWivesWar(".$power.")");
+	}
+
+	public static function EvtSixWivesMary(){
+
+	}
+
+	public static function EvtSixWivesFranceIntervention($do){
+		if($do){
+			//france declares war on England, gains alience with Scotland
+			Diplomacy::declareWar(Powers::FRANCE, Powers::ENGLAND);
+			Diplomacy::declareAlience(Powers::FRANCE, Powers::MINOR_SCOTLAND);
+		}
+		Players::setActivePlayer(Powers::ENGLAND);
+		Globals::setRemainingCP(5);
+		Game::get()->gamestate->nextState("make_war_scotland");
+	}
+
+	public static function EvtPatronOfArts(){
+		$modfier = ArgsOnEnteringStateTrait::argPatronOfArts()["modfier"];
+		$chateauxRoll = Utils::rollDice(1)[0]+$modfier;
+		Notifications::message("France rolled an ".($chateauxRoll-$modfier)." + ".$modfier." on the Chateaux table");
+		if($chateauxRoll <= 2){
+			//draw 2, discard 1
+			Cards::draw(Powers::FRANCE, 2);
+			Cards::discard(Powers::FRANCE, 1);
+		}elseif($chateauxRoll <= 4){
+			//1VP, draw 1, discard 1
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 1);
+			Cards::discard(Powers::FRANCE, 1);
+		}elseif($chateauxRoll <= 7){
+			//1VP, draw 1, discard 0
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 1);
+		}else{
+			//1VP, draw 2, discard 1
+			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Cards::draw(Powers::FRANCE, 2);
+			Cards::discard(Powers::FRANCE, 1);
+		}
+		Game::get()->gamestate->nextState("rollChatteaux");
 	}
 
 }
