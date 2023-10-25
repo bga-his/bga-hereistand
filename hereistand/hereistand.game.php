@@ -34,7 +34,9 @@ require_once APP_GAMEMODULE_PATH . 'module/table/table.game.php';
 
 use HIS\Core\Actions;
 use HIS\Core\Globals;
+use HIS\Core\Notifications;
 use HIS\Core\Preferences;
+use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
@@ -47,7 +49,7 @@ class hereistand extends Table {
 	use HIS\States\InterceptionTrait;
 	use HIS\States\AvoidBattleTrait;
 	use HIS\States\WithdrawBattleTrait;
-	use HIS\States\BuyTrait;
+	use HIS\States\ArgsOnEnteringStateTrait;
 	use HIS\States\ImpulseActionsTrait;
 	use HIS\SetupTrait;
 	use HIS\AdditionalStaticTrait;
@@ -72,6 +74,26 @@ class hereistand extends Table {
 	public function getStateName() {
 		$state = $this->gamestate->state();
 		return $state['name'];
+	}
+
+	public function getImpulsePlayer() {
+		//TODO read from DB, as active player might be different from Impulse player during interrupts
+		return $player = Players::getActive();
+	}
+
+	public function mdebug($keyLocations) {
+		//TODO Tokens::getInLocation doesnt function as I would assume it does.
+		Notifications::message("keyLocation=".getType($keyLocations)." ".$keyLocations);
+		//$keyLocations = $keyLocations;
+		//powercards_location_
+		//map_city_
+		//supply_england_
+		//supply_other_
+		$tmp = Tokens::getInLocation($keyLocations);
+		Notifications::message("Count of tokens in ".$keyLocations." = ".count($tmp));
+		foreach($tmp as $i){
+			Notifications::message("Tokens in Location ".$keyLocations." :".Utils::varToString($i));
+		}
 	}
 
 	/*
@@ -217,7 +239,7 @@ class hereistand extends Table {
 
 		if ($state['type'] === 'multipleactiveplayer') {
 			// Make sure player is in a non blocking status for role turn
-			$this->gamestate->setPlayerNonMultiactive($active_player, '');
+			$this->gamestate->setPlayerNonMultiactive($this->getActivePlayerId(), '');
 
 			return;
 		}

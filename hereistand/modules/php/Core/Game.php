@@ -7,6 +7,7 @@ use hereistand;
  */
 class Game {
 	public static function get() {
+		//Game::get()->cities = {cityID:City for all citiys in game}
 		return hereistand::get();
 	}
 }

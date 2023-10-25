@@ -50,4 +50,9 @@ class Collection extends \ArrayObject {
 			return $elem->jsonSerialize();
 		})->toArray();
 	}
+
+	public function __toString() {
+		//return "HIS/Helpers/Collection".gettype($this);
+		return "HIS/Helpers/Collection: ".implode(",", $this->toArray());//elements of this array are Arrays?
+	}
 }

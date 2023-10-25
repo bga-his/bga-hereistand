@@ -1,0 +1,15 @@
+SEAZONE_ID,name,posX,posY,Connection_1,Connection_2,Connection_3,Connection_4,harbour_1,harbour_2,harbour_3,harbour_4,harbour_5,harbour_6,harbour_7,harbour_8,Harbour_9
+BALTIC_SEA,Baltic Sea,0,0,NORTH_SEA,,,,Stettin,Lübeck,,,,,,,
+NORTH_SEA,North Sea,0,0,BALTIC_SEA,IRISH_SEA,ENGLISH_CHANNEL,,Hamburg,Bremen,Amsterdam,Antwerp,Calais,London,Norwich,Berwick,Edinburgh
+IRISH_SEA,Irish Sea,0,0,NORTH_SEA,ENGLISH_CHANNEL,BAY_OF_BISCAY,,Bristol,Glasgow,,,,,,,
+ENGLISH_CHANNEL,English Channel,0,0,NORTH_SEA,IRISH_SEA,BAY_OF_BISCAY,,Calais,Boulogne,Rouen,Brest,Portsmouth,Plymouth,,,
+BAY_OF_BISCAY,Bay of Biscay,0,0,IRISH_SEA,ENGLISH_CHANNEL,ATLANTIC_OCEAN,,Brest,Nantes,Bordeaux,Corunna,,,,,
+ATLANTIC_OCEAN,Atlantic Ocean,0,0,BAY_OF_BISCAY,,,,Corunna,Seville,Gibraltar,,,,,,
+GULF_OF_LYON,Gulf of Lyon,0,0,BARBARY_COAST,TYRRHENIAN_SEA,,,Cartagena,Valencia,Barcelona,Marsilla,Nice,Genoa,Bastia,Palma,
+BARBARY_COAST,Barbary Coast,0,0,GULF_OF_LYON,TYRRHENIAN_SEA,IONIAN_SEA,NORTH_AFRICAN_COAST,Gibraltar,Cartagena,Palma,Cagliari,Oran,Algiers,Tunis,,
+TYRRHENIAN_SEA,Tyrrhenian Sea,0,0,GULF_OF_LYON,BARBARY_COAST,,,Genoa,Bastia,Rome,Naples,Messina,Palermo,Cagliari,,
+IONIAN_SEA,Ionian Sea,0,0,ADRIATIC_SEA,BARBARY_COAST,NORTH_AFRICAN_COAST,AEGEAN_SEA,Taranto,Messina,Malta,Corfu,Lepanto,Coron,,,
+ADRIATIC_SEA,Adriatic Sea,0,0,IONIAN_SEA,,,,Venice,Trieste,Ravenna,Ancona,Ragusa,Scutari,Durazzo,Corfu,
+NORTH_AFRICAN_COAST,North African Coast,0,0,BARBARY_COAST,IONIAN_SEA,AEGEAN_SEA,,Tunis,Malta,Tripoli,Candia,Rhodes,,,,
+AEGEAN_SEA,Aegean Sea,0,0,BLACK_SEA,IONIAN_SEA,NORTH_AFRICAN_COAST,,Istanbul,Salonika,Athens,Candia,Rhodes,,,,
+BLACK_SEA,Black Sea,0,0,AEGEAN_SEA,,,,Istanbul,Varna,,,,,,,

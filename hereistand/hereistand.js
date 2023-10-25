@@ -36,8 +36,9 @@ define([
 ], function (dojo, declare, noUiSlider) {
   return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board,
                                         hereistand.cards, hereistand.actionbuttons, hereistand.notifications,
-                                        hereistand.states, hereistand.actions], {
+                                        hereistand.states, hereistand.actions], {// Imports the setup[Players,Board,Cards] methods from modules/js/*,
     constructor() {
+      console.log("constructor")
       this._activeStates = [
         'impulseActions',
         'declareFormation',

@@ -1,11 +1,20 @@
 define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
   return declare('hereistand.states', null, {
+    
     onEnteringStatePickCard(args){
-      this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
+      debug("onEnteringStatePickCar: add this.onCardClick to cards on player hand.");
+      this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');//TODO only show pass button when its allowed to pass
       this.selectedCardId = null;
       dojo.query('#player-hand .card-wrapper').forEach((node) => 
         this.onClick(node, this.onCardClick)
       );
+    },
+
+    onEnteringStateDiscard(args){
+      this.addPrimaryActionButton('discard', _('Discard'), 'onDiscardClick');
+    dojo.query('#player-hand .card-wrapper').forEach((node) => 
+      this.onClick(node, this.onCardClick)
+    );
     },
 
     onEnteringStateImpulseActions(args){
@@ -37,7 +46,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       for(const city_id of args.valid_city_ids){
         const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onDestinationClick);
+        this.onClick(city_node, this.onDestinationClick);//onClick is defined in game.js, onDestinationClick method in Actions.js
       }
     },
 
@@ -48,5 +57,49 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
         this.onClick(token_id, this.onUnitClick);
       }
     },
+
+    onEnteringStateEvtJanissaries(args){
+      this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
+      for(const city_id of args.valid_city_ids){
+        const city_node = dojo.byId(`cityselector_${city_id}`);
+        this.onClick(city_node, this.onDestinationClick);
+      }
+    },
+
+    onEnteringStateEvtHolyRoman(args){
+      this.addPrimaryActionButton('move Charles V', _('onEvtHolyRomanMoveCharlesVClick'), 'onEvtHolyRomanMoveCharlesVClick');
+      this.addPrimaryActionButton('move Charles V and Duke Of Alva', _('onEvtHolyRomaMoveCharlesVAndDukeClick'), 'onEvtHolyRomaMoveCharlesVAndDukeClick');
+      this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
+      for(const city_id of args.valid_city_ids){
+        const city_node = dojo.byId(`cityselector_${city_id}`);
+        this.onClick(city_node, this.onEvtHolyRomanDestClick);
+      }
+    },
+
+    onEnteringStateEvtSixWives(args){
+      if(args.can_declare_war_on_france){
+        this.addPrimaryActionButton('Declare war on France', _('onEvtSixWivesWarFranceClick'), 'onEvtSixWivesWarFranceClick');
+      }
+      if(args.can_declare_war_on_hapsburg){
+        this.addPrimaryActionButton('Declare war on Hapsburg', _('onEvtSixWivesWarHapsburgClick'), 'onEvtSixWivesWarHapsburgClick');
+      }
+      if(args.can_declare_war_on_scotland){
+        this.addPrimaryActionButton('Declare war on Scotland', _('onEvtSixWivesWarScotlandClick'), 'onEvtSixWivesWarScotlandClick');
+      }
+      if(args.nextWive_name != ""){
+        this.addPrimaryActionButton('Mary '+args.nextWive_name, _('onEvtSixWivesMaryClick'), 'onEvtSixWivesMaryClick')
+      }
+    },
+
+    onEnteringStateEvtSixWivesFranceIntervention(args){
+      this.addPrimaryActionButton("Interven on Scottish side.", _('onEvtSixWivesFranceInterventionDoClick'), 'onEvtSixWivesFranceInterventionDoClick');
+      this.addPrimaryActionButton("do nothing.", _('onEvtSixWivesFranceInterventionDontClick'), 'onEvtSixWivesFranceInterventionDontClick');
+    },
+
+    onEnteringStateEvtPatronOfArts(args){
+      this.addPrimaryActionButton("Roll with an " + args.modfier +" modfier", _('onEvtPatronOfArtsClick'), 'onEvtPatronOfArtsClick');
+      this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
+    },
+
   });
 });

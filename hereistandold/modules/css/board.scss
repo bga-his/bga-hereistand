@@ -1,0 +1,197 @@
+#overall-content {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+#board {
+  position: relative;
+  transform-origin: 0 0;
+}
+
+#map {
+  position: relative;
+
+  width: 5100px;
+  height: 3300px;
+  background-image: url('img/board.jpg');
+  background-size: 5100px;
+  background-repeat: no-repeat;
+}
+
+#other-boards {
+  position: relative;
+  transform-origin: 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 3825px;
+}
+
+#other-boards-wrapper{
+  margin-top: 1em;
+}
+
+#religious-struggle {
+  position: relative;
+  width: 1467px;
+  height: 1899px;
+  background-image: url('img/religious.jpg');
+  background-repeat: no-repeat;
+}
+
+#power-cards {
+  position: relative;
+  width: 3825px;
+  height: 1650px;
+  background-image: url('img/referencetotal.jpg');
+  background-repeat: no-repeat;
+}
+
+.map_node{
+  position: absolute;
+}
+
+.city {
+  position: relative;
+}
+
+.location {
+  // width: 15px;
+  // height: 15px;
+  // background-color: red;
+}
+
+.city:hover {
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
+  transform: scale(2);
+  .token {
+    position: relative;
+    z-index: 5;
+  }
+  .Units.Naval {
+    left: -50px;
+  }
+}
+
+#city_3097:hover {
+  transform: translateX(-400px) scale(2);
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
+  .token {
+    position: relative;
+    z-index: 5;
+  }
+  .Units.Naval {
+    left: -50px;
+  }
+}
+
+.location:hover {
+  position: absolute;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  z-index: 4;
+  transform-origin: 0 0;
+  transform: scale(2);
+  .token {
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.token {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  height: 100px;
+  width: 100px;
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.Hex {
+  top: -57px;
+  left: -46px;
+  height: 110px;
+  order: 1;
+}
+
+.Keys {
+  z-index: 1;
+  top: -48px;
+  left: -46px;
+  order: 1;
+}
+
+.Units {
+  z-index: 3;
+  top: -54px;
+  left: -48px;
+  order: 3;
+}
+
+.Units.Naval {
+  z-index: 2;
+  top: -54px;
+  left: -100px;
+  height: 100px;
+  width: 200px;
+  background-size: 200px;
+  order: 2;
+}
+
+.Leader {
+  z-index: 4;
+  order: 4;
+}
+
+.card {
+  background-size: 200px;
+  height: 280px;
+  width: 200px;
+}
+
+.card-wrapper {
+
+}
+
+#player-hand {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.selected {
+  border: 5px blue solid;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.city-selector.selectable {
+  border: 15px solid green;
+  z-index: 100;
+}
+
+.city-selector {
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  height: 110px;
+  width: 110px;
+  border-radius: 25px;
+}
+
+.phantomm {
+  background-image: none;
+}

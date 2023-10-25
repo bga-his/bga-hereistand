@@ -65,7 +65,7 @@ $gameinfos = array(
 	// Note: if you are NOT using any tie breaker, leave the empty string.
 	//
 	// Example: 'tie_breaker_description' => totranslate( "Number of remaining cards in hand" ),
-	'tie_breaker_description' => "VP in last turn",
+	'tie_breaker_description' => totranslate("VP in previus turn"),
 
 // If in the game, all losers are equal (no score to rank them or explicit in the rules that losers are not ranked between them), set this to true
 	// The game end result will display "Winner" for the 1st player and "Loser" for all other players
