@@ -6,7 +6,7 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
-use TokenAttributs;
+use TokenAttributes;
 use tokenIDs_EXPLORATION;
 use UnitTypes;
 use tokenIDs_UNITS;
@@ -36,7 +36,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 		$token_static = Game::get()->tokens[$token['type']];
 		$token = array_merge($token, $token_static);
 		if ($token['flipped'] == 'flipped') {
-			$token = array_merge($token, $token_static[TokenAttributs::back]);
+			$token = array_merge($token, $token_static[TokenAttributes::back]);
 		}
 		return $token;
 	}

@@ -89,7 +89,7 @@ abstract class TokenSides{
     const BACK = 1;
  }
 
- abstract class TokenAttributs{
+ abstract class TokenAttributes{
     const name = "name";
     const power = "power"; //Element of Powers
     const style = "style";
@@ -129,6 +129,52 @@ abstract class UnitTypes{
     const CAV = 3;
 }
 
+/*
+ * Land and Naval Token constants
+ */
+abstract class LandUnitTokens{
+    const OTTOMAN_1UNIT = tokenIDs::OTTOMAN_1UNIT;
+    const OTTOMAN_2UNIT = tokenIDs::OTTOMAN_2UNIT;
+    const OTTOMAN_4UNIT = tokenIDs::OTTOMAN_4UNIT;
+    const OTTOMAN_6UNIT = tokenIDs::OTTOMAN_6UNIT;
+    const HAPSBURG_1UNIT = tokenIDs::HAPSBURG_1UNIT;
+    const HAPSBURG_2UNIT = tokenIDs::HAPSBURG_2UNIT;
+    const HAPSBURG_4UNIT = tokenIDs::HAPSBURG_4UNIT;
+    const HAPSBURG_6UNIT = tokenIDs::HAPSBURG_6UNIT;
+    const ENGLAND_1UNIT = tokenIDs::ENGLAND_1UNIT;
+    const ENGLAND_2UNIT = tokenIDs::ENGLAND_2UNIT;
+    const ENGLAND_4UNIT = tokenIDs::ENGLAND_4UNIT;
+    const ENGLAND_6UNIT = tokenIDs::ENGLAND_6UNIT;
+    const FRANCE_1UNIT = tokenIDs::FRANCE_1UNIT;
+    const FRANCE_2UNIT = tokenIDs::FRANCE_2UNIT;
+    const FRANCE_4UNIT = tokenIDs::FRANCE_4UNIT;
+    const FRANCE_6UNIT = tokenIDs::FRANCE_6UNIT;
+    const PAPACY_1UNIT = tokenIDs::PAPACY_1UNIT;
+    const PAPACY_2UNIT = tokenIDs::PAPACY_2UNIT;
+    const PAPACY_4UNIT = tokenIDs::PAPACY_4UNIT;
+    const PROTESTANT_1UNIT = tokenIDs::PROTESTANT_1UNIT;
+    const PROTESTANT_2UNIT = tokenIDs::PROTESTANT_2UNIT;
+    const PROTESTANT_4UNIT = tokenIDs::PROTESTANT_4UNIT;
+    const SCOTLAND_1UNIT = tokenIDs::SCOTLAND_1UNIT;
+    const SCOTLAND_2UNIT = tokenIDs::SCOTLAND_2UNIT;
+    const HUNGARY_1UNIT = tokenIDs::HUNGARY_1UNIT;
+    const HUNGARY_4UNIT = tokenIDs::HUNGARY_4UNIT;
+    const VENICE_1UNIT = tokenIDs::VENICE_1UNIT;
+    const VENICE_2UNIT = tokenIDs::VENICE_2UNIT;
+    const GENOA_1UNIT = tokenIDs::GENOA_1UNIT;
+    const GENOA_2UNIT = tokenIDs::GENEROA_2UNIT;
+}
+
+abstract class NavalUnitTokens {
+    const ENGLISH_SQUADRON = tokenIDs::ENGLISH_SQUADRON;
+    const FRENCH_SQUADRON = tokenIDs::FRENCH_SQUADRON;
+    const HAPSBURG_SQUADRON = tokenIDs::HAPSBURG_SQUADRON;
+    const PAPACY_SQUADRON = tokenIDs::PAPACY_SQUADRON;
+    const OTTOMAN_SQUADRON = tokenIDs::OTTOMAN_SQUADRON;
+    const SCOTTISH_SQUADRON = tokenIDs::SCOTTISH_SQUADRON;
+    const GENOESE_SQAUADRON = tokenIDs::GENOESE_SQAUADRON;
+    const VENETIAN_SQUADRON = tokenIDs::VENETIAN_SQUADRON;
+}
 /*
  * Battle constants unused?
  */
