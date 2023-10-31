@@ -19,9 +19,11 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onEnteringStateImpulseActions(args){
       this.addPrimaryActionButton('move_in_clear', _('Move (1 - 2CP)'), 'onMoveClick');
-      this.addPrimaryActionButton('regular_unit_construction', _('Build Regular Unit (2CP)'), 'onRegularUnitBuildClick');
       this.addPrimaryActionButton('merc_unit_construction', _('Build Merc/Cav Unit (1CP)'), 'onMercUnitBuildClick');
-      this.addPrimaryActionButton('naval_unit_construction', _('Build Naval Unit (2CP)'), 'onNavalUnitBuildClick');
+      if(args.remainingCP >= 2) {
+        this.addPrimaryActionButton('regular_unit_construction', _('Build Regular Unit (2CP)'), 'onRegularUnitBuildClick');
+        this.addPrimaryActionButton('naval_unit_construction', _('Build Naval Unit (2CP)'), 'onNavalUnitBuildClick');
+      }
       this.addPrimaryActionButton('pass', _('Pass'), 'onPassClick');
     },
 
