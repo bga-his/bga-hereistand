@@ -51,7 +51,7 @@ final class SpaceTest extends TestCase {
 		# test control change from control type tokens
 		$worms = new Space(SpaceIDs::WORMS, self::$tokens);
 		$this->assertEquals($worms->getControl(), Powers::HAPSBURG);
-		$token = TestingUtils::makeTokenInSpace(tokenIDs::PAPACY_HEX, SpaceIDs::PAVIA);
+		$token = TestingUtils::makeTokenInSpace(TokenIDs::PAPACY_HEX, SpaceIDs::PAVIA);
 		self::$tokens[] = $token;
 		$pavia = new Space(SpaceIDs::PAVIA, self::$tokens);
 		$this->assertEquals($pavia->getControl(), Powers::PAPACY);
@@ -65,7 +65,7 @@ final class SpaceTest extends TestCase {
 		$this->assertEquals($nezh->getReligion(), ReligionIDs::OTHER);
 
 		# test changing religions based on tokens
-		self::$tokens[] = TestingUtils::makeFlippedTokenInSpace(tokenIDs::PROTESTANT_HEX, SpaceIDs::TOULOUSE);
+		self::$tokens[] = TestingUtils::makeFlippedTokenInSpace(TokenIDs::PROTESTANT_HEX, SpaceIDs::TOULOUSE);
 		$toulouse = new Space(SpaceIDs::TOULOUSE, self::$tokens);
 		$this->assertEquals($toulouse->getReligion(), ReligionIDs::REFORMED);
 

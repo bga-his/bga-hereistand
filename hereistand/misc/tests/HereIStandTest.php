@@ -15,7 +15,7 @@ final class HereIStandTest extends TestCase {
 	}
 
 	public function testMakeToken() {
-		$token = TestingUtils::makeTokenInSpace(tokenIDs::PAPACY_4UNIT, SpaceIDs::ROME);
+		$token = TestingUtils::makeTokenInSpace(TokenIDs::PAPACY_4UNIT, SpaceIDs::ROME);
 		$this->assertEquals($token['strength'], 4);
 	}
 
@@ -27,12 +27,12 @@ final class HereIStandTest extends TestCase {
 	public function testQuickTokens() {
 		$setup = [
 			SpaceIDs::ROME => [
-				tokenIDs::PAPACY_4UNIT,
-				tokenIDs::PAPACY_1UNIT,
+				TokenIDs::PAPACY_4UNIT,
+				TokenIDs::PAPACY_1UNIT,
 			],
 			SpaceIDs::SIENA => [
-				tokenIDs::HAPSBURG_4UNIT,
-				tokenIDs::CHARLES_V,
+				TokenIDs::HAPSBURG_4UNIT,
+				TokenIDs::CHARLES_V,
 			],
 		];
 		$tokens = TestingUtils::makeQuickTokens($setup);

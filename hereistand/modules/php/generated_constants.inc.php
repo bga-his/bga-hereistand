@@ -3,7 +3,7 @@
  * Token constants
  */
 
- abstract class tokenIDs 
+ abstract class TokenIDs 
 {const ENGLAND_KEY = 1000;
 const FRANCE_KEY = 1001;
 const HAPSBURG_KEY = 1002;

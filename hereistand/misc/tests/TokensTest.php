@@ -11,7 +11,7 @@ final class TokensTest extends TestCase {
 	}
 
 	public function testInSpace() {
-		$token = TestingUtils::makeTokenInSpace(tokenIDs::PAPACY_4UNIT, spaceIDs::ROME);
+		$token = TestingUtils::makeTokenInSpace(TokenIDs::PAPACY_4UNIT, spaceIDs::ROME);
 		$this->assertTrue(Tokens::inSpace($token, spaceIDs::ROME));
 		$this->assertFalse(Tokens::inSpace($token, spaceIDs::PARIS));
 	}
