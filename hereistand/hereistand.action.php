@@ -134,29 +134,29 @@ class action_hereistand extends APP_GameAction {
 		self::ajaxResponse();
 	}
 
-	public function actPickCity() {
+	public function actPickSpace() {
 		self::setAjaxMode();
-		$city_id = self::getArg('city_id', AT_posint, true);
-		$this->game->actPickCity($city_id);
+		$space_id = self::getArg('space_id', AT_posint, true);
+		$this->game->actPickSpace($space_id);
 		self::ajaxResponse();
 	}
 
-	public function actEvtHolyRomanMoveCharlesV($city_id){
+	public function actEvtHolyRomanMoveCharlesV($space_id){
 		self::setAjaxMode();
-		if($city_id > 0){
-			$this->game->EvtHolyRoman($city_id, false);
+		if($space_id > 0){
+			$this->game->EvtHolyRoman($space_id, false);
 		}else{
-			Notifications::message("Evtent Holy Roman Emporer: Select a target city first.");
+			Notifications::message("Evtent Holy Roman Emporer: Select a target space first.");
 		}
 		self::ajaxResponse();
 	}
 
-	public function actEvtHolyRomanMoveCharlesVAndDuke($city_id){
+	public function actEvtHolyRomanMoveCharlesVAndDuke($space_id){
 		self::setAjaxMode();
-		if($city_id > 0){
-			$this->game->EvtHolyRoman($city_id, true);
+		if($space_id > 0){
+			$this->game->EvtHolyRoman($space_id, true);
 		}else{
-			Notifications::message("Evtent Holy Roman Emporer: Select a target city first.");
+			Notifications::message("Evtent Holy Roman Emporer: Select a target space first.");
 		}
 		self::ajaxResponse();
 	}

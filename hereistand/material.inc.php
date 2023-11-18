@@ -21,1973 +21,1973 @@
 
 require_once 'modules/php/constants.inc.php';
 
-$this->cities = [
-CityIDs::WITTENBERG => [
+$this->spaces = [
+SpaceIDs::WITTENBERG => [
 "x" => 3247,
 "y" => 731,
 "name" => "Wittenberg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::MAGDEBURG,
-  CityIDs::LEIPZIG,
-  CityIDs::PRAGUE,
-  CityIDs::BRESLAU],
-"id" => CityIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::LEIPZIG,
+  SpaceIDs::PRAGUE,
+  SpaceIDs::BRESLAU],
+"id" => SpaceIDs::WITTENBERG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BRANDENBURG => [
+SpaceIDs::BRANDENBURG => [
 "x" => 3196,
 "y" => 590,
 "name" => "Brandenburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::MAGDEBURG,
-  CityIDs::BRESLAU,
-  CityIDs::LUBECK,
-  CityIDs::STETTIN],
-"id" => CityIDs::BRANDENBURG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::BRESLAU,
+  SpaceIDs::LUBECK,
+  SpaceIDs::STETTIN],
+"id" => SpaceIDs::BRANDENBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MAINZ => [
+SpaceIDs::MAINZ => [
 "x" => 2783,
 "y" => 992,
 "name" => "Mainz",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::NUREMBERG,
-  CityIDs::COLOGNE,
-  CityIDs::TRIER,
-  CityIDs::WORMS],
-"id" => CityIDs::MAINZ,
+  SpaceIDs::KASSEL,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::COLOGNE,
+  SpaceIDs::TRIER,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::MAINZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::COLOGNE => [
+SpaceIDs::COLOGNE => [
 "x" => 2617,
 "y" => 848,
 "name" => "Cologne",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::MUNSTER,
-  CityIDs::LIEGE],
-"id" => CityIDs::COLOGNE,
+  SpaceIDs::MAINZ,
+  SpaceIDs::MUNSTER,
+  SpaceIDs::LIEGE],
+"id" => SpaceIDs::COLOGNE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TRIER => [
+SpaceIDs::TRIER => [
 "x" => 2636,
 "y" => 1018,
 "name" => "Trier",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::METZ,
-  CityIDs::LIEGE],
-"id" => CityIDs::TRIER,
+  SpaceIDs::MAINZ,
+  SpaceIDs::METZ,
+  SpaceIDs::LIEGE],
+"id" => SpaceIDs::TRIER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AUGSBURG => [
+SpaceIDs::AUGSBURG => [
 "x" => 2981,
 "y" => 1203,
 "name" => "Augsburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::REGENSBURG,
-  CityIDs::NUREMBERG,
-  CityIDs::SALZBURG,
-  CityIDs::WORMS],
-"id" => CityIDs::AUGSBURG,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::AUGSBURG,
 "passes" => [
-  CityIDs::INNSBRUCK],
+  SpaceIDs::INNSBRUCK],
 "seazones" => []
 ],
-CityIDs::STETTIN => [
+SpaceIDs::STETTIN => [
 "x" => 3332,
 "y" => 436,
 "name" => "Stettin",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::LUBECK],
-"id" => CityIDs::STETTIN,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::LUBECK],
+"id" => SpaceIDs::STETTIN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BALTIC_SEA]
 ],
-CityIDs::LUBECK => [
+SpaceIDs::LUBECK => [
 "x" => 3103,
 "y" => 382,
 "name" => "Lübeck",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::STETTIN,
-  CityIDs::MAGDEBURG,
-  CityIDs::HAMBURG],
-"id" => CityIDs::LUBECK,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::STETTIN,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::HAMBURG],
+"id" => SpaceIDs::LUBECK,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BALTIC_SEA]
 ],
-CityIDs::MAGDEBURG => [
+SpaceIDs::MAGDEBURG => [
 "x" => 3052,
 "y" => 660,
 "name" => "Magdeburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::BRANDENBURG,
-  CityIDs::LUBECK,
-  CityIDs::BRUNSWICK,
-  CityIDs::ERFURT],
-"id" => CityIDs::MAGDEBURG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::LUBECK,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::ERFURT],
+"id" => SpaceIDs::MAGDEBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::HAMBURG => [
+SpaceIDs::HAMBURG => [
 "x" => 2877,
 "y" => 471,
 "name" => "Hamburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::LUBECK,
-  CityIDs::BRUNSWICK,
-  CityIDs::BREMEN],
-"id" => CityIDs::HAMBURG,
+  SpaceIDs::LUBECK,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::BREMEN],
+"id" => SpaceIDs::HAMBURG,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::BRUNSWICK => [
+SpaceIDs::BRUNSWICK => [
 "x" => 2842,
 "y" => 692,
 "name" => "Brunswick",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::HAMBURG,
-  CityIDs::MAGDEBURG,
-  CityIDs::BREMEN,
-  CityIDs::KASSEL],
-"id" => CityIDs::BRUNSWICK,
+  SpaceIDs::HAMBURG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::BREMEN,
+  SpaceIDs::KASSEL],
+"id" => SpaceIDs::BRUNSWICK,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BREMEN => [
+SpaceIDs::BREMEN => [
 "x" => 2714,
 "y" => 547,
 "name" => "Bremen",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::HAMBURG,
-  CityIDs::BRUNSWICK,
-  CityIDs::MUNSTER],
-"id" => CityIDs::BREMEN,
+  SpaceIDs::HAMBURG,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::MUNSTER],
+"id" => SpaceIDs::BREMEN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::MUNSTER => [
+SpaceIDs::MUNSTER => [
 "x" => 2620,
 "y" => 662,
 "name" => "Münster",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BREMEN,
-  CityIDs::KASSEL,
-  CityIDs::AMSTERDAM],
-"id" => CityIDs::MUNSTER,
+  SpaceIDs::BREMEN,
+  SpaceIDs::KASSEL,
+  SpaceIDs::AMSTERDAM],
+"id" => SpaceIDs::MUNSTER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::KASSEL => [
+SpaceIDs::KASSEL => [
 "x" => 2785,
 "y" => 839,
 "name" => "Kassel",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::BRUNSWICK,
-  CityIDs::MUNSTER,
-  CityIDs::NUREMBERG,
-  CityIDs::ERFURT],
-"id" => CityIDs::KASSEL,
+  SpaceIDs::MAINZ,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::MUNSTER,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::ERFURT],
+"id" => SpaceIDs::KASSEL,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ERFURT => [
+SpaceIDs::ERFURT => [
 "x" => 2942,
 "y" => 875,
 "name" => "Erfurt",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::MAGDEBURG,
-  CityIDs::LEIPZIG],
-"id" => CityIDs::ERFURT,
+  SpaceIDs::KASSEL,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::LEIPZIG],
+"id" => SpaceIDs::ERFURT,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LEIPZIG => [
+SpaceIDs::LEIPZIG => [
 "x" => 3101,
 "y" => 813,
 "name" => "Leipzig",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::NUREMBERG,
-  CityIDs::ERFURT,
-  CityIDs::PRAGUE],
-"id" => CityIDs::LEIPZIG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::ERFURT,
+  SpaceIDs::PRAGUE],
+"id" => SpaceIDs::LEIPZIG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NUREMBERG => [
+SpaceIDs::NUREMBERG => [
 "x" => 2954,
 "y" => 1049,
 "name" => "Nuremberg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::REGENSBURG,
-  CityIDs::LEIPZIG,
-  CityIDs::AUGSBURG,
-  CityIDs::WORMS],
-"id" => CityIDs::NUREMBERG,
+  SpaceIDs::KASSEL,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::LEIPZIG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::NUREMBERG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::WORMS => [
+SpaceIDs::WORMS => [
 "x" => 2823,
 "y" => 1133,
 "name" => "Worms",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::NUREMBERG,
-  CityIDs::AUGSBURG,
-  CityIDs::STRASBURG],
-"id" => CityIDs::WORMS,
+  SpaceIDs::MAINZ,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::STRASBURG],
+"id" => SpaceIDs::WORMS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::REGENSBURG => [
+SpaceIDs::REGENSBURG => [
 "x" => 3152,
 "y" => 1079,
 "name" => "Regensburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::SALZBURG,
-  CityIDs::NUREMBERG,
-  CityIDs::AUGSBURG,
-  CityIDs::LINZ],
-"id" => CityIDs::REGENSBURG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::LINZ],
+"id" => SpaceIDs::REGENSBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::STRASBURG => [
+SpaceIDs::STRASBURG => [
 "x" => 2698,
 "y" => 1194,
 "name" => "Strasburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WORMS,
-  CityIDs::METZ,
-  CityIDs::BESANCON,
-  CityIDs::BASEL],
-"id" => CityIDs::STRASBURG,
+  SpaceIDs::WORMS,
+  SpaceIDs::METZ,
+  SpaceIDs::BESANCON,
+  SpaceIDs::BASEL],
+"id" => SpaceIDs::STRASBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SALZBURG => [
+SpaceIDs::SALZBURG => [
 "x" => 3267,
 "y" => 1233,
 "name" => "Salzburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::INNSBRUCK,
-  CityIDs::REGENSBURG,
-  CityIDs::AUGSBURG,
-  CityIDs::LINZ],
-"id" => CityIDs::SALZBURG,
+  SpaceIDs::INNSBRUCK,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::LINZ],
+"id" => SpaceIDs::SALZBURG,
 "passes" => [
-  CityIDs::GRAZ],
+  SpaceIDs::GRAZ],
 "seazones" => []
 ],
-CityIDs::VIENNA => [
+SpaceIDs::VIENNA => [
 "x" => 3594,
 "y" => 1144,
 "name" => "Vienna",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::LINZ,
-  CityIDs::BRUNN,
-  CityIDs::PRESSBURG,
-  CityIDs::GRAZ],
-"id" => CityIDs::VIENNA,
+  SpaceIDs::LINZ,
+  SpaceIDs::BRUNN,
+  SpaceIDs::PRESSBURG,
+  SpaceIDs::GRAZ],
+"id" => SpaceIDs::VIENNA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LINZ => [
+SpaceIDs::LINZ => [
 "x" => 3406,
 "y" => 1172,
 "name" => "Linz",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::VIENNA,
-  CityIDs::REGENSBURG,
-  CityIDs::SALZBURG,
-  CityIDs::PRAGUE],
-"id" => CityIDs::LINZ,
+  SpaceIDs::VIENNA,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::PRAGUE],
+"id" => SpaceIDs::LINZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GRAZ => [
+SpaceIDs::GRAZ => [
 "x" => 3491,
 "y" => 1331,
 "name" => "Graz",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::VIENNA,
-  CityIDs::MOHACS,
-  CityIDs::TRIESTE,
-  CityIDs::AGRAM],
-"id" => CityIDs::GRAZ,
+  SpaceIDs::VIENNA,
+  SpaceIDs::MOHACS,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::GRAZ,
 "passes" => [
-  CityIDs::SALZBURG],
+  SpaceIDs::SALZBURG],
 "seazones" => []
 ],
-CityIDs::INNSBRUCK => [
+SpaceIDs::INNSBRUCK => [
 "x" => 3135,
 "y" => 1295,
 "name" => "Innsbruck",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::SALZBURG,
-  CityIDs::ZURICH],
-"id" => CityIDs::INNSBRUCK,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::ZURICH],
+"id" => SpaceIDs::INNSBRUCK,
 "passes" => [
-  CityIDs::AUGSBURG],
+  SpaceIDs::AUGSBURG],
 "seazones" => []
 ],
-CityIDs::ZURICH => [
+SpaceIDs::ZURICH => [
 "x" => 2830,
 "y" => 1342,
 "name" => "Zürich",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BASEL,
-  CityIDs::INNSBRUCK],
-"id" => CityIDs::ZURICH,
+  SpaceIDs::BASEL,
+  SpaceIDs::INNSBRUCK],
+"id" => SpaceIDs::ZURICH,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BASEL => [
+SpaceIDs::BASEL => [
 "x" => 2675,
 "y" => 1338,
 "name" => "Basel",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::ZURICH,
-  CityIDs::STRASBURG,
-  CityIDs::GENEVA,
-  CityIDs::BESANCON],
-"id" => CityIDs::BASEL,
+  SpaceIDs::ZURICH,
+  SpaceIDs::STRASBURG,
+  SpaceIDs::GENEVA,
+  SpaceIDs::BESANCON],
+"id" => SpaceIDs::BASEL,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LONDON => [
+SpaceIDs::LONDON => [
 "x" => 1904,
 "y" => 830,
 "name" => "London",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::NORWICH,
-  CityIDs::LINCOLN,
-  CityIDs::SHREWSBURY,
-  CityIDs::BRISTOL,
-  CityIDs::PORTSMOUTH],
-"id" => CityIDs::LONDON,
+  SpaceIDs::NORWICH,
+  SpaceIDs::LINCOLN,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PORTSMOUTH],
+"id" => SpaceIDs::LONDON,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::BRISTOL => [
+SpaceIDs::BRISTOL => [
 "x" => 1674,
 "y" => 812,
 "name" => "Bristol",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::WALES,
-  CityIDs::SHREWSBURY,
-  CityIDs::PLYMOUTH,
-  CityIDs::PORTSMOUTH],
-"id" => CityIDs::BRISTOL,
+  SpaceIDs::LONDON,
+  SpaceIDs::WALES,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::PLYMOUTH,
+  SpaceIDs::PORTSMOUTH],
+"id" => SpaceIDs::BRISTOL,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IRISH_SEA]
 ],
-CityIDs::YORK => [
+SpaceIDs::YORK => [
 "x" => 1715,
 "y" => 499,
 "name" => "York",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::LINCOLN,
-  CityIDs::SHREWSBURY,
-  CityIDs::BERWICK],
-"id" => CityIDs::YORK,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::LINCOLN,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::BERWICK],
+"id" => SpaceIDs::YORK,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NORWICH => [
+SpaceIDs::NORWICH => [
 "x" => 2016,
 "y" => 663,
 "name" => "Norwich",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON],
-"id" => CityIDs::NORWICH,
+  SpaceIDs::LONDON],
+"id" => SpaceIDs::NORWICH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::PORTSMOUTH => [
+SpaceIDs::PORTSMOUTH => [
 "x" => 1784,
 "y" => 945,
 "name" => "Portsmouth",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::BRISTOL,
-  CityIDs::PLYMOUTH],
-"id" => CityIDs::PORTSMOUTH,
+  SpaceIDs::LONDON,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PLYMOUTH],
+"id" => SpaceIDs::PORTSMOUTH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::PLYMOUTH => [
+SpaceIDs::PLYMOUTH => [
 "x" => 1517,
 "y" => 1023,
 "name" => "Plymouth",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BRISTOL,
-  CityIDs::PLYMOUTH],
-"id" => CityIDs::PLYMOUTH,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PLYMOUTH],
+"id" => SpaceIDs::PLYMOUTH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::LINCOLN => [
+SpaceIDs::LINCOLN => [
 "x" => 1828,
 "y" => 658,
 "name" => "Lincoln",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::YORK],
-"id" => CityIDs::LINCOLN,
+  SpaceIDs::LONDON,
+  SpaceIDs::YORK],
+"id" => SpaceIDs::LINCOLN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::WALES => [
+SpaceIDs::WALES => [
 "x" => 1518,
 "y" => 758,
 "name" => "Wales",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BRISTOL,
-  CityIDs::SHREWSBURY],
-"id" => CityIDs::WALES,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::SHREWSBURY],
+"id" => SpaceIDs::WALES,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SHREWSBURY => [
+SpaceIDs::SHREWSBURY => [
 "x" => 1657,
 "y" => 646,
 "name" => "Shrewsbury",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::WALES,
-  CityIDs::BRISTOL,
-  CityIDs::YORK,
-  CityIDs::CARLISLE],
-"id" => CityIDs::SHREWSBURY,
+  SpaceIDs::LONDON,
+  SpaceIDs::WALES,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::YORK,
+  SpaceIDs::CARLISLE],
+"id" => SpaceIDs::SHREWSBURY,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CARLISLE => [
+SpaceIDs::CARLISLE => [
 "x" => 1569,
 "y" => 404,
 "name" => "Carlisle",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BERWICK,
-  CityIDs::YORK,
-  CityIDs::SHREWSBURY,
-  CityIDs::GLASGOW],
-"id" => CityIDs::CARLISLE,
+  SpaceIDs::BERWICK,
+  SpaceIDs::YORK,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::CARLISLE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BERWICK => [
+SpaceIDs::BERWICK => [
 "x" => 1692,
 "y" => 308,
 "name" => "Berwick",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::YORK,
-  CityIDs::EDINBURGH],
-"id" => CityIDs::BERWICK,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::YORK,
+  SpaceIDs::EDINBURGH],
+"id" => SpaceIDs::BERWICK,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::EDINBURGH => [
+SpaceIDs::EDINBURGH => [
 "x" => 1540,
 "y" => 254,
 "name" => "Edinburgh",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BERWICK,
-  CityIDs::STIRLING,
-  CityIDs::GLASGOW],
-"id" => CityIDs::EDINBURGH,
+  SpaceIDs::BERWICK,
+  SpaceIDs::STIRLING,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::EDINBURGH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::STIRLING => [
+SpaceIDs::STIRLING => [
 "x" => 1382,
 "y" => 204,
 "name" => "Stirling",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::EDINBURGH,
-  CityIDs::GLASGOW],
-"id" => CityIDs::STIRLING,
+  SpaceIDs::EDINBURGH,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::STIRLING,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GLASGOW => [
+SpaceIDs::GLASGOW => [
 "x" => 1403,
 "y" => 362,
 "name" => "Glasgow",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::STIRLING,
-  CityIDs::EDINBURGH],
-"id" => CityIDs::GLASGOW,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::STIRLING,
+  SpaceIDs::EDINBURGH],
+"id" => SpaceIDs::GLASGOW,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IRISH_SEA]
 ],
-CityIDs::PARIS => [
+SpaceIDs::PARIS => [
 "x" => 2128,
 "y" => 1188,
 "name" => "Paris",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::BOULOGNE,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ST_DIZIER,
-  CityIDs::DIJON],
-"id" => CityIDs::PARIS,
+  SpaceIDs::ROUEN,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ST_DIZIER,
+  SpaceIDs::DIJON],
+"id" => SpaceIDs::PARIS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LYON => [
+SpaceIDs::LYON => [
 "x" => 2430,
 "y" => 1567,
 "name" => "Lyon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::GENEVA,
-  CityIDs::ORLEANS,
-  CityIDs::DIJON,
-  CityIDs::LIMOGES,
-  CityIDs::AVIGNON],
-"id" => CityIDs::LYON,
+  SpaceIDs::GENEVA,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::DIJON,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::AVIGNON],
+"id" => SpaceIDs::LYON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ROUEN => [
+SpaceIDs::ROUEN => [
 "x" => 1926,
 "y" => 1123,
 "name" => "Rouen",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::BOULOGNE,
-  CityIDs::TOURS,
-  CityIDs::NANTES],
-"id" => CityIDs::ROUEN,
+  SpaceIDs::PARIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::TOURS,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::ROUEN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::MARSEILLE => [
+SpaceIDs::MARSEILLE => [
 "x" => 2506,
 "y" => 1905,
 "name" => "Marseille",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::AVIGNON,
-  CityIDs::NICE],
-"id" => CityIDs::MARSEILLE,
+  SpaceIDs::AVIGNON,
+  SpaceIDs::NICE],
+"id" => SpaceIDs::MARSEILLE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::BORDEAUX => [
+SpaceIDs::BORDEAUX => [
 "x" => 1899,
 "y" => 1690,
 "name" => "Bordeaux",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::NANTES,
-  CityIDs::TOURS,
-  CityIDs::LIMOGES,
-  CityIDs::TOULOUSE],
-"id" => CityIDs::BORDEAUX,
+  SpaceIDs::NANTES,
+  SpaceIDs::TOURS,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::TOULOUSE],
+"id" => SpaceIDs::BORDEAUX,
 "passes" => [
-  CityIDs::NAVARRE],
+  SpaceIDs::NAVARRE],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::GRENOBLE => [
+SpaceIDs::GRENOBLE => [
 "x" => 2556,
 "y" => 1716,
 "name" => "Grenoble",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::GENEVA],
-"id" => CityIDs::GRENOBLE,
+  SpaceIDs::LYON,
+  SpaceIDs::GENEVA],
+"id" => SpaceIDs::GRENOBLE,
 "passes" => [
-  CityIDs::TURIN],
+  SpaceIDs::TURIN],
 "seazones" => []
 ],
-CityIDs::DIJON => [
+SpaceIDs::DIJON => [
 "x" => 2321,
 "y" => 1332,
 "name" => "Dijon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ORLEANS,
-  CityIDs::LYON,
-  CityIDs::BESANCON,
-  CityIDs::PARIS,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::DIJON,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::LYON,
+  SpaceIDs::BESANCON,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::DIJON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ST_DIZIER => [
+SpaceIDs::ST_DIZIER => [
 "x" => 2322,
 "y" => 1170,
 "name" => "St. Dizier",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::ST_QUENTIN,
-  CityIDs::BRUSSELS,
-  CityIDs::METZ,
-  CityIDs::DIJON],
-"id" => CityIDs::ST_DIZIER,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::METZ,
+  SpaceIDs::DIJON],
+"id" => SpaceIDs::ST_DIZIER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ST_QUENTIN => [
+SpaceIDs::ST_QUENTIN => [
 "x" => 2211,
 "y" => 1059,
 "name" => "St. Quentin",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::BOULOGNE,
-  CityIDs::BRUSSELS,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::ST_QUENTIN,
+  SpaceIDs::PARIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::ST_QUENTIN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BOULOGNE => [
+SpaceIDs::BOULOGNE => [
 "x" => 2075,
 "y" => 1005,
 "name" => "Boulogne",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ROUEN,
-  CityIDs::CALAIS],
-"id" => CityIDs::BOULOGNE,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ROUEN,
+  SpaceIDs::CALAIS],
+"id" => SpaceIDs::BOULOGNE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::ORLEANS => [
+SpaceIDs::ORLEANS => [
 "x" => 2138,
 "y" => 1345,
 "name" => "Orleans",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::TOURS,
-  CityIDs::DIJON,
-  CityIDs::LYON],
-"id" => CityIDs::ORLEANS,
+  SpaceIDs::PARIS,
+  SpaceIDs::TOURS,
+  SpaceIDs::DIJON,
+  SpaceIDs::LYON],
+"id" => SpaceIDs::ORLEANS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AVIGNON => [
+SpaceIDs::AVIGNON => [
 "x" => 2410,
 "y" => 1771,
 "name" => "Avignon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::MARSEILLE,
-  CityIDs::TOULOUSE],
-"id" => CityIDs::AVIGNON,
+  SpaceIDs::LYON,
+  SpaceIDs::MARSEILLE,
+  SpaceIDs::TOULOUSE],
+"id" => SpaceIDs::AVIGNON,
 "passes" => [
-  CityIDs::BARCELONA],
+  SpaceIDs::BARCELONA],
 "seazones" => []
 ],
-CityIDs::TOULOUSE => [
+SpaceIDs::TOULOUSE => [
 "x" => 2110,
 "y" => 1862,
 "name" => "Toulouse",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::BORDEAUX,
-  CityIDs::AVIGNON],
-"id" => CityIDs::TOULOUSE,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::AVIGNON],
+"id" => SpaceIDs::TOULOUSE,
 "passes" => [
-  CityIDs::BARCELONA],
+  SpaceIDs::BARCELONA],
 "seazones" => []
 ],
-CityIDs::LIMOGES => [
+SpaceIDs::LIMOGES => [
 "x" => 2094,
 "y" => 1522,
 "name" => "Limoges",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::TOURS,
-  CityIDs::BORDEAUX],
-"id" => CityIDs::LIMOGES,
+  SpaceIDs::LYON,
+  SpaceIDs::TOURS,
+  SpaceIDs::BORDEAUX],
+"id" => SpaceIDs::LIMOGES,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TOURS => [
+SpaceIDs::TOURS => [
 "x" => 1969,
 "y" => 1403,
 "name" => "Tours",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::ORLEANS,
-  CityIDs::BORDEAUX,
-  CityIDs::LIMOGES,
-  CityIDs::NANTES],
-"id" => CityIDs::TOURS,
+  SpaceIDs::ROUEN,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::TOURS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NANTES => [
+SpaceIDs::NANTES => [
 "x" => 1770,
 "y" => 1434,
 "name" => "Nantes",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::TOURS,
-  CityIDs::BORDEAUX,
-  CityIDs::BREST],
-"id" => CityIDs::NANTES,
+  SpaceIDs::ROUEN,
+  SpaceIDs::TOURS,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::BREST],
+"id" => SpaceIDs::NANTES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::BREST => [
+SpaceIDs::BREST => [
 "x" => 1528,
 "y" => 1299,
 "name" => "Brest",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::NANTES],
-"id" => CityIDs::BREST,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::BREST,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::BRUSSELS => [
+SpaceIDs::BRUSSELS => [
 "x" => 2320,
 "y" => 947,
 "name" => "Brussels",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::CALAIS,
-  CityIDs::ANTWERP,
-  CityIDs::LIEGE,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::BRUSSELS,
+  SpaceIDs::CALAIS,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::LIEGE,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::BRUSSELS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BESANCON => [
+SpaceIDs::BESANCON => [
 "x" => 2510,
 "y" => 1292,
 "name" => "Besançon",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::DIJON,
-  CityIDs::BASEL,
-  CityIDs::GENEVA,
-  CityIDs::METZ,
-  CityIDs::STRASBURG],
-"id" => CityIDs::BESANCON,
+  SpaceIDs::DIJON,
+  SpaceIDs::BASEL,
+  SpaceIDs::GENEVA,
+  SpaceIDs::METZ,
+  SpaceIDs::STRASBURG],
+"id" => SpaceIDs::BESANCON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CALAIS => [
+SpaceIDs::CALAIS => [
 "x" => 2142,
 "y" => 869,
 "name" => "Calais",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::BOULOGNE,
-  CityIDs::ANTWERP,
-  CityIDs::BRUSSELS],
-"id" => CityIDs::CALAIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::BRUSSELS],
+"id" => SpaceIDs::CALAIS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::METZ => [
+SpaceIDs::METZ => [
 "x" => 2503,
 "y" => 1118,
 "name" => "Metz",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::TRIER,
-  CityIDs::BESANCON,
-  CityIDs::LIEGE,
-  CityIDs::STRASBURG,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::METZ,
+  SpaceIDs::TRIER,
+  SpaceIDs::BESANCON,
+  SpaceIDs::LIEGE,
+  SpaceIDs::STRASBURG,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::METZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LIEGE => [
+SpaceIDs::LIEGE => [
 "x" => 2471,
 "y" => 908,
 "name" => "Liege",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::TRIER,
-  CityIDs::ANTWERP,
-  CityIDs::BRUSSELS,
-  CityIDs::METZ,
-  CityIDs::COLOGNE],
-"id" => CityIDs::LIEGE,
+  SpaceIDs::TRIER,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::METZ,
+  SpaceIDs::COLOGNE],
+"id" => SpaceIDs::LIEGE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GENEVA => [
+SpaceIDs::GENEVA => [
 "x" => 2593,
 "y" => 1491,
 "name" => "Geneva",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::BESANCON,
-  CityIDs::BASEL,
-  CityIDs::GRENOBLE],
-"id" => CityIDs::GENEVA,
+  SpaceIDs::LYON,
+  SpaceIDs::BESANCON,
+  SpaceIDs::BASEL,
+  SpaceIDs::GRENOBLE],
+"id" => SpaceIDs::GENEVA,
 "passes" => [
-  CityIDs::TURIN],
+  SpaceIDs::TURIN],
 "seazones" => []
 ],
-CityIDs::NICE => [
+SpaceIDs::NICE => [
 "x" => 2700,
 "y" => 1858,
 "name" => "Nice",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::MARSEILLE],
-"id" => CityIDs::NICE,
+  SpaceIDs::MARSEILLE],
+"id" => SpaceIDs::NICE,
 "passes" => [
-  CityIDs::GENOA],
+  SpaceIDs::GENOA],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::ROME => [
+SpaceIDs::ROME => [
 "x" => 3241,
 "y" => 2045,
 "name" => "Rome",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::SIENA,
-  CityIDs::ANCONA,
-  CityIDs::CERIGNOLA],
-"id" => CityIDs::ROME,
+  SpaceIDs::NAPLES,
+  SpaceIDs::SIENA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::CERIGNOLA],
+"id" => SpaceIDs::ROME,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::RAVENNA => [
+SpaceIDs::RAVENNA => [
 "x" => 3247,
 "y" => 1720,
 "name" => "Ravenna",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::ANCONA,
-  CityIDs::VENICE,
-  CityIDs::MODENA],
-"id" => CityIDs::RAVENNA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::VENICE,
+  SpaceIDs::MODENA],
+"id" => SpaceIDs::RAVENNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ANCONA => [
+SpaceIDs::ANCONA => [
 "x" => 3357,
 "y" => 1878,
 "name" => "Ancona",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::RAVENNA,
-  CityIDs::ROME,
-  CityIDs::CERIGNOLA],
-"id" => CityIDs::ANCONA,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::ROME,
+  SpaceIDs::CERIGNOLA],
+"id" => SpaceIDs::ANCONA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::NAPLES => [
+SpaceIDs::NAPLES => [
 "x" => 3475,
 "y" => 2213,
 "name" => "Naples",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TARANTO,
-  CityIDs::ROME,
-  CityIDs::MESSINA],
-"id" => CityIDs::NAPLES,
+  SpaceIDs::TARANTO,
+  SpaceIDs::ROME,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::NAPLES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::TRIESTE => [
+SpaceIDs::TRIESTE => [
 "x" => 3375,
 "y" => 1515,
 "name" => "Trieste",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::VENICE,
-  CityIDs::GRAZ,
-  CityIDs::AGRAM,
-  CityIDs::ZARA],
-"id" => CityIDs::TRIESTE,
+  SpaceIDs::VENICE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::AGRAM,
+  SpaceIDs::ZARA],
+"id" => SpaceIDs::TRIESTE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::CERIGNOLA => [
+SpaceIDs::CERIGNOLA => [
 "x" => 3544,
 "y" => 2042,
 "name" => "Cerignola",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::ANCONA,
-  CityIDs::ROME,
-  CityIDs::TARANTO],
-"id" => CityIDs::CERIGNOLA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::ROME,
+  SpaceIDs::TARANTO],
+"id" => SpaceIDs::CERIGNOLA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TARANTO => [
+SpaceIDs::TARANTO => [
 "x" => 3716,
 "y" => 2205,
 "name" => "Taranto",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::CERIGNOLA,
-  CityIDs::MESSINA],
-"id" => CityIDs::TARANTO,
+  SpaceIDs::NAPLES,
+  SpaceIDs::CERIGNOLA,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::TARANTO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::MESSINA => [
+SpaceIDs::MESSINA => [
 "x" => 3594,
 "y" => 2553,
 "name" => "Messina",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::PALERMO,
-  CityIDs::TARANTO],
-"id" => CityIDs::MESSINA,
+  SpaceIDs::NAPLES,
+  SpaceIDs::PALERMO,
+  SpaceIDs::TARANTO],
+"id" => SpaceIDs::MESSINA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::PALERMO => [
+SpaceIDs::PALERMO => [
 "x" => 3378,
 "y" => 2546,
 "name" => "Palermo",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MESSINA],
-"id" => CityIDs::PALERMO,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::PALERMO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::GENOA => [
+SpaceIDs::GENOA => [
 "x" => 2844,
 "y" => 1750,
 "name" => "Genoa",
 "home_power" => Powers::MINOR_GENOA,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TURIN,
-  CityIDs::PAVIA,
-  CityIDs::FLORENCE,
-  CityIDs::SIENA],
-"id" => CityIDs::GENOA,
+  SpaceIDs::TURIN,
+  SpaceIDs::PAVIA,
+  SpaceIDs::FLORENCE,
+  SpaceIDs::SIENA],
+"id" => SpaceIDs::GENOA,
 "passes" => [
-  CityIDs::NICE],
+  SpaceIDs::NICE],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::VENICE => [
+SpaceIDs::VENICE => [
 "x" => 3205,
 "y" => 1524,
 "name" => "Venice",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TRENT,
-  CityIDs::MODENA,
-  CityIDs::RAVENNA,
-  CityIDs::TRIESTE],
-"id" => CityIDs::VENICE,
+  SpaceIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::TRIESTE],
+"id" => SpaceIDs::VENICE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::MILAN => [
+SpaceIDs::MILAN => [
 "x" => 2864,
 "y" => 1495,
 "name" => "Milan",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TRENT,
-  CityIDs::MODENA,
-  CityIDs::PAVIA,
-  CityIDs::TURIN],
-"id" => CityIDs::MILAN,
+  SpaceIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::PAVIA,
+  SpaceIDs::TURIN],
+"id" => SpaceIDs::MILAN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::FLORENCE => [
+SpaceIDs::FLORENCE => [
 "x" => 3094,
 "y" => 1769,
 "name" => "Florence",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MODENA,
-  CityIDs::GENOA,
-  CityIDs::SIENA],
-"id" => CityIDs::FLORENCE,
+  SpaceIDs::MODENA,
+  SpaceIDs::GENOA,
+  SpaceIDs::SIENA],
+"id" => SpaceIDs::FLORENCE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TURIN => [
+SpaceIDs::TURIN => [
 "x" => 2702,
 "y" => 1655,
 "name" => "Turin",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::PAVIA,
-  CityIDs::GENOA],
-"id" => CityIDs::TURIN,
+  SpaceIDs::MILAN,
+  SpaceIDs::PAVIA,
+  SpaceIDs::GENOA],
+"id" => SpaceIDs::TURIN,
 "passes" => [
-  CityIDs::GENEVA],
+  SpaceIDs::GENEVA],
 "seazones" => []
 ],
-CityIDs::TRENT => [
+SpaceIDs::TRENT => [
 "x" => 3051,
 "y" => 1436,
 "name" => "Trent",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MODENA,
-  CityIDs::VENICE,
-  CityIDs::MILAN],
-"id" => CityIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::VENICE,
+  SpaceIDs::MILAN],
+"id" => SpaceIDs::TRENT,
 "passes" => [
-  CityIDs::INNSBRUCK],
+  SpaceIDs::INNSBRUCK],
 "seazones" => []
 ],
-CityIDs::MODENA => [
+SpaceIDs::MODENA => [
 "x" => 3069,
 "y" => 1613,
 "name" => "Modena",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::VENICE,
-  CityIDs::RAVENNA,
-  CityIDs::PAVIA,
-  CityIDs::FLORENCE],
-"id" => CityIDs::MODENA,
+  SpaceIDs::MILAN,
+  SpaceIDs::VENICE,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::PAVIA,
+  SpaceIDs::FLORENCE],
+"id" => SpaceIDs::MODENA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::PAVIA => [
+SpaceIDs::PAVIA => [
 "x" => 2917,
 "y" => 1630,
 "name" => "Pavia",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::MODENA,
-  CityIDs::GENOA,
-  CityIDs::TURIN],
-"id" => CityIDs::PAVIA,
+  SpaceIDs::MILAN,
+  SpaceIDs::MODENA,
+  SpaceIDs::GENOA,
+  SpaceIDs::TURIN],
+"id" => SpaceIDs::PAVIA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SIENA => [
+SpaceIDs::SIENA => [
 "x" => 3106,
 "y" => 1932,
 "name" => "Siena",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::FLORENCE,
-  CityIDs::ROME,
-  CityIDs::GENOA],
-"id" => CityIDs::SIENA,
+  SpaceIDs::FLORENCE,
+  SpaceIDs::ROME,
+  SpaceIDs::GENOA],
+"id" => SpaceIDs::SIENA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::VALLADOLID => [
+SpaceIDs::VALLADOLID => [
 "x" => 1514,
 "y" => 2180,
 "name" => "Valladolid",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::MADRID,
-  CityIDs::BILBAO,
-  CityIDs::CORUNNA],
-"id" => CityIDs::VALLADOLID,
+  SpaceIDs::MADRID,
+  SpaceIDs::BILBAO,
+  SpaceIDs::CORUNNA],
+"id" => SpaceIDs::VALLADOLID,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NAVARRE => [
+SpaceIDs::NAVARRE => [
 "x" => 1822,
 "y" => 1939,
 "name" => "Navarre",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::ZARAGOZA],
-"id" => CityIDs::NAVARRE,
+  SpaceIDs::BILBAO,
+  SpaceIDs::ZARAGOZA],
+"id" => SpaceIDs::NAVARRE,
 "passes" => [
-  CityIDs::BORDEAUX],
+  SpaceIDs::BORDEAUX],
 "seazones" => []
 ],
-CityIDs::BARCELONA => [
+SpaceIDs::BARCELONA => [
 "x" => 2227,
 "y" => 2186,
 "name" => "Barcelona",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::ZARAGOZA,
-  CityIDs::VALENCIA],
-"id" => CityIDs::BARCELONA,
+  SpaceIDs::ZARAGOZA,
+  SpaceIDs::VALENCIA],
+"id" => SpaceIDs::BARCELONA,
 "passes" => [
-  CityIDs::TOULOUSE],
+  SpaceIDs::TOULOUSE],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::SEVILLE => [
+SpaceIDs::SEVILLE => [
 "x" => 1442,
 "y" => 2766,
 "name" => "Seville",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORDOBA,
-  CityIDs::GIBRALTAR],
-"id" => CityIDs::SEVILLE,
+  SpaceIDs::CORDOBA,
+  SpaceIDs::GIBRALTAR],
+"id" => SpaceIDs::SEVILLE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ATLANTIC_OCEAN]
 ],
-CityIDs::GIBRALTAR => [
+SpaceIDs::GIBRALTAR => [
 "x" => 1494,
 "y" => 2945,
 "name" => "Gibraltar",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::SEVILLE,
-  CityIDs::GRANADA],
-"id" => CityIDs::GIBRALTAR,
+  SpaceIDs::SEVILLE,
+  SpaceIDs::GRANADA],
+"id" => SpaceIDs::GIBRALTAR,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ATLANTIC_OCEAN]
 ],
-CityIDs::CORUNNA => [
+SpaceIDs::CORUNNA => [
 "x" => 1136,
 "y" => 1996,
 "name" => "Corunna",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::VALLADOLID],
-"id" => CityIDs::CORUNNA,
+  SpaceIDs::BILBAO,
+  SpaceIDs::VALLADOLID],
+"id" => SpaceIDs::CORUNNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::BILBAO => [
+SpaceIDs::BILBAO => [
 "x" => 1653,
 "y" => 1950,
 "name" => "Bilbao",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORUNNA,
-  CityIDs::VALLADOLID,
-  CityIDs::NAVARRE,
-  CityIDs::ZARAGOZA],
-"id" => CityIDs::BILBAO,
+  SpaceIDs::CORUNNA,
+  SpaceIDs::VALLADOLID,
+  SpaceIDs::NAVARRE,
+  SpaceIDs::ZARAGOZA],
+"id" => SpaceIDs::BILBAO,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ZARAGOZA => [
+SpaceIDs::ZARAGOZA => [
 "x" => 1897,
 "y" => 2150,
 "name" => "Zaragoza",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::MADRID,
-  CityIDs::NAVARRE,
-  CityIDs::BARCELONA],
-"id" => CityIDs::ZARAGOZA,
+  SpaceIDs::BILBAO,
+  SpaceIDs::MADRID,
+  SpaceIDs::NAVARRE,
+  SpaceIDs::BARCELONA],
+"id" => SpaceIDs::ZARAGOZA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MADRID => [
+SpaceIDs::MADRID => [
 "x" => 1670,
 "y" => 2358,
 "name" => "Madrid",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::VALLADOLID,
-  CityIDs::ZARAGOZA,
-  CityIDs::VALENCIA,
-  CityIDs::CORDOBA],
-"id" => CityIDs::MADRID,
+  SpaceIDs::VALLADOLID,
+  SpaceIDs::ZARAGOZA,
+  SpaceIDs::VALENCIA,
+  SpaceIDs::CORDOBA],
+"id" => SpaceIDs::MADRID,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::VALENCIA => [
+SpaceIDs::VALENCIA => [
 "x" => 1992,
 "y" => 2457,
 "name" => "Valencia",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::MADRID,
-  CityIDs::BARCELONA,
-  CityIDs::CARTAGENA],
-"id" => CityIDs::VALENCIA,
+  SpaceIDs::MADRID,
+  SpaceIDs::BARCELONA,
+  SpaceIDs::CARTAGENA],
+"id" => SpaceIDs::VALENCIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::PALMA => [
+SpaceIDs::PALMA => [
 "x" => 2341,
 "y" => 2392,
 "name" => "Palma",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [],
-"id" => CityIDs::PALMA,
+"id" => SpaceIDs::PALMA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::CORDOBA => [
+SpaceIDs::CORDOBA => [
 "x" => 1566,
 "y" => 2654,
 "name" => "Cordoba",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::SEVILLE,
-  CityIDs::GRANADA,
-  CityIDs::MADRID],
-"id" => CityIDs::CORDOBA,
+  SpaceIDs::SEVILLE,
+  SpaceIDs::GRANADA,
+  SpaceIDs::MADRID],
+"id" => SpaceIDs::CORDOBA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GRANADA => [
+SpaceIDs::GRANADA => [
 "x" => 1676,
 "y" => 2781,
 "name" => "Granada",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORDOBA,
-  CityIDs::GIBRALTAR,
-  CityIDs::CARTAGENA],
-"id" => CityIDs::GRANADA,
+  SpaceIDs::CORDOBA,
+  SpaceIDs::GIBRALTAR,
+  SpaceIDs::CARTAGENA],
+"id" => SpaceIDs::GRANADA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CARTAGENA => [
+SpaceIDs::CARTAGENA => [
 "x" => 1949,
 "y" => 2716,
 "name" => "Cartagena",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::VALENCIA,
-  CityIDs::GRANADA],
-"id" => CityIDs::CARTAGENA,
+  SpaceIDs::VALENCIA,
+  SpaceIDs::GRANADA],
+"id" => SpaceIDs::CARTAGENA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::ISTANBUL => [
+SpaceIDs::ISTANBUL => [
 "x" => 4892,
 "y" => 2014,
 "name" => "Istanbul",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::VARNA],
-"id" => CityIDs::ISTANBUL,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::VARNA],
+"id" => SpaceIDs::ISTANBUL,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BLACK_SEA]
 ],
-CityIDs::EDIRNE => [
+SpaceIDs::EDIRNE => [
 "x" => 4651,
 "y" => 1964,
 "name" => "Edirne",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ISTANBUL,
-  CityIDs::VARNA,
-  CityIDs::SOFIA,
-  CityIDs::SALONIKA],
-"id" => CityIDs::EDIRNE,
+  SpaceIDs::ISTANBUL,
+  SpaceIDs::VARNA,
+  SpaceIDs::SOFIA,
+  SpaceIDs::SALONIKA],
+"id" => SpaceIDs::EDIRNE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SALONIKA => [
+SpaceIDs::SALONIKA => [
 "x" => 4283,
 "y" => 2134,
 "name" => "Salonika",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::LARISSA],
-"id" => CityIDs::SALONIKA,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::LARISSA],
+"id" => SpaceIDs::SALONIKA,
 "passes" => [
-  CityIDs::SOFIA],
+  SpaceIDs::SOFIA],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::ATHENS => [
+SpaceIDs::ATHENS => [
 "x" => 4404,
 "y" => 2470,
 "name" => "Athens",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::LARISSA,
-  CityIDs::LEPANTO,
-  CityIDs::CORON],
-"id" => CityIDs::ATHENS,
+  SpaceIDs::LARISSA,
+  SpaceIDs::LEPANTO,
+  SpaceIDs::CORON],
+"id" => SpaceIDs::ATHENS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::SCUTARI => [
+SpaceIDs::SCUTARI => [
 "x" => 3937,
 "y" => 1984,
 "name" => "Scutari",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::DURAZZO,
-  CityIDs::RAGUSA],
-"id" => CityIDs::SCUTARI,
+  SpaceIDs::DURAZZO,
+  SpaceIDs::RAGUSA],
+"id" => SpaceIDs::SCUTARI,
 "passes" => [
-  CityIDs::NEZH],
+  SpaceIDs::NEZH],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::VARNA => [
+SpaceIDs::VARNA => [
 "x" => 4772,
 "y" => 1747,
 "name" => "Varna",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUCHAREST,
-  CityIDs::EDIRNE,
-  CityIDs::ISTANBUL],
-"id" => CityIDs::VARNA,
+  SpaceIDs::BUCHAREST,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::ISTANBUL],
+"id" => SpaceIDs::VARNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BLACK_SEA]
 ],
-CityIDs::BUCHAREST => [
+SpaceIDs::BUCHAREST => [
 "x" => 4576,
 "y" => 1552,
 "name" => "Bucharest",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::NICOPOLIS,
-  CityIDs::VARNA],
-"id" => CityIDs::BUCHAREST,
+  SpaceIDs::NICOPOLIS,
+  SpaceIDs::VARNA],
+"id" => SpaceIDs::BUCHAREST,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NICOPOLIS => [
+SpaceIDs::NICOPOLIS => [
 "x" => 4454,
 "y" => 1694,
 "name" => "Nicopolis",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUCHAREST,
-  CityIDs::BELGRADE],
-"id" => CityIDs::NICOPOLIS,
+  SpaceIDs::BUCHAREST,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::NICOPOLIS,
 "passes" => [
-  CityIDs::SOFIA],
+  SpaceIDs::SOFIA],
 "seazones" => []
 ],
-CityIDs::SOFIA => [
+SpaceIDs::SOFIA => [
 "x" => 4392,
 "y" => 1890,
 "name" => "Sofia",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::NEZH],
-"id" => CityIDs::SOFIA,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::NEZH],
+"id" => SpaceIDs::SOFIA,
 "passes" => [
-  CityIDs::NICOPOLIS],
+  SpaceIDs::NICOPOLIS],
 "seazones" => []
 ],
-CityIDs::LARISSA => [
+SpaceIDs::LARISSA => [
 "x" => 4249,
 "y" => 2307,
 "name" => "Larissa",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SALONIKA,
-  CityIDs::LEPANTO,
-  CityIDs::ATHENS],
-"id" => CityIDs::LARISSA,
+  SpaceIDs::SALONIKA,
+  SpaceIDs::LEPANTO,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::LARISSA,
 "passes" => [
-  CityIDs::DURAZZO],
+  SpaceIDs::DURAZZO],
 "seazones" => []
 ],
-CityIDs::LEPANTO => [
+SpaceIDs::LEPANTO => [
 "x" => 4177,
 "y" => 2446,
 "name" => "Lepanto",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::LARISSA,
-  CityIDs::ATHENS],
-"id" => CityIDs::LEPANTO,
+  SpaceIDs::LARISSA,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::LEPANTO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::CORON => [
+SpaceIDs::CORON => [
 "x" => 4264,
 "y" => 2634,
 "name" => "Coron",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ATHENS],
-"id" => CityIDs::CORON,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::CORON,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::NEZH => [
+SpaceIDs::NEZH => [
 "x" => 4188,
 "y" => 1777,
 "name" => "Nezh",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BELGRADE,
-  CityIDs::SOFIA],
-"id" => CityIDs::NEZH,
+  SpaceIDs::BELGRADE,
+  SpaceIDs::SOFIA],
+"id" => SpaceIDs::NEZH,
 "passes" => [
-  CityIDs::SCUTARI],
+  SpaceIDs::SCUTARI],
 "seazones" => []
 ],
-CityIDs::DURAZZO => [
+SpaceIDs::DURAZZO => [
 "x" => 3963,
 "y" => 2164,
 "name" => "Durazzo",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SCUTARI],
-"id" => CityIDs::DURAZZO,
+  SpaceIDs::SCUTARI],
+"id" => SpaceIDs::DURAZZO,
 "passes" => [
-  CityIDs::LARISSA],
+  SpaceIDs::LARISSA],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ALGIERS => [
+SpaceIDs::ALGIERS => [
 "x" => 2394,
 "y" => 2779,
 "name" => "Algiers",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::ALGIERS,
+"id" => SpaceIDs::ALGIERS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::ORAN => [
+SpaceIDs::ORAN => [
 "x" => 2021,
 "y" => 2944,
 "name" => "Oran",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::ORAN,
+"id" => SpaceIDs::ORAN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::TRIPOLI => [
+SpaceIDs::TRIPOLI => [
 "x" => 3435,
 "y" => 3153,
 "name" => "Tripoli",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::TRIPOLI,
+"id" => SpaceIDs::TRIPOLI,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_AFRICAN_COAST]
 ],
-CityIDs::BELGRADE => [
+SpaceIDs::BELGRADE => [
 "x" => 4010,
 "y" => 1574,
 "name" => "Belgrade",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::NICOPOLIS,
-  CityIDs::NEZH,
-  CityIDs::SZEGEDIN,
-  CityIDs::MOHACS,
-  CityIDs::AGRAM],
-"id" => CityIDs::BELGRADE,
+  SpaceIDs::NICOPOLIS,
+  SpaceIDs::NEZH,
+  SpaceIDs::SZEGEDIN,
+  SpaceIDs::MOHACS,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::BELGRADE,
 "passes" => [
-  CityIDs::RAGUSA],
+  SpaceIDs::RAGUSA],
 "seazones" => []
 ],
-CityIDs::BUDA => [
+SpaceIDs::BUDA => [
 "x" => 3865,
 "y" => 1232,
 "name" => "Buda",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SZEGEDIN,
-  CityIDs::MOHACS,
-  CityIDs::PRESSBURG],
-"id" => CityIDs::BUDA,
+  SpaceIDs::SZEGEDIN,
+  SpaceIDs::MOHACS,
+  SpaceIDs::PRESSBURG],
+"id" => SpaceIDs::BUDA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::PRAGUE => [
+SpaceIDs::PRAGUE => [
 "x" => 3346,
 "y" => 912,
 "name" => "Prague",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRUNN,
-  CityIDs::LINZ,
-  CityIDs::WITTENBERG,
-  CityIDs::LEIPZIG],
-"id" => CityIDs::PRAGUE,
+  SpaceIDs::BRUNN,
+  SpaceIDs::LINZ,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::LEIPZIG],
+"id" => SpaceIDs::PRAGUE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SZEGEDIN => [
+SpaceIDs::SZEGEDIN => [
 "x" => 3964,
 "y" => 1393,
 "name" => "Szegedin",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::BELGRADE],
-"id" => CityIDs::SZEGEDIN,
+  SpaceIDs::BUDA,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::SZEGEDIN,
 "passes" => [
-  CityIDs::NICOPOLIS],
+  SpaceIDs::NICOPOLIS],
 "seazones" => []
 ],
-CityIDs::PRESSBURG => [
+SpaceIDs::PRESSBURG => [
 "x" => 3731,
 "y" => 1207,
 "name" => "Pressburg",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::VIENNA],
-"id" => CityIDs::PRESSBURG,
+  SpaceIDs::BUDA,
+  SpaceIDs::VIENNA],
+"id" => SpaceIDs::PRESSBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MOHACS => [
+SpaceIDs::MOHACS => [
 "x" => 3829,
 "y" => 1477,
 "name" => "Mohacs",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::BELGRADE,
-  CityIDs::GRAZ,
-  CityIDs::AGRAM],
-"id" => CityIDs::MOHACS,
+  SpaceIDs::BUDA,
+  SpaceIDs::BELGRADE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::MOHACS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AGRAM => [
+SpaceIDs::AGRAM => [
 "x" => 3578,
 "y" => 1496,
 "name" => "Agram",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::TRIESTE,
-  CityIDs::GRAZ,
-  CityIDs::MOHACS,
-  CityIDs::BELGRADE],
-"id" => CityIDs::AGRAM,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::MOHACS,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::AGRAM,
 "passes" => [
-  CityIDs::ZARA],
+  SpaceIDs::ZARA],
 "seazones" => []
 ],
-CityIDs::BRUNN => [
+SpaceIDs::BRUNN => [
 "x" => 3645,
 "y" => 966,
 "name" => "Brunn",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRESLAU,
-  CityIDs::PRAGUE,
-  CityIDs::VIENNA],
-"id" => CityIDs::BRUNN,
+  SpaceIDs::BRESLAU,
+  SpaceIDs::PRAGUE,
+  SpaceIDs::VIENNA],
+"id" => SpaceIDs::BRUNN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BRESLAU => [
+SpaceIDs::BRESLAU => [
 "x" => 3585,
 "y" => 765,
 "name" => "Breslau",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRUNN,
-  CityIDs::WITTENBERG,
-  CityIDs::BRANDENBURG],
-"id" => CityIDs::BRESLAU,
+  SpaceIDs::BRUNN,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG],
+"id" => SpaceIDs::BRESLAU,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ANTWERP => [
+SpaceIDs::ANTWERP => [
 "x" => 2287,
 "y" => 795,
 "name" => "Antwerp",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::CALAIS,
-  CityIDs::LIEGE,
-  CityIDs::BRUSSELS,
-  CityIDs::AMSTERDAM],
-"id" => CityIDs::ANTWERP,
+  SpaceIDs::CALAIS,
+  SpaceIDs::LIEGE,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::AMSTERDAM],
+"id" => SpaceIDs::ANTWERP,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::MALTA => [
+SpaceIDs::MALTA => [
 "x" => 3498,
 "y" => 2839,
 "name" => "Malta",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::MALTA,
+"id" => SpaceIDs::MALTA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::CAGLIARI => [
+SpaceIDs::CAGLIARI => [
 "x" => 2949,
 "y" => 2448,
 "name" => "Cagliari",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CAGLIARI,
+"id" => SpaceIDs::CAGLIARI,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::AMSTERDAM => [
+SpaceIDs::AMSTERDAM => [
 "x" => 2363,
 "y" => 672,
 "name" => "Amsterdam",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ANTWERP,
-  CityIDs::MUNSTER],
-"id" => CityIDs::AMSTERDAM,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::MUNSTER],
+"id" => SpaceIDs::AMSTERDAM,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::CANDIA => [
+SpaceIDs::CANDIA => [
 "x" => 4603,
 "y" => 2791,
 "name" => "Candia",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CANDIA,
+"id" => SpaceIDs::CANDIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::CORFU => [
+SpaceIDs::CORFU => [
 "x" => 3987,
 "y" => 2333,
 "name" => "Corfu",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CORFU,
+"id" => SpaceIDs::CORFU,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ZARA => [
+SpaceIDs::ZARA => [
 "x" => 3492,
 "y" => 1696,
 "name" => "Zara",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::TRIESTE,
-  CityIDs::RAGUSA],
-"id" => CityIDs::ZARA,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::RAGUSA],
+"id" => SpaceIDs::ZARA,
 "passes" => [
-  CityIDs::AGRAM],
+  SpaceIDs::AGRAM],
 "seazones" => []
 ],
-CityIDs::BASTIA => [
+SpaceIDs::BASTIA => [
 "x" => 2903,
 "y" => 1951,
 "name" => "Bastia",
 "home_power" => Powers::MINOR_GENOA,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::BASTIA,
+"id" => SpaceIDs::BASTIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::TUNIS => [
+SpaceIDs::TUNIS => [
 "x" => 3064,
 "y" => 2720,
 "name" => "Tunis",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::TUNIS,
+"id" => SpaceIDs::TUNIS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::RHODES => [
+SpaceIDs::RHODES => [
 "x" => 4851,
 "y" => 2646,
 "name" => "Rhodes",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::RHODES,
+"id" => SpaceIDs::RHODES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::RAGUSA => [
+SpaceIDs::RAGUSA => [
 "x" => 3779,
 "y" => 1874,
 "name" => "Ragusa",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ZARA,
-  CityIDs::SCUTARI],
-"id" => CityIDs::RAGUSA,
+  SpaceIDs::ZARA,
+  SpaceIDs::SCUTARI],
+"id" => SpaceIDs::RAGUSA,
 "passes" => [
-  CityIDs::BELGRADE],
+  SpaceIDs::BELGRADE],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ]
 ];
 
 $this->tokens = [
-tokenIDs::ENGLAND_KEY => [
+TokenIDs::ENGLAND_KEY => [
 "name" => "English Key",
 "power" => Powers::ENGLAND,
 "style" => "Control Keys Catholic england_key",
@@ -2005,7 +2005,7 @@ tokenIDs::ENGLAND_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::FRANCE_KEY => [
+TokenIDs::FRANCE_KEY => [
 "name" => "French Key",
 "power" => Powers::FRANCE,
 "style" => "Control Keys Catholic france_key",
@@ -2023,7 +2023,7 @@ tokenIDs::FRANCE_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::HAPSBURG_KEY => [
+TokenIDs::HAPSBURG_KEY => [
 "name" => "Hapsburg Key",
 "power" => Powers::HAPSBURG,
 "style" => "Control Keys Catholic hapsburg_key",
@@ -2041,7 +2041,7 @@ tokenIDs::HAPSBURG_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::OTTOMAN_KEY => [
+TokenIDs::OTTOMAN_KEY => [
 "name" => "Ottoman Key",
 "power" => Powers::OTTOMAN,
 "style" => "Control Keys Catholic ottoman_key",
@@ -2059,7 +2059,7 @@ tokenIDs::OTTOMAN_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::INDEPENDENT_KEY => [
+TokenIDs::INDEPENDENT_KEY => [
 "name" => "Independent Key",
 "power" => Powers::INDEPENDENT,
 "style" => "Control Keys Catholic independent_key",
@@ -2077,7 +2077,7 @@ tokenIDs::INDEPENDENT_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::PAPACY_KEY => [
+TokenIDs::PAPACY_KEY => [
 "name" => "Papacy Key",
 "power" => Powers::PAPACY,
 "style" => "Control Keys Catholic papacy_key",
@@ -2095,7 +2095,7 @@ tokenIDs::PAPACY_KEY => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::ENGLAND_HEX => [
+TokenIDs::ENGLAND_HEX => [
 "name" => "English Hexagonal Marker",
 "power" => Powers::ENGLAND,
 "style" => "Control Hex Catholic england_hex",
@@ -2113,7 +2113,7 @@ tokenIDs::ENGLAND_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::FRANCE_HEX => [
+TokenIDs::FRANCE_HEX => [
 "name" => "French Hexagonal Marker",
 "power" => Powers::FRANCE,
 "style" => "Control Hex Catholic france_hex",
@@ -2131,7 +2131,7 @@ tokenIDs::FRANCE_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::HAPSBURG_HEX => [
+TokenIDs::HAPSBURG_HEX => [
 "name" => "Hapsburg Hexagonal Marker",
 "power" => Powers::HAPSBURG,
 "style" => "Control Hex Catholic hapsburg_hex",
@@ -2149,7 +2149,7 @@ tokenIDs::HAPSBURG_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::INDEPENDENT_HEX => [
+TokenIDs::INDEPENDENT_HEX => [
 "name" => "Independent Hexagonal Marker",
 "power" => Powers::INDEPENDENT,
 "style" => "Control Hex Catholic independent_hex",
@@ -2167,7 +2167,7 @@ tokenIDs::INDEPENDENT_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::OTTOMAN_HEX => [
+TokenIDs::OTTOMAN_HEX => [
 "name" => "Ottoman Hexagonal Marker",
 "power" => Powers::OTTOMAN,
 "style" => "Control Hex Catholic ottoman_hex",
@@ -2185,7 +2185,7 @@ tokenIDs::OTTOMAN_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::PAPACY_HEX => [
+TokenIDs::PAPACY_HEX => [
 "name" => "Papacy Hexagonal Marker",
 "power" => Powers::PAPACY,
 "style" => "Control Hex Catholic papacy_hex",
@@ -2203,7 +2203,7 @@ tokenIDs::PAPACY_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::PROTESTANT_HEX => [
+TokenIDs::PROTESTANT_HEX => [
 "name" => "Protestant Hexagonal Marker",
 "power" => Powers::PROTESTANT,
 "style" => "Control Hex Catholic protestant_hex",
@@ -2221,7 +2221,7 @@ tokenIDs::PROTESTANT_HEX => [
   tokenTypeIDs::REFORMED]
 ]
 ],
-tokenIDs::ENGLAND_1UNIT => [
+TokenIDs::ENGLAND_1UNIT => [
 "name" => "English 1 Military Unit",
 "power" => Powers::ENGLAND,
 "style" => "Military Units england_1unit",
@@ -2240,7 +2240,7 @@ tokenIDs::ENGLAND_1UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::ENGLAND_2UNIT => [
+TokenIDs::ENGLAND_2UNIT => [
 "name" => "English 2 Military Unit",
 "power" => Powers::ENGLAND,
 "style" => "Military Units england_2unit",
@@ -2259,7 +2259,7 @@ tokenIDs::ENGLAND_2UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::ENGLAND_4UNIT => [
+TokenIDs::ENGLAND_4UNIT => [
 "name" => "English 4 Military Unit",
 "power" => Powers::ENGLAND,
 "style" => "Military Units england_4unit",
@@ -2278,7 +2278,7 @@ tokenIDs::ENGLAND_4UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::ENGLAND_6UNIT => [
+TokenIDs::ENGLAND_6UNIT => [
 "name" => "English 6 Military Unit",
 "power" => Powers::ENGLAND,
 "style" => "Military Units england_6unit",
@@ -2297,7 +2297,7 @@ tokenIDs::ENGLAND_6UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::FRANCE_1UNIT => [
+TokenIDs::FRANCE_1UNIT => [
 "name" => "French 1 Military Unit",
 "power" => Powers::FRANCE,
 "style" => "Military Units france_1unit",
@@ -2316,7 +2316,7 @@ tokenIDs::FRANCE_1UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::FRANCE_2UNIT => [
+TokenIDs::FRANCE_2UNIT => [
 "name" => "French 2 Military Unit",
 "power" => Powers::FRANCE,
 "style" => "Military Units france_2unit",
@@ -2335,7 +2335,7 @@ tokenIDs::FRANCE_2UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::FRANCE_4UNIT => [
+TokenIDs::FRANCE_4UNIT => [
 "name" => "French 4 Military Unit",
 "power" => Powers::FRANCE,
 "style" => "Military Units france_4unit",
@@ -2354,7 +2354,7 @@ tokenIDs::FRANCE_4UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::FRANCE_6UNIT => [
+TokenIDs::FRANCE_6UNIT => [
 "name" => "French 6 Military Unit",
 "power" => Powers::FRANCE,
 "style" => "Military Units france_6unit",
@@ -2373,7 +2373,7 @@ tokenIDs::FRANCE_6UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::GENOA_1UNIT => [
+TokenIDs::GENOA_1UNIT => [
 "name" => "Genoese 1 Military Unit",
 "power" => Powers::MINOR_GENOA,
 "style" => "Military Units genoa_1unit",
@@ -2391,7 +2391,7 @@ tokenIDs::GENOA_1UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::HAPSBURG_1UNIT => [
+TokenIDs::HAPSBURG_1UNIT => [
 "name" => "Hapsburg 1 Military Unit",
 "power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_1unit",
@@ -2410,7 +2410,7 @@ tokenIDs::HAPSBURG_1UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::HAPSBURG_2UNIT => [
+TokenIDs::HAPSBURG_2UNIT => [
 "name" => "Hapsburg 2 Military Unit",
 "power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_2unit",
@@ -2429,7 +2429,7 @@ tokenIDs::HAPSBURG_2UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::HAPSBURG_4UNIT => [
+TokenIDs::HAPSBURG_4UNIT => [
 "name" => "Hapsburg 4 Military Unit",
 "power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_4unit",
@@ -2448,7 +2448,7 @@ tokenIDs::HAPSBURG_4UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::HAPSBURG_6UNIT => [
+TokenIDs::HAPSBURG_6UNIT => [
 "name" => "Hapsburg 6 Military Unit",
 "power" => Powers::HAPSBURG,
 "style" => "Military Units hapsburg_6unit",
@@ -2467,7 +2467,7 @@ tokenIDs::HAPSBURG_6UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::HUNGARY_1UNIT => [
+TokenIDs::HUNGARY_1UNIT => [
 "name" => "Hungarian 1 Military Unit",
 "power" => Powers::MINOR_HUNGARY,
 "style" => "Military Units hungary_1unit",
@@ -2485,7 +2485,7 @@ tokenIDs::HUNGARY_1UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::HUNGARY_4UNIT => [
+TokenIDs::HUNGARY_4UNIT => [
 "name" => "Hungarian 4 Military Unit",
 "power" => Powers::MINOR_HUNGARY,
 "style" => "Military Units hungary_4unit",
@@ -2503,7 +2503,7 @@ tokenIDs::HUNGARY_4UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::INDEPENDENT_1UNIT => [
+TokenIDs::INDEPENDENT_1UNIT => [
 "name" => "Independent 1 Military Unit",
 "power" => Powers::INDEPENDENT,
 "style" => "Military Units independent_1unit",
@@ -2521,7 +2521,7 @@ tokenIDs::INDEPENDENT_1UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::KNIGHTS_1UNIT => [
+TokenIDs::KNIGHTS_1UNIT => [
 "name" => "Knights of Saint John 1 Military Unit",
 "power" => Powers::INDEPENDENT,
 "style" => "Military Units knights_1unit",
@@ -2531,7 +2531,7 @@ tokenIDs::KNIGHTS_1UNIT => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::OTTOMAN_1UNIT => [
+TokenIDs::OTTOMAN_1UNIT => [
 "name" => "Ottoman 1 Military Unit",
 "power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_1unit",
@@ -2550,7 +2550,7 @@ tokenIDs::OTTOMAN_1UNIT => [
   tokenTypeIDs::CAVALRY]
 ]
 ],
-tokenIDs::OTTOMAN_2UNIT => [
+TokenIDs::OTTOMAN_2UNIT => [
 "name" => "Ottoman 2 Military Unit",
 "power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_2unit",
@@ -2569,7 +2569,7 @@ tokenIDs::OTTOMAN_2UNIT => [
   tokenTypeIDs::CAVALRY]
 ]
 ],
-tokenIDs::OTTOMAN_4UNIT => [
+TokenIDs::OTTOMAN_4UNIT => [
 "name" => "Ottoman 4 Military Unit",
 "power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_4unit",
@@ -2588,7 +2588,7 @@ tokenIDs::OTTOMAN_4UNIT => [
   tokenTypeIDs::CAVALRY]
 ]
 ],
-tokenIDs::OTTOMAN_6UNIT => [
+TokenIDs::OTTOMAN_6UNIT => [
 "name" => "Ottoman 6 Military Unit",
 "power" => Powers::OTTOMAN,
 "style" => "Military Units ottoman_6unit",
@@ -2607,7 +2607,7 @@ tokenIDs::OTTOMAN_6UNIT => [
   tokenTypeIDs::CAVALRY]
 ]
 ],
-tokenIDs::PAPACY_1UNIT => [
+TokenIDs::PAPACY_1UNIT => [
 "name" => "Papacy 1 Military Unit",
 "power" => Powers::PAPACY,
 "style" => "Military Units papacy_1unit",
@@ -2626,7 +2626,7 @@ tokenIDs::PAPACY_1UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::PAPACY_2UNIT => [
+TokenIDs::PAPACY_2UNIT => [
 "name" => "Papacy 2 Military Unit",
 "power" => Powers::PAPACY,
 "style" => "Military Units papacy_2unit",
@@ -2645,7 +2645,7 @@ tokenIDs::PAPACY_2UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::PAPACY_4UNIT => [
+TokenIDs::PAPACY_4UNIT => [
 "name" => "Papacy 4 Military Unit",
 "power" => Powers::PAPACY,
 "style" => "Military Units papacy_4unit",
@@ -2664,7 +2664,7 @@ tokenIDs::PAPACY_4UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::PROTESTANT_1UNIT => [
+TokenIDs::PROTESTANT_1UNIT => [
 "name" => "Protestant 1 Military Unit",
 "power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_1unit",
@@ -2683,7 +2683,7 @@ tokenIDs::PROTESTANT_1UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::PROTESTANT_2UNIT => [
+TokenIDs::PROTESTANT_2UNIT => [
 "name" => "Protestant 2 Military Unit",
 "power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_2unit",
@@ -2702,7 +2702,7 @@ tokenIDs::PROTESTANT_2UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::PROTESTANT_4UNIT => [
+TokenIDs::PROTESTANT_4UNIT => [
 "name" => "Protestant 4 Military Unit",
 "power" => Powers::PROTESTANT,
 "style" => "Military Units protestant_4unit",
@@ -2721,7 +2721,7 @@ tokenIDs::PROTESTANT_4UNIT => [
   tokenTypeIDs::MERCENARY]
 ]
 ],
-tokenIDs::SCOTLAND_1UNIT => [
+TokenIDs::SCOTLAND_1UNIT => [
 "name" => "Scottish 1 Military Unit",
 "power" => Powers::MINOR_SCOTLAND,
 "style" => "Military Units scotland_1unit",
@@ -2739,7 +2739,7 @@ tokenIDs::SCOTLAND_1UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::VENICE_1UNIT => [
+TokenIDs::VENICE_1UNIT => [
 "name" => "Venetian 1 Military Unit",
 "power" => Powers::MINOR_VENICE,
 "style" => "Military Units venice_1unit",
@@ -2757,7 +2757,7 @@ tokenIDs::VENICE_1UNIT => [
   tokenTypeIDs::UNITS]
 ]
 ],
-tokenIDs::BRANDON => [
+TokenIDs::BRANDON => [
 "name" => "Brandon",
 "power" => Powers::ENGLAND,
 "style" => "Military Leader brandon",
@@ -2768,7 +2768,7 @@ tokenIDs::BRANDON => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::CHARLES_V => [
+TokenIDs::CHARLES_V => [
 "name" => "Charles V",
 "power" => Powers::HAPSBURG,
 "style" => "Military Leader Ruler charles_v",
@@ -2782,7 +2782,7 @@ tokenIDs::CHARLES_V => [
   tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
-tokenIDs::DUDLEY => [
+TokenIDs::DUDLEY => [
 "name" => "Dudley",
 "power" => Powers::OTHER,
 "style" => "Military Leader dudley",
@@ -2793,7 +2793,7 @@ tokenIDs::DUDLEY => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::DUKE_ALVA => [
+TokenIDs::DUKE_ALVA => [
 "name" => "Duke of Alva",
 "power" => Powers::HAPSBURG,
 "style" => "Military Leader duke_alva",
@@ -2804,7 +2804,7 @@ tokenIDs::DUKE_ALVA => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::FERDINAND => [
+TokenIDs::FERDINAND => [
 "name" => "Ferdinand",
 "power" => Powers::HAPSBURG,
 "style" => "Military Leader ferdinand",
@@ -2815,7 +2815,7 @@ tokenIDs::FERDINAND => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::FRANCIS_I => [
+TokenIDs::FRANCIS_I => [
 "name" => "Francis I",
 "power" => Powers::FRANCE,
 "style" => "Military Leader Ruler francis_i",
@@ -2829,7 +2829,7 @@ tokenIDs::FRANCIS_I => [
   tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
-tokenIDs::HENRY_II => [
+TokenIDs::HENRY_II => [
 "name" => "Henry II",
 "power" => Powers::ENGLAND,
 "style" => "Military Leader Ruler henry_ii",
@@ -2843,7 +2843,7 @@ tokenIDs::HENRY_II => [
   tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
-tokenIDs::HENRY_VIII => [
+TokenIDs::HENRY_VIII => [
 "name" => "Henry VIII",
 "power" => Powers::ENGLAND,
 "style" => "Military Leader Ruler henry_viii",
@@ -2857,7 +2857,7 @@ tokenIDs::HENRY_VIII => [
   tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
-tokenIDs::IBRAHIM => [
+TokenIDs::IBRAHIM => [
 "name" => "Ibrahim",
 "power" => Powers::OTTOMAN,
 "style" => "Military Leader ibrahim",
@@ -2868,7 +2868,7 @@ tokenIDs::IBRAHIM => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::JOHN_FREDERICK => [
+TokenIDs::JOHN_FREDERICK => [
 "name" => "John Frederick",
 "power" => Powers::PROTESTANT,
 "style" => "Military Leader john_frederick",
@@ -2879,7 +2879,7 @@ tokenIDs::JOHN_FREDERICK => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::MAURICE_OF_SAXONY => [
+TokenIDs::MAURICE_OF_SAXONY => [
 "name" => "Maurice of Saxony",
 "power" => Powers::OTHER,
 "style" => "Military Leader maurice_of_saxony",
@@ -2897,7 +2897,7 @@ tokenIDs::MAURICE_OF_SAXONY => [
   tokenTypeIDs::LEADER]
 ]
 ],
-tokenIDs::MONTMORENCY => [
+TokenIDs::MONTMORENCY => [
 "name" => "Montmorency",
 "power" => Powers::FRANCE,
 "style" => "Military Leader montmorency",
@@ -2908,7 +2908,7 @@ tokenIDs::MONTMORENCY => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::PHILIP_HESSE => [
+TokenIDs::PHILIP_HESSE => [
 "name" => "Philip of Hesse",
 "power" => Powers::PROTESTANT,
 "style" => "Military Leader philip_hesse",
@@ -2919,7 +2919,7 @@ tokenIDs::PHILIP_HESSE => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::RENEGADE => [
+TokenIDs::RENEGADE => [
 "name" => "Charles Borbon, Renegade Leader",
 "power" => Powers::OTHER,
 "style" => "Military Leader renegade",
@@ -2930,7 +2930,7 @@ tokenIDs::RENEGADE => [
   tokenTypeIDs::MILITARY,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::SULEIMAN => [
+TokenIDs::SULEIMAN => [
 "name" => "Suleiman",
 "power" => Powers::OTTOMAN,
 "style" => "Military Leader Ruler suleiman",
@@ -2944,7 +2944,7 @@ tokenIDs::SULEIMAN => [
   tokenTypeIDs::LEADER,
   tokenTypeIDs::RULER]
 ],
-tokenIDs::ENGLISH_SQUADRON => [
+TokenIDs::ENGLISH_SQUADRON => [
 "name" => "English Squadron",
 "power" => Powers::ENGLAND,
 "style" => "Naval Units english_squadron",
@@ -2954,7 +2954,7 @@ tokenIDs::ENGLISH_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::FRENCH_SQUADRON => [
+TokenIDs::FRENCH_SQUADRON => [
 "name" => "French Squadron",
 "power" => Powers::FRANCE,
 "style" => "Naval Units french_squadron",
@@ -2964,7 +2964,7 @@ tokenIDs::FRENCH_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::GENOESE_SQAUADRON => [
+TokenIDs::GENOESE_SQAUADRON => [
 "name" => "Genoese Squadron",
 "power" => Powers::MINOR_GENOA,
 "style" => "Naval Units genoese_sqauadron",
@@ -2974,7 +2974,7 @@ tokenIDs::GENOESE_SQAUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::HAPSBURG_SQUADRON => [
+TokenIDs::HAPSBURG_SQUADRON => [
 "name" => "Hapsburg Squadron",
 "power" => Powers::HAPSBURG,
 "style" => "Naval Units hapsburg_squadron",
@@ -2984,7 +2984,7 @@ tokenIDs::HAPSBURG_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::OTTOMAN_SQUADRON => [
+TokenIDs::OTTOMAN_SQUADRON => [
 "name" => "Ottoman Squadron",
 "power" => Powers::OTTOMAN,
 "style" => "Naval Units ottoman_squadron",
@@ -2994,7 +2994,7 @@ tokenIDs::OTTOMAN_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::PAPACY_SQUADRON => [
+TokenIDs::PAPACY_SQUADRON => [
 "name" => "Papacy Squadron",
 "power" => Powers::PAPACY,
 "style" => "Naval Units papacy_squadron",
@@ -3004,7 +3004,7 @@ tokenIDs::PAPACY_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::SCOTTISH_SQUADRON => [
+TokenIDs::SCOTTISH_SQUADRON => [
 "name" => "Scottish Squadron",
 "power" => Powers::MINOR_SCOTLAND,
 "style" => "Naval Units scottish_squadron",
@@ -3014,7 +3014,7 @@ tokenIDs::SCOTTISH_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::VENETIAN_SQUADRON => [
+TokenIDs::VENETIAN_SQUADRON => [
 "name" => "Venetian Squadron",
 "power" => Powers::MINOR_VENICE,
 "style" => "Naval Units venetian_squadron",
@@ -3024,7 +3024,7 @@ tokenIDs::VENETIAN_SQUADRON => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::UNITS]
 ],
-tokenIDs::ANDREA_DORIA => [
+TokenIDs::ANDREA_DORIA => [
 "name" => "Andrea Doria",
 "power" => Powers::OTHER,
 "style" => "Naval Leader andrea_doria",
@@ -3034,7 +3034,7 @@ tokenIDs::ANDREA_DORIA => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::BARBAROSSA => [
+TokenIDs::BARBAROSSA => [
 "name" => "Barbarossa",
 "power" => Powers::OTHER,
 "style" => "Naval Leader barbarossa",
@@ -3045,7 +3045,7 @@ tokenIDs::BARBAROSSA => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::DRAGUT => [
+TokenIDs::DRAGUT => [
 "name" => "Dragut",
 "power" => Powers::OTHER,
 "style" => "Naval Leader dragut",
@@ -3056,7 +3056,7 @@ tokenIDs::DRAGUT => [
   tokenTypeIDs::NAVAL,
   tokenTypeIDs::LEADER]
 ],
-tokenIDs::ALLIED => [
+TokenIDs::ALLIED => [
 "name" => "Allied",
 "power" => Powers::OTHER,
 "style" => "Diplomacy allied",
@@ -3064,7 +3064,7 @@ tokenIDs::ALLIED => [
 "types" => [
   tokenTypeIDs::DIPLOMACY]
 ],
-tokenIDs::AT_WAR => [
+TokenIDs::AT_WAR => [
 "name" => "At War",
 "power" => Powers::OTHER,
 "style" => "Diplomacy at_war",
@@ -3072,7 +3072,7 @@ tokenIDs::AT_WAR => [
 "types" => [
   tokenTypeIDs::DIPLOMACY]
 ],
-tokenIDs::UNREST => [
+TokenIDs::UNREST => [
 "name" => "Unrest",
 "power" => Powers::OTHER,
 "style" => "Unrest_marker unrest",
@@ -3080,7 +3080,7 @@ tokenIDs::UNREST => [
 "types" => [
   tokenTypeIDs::UNREST_MARKER]
 ],
-tokenIDs::VP_ENGLAND => [
+TokenIDs::VP_ENGLAND => [
 "name" => "English VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_england",
@@ -3088,7 +3088,7 @@ tokenIDs::VP_ENGLAND => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::VP_FRANCE => [
+TokenIDs::VP_FRANCE => [
 "name" => "French VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_france",
@@ -3096,7 +3096,7 @@ tokenIDs::VP_FRANCE => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::VP_HAPSBURG => [
+TokenIDs::VP_HAPSBURG => [
 "name" => "Hapsburg VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_hapsburg",
@@ -3104,7 +3104,7 @@ tokenIDs::VP_HAPSBURG => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::VP_OTTOMAN => [
+TokenIDs::VP_OTTOMAN => [
 "name" => "Ottoman VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_ottoman",
@@ -3112,7 +3112,7 @@ tokenIDs::VP_OTTOMAN => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::VP_PAPACY => [
+TokenIDs::VP_PAPACY => [
 "name" => "Papacy VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_papacy",
@@ -3120,7 +3120,7 @@ tokenIDs::VP_PAPACY => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::VP_PROTESTANT => [
+TokenIDs::VP_PROTESTANT => [
 "name" => "Protestant VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker vp_protestant",
@@ -3128,7 +3128,7 @@ tokenIDs::VP_PROTESTANT => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::LOANED_ENGLAND => [
+TokenIDs::LOANED_ENGLAND => [
 "name" => "Loaned to England",
 "power" => Powers::ENGLAND,
 "style" => "Loaned loaned_england",
@@ -3136,7 +3136,7 @@ tokenIDs::LOANED_ENGLAND => [
 "types" => [
   tokenTypeIDs::LOANED]
 ],
-tokenIDs::LOANED_FRANCE => [
+TokenIDs::LOANED_FRANCE => [
 "name" => "Loaned to France",
 "power" => Powers::FRANCE,
 "style" => "Loaned loaned_france",
@@ -3144,7 +3144,7 @@ tokenIDs::LOANED_FRANCE => [
 "types" => [
   tokenTypeIDs::LOANED]
 ],
-tokenIDs::LOANED_HAPSBURG => [
+TokenIDs::LOANED_HAPSBURG => [
 "name" => "Loaned to Hapsburg",
 "power" => Powers::HAPSBURG,
 "style" => "Loaned loaned_hapsburg",
@@ -3152,7 +3152,7 @@ tokenIDs::LOANED_HAPSBURG => [
 "types" => [
   tokenTypeIDs::LOANED]
 ],
-tokenIDs::LOANED_OTTOMAN => [
+TokenIDs::LOANED_OTTOMAN => [
 "name" => "Loaned to Ottoman",
 "power" => Powers::OTTOMAN,
 "style" => "Loaned loaned_ottoman",
@@ -3160,7 +3160,7 @@ tokenIDs::LOANED_OTTOMAN => [
 "types" => [
   tokenTypeIDs::LOANED]
 ],
-tokenIDs::LOANED_PAPACY => [
+TokenIDs::LOANED_PAPACY => [
 "name" => "Loaned to Papacy",
 "power" => Powers::PAPACY,
 "style" => "Loaned loaned_papacy",
@@ -3168,7 +3168,7 @@ tokenIDs::LOANED_PAPACY => [
 "types" => [
   tokenTypeIDs::LOANED]
 ],
-tokenIDs::CALVIN_REFORMER => [
+TokenIDs::CALVIN_REFORMER => [
 "name" => "Calvin Reformer",
 "power" => Powers::OTHER,
 "style" => "Reformer calvin_reformer",
@@ -3176,7 +3176,7 @@ tokenIDs::CALVIN_REFORMER => [
 "types" => [
   tokenTypeIDs::REFORMER]
 ],
-tokenIDs::CRANMER_REFORMER => [
+TokenIDs::CRANMER_REFORMER => [
 "name" => "Cranmer Reformer",
 "power" => Powers::OTHER,
 "style" => "Reformer cranmer_reformer",
@@ -3184,7 +3184,7 @@ tokenIDs::CRANMER_REFORMER => [
 "types" => [
   tokenTypeIDs::REFORMER]
 ],
-tokenIDs::LUTHER_REFORMER => [
+TokenIDs::LUTHER_REFORMER => [
 "name" => "Luther Reformer",
 "power" => Powers::OTHER,
 "style" => "Reformer luther_reformer",
@@ -3192,7 +3192,7 @@ tokenIDs::LUTHER_REFORMER => [
 "types" => [
   tokenTypeIDs::REFORMER]
 ],
-tokenIDs::ZWINGLI_REFORMER => [
+TokenIDs::ZWINGLI_REFORMER => [
 "name" => "Zwingli Reformer",
 "power" => Powers::OTHER,
 "style" => "Reformer zwingli_reformer",
@@ -3200,7 +3200,7 @@ tokenIDs::ZWINGLI_REFORMER => [
 "types" => [
   tokenTypeIDs::REFORMER]
 ],
-tokenIDs::ALEANDER => [
+TokenIDs::ALEANDER => [
 "name" => "Aleander",
 "power" => Powers::PROTESTANT,
 "style" => "Debater aleander",
@@ -3216,7 +3216,7 @@ tokenIDs::ALEANDER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CAJETAN => [
+TokenIDs::CAJETAN => [
 "name" => "Cajetan",
 "power" => Powers::PROTESTANT,
 "style" => "Debater cajetan",
@@ -3232,7 +3232,7 @@ tokenIDs::CAJETAN => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CAMPEGGIO => [
+TokenIDs::CAMPEGGIO => [
 "name" => "Campeggio",
 "power" => Powers::PROTESTANT,
 "style" => "Debater campeggio",
@@ -3248,7 +3248,7 @@ tokenIDs::CAMPEGGIO => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CANISIUS => [
+TokenIDs::CANISIUS => [
 "name" => "Canisius",
 "power" => Powers::PROTESTANT,
 "style" => "Debater canisius",
@@ -3264,7 +3264,7 @@ tokenIDs::CANISIUS => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CARAFFA => [
+TokenIDs::CARAFFA => [
 "name" => "Caraffa",
 "power" => Powers::PROTESTANT,
 "style" => "Debater caraffa",
@@ -3280,7 +3280,7 @@ tokenIDs::CARAFFA => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CONTARINI => [
+TokenIDs::CONTARINI => [
 "name" => "Contarini",
 "power" => Powers::PROTESTANT,
 "style" => "Debater contarini",
@@ -3296,7 +3296,7 @@ tokenIDs::CONTARINI => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::ECK => [
+TokenIDs::ECK => [
 "name" => "Eck",
 "power" => Powers::PROTESTANT,
 "style" => "Debater eck",
@@ -3312,7 +3312,7 @@ tokenIDs::ECK => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::FABER => [
+TokenIDs::FABER => [
 "name" => "Faber",
 "power" => Powers::PROTESTANT,
 "style" => "Debater faber",
@@ -3328,7 +3328,7 @@ tokenIDs::FABER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::GARDINER => [
+TokenIDs::GARDINER => [
 "name" => "Gardiner",
 "power" => Powers::PROTESTANT,
 "style" => "Debater gardiner",
@@ -3344,7 +3344,7 @@ tokenIDs::GARDINER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::LOYOLA => [
+TokenIDs::LOYOLA => [
 "name" => "Loyola",
 "power" => Powers::PROTESTANT,
 "style" => "Debater loyola",
@@ -3360,7 +3360,7 @@ tokenIDs::LOYOLA => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::POLE => [
+TokenIDs::POLE => [
 "name" => "Pole",
 "power" => Powers::PROTESTANT,
 "style" => "Debater pole",
@@ -3376,7 +3376,7 @@ tokenIDs::POLE => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::TETZEL => [
+TokenIDs::TETZEL => [
 "name" => "Tetzel",
 "power" => Powers::PROTESTANT,
 "style" => "Debater tetzel",
@@ -3392,7 +3392,7 @@ tokenIDs::TETZEL => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::BUCER => [
+TokenIDs::BUCER => [
 "name" => "Bucer",
 "power" => Powers::PAPACY,
 "style" => "Debater bucer",
@@ -3408,7 +3408,7 @@ tokenIDs::BUCER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::BULLINGER => [
+TokenIDs::BULLINGER => [
 "name" => "Bullinger",
 "power" => Powers::PAPACY,
 "style" => "Debater bullinger",
@@ -3424,7 +3424,7 @@ tokenIDs::BULLINGER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CALVIN => [
+TokenIDs::CALVIN => [
 "name" => "Calvin",
 "power" => Powers::PAPACY,
 "style" => "Debater Ruler calvin",
@@ -3443,7 +3443,7 @@ tokenIDs::CALVIN => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CARLSTADT => [
+TokenIDs::CARLSTADT => [
 "name" => "Carlstadt",
 "power" => Powers::PAPACY,
 "style" => "Debater carlstadt",
@@ -3459,7 +3459,7 @@ tokenIDs::CARLSTADT => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::COP => [
+TokenIDs::COP => [
 "name" => "Cop",
 "power" => Powers::PAPACY,
 "style" => "Debater cop",
@@ -3475,7 +3475,7 @@ tokenIDs::COP => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::COVERDALE => [
+TokenIDs::COVERDALE => [
 "name" => "Coverdale",
 "power" => Powers::PAPACY,
 "style" => "Debater coverdale",
@@ -3491,7 +3491,7 @@ tokenIDs::COVERDALE => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::CRANMER => [
+TokenIDs::CRANMER => [
 "name" => "Cranmer",
 "power" => Powers::PAPACY,
 "style" => "Debater cranmer",
@@ -3507,7 +3507,7 @@ tokenIDs::CRANMER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::FAREL => [
+TokenIDs::FAREL => [
 "name" => "Farel",
 "power" => Powers::PAPACY,
 "style" => "Debater farel",
@@ -3523,7 +3523,7 @@ tokenIDs::FAREL => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::KNOX => [
+TokenIDs::KNOX => [
 "name" => "Knox",
 "power" => Powers::PAPACY,
 "style" => "Debater knox",
@@ -3539,7 +3539,7 @@ tokenIDs::KNOX => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::LATIMER => [
+TokenIDs::LATIMER => [
 "name" => "Latimer",
 "power" => Powers::PAPACY,
 "style" => "Debater latimer",
@@ -3555,7 +3555,7 @@ tokenIDs::LATIMER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::LUTHER => [
+TokenIDs::LUTHER => [
 "name" => "Luther",
 "power" => Powers::PAPACY,
 "style" => "Debater Ruler luther",
@@ -3574,7 +3574,7 @@ tokenIDs::LUTHER => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::MELANCHTHON => [
+TokenIDs::MELANCHTHON => [
 "name" => "Melanchthon",
 "power" => Powers::PAPACY,
 "style" => "Debater melanchthon",
@@ -3590,7 +3590,7 @@ tokenIDs::MELANCHTHON => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::OEKOLAMPADIUS => [
+TokenIDs::OEKOLAMPADIUS => [
 "name" => "Oekolampadius",
 "power" => Powers::PAPACY,
 "style" => "Debater oekolampadius",
@@ -3606,7 +3606,7 @@ tokenIDs::OEKOLAMPADIUS => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::OLIVETAN => [
+TokenIDs::OLIVETAN => [
 "name" => "Olivetan",
 "power" => Powers::PAPACY,
 "style" => "Debater olivetan",
@@ -3622,7 +3622,7 @@ tokenIDs::OLIVETAN => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::TYNDALE => [
+TokenIDs::TYNDALE => [
 "name" => "Tyndale",
 "power" => Powers::PAPACY,
 "style" => "Debater tyndale",
@@ -3638,7 +3638,7 @@ tokenIDs::TYNDALE => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::WISHART => [
+TokenIDs::WISHART => [
 "name" => "Wishart",
 "power" => Powers::PAPACY,
 "style" => "Debater wishart",
@@ -3654,7 +3654,7 @@ tokenIDs::WISHART => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::ZWINGLI => [
+TokenIDs::ZWINGLI => [
 "name" => "Zwingli",
 "power" => Powers::PAPACY,
 "style" => "Debater zwingli",
@@ -3670,7 +3670,7 @@ tokenIDs::ZWINGLI => [
   tokenTypeIDs::COMMITTED]
 ]
 ],
-tokenIDs::ENGLISH_EXPLORATION => [
+TokenIDs::ENGLISH_EXPLORATION => [
 "name" => "English Exploration Underway",
 "power" => Powers::ENGLAND,
 "style" => "Exploration Charted english_exploration",
@@ -3685,7 +3685,7 @@ tokenIDs::ENGLISH_EXPLORATION => [
   tokenTypeIDs::EXPLORATION]
 ]
 ],
-tokenIDs::FRENCH_EXPLORATION => [
+TokenIDs::FRENCH_EXPLORATION => [
 "name" => "French Exploration Underway",
 "power" => Powers::FRANCE,
 "style" => "Exploration Charted french_exploration",
@@ -3700,7 +3700,7 @@ tokenIDs::FRENCH_EXPLORATION => [
   tokenTypeIDs::EXPLORATION]
 ]
 ],
-tokenIDs::HAPSBURG_EXPLORATION => [
+TokenIDs::HAPSBURG_EXPLORATION => [
 "name" => "Hapsburg Exploration Underway",
 "power" => Powers::HAPSBURG,
 "style" => "Exploration Charted hapsburg_exploration",
@@ -3715,7 +3715,7 @@ tokenIDs::HAPSBURG_EXPLORATION => [
   tokenTypeIDs::EXPLORATION]
 ]
 ],
-tokenIDs::CABOT_ENG => [
+TokenIDs::CABOT_ENG => [
 "name" => "Cabot English",
 "power" => Powers::ENGLAND,
 "style" => "Explorer cabot_eng",
@@ -3731,7 +3731,7 @@ tokenIDs::CABOT_ENG => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CABOT_FRE => [
+TokenIDs::CABOT_FRE => [
 "name" => "Cabot French",
 "power" => Powers::FRANCE,
 "style" => "Explorer cabot_fre",
@@ -3747,7 +3747,7 @@ tokenIDs::CABOT_FRE => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CABOT_HAP => [
+TokenIDs::CABOT_HAP => [
 "name" => "Cabot Hapsburg",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer cabot_hap",
@@ -3763,7 +3763,7 @@ tokenIDs::CABOT_HAP => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CARTIER => [
+TokenIDs::CARTIER => [
 "name" => "Cartier",
 "power" => Powers::FRANCE,
 "style" => "Explorer cartier",
@@ -3779,7 +3779,7 @@ tokenIDs::CARTIER => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CHANCELLOR => [
+TokenIDs::CHANCELLOR => [
 "name" => "Chancellor",
 "power" => Powers::ENGLAND,
 "style" => "Explorer chancellor",
@@ -3795,7 +3795,7 @@ tokenIDs::CHANCELLOR => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::DE_VACA => [
+TokenIDs::DE_VACA => [
 "name" => "De Vaca",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer de_vaca",
@@ -3811,7 +3811,7 @@ tokenIDs::DE_VACA => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::DE_SOTO => [
+TokenIDs::DE_SOTO => [
 "name" => "De Soto",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer de_soto",
@@ -3827,7 +3827,7 @@ tokenIDs::DE_SOTO => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::LEON => [
+TokenIDs::LEON => [
 "name" => "Leon",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer leon",
@@ -3843,7 +3843,7 @@ tokenIDs::LEON => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::MAGELLAN => [
+TokenIDs::MAGELLAN => [
 "name" => "Magellan",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer magellan",
@@ -3859,7 +3859,7 @@ tokenIDs::MAGELLAN => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::NARVAEZ => [
+TokenIDs::NARVAEZ => [
 "name" => "Narvaez",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer narvaez",
@@ -3875,7 +3875,7 @@ tokenIDs::NARVAEZ => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::ORELLANA => [
+TokenIDs::ORELLANA => [
 "name" => "Orellana",
 "power" => Powers::HAPSBURG,
 "style" => "Explorer orellana",
@@ -3891,7 +3891,7 @@ tokenIDs::ORELLANA => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::ROBERVAL => [
+TokenIDs::ROBERVAL => [
 "name" => "Roberval",
 "power" => Powers::FRANCE,
 "style" => "Explorer roberval",
@@ -3907,7 +3907,7 @@ tokenIDs::ROBERVAL => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::RUT => [
+TokenIDs::RUT => [
 "name" => "Rut",
 "power" => Powers::ENGLAND,
 "style" => "Explorer rut",
@@ -3923,7 +3923,7 @@ tokenIDs::RUT => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::VERRAZANO => [
+TokenIDs::VERRAZANO => [
 "name" => "Verrazano",
 "power" => Powers::FRANCE,
 "style" => "Explorer verrazano",
@@ -3939,7 +3939,7 @@ tokenIDs::VERRAZANO => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::WILLOUGHBY => [
+TokenIDs::WILLOUGHBY => [
 "name" => "Willoughby",
 "power" => Powers::ENGLAND,
 "style" => "Explorer willoughby",
@@ -3955,7 +3955,7 @@ tokenIDs::WILLOUGHBY => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CHARLESBOURG => [
+TokenIDs::CHARLESBOURG => [
 "name" => "Charlesbourg",
 "power" => Powers::FRANCE,
 "style" => "Colony charlesbourg",
@@ -3963,7 +3963,7 @@ tokenIDs::CHARLESBOURG => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::CUBA => [
+TokenIDs::CUBA => [
 "name" => "Cuba",
 "power" => Powers::HAPSBURG,
 "style" => "Colony cuba",
@@ -3971,7 +3971,7 @@ tokenIDs::CUBA => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::HISPANIOLA => [
+TokenIDs::HISPANIOLA => [
 "name" => "Hispaniola",
 "power" => Powers::HAPSBURG,
 "style" => "Colony hispaniola",
@@ -3979,7 +3979,7 @@ tokenIDs::HISPANIOLA => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::JAMESTOWN => [
+TokenIDs::JAMESTOWN => [
 "name" => "Jamestown",
 "power" => Powers::ENGLAND,
 "style" => "Colony jamestown",
@@ -3987,7 +3987,7 @@ tokenIDs::JAMESTOWN => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::MONTREAL => [
+TokenIDs::MONTREAL => [
 "name" => "Montreal",
 "power" => Powers::FRANCE,
 "style" => "Colony montreal",
@@ -3995,7 +3995,7 @@ tokenIDs::MONTREAL => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::POTOSI => [
+TokenIDs::POTOSI => [
 "name" => "Potosi Silver Mines",
 "power" => Powers::OTHER,
 "style" => "Colony potosi",
@@ -4003,7 +4003,7 @@ tokenIDs::POTOSI => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::PUERTO_RICO => [
+TokenIDs::PUERTO_RICO => [
 "name" => "Puerto Rico",
 "power" => Powers::HAPSBURG,
 "style" => "Colony puerto_rico",
@@ -4011,7 +4011,7 @@ tokenIDs::PUERTO_RICO => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::ROANOKE => [
+TokenIDs::ROANOKE => [
 "name" => "Roanoke",
 "power" => Powers::ENGLAND,
 "style" => "Colony roanoke",
@@ -4019,7 +4019,7 @@ tokenIDs::ROANOKE => [
 "types" => [
   tokenTypeIDs::COLONY]
 ],
-tokenIDs::HAPSBURG_CONQUEST => [
+TokenIDs::HAPSBURG_CONQUEST => [
 "name" => "Hapsburg Conquest Underway",
 "power" => Powers::HAPSBURG,
 "style" => "Conquest hapsburg_conquest",
@@ -4027,7 +4027,7 @@ tokenIDs::HAPSBURG_CONQUEST => [
 "types" => [
   tokenTypeIDs::CONQUEST]
 ],
-tokenIDs::ENGLISH_CONQUEST => [
+TokenIDs::ENGLISH_CONQUEST => [
 "name" => "English Conquest",
 "power" => Powers::ENGLAND,
 "style" => "Conquistador english_conquest",
@@ -4036,7 +4036,7 @@ tokenIDs::ENGLISH_CONQUEST => [
 "types" => [
   tokenTypeIDs::CONQUISTADOR]
 ],
-tokenIDs::FRENCH_CONQUEST => [
+TokenIDs::FRENCH_CONQUEST => [
 "name" => "French Conquest",
 "power" => Powers::FRANCE,
 "style" => "Conquistador french_conquest",
@@ -4045,7 +4045,7 @@ tokenIDs::FRENCH_CONQUEST => [
 "types" => [
   tokenTypeIDs::CONQUISTADOR]
 ],
-tokenIDs::CORDOVA => [
+TokenIDs::CORDOVA => [
 "name" => "Cordova",
 "power" => Powers::HAPSBURG,
 "style" => "Conquistador cordova",
@@ -4061,7 +4061,7 @@ tokenIDs::CORDOVA => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CORONADO => [
+TokenIDs::CORONADO => [
 "name" => "Coronado",
 "power" => Powers::HAPSBURG,
 "style" => "Conquistador coronado",
@@ -4077,7 +4077,7 @@ tokenIDs::CORONADO => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::CORTEZ => [
+TokenIDs::CORTEZ => [
 "name" => "Cortez",
 "power" => Powers::HAPSBURG,
 "style" => "Conquistador cortez",
@@ -4093,7 +4093,7 @@ tokenIDs::CORTEZ => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::MONTEJO => [
+TokenIDs::MONTEJO => [
 "name" => "Montejo",
 "power" => Powers::HAPSBURG,
 "style" => "Conquistador montejo",
@@ -4109,7 +4109,7 @@ tokenIDs::MONTEJO => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::PIZARRO => [
+TokenIDs::PIZARRO => [
 "name" => "Pizarro",
 "power" => Powers::HAPSBURG,
 "style" => "Conquistador pizarro",
@@ -4125,7 +4125,7 @@ tokenIDs::PIZARRO => [
   tokenTypeIDs::UNKNOWN]
 ]
 ],
-tokenIDs::ENGLISH_PROT_COUNTER => [
+TokenIDs::ENGLISH_PROT_COUNTER => [
 "name" => "English Home Protestant Spaces",
 "power" => Powers::OTHER,
 "style" => "Religious counter english_prot_counter",
@@ -4134,7 +4134,7 @@ tokenIDs::ENGLISH_PROT_COUNTER => [
   tokenTypeIDs::RELIGIOUS,
   tokenTypeIDs::COUNTER]
 ],
-tokenIDs::PROTESTANT_SPACES => [
+TokenIDs::PROTESTANT_SPACES => [
 "name" => "Protestant Spaces",
 "power" => Powers::OTHER,
 "style" => "Religious counter protestant_spaces",
@@ -4143,7 +4143,7 @@ tokenIDs::PROTESTANT_SPACES => [
   tokenTypeIDs::RELIGIOUS,
   tokenTypeIDs::COUNTER]
 ],
-tokenIDs::TURN => [
+TokenIDs::TURN => [
 "name" => "Turn",
 "power" => Powers::OTHER,
 "style" => "Turn_marker turn",
@@ -4151,7 +4151,7 @@ tokenIDs::TURN => [
 "types" => [
   tokenTypeIDs::TURN_MARKER]
 ],
-tokenIDs::MINUS_ONE_CARD => [
+TokenIDs::MINUS_ONE_CARD => [
 "name" => "-1 Card",
 "power" => Powers::OTHER,
 "style" => "Cards_marker minus_one_card",
@@ -4159,7 +4159,7 @@ tokenIDs::MINUS_ONE_CARD => [
 "types" => [
   tokenTypeIDs::CARDS_MARKER]
 ],
-tokenIDs::GREAT_LAKES_1VP => [
+TokenIDs::GREAT_LAKES_1VP => [
 "name" => "Great Lakes 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker great_lakes_1vp",
@@ -4167,7 +4167,7 @@ tokenIDs::GREAT_LAKES_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::MISSISSIPPI_RIVER_1VP => [
+TokenIDs::MISSISSIPPI_RIVER_1VP => [
 "name" => "Mississippi River 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker mississippi_river_1vp",
@@ -4175,7 +4175,7 @@ tokenIDs::MISSISSIPPI_RIVER_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::ST_LAWRENCE_RIVER_1VP => [
+TokenIDs::ST_LAWRENCE_RIVER_1VP => [
 "name" => "Saint Lawrence River 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker st_lawrence_river_1vp",
@@ -4183,7 +4183,7 @@ tokenIDs::ST_LAWRENCE_RIVER_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::AMAZON_RIVER_2VP => [
+TokenIDs::AMAZON_RIVER_2VP => [
 "name" => "Amazon River 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker amazon_river_2vp",
@@ -4191,7 +4191,7 @@ tokenIDs::AMAZON_RIVER_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::PACIFIC_STRAIT_1VP => [
+TokenIDs::PACIFIC_STRAIT_1VP => [
 "name" => "Pacific Strait 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker pacific_strait_1vp",
@@ -4199,7 +4199,7 @@ tokenIDs::PACIFIC_STRAIT_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::CIRCUMNAVIGATION_3VP => [
+TokenIDs::CIRCUMNAVIGATION_3VP => [
 "name" => "Circumnavigation 3 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker circumnavigation_3vp",
@@ -4207,7 +4207,7 @@ tokenIDs::CIRCUMNAVIGATION_3VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::MAYA_1VP => [
+TokenIDs::MAYA_1VP => [
 "name" => "Maya 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker maya_1vp",
@@ -4215,7 +4215,7 @@ tokenIDs::MAYA_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::AZTECS_2VP => [
+TokenIDs::AZTECS_2VP => [
 "name" => "Aztecs 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker aztecs_2vp",
@@ -4223,7 +4223,7 @@ tokenIDs::AZTECS_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::INCA_2VP => [
+TokenIDs::INCA_2VP => [
 "name" => "Inca 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker inca_2vp",
@@ -4231,7 +4231,7 @@ tokenIDs::INCA_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::BIBLE_ENG_1VP => [
+TokenIDs::BIBLE_ENG_1VP => [
 "name" => "Bible English Translation 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker bible_eng_1vp",
@@ -4239,7 +4239,7 @@ tokenIDs::BIBLE_ENG_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::BIBLE_FRE_1VP => [
+TokenIDs::BIBLE_FRE_1VP => [
 "name" => "Bible French Translation 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker bible_fre_1vp",
@@ -4247,7 +4247,7 @@ tokenIDs::BIBLE_FRE_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::BIBLE_GER_1VP => [
+TokenIDs::BIBLE_GER_1VP => [
 "name" => "Bible German Translation 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker bible_ger_1vp",
@@ -4255,7 +4255,7 @@ tokenIDs::BIBLE_GER_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::CHATEAUX_VP => [
+TokenIDs::CHATEAUX_VP => [
 "name" => "Chateaux VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker chateaux_vp",
@@ -4263,7 +4263,7 @@ tokenIDs::CHATEAUX_VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::PIRACY_VP => [
+TokenIDs::PIRACY_VP => [
 "name" => "Piracy VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker piracy_vp",
@@ -4271,7 +4271,7 @@ tokenIDs::PIRACY_VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::ST_PETERS_VP => [
+TokenIDs::ST_PETERS_VP => [
 "name" => "Saint Peter's VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker st_peters_vp",
@@ -4279,7 +4279,7 @@ tokenIDs::ST_PETERS_VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::COPERNICUS_1VP => [
+TokenIDs::COPERNICUS_1VP => [
 "name" => "Copernicus 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker copernicus_1vp",
@@ -4287,7 +4287,7 @@ tokenIDs::COPERNICUS_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::COPERNICUS_2VP => [
+TokenIDs::COPERNICUS_2VP => [
 "name" => "Copernicus 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker copernicus_2vp",
@@ -4295,7 +4295,7 @@ tokenIDs::COPERNICUS_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::EDWARD_5VP => [
+TokenIDs::EDWARD_5VP => [
 "name" => "Edward VI 5 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker edward_5vp",
@@ -4303,7 +4303,7 @@ tokenIDs::EDWARD_5VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::ELIZABETH_2VP => [
+TokenIDs::ELIZABETH_2VP => [
 "name" => "Elizabeth 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker elizabeth_2vp",
@@ -4311,7 +4311,7 @@ tokenIDs::ELIZABETH_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::GONZAGA_1VP => [
+TokenIDs::GONZAGA_1VP => [
 "name" => "Giulia Gonzaga 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker gonzaga_1vp",
@@ -4319,7 +4319,7 @@ tokenIDs::GONZAGA_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::SERVETUS_1VP => [
+TokenIDs::SERVETUS_1VP => [
 "name" => "Servetus 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker servetus_1vp",
@@ -4327,7 +4327,7 @@ tokenIDs::SERVETUS_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::MASTER_OF_ITALY_1VP => [
+TokenIDs::MASTER_OF_ITALY_1VP => [
 "name" => "Master of Italy 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker master_of_italy_1vp",
@@ -4335,7 +4335,7 @@ tokenIDs::MASTER_OF_ITALY_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::MASTER_OF_ITALY_2VP => [
+TokenIDs::MASTER_OF_ITALY_2VP => [
 "name" => "Master of Italy 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker master_of_italy_2vp",
@@ -4343,7 +4343,7 @@ tokenIDs::MASTER_OF_ITALY_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::WAR_WINNER_1VP => [
+TokenIDs::WAR_WINNER_1VP => [
 "name" => "War Winner 1 VP",
 "power" => Powers::OTHER,
 "style" => "VP_marker war_winner_1vp",
@@ -4351,7 +4351,7 @@ tokenIDs::WAR_WINNER_1VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::WAR_WINNER_2VP => [
+TokenIDs::WAR_WINNER_2VP => [
 "name" => "War Winner 2 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker war_winner_2vp",
@@ -4359,7 +4359,7 @@ tokenIDs::WAR_WINNER_2VP => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::PHONYSCOTLAND_MINUS1 => [
+TokenIDs::PHONYSCOTLAND_MINUS1 => [
 "name" => "Phony War in Scotland -1 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker phonyscotland_minus1",
@@ -4367,7 +4367,7 @@ tokenIDs::PHONYSCOTLAND_MINUS1 => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::PHONYVENICE_MINUS1 => [
+TokenIDs::PHONYVENICE_MINUS1 => [
 "name" => "Phony War in Venice - 1 VP's",
 "power" => Powers::OTHER,
 "style" => "VP_marker phonyvenice_minus1",
@@ -4375,7 +4375,7 @@ tokenIDs::PHONYVENICE_MINUS1 => [
 "types" => [
   tokenTypeIDs::VP_MARKER]
 ],
-tokenIDs::ANNE_BOLEYN => [
+TokenIDs::ANNE_BOLEYN => [
 "name" => "Anne Boleyn",
 "power" => Powers::ENGLAND,
 "style" => "Wife anne_boleyn",
@@ -4390,7 +4390,7 @@ tokenIDs::ANNE_BOLEYN => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::ANNE_CLEVES => [
+TokenIDs::ANNE_CLEVES => [
 "name" => "Anne of Cleves",
 "power" => Powers::ENGLAND,
 "style" => "Wife anne_cleves",
@@ -4405,7 +4405,7 @@ tokenIDs::ANNE_CLEVES => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::CATHERINE_ARAGON => [
+TokenIDs::CATHERINE_ARAGON => [
 "name" => "Catherine of Aragon",
 "power" => Powers::ENGLAND,
 "style" => "Wife catherine_aragon",
@@ -4420,7 +4420,7 @@ tokenIDs::CATHERINE_ARAGON => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::JANE_SEYMOUR => [
+TokenIDs::JANE_SEYMOUR => [
 "name" => "Jane Seymour",
 "power" => Powers::ENGLAND,
 "style" => "Wife jane_seymour",
@@ -4435,7 +4435,7 @@ tokenIDs::JANE_SEYMOUR => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::KATHERINE_PARR => [
+TokenIDs::KATHERINE_PARR => [
 "name" => "Katherine Parr",
 "power" => Powers::ENGLAND,
 "style" => "Wife katherine_parr",
@@ -4450,7 +4450,7 @@ tokenIDs::KATHERINE_PARR => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::KATHRYN_HOWARD => [
+TokenIDs::KATHRYN_HOWARD => [
 "name" => "Kathryn Howard",
 "power" => Powers::ENGLAND,
 "style" => "Wife kathryn_howard",
@@ -4465,7 +4465,7 @@ tokenIDs::KATHRYN_HOWARD => [
   tokenTypeIDs::BENEFIT]
 ]
 ],
-tokenIDs::HENRY_MARITAL_STATUS => [
+TokenIDs::HENRY_MARITAL_STATUS => [
 "name" => "Henry Marital Status",
 "power" => Powers::ENGLAND,
 "style" => "Wives Status henry_marital_status",
@@ -4474,7 +4474,7 @@ tokenIDs::HENRY_MARITAL_STATUS => [
   tokenTypeIDs::WIVES,
   tokenTypeIDs::STATUS]
 ],
-tokenIDs::BIBLE_ENGLISH => [
+TokenIDs::BIBLE_ENGLISH => [
 "name" => "Bible English",
 "power" => Powers::PROTESTANT,
 "style" => "Translation bible_english",
@@ -4482,7 +4482,7 @@ tokenIDs::BIBLE_ENGLISH => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::BIBLE_FRENCH => [
+TokenIDs::BIBLE_FRENCH => [
 "name" => "Bible French",
 "power" => Powers::PROTESTANT,
 "style" => "Translation bible_french",
@@ -4490,7 +4490,7 @@ tokenIDs::BIBLE_FRENCH => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::BIBLE_GERMAN => [
+TokenIDs::BIBLE_GERMAN => [
 "name" => "Bible German",
 "power" => Powers::PROTESTANT,
 "style" => "Translation bible_german",
@@ -4498,7 +4498,7 @@ tokenIDs::BIBLE_GERMAN => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::NEW_TESTAMENT_ENGLISH => [
+TokenIDs::NEW_TESTAMENT_ENGLISH => [
 "name" => "New Testament English",
 "power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_english",
@@ -4506,7 +4506,7 @@ tokenIDs::NEW_TESTAMENT_ENGLISH => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::NEW_TESTAMENT_FRENCH => [
+TokenIDs::NEW_TESTAMENT_FRENCH => [
 "name" => "New Testament French",
 "power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_french",
@@ -4514,7 +4514,7 @@ tokenIDs::NEW_TESTAMENT_FRENCH => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::NEW_TESTAMENT_GERMAN => [
+TokenIDs::NEW_TESTAMENT_GERMAN => [
 "name" => "New Testament German",
 "power" => Powers::PROTESTANT,
 "style" => "Translation new_testament_german",
@@ -4522,7 +4522,7 @@ tokenIDs::NEW_TESTAMENT_GERMAN => [
 "types" => [
   tokenTypeIDs::TRANSLATION]
 ],
-tokenIDs::ST_PETERS_CP => [
+TokenIDs::ST_PETERS_CP => [
 "name" => "Saint Peter's CP Status",
 "power" => Powers::PAPACY,
 "style" => "Saint_Peters st_peters_cp",
@@ -4530,7 +4530,7 @@ tokenIDs::ST_PETERS_CP => [
 "types" => [
   tokenTypeIDs::SAINT_PETERS]
 ],
-tokenIDs::AUGSBURG_CONFESSION => [
+TokenIDs::AUGSBURG_CONFESSION => [
 "name" => "Augsburg Confession Active",
 "power" => Powers::PROTESTANT,
 "style" => "Event_reminder augsburg_confession",
@@ -4538,7 +4538,7 @@ tokenIDs::AUGSBURG_CONFESSION => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::PRINTING_PRESS => [
+TokenIDs::PRINTING_PRESS => [
 "name" => "Printing Press Active",
 "power" => Powers::PROTESTANT,
 "style" => "Event_reminder printing_press",
@@ -4546,7 +4546,7 @@ tokenIDs::PRINTING_PRESS => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::COLONIAL_GOVERNOR => [
+TokenIDs::COLONIAL_GOVERNOR => [
 "name" => "Colonial Governor",
 "power" => Powers::OTHER,
 "style" => "Event_reminder colonial_governor",
@@ -4554,7 +4554,7 @@ tokenIDs::COLONIAL_GOVERNOR => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::GALLEONS => [
+TokenIDs::GALLEONS => [
 "name" => "Galleons",
 "power" => Powers::OTHER,
 "style" => "Event_reminder galleons",
@@ -4562,7 +4562,7 @@ tokenIDs::GALLEONS => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::PLANTATIONS => [
+TokenIDs::PLANTATIONS => [
 "name" => "Plantations",
 "power" => Powers::OTHER,
 "style" => "Event_reminder plantations",
@@ -4570,7 +4570,7 @@ tokenIDs::PLANTATIONS => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::PIRACY => [
+TokenIDs::PIRACY => [
 "name" => "Piracy Marker",
 "power" => Powers::OTTOMAN,
 "style" => "Event_reminder piracy",
@@ -4578,7 +4578,7 @@ tokenIDs::PIRACY => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::NATIVE_UPRISING => [
+TokenIDs::NATIVE_UPRISING => [
 "name" => "Native Uprising",
 "power" => Powers::OTHER,
 "style" => "Event_reminder native_uprising",
@@ -4586,7 +4586,7 @@ tokenIDs::NATIVE_UPRISING => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::RAIDER_ENGLISH => [
+TokenIDs::RAIDER_ENGLISH => [
 "name" => "English Huguenot Raider",
 "power" => Powers::ENGLAND,
 "style" => "Event_reminder raider_english",
@@ -4594,7 +4594,7 @@ tokenIDs::RAIDER_ENGLISH => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::RAIDER_FRENCH => [
+TokenIDs::RAIDER_FRENCH => [
 "name" => "French Huguenot Raider",
 "power" => Powers::FRANCE,
 "style" => "Event_reminder raider_french",
@@ -4602,7 +4602,7 @@ tokenIDs::RAIDER_FRENCH => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::RAIDER_PROTESTANT => [
+TokenIDs::RAIDER_PROTESTANT => [
 "name" => "Protestant Huguenot Raider",
 "power" => Powers::PROTESTANT,
 "style" => "Event_reminder raider_protestant",
@@ -4610,7 +4610,7 @@ tokenIDs::RAIDER_PROTESTANT => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::MERCATOR_MAP => [
+TokenIDs::MERCATOR_MAP => [
 "name" => "Mercator's Map",
 "power" => Powers::OTHER,
 "style" => "Event_reminder mercator_map",
@@ -4618,7 +4618,7 @@ tokenIDs::MERCATOR_MAP => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::SMALLPOX => [
+TokenIDs::SMALLPOX => [
 "name" => "Smallpox",
 "power" => Powers::OTHER,
 "style" => "Event_reminder smallpox",
@@ -4626,7 +4626,7 @@ tokenIDs::SMALLPOX => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::THOMAS_MORE => [
+TokenIDs::THOMAS_MORE => [
 "name" => "Thomas More",
 "power" => Powers::OTHER,
 "style" => "Event_reminder thomas_more",
@@ -4634,7 +4634,7 @@ tokenIDs::THOMAS_MORE => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::WARTBURG => [
+TokenIDs::WARTBURG => [
 "name" => "Wartburg",
 "power" => Powers::PROTESTANT,
 "style" => "Event_reminder wartburg",
@@ -4642,7 +4642,7 @@ tokenIDs::WARTBURG => [
 "types" => [
   tokenTypeIDs::EVENT_REMINDER]
 ],
-tokenIDs::EXCOMMUNICATED => [
+TokenIDs::EXCOMMUNICATED => [
 "name" => "Excommunicated",
 "power" => Powers::PAPACY,
 "style" => "Excommunion excommunicated",
@@ -4650,7 +4650,7 @@ tokenIDs::EXCOMMUNICATED => [
 "types" => [
   tokenTypeIDs::EXCOMMUNION]
 ],
-tokenIDs::FORTRESS => [
+TokenIDs::FORTRESS => [
 "name" => "Fortress",
 "power" => Powers::OTHER,
 "style" => "Fortress_marker fortress",
@@ -4658,7 +4658,7 @@ tokenIDs::FORTRESS => [
 "types" => [
   tokenTypeIDs::FORTRESS_MARKER]
 ],
-tokenIDs::PIRATE_HAVEN => [
+TokenIDs::PIRATE_HAVEN => [
 "name" => "Pirate Haven",
 "power" => Powers::OTTOMAN,
 "style" => "PirateHaven pirate_haven",
@@ -4666,7 +4666,7 @@ tokenIDs::PIRATE_HAVEN => [
 "types" => [
   tokenTypeIDs::PIRATEHAVEN]
 ],
-tokenIDs::JESUIT_UNIVERSITY => [
+TokenIDs::JESUIT_UNIVERSITY => [
 "name" => "Jesuit University",
 "power" => Powers::PAPACY,
 "style" => "University jesuit_university",
@@ -4674,7 +4674,7 @@ tokenIDs::JESUIT_UNIVERSITY => [
 "types" => [
   tokenTypeIDs::UNIVERSITY]
 ],
-tokenIDs::LEOX => [
+TokenIDs::LEOX => [
 "name" => "Leo X",
 "power" => Powers::PAPACY,
 "style" => "Ruler leox",
@@ -4684,7 +4684,7 @@ tokenIDs::LEOX => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::CLEMENTVII => [
+TokenIDs::CLEMENTVII => [
 "name" => "Celement VII",
 "power" => Powers::PAPACY,
 "style" => "Ruler clementvii",
@@ -4694,7 +4694,7 @@ tokenIDs::CLEMENTVII => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::PAULIII => [
+TokenIDs::PAULIII => [
 "name" => "Paul III",
 "power" => Powers::PAPACY,
 "style" => "Ruler pauliii",
@@ -4704,7 +4704,7 @@ tokenIDs::PAULIII => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::EDWARDVI => [
+TokenIDs::EDWARDVI => [
 "name" => "Edward VI",
 "power" => Powers::ENGLAND,
 "style" => "Ruler edwardvi",
@@ -4714,7 +4714,7 @@ tokenIDs::EDWARDVI => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::MARYI => [
+TokenIDs::MARYI => [
 "name" => "Mary I",
 "power" => Powers::ENGLAND,
 "style" => "Ruler maryi",
@@ -4724,7 +4724,7 @@ tokenIDs::MARYI => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::JULIUSIII => [
+TokenIDs::JULIUSIII => [
 "name" => "Julius III",
 "power" => Powers::PAPACY,
 "style" => "Ruler juliusiii",
@@ -4734,7 +4734,7 @@ tokenIDs::JULIUSIII => [
 "types" => [
   tokenTypeIDs::RULER]
 ],
-tokenIDs::ELIZABETHI => [
+TokenIDs::ELIZABETHI => [
 "name" => "Elizabeth I",
 "power" => Powers::ENGLAND,
 "style" => "Ruler elizabethi",
@@ -4747,225 +4747,225 @@ tokenIDs::ELIZABETHI => [
 ];
 
 $this->starting_token_counts = [
-tokenIDs::ENGLAND_KEY => 9,
-tokenIDs::FRANCE_KEY => 11,
-tokenIDs::HAPSBURG_KEY => 14,
-tokenIDs::OTTOMAN_KEY => 11,
-tokenIDs::INDEPENDENT_KEY => 18,
-tokenIDs::PAPACY_KEY => 7,
-tokenIDs::ENGLAND_HEX => 100,
-tokenIDs::FRANCE_HEX => 100,
-tokenIDs::HAPSBURG_HEX => 100,
-tokenIDs::INDEPENDENT_HEX => 31,
-tokenIDs::OTTOMAN_HEX => 100,
-tokenIDs::PAPACY_HEX => 100,
-tokenIDs::PROTESTANT_HEX => 100,
-tokenIDs::ENGLAND_1UNIT => 9,
-tokenIDs::ENGLAND_2UNIT => 5,
-tokenIDs::ENGLAND_4UNIT => 2,
-tokenIDs::ENGLAND_6UNIT => 1,
-tokenIDs::FRANCE_1UNIT => 10,
-tokenIDs::FRANCE_2UNIT => 4,
-tokenIDs::FRANCE_4UNIT => 3,
-tokenIDs::FRANCE_6UNIT => 1,
-tokenIDs::GENOA_1UNIT => 2,
-tokenIDs::HAPSBURG_1UNIT => 12,
-tokenIDs::HAPSBURG_2UNIT => 7,
-tokenIDs::HAPSBURG_4UNIT => 4,
-tokenIDs::HAPSBURG_6UNIT => 1,
-tokenIDs::HUNGARY_1UNIT => 3,
-tokenIDs::HUNGARY_4UNIT => 1,
-tokenIDs::INDEPENDENT_1UNIT => 6,
-tokenIDs::KNIGHTS_1UNIT => 1,
-tokenIDs::OTTOMAN_1UNIT => 11,
-tokenIDs::OTTOMAN_2UNIT => 7,
-tokenIDs::OTTOMAN_4UNIT => 4,
-tokenIDs::OTTOMAN_6UNIT => 1,
-tokenIDs::PAPACY_1UNIT => 7,
-tokenIDs::PAPACY_2UNIT => 4,
-tokenIDs::PAPACY_4UNIT => 2,
-tokenIDs::PROTESTANT_1UNIT => 8,
-tokenIDs::PROTESTANT_2UNIT => 5,
-tokenIDs::PROTESTANT_4UNIT => 2,
-tokenIDs::SCOTLAND_1UNIT => 3,
-tokenIDs::VENICE_1UNIT => 4,
-tokenIDs::BRANDON => 1,
-tokenIDs::CHARLES_V => 1,
-tokenIDs::DUDLEY => 1,
-tokenIDs::DUKE_ALVA => 1,
-tokenIDs::FERDINAND => 1,
-tokenIDs::FRANCIS_I => 1,
-tokenIDs::HENRY_II => 1,
-tokenIDs::HENRY_VIII => 1,
-tokenIDs::IBRAHIM => 1,
-tokenIDs::JOHN_FREDERICK => 1,
-tokenIDs::MAURICE_OF_SAXONY => 1,
-tokenIDs::MONTMORENCY => 1,
-tokenIDs::PHILIP_HESSE => 1,
-tokenIDs::RENEGADE => 1,
-tokenIDs::SULEIMAN => 1,
-tokenIDs::ENGLISH_SQUADRON => 5,
-tokenIDs::FRENCH_SQUADRON => 5,
-tokenIDs::GENOESE_SQAUADRON => 1,
-tokenIDs::HAPSBURG_SQUADRON => 6,
-tokenIDs::OTTOMAN_SQUADRON => 9,
-tokenIDs::PAPACY_SQUADRON => 2,
-tokenIDs::SCOTTISH_SQUADRON => 1,
-tokenIDs::VENETIAN_SQUADRON => 4,
-tokenIDs::ANDREA_DORIA => 1,
-tokenIDs::BARBAROSSA => 1,
-tokenIDs::DRAGUT => 1,
-tokenIDs::ALLIED => 18,
-tokenIDs::AT_WAR => 30,
-tokenIDs::UNREST => 100,
-tokenIDs::VP_ENGLAND => 1,
-tokenIDs::VP_FRANCE => 1,
-tokenIDs::VP_HAPSBURG => 1,
-tokenIDs::VP_OTTOMAN => 1,
-tokenIDs::VP_PAPACY => 1,
-tokenIDs::VP_PROTESTANT => 1,
-tokenIDs::LOANED_ENGLAND => 28,
-tokenIDs::LOANED_FRANCE => 28,
-tokenIDs::LOANED_HAPSBURG => 27,
-tokenIDs::LOANED_OTTOMAN => 22,
-tokenIDs::LOANED_PAPACY => 22,
-tokenIDs::CALVIN_REFORMER => 1,
-tokenIDs::CRANMER_REFORMER => 1,
-tokenIDs::LUTHER_REFORMER => 1,
-tokenIDs::ZWINGLI_REFORMER => 1,
-tokenIDs::ALEANDER => 1,
-tokenIDs::CAJETAN => 1,
-tokenIDs::CAMPEGGIO => 1,
-tokenIDs::CANISIUS => 1,
-tokenIDs::CARAFFA => 1,
-tokenIDs::CONTARINI => 1,
-tokenIDs::ECK => 1,
-tokenIDs::FABER => 1,
-tokenIDs::GARDINER => 1,
-tokenIDs::LOYOLA => 1,
-tokenIDs::POLE => 1,
-tokenIDs::TETZEL => 1,
-tokenIDs::BUCER => 1,
-tokenIDs::BULLINGER => 1,
-tokenIDs::CALVIN => 1,
-tokenIDs::CARLSTADT => 1,
-tokenIDs::COP => 1,
-tokenIDs::COVERDALE => 1,
-tokenIDs::CRANMER => 1,
-tokenIDs::FAREL => 1,
-tokenIDs::KNOX => 1,
-tokenIDs::LATIMER => 1,
-tokenIDs::LUTHER => 1,
-tokenIDs::MELANCHTHON => 1,
-tokenIDs::OEKOLAMPADIUS => 1,
-tokenIDs::OLIVETAN => 1,
-tokenIDs::TYNDALE => 1,
-tokenIDs::WISHART => 1,
-tokenIDs::ZWINGLI => 1,
-tokenIDs::ENGLISH_EXPLORATION => 1,
-tokenIDs::FRENCH_EXPLORATION => 1,
-tokenIDs::HAPSBURG_EXPLORATION => 1,
-tokenIDs::CABOT_ENG => 1,
-tokenIDs::CABOT_FRE => 1,
-tokenIDs::CABOT_HAP => 1,
-tokenIDs::CARTIER => 1,
-tokenIDs::CHANCELLOR => 1,
-tokenIDs::DE_VACA => 1,
-tokenIDs::DE_SOTO => 1,
-tokenIDs::LEON => 1,
-tokenIDs::MAGELLAN => 1,
-tokenIDs::NARVAEZ => 1,
-tokenIDs::ORELLANA => 1,
-tokenIDs::ROBERVAL => 1,
-tokenIDs::RUT => 1,
-tokenIDs::VERRAZANO => 1,
-tokenIDs::WILLOUGHBY => 1,
-tokenIDs::CHARLESBOURG => 1,
-tokenIDs::CUBA => 1,
-tokenIDs::HISPANIOLA => 1,
-tokenIDs::JAMESTOWN => 1,
-tokenIDs::MONTREAL => 1,
-tokenIDs::POTOSI => 1,
-tokenIDs::PUERTO_RICO => 1,
-tokenIDs::ROANOKE => 1,
-tokenIDs::HAPSBURG_CONQUEST => 1,
-tokenIDs::ENGLISH_CONQUEST => 2,
-tokenIDs::FRENCH_CONQUEST => 2,
-tokenIDs::CORDOVA => 1,
-tokenIDs::CORONADO => 1,
-tokenIDs::CORTEZ => 1,
-tokenIDs::MONTEJO => 1,
-tokenIDs::PIZARRO => 1,
-tokenIDs::ENGLISH_PROT_COUNTER => 1,
-tokenIDs::PROTESTANT_SPACES => 1,
-tokenIDs::TURN => 1,
-tokenIDs::MINUS_ONE_CARD => 7,
-tokenIDs::GREAT_LAKES_1VP => 1,
-tokenIDs::MISSISSIPPI_RIVER_1VP => 1,
-tokenIDs::ST_LAWRENCE_RIVER_1VP => 1,
-tokenIDs::AMAZON_RIVER_2VP => 1,
-tokenIDs::PACIFIC_STRAIT_1VP => 1,
-tokenIDs::CIRCUMNAVIGATION_3VP => 1,
-tokenIDs::MAYA_1VP => 1,
-tokenIDs::AZTECS_2VP => 1,
-tokenIDs::INCA_2VP => 1,
-tokenIDs::BIBLE_ENG_1VP => 1,
-tokenIDs::BIBLE_FRE_1VP => 1,
-tokenIDs::BIBLE_GER_1VP => 1,
-tokenIDs::CHATEAUX_VP => 1,
-tokenIDs::PIRACY_VP => 1,
-tokenIDs::ST_PETERS_VP => 1,
-tokenIDs::COPERNICUS_1VP => 1,
-tokenIDs::COPERNICUS_2VP => 1,
-tokenIDs::EDWARD_5VP => 1,
-tokenIDs::ELIZABETH_2VP => 1,
-tokenIDs::GONZAGA_1VP => 1,
-tokenIDs::SERVETUS_1VP => 1,
-tokenIDs::MASTER_OF_ITALY_1VP => 9,
-tokenIDs::MASTER_OF_ITALY_2VP => 9,
-tokenIDs::WAR_WINNER_1VP => 100,
-tokenIDs::WAR_WINNER_2VP => 100,
-tokenIDs::PHONYSCOTLAND_MINUS1 => 1,
-tokenIDs::PHONYVENICE_MINUS1 => 1,
-tokenIDs::ANNE_BOLEYN => 1,
-tokenIDs::ANNE_CLEVES => 1,
-tokenIDs::CATHERINE_ARAGON => 1,
-tokenIDs::JANE_SEYMOUR => 1,
-tokenIDs::KATHERINE_PARR => 1,
-tokenIDs::KATHRYN_HOWARD => 1,
-tokenIDs::HENRY_MARITAL_STATUS => 1,
-tokenIDs::BIBLE_ENGLISH => 1,
-tokenIDs::BIBLE_FRENCH => 1,
-tokenIDs::BIBLE_GERMAN => 1,
-tokenIDs::NEW_TESTAMENT_ENGLISH => 1,
-tokenIDs::NEW_TESTAMENT_FRENCH => 1,
-tokenIDs::NEW_TESTAMENT_GERMAN => 1,
-tokenIDs::ST_PETERS_CP => 1,
-tokenIDs::AUGSBURG_CONFESSION => 1,
-tokenIDs::PRINTING_PRESS => 1,
-tokenIDs::COLONIAL_GOVERNOR => 3,
-tokenIDs::GALLEONS => 3,
-tokenIDs::PLANTATIONS => 3,
-tokenIDs::PIRACY => 4,
-tokenIDs::NATIVE_UPRISING => 3,
-tokenIDs::RAIDER_ENGLISH => 1,
-tokenIDs::RAIDER_FRENCH => 1,
-tokenIDs::RAIDER_PROTESTANT => 1,
-tokenIDs::MERCATOR_MAP => 1,
-tokenIDs::SMALLPOX => 1,
-tokenIDs::THOMAS_MORE => 1,
-tokenIDs::WARTBURG => 1,
-tokenIDs::EXCOMMUNICATED => 7,
-tokenIDs::FORTRESS => 9,
-tokenIDs::PIRATE_HAVEN => 2,
-tokenIDs::JESUIT_UNIVERSITY => 53,
-tokenIDs::LEOX => 1,
-tokenIDs::CLEMENTVII => 1,
-tokenIDs::PAULIII => 1,
-tokenIDs::EDWARDVI => 1,
-tokenIDs::MARYI => 1,
-tokenIDs::JULIUSIII => 1,
-tokenIDs::ELIZABETHI => 1
+TokenIDs::ENGLAND_KEY => 9,
+TokenIDs::FRANCE_KEY => 11,
+TokenIDs::HAPSBURG_KEY => 14,
+TokenIDs::OTTOMAN_KEY => 11,
+TokenIDs::INDEPENDENT_KEY => 18,
+TokenIDs::PAPACY_KEY => 7,
+TokenIDs::ENGLAND_HEX => 100,
+TokenIDs::FRANCE_HEX => 100,
+TokenIDs::HAPSBURG_HEX => 100,
+TokenIDs::INDEPENDENT_HEX => 31,
+TokenIDs::OTTOMAN_HEX => 100,
+TokenIDs::PAPACY_HEX => 100,
+TokenIDs::PROTESTANT_HEX => 100,
+TokenIDs::ENGLAND_1UNIT => 9,
+TokenIDs::ENGLAND_2UNIT => 5,
+TokenIDs::ENGLAND_4UNIT => 2,
+TokenIDs::ENGLAND_6UNIT => 1,
+TokenIDs::FRANCE_1UNIT => 10,
+TokenIDs::FRANCE_2UNIT => 4,
+TokenIDs::FRANCE_4UNIT => 3,
+TokenIDs::FRANCE_6UNIT => 1,
+TokenIDs::GENOA_1UNIT => 2,
+TokenIDs::HAPSBURG_1UNIT => 12,
+TokenIDs::HAPSBURG_2UNIT => 7,
+TokenIDs::HAPSBURG_4UNIT => 4,
+TokenIDs::HAPSBURG_6UNIT => 1,
+TokenIDs::HUNGARY_1UNIT => 3,
+TokenIDs::HUNGARY_4UNIT => 1,
+TokenIDs::INDEPENDENT_1UNIT => 6,
+TokenIDs::KNIGHTS_1UNIT => 1,
+TokenIDs::OTTOMAN_1UNIT => 11,
+TokenIDs::OTTOMAN_2UNIT => 7,
+TokenIDs::OTTOMAN_4UNIT => 4,
+TokenIDs::OTTOMAN_6UNIT => 1,
+TokenIDs::PAPACY_1UNIT => 7,
+TokenIDs::PAPACY_2UNIT => 4,
+TokenIDs::PAPACY_4UNIT => 2,
+TokenIDs::PROTESTANT_1UNIT => 8,
+TokenIDs::PROTESTANT_2UNIT => 5,
+TokenIDs::PROTESTANT_4UNIT => 2,
+TokenIDs::SCOTLAND_1UNIT => 3,
+TokenIDs::VENICE_1UNIT => 4,
+TokenIDs::BRANDON => 1,
+TokenIDs::CHARLES_V => 1,
+TokenIDs::DUDLEY => 1,
+TokenIDs::DUKE_ALVA => 1,
+TokenIDs::FERDINAND => 1,
+TokenIDs::FRANCIS_I => 1,
+TokenIDs::HENRY_II => 1,
+TokenIDs::HENRY_VIII => 1,
+TokenIDs::IBRAHIM => 1,
+TokenIDs::JOHN_FREDERICK => 1,
+TokenIDs::MAURICE_OF_SAXONY => 1,
+TokenIDs::MONTMORENCY => 1,
+TokenIDs::PHILIP_HESSE => 1,
+TokenIDs::RENEGADE => 1,
+TokenIDs::SULEIMAN => 1,
+TokenIDs::ENGLISH_SQUADRON => 5,
+TokenIDs::FRENCH_SQUADRON => 5,
+TokenIDs::GENOESE_SQAUADRON => 1,
+TokenIDs::HAPSBURG_SQUADRON => 6,
+TokenIDs::OTTOMAN_SQUADRON => 9,
+TokenIDs::PAPACY_SQUADRON => 2,
+TokenIDs::SCOTTISH_SQUADRON => 1,
+TokenIDs::VENETIAN_SQUADRON => 4,
+TokenIDs::ANDREA_DORIA => 1,
+TokenIDs::BARBAROSSA => 1,
+TokenIDs::DRAGUT => 1,
+TokenIDs::ALLIED => 18,
+TokenIDs::AT_WAR => 30,
+TokenIDs::UNREST => 100,
+TokenIDs::VP_ENGLAND => 1,
+TokenIDs::VP_FRANCE => 1,
+TokenIDs::VP_HAPSBURG => 1,
+TokenIDs::VP_OTTOMAN => 1,
+TokenIDs::VP_PAPACY => 1,
+TokenIDs::VP_PROTESTANT => 1,
+TokenIDs::LOANED_ENGLAND => 28,
+TokenIDs::LOANED_FRANCE => 28,
+TokenIDs::LOANED_HAPSBURG => 27,
+TokenIDs::LOANED_OTTOMAN => 22,
+TokenIDs::LOANED_PAPACY => 22,
+TokenIDs::CALVIN_REFORMER => 1,
+TokenIDs::CRANMER_REFORMER => 1,
+TokenIDs::LUTHER_REFORMER => 1,
+TokenIDs::ZWINGLI_REFORMER => 1,
+TokenIDs::ALEANDER => 1,
+TokenIDs::CAJETAN => 1,
+TokenIDs::CAMPEGGIO => 1,
+TokenIDs::CANISIUS => 1,
+TokenIDs::CARAFFA => 1,
+TokenIDs::CONTARINI => 1,
+TokenIDs::ECK => 1,
+TokenIDs::FABER => 1,
+TokenIDs::GARDINER => 1,
+TokenIDs::LOYOLA => 1,
+TokenIDs::POLE => 1,
+TokenIDs::TETZEL => 1,
+TokenIDs::BUCER => 1,
+TokenIDs::BULLINGER => 1,
+TokenIDs::CALVIN => 1,
+TokenIDs::CARLSTADT => 1,
+TokenIDs::COP => 1,
+TokenIDs::COVERDALE => 1,
+TokenIDs::CRANMER => 1,
+TokenIDs::FAREL => 1,
+TokenIDs::KNOX => 1,
+TokenIDs::LATIMER => 1,
+TokenIDs::LUTHER => 1,
+TokenIDs::MELANCHTHON => 1,
+TokenIDs::OEKOLAMPADIUS => 1,
+TokenIDs::OLIVETAN => 1,
+TokenIDs::TYNDALE => 1,
+TokenIDs::WISHART => 1,
+TokenIDs::ZWINGLI => 1,
+TokenIDs::ENGLISH_EXPLORATION => 1,
+TokenIDs::FRENCH_EXPLORATION => 1,
+TokenIDs::HAPSBURG_EXPLORATION => 1,
+TokenIDs::CABOT_ENG => 1,
+TokenIDs::CABOT_FRE => 1,
+TokenIDs::CABOT_HAP => 1,
+TokenIDs::CARTIER => 1,
+TokenIDs::CHANCELLOR => 1,
+TokenIDs::DE_VACA => 1,
+TokenIDs::DE_SOTO => 1,
+TokenIDs::LEON => 1,
+TokenIDs::MAGELLAN => 1,
+TokenIDs::NARVAEZ => 1,
+TokenIDs::ORELLANA => 1,
+TokenIDs::ROBERVAL => 1,
+TokenIDs::RUT => 1,
+TokenIDs::VERRAZANO => 1,
+TokenIDs::WILLOUGHBY => 1,
+TokenIDs::CHARLESBOURG => 1,
+TokenIDs::CUBA => 1,
+TokenIDs::HISPANIOLA => 1,
+TokenIDs::JAMESTOWN => 1,
+TokenIDs::MONTREAL => 1,
+TokenIDs::POTOSI => 1,
+TokenIDs::PUERTO_RICO => 1,
+TokenIDs::ROANOKE => 1,
+TokenIDs::HAPSBURG_CONQUEST => 1,
+TokenIDs::ENGLISH_CONQUEST => 2,
+TokenIDs::FRENCH_CONQUEST => 2,
+TokenIDs::CORDOVA => 1,
+TokenIDs::CORONADO => 1,
+TokenIDs::CORTEZ => 1,
+TokenIDs::MONTEJO => 1,
+TokenIDs::PIZARRO => 1,
+TokenIDs::ENGLISH_PROT_COUNTER => 1,
+TokenIDs::PROTESTANT_SPACES => 1,
+TokenIDs::TURN => 1,
+TokenIDs::MINUS_ONE_CARD => 7,
+TokenIDs::GREAT_LAKES_1VP => 1,
+TokenIDs::MISSISSIPPI_RIVER_1VP => 1,
+TokenIDs::ST_LAWRENCE_RIVER_1VP => 1,
+TokenIDs::AMAZON_RIVER_2VP => 1,
+TokenIDs::PACIFIC_STRAIT_1VP => 1,
+TokenIDs::CIRCUMNAVIGATION_3VP => 1,
+TokenIDs::MAYA_1VP => 1,
+TokenIDs::AZTECS_2VP => 1,
+TokenIDs::INCA_2VP => 1,
+TokenIDs::BIBLE_ENG_1VP => 1,
+TokenIDs::BIBLE_FRE_1VP => 1,
+TokenIDs::BIBLE_GER_1VP => 1,
+TokenIDs::CHATEAUX_VP => 1,
+TokenIDs::PIRACY_VP => 1,
+TokenIDs::ST_PETERS_VP => 1,
+TokenIDs::COPERNICUS_1VP => 1,
+TokenIDs::COPERNICUS_2VP => 1,
+TokenIDs::EDWARD_5VP => 1,
+TokenIDs::ELIZABETH_2VP => 1,
+TokenIDs::GONZAGA_1VP => 1,
+TokenIDs::SERVETUS_1VP => 1,
+TokenIDs::MASTER_OF_ITALY_1VP => 9,
+TokenIDs::MASTER_OF_ITALY_2VP => 9,
+TokenIDs::WAR_WINNER_1VP => 100,
+TokenIDs::WAR_WINNER_2VP => 100,
+TokenIDs::PHONYSCOTLAND_MINUS1 => 1,
+TokenIDs::PHONYVENICE_MINUS1 => 1,
+TokenIDs::ANNE_BOLEYN => 1,
+TokenIDs::ANNE_CLEVES => 1,
+TokenIDs::CATHERINE_ARAGON => 1,
+TokenIDs::JANE_SEYMOUR => 1,
+TokenIDs::KATHERINE_PARR => 1,
+TokenIDs::KATHRYN_HOWARD => 1,
+TokenIDs::HENRY_MARITAL_STATUS => 1,
+TokenIDs::BIBLE_ENGLISH => 1,
+TokenIDs::BIBLE_FRENCH => 1,
+TokenIDs::BIBLE_GERMAN => 1,
+TokenIDs::NEW_TESTAMENT_ENGLISH => 1,
+TokenIDs::NEW_TESTAMENT_FRENCH => 1,
+TokenIDs::NEW_TESTAMENT_GERMAN => 1,
+TokenIDs::ST_PETERS_CP => 1,
+TokenIDs::AUGSBURG_CONFESSION => 1,
+TokenIDs::PRINTING_PRESS => 1,
+TokenIDs::COLONIAL_GOVERNOR => 3,
+TokenIDs::GALLEONS => 3,
+TokenIDs::PLANTATIONS => 3,
+TokenIDs::PIRACY => 4,
+TokenIDs::NATIVE_UPRISING => 3,
+TokenIDs::RAIDER_ENGLISH => 1,
+TokenIDs::RAIDER_FRENCH => 1,
+TokenIDs::RAIDER_PROTESTANT => 1,
+TokenIDs::MERCATOR_MAP => 1,
+TokenIDs::SMALLPOX => 1,
+TokenIDs::THOMAS_MORE => 1,
+TokenIDs::WARTBURG => 1,
+TokenIDs::EXCOMMUNICATED => 7,
+TokenIDs::FORTRESS => 9,
+TokenIDs::PIRATE_HAVEN => 2,
+TokenIDs::JESUIT_UNIVERSITY => 53,
+TokenIDs::LEOX => 1,
+TokenIDs::CLEMENTVII => 1,
+TokenIDs::PAULIII => 1,
+TokenIDs::EDWARDVI => 1,
+TokenIDs::MARYI => 1,
+TokenIDs::JULIUSIII => 1,
+TokenIDs::ELIZABETHI => 1
 ];
 
 $this->board_locations = [

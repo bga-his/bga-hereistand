@@ -1,10 +1,10 @@
 <?php
 namespace HIS\States;
 
-use CityIDs;
+use SpaceIDs;
 use HIS\Core\Game;
 use HIS\Core\Globals;
-use HIS\Managers\Cities;
+use HIS\Managers\Spaces;
 use HIS\Managers\Players;
 use HIS\Managers\Diplomacy;
 use HIS\Managers\Tokens;
@@ -18,16 +18,16 @@ use TokenIDs;
 trait ArgsOnEnteringStateTrait {
 
 	public static function freeHomeSpaces($power){
-		$cities = Game::get()->cities;
-		$home_cities = [];
-		foreach ($cities as $city_id => $city) {
+		$spaces = Game::get()->spaces;
+		$home_spaces = [];
+		foreach ($spaces as $space_id => $space) {
 			
-			if ($city['home_power'] == $power) {// and not contain enemy units and not unrest
-				$home_cities[] = $city_id;
+			if ($space['home_power'] == $power) {// and not contain enemy units and not unrest
+				$home_spaces[] = $space_id;
 			}
 		}
 		return [
-			'valid_city_ids' => $home_cities,
+			'valid_space_ids' => $home_spaces,
 		];
 	}
 	function argBuyUnit() {
@@ -99,18 +99,18 @@ trait ArgsOnEnteringStateTrait {
 
 	function argPatronOfArts(){
 		$modifer = 0;
-		if(Cities::getControllPowerById(CityIDs::MILAN) == Powers::FRANCE){
+		if(Spaces::getControllPowerById(SpaceIDs::MILAN) == Powers::FRANCE){
 			$modifer += 2;
 		}
-		if(Cities::getControllPowerById(CityIds::FLORENCE) == Powers::FRANCE){
+		if(Spaces::getControllPowerById(SpaceIDs::FLORENCE) == Powers::FRANCE){
 			$modifer += 1;
 		}
-		//TODO 3 citys in Italy -> +2
-		$homeCities = Cities::getHomeCities(Powers::FRANCE);
-		foreach ($homeCities as $city_id => $city) {
+		//TODO 3 spaces in Italy -> +2
+		$homeSpaces = Spaces::getHomeSpaces(Powers::FRANCE);
+		foreach ($homeSpaces as $space_id => $space) {
 			//TODO if contains enemy units: -2
 			//TODO only one time per enemy or total, I think.
-			if(Cities::getControllPowerById($city_id) != Powers::FRANCE){
+			if(Spaces::getControllPowerById($space_id) != Powers::FRANCE){
 				$modifer -= 1;
 			}
 		}

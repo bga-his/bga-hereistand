@@ -64,48 +64,47 @@ class Actions {
 		Game::get()->gamestate->nextState("withdraw");
 	}
 
-	public static function pickCity($city_id, $statename) {
-		Notifications::message("Actions::pickCity: statename = ".$statename." = game.get() ".game::get()->getStateName());
-		$cities = Game::get()->cities;
-		$city = $cities[$city_id];
+	public static function pickSpace($space_id, $statename) {
+		Notifications::message("Actions::pickSpace: statename = ".$statename." = game.get() ".game::get()->getStateName());
+		$spaces = Game::get()->spaces;
+		$space = $spaces[$space_id];
 		switch ($statename) {
 		case 'declareDestination':
-			self::declareDestination($city);
+			self::declareDestination($space);
 			break;
 		case 'buyUnit':
-			self::pickBuyCity($city);
+			self::pickBuySpace($space);
 			break;
 		case 'evtJanissaries':
-			self::BuildJanissaries($city);
+			self::BuildJanissaries($space);
 			break;
 		default:
-			throw new UserException("Picking city in wrong state: " . $statename);
-			break;
+			throw new UserException("Picking space in wrong state: " . $statename);
 		}
 	}
 
-	public static function declareDestination($city) {
-		$destination_id = $city['id'];
-		$cities = Game::get()->cities;
+	public static function declareDestination($space) {
+		$destination_id = $space['id'];
+		$spaces = Game::get()->spaces;
 		$origin = Globals::getOrigin();
-		$origin_city = $cities[$origin];
+		$origin_space = $spaces[$origin];
 		$remainingCP = Globals::getRemainingCP();
-		if (in_array($destination_id, $origin_city['connections'])) {
+		if (in_array($destination_id, $origin_space['connections'])) {
 			Globals::incRemainingCP(-1);
-		} elseif (in_array($destination_id, $origin_city['passes'])) {
+		} elseif (in_array($destination_id, $origin_space['passes'])) {
 			if ($remainingCP < 2) {
 				throw new UserException("Attempt to move over pass with less than 2 CP remaining");
 			}
 			Globals::incRemainingCP(-2);
 		} else {
-			throw new UserException("Attempt to move to a non-connected city");
+			throw new UserException("Attempt to move to a non-connected space");
 		}
 		Globals::setDestination($destination_id);
 		Game::get()->gamestate->nextState("declare");
 	}
 
 	public static function pickLocation($location_id) {
-		$cities = Game::get()->cities;
+		$spaces = Game::get()->spaces;
 		$remainingCP = Globals::getRemainingCP();
 		Game::get()->gamestate->nextState("declare");
 	}
@@ -151,14 +150,14 @@ class Actions {
 		Game::get()->gamestate->setPlayerNonMultiactive($player->id, 'done');
 	}
 
-	public static function pickBuyCity($city) {
+	public static function pickBuySpace($space) {
 		$unit_type = Globals::getUnitBuyType();
 		$player = Players::getActive();
 		$remainingCP = Globals::getRemainingCP();
 		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == UnitTypes::REGULAR)) {
 			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
-		TOKENS::addLandunits($city['id'], $player->power, 1, $unit_type);
+		TOKENS::addLandunits($space['id'], $player->power, 1, $unit_type);
 		if ($unit_type == UnitTypes::MERC || $unit_type == UnitTypes::CAV) {
 			$remainingCP -= 1;
 			Globals::incRemainingCP(-1);
@@ -173,9 +172,9 @@ class Actions {
 		}
 	}
 
-	public static function BuildJanissaries($city){
-		Notifications::message("OTTOMAN placed 4 Regulars On ".Utils::varToString($city['id']));
-		Tokens::addLandunits($city['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
+	public static function BuildJanissaries($space){
+		Notifications::message("OTTOMAN placed 4 Regulars On ".Utils::varToString($space['id']));
+		Tokens::addLandunits($space['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
 		Cards::discardByID(CardIDs::JANISSARIES);
 		Game::get()->gamestate->nextState("resolve");
 
@@ -183,10 +182,10 @@ class Actions {
 		//TODO by the rules the units may be build in any combination of spaces, not only in one.
 	}
 
-	public static function EvtHolyRoman($city, $bolBoth){
+	public static function EvtHolyRoman($space, $bolBoth){
 		$tokenCharlsV = Tokens::tokenGetLeader("CharlesV");
 		//TODO check that CharlsV is not captured or under siege.
-		if($tokenCharlsV['location_type'] != 'city' Or Tokens::bolIsSieged($tokenCharlsV['location_id'])){
+		if($tokenCharlsV['location_type'] != 'space' Or Tokens::bolIsSieged($tokenCharlsV['location_id'])){
 			Notifications::message("Charles V must not be captured or under siege");
 			Game::get()->gamestate->nextState("undo");
 			return;
@@ -194,16 +193,16 @@ class Actions {
 		if($bolBoth){
 			$tokenDukeOfAlva = Tokens::tokenGetLeader("DukeOfAlva");
 			if($tokenDukeOfAlva->Position = $tokenCharlsV->Position){
-				Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenDukeOfAlva);
-				Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+				Tokens::moveLeader($tokenCharlsV->Position, $space["id"], $tokenDukeOfAlva);
+				Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $space);
 			}else{
 				Notifications::message("DukeOfAlva must be in the same space to accompany Charles V");
 				Game::get()->gamestate->nextState("undo");
 			}
 		}
-		Tokens::moveLeader($tokenCharlsV->Position, $city["id"], $tokenCharlsV);
+		Tokens::moveLeader($tokenCharlsV->Position, $space["id"], $tokenCharlsV);
 		Globals::setRemainingCP(5);
-		Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $city);
+		Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $space);
 		Game::get()->gamestate->nextState("move_Charles");
 	}
 

@@ -77,7 +77,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('You must declare destination'),
 		'type' => 'activeplayer',
 		'args' => 'argDeclareDestination',
-		'possibleactions' => ['actPickCity', 'actUndo'],
+		'possibleactions' => ['actPickSpace', 'actUndo'],
 		'transitions' => ['declare' => GameStates::ST_FIND_MOVEMENT_RESPONSES, 'undo' => GameStates::ST_IMPULSE_ACTIONS],
 	],
 
@@ -347,16 +347,16 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('You must select location to construct unit'),
 		'type' => 'activeplayer',
 		'args' => 'argBuyUnit',
-		'possibleactions' => ['actPickCity', 'actUndo'],
+		'possibleactions' => ['actPickSpace', 'actUndo'],
 		'transitions' => ['buy' => GameStates::ST_IMPULSE_ACTIONS, 'undo' => GameStates::ST_IMPULSE_ACTIONS, 'next' => GameStates::ST_NEXT_PLAYER],
 	],
 
 	GameStates::ST_CP_REFORMATION_ATTEMPS => [//TODO store languge Zone(any, notset, ger, eng, frenche, ...), number of Reformation attemps, 95Theses active, Printing press active, Marburg Colloquium active and whos winning Ties somewhere
 		'name' => 'reformationAttems',
-		'description' => clienttranslate('${actplayer} must select city for reformation attempt'),
-		'descriptionmyturn' => clienttranslate('You must select city for reformation attempt'),
+		'description' => clienttranslate('${actplayer} must select space for reformation attempt'),
+		'descriptionmyturn' => clienttranslate('You must select space for reformation attempt'),
 		'type' => 'activeplayer',
-		'possibleactions' => ['actPickCity', 'actUndo'],
+		'possibleactions' => ['actPickSpace', 'actUndo'],
 		'transitions' => ['a' => GameStates::ST_IMPULSE_ACTIONS, 'b' => GameStates::ST_CP_REFORMATION_ATTEMPS],
 	],
 
@@ -366,7 +366,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('You must select location to construct Janissaires (4 Regulars)'),
 		'type' => 'activeplayer',
 		'args' => 'argEvtJanissaries',
-		'possibleactions' => ['actPickCity', 'actUndo'],
+		'possibleactions' => ['actPickSpace', 'actUndo'],
 		'transitions' => ['undo' => GameStates::ST_PICK_CARD, 'resolve' => GameStates::ST_NEXT_PLAYER],
 	],
 
@@ -376,7 +376,7 @@ $machinestates = [
 		'descriptionmyturn' => clienttranslate('You must select location to move Charles V to'),
 		'type' => 'activeplayer',
 		'args' => 'argHolyRoman',
-		'possibleactions' => ['actPickCity', 'actUndo'],
+		'possibleactions' => ['actPickSpace', 'actUndo'],
 		'transitions' => ['undo' => GameStates::ST_PICK_CARD, 'move_Charles' => GameStates::ST_IMPULSE_ACTIONS],
 	],
 

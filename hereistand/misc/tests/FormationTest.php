@@ -14,8 +14,8 @@ final class FormationTest extends TestCase {
 
 	public function testExists() {
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::FERDINAND, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
 		$formation = new Formation($tokens);
 		$this->assertInstanceOf(Formation::class, $formation);
 	}
@@ -27,23 +27,23 @@ final class FormationTest extends TestCase {
 
 		# a valid formation
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::FERDINAND, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
 		$formation = new Formation($tokens);
 		$this->assertTrue($formation->isValid());
 	}
 
-	public function testCityValidity() {
-		# formations must be in cities
-		$supply_token = TestingUtils::makeToken(HAPSBURG_4UNIT, 'supply_' . HAPSBURG . '_' . HAPSBURG_4UNIT, null);
+	public function testSpaceValidity() {
+		# formations must be in spaces
+		$supply_token = TestingUtils::makeToken(TokenIDs::HAPSBURG_4UNIT, 'supply_' . Powers::HAPSBURG . '_' . TokenIDs::HAPSBURG_4UNIT, null);
 		$formation = new Formation([$supply_token]);
 
 		$this->assertFalse($formation->isValid());
-		# all units in a formation must be in the same city
+		# all units in a formation must be in the same space
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, ROME);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::FERDINAND, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::HAPSBURG_4UNIT, SpaceIDs::ROME);
 		$formation = new Formation($tokens);
 		$this->assertFalse($formation->isValid());
 	}
@@ -51,17 +51,17 @@ final class FormationTest extends TestCase {
 	public function testPowerValidity() {
 		# all units in formation must be from same major power
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(PAPACY_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::FERDINAND, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::PAPACY_4UNIT, SpaceIDs::VIENNA);
 		$formation = new Formation($tokens);
 		$this->assertFalse($formation->isValid());
 	}
 
 	public function testGetPower() {
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(FERDINAND, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(TokenIDs::FERDINAND, SpaceIDs::VIENNA);
 		$formation = new Formation($tokens);
-		$this->assertEquals($formation->getPower(), HAPSBURG);
+		$this->assertEquals($formation->getPower(), Powers::HAPSBURG);
 	}
 
 }

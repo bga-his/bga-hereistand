@@ -86,8 +86,8 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onDestinationClick(evt, _this){
       dojo.stopEvent(evt);
-      const city_id = evt.currentTarget.id.split('_')[1];
-      _this.takeAction('actPickCity', {city_id: city_id});
+      const space_id = evt.currentTarget.id.split('_')[1];
+      _this.takeAction('actPickSpace', {space_id: space_id});
     },
 
     onDeclareCasualtiesClick(evt){
@@ -98,26 +98,26 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     
     onEvtHolyRomanDestClick(evt, _this){
       dojo.stopEvent(evt);
-      const city_id = evt.currentTarget.id.split('_')[1];
-      this.selectedCityId = city_id;
+      const space_id = evt.currentTarget.id.split('_')[1];
+      this.selectedSpaceId = space_id;
     },
 
     onEvtHolyRomanMoveCharlesVClick(evt){
       dojo.stopEvent(evt);
-      if(this.selectedCityId = null){
-        this.selectedCityId = -1;
+      if(this.selectedSpaceId = null){
+        this.selectedSpaceId = -1;
       }
-      this.takeAction('actEvtHolyRomanMoveCharlesV', {city_id: this.selectedCityId});
-      this.selectedCityId = -1;
+      this.takeAction('actEvtHolyRomanMoveCharlesV', {space_id: this.selectedSpaceId});
+      this.selectedSpaceId = -1;
     },
 
     onEvtHolyRomaMoveCharlesVAndDukeClick(evt){
       dojo.stopEvent(evt);
-      if(this.selectedCityId = null){
-        this.selectedCityId = -1;
+      if(this.selectedSpaceId = null){
+        this.selectedSpaceId = -1;
       }
-      this.takeAction('actEvtHolyRomanMoveCharlesVAndDuke', {city_id: this.selectedCityId})
-      this.selectedCityId = -1;
+      this.takeAction('actEvtHolyRomanMoveCharlesVAndDuke', {space_id: this.selectedSpaceId})
+      this.selectedSpaceId = -1;
     },
 
     onEvtSixWivesWarFranceClick(evt){

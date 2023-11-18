@@ -3,7 +3,7 @@
  * Token constants
  */
 
- abstract class tokenIDs 
+ abstract class TokenIDs 
 {const ENGLAND_KEY = 1000;
 const FRANCE_KEY = 1001;
 const HAPSBURG_KEY = 1002;
@@ -277,10 +277,10 @@ const PIRATEHAVEN = 2039;
 const UNIVERSITY = 2040;
 }
 /*
- * City constants
+ * Space constants
  */
 
- abstract class CityIDs 
+ abstract class SpaceIDs 
 {const WITTENBERG = 3000;
 const BRANDENBURG = 3001;
 const MAINZ = 3002;

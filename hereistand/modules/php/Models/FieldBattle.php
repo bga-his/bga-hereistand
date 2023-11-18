@@ -101,13 +101,13 @@ class FieldBattle {
 		return $field;
 	}
 
-	public static function getRetreatingUnits($power, $field, $city_id) {
+	public static function getRetreatingUnits($power, $field, $space_id) {
 		$starting_units = [];
 		foreach ($field['powers'][$power]['tokens'] as $token_id => $token) {
 			$starting_units[] = $token_id;
 		}
 		$destination_ids = [];
-		foreach (Tokens::getInLocation(['map', 'city', $city_id]) as $token) {
+		foreach (Tokens::getInLocation(['map', 'space', $space_id]) as $token) {
 			$destination_ids[] = $token['id'];
 		}
 		return array_values(array_intersect($starting_units, $destination_ids));

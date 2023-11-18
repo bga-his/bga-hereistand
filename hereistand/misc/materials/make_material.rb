@@ -3,7 +3,7 @@
 require "csv"
 require "set"
 IDNAMES = Hash.new
-IDNAMES["citys"] = "CityIDs::"
+IDNAMES["spaces"] = "SpaceIDs::"
 IDNAMES["cards"] = "CardIDs::"
 IDNAMES["tokens"] = "tokenIDs::"
 IDNAMES["types"] = "tokenTypeIDs::"
@@ -137,7 +137,7 @@ card_csv.each do |row|
 	card_name = row['CONSTANT_NAME'].sub! "CARD_", ""
 	card['class_name'] = row['css_class_name']
 	card['name'] = row['name']
-	card['type'] = "CardTypes::"+row['type']
+	card['type'] = "CardTypes::"+row['type']1
 	card['cp'] = row['cp']
 	card['remove'] = row['remove'] unless row['remove'].nil?
 	card['turn_added'] = row['turn_added'] unless row['turn_added'].nil?
@@ -151,39 +151,39 @@ card_csv.each do |row|
 	i += 1
 end
 
-city_csv = CSV.read('cities.csv', headers: true)
+space_csv = CSV.read('spaces.csv', headers: true)
 
-cities = Hash.new
-city_constants = Array.new
-city_csv.each do |row|
-	city_id = IDNAMES["citys"]+row['CITY_ID']
-	city_constants.push row['CITY_ID']
-	city = Hash.new
-	city['x'] = row['posX'] || 0
-	city['y'] = row['posY'] || 0
-	city['name'] = row['name'] || 'tbd'
+spaces = Hash.new
+space_constants = Array.new
+space_csv.each do |row|
+	space_id = IDNAMES["spaces"]+row['SPACE_ID']
+	space_constants.push row['SPACE_ID']
+	space = Hash.new
+	space['x'] = row['posX'] || 0
+	space['y'] = row['posY'] || 0
+	space['name'] = row['name'] || 'tbd'
 	if ["VENICE", "SCOTLAND", "GENOA", "HUNGARY"].include? row['home_power'].upcase then
 		row['home_power'] = "MINOR_" + row['home_power']
 	end
-	city['home_power'] = IDNAMES["powers"]+row['home_power'].upcase
-	city['language'] = "LanguageZones::"+row['language'].upcase
-	city['connections'] = Array.new
-	city['id'] = city_id
-	if city_id.upcase.eql? "COLOGNE" then
-		puts city['id']
+	space['home_power'] = IDNAMES["powers"]+row['home_power'].upcase
+	space['language'] = "LanguageZones::"+row['language'].upcase
+	space['connections'] = Array.new
+	space['id'] = space_id
+	if space_id.upcase.eql? "COLOGNE" then
+		puts space['id']
 	end
 	6.times do |i|
-		city['connections'].push IDNAMES["citys"]+row["connection_#{i}"] unless row["connection_#{i}"].nil?
+		space['connections'].push IDNAMES["spaces"]+row["connection_#{i}"] unless row["connection_#{i}"].nil?
 	end
-	city['passes'] = Array.new
+	space['passes'] = Array.new
 	2.times do |i|
-		city['passes'].push IDNAMES["citys"]+row["pass_#{i}"] unless row["pass_#{i}"].nil?
+		space['passes'].push IDNAMES["spaces"]+row["pass_#{i}"] unless row["pass_#{i}"].nil?
 	end
-	city['seazones'] = Array.new
+	space['seazones'] = Array.new
 	2.times do |i|
-		city['seazones'].push IDNAMES["seazones"]+row["seazone_#{i}"] unless row["seazone_#{i}"].nil?
+		space['seazones'].push IDNAMES["seazones"]+row["seazone_#{i}"] unless row["seazone_#{i}"].nil?
 	end
-	cities[city_id] = city
+	spaces[space_id] = space
 	
 end
 
@@ -204,7 +204,7 @@ seazones_csv.each do |row|
 	end
 	seazone['harbours'] = Array.new
 	9.times do |i|
-		seazone['harbours'].push IDNAMES["citys"]+row["Harbour_#{i}"] unless row["Harbour_#{i}"].nil?
+		seazone['harbours'].push IDNAMES["spaces"]+row["Harbour_#{i}"] unless row["Harbour_#{i}"].nil?
 	end
 	seazones[seazone_id] = seazone
 	seazones_constants.push row['SEAZONE_ID']
@@ -225,26 +225,26 @@ location_csv.each do |row|
 end
 
 # check that data is correct
-# if cityA is connect to cityB, then cityB should be connected to cityA.
-#cities.each do |cityA|
+# if spaceA is connect to spaceB, then spaceB should be connected to spaceA.
+#spaces.each do |spaceA|
 #	6.times do |i|
-#		unless cityA['connections'][i].nil?
-#			if not cities[cityA['connections'][i]]['connections'].include? cityA['id'] then
-#				puts "city " + cityA['id'] + " has an connection to " + cityA['connections'][i] + ", but not the other way round."
+#		unless spaceA['connections'][i].nil?
+#			if not spaces[spaceA['connections'][i]]['connections'].include? spaceA['id'] then
+#				puts "space " + spaceA['id'] + " has an connection to " + spaceA['connections'][i] + ", but not the other way round."
 #			end
 #		end
 #	end
 #	2.times do |i|
-#		unless cityA['passes'][i].nil?
-#			if not cities[cityA['passes'][i]]['passes'].include? cityA['id'] then
-#				puts "city " + cityA['id'] + " has an pass to " + cityA['connections'][i] + ", but not the other way round."
+#		unless spaceA['passes'][i].nil?
+#			if not spaces[spaceA['passes'][i]]['passes'].include? spaceA['id'] then
+#				puts "space " + spaceA['id'] + " has an pass to " + spaceA['connections'][i] + ", but not the other way round."
 #			end
 #		end
 #	end
 #	2.times do |i|
-#		unless cityA['seazones'][i].nil?
-#			if not seazones[cityA['seazones'][i]]['ports'].include? cityA['id'] then
-#				puts "city " + cityA['id'] + " has an port to " + cityA['seazones'][i] + ", but not the other way round."
+#		unless spaceA['seazones'][i].nil?
+#			if not seazones[spaceA['seazones'][i]]['ports'].include? spaceA['id'] then
+#				puts "space " + spaceA['id'] + " has an port to " + spaceA['seazones'][i] + ", but not the other way round."
 #			end
 #		end
 #	end
@@ -274,7 +274,7 @@ File.open('../../material.inc.php', 'w') do |file|
  */
 
 require_once 'modules/php/constants.inc.php';\n\n"
-	file.write php_print('cities', cities)
+	file.write php_print('spaces', spaces)
 	file.write "\n\n"
 	file.write php_print('tokens', tokens)
 	file.write "\n\n"
@@ -312,10 +312,10 @@ File.open('../../modules/php/generated_constants.inc.php', 'w') do |file|
 		file.write print_constant(name, i, 2000) + "\n"
 	end
 	file.write "}\n/*
- * City constants
+ * Space constants
  */\n
- abstract class " + IDNAMES["citys"].sub("::", "") + " \n{"
-	city_constants.each_with_index do |name, i|
+ abstract class " + IDNAMES["spaces"].sub("::", "") + " \n{"
+	space_constants.each_with_index do |name, i|
 		file.write print_constant(name, i, 3000) + "\n"
 	end
 	file.write "}\n/*

@@ -31,24 +31,24 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('declare_formation', _('Declare Formation'), 'onDeclareFormationClick');
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
       this.selectedFormation = [];
-      dojo.query('.city .Military').forEach((node) =>
+      dojo.query('.space .Military').forEach((node) =>
         this.onClick(node, this.onUnitClick)
       );
     },
 
     onEnteringStateDeclareDestination(args){
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
-      for(const city_id of args.valid_city_ids){
-        const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onDestinationClick);
+      for(const space_id of args.valid_space_ids){
+        const space_node = dojo.byId(`spaceselector_${space_id}`);
+        this.onClick(space_node, this.onDestinationClick);
       }
     },
 
     onEnteringStateBuyUnit(args){
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
-      for(const city_id of args.valid_city_ids){
-        const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onDestinationClick);//onClick is defined in game.js, onDestinationClick method in Actions.js
+      for(const space_id of args.valid_space_ids){
+        const space_node = dojo.byId(`spaceselector_${space_id}`);
+        this.onClick(space_node, this.onDestinationClick);//onClick is defined in game.js, onDestinationClick method in Actions.js
       }
     },
 
@@ -62,9 +62,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
 
     onEnteringStateEvtJanissaries(args){
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
-      for(const city_id of args.valid_city_ids){
-        const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onDestinationClick);
+      for(const space_id of args.valid_space_ids){
+        const space_node = dojo.byId(`spaceselector_${space_id}`);
+        this.onClick(space_node, this.onDestinationClick);
       }
     },
 
@@ -72,9 +72,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.addPrimaryActionButton('move Charles V', _('onEvtHolyRomanMoveCharlesVClick'), 'onEvtHolyRomanMoveCharlesVClick');
       this.addPrimaryActionButton('move Charles V and Duke Of Alva', _('onEvtHolyRomaMoveCharlesVAndDukeClick'), 'onEvtHolyRomaMoveCharlesVAndDukeClick');
       this.addPrimaryActionButton('undo', _('Undo'), 'onUndoClick');
-      for(const city_id of args.valid_city_ids){
-        const city_node = dojo.byId(`cityselector_${city_id}`);
-        this.onClick(city_node, this.onEvtHolyRomanDestClick);
+      for(const space_id of args.valid_space_ids){
+        const space_node = dojo.byId(`spaceselector_${space_id}`);
+        this.onClick(space_node, this.onEvtHolyRomanDestClick);
       }
     },
 
