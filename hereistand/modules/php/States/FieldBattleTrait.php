@@ -11,7 +11,7 @@ use HIS\Notifications\Battle;
 trait FieldBattleTrait {
 	function stFindBattle() {
 		$destination = Globals::getDestination();
-		$tokens = Tokens::getInLocation(['map', 'city', $destination]);
+		$tokens = Tokens::getInLocation(['map', 'space', $destination]);
 		$active_power = Players::getActive()->power;
 		$field = [];
 		// Get list of units from opposing powers
@@ -96,11 +96,11 @@ trait FieldBattleTrait {
 		$destination = Globals::getDestination();
 		if ($field['winner'] == DEFENDER) {
 			$origin = Globals::getOrigin();
-			$cities = $this->cities;
-			$city = $cities[$origin];
+			$spaces = $this->spaces;
+			$space = $spaces[$origin];
 			$retreating_units = FieldBattle::getRetreatingUnits($field['attacking_power'], $field, $destination);
-			Tokens::move($retreating_units, ['map', 'city', $origin]);
-			Battle::retreatUnits($retreating_units, $city);
+			Tokens::move($retreating_units, ['map', 'space', $origin]);
+			Battle::retreatUnits($retreating_units, $space);
 			$this->gamestate->nextState("none");
 		} else {
 			$retreats = [];

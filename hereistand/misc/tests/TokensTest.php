@@ -10,9 +10,9 @@ final class TokensTest extends TestCase {
 		self::$his = new HereIStandMocker();
 	}
 
-	public function testInCity() {
-		$token = TestingUtils::makeTokenInCity(PAPACY_4UNIT, ROME);
-		$this->assertTrue(Tokens::inCity($token, ROME));
-		$this->assertFalse(Tokens::inCity($token, PARIS));
+	public function testInSpace() {
+		$token = TestingUtils::makeTokenInSpace(tokenIDs::PAPACY_4UNIT, spaceIDs::ROME);
+		$this->assertTrue(Tokens::inSpace($token, spaceIDs::ROME));
+		$this->assertFalse(Tokens::inSpace($token, spaceIDs::PARIS));
 	}
 }

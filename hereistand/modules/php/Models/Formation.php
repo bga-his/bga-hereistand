@@ -18,13 +18,13 @@ class Formation {
 			return false;
 		}
 
-		# all tokens must be in single city
-		if ($this->tokens[0]['location_type'] != 'city') {
+		# all tokens must be in single space
+		if ($this->tokens[0]['location_type'] != 'space') {
 			return false;
 		}
-		$city_id = $this->tokens[0]['location_id'];
+		$space_id = $this->tokens[0]['location_id'];
 		foreach ($this->tokens as $token) {
-			if ($token['location_id'] != $city_id) {
+			if ($token['location_id'] != $space_id) {
 				return false;
 			}
 		}

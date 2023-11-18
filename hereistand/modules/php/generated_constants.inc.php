@@ -277,10 +277,10 @@ const PIRATEHAVEN = 2039;
 const UNIVERSITY = 2040;
 }
 /*
- * City constants
+ * Space constants
  */
 
- abstract class CityIDs 
+ abstract class SpaceIDs 
 {const WITTENBERG = 3000;
 const BRANDENBURG = 3001;
 const MAINZ = 3002;

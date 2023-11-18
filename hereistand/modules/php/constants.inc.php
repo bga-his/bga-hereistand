@@ -107,7 +107,7 @@ abstract class TokenSides{
  }
 
  abstract class Locationtypes{
-    const city = "map_city";
+    const space = "map_space";
     const powercards = "powercards_location";
     const supply = [Powers::OTTOMAN => "supply_ottoman", Powers::HAPSBURG => "supply_hapsburg", Powers::ENGLAND => "supply_england", Powers::FRANCE => "supply_france", Powers::PAPACY => "supply_papacy", Powers::PROTESTANT => "supply_protestant", Powers::OTHER => "supply_other"];
     //TODO maybe there exists more?

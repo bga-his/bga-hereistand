@@ -19,13 +19,13 @@ class view_hereistand_hereistand extends game_view {
 		return 'hereistand';
 	}
 	function build_page($viewArgs) {
-		$this->page->begin_block("hereistand_hereistand", "city");
-		foreach ($this->game->cities as $city_id => $city) {
-			$this->page->insert_block("city", array(
-				'X' => $city['x'],
-				'Y' => $city['y'],
-				'ID' => $city_id,
-				'NAME' => $city['name'],
+		$this->page->begin_block("hereistand_hereistand", "space");
+		foreach ($this->game->spaces as $space_id => $space) {
+			$this->page->insert_block("space", array(
+				'X' => $space['x'],
+				'Y' => $space['y'],
+				'ID' => $space_id,
+				'NAME' => $space['name'],
 			));
 		}
 		$this->page->begin_block("hereistand_hereistand", "map_location");

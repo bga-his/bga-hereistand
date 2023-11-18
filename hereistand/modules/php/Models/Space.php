@@ -8,19 +8,19 @@ use ReligionIDs;
 use tokenTypeIDs;
 
 /*
- * City: all utility functions concerning a city
+ * Space: all utility functions concerning a space
  */
 
-class City {
+class Space {
 	protected $attributes = [];
 	public $tokens = [];
 	public $id = null;
 
-	public function __construct($city_id, $tokens) {
-		$this->id = $city_id;
-		$this->attributes = Game::get()->cities[$city_id];
+	public function __construct($space_id, $tokens) {
+		$this->id = $space_id;
+		$this->attributes = Game::get()->spaces[$space_id];
 		foreach ($tokens as $token) {
-			if (Tokens::inCity($token, $city_id)) {
+			if (Tokens::inSpace($token, $space_id)) {
 				$this->tokens[] = $token;
 			}
 		}

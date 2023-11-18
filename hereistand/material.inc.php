@@ -21,1966 +21,1966 @@
 
 require_once 'modules/php/constants.inc.php';
 
-$this->cities = [
-CityIDs::WITTENBERG => [
+$this->spaces = [
+SpaceIDs::WITTENBERG => [
 "x" => 3247,
 "y" => 731,
 "name" => "Wittenberg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::MAGDEBURG,
-  CityIDs::LEIPZIG,
-  CityIDs::PRAGUE,
-  CityIDs::BRESLAU],
-"id" => CityIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::LEIPZIG,
+  SpaceIDs::PRAGUE,
+  SpaceIDs::BRESLAU],
+"id" => SpaceIDs::WITTENBERG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BRANDENBURG => [
+SpaceIDs::BRANDENBURG => [
 "x" => 3196,
 "y" => 590,
 "name" => "Brandenburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::MAGDEBURG,
-  CityIDs::BRESLAU,
-  CityIDs::LUBECK,
-  CityIDs::STETTIN],
-"id" => CityIDs::BRANDENBURG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::BRESLAU,
+  SpaceIDs::LUBECK,
+  SpaceIDs::STETTIN],
+"id" => SpaceIDs::BRANDENBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MAINZ => [
+SpaceIDs::MAINZ => [
 "x" => 2783,
 "y" => 992,
 "name" => "Mainz",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::NUREMBERG,
-  CityIDs::COLOGNE,
-  CityIDs::TRIER,
-  CityIDs::WORMS],
-"id" => CityIDs::MAINZ,
+  SpaceIDs::KASSEL,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::COLOGNE,
+  SpaceIDs::TRIER,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::MAINZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::COLOGNE => [
+SpaceIDs::COLOGNE => [
 "x" => 2617,
 "y" => 848,
 "name" => "Cologne",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::MUNSTER,
-  CityIDs::LIEGE],
-"id" => CityIDs::COLOGNE,
+  SpaceIDs::MAINZ,
+  SpaceIDs::MUNSTER,
+  SpaceIDs::LIEGE],
+"id" => SpaceIDs::COLOGNE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TRIER => [
+SpaceIDs::TRIER => [
 "x" => 2636,
 "y" => 1018,
 "name" => "Trier",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::METZ,
-  CityIDs::LIEGE],
-"id" => CityIDs::TRIER,
+  SpaceIDs::MAINZ,
+  SpaceIDs::METZ,
+  SpaceIDs::LIEGE],
+"id" => SpaceIDs::TRIER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AUGSBURG => [
+SpaceIDs::AUGSBURG => [
 "x" => 2981,
 "y" => 1203,
 "name" => "Augsburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::REGENSBURG,
-  CityIDs::NUREMBERG,
-  CityIDs::SALZBURG,
-  CityIDs::WORMS],
-"id" => CityIDs::AUGSBURG,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::AUGSBURG,
 "passes" => [
-  CityIDs::INNSBRUCK],
+  SpaceIDs::INNSBRUCK],
 "seazones" => []
 ],
-CityIDs::STETTIN => [
+SpaceIDs::STETTIN => [
 "x" => 3332,
 "y" => 436,
 "name" => "Stettin",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::LUBECK],
-"id" => CityIDs::STETTIN,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::LUBECK],
+"id" => SpaceIDs::STETTIN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BALTIC_SEA]
 ],
-CityIDs::LUBECK => [
+SpaceIDs::LUBECK => [
 "x" => 3103,
 "y" => 382,
 "name" => "Lübeck",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BRANDENBURG,
-  CityIDs::STETTIN,
-  CityIDs::MAGDEBURG,
-  CityIDs::HAMBURG],
-"id" => CityIDs::LUBECK,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::STETTIN,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::HAMBURG],
+"id" => SpaceIDs::LUBECK,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BALTIC_SEA]
 ],
-CityIDs::MAGDEBURG => [
+SpaceIDs::MAGDEBURG => [
 "x" => 3052,
 "y" => 660,
 "name" => "Magdeburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::BRANDENBURG,
-  CityIDs::LUBECK,
-  CityIDs::BRUNSWICK,
-  CityIDs::ERFURT],
-"id" => CityIDs::MAGDEBURG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG,
+  SpaceIDs::LUBECK,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::ERFURT],
+"id" => SpaceIDs::MAGDEBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::HAMBURG => [
+SpaceIDs::HAMBURG => [
 "x" => 2877,
 "y" => 471,
 "name" => "Hamburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::LUBECK,
-  CityIDs::BRUNSWICK,
-  CityIDs::BREMEN],
-"id" => CityIDs::HAMBURG,
+  SpaceIDs::LUBECK,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::BREMEN],
+"id" => SpaceIDs::HAMBURG,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::BRUNSWICK => [
+SpaceIDs::BRUNSWICK => [
 "x" => 2842,
 "y" => 692,
 "name" => "Brunswick",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::HAMBURG,
-  CityIDs::MAGDEBURG,
-  CityIDs::BREMEN,
-  CityIDs::KASSEL],
-"id" => CityIDs::BRUNSWICK,
+  SpaceIDs::HAMBURG,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::BREMEN,
+  SpaceIDs::KASSEL],
+"id" => SpaceIDs::BRUNSWICK,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BREMEN => [
+SpaceIDs::BREMEN => [
 "x" => 2714,
 "y" => 547,
 "name" => "Bremen",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::HAMBURG,
-  CityIDs::BRUNSWICK,
-  CityIDs::MUNSTER],
-"id" => CityIDs::BREMEN,
+  SpaceIDs::HAMBURG,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::MUNSTER],
+"id" => SpaceIDs::BREMEN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::MUNSTER => [
+SpaceIDs::MUNSTER => [
 "x" => 2620,
 "y" => 662,
 "name" => "Münster",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BREMEN,
-  CityIDs::KASSEL,
-  CityIDs::AMSTERDAM],
-"id" => CityIDs::MUNSTER,
+  SpaceIDs::BREMEN,
+  SpaceIDs::KASSEL,
+  SpaceIDs::AMSTERDAM],
+"id" => SpaceIDs::MUNSTER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::KASSEL => [
+SpaceIDs::KASSEL => [
 "x" => 2785,
 "y" => 839,
 "name" => "Kassel",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::BRUNSWICK,
-  CityIDs::MUNSTER,
-  CityIDs::NUREMBERG,
-  CityIDs::ERFURT],
-"id" => CityIDs::KASSEL,
+  SpaceIDs::MAINZ,
+  SpaceIDs::BRUNSWICK,
+  SpaceIDs::MUNSTER,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::ERFURT],
+"id" => SpaceIDs::KASSEL,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ERFURT => [
+SpaceIDs::ERFURT => [
 "x" => 2942,
 "y" => 875,
 "name" => "Erfurt",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::MAGDEBURG,
-  CityIDs::LEIPZIG],
-"id" => CityIDs::ERFURT,
+  SpaceIDs::KASSEL,
+  SpaceIDs::MAGDEBURG,
+  SpaceIDs::LEIPZIG],
+"id" => SpaceIDs::ERFURT,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LEIPZIG => [
+SpaceIDs::LEIPZIG => [
 "x" => 3101,
 "y" => 813,
 "name" => "Leipzig",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WITTENBERG,
-  CityIDs::NUREMBERG,
-  CityIDs::ERFURT,
-  CityIDs::PRAGUE],
-"id" => CityIDs::LEIPZIG,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::ERFURT,
+  SpaceIDs::PRAGUE],
+"id" => SpaceIDs::LEIPZIG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NUREMBERG => [
+SpaceIDs::NUREMBERG => [
 "x" => 2954,
 "y" => 1049,
 "name" => "Nuremberg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::KASSEL,
-  CityIDs::REGENSBURG,
-  CityIDs::LEIPZIG,
-  CityIDs::AUGSBURG,
-  CityIDs::WORMS],
-"id" => CityIDs::NUREMBERG,
+  SpaceIDs::KASSEL,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::LEIPZIG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::WORMS],
+"id" => SpaceIDs::NUREMBERG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::WORMS => [
+SpaceIDs::WORMS => [
 "x" => 2823,
 "y" => 1133,
 "name" => "Worms",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::MAINZ,
-  CityIDs::NUREMBERG,
-  CityIDs::AUGSBURG,
-  CityIDs::STRASBURG],
-"id" => CityIDs::WORMS,
+  SpaceIDs::MAINZ,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::STRASBURG],
+"id" => SpaceIDs::WORMS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::REGENSBURG => [
+SpaceIDs::REGENSBURG => [
 "x" => 3152,
 "y" => 1079,
 "name" => "Regensburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::SALZBURG,
-  CityIDs::NUREMBERG,
-  CityIDs::AUGSBURG,
-  CityIDs::LINZ],
-"id" => CityIDs::REGENSBURG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::NUREMBERG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::LINZ],
+"id" => SpaceIDs::REGENSBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::STRASBURG => [
+SpaceIDs::STRASBURG => [
 "x" => 2698,
 "y" => 1194,
 "name" => "Strasburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::WORMS,
-  CityIDs::METZ,
-  CityIDs::BESANCON,
-  CityIDs::BASEL],
-"id" => CityIDs::STRASBURG,
+  SpaceIDs::WORMS,
+  SpaceIDs::METZ,
+  SpaceIDs::BESANCON,
+  SpaceIDs::BASEL],
+"id" => SpaceIDs::STRASBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SALZBURG => [
+SpaceIDs::SALZBURG => [
 "x" => 3267,
 "y" => 1233,
 "name" => "Salzburg",
 "home_power" => Powers::PROTESTANT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::INNSBRUCK,
-  CityIDs::REGENSBURG,
-  CityIDs::AUGSBURG,
-  CityIDs::LINZ],
-"id" => CityIDs::SALZBURG,
+  SpaceIDs::INNSBRUCK,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::AUGSBURG,
+  SpaceIDs::LINZ],
+"id" => SpaceIDs::SALZBURG,
 "passes" => [
-  CityIDs::GRAZ],
+  SpaceIDs::GRAZ],
 "seazones" => []
 ],
-CityIDs::VIENNA => [
+SpaceIDs::VIENNA => [
 "x" => 3594,
 "y" => 1144,
 "name" => "Vienna",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::LINZ,
-  CityIDs::BRUNN,
-  CityIDs::PRESSBURG,
-  CityIDs::GRAZ],
-"id" => CityIDs::VIENNA,
+  SpaceIDs::LINZ,
+  SpaceIDs::BRUNN,
+  SpaceIDs::PRESSBURG,
+  SpaceIDs::GRAZ],
+"id" => SpaceIDs::VIENNA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LINZ => [
+SpaceIDs::LINZ => [
 "x" => 3406,
 "y" => 1172,
 "name" => "Linz",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::VIENNA,
-  CityIDs::REGENSBURG,
-  CityIDs::SALZBURG,
-  CityIDs::PRAGUE],
-"id" => CityIDs::LINZ,
+  SpaceIDs::VIENNA,
+  SpaceIDs::REGENSBURG,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::PRAGUE],
+"id" => SpaceIDs::LINZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GRAZ => [
+SpaceIDs::GRAZ => [
 "x" => 3491,
 "y" => 1331,
 "name" => "Graz",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::VIENNA,
-  CityIDs::MOHACS,
-  CityIDs::TRIESTE,
-  CityIDs::AGRAM],
-"id" => CityIDs::GRAZ,
+  SpaceIDs::VIENNA,
+  SpaceIDs::MOHACS,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::GRAZ,
 "passes" => [
-  CityIDs::SALZBURG],
+  SpaceIDs::SALZBURG],
 "seazones" => []
 ],
-CityIDs::INNSBRUCK => [
+SpaceIDs::INNSBRUCK => [
 "x" => 3135,
 "y" => 1295,
 "name" => "Innsbruck",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::SALZBURG,
-  CityIDs::ZURICH],
-"id" => CityIDs::INNSBRUCK,
+  SpaceIDs::SALZBURG,
+  SpaceIDs::ZURICH],
+"id" => SpaceIDs::INNSBRUCK,
 "passes" => [
-  CityIDs::AUGSBURG],
+  SpaceIDs::AUGSBURG],
 "seazones" => []
 ],
-CityIDs::ZURICH => [
+SpaceIDs::ZURICH => [
 "x" => 2830,
 "y" => 1342,
 "name" => "Zürich",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::BASEL,
-  CityIDs::INNSBRUCK],
-"id" => CityIDs::ZURICH,
+  SpaceIDs::BASEL,
+  SpaceIDs::INNSBRUCK],
+"id" => SpaceIDs::ZURICH,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BASEL => [
+SpaceIDs::BASEL => [
 "x" => 2675,
 "y" => 1338,
 "name" => "Basel",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::GERMAN,
 "connections" => [
-  CityIDs::ZURICH,
-  CityIDs::STRASBURG,
-  CityIDs::GENEVA,
-  CityIDs::BESANCON],
-"id" => CityIDs::BASEL,
+  SpaceIDs::ZURICH,
+  SpaceIDs::STRASBURG,
+  SpaceIDs::GENEVA,
+  SpaceIDs::BESANCON],
+"id" => SpaceIDs::BASEL,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LONDON => [
+SpaceIDs::LONDON => [
 "x" => 1904,
 "y" => 830,
 "name" => "London",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::NORWICH,
-  CityIDs::LINCOLN,
-  CityIDs::SHREWSBURY,
-  CityIDs::BRISTOL,
-  CityIDs::PORTSMOUTH],
-"id" => CityIDs::LONDON,
+  SpaceIDs::NORWICH,
+  SpaceIDs::LINCOLN,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PORTSMOUTH],
+"id" => SpaceIDs::LONDON,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::BRISTOL => [
+SpaceIDs::BRISTOL => [
 "x" => 1674,
 "y" => 812,
 "name" => "Bristol",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::WALES,
-  CityIDs::SHREWSBURY,
-  CityIDs::PLYMOUTH,
-  CityIDs::PORTSMOUTH],
-"id" => CityIDs::BRISTOL,
+  SpaceIDs::LONDON,
+  SpaceIDs::WALES,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::PLYMOUTH,
+  SpaceIDs::PORTSMOUTH],
+"id" => SpaceIDs::BRISTOL,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IRISH_SEA]
 ],
-CityIDs::YORK => [
+SpaceIDs::YORK => [
 "x" => 1715,
 "y" => 499,
 "name" => "York",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::LINCOLN,
-  CityIDs::SHREWSBURY,
-  CityIDs::BERWICK],
-"id" => CityIDs::YORK,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::LINCOLN,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::BERWICK],
+"id" => SpaceIDs::YORK,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NORWICH => [
+SpaceIDs::NORWICH => [
 "x" => 2016,
 "y" => 663,
 "name" => "Norwich",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON],
-"id" => CityIDs::NORWICH,
+  SpaceIDs::LONDON],
+"id" => SpaceIDs::NORWICH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::PORTSMOUTH => [
+SpaceIDs::PORTSMOUTH => [
 "x" => 1784,
 "y" => 945,
 "name" => "Portsmouth",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::BRISTOL,
-  CityIDs::PLYMOUTH],
-"id" => CityIDs::PORTSMOUTH,
+  SpaceIDs::LONDON,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PLYMOUTH],
+"id" => SpaceIDs::PORTSMOUTH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::PLYMOUTH => [
+SpaceIDs::PLYMOUTH => [
 "x" => 1517,
 "y" => 1023,
 "name" => "Plymouth",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BRISTOL,
-  CityIDs::PLYMOUTH],
-"id" => CityIDs::PLYMOUTH,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::PLYMOUTH],
+"id" => SpaceIDs::PLYMOUTH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::LINCOLN => [
+SpaceIDs::LINCOLN => [
 "x" => 1828,
 "y" => 658,
 "name" => "Lincoln",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::YORK],
-"id" => CityIDs::LINCOLN,
+  SpaceIDs::LONDON,
+  SpaceIDs::YORK],
+"id" => SpaceIDs::LINCOLN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::WALES => [
+SpaceIDs::WALES => [
 "x" => 1518,
 "y" => 758,
 "name" => "Wales",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BRISTOL,
-  CityIDs::SHREWSBURY],
-"id" => CityIDs::WALES,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::SHREWSBURY],
+"id" => SpaceIDs::WALES,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SHREWSBURY => [
+SpaceIDs::SHREWSBURY => [
 "x" => 1657,
 "y" => 646,
 "name" => "Shrewsbury",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::LONDON,
-  CityIDs::WALES,
-  CityIDs::BRISTOL,
-  CityIDs::YORK,
-  CityIDs::CARLISLE],
-"id" => CityIDs::SHREWSBURY,
+  SpaceIDs::LONDON,
+  SpaceIDs::WALES,
+  SpaceIDs::BRISTOL,
+  SpaceIDs::YORK,
+  SpaceIDs::CARLISLE],
+"id" => SpaceIDs::SHREWSBURY,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CARLISLE => [
+SpaceIDs::CARLISLE => [
 "x" => 1569,
 "y" => 404,
 "name" => "Carlisle",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BERWICK,
-  CityIDs::YORK,
-  CityIDs::SHREWSBURY,
-  CityIDs::GLASGOW],
-"id" => CityIDs::CARLISLE,
+  SpaceIDs::BERWICK,
+  SpaceIDs::YORK,
+  SpaceIDs::SHREWSBURY,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::CARLISLE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BERWICK => [
+SpaceIDs::BERWICK => [
 "x" => 1692,
 "y" => 308,
 "name" => "Berwick",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::YORK,
-  CityIDs::EDINBURGH],
-"id" => CityIDs::BERWICK,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::YORK,
+  SpaceIDs::EDINBURGH],
+"id" => SpaceIDs::BERWICK,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::EDINBURGH => [
+SpaceIDs::EDINBURGH => [
 "x" => 1540,
 "y" => 254,
 "name" => "Edinburgh",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::BERWICK,
-  CityIDs::STIRLING,
-  CityIDs::GLASGOW],
-"id" => CityIDs::EDINBURGH,
+  SpaceIDs::BERWICK,
+  SpaceIDs::STIRLING,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::EDINBURGH,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::STIRLING => [
+SpaceIDs::STIRLING => [
 "x" => 1382,
 "y" => 204,
 "name" => "Stirling",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::EDINBURGH,
-  CityIDs::GLASGOW],
-"id" => CityIDs::STIRLING,
+  SpaceIDs::EDINBURGH,
+  SpaceIDs::GLASGOW],
+"id" => SpaceIDs::STIRLING,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GLASGOW => [
+SpaceIDs::GLASGOW => [
 "x" => 1403,
 "y" => 362,
 "name" => "Glasgow",
 "home_power" => Powers::MINOR_SCOTLAND,
 "language" => LanguageZones::ENGLISH,
 "connections" => [
-  CityIDs::CARLISLE,
-  CityIDs::STIRLING,
-  CityIDs::EDINBURGH],
-"id" => CityIDs::GLASGOW,
+  SpaceIDs::CARLISLE,
+  SpaceIDs::STIRLING,
+  SpaceIDs::EDINBURGH],
+"id" => SpaceIDs::GLASGOW,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IRISH_SEA]
 ],
-CityIDs::PARIS => [
+SpaceIDs::PARIS => [
 "x" => 2128,
 "y" => 1188,
 "name" => "Paris",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::BOULOGNE,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ST_DIZIER,
-  CityIDs::DIJON],
-"id" => CityIDs::PARIS,
+  SpaceIDs::ROUEN,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ST_DIZIER,
+  SpaceIDs::DIJON],
+"id" => SpaceIDs::PARIS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LYON => [
+SpaceIDs::LYON => [
 "x" => 2430,
 "y" => 1567,
 "name" => "Lyon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::GENEVA,
-  CityIDs::ORLEANS,
-  CityIDs::DIJON,
-  CityIDs::LIMOGES,
-  CityIDs::AVIGNON],
-"id" => CityIDs::LYON,
+  SpaceIDs::GENEVA,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::DIJON,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::AVIGNON],
+"id" => SpaceIDs::LYON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ROUEN => [
+SpaceIDs::ROUEN => [
 "x" => 1926,
 "y" => 1123,
 "name" => "Rouen",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::BOULOGNE,
-  CityIDs::TOURS,
-  CityIDs::NANTES],
-"id" => CityIDs::ROUEN,
+  SpaceIDs::PARIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::TOURS,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::ROUEN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::MARSEILLE => [
+SpaceIDs::MARSEILLE => [
 "x" => 2506,
 "y" => 1905,
 "name" => "Marseille",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::AVIGNON,
-  CityIDs::NICE],
-"id" => CityIDs::MARSEILLE,
+  SpaceIDs::AVIGNON,
+  SpaceIDs::NICE],
+"id" => SpaceIDs::MARSEILLE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::BORDEAUX => [
+SpaceIDs::BORDEAUX => [
 "x" => 1899,
 "y" => 1690,
 "name" => "Bordeaux",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::NANTES,
-  CityIDs::TOURS,
-  CityIDs::LIMOGES,
-  CityIDs::TOULOUSE],
-"id" => CityIDs::BORDEAUX,
+  SpaceIDs::NANTES,
+  SpaceIDs::TOURS,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::TOULOUSE],
+"id" => SpaceIDs::BORDEAUX,
 "passes" => [
-  CityIDs::NAVARRE],
+  SpaceIDs::NAVARRE],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::GRENOBLE => [
+SpaceIDs::GRENOBLE => [
 "x" => 2556,
 "y" => 1716,
 "name" => "Grenoble",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::GENEVA],
-"id" => CityIDs::GRENOBLE,
+  SpaceIDs::LYON,
+  SpaceIDs::GENEVA],
+"id" => SpaceIDs::GRENOBLE,
 "passes" => [
-  CityIDs::TURIN],
+  SpaceIDs::TURIN],
 "seazones" => []
 ],
-CityIDs::DIJON => [
+SpaceIDs::DIJON => [
 "x" => 2321,
 "y" => 1332,
 "name" => "Dijon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ORLEANS,
-  CityIDs::LYON,
-  CityIDs::BESANCON,
-  CityIDs::PARIS,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::DIJON,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::LYON,
+  SpaceIDs::BESANCON,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::DIJON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ST_DIZIER => [
+SpaceIDs::ST_DIZIER => [
 "x" => 2322,
 "y" => 1170,
 "name" => "St. Dizier",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::ST_QUENTIN,
-  CityIDs::BRUSSELS,
-  CityIDs::METZ,
-  CityIDs::DIJON],
-"id" => CityIDs::ST_DIZIER,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::METZ,
+  SpaceIDs::DIJON],
+"id" => SpaceIDs::ST_DIZIER,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ST_QUENTIN => [
+SpaceIDs::ST_QUENTIN => [
 "x" => 2211,
 "y" => 1059,
 "name" => "St. Quentin",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::BOULOGNE,
-  CityIDs::BRUSSELS,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::ST_QUENTIN,
+  SpaceIDs::PARIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::ST_QUENTIN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BOULOGNE => [
+SpaceIDs::BOULOGNE => [
 "x" => 2075,
 "y" => 1005,
 "name" => "Boulogne",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ROUEN,
-  CityIDs::CALAIS],
-"id" => CityIDs::BOULOGNE,
+  SpaceIDs::PARIS,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ROUEN,
+  SpaceIDs::CALAIS],
+"id" => SpaceIDs::BOULOGNE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::ORLEANS => [
+SpaceIDs::ORLEANS => [
 "x" => 2138,
 "y" => 1345,
 "name" => "Orleans",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::PARIS,
-  CityIDs::TOURS,
-  CityIDs::DIJON,
-  CityIDs::LYON],
-"id" => CityIDs::ORLEANS,
+  SpaceIDs::PARIS,
+  SpaceIDs::TOURS,
+  SpaceIDs::DIJON,
+  SpaceIDs::LYON],
+"id" => SpaceIDs::ORLEANS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AVIGNON => [
+SpaceIDs::AVIGNON => [
 "x" => 2410,
 "y" => 1771,
 "name" => "Avignon",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::MARSEILLE,
-  CityIDs::TOULOUSE],
-"id" => CityIDs::AVIGNON,
+  SpaceIDs::LYON,
+  SpaceIDs::MARSEILLE,
+  SpaceIDs::TOULOUSE],
+"id" => SpaceIDs::AVIGNON,
 "passes" => [
-  CityIDs::BARCELONA],
+  SpaceIDs::BARCELONA],
 "seazones" => []
 ],
-CityIDs::TOULOUSE => [
+SpaceIDs::TOULOUSE => [
 "x" => 2110,
 "y" => 1862,
 "name" => "Toulouse",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::BORDEAUX,
-  CityIDs::AVIGNON],
-"id" => CityIDs::TOULOUSE,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::AVIGNON],
+"id" => SpaceIDs::TOULOUSE,
 "passes" => [
-  CityIDs::BARCELONA],
+  SpaceIDs::BARCELONA],
 "seazones" => []
 ],
-CityIDs::LIMOGES => [
+SpaceIDs::LIMOGES => [
 "x" => 2094,
 "y" => 1522,
 "name" => "Limoges",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::TOURS,
-  CityIDs::BORDEAUX],
-"id" => CityIDs::LIMOGES,
+  SpaceIDs::LYON,
+  SpaceIDs::TOURS,
+  SpaceIDs::BORDEAUX],
+"id" => SpaceIDs::LIMOGES,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TOURS => [
+SpaceIDs::TOURS => [
 "x" => 1969,
 "y" => 1403,
 "name" => "Tours",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::ORLEANS,
-  CityIDs::BORDEAUX,
-  CityIDs::LIMOGES,
-  CityIDs::NANTES],
-"id" => CityIDs::TOURS,
+  SpaceIDs::ROUEN,
+  SpaceIDs::ORLEANS,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::LIMOGES,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::TOURS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NANTES => [
+SpaceIDs::NANTES => [
 "x" => 1770,
 "y" => 1434,
 "name" => "Nantes",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::ROUEN,
-  CityIDs::TOURS,
-  CityIDs::BORDEAUX,
-  CityIDs::BREST],
-"id" => CityIDs::NANTES,
+  SpaceIDs::ROUEN,
+  SpaceIDs::TOURS,
+  SpaceIDs::BORDEAUX,
+  SpaceIDs::BREST],
+"id" => SpaceIDs::NANTES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::BREST => [
+SpaceIDs::BREST => [
 "x" => 1528,
 "y" => 1299,
 "name" => "Brest",
 "home_power" => Powers::FRANCE,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::NANTES],
-"id" => CityIDs::BREST,
+  SpaceIDs::NANTES],
+"id" => SpaceIDs::BREST,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ENGLISH_CHANNEL]
 ],
-CityIDs::BRUSSELS => [
+SpaceIDs::BRUSSELS => [
 "x" => 2320,
 "y" => 947,
 "name" => "Brussels",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::CALAIS,
-  CityIDs::ANTWERP,
-  CityIDs::LIEGE,
-  CityIDs::ST_QUENTIN,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::BRUSSELS,
+  SpaceIDs::CALAIS,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::LIEGE,
+  SpaceIDs::ST_QUENTIN,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::BRUSSELS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BESANCON => [
+SpaceIDs::BESANCON => [
 "x" => 2510,
 "y" => 1292,
 "name" => "Besançon",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::DIJON,
-  CityIDs::BASEL,
-  CityIDs::GENEVA,
-  CityIDs::METZ,
-  CityIDs::STRASBURG],
-"id" => CityIDs::BESANCON,
+  SpaceIDs::DIJON,
+  SpaceIDs::BASEL,
+  SpaceIDs::GENEVA,
+  SpaceIDs::METZ,
+  SpaceIDs::STRASBURG],
+"id" => SpaceIDs::BESANCON,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CALAIS => [
+SpaceIDs::CALAIS => [
 "x" => 2142,
 "y" => 869,
 "name" => "Calais",
 "home_power" => Powers::ENGLAND,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::BOULOGNE,
-  CityIDs::ANTWERP,
-  CityIDs::BRUSSELS],
-"id" => CityIDs::CALAIS,
+  SpaceIDs::BOULOGNE,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::BRUSSELS],
+"id" => SpaceIDs::CALAIS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::METZ => [
+SpaceIDs::METZ => [
 "x" => 2503,
 "y" => 1118,
 "name" => "Metz",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::TRIER,
-  CityIDs::BESANCON,
-  CityIDs::LIEGE,
-  CityIDs::STRASBURG,
-  CityIDs::ST_DIZIER],
-"id" => CityIDs::METZ,
+  SpaceIDs::TRIER,
+  SpaceIDs::BESANCON,
+  SpaceIDs::LIEGE,
+  SpaceIDs::STRASBURG,
+  SpaceIDs::ST_DIZIER],
+"id" => SpaceIDs::METZ,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::LIEGE => [
+SpaceIDs::LIEGE => [
 "x" => 2471,
 "y" => 908,
 "name" => "Liege",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::TRIER,
-  CityIDs::ANTWERP,
-  CityIDs::BRUSSELS,
-  CityIDs::METZ,
-  CityIDs::COLOGNE],
-"id" => CityIDs::LIEGE,
+  SpaceIDs::TRIER,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::METZ,
+  SpaceIDs::COLOGNE],
+"id" => SpaceIDs::LIEGE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GENEVA => [
+SpaceIDs::GENEVA => [
 "x" => 2593,
 "y" => 1491,
 "name" => "Geneva",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::LYON,
-  CityIDs::BESANCON,
-  CityIDs::BASEL,
-  CityIDs::GRENOBLE],
-"id" => CityIDs::GENEVA,
+  SpaceIDs::LYON,
+  SpaceIDs::BESANCON,
+  SpaceIDs::BASEL,
+  SpaceIDs::GRENOBLE],
+"id" => SpaceIDs::GENEVA,
 "passes" => [
-  CityIDs::TURIN],
+  SpaceIDs::TURIN],
 "seazones" => []
 ],
-CityIDs::NICE => [
+SpaceIDs::NICE => [
 "x" => 2700,
 "y" => 1858,
 "name" => "Nice",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::FRENCH,
 "connections" => [
-  CityIDs::MARSEILLE],
-"id" => CityIDs::NICE,
+  SpaceIDs::MARSEILLE],
+"id" => SpaceIDs::NICE,
 "passes" => [
-  CityIDs::GENOA],
+  SpaceIDs::GENOA],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::ROME => [
+SpaceIDs::ROME => [
 "x" => 3241,
 "y" => 2045,
 "name" => "Rome",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::SIENA,
-  CityIDs::ANCONA,
-  CityIDs::CERIGNOLA],
-"id" => CityIDs::ROME,
+  SpaceIDs::NAPLES,
+  SpaceIDs::SIENA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::CERIGNOLA],
+"id" => SpaceIDs::ROME,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::RAVENNA => [
+SpaceIDs::RAVENNA => [
 "x" => 3247,
 "y" => 1720,
 "name" => "Ravenna",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::ANCONA,
-  CityIDs::VENICE,
-  CityIDs::MODENA],
-"id" => CityIDs::RAVENNA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::VENICE,
+  SpaceIDs::MODENA],
+"id" => SpaceIDs::RAVENNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ANCONA => [
+SpaceIDs::ANCONA => [
 "x" => 3357,
 "y" => 1878,
 "name" => "Ancona",
 "home_power" => Powers::PAPACY,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::RAVENNA,
-  CityIDs::ROME,
-  CityIDs::CERIGNOLA],
-"id" => CityIDs::ANCONA,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::ROME,
+  SpaceIDs::CERIGNOLA],
+"id" => SpaceIDs::ANCONA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::NAPLES => [
+SpaceIDs::NAPLES => [
 "x" => 3475,
 "y" => 2213,
 "name" => "Naples",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TARANTO,
-  CityIDs::ROME,
-  CityIDs::MESSINA],
-"id" => CityIDs::NAPLES,
+  SpaceIDs::TARANTO,
+  SpaceIDs::ROME,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::NAPLES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::TRIESTE => [
+SpaceIDs::TRIESTE => [
 "x" => 3375,
 "y" => 1515,
 "name" => "Trieste",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::VENICE,
-  CityIDs::GRAZ,
-  CityIDs::AGRAM,
-  CityIDs::ZARA],
-"id" => CityIDs::TRIESTE,
+  SpaceIDs::VENICE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::AGRAM,
+  SpaceIDs::ZARA],
+"id" => SpaceIDs::TRIESTE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::CERIGNOLA => [
+SpaceIDs::CERIGNOLA => [
 "x" => 3544,
 "y" => 2042,
 "name" => "Cerignola",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::ANCONA,
-  CityIDs::ROME,
-  CityIDs::TARANTO],
-"id" => CityIDs::CERIGNOLA,
+  SpaceIDs::ANCONA,
+  SpaceIDs::ROME,
+  SpaceIDs::TARANTO],
+"id" => SpaceIDs::CERIGNOLA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TARANTO => [
+SpaceIDs::TARANTO => [
 "x" => 3716,
 "y" => 2205,
 "name" => "Taranto",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::CERIGNOLA,
-  CityIDs::MESSINA],
-"id" => CityIDs::TARANTO,
+  SpaceIDs::NAPLES,
+  SpaceIDs::CERIGNOLA,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::TARANTO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::MESSINA => [
+SpaceIDs::MESSINA => [
 "x" => 3594,
 "y" => 2553,
 "name" => "Messina",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::NAPLES,
-  CityIDs::PALERMO,
-  CityIDs::TARANTO],
-"id" => CityIDs::MESSINA,
+  SpaceIDs::NAPLES,
+  SpaceIDs::PALERMO,
+  SpaceIDs::TARANTO],
+"id" => SpaceIDs::MESSINA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::PALERMO => [
+SpaceIDs::PALERMO => [
 "x" => 3378,
 "y" => 2546,
 "name" => "Palermo",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MESSINA],
-"id" => CityIDs::PALERMO,
+  SpaceIDs::MESSINA],
+"id" => SpaceIDs::PALERMO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::GENOA => [
+SpaceIDs::GENOA => [
 "x" => 2844,
 "y" => 1750,
 "name" => "Genoa",
 "home_power" => Powers::MINOR_GENOA,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TURIN,
-  CityIDs::PAVIA,
-  CityIDs::FLORENCE,
-  CityIDs::SIENA],
-"id" => CityIDs::GENOA,
+  SpaceIDs::TURIN,
+  SpaceIDs::PAVIA,
+  SpaceIDs::FLORENCE,
+  SpaceIDs::SIENA],
+"id" => SpaceIDs::GENOA,
 "passes" => [
-  CityIDs::NICE],
+  SpaceIDs::NICE],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::VENICE => [
+SpaceIDs::VENICE => [
 "x" => 3205,
 "y" => 1524,
 "name" => "Venice",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TRENT,
-  CityIDs::MODENA,
-  CityIDs::RAVENNA,
-  CityIDs::TRIESTE],
-"id" => CityIDs::VENICE,
+  SpaceIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::TRIESTE],
+"id" => SpaceIDs::VENICE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::MILAN => [
+SpaceIDs::MILAN => [
 "x" => 2864,
 "y" => 1495,
 "name" => "Milan",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::TRENT,
-  CityIDs::MODENA,
-  CityIDs::PAVIA,
-  CityIDs::TURIN],
-"id" => CityIDs::MILAN,
+  SpaceIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::PAVIA,
+  SpaceIDs::TURIN],
+"id" => SpaceIDs::MILAN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::FLORENCE => [
+SpaceIDs::FLORENCE => [
 "x" => 3094,
 "y" => 1769,
 "name" => "Florence",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MODENA,
-  CityIDs::GENOA,
-  CityIDs::SIENA],
-"id" => CityIDs::FLORENCE,
+  SpaceIDs::MODENA,
+  SpaceIDs::GENOA,
+  SpaceIDs::SIENA],
+"id" => SpaceIDs::FLORENCE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::TURIN => [
+SpaceIDs::TURIN => [
 "x" => 2702,
 "y" => 1655,
 "name" => "Turin",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::PAVIA,
-  CityIDs::GENOA],
-"id" => CityIDs::TURIN,
+  SpaceIDs::MILAN,
+  SpaceIDs::PAVIA,
+  SpaceIDs::GENOA],
+"id" => SpaceIDs::TURIN,
 "passes" => [
-  CityIDs::GENEVA],
+  SpaceIDs::GENEVA],
 "seazones" => []
 ],
-CityIDs::TRENT => [
+SpaceIDs::TRENT => [
 "x" => 3051,
 "y" => 1436,
 "name" => "Trent",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MODENA,
-  CityIDs::VENICE,
-  CityIDs::MILAN],
-"id" => CityIDs::TRENT,
+  SpaceIDs::MODENA,
+  SpaceIDs::VENICE,
+  SpaceIDs::MILAN],
+"id" => SpaceIDs::TRENT,
 "passes" => [
-  CityIDs::INNSBRUCK],
+  SpaceIDs::INNSBRUCK],
 "seazones" => []
 ],
-CityIDs::MODENA => [
+SpaceIDs::MODENA => [
 "x" => 3069,
 "y" => 1613,
 "name" => "Modena",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::VENICE,
-  CityIDs::RAVENNA,
-  CityIDs::PAVIA,
-  CityIDs::FLORENCE],
-"id" => CityIDs::MODENA,
+  SpaceIDs::MILAN,
+  SpaceIDs::VENICE,
+  SpaceIDs::RAVENNA,
+  SpaceIDs::PAVIA,
+  SpaceIDs::FLORENCE],
+"id" => SpaceIDs::MODENA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::PAVIA => [
+SpaceIDs::PAVIA => [
 "x" => 2917,
 "y" => 1630,
 "name" => "Pavia",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::MILAN,
-  CityIDs::MODENA,
-  CityIDs::GENOA,
-  CityIDs::TURIN],
-"id" => CityIDs::PAVIA,
+  SpaceIDs::MILAN,
+  SpaceIDs::MODENA,
+  SpaceIDs::GENOA,
+  SpaceIDs::TURIN],
+"id" => SpaceIDs::PAVIA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SIENA => [
+SpaceIDs::SIENA => [
 "x" => 3106,
 "y" => 1932,
 "name" => "Siena",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::ITALIAN,
 "connections" => [
-  CityIDs::FLORENCE,
-  CityIDs::ROME,
-  CityIDs::GENOA],
-"id" => CityIDs::SIENA,
+  SpaceIDs::FLORENCE,
+  SpaceIDs::ROME,
+  SpaceIDs::GENOA],
+"id" => SpaceIDs::SIENA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::VALLADOLID => [
+SpaceIDs::VALLADOLID => [
 "x" => 1514,
 "y" => 2180,
 "name" => "Valladolid",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::MADRID,
-  CityIDs::BILBAO,
-  CityIDs::CORUNNA],
-"id" => CityIDs::VALLADOLID,
+  SpaceIDs::MADRID,
+  SpaceIDs::BILBAO,
+  SpaceIDs::CORUNNA],
+"id" => SpaceIDs::VALLADOLID,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NAVARRE => [
+SpaceIDs::NAVARRE => [
 "x" => 1822,
 "y" => 1939,
 "name" => "Navarre",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::ZARAGOZA],
-"id" => CityIDs::NAVARRE,
+  SpaceIDs::BILBAO,
+  SpaceIDs::ZARAGOZA],
+"id" => SpaceIDs::NAVARRE,
 "passes" => [
-  CityIDs::BORDEAUX],
+  SpaceIDs::BORDEAUX],
 "seazones" => []
 ],
-CityIDs::BARCELONA => [
+SpaceIDs::BARCELONA => [
 "x" => 2227,
 "y" => 2186,
 "name" => "Barcelona",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::ZARAGOZA,
-  CityIDs::VALENCIA],
-"id" => CityIDs::BARCELONA,
+  SpaceIDs::ZARAGOZA,
+  SpaceIDs::VALENCIA],
+"id" => SpaceIDs::BARCELONA,
 "passes" => [
-  CityIDs::TOULOUSE],
+  SpaceIDs::TOULOUSE],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::SEVILLE => [
+SpaceIDs::SEVILLE => [
 "x" => 1442,
 "y" => 2766,
 "name" => "Seville",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORDOBA,
-  CityIDs::GIBRALTAR],
-"id" => CityIDs::SEVILLE,
+  SpaceIDs::CORDOBA,
+  SpaceIDs::GIBRALTAR],
+"id" => SpaceIDs::SEVILLE,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ATLANTIC_OCEAN]
 ],
-CityIDs::GIBRALTAR => [
+SpaceIDs::GIBRALTAR => [
 "x" => 1494,
 "y" => 2945,
 "name" => "Gibraltar",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::SEVILLE,
-  CityIDs::GRANADA],
-"id" => CityIDs::GIBRALTAR,
+  SpaceIDs::SEVILLE,
+  SpaceIDs::GRANADA],
+"id" => SpaceIDs::GIBRALTAR,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ATLANTIC_OCEAN]
 ],
-CityIDs::CORUNNA => [
+SpaceIDs::CORUNNA => [
 "x" => 1136,
 "y" => 1996,
 "name" => "Corunna",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::VALLADOLID],
-"id" => CityIDs::CORUNNA,
+  SpaceIDs::BILBAO,
+  SpaceIDs::VALLADOLID],
+"id" => SpaceIDs::CORUNNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BAY_OF_BISCAY]
 ],
-CityIDs::BILBAO => [
+SpaceIDs::BILBAO => [
 "x" => 1653,
 "y" => 1950,
 "name" => "Bilbao",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORUNNA,
-  CityIDs::VALLADOLID,
-  CityIDs::NAVARRE,
-  CityIDs::ZARAGOZA],
-"id" => CityIDs::BILBAO,
+  SpaceIDs::CORUNNA,
+  SpaceIDs::VALLADOLID,
+  SpaceIDs::NAVARRE,
+  SpaceIDs::ZARAGOZA],
+"id" => SpaceIDs::BILBAO,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ZARAGOZA => [
+SpaceIDs::ZARAGOZA => [
 "x" => 1897,
 "y" => 2150,
 "name" => "Zaragoza",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::BILBAO,
-  CityIDs::MADRID,
-  CityIDs::NAVARRE,
-  CityIDs::BARCELONA],
-"id" => CityIDs::ZARAGOZA,
+  SpaceIDs::BILBAO,
+  SpaceIDs::MADRID,
+  SpaceIDs::NAVARRE,
+  SpaceIDs::BARCELONA],
+"id" => SpaceIDs::ZARAGOZA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MADRID => [
+SpaceIDs::MADRID => [
 "x" => 1670,
 "y" => 2358,
 "name" => "Madrid",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::VALLADOLID,
-  CityIDs::ZARAGOZA,
-  CityIDs::VALENCIA,
-  CityIDs::CORDOBA],
-"id" => CityIDs::MADRID,
+  SpaceIDs::VALLADOLID,
+  SpaceIDs::ZARAGOZA,
+  SpaceIDs::VALENCIA,
+  SpaceIDs::CORDOBA],
+"id" => SpaceIDs::MADRID,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::VALENCIA => [
+SpaceIDs::VALENCIA => [
 "x" => 1992,
 "y" => 2457,
 "name" => "Valencia",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::MADRID,
-  CityIDs::BARCELONA,
-  CityIDs::CARTAGENA],
-"id" => CityIDs::VALENCIA,
+  SpaceIDs::MADRID,
+  SpaceIDs::BARCELONA,
+  SpaceIDs::CARTAGENA],
+"id" => SpaceIDs::VALENCIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::PALMA => [
+SpaceIDs::PALMA => [
 "x" => 2341,
 "y" => 2392,
 "name" => "Palma",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [],
-"id" => CityIDs::PALMA,
+"id" => SpaceIDs::PALMA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::CORDOBA => [
+SpaceIDs::CORDOBA => [
 "x" => 1566,
 "y" => 2654,
 "name" => "Cordoba",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::SEVILLE,
-  CityIDs::GRANADA,
-  CityIDs::MADRID],
-"id" => CityIDs::CORDOBA,
+  SpaceIDs::SEVILLE,
+  SpaceIDs::GRANADA,
+  SpaceIDs::MADRID],
+"id" => SpaceIDs::CORDOBA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::GRANADA => [
+SpaceIDs::GRANADA => [
 "x" => 1676,
 "y" => 2781,
 "name" => "Granada",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::CORDOBA,
-  CityIDs::GIBRALTAR,
-  CityIDs::CARTAGENA],
-"id" => CityIDs::GRANADA,
+  SpaceIDs::CORDOBA,
+  SpaceIDs::GIBRALTAR,
+  SpaceIDs::CARTAGENA],
+"id" => SpaceIDs::GRANADA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::CARTAGENA => [
+SpaceIDs::CARTAGENA => [
 "x" => 1949,
 "y" => 2716,
 "name" => "Cartagena",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::SPANISH,
 "connections" => [
-  CityIDs::VALENCIA,
-  CityIDs::GRANADA],
-"id" => CityIDs::CARTAGENA,
+  SpaceIDs::VALENCIA,
+  SpaceIDs::GRANADA],
+"id" => SpaceIDs::CARTAGENA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::ISTANBUL => [
+SpaceIDs::ISTANBUL => [
 "x" => 4892,
 "y" => 2014,
 "name" => "Istanbul",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::VARNA],
-"id" => CityIDs::ISTANBUL,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::VARNA],
+"id" => SpaceIDs::ISTANBUL,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BLACK_SEA]
 ],
-CityIDs::EDIRNE => [
+SpaceIDs::EDIRNE => [
 "x" => 4651,
 "y" => 1964,
 "name" => "Edirne",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ISTANBUL,
-  CityIDs::VARNA,
-  CityIDs::SOFIA,
-  CityIDs::SALONIKA],
-"id" => CityIDs::EDIRNE,
+  SpaceIDs::ISTANBUL,
+  SpaceIDs::VARNA,
+  SpaceIDs::SOFIA,
+  SpaceIDs::SALONIKA],
+"id" => SpaceIDs::EDIRNE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SALONIKA => [
+SpaceIDs::SALONIKA => [
 "x" => 4283,
 "y" => 2134,
 "name" => "Salonika",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::LARISSA],
-"id" => CityIDs::SALONIKA,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::LARISSA],
+"id" => SpaceIDs::SALONIKA,
 "passes" => [
-  CityIDs::SOFIA],
+  SpaceIDs::SOFIA],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::ATHENS => [
+SpaceIDs::ATHENS => [
 "x" => 4404,
 "y" => 2470,
 "name" => "Athens",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::LARISSA,
-  CityIDs::LEPANTO,
-  CityIDs::CORON],
-"id" => CityIDs::ATHENS,
+  SpaceIDs::LARISSA,
+  SpaceIDs::LEPANTO,
+  SpaceIDs::CORON],
+"id" => SpaceIDs::ATHENS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::SCUTARI => [
+SpaceIDs::SCUTARI => [
 "x" => 3937,
 "y" => 1984,
 "name" => "Scutari",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::DURAZZO,
-  CityIDs::RAGUSA],
-"id" => CityIDs::SCUTARI,
+  SpaceIDs::DURAZZO,
+  SpaceIDs::RAGUSA],
+"id" => SpaceIDs::SCUTARI,
 "passes" => [
-  CityIDs::NEZH],
+  SpaceIDs::NEZH],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::VARNA => [
+SpaceIDs::VARNA => [
 "x" => 4772,
 "y" => 1747,
 "name" => "Varna",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUCHAREST,
-  CityIDs::EDIRNE,
-  CityIDs::ISTANBUL],
-"id" => CityIDs::VARNA,
+  SpaceIDs::BUCHAREST,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::ISTANBUL],
+"id" => SpaceIDs::VARNA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BLACK_SEA]
 ],
-CityIDs::BUCHAREST => [
+SpaceIDs::BUCHAREST => [
 "x" => 4576,
 "y" => 1552,
 "name" => "Bucharest",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::NICOPOLIS,
-  CityIDs::VARNA],
-"id" => CityIDs::BUCHAREST,
+  SpaceIDs::NICOPOLIS,
+  SpaceIDs::VARNA],
+"id" => SpaceIDs::BUCHAREST,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::NICOPOLIS => [
+SpaceIDs::NICOPOLIS => [
 "x" => 4454,
 "y" => 1694,
 "name" => "Nicopolis",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUCHAREST,
-  CityIDs::BELGRADE],
-"id" => CityIDs::NICOPOLIS,
+  SpaceIDs::BUCHAREST,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::NICOPOLIS,
 "passes" => [
-  CityIDs::SOFIA],
+  SpaceIDs::SOFIA],
 "seazones" => []
 ],
-CityIDs::SOFIA => [
+SpaceIDs::SOFIA => [
 "x" => 4392,
 "y" => 1890,
 "name" => "Sofia",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::EDIRNE,
-  CityIDs::NEZH],
-"id" => CityIDs::SOFIA,
+  SpaceIDs::EDIRNE,
+  SpaceIDs::NEZH],
+"id" => SpaceIDs::SOFIA,
 "passes" => [
-  CityIDs::NICOPOLIS],
+  SpaceIDs::NICOPOLIS],
 "seazones" => []
 ],
-CityIDs::LARISSA => [
+SpaceIDs::LARISSA => [
 "x" => 4249,
 "y" => 2307,
 "name" => "Larissa",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SALONIKA,
-  CityIDs::LEPANTO,
-  CityIDs::ATHENS],
-"id" => CityIDs::LARISSA,
+  SpaceIDs::SALONIKA,
+  SpaceIDs::LEPANTO,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::LARISSA,
 "passes" => [
-  CityIDs::DURAZZO],
+  SpaceIDs::DURAZZO],
 "seazones" => []
 ],
-CityIDs::LEPANTO => [
+SpaceIDs::LEPANTO => [
 "x" => 4177,
 "y" => 2446,
 "name" => "Lepanto",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::LARISSA,
-  CityIDs::ATHENS],
-"id" => CityIDs::LEPANTO,
+  SpaceIDs::LARISSA,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::LEPANTO,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::CORON => [
+SpaceIDs::CORON => [
 "x" => 4264,
 "y" => 2634,
 "name" => "Coron",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ATHENS],
-"id" => CityIDs::CORON,
+  SpaceIDs::ATHENS],
+"id" => SpaceIDs::CORON,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::NEZH => [
+SpaceIDs::NEZH => [
 "x" => 4188,
 "y" => 1777,
 "name" => "Nezh",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BELGRADE,
-  CityIDs::SOFIA],
-"id" => CityIDs::NEZH,
+  SpaceIDs::BELGRADE,
+  SpaceIDs::SOFIA],
+"id" => SpaceIDs::NEZH,
 "passes" => [
-  CityIDs::SCUTARI],
+  SpaceIDs::SCUTARI],
 "seazones" => []
 ],
-CityIDs::DURAZZO => [
+SpaceIDs::DURAZZO => [
 "x" => 3963,
 "y" => 2164,
 "name" => "Durazzo",
 "home_power" => Powers::OTTOMAN,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SCUTARI],
-"id" => CityIDs::DURAZZO,
+  SpaceIDs::SCUTARI],
+"id" => SpaceIDs::DURAZZO,
 "passes" => [
-  CityIDs::LARISSA],
+  SpaceIDs::LARISSA],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ALGIERS => [
+SpaceIDs::ALGIERS => [
 "x" => 2394,
 "y" => 2779,
 "name" => "Algiers",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::ALGIERS,
+"id" => SpaceIDs::ALGIERS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::ORAN => [
+SpaceIDs::ORAN => [
 "x" => 2021,
 "y" => 2944,
 "name" => "Oran",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::ORAN,
+"id" => SpaceIDs::ORAN,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::TRIPOLI => [
+SpaceIDs::TRIPOLI => [
 "x" => 3435,
 "y" => 3153,
 "name" => "Tripoli",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::TRIPOLI,
+"id" => SpaceIDs::TRIPOLI,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_AFRICAN_COAST]
 ],
-CityIDs::BELGRADE => [
+SpaceIDs::BELGRADE => [
 "x" => 4010,
 "y" => 1574,
 "name" => "Belgrade",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::NICOPOLIS,
-  CityIDs::NEZH,
-  CityIDs::SZEGEDIN,
-  CityIDs::MOHACS,
-  CityIDs::AGRAM],
-"id" => CityIDs::BELGRADE,
+  SpaceIDs::NICOPOLIS,
+  SpaceIDs::NEZH,
+  SpaceIDs::SZEGEDIN,
+  SpaceIDs::MOHACS,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::BELGRADE,
 "passes" => [
-  CityIDs::RAGUSA],
+  SpaceIDs::RAGUSA],
 "seazones" => []
 ],
-CityIDs::BUDA => [
+SpaceIDs::BUDA => [
 "x" => 3865,
 "y" => 1232,
 "name" => "Buda",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::SZEGEDIN,
-  CityIDs::MOHACS,
-  CityIDs::PRESSBURG],
-"id" => CityIDs::BUDA,
+  SpaceIDs::SZEGEDIN,
+  SpaceIDs::MOHACS,
+  SpaceIDs::PRESSBURG],
+"id" => SpaceIDs::BUDA,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::PRAGUE => [
+SpaceIDs::PRAGUE => [
 "x" => 3346,
 "y" => 912,
 "name" => "Prague",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRUNN,
-  CityIDs::LINZ,
-  CityIDs::WITTENBERG,
-  CityIDs::LEIPZIG],
-"id" => CityIDs::PRAGUE,
+  SpaceIDs::BRUNN,
+  SpaceIDs::LINZ,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::LEIPZIG],
+"id" => SpaceIDs::PRAGUE,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::SZEGEDIN => [
+SpaceIDs::SZEGEDIN => [
 "x" => 3964,
 "y" => 1393,
 "name" => "Szegedin",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::BELGRADE],
-"id" => CityIDs::SZEGEDIN,
+  SpaceIDs::BUDA,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::SZEGEDIN,
 "passes" => [
-  CityIDs::NICOPOLIS],
+  SpaceIDs::NICOPOLIS],
 "seazones" => []
 ],
-CityIDs::PRESSBURG => [
+SpaceIDs::PRESSBURG => [
 "x" => 3731,
 "y" => 1207,
 "name" => "Pressburg",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::VIENNA],
-"id" => CityIDs::PRESSBURG,
+  SpaceIDs::BUDA,
+  SpaceIDs::VIENNA],
+"id" => SpaceIDs::PRESSBURG,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::MOHACS => [
+SpaceIDs::MOHACS => [
 "x" => 3829,
 "y" => 1477,
 "name" => "Mohacs",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BUDA,
-  CityIDs::BELGRADE,
-  CityIDs::GRAZ,
-  CityIDs::AGRAM],
-"id" => CityIDs::MOHACS,
+  SpaceIDs::BUDA,
+  SpaceIDs::BELGRADE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::AGRAM],
+"id" => SpaceIDs::MOHACS,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::AGRAM => [
+SpaceIDs::AGRAM => [
 "x" => 3578,
 "y" => 1496,
 "name" => "Agram",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::TRIESTE,
-  CityIDs::GRAZ,
-  CityIDs::MOHACS,
-  CityIDs::BELGRADE],
-"id" => CityIDs::AGRAM,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::GRAZ,
+  SpaceIDs::MOHACS,
+  SpaceIDs::BELGRADE],
+"id" => SpaceIDs::AGRAM,
 "passes" => [
-  CityIDs::ZARA],
+  SpaceIDs::ZARA],
 "seazones" => []
 ],
-CityIDs::BRUNN => [
+SpaceIDs::BRUNN => [
 "x" => 3645,
 "y" => 966,
 "name" => "Brunn",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRESLAU,
-  CityIDs::PRAGUE,
-  CityIDs::VIENNA],
-"id" => CityIDs::BRUNN,
+  SpaceIDs::BRESLAU,
+  SpaceIDs::PRAGUE,
+  SpaceIDs::VIENNA],
+"id" => SpaceIDs::BRUNN,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::BRESLAU => [
+SpaceIDs::BRESLAU => [
 "x" => 3585,
 "y" => 765,
 "name" => "Breslau",
 "home_power" => Powers::MINOR_HUNGARY,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::BRUNN,
-  CityIDs::WITTENBERG,
-  CityIDs::BRANDENBURG],
-"id" => CityIDs::BRESLAU,
+  SpaceIDs::BRUNN,
+  SpaceIDs::WITTENBERG,
+  SpaceIDs::BRANDENBURG],
+"id" => SpaceIDs::BRESLAU,
 "passes" => [],
 "seazones" => []
 ],
-CityIDs::ANTWERP => [
+SpaceIDs::ANTWERP => [
 "x" => 2287,
 "y" => 795,
 "name" => "Antwerp",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::CALAIS,
-  CityIDs::LIEGE,
-  CityIDs::BRUSSELS,
-  CityIDs::AMSTERDAM],
-"id" => CityIDs::ANTWERP,
+  SpaceIDs::CALAIS,
+  SpaceIDs::LIEGE,
+  SpaceIDs::BRUSSELS,
+  SpaceIDs::AMSTERDAM],
+"id" => SpaceIDs::ANTWERP,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::MALTA => [
+SpaceIDs::MALTA => [
 "x" => 3498,
 "y" => 2839,
 "name" => "Malta",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::MALTA,
+"id" => SpaceIDs::MALTA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::IONIAN_SEA]
 ],
-CityIDs::CAGLIARI => [
+SpaceIDs::CAGLIARI => [
 "x" => 2949,
 "y" => 2448,
 "name" => "Cagliari",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CAGLIARI,
+"id" => SpaceIDs::CAGLIARI,
 "passes" => [],
 "seazones" => [
   SeazoneIds::TYRRHENIAN_SEA]
 ],
-CityIDs::AMSTERDAM => [
+SpaceIDs::AMSTERDAM => [
 "x" => 2363,
 "y" => 672,
 "name" => "Amsterdam",
 "home_power" => Powers::HAPSBURG,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ANTWERP,
-  CityIDs::MUNSTER],
-"id" => CityIDs::AMSTERDAM,
+  SpaceIDs::ANTWERP,
+  SpaceIDs::MUNSTER],
+"id" => SpaceIDs::AMSTERDAM,
 "passes" => [],
 "seazones" => [
   SeazoneIds::NORTH_SEA]
 ],
-CityIDs::CANDIA => [
+SpaceIDs::CANDIA => [
 "x" => 4603,
 "y" => 2791,
 "name" => "Candia",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CANDIA,
+"id" => SpaceIDs::CANDIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::CORFU => [
+SpaceIDs::CORFU => [
 "x" => 3987,
 "y" => 2333,
 "name" => "Corfu",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::CORFU,
+"id" => SpaceIDs::CORFU,
 "passes" => [],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ],
-CityIDs::ZARA => [
+SpaceIDs::ZARA => [
 "x" => 3492,
 "y" => 1696,
 "name" => "Zara",
 "home_power" => Powers::MINOR_VENICE,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::TRIESTE,
-  CityIDs::RAGUSA],
-"id" => CityIDs::ZARA,
+  SpaceIDs::TRIESTE,
+  SpaceIDs::RAGUSA],
+"id" => SpaceIDs::ZARA,
 "passes" => [
-  CityIDs::AGRAM],
+  SpaceIDs::AGRAM],
 "seazones" => []
 ],
-CityIDs::BASTIA => [
+SpaceIDs::BASTIA => [
 "x" => 2903,
 "y" => 1951,
 "name" => "Bastia",
 "home_power" => Powers::MINOR_GENOA,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::BASTIA,
+"id" => SpaceIDs::BASTIA,
 "passes" => [],
 "seazones" => [
   SeazoneIds::GULF_OF_LYON]
 ],
-CityIDs::TUNIS => [
+SpaceIDs::TUNIS => [
 "x" => 3064,
 "y" => 2720,
 "name" => "Tunis",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::TUNIS,
+"id" => SpaceIDs::TUNIS,
 "passes" => [],
 "seazones" => [
   SeazoneIds::BARBARY_COAST]
 ],
-CityIDs::RHODES => [
+SpaceIDs::RHODES => [
 "x" => 4851,
 "y" => 2646,
 "name" => "Rhodes",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [],
-"id" => CityIDs::RHODES,
+"id" => SpaceIDs::RHODES,
 "passes" => [],
 "seazones" => [
   SeazoneIds::AEGEAN_SEA]
 ],
-CityIDs::RAGUSA => [
+SpaceIDs::RAGUSA => [
 "x" => 3779,
 "y" => 1874,
 "name" => "Ragusa",
 "home_power" => Powers::INDEPENDENT,
 "language" => LanguageZones::OTHER,
 "connections" => [
-  CityIDs::ZARA,
-  CityIDs::SCUTARI],
-"id" => CityIDs::RAGUSA,
+  SpaceIDs::ZARA,
+  SpaceIDs::SCUTARI],
+"id" => SpaceIDs::RAGUSA,
 "passes" => [
-  CityIDs::BELGRADE],
+  SpaceIDs::BELGRADE],
 "seazones" => [
   SeazoneIds::ADRIATIC_SEA]
 ]

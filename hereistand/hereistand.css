@@ -1451,10 +1451,10 @@
 .map_node {
   position: absolute; }
 
-.city {
+.space {
   position: relative; }
 
-.city:hover {
+.space:hover {
   position: absolute;
   display: flex;
   width: 300px;
@@ -1462,13 +1462,13 @@
   z-index: 4;
   transform-origin: 0 0;
   transform: scale(2); }
-  .city:hover .token {
+  .space:hover .token {
     position: relative;
     z-index: 5; }
-  .city:hover .Units.Naval {
+  .space:hover .Units.Naval {
     left: -50px; }
 
-#city_3097:hover {
+#space_3097:hover {
   transform: translateX(-400px) scale(2);
   position: absolute;
   display: flex;
@@ -1476,10 +1476,10 @@
   flex-wrap: wrap;
   z-index: 4;
   transform-origin: 0 0; }
-  #city_3097:hover .token {
+  #space_3097:hover .token {
     position: relative;
     z-index: 5; }
-  #city_3097:hover .Units.Naval {
+  #space_3097:hover .Units.Naval {
     left: -50px; }
 
 .location:hover {
@@ -1550,11 +1550,11 @@
 .selectable {
   cursor: pointer; }
 
-.city-selector.selectable {
+.space-selector.selectable {
   border: 15px solid green;
   z-index: 100; }
 
-.city-selector {
+.space-selector {
   position: absolute;
   top: -70px;
   left: -70px;

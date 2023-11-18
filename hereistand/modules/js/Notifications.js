@@ -12,7 +12,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_moveFormation(args){
-      const dest = `city_${args.args.city.id}`;
+      const dest = `space_${args.args.space.id}`;
       const formation = args.args.formation;
       for(let token of formation){
         this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});
@@ -20,10 +20,10 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_buyUnit(args){
-      // place token on city
+      // place token on space
       console.log("Notifications::notif_buyUnit");
       const start = `player_board_${args.args.player_id}`;
-      const dest = `city_${args.args.city.id}`;
+      const dest = `space_${args.args.space.id}`;
       const token = args.args.token;
       this.place('tplToken', token, start);
       console.log("Notifications::notif_buyUnit: token.id="+token.id+", dest="+dest)

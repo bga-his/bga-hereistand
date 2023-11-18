@@ -10,9 +10,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
           this.place('tplToken', token, `${token.location_type}_${token.location_id}`);// This somehow includes tokens on player boards.
         }
       }
-      for(const city_node of dojo.query('.city')){
-        const city_id = city_node.id.split('_')[1];
-        this.place('tplCitySelector', city_id, city_node);//invisible, used to select citys (e.g. to build untis), I guess?
+      for(const space_node of dojo.query('.space')){
+        const space_id = space_node.id.split('_')[1];
+        this.place('tplSpaceSelector', space_id, space_node);//invisible, used to select spaces (e.g. to build untis), I guess?
       }
     },
 
@@ -24,9 +24,9 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       `;
     },
 
-    tplCitySelector(city_id){
+    tplSpaceSelector(space_id){
       return `
-        <div id="cityselector_${city_id}" class="city-selector">
+        <div id="spaceselector_${space_id}" class="space-selector">
         </div>
       `;
 

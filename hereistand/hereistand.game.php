@@ -86,7 +86,7 @@ class hereistand extends Table {
 		Notifications::message("keyLocation=".getType($keyLocations)." ".$keyLocations);
 		//$keyLocations = $keyLocations;
 		//powercards_location_
-		//map_city_
+		//map_space_
 		//supply_england_
 		//supply_other_
 		$tmp = Tokens::getInLocation($keyLocations);
@@ -194,8 +194,8 @@ class hereistand extends Table {
 		Actions::declareCasualties($token_ids);
 	}
 
-	function actPickCity($city_id) {
-		Actions::pickCity($city_id, self::getStateName());
+	function actPickSpace($space_id) {
+		Actions::pickSpace($space_id, self::getStateName());
 	}
 
 	function actBuyUnit($unit_type) {

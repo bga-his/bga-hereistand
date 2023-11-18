@@ -346,7 +346,7 @@ class Pieces extends DB_Manager {
 	public static function move($ids, $location, $state = 0) {
 		//ids As array of numbericalStings: ids of the pices to move
 		//if $ids in cardIds then location has to be in ?
-		//if $ids in LandUnitTokens then location in cityIds|?
+		//if $ids in LandUnitTokens then location in spaceIds|?
 		// ...
 
 		if (!is_array($ids)) {

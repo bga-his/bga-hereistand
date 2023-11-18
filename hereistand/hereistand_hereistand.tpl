@@ -2,10 +2,10 @@
 	<div id="board-wrapper">
 		<div id='board'>
 			<div id='map'>
-				<div id='cities'>
-				    <!-- BEGIN city -->
-				        <div id="city_{ID}" class="map_node city" style="left: {X}px; top: {Y}px;" data-name="{NAME}"></div>
-				    <!-- END city -->
+				<div id='spaces'>
+				    <!-- BEGIN space -->
+				        <div id="space_{ID}" class="map_node space" style="left: {X}px; top: {Y}px;" data-name="{NAME}"></div>
+				    <!-- END space -->
 				</div>
 				<div id='map-locations'>
 				    <!-- BEGIN map_location -->

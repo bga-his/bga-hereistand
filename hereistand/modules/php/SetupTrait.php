@@ -3,7 +3,7 @@ namespace HIS;
 
 use TokenIDs;
 use LocationIDs;
-use CityIDs;
+use SpaceIDs;
 use Powers;
 use tokenIDs_LEADER;
 use tokenIDs_UNITS;
@@ -96,7 +96,7 @@ trait SetupTrait {
 	public function getSetup() {
 		$setup_base = [
 			Powers::OTTOMAN => [
-				cityIds::ISTANBUL => [
+				SpaceIDs::ISTANBUL => [
 					tokenIDs_LEADER::SULEIMAN,
 					tokenIDs_LEADER::IBRAHIM,
 					tokenIDs_UNITS::OTTOMAN_6UNIT,
@@ -105,135 +105,135 @@ trait SetupTrait {
 					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 					tokenIDs_UNITS::OTTOMAN_1UNIT,
 				],
-				cityIds::EDIRNE => [
+				SpaceIDs::EDIRNE => [
 					tokenIDs_UNITS::OTTOMAN_1UNIT,
 					tokenIDs_CONTROL::OTTOMAN_KEY,
 				],
-				cityIds::SALONIKA => [
+				SpaceIDs::SALONIKA => [
 					tokenIDs_UNITS::OTTOMAN_1UNIT,
 					tokenIDs_CONTROL::OTTOMAN_KEY,
 					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
-				cityIds::ATHENS => [
+				SpaceIDs::ATHENS => [
 					tokenIDs_UNITS::OTTOMAN_1UNIT,
 					tokenIDs_CONTROL::OTTOMAN_KEY,
 					tokenIDs_NAVAL::OTTOMAN_SQUADRON,
 				],
 			],
 			Powers::HAPSBURG => [
-				cityIds::VALLADOLID => [
+				SpaceIDs::VALLADOLID => [
 					tokenIDs_LEADER::CHARLES_V,
 					tokenIDs_LEADER::DUKE_ALVA,
 					tokenIDs_UNITS::HAPSBURG_4UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
-				cityIds::SEVILLE => [
+				SpaceIDs::SEVILLE => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
-				cityIds::BARCELONA => [
+				SpaceIDs::BARCELONA => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
-				cityIds::NAVARRE => [
+				SpaceIDs::NAVARRE => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
-				cityIds::TUNIS => [
+				SpaceIDs::TUNIS => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
-				cityIds::NAPLES => [
+				SpaceIDs::NAPLES => [
 					tokenIDs_UNITS::HAPSBURG_2UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 					tokenIDs_NAVAL::HAPSBURG_SQUADRON,
 				],
-				cityIds::BESANCON => [
+				SpaceIDs::BESANCON => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 				],
-				cityIds::BRUSSELS => [
+				SpaceIDs::BRUSSELS => [
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 				],
-				cityIds::VIENNA => [
+				SpaceIDs::VIENNA => [
 					tokenIDs_LEADER::FERDINAND,
 					tokenIDs_UNITS::HAPSBURG_4UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
-				cityIds::ANTWERP => [
+				SpaceIDs::ANTWERP => [
 					tokenIDs_UNITS::HAPSBURG_2UNIT,
 					tokenIDs_UNITS::HAPSBURG_1UNIT,
 					tokenIDs_CONTROL::HAPSBURG_KEY,
 				],
-				cityIds::WITTENBERG => [
+				SpaceIDs::WITTENBERG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::BRANDENBURG => [
+				SpaceIDs::BRANDENBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::MAINZ => [
+				SpaceIDs::MAINZ => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::COLOGNE => [
+				SpaceIDs::COLOGNE => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::TRIER => [
+				SpaceIDs::TRIER => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::AUGSBURG => [
+				SpaceIDs::AUGSBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::STETTIN => [
+				SpaceIDs::STETTIN => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::LUBECK => [
+				SpaceIDs::LUBECK => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::MAGDEBURG => [
+				SpaceIDs::MAGDEBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::HAMBURG => [
+				SpaceIDs::HAMBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::BRUNSWICK => [
+				SpaceIDs::BRUNSWICK => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::BREMEN => [
+				SpaceIDs::BREMEN => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::MUNSTER => [
+				SpaceIDs::MUNSTER => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::KASSEL => [
+				SpaceIDs::KASSEL => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::ERFURT => [
+				SpaceIDs::ERFURT => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::LEIPZIG => [
+				SpaceIDs::LEIPZIG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::NUREMBERG => [
+				SpaceIDs::NUREMBERG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::WORMS => [
+				SpaceIDs::WORMS => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::REGENSBURG => [
+				SpaceIDs::REGENSBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::STRASBURG => [
+				SpaceIDs::STRASBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
-				cityIds::SALZBURG => [
+				SpaceIDs::SALZBURG => [
 					tokenIDs_CONTROL::HAPSBURG_HEX,
 				],
 			],
 			Powers::PROTESTANT => [
 			],
 			Powers::ENGLAND => [
-				cityIds::LONDON => [
+				SpaceIDs::LONDON => [
 					tokenIDs_LEADER::HENRY_VIII,
 					tokenIDs_LEADER::BRANDON,
 					tokenIDs_UNITS::ENGLAND_1UNIT,
@@ -241,83 +241,83 @@ trait SetupTrait {
 					tokenIDs_CONTROL::ENGLAND_KEY,
 					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
-				cityIds::PORTSMOUTH => [
+				SpaceIDs::PORTSMOUTH => [
 					tokenIDs_NAVAL::ENGLISH_SQUADRON,
 				],
-				cityIds::CALAIS => [
+				SpaceIDs::CALAIS => [
 					tokenIDs_UNITS::ENGLAND_2UNIT,
 					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
-				cityIds::YORK => [
+				SpaceIDs::YORK => [
 					tokenIDs_UNITS::ENGLAND_1UNIT,
 					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
-				cityIds::BRISTOL => [
+				SpaceIDs::BRISTOL => [
 					tokenIDs_UNITS::ENGLAND_1UNIT,
 					tokenIDs_CONTROL::ENGLAND_KEY,
 				],
 			],
 			Powers::FRANCE => [
-				cityIds::PARIS => [
+				SpaceIDs::PARIS => [
 					tokenIDs_LEADER::FRANCIS_I,
 					tokenIDs_LEADER::MONTMORENCY,
 					tokenIDs_UNITS::FRANCE_4UNIT,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				cityIds::ROUEN => [
+				SpaceIDs::ROUEN => [
 					tokenIDs_UNITS::FRANCE_1UNIT,
 					tokenIDs_NAVAL::FRENCH_SQUADRON,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				cityIds::BORDEAUX => [
+				SpaceIDs::BORDEAUX => [
 					tokenIDs_UNITS::FRANCE_2UNIT,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				cityIds::LYON => [
+				SpaceIDs::LYON => [
 					tokenIDs_UNITS::FRANCE_1UNIT,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				cityIds::MARSEILLE => [
+				SpaceIDs::MARSEILLE => [
 					tokenIDs_UNITS::FRANCE_1UNIT,
 					tokenIDs_NAVAL::FRENCH_SQUADRON,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
-				cityIds::TURIN => [
+				SpaceIDs::TURIN => [
 					tokenIDs_CONTROL::FRANCE_HEX,
 				],
-				cityIds::MILAN => [
+				SpaceIDs::MILAN => [
 					tokenIDs_UNITS::FRANCE_2UNIT,
 					tokenIDs_CONTROL::FRANCE_KEY,
 				],
 			],
 			Powers::PAPACY => [
-				cityIds::ROME => [
+				SpaceIDs::ROME => [
 					tokenIDs_UNITS::PAPACY_1UNIT,
 					tokenIDs_NAVAL::PAPACY_SQUADRON,
 					tokenIDs_CONTROL::PAPACY_KEY,
 				],
-				cityIds::RAVENNA => [
+				SpaceIDs::RAVENNA => [
 					tokenIDs_UNITS::PAPACY_1UNIT,
 					tokenIDs_CONTROL::PAPACY_KEY,
 				],
 			],
 			Powers::MINOR_VENICE => [
-				cityIds::VENICE => [
+				SpaceIDs::VENICE => [
 					tokenIDs_UNITS::VENICE_1UNIT,
 					tokenIDs_UNITS::VENICE_1UNIT,
 					tokenIDs_NAVAL::VENETIAN_SQUADRON,
 					tokenIDs_NAVAL::VENETIAN_SQUADRON,
 					tokenIDs_NAVAL::VENETIAN_SQUADRON,
 				],
-				cityIds::CORFU => [
+				SpaceIDs::CORFU => [
 					tokenIDs_UNITS::VENICE_1UNIT,
 				],
-				cityIds::CANDIA => [
+				SpaceIDs::CANDIA => [
 					tokenIDs_UNITS::VENICE_1UNIT,
 				],
 			],
 			Powers::MINOR_GENOA => [
-				cityIds::GENOA => [
+				SpaceIDs::GENOA => [
 					tokenIDs_LEADER::ANDREA_DORIA,
 					tokenIDs_UNITS::GENOA_1UNIT,
 					tokenIDs_UNITS::GENOA_1UNIT,
@@ -325,19 +325,19 @@ trait SetupTrait {
 				],
 			],
 			Powers::MINOR_HUNGARY => [
-				cityIds::BELGRADE => [
+				SpaceIDs::BELGRADE => [
 					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
-				cityIds::BUDA => [
+				SpaceIDs::BUDA => [
 					tokenIDs_UNITS::HUNGARY_4UNIT,
 					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
-				cityIds::PRAGUE => [
+				SpaceIDs::PRAGUE => [
 					tokenIDs_UNITS::HUNGARY_1UNIT,
 				],
 			],
 			Powers::MINOR_SCOTLAND => [
-				cityIds::EDINBURGH => [
+				SpaceIDs::EDINBURGH => [
 					tokenIDs_UNITS::SCOTLAND_1UNIT,
 					tokenIDs_UNITS::SCOTLAND_1UNIT,
 					tokenIDs_UNITS::SCOTLAND_1UNIT,
@@ -345,13 +345,13 @@ trait SetupTrait {
 				],
 			],
 			Powers::INDEPENDENT => [
-				cityIds::RHODES => [
+				SpaceIDs::RHODES => [
 					tokenIDs_UNITS::KNIGHTS_1UNIT,
 				],
-				cityIds::METZ => [
+				SpaceIDs::METZ => [
 					tokenIDs_UNITS::INDEPENDENT_1UNIT,
 				],
-				cityIds::FLORENCE => [
+				SpaceIDs::FLORENCE => [
 					tokenIDs_UNITS::INDEPENDENT_1UNIT,
 				],
 			],

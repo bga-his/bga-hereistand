@@ -22,31 +22,33 @@ final class TestingUtils {
 		]);
 	}
 
-	public static function makeTokenInCity($type, $city_id) {
-		return self::makeToken($type, 'map_city_' . $city_id, null);
+	public static function makeTokenInSpace($type, $space_id) {
+		return self::makeToken($type, 'map_space_' . $space_id, null);
 	}
 
-	public static function makeFlippedTokenInCity($type, $city_id) {
-		return self::makeToken($type, 'map_city_' . $city_id, FLIPPED);
+	//TODO: There was a constant named "FLIPPED" here. Need to quote it to make this test work
+	//Should figure out what this constant was
+	public static function makeFlippedTokenInSpace($type, $space_id) {
+		return self::makeToken($type, 'map_space_' . $space_id, TokenSides::BACK);
 	}
 
 	public static function makeStartingTokens() {
 		$tokens = [];
-		foreach (Game::get()->getSetup() as $power => $cities) {
-			foreach ($cities as $city_name => $city) {
-				foreach ($city as $unit) {
-					$tokens[] = self::makeTokenInCity($unit, $city_name);
+		foreach (Game::get()->getSetup() as $power => $spaces) {
+			foreach ($spaces as $space_name => $space) {
+				foreach ($space as $unit) {
+					$tokens[] = self::makeTokenInSpace($unit, $space_name);
 				}
 			}
 		}
 		return $tokens;
 	}
 
-	public function makeQuickTokens($setup) {
+	public static function makeQuickTokens($setup) {
 		$tokens = [];
-		foreach ($setup as $city_name => $city) {
-			foreach ($city as $unit) {
-				$tokens[] = self::makeTokenInCity($unit, $city_name);
+		foreach ($setup as $space_name => $space) {
+			foreach ($space as $unit) {
+				$tokens[] = self::makeTokenInSpace($unit, $space_name);
 			}
 		}
 		return $tokens;

@@ -12,21 +12,21 @@ trait MovementTrait {
 	}
 
 	function argDeclareDestination() {
-		$cities = Game::get()->cities;
+		$spaces = Game::get()->spaces;
 		$formation = Tokens::getMany(Globals::getFormation());
 		if ($formation->empty()) {
 			throw new UserException("Game error: no formation selected.");
 		}
-		$city_id = $formation->first()['location_id'];
-		$city = $cities[$city_id];
-		Globals::setOrigin($city_id);
-		$connections = $city['connections'];
+		$space_id = $formation->first()['location_id'];
+		$space = $spaces[$space_id];
+		Globals::setOrigin($space_id);
+		$connections = $space['connections'];
 		if (Globals::getRemainingCP() >= 2) {
-			$connections = array_merge($connections, $city['passes']);
+			$connections = array_merge($connections, $space['passes']);
 		}
 		return [
-			"city" => $city,
-			"valid_city_ids" => $connections,
+			"space" => $space,
+			"valid_space_ids" => $connections,
 			"formation" => $formation,
 		];
 	}
@@ -37,14 +37,14 @@ trait MovementTrait {
 
 	function stMoveFormation() {
 		$player = Players::getActive();
-		$cities = Game::get()->cities;
+		$spaces = Game::get()->spaces;
 		$formation = Globals::getFormation();
 		$destination = Globals::getDestination();
 		$origin = Globals::getOrigin();
-		$from_city = $cities[$origin];
-		$to_city = $cities[$destination];
-		Tokens::move($formation, ['map', 'city', $destination]);
-		Move::moveFormation($player, $formation, $from_city, $to_city);
+		$from_space = $spaces[$origin];
+		$to_space = $spaces[$destination];
+		Tokens::move($formation, ['map', 'space', $destination]);
+		Move::moveFormation($player, $formation, $from_space, $to_space);
 		$this->gamestate->nextState("done");
 	}
 

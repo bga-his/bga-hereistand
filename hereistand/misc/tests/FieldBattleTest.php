@@ -20,24 +20,24 @@ final class FieldBattleTest extends TestCase {
 	public function testFindOpposingPowers() {
 		# two opposing powers
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(ENGLAND_4UNIT, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(tokenIDs::ENGLAND_4UNIT, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(tokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
 
-		$powers = FieldBattle::findOpposingPowers(VIENNA, $tokens, ENGLAND);
+		$powers = FieldBattle::findOpposingPowers(SpaceIDs::VIENNA, $tokens, Powers::ENGLAND);
 		$this->assertEquals(count($powers), 2);
-		$this->assertArrayHasKey(HAPSBURG, $powers);
-		$this->assertArrayHasKey(ENGLAND, $powers);
+		$this->assertArrayHasKey(Powers::HAPSBURG, $powers);
+		$this->assertArrayHasKey(Powers::ENGLAND, $powers);
 	}
 
 	public function testFindOpposingPowersNone() {
 		# two opposing powers
 		$tokens = [];
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
-		$tokens[] = TestingUtils::makeTokenInCity(HAPSBURG_4UNIT, VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(tokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
+		$tokens[] = TestingUtils::makeTokenInSpace(tokenIDs::HAPSBURG_4UNIT, SpaceIDs::VIENNA);
 
-		$powers = FieldBattle::findOpposingPowers(VIENNA, $tokens, ENGLAND);
+		$powers = FieldBattle::findOpposingPowers(SpaceIDs::VIENNA, $tokens, Powers::ENGLAND);
 		$this->assertEquals(count($powers), 1);
-		$this->assertArrayHasKey(HAPSBURG, $powers);
+		$this->assertArrayHasKey(Powers::HAPSBURG, $powers);
 	}
 
 }

@@ -27,11 +27,11 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
-	public static function notif_buyUnit($player, $token, $unit_type, $city) {
-		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${city_name}', [
+	public static function notif_buyUnit($player, $token, $unit_type, $space) {
+		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${space_name}', [
 			"player" => $player,
 			"token" => $token,
-			"city" => $city,
+			"space" => $space,
 			"unit_name" => $token['name'],
 		]);
 	}
@@ -86,32 +86,32 @@ class Notifications {
 		]);
 	}
 
-	public static function retreatUnits($token_ids, $city) {
-		self::notifyAll('moveFormation', 'Units retreat to ${city_name}', [
+	public static function retreatUnits($token_ids, $space) {
+		self::notifyAll('moveFormation', 'Units retreat to ${space_name}', [
 			'formation' => $token_ids,
-			'city' => $city,
+			'space' => $space,
 		]);
 
 	}
 
-	public static function moveFormation($player, $formation, $from_city, $to_city) {
-		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${city_name}', [
+	public static function moveFormation($player, $formation, $from_space, $to_space) {
+		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${space_name}', [
 			"player" => $player,
 			"formation_count" => count($formation),
 			"formation" => $formation,
-			"from_id" => $from_city['id'],
-			"from_name" => $from_city['name'],
-			"city" => $to_city,
+			"from_id" => $from_space['id'],
+			"from_name" => $from_space['name'],
+			"space" => $to_space,
 		]);
 	}
 
-	public static function moveLeader($player, $leader, $from_city, $to_city){
-		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${city_name}', [
+	public static function moveLeader($player, $leader, $from_space, $to_space){
+		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${space_name}', [
 			"player" => $player,
 			"leader" => $leader,
-			"from_id" => $from_city['id'],
-			"from_name" => $from_city['name'],
-			"city" => $to_city,
+			"from_id" => $from_space['id'],
+			"from_name" => $from_space['name'],
+			"space" => $to_space,
 		]);
 	}
 
@@ -136,10 +136,10 @@ class Notifications {
 			$args['card_name'] = $c['name']; // The substitution will be done in JS format_string_recursive function
 		}
 
-		if (isset($args['city'])) {
-			$c = $args['city'];
+		if (isset($args['space'])) {
+			$c = $args['space'];
 
-			$args['city_name'] = $c['name'];
+			$args['space_name'] = $c['name'];
 		}
 	
 
