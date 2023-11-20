@@ -3,6 +3,7 @@ namespace HIS\Managers;
 use HIS\Core\Game;
 use HIS\Managers\Tokens;
 use HIS\Models\Space;
+use SpaceIDs;
 
 /*
  * Spaces: all utility functions concerning spaces

@@ -11,6 +11,4 @@ class Game {
 		//Game::get()->spaces = {spaceID:Space for all spaces in game}
 		return hereistand::get();
 	}
-
-	public $spaces = array();
 }

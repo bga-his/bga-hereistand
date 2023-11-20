@@ -3,6 +3,7 @@ namespace HIS\Models;
 
 use HIS\Core\Game;
 use HIS\Managers\Tokens;
+use HIS\Exceptions\OttomanReligionException;
 use Powers;
 use ReligionIDs;
 use tokenTypeIDs;
@@ -63,5 +64,11 @@ class Space {
 			}
 		}
 		return $religion;
+	}
+
+	public function setReligion($religionID) {
+		if ($this->attributes['home_power'] == Powers::OTTOMAN) {
+			throw new OttomanReligionException();
+		}
 	}
 }

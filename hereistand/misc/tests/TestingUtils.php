@@ -26,8 +26,6 @@ final class TestingUtils {
 		return self::makeToken($type, 'map_space_' . $space_id, null);
 	}
 
-	//TODO: There was a constant named "FLIPPED" here. Need to quote it to make this test work
-	//Should figure out what this constant was
 	public static function makeFlippedTokenInSpace($type, $space_id) {
 		return self::makeToken($type, 'map_space_' . $space_id, TokenSides::BACK);
 	}

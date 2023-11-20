@@ -1,4 +1,5 @@
 <?php
+use HIS\Exceptions\OttomanReligionException;
 error_reporting(E_ALL ^ E_DEPRECATED);
 
 use HIS\Models\Space;
@@ -72,6 +73,12 @@ final class SpaceTest extends TestCase {
 		# protestant home spaces with no markers should be protestant
 		$munster = new Space(SpaceIDs::MUNSTER, []);
 		$this->assertEquals($munster->getReligion(), ReligionIDs::REFORMED);
+	}
+
+	public function testSetOttomanReligion() {
+		$this->expectException(OttomanReligionException::class);
+		$istanbul = new Space(SpaceIDs::ISTANBUL, self::$tokens);
+		$istanbul->setReligion(ReligionIDs::REFORMED);
 	}
 
 }
