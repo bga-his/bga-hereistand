@@ -81,18 +81,36 @@ class hereistand extends Table {
 		return $player = Players::getActive();
 	}
 
-	public function mdebug($keyLocations) {
-		//TODO Tokens::getInLocation doesnt function as I would assume it does.
-		Notifications::message("keyLocation=".getType($keyLocations)." ".$keyLocations);
+	public function cmd($args) {
 		//$keyLocations = $keyLocations;
 		//powercards_location_
 		//map_space_
 		//supply_england_
 		//supply_other_
-		$tmp = Tokens::getInLocation($keyLocations);
-		Notifications::message("Count of tokens in ".$keyLocations." = ".count($tmp));
-		foreach($tmp as $i){
-			Notifications::message("Tokens in Location ".$keyLocations." :".Utils::varToString($i));
+		$arrstr_args = explode(" ", $args);
+		if($arrstr_args[0] == "map"){
+			if($arrstr_args[1] == "get"){
+				if(count($arrstr_args) != 4){
+					Notifications::notifyAll("cmd-error", "map-command has format map [get|set] [pol|rel] cityId [value to set city to]", {});
+				}else{
+					if($arrstr_args[2] == "pol"){
+						Notifications::notifyAll("cmd", "political control of city ".$arrstr_args[3]." = TODO", {});
+					}else{ // religios
+						Notifications::notifyAll("cmd", "religius control of city ".$arrstr_args[3]." = TODO", {});
+					}
+				}
+			}else{ // set
+				if(count($arrstr_args) != 5){
+					Notifications::notifyAll("cmd-error", "map-command has format map [get|set] [pol|rel] cityId [value to set city to]", {});
+				}else{
+					if($arrstr_args[2] == "pol"){
+						Notifications::notifyAll("cmd", "set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4], {});
+					}else{ // religios
+						Notifications::notifyAll("cmd", "set religius control of city ".$arrstr_args[3]." to "..$arrstr_args[4], {});
+					}
+				}
+			}
+			
 		}
 	}
 
