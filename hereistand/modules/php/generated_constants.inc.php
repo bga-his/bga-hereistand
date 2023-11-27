@@ -3,7 +3,7 @@
  * Token constants
  */
 
- abstract class TokenIDs 
+ abstract class tokenIDs 
 {const ENGLAND_KEY = 1000;
 const FRANCE_KEY = 1001;
 const HAPSBURG_KEY = 1002;
@@ -264,12 +264,12 @@ const RELIGIOUS = 2026;
 const COUNTER = 2027;
 const TURN_MARKER = 2028;
 const CARDS_MARKER = 2029;
-const WIFE = 2030;
-const BENEFIT = 2031;
-const WIVES = 2032;
-const STATUS = 2033;
-const TRANSLATION = 2034;
-const SAINT_PETERS = 2035;
+const SAINT_PETERS = 2030;
+const WIFE = 2031;
+const BENEFIT = 2032;
+const WIVES = 2033;
+const STATUS = 2034;
+const TRANSLATION = 2035;
 const EVENT_REMINDER = 2036;
 const EXCOMMUNION = 2037;
 const FORTRESS_MARKER = 2038;
@@ -1307,6 +1307,11 @@ abstract class tokenIDs_CARDS_MARKER
 {const MINUS_ONE_CARD = 1152;
 }
 
+abstract class tokenIDs_SAINT_PETERS
+{const ST_PETERS_VP = 1167;
+const ST_PETERS_CP = 1193;
+}
+
 abstract class tokenIDs_WIFE
 {const ANNE_BOLEYN = 1180;
 const ANNE_CLEVES = 1181;
@@ -1331,11 +1336,6 @@ const BIBLE_GERMAN = 1189;
 const NEW_TESTAMENT_ENGLISH = 1190;
 const NEW_TESTAMENT_FRENCH = 1191;
 const NEW_TESTAMENT_GERMAN = 1192;
-}
-
-abstract class tokenIDs_SAINT_PETERS
-{const ST_PETERS_CP = 1193;
-const ST_PETERS_VP = 1167;
 }
 
 abstract class tokenIDs_EVENT_REMINDER

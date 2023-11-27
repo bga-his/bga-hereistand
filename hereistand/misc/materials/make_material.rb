@@ -137,7 +137,7 @@ card_csv.each do |row|
 	card_name = row['CONSTANT_NAME'].sub! "CARD_", ""
 	card['class_name'] = row['css_class_name']
 	card['name'] = row['name']
-	card['type'] = "CardTypes::"+row['type']1
+	card['type'] = "CardTypes::"+row['type']
 	card['cp'] = row['cp']
 	card['remove'] = row['remove'] unless row['remove'].nil?
 	card['turn_added'] = row['turn_added'] unless row['turn_added'].nil?
