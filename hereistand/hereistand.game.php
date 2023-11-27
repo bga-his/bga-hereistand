@@ -40,6 +40,7 @@ use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
+use HIS\Managers\Map;
 
 class hereistand extends Table {
 	use HIS\DebugTrait;
@@ -91,27 +92,37 @@ class hereistand extends Table {
 		if($arrstr_args[0] == "map"){
 			if($arrstr_args[1] == "get"){
 				if(count($arrstr_args) != 4){
-					Notifications::notifyAll("cmd-error", "map-command has format map [get|set] [pol|rel] cityId [value to set city to]", {});
+					Notifications::message("map-command has format map [get|set] [pol|rel] cityId [value to set city to]");
+					return;
 				}else{
 					if($arrstr_args[2] == "pol"){
-						Notifications::notifyAll("cmd", "political control of city ".$arrstr_args[3]." = TODO", {});
+						$power = Map::getPoliticalControl(intval($arrstr_args[3]));
+						Notifications::message("political control of city ".$arrstr_args[3]." = ".$power);
+						return;
 					}else{ // religios
-						Notifications::notifyAll("cmd", "religius control of city ".$arrstr_args[3]." = TODO", {});
+						$religionID = Map::getReligiosControl(intval($arrstr_args[3]));
+						Notifications::message("religius control of city ".$arrstr_args[3]." = ".$religionID);
+						return;
 					}
 				}
 			}else{ // set
 				if(count($arrstr_args) != 5){
-					Notifications::notifyAll("cmd-error", "map-command has format map [get|set] [pol|rel] cityId [value to set city to]", {});
+					Notifications::message("map-command has format map [get|set] [pol|rel] cityId [value to set city to]");
+					return;
 				}else{
 					if($arrstr_args[2] == "pol"){
-						Notifications::notifyAll("cmd", "set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4], {});
+						Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
+						Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
+						return;
 					}else{ // religios
-						Notifications::notifyAll("cmd", "set religius control of city ".$arrstr_args[3]." to "..$arrstr_args[4], {});
+						Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
+						Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
+						return;
 					}
 				}
 			}
-			
 		}
+		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));
 	}
 
 	/*

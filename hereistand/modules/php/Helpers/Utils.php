@@ -1,7 +1,9 @@
 <?php
 namespace HIS\Helpers;
 
+use HIS\Core\Notifications;
 use TrackTokens;
+use Powers;
 
 use function PHPSTORM_META\type;
 
@@ -53,5 +55,28 @@ abstract class Utils extends \APP_DbObject {
 
 	public static function varToString($var){
 		return var_export($var, true);
+	}
+
+	public static function cmdStrToPower($strPower){
+		if(strtolower($strPower) == 'otto'){
+			return Powers::OTTOMAN;
+		}
+		if(strtolower($strPower) == 'haps'){
+			return Powers::HAPSBURG;
+		}
+		if(strtolower($strPower) == 'england'){
+			return Powers::ENGLAND;
+		}
+		if(strtolower($strPower) == "france"){
+			return Powers::FRANCE;
+		}
+		if(strtolower($strPower) == 'papacy'){
+			return Powers::PAPACY;
+		}
+		if(strtolower($strPower) == 'prot'){
+			return Powers::PROTESTANT;
+		}
+		Notifications::message("unkown power: ".$strPower);
+		return Powers::OTTOMAN;
 	}
 }

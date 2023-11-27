@@ -8,9 +8,13 @@ use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use TokenAttributes;
 use tokenIDs_EXPLORATION;
+use tokenIDs_HEX;
 use UnitTypes;
 use tokenIDs_UNITS;
 use TokenSides;
+use tokenTypeIDs;
+use Locationtypes;
+
 /**
  * Tokens: id, value, faction
  */
@@ -39,49 +43,6 @@ class Tokens extends \HIS\Helpers\Pieces {
 			$token = array_merge($token, $token_static[TokenAttributes::back]);
 		}
 		return $token;
-	}
-
-	
-	public static function addLandunits($spaceId, $power, int $count, $type){
-		//Add Landunits from supply to location
-		//$spaceId As ?NumericString?
-		//$power As String From {constans::FRANCE, constants::HAPSBURG, ..., constants::MINOR_VENICE, ..., constants::INDEPENDENT}
-		//$count As int, total strength of land units to add
-		//$type As int from {regular, merc, cav}//somewehre these constants have been defined, I think
-
-		$buy_id = strval(Game::get()->getPowerUnits()[$power][UnitTypes::REGULAR][$count]); // buy_id element of LandUnitTokens or NavalUnitTokens
-		if($type == UnitTypes::REGULAR){//if major power.
-			$side = strval(TokenSides::FRONT);
-		}elseif($type == UnitTypes::MERC ||  $type == UnitTypes::CAV){
-			$side = strval(TokenSides::BACK);
-		}else{
-			throw new UserException("invalid unit type in Tokens::addLandUnits: ".Utils::varToString($type));
-		}
-		//if minor power: select front/back to match the requested count, throw error if type != REGULAR
-		//$already_there = number of units with type=$type on $spaceId
-		//calculate "optimal" counter mix to represent $count + $already_there
-		//place these counters and remove the units already there.
-		$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], ['board', 'space', $spaceId], $side);
-		if ($token == null) {
-			throw new UserException("You are out of buy_id=" . Utils::varToString($buy_id) . " tokens.");
-		}
-
-		//Notification
-		
-		//Notifications::message("Space of id".$spaceId." = ".Utils::varToString(Spaces::getByID($spaceId)));
-		Notifications::notif_buyUnit(Players::getFromPower($power), $token, $type, Spaces::getByID($spaceId));
-	}
-
-	public static function removeLandUnits($spaceId, $power, $count, $type){
-
-	}
-
-	public static function moveFormation($spaceIdFrom, $spaceIdTo, $formation){
-
-	}
-
-	public static function moveLeader($spaceIdFrom, $spaceIdTo, $leader){
-
 	}
 
 	public static function getTrackPosition(int $token) : int{
@@ -169,6 +130,16 @@ class Tokens extends \HIS\Helpers\Pieces {
 		return $tokens["leader"]['power'];
 	}
 
+	public static function GetControlMarker($spaceID){
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+		foreach ($tokens as $token) {
+			if(in_array(tokenTypeIDs::CONTROL, $token["types"], true)){
+				return $token;
+			}
+		}
+		return null;
+	}
+
 	//////////////////////////////////
 	//////////////////////////////////
 	///////////// SETTERS //////////////
@@ -189,9 +160,9 @@ class Tokens extends \HIS\Helpers\Pieces {
 			self::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
 		}
 		foreach (Game::get()->getSetup() as $power => $spaces) {
-			foreach ($spaces as $space_name => $space) {
-				foreach ($space as $unit) {
-					self::pickForLocation(1, ['supply', $tokens[$unit]['power'], $unit], ['map', 'space', $space_name]); //locationtypes[$tokens[$unit]['power']]
+			foreach ($spaces as $spaceID => $space) {
+				foreach ($space as $tokenID) {
+					self::pickForLocation(1, ['supply', $tokens[$tokenID]['power'], $tokenID], ['map', 'space', $spaceID]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
 		}

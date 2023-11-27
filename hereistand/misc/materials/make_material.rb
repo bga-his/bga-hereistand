@@ -162,6 +162,7 @@ space_csv.each do |row|
 	space['x'] = row['posX'] || 0
 	space['y'] = row['posY'] || 0
 	space['name'] = row['name'] || 'tbd'
+	space['type'] = "SpaceTypes::"+row['type']
 	if ["VENICE", "SCOTLAND", "GENOA", "HUNGARY"].include? row['home_power'].upcase then
 		row['home_power'] = "MINOR_" + row['home_power']
 	end

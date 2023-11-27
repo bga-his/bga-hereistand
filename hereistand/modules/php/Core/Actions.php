@@ -7,12 +7,13 @@ use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
 use HIS\Managers\Diplomancy;
+use HIS\Managers\Map;
 use HIS\Models\Formation;
 use HIS\Core\Notifications;
 use HIS\Managers\Diplomacy;
 use HIS\States\ArgsOnEnteringStateTrait;
 use Powers;
-use TrackTokens;
+use tokenIDs_VP_MARKER;
 use UnitTypes;
 use CardIDs;
 
@@ -157,7 +158,7 @@ class Actions {
 		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == UnitTypes::REGULAR)) {
 			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
-		TOKENS::addLandunits($space['id'], $player->power, 1, $unit_type);
+		MAP::addLandunits($space['id'], $player->power, 1, $unit_type);
 		if ($unit_type == UnitTypes::MERC || $unit_type == UnitTypes::CAV) {
 			$remainingCP -= 1;
 			Globals::incRemainingCP(-1);
@@ -174,7 +175,7 @@ class Actions {
 
 	public static function BuildJanissaries($space){
 		Notifications::message("OTTOMAN placed 4 Regulars On ".Utils::varToString($space['id']));
-		Tokens::addLandunits($space['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
+		Map::addLandunits($space['id'], Powers::OTTOMAN, 4, UnitTypes::REGULAR);
 		Cards::discardByID(CardIDs::JANISSARIES);
 		Game::get()->gamestate->nextState("resolve");
 
@@ -193,14 +194,14 @@ class Actions {
 		if($bolBoth){
 			$tokenDukeOfAlva = Tokens::tokenGetLeader("DukeOfAlva");
 			if($tokenDukeOfAlva->Position = $tokenCharlsV->Position){
-				Tokens::moveLeader($tokenCharlsV->Position, $space["id"], $tokenDukeOfAlva);
+				Map::moveLeader($tokenCharlsV->Position, $space["id"], $tokenDukeOfAlva);
 				Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $space);
 			}else{
 				Notifications::message("DukeOfAlva must be in the same space to accompany Charles V");
 				Game::get()->gamestate->nextState("undo");
 			}
 		}
-		Tokens::moveLeader($tokenCharlsV->Position, $space["id"], $tokenCharlsV);
+		Map::moveLeader($tokenCharlsV->Position, $space["id"], $tokenCharlsV);
 		Globals::setRemainingCP(5);
 		Notifications::moveLeader(Players::getFromPower(Powers::HAPSBURG), $tokenCharlsV, $tokenCharlsV->Position, $space);
 		Game::get()->gamestate->nextState("move_Charles");
@@ -259,16 +260,16 @@ class Actions {
 			Cards::discard(Powers::FRANCE, 1);
 		}elseif($chateauxRoll <= 4){
 			//1VP, draw 1, discard 1
-			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Tokens::incCounter(tokenIDs_VP_MARKER::CHATEAUX_VP, 1);
 			Cards::draw(Powers::FRANCE, 1);
 			Cards::discard(Powers::FRANCE, 1);
 		}elseif($chateauxRoll <= 7){
 			//1VP, draw 1, discard 0
-			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Tokens::incCounter(tokenIDs_VP_MARKER::CHATEAUX_VP, 1);
 			Cards::draw(Powers::FRANCE, 1);
 		}else{
 			//1VP, draw 2, discard 1
-			Tokens::incCounter(TrackTokens::CHATEAUX_VP, 1);
+			Tokens::incCounter(tokenIDs_VP_MARKER::CHATEAUX_VP, 1);
 			Cards::draw(Powers::FRANCE, 2);
 			Cards::discard(Powers::FRANCE, 1);
 		}

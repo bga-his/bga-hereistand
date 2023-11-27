@@ -110,7 +110,15 @@ abstract class TokenSides{
     const space = "map_space";
     const powercards = "powercards_location";
     const supply = [Powers::OTTOMAN => "supply_ottoman", Powers::HAPSBURG => "supply_hapsburg", Powers::ENGLAND => "supply_england", Powers::FRANCE => "supply_france", Powers::PAPACY => "supply_papacy", Powers::PROTESTANT => "supply_protestant", Powers::OTHER => "supply_other"];
-    //TODO maybe there exists more?
+    //TODO supply has incrementing number appended. why?
+ }
+
+ abstract class SpaceTypes{
+    const SPACE_UNFORTIFIED = 100;
+    const SPACE_ELECTORATE = 101;
+    const SPACE_FORTRESS = 102;
+    const SPACE_KEY = 103;
+    const SPACE_CAPITAL = 104;
  }
 
 abstract class ReligionIDs{
@@ -131,6 +139,7 @@ abstract class UnitTypes{
 
 /*
  * Land and Naval Token constants
+ * depreacheated, use generated_constanst::tokenIDs_UNITS instead.
  */
 abstract class LandUnitTokens{
     const OTTOMAN_1UNIT = TokenIDs::OTTOMAN_1UNIT;
@@ -156,13 +165,13 @@ abstract class LandUnitTokens{
     const PROTESTANT_2UNIT = TokenIDs::PROTESTANT_2UNIT;
     const PROTESTANT_4UNIT = TokenIDs::PROTESTANT_4UNIT;
     const SCOTLAND_1UNIT = TokenIDs::SCOTLAND_1UNIT;
-    const SCOTLAND_2UNIT = TokenIDs::SCOTLAND_2UNIT;
+    //const SCOTLAND_2UNIT = TokenIDs::SCOTLAND_2UNIT;
     const HUNGARY_1UNIT = TokenIDs::HUNGARY_1UNIT;
     const HUNGARY_4UNIT = TokenIDs::HUNGARY_4UNIT;
     const VENICE_1UNIT = TokenIDs::VENICE_1UNIT;
-    const VENICE_2UNIT = TokenIDs::VENICE_2UNIT;
+    //const VENICE_2UNIT = TokenIDs::VENICE_2UNIT;
     const GENOA_1UNIT = TokenIDs::GENOA_1UNIT;
-    const GENOA_2UNIT = TokenIDs::GENEROA_2UNIT;
+    //const GENOA_2UNIT = TokenIDs::GENEROA_2UNIT;
 }
 
 abstract class NavalUnitTokens {
@@ -278,6 +287,23 @@ const HomeCard_key_locations = [
     Powers::ENGLAND => [locationIDs::ENGLAND_KEY_1, locationIDs::ENGLAND_KEY_2, locationIDs::ENGLAND_KEY_3, locationIDs::ENGLAND_KEY_4, locationIDs::ENGLAND_KEY_5, locationIDs::ENGLAND_KEY_6, locationIDs::ENGLAND_KEY_7, locationIDs::ENGLAND_KEY_8, locationIDs::ENGLAND_KEY_9],
     Powers::FRANCE => [locationIDs::FRANCE_KEY_1, locationIDs::FRANCE_KEY_2, locationIDs::FRANCE_KEY_3, locationIDs::FRANCE_KEY_4, locationIDs::FRANCE_KEY_5, locationIDs::FRANCE_KEY_6, locationIDs::FRANCE_KEY_7, locationIDs::FRANCE_KEY_8, locationIDs::FRANCE_KEY_9, locationIDs::FRANCE_KEY_10, locationIDs::FRANCE_KEY_11],
     Powers::PAPACY => [locationIDs::PAPACY_KEY_1, locationIDs::PAPACY_KEY_2, locationIDs::PAPACY_KEY_3, locationIDs::PAPACY_KEY_4, locationIDs::PAPACY_KEY_5, locationIDs::PAPACY_KEY_6, locationIDs::PAPACY_KEY_7]
+];
+
+const hexControlMarkers = [
+    Powers::OTTOMAN => tokenIDs_CONTROL::OTTOMAN_HEX,
+    Powers::HAPSBURG => tokenIDs_CONTROL::HAPSBURG_HEX,
+    Powers::ENGLAND => tokenIDs_CONTROL::ENGLAND_HEX,
+    Powers::FRANCE => tokenIDs_CONTROL::FRANCE_HEX,
+    Powers::PAPACY => tokenIDs_CONTROL::PAPACY_HEX,
+    Powers::PROTESTANT => tokenIDs_CONTROL::PROTESTANT_HEX
+];
+
+const keyControlMarkers = [
+    Powers::OTTOMAN => tokenIDs_CONTROL::OTTOMAN_KEY,
+    Powers::HAPSBURG => tokenIDs_CONTROL::HAPSBURG_KEY,
+    Powers::ENGLAND => tokenIDs_CONTROL::ENGLAND_KEY,
+    Powers::FRANCE => tokenIDs_CONTROL::FRANCE_KEY,
+    Powers::PAPACY => tokenIDs_CONTROL::PAPACY_KEY
 ];
 /*
  * Game options
