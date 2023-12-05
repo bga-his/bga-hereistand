@@ -11,6 +11,8 @@ use ReligionIDs;
 use UnitTypes;
 use TokenSides;
 use Locationtypes;
+use SpaceTest;
+use SpaceTypes;
 use tokenTypeIDs;
 use tokenIDs_CONTROL;
 
@@ -22,10 +24,23 @@ class Map extends \HIS\Helpers\Pieces {
 	public static function getName($spaceID){
 		return Game::get()->spaces[$spaceID]["name"];
 	}
+	public static function bolIsKey($spaceID){
+		return Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_KEY;
+	}
 
 	public static function addControlToken($spaceID, $power){
-		if((Game::get()->spaces[$spaceID]["type"] == "SPACE_CAPITAL" || Game::get()->spaces[$spaceID]["type"] == "SPACE_KEY") && $power != Powers::PROTESTANT){
-			Tokens::pickForLocation(1, ['supply',$power, keyControlMarkers[$power]], ['map', 'space', $spaceID]);
+		Notifications::message("Map::addControlToken(".$spaceID.", ".$power.");");
+		if(Map::bolIsKey($spaceID) && $power != Powers::PROTESTANT){
+			foreach (HomeCard_key_locations[$power] as $keyLocations) {
+				$scm = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocations);
+				if(count($scm) > 0){
+					Notifications::message("move scm ".$scm->first()["id"]." to map_space_".$spaceID.".");
+					Tokens::move($scm->first()["id"], "map_space_".$spaceID);
+					//TODO update VP track.
+					return;
+				}
+				//autowin.
+			}
 		}else{
 			Tokens::pickForLocation(1, ['supply',$power, hexControlMarkers[$power]], ['map', 'space', $spaceID]);
 		}
@@ -35,9 +50,21 @@ class Map extends \HIS\Helpers\Pieces {
 	public static function removeControlToken($spaceID){
 		$token = Tokens::GetControlMarker($spaceID);
 		if($token != null){
-			Tokens::move($token['id'], Locationtypes::supply[$token["power"]]); //TODO supply seems to have other name
+			if(in_array(tokenTypeIDs::KEYS, $token["types"])){ // if type($token) == scm
+				// move scm to power card, not supply.
+				for($intI = count(HomeCard_key_locations[$token["power"]])-1; $intI >= 0; $intI--){
+					$keyLocation = HomeCard_key_locations[$token["power"]][$intI];
+					if(count(Tokens::getInLocation(Locationtypes::powercards."_".$keyLocation)) == 0){
+						Notifications::message("move scm of ".$token["power"]." to ".$keyLocation);
+						Tokens::move($token["id"], "powercards_location_".$keyLocation);
+						//TODO update VP track.
+						return;
+					}
+				}
+			}else{
+				Tokens::move($token['id'], Locationtypes::supply[$token["power"]]); //TODO supply seems to have other name
+			}
 		}
-		
 	}
 
     public static function getPoliticalControl($spaceID){
@@ -59,20 +86,33 @@ class Map extends \HIS\Helpers\Pieces {
 	 * @param string $power element of constants::Powers
 	 */
 	public static function setPoliticalControl($spaceID, $power){
-		Notifications::message("setPoliticalControl of ".Map::getName($spaceID)." to ".$power);
+		Notifications::message("Map::setPoliticalControl(".Map::getName($spaceID).", ".$power.");");
         $token = Tokens::GetControlMarker($spaceID);
-		$religion = Map::getReligiosControl($spaceID);
+		if($token == null){
+			$flipped = False; // $flipped <=> new token has to be flipped.
+		}else{
+			$flipped = $token["flipped"] != "";
+		}
 		Notifications::message("token = ".Utils::varToString($token));
-		Notifications::message("religion = ".$religion);
+		if($flipped){
+			Notifications::message("flipped = True");	
+		}else{
+			Notifications::message("flipped = False");
+		}
+
 		Map::removeControlToken($spaceID);
-		if(Map::getHomePower($spaceID) != $power || $religion != Map::getReligiosControl($spaceID)){
-			Notifications::message("supply = ".Locationtypes::supply[$power]);
+		if(Map::getHomePower($spaceID) != $power || $flipped || Map::bolIsKey($spaceID)){
 			Map::addControlToken($spaceID, $power);
 			$token = Tokens::GetControlMarker($spaceID);
-			if(($religion == ReligionIDs::CATHOLIC && $power == Powers::PROTESTANT) || ($religion == ReligionIDs::REFORMED && $power != Powers::PROTESTANT)){
+			Notifications::message("Map::setPoliticalControl: added Control Marker ".Utils::varToString($token));
+			if($flipped){
 				Tokens::setState($token['id'], TokenSides::BACK);
+			}else{
+				Tokens::setState($token['id'], TokenSides::FRONT);
 			}
 		}
+		//if $spaceID["type"] = captial or key and no square control marker present: add.
+		//TODO remove control token if unnecessary
     }
 
     public static function getReligiosControl($spaceID){
@@ -92,43 +132,52 @@ class Map extends \HIS\Helpers\Pieces {
 		}else{
 			if($token["flipped"] == ''){
 				//token unflipped:
-				if($token["power"] == Powers::PROTESTANT){
-					return ReligionIDs::REFORMED;
-				}else{
-					return ReligionIDs::CATHOLIC;
-				}
+				return ReligionIDs::CATHOLIC;
 			}else{
 				//flipped token
-				if($token["power"] == Powers::PROTESTANT){
-					return ReligionIDs::CATHOLIC;
-				}else{
-					return ReligionIDs::REFORMED;
-				}
+				return ReligionIDs::REFORMED;
 			}
 		}
-		
-
     }
 
     public static function setReligiosControl($spaceID, $religion) : void{
 		$power = Map::getPoliticalControl($spaceID);
-        if(($religion == ReligionIDs::CATHOLIC && $power == Powers::PROTESTANT) || ($religion == ReligionIDs::REFORMED && $power != Powers::PROTESTANT)){
-			//control marker should be flipped.
-			$token = Tokens::GetControlMarker($spaceID);
-			if($token == null){
-				Map::addControlToken($spaceID, $power);
-				$token = Tokens::GetControlMarker($spaceID);
-			}
-			Tokens::setState($token['id'], TokenSides::BACK);
-		}else{
-			//control marker should not be flipped.
-			if($power == Map::getHomePower($spaceID)){
+		$homePower = Map::getHomePower($spaceID);
+		$token = Tokens::GetControlMarker($spaceID);
+		if($power == Powers::PROTESTANT && $homePower == Powers::PROTESTANT){
+			if($religion == ReligionIDs::REFORMED && $token != null){
 				Map::removeControlToken($spaceID);
+			}
+			if($religion == ReligionIDs::CATHOLIC){
+				if($token == null){
+					Map::addControlToken($spaceID, Powers::PROTESTANT);
+					$token = Tokens::GetControlMarker($spaceID);
+				}
+				if($religion == ReligionIDs::REFORMED){
+					Tokens::setState($token['id'], TokenSides::BACK);
+				}else{
+					Tokens::setState($token['id'], TokenSides::FRONT);
+				}
+			}
+		}else{
+			//no protestand home space involved.
+			if($religion == ReligionIDs::REFORMED){
+				if($token == null){
+					Map::addControlToken($spaceID, $homePower);
+					$token = Tokens::GetControlMarker($spaceID);
+				}
+				Tokens::setState($token['id'], TokenSides::BACK);
 			}else{
-				$token = Tokens::GetControlMarker($spaceID);
-				Tokens::setState($token['id'], TokenSides::FRONT);
+				if($token != null){
+					if($power == $homePower){
+						Map::removeControlToken($spaceID);
+					}else{
+						Tokens::setState($token['id'], TokenSides::FRONT);
+					}
+				}
 			}
 		}
+		Notifications::notif_setReligion(Map::getName($spaceID), $religion);
     }
 
     public static function bolGetSpaceIsFortified($spaceID) : bool{

@@ -27,6 +27,13 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
+	public static function notif_setReligion($spaceName, $religion) {
+		self::notifyAll('setReligion', '${spaceName} was set to {$religion}.', [
+			"spaceName" => $spaceName,
+			"religion" => $religion,
+		]);
+	}
+
 	public static function notif_buyUnit($player, $token, $unit_type, $space) {
 		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${space_name}', [
 			"player" => $player,
