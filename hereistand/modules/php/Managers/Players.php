@@ -83,7 +83,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 		return $players;
 	}
 
-	public function getFromPower($power) {
+	public static function getFromPower($power) {
 		//powe: elemt of Powers
 		return self::DB()
 			->where('player_power', $power)

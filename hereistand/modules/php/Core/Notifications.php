@@ -2,6 +2,8 @@
 namespace HIS\Core;
 
 use HIS\Managers\Players;
+use HIS\Managers\Map;
+use tokenTypeIDs;
 
 class Notifications {
 	/*************************
@@ -27,10 +29,26 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
-	public static function notif_setReligion($spaceName, $religion) {
-		self::notifyAll('setReligion', '${spaceName} was set to {$religion}.', [
+	public static function notif_setReligion($spaceName, $religion, $token_weg, $token_add) {
+		self::notifyAll('setReligion', 'the religios control of ${spaceName} was set to ${religion}.', [
 			"spaceName" => $spaceName,
 			"religion" => $religion,
+			"token_weg" => $token_weg,
+			"token_add" => $token_add,
+		]);
+	}
+	
+	public static function notif_setPoliticalControl($spaceID, $spaceName, $power, $token_weg, $token_add, $scmLocation) {
+		self::notifyAll('setPoliticalControl', 'the political control of ${spaceName} was set to ${power}', [
+			"spaceName" => $spaceName,
+			"spaceID" => $spaceID,
+			"power" => $power,
+			"token_weg" => $token_weg,
+			"token_add" => $token_add,
+			"player_id_weg" => $token_weg!=null?Players::getFromPower($token_weg["power"])->getId():null,
+			"player_id_add" => $token_add!=null?Players::getFromPower($token_add["power"])->getId():null,
+			"type" => ($token_add!=null && in_array(tokenTypeIDs::KEYS, $token_add["types"]))?"scm":"hex",
+			"scmLocation" => $scmLocation,
 		]);
 	}
 
