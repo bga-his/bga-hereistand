@@ -203,16 +203,16 @@ class Map extends \HIS\Helpers\Pieces {
 				Tokens::setState($token_add['id'], TokenSides::BACK);
 			}else{
 				if($token_original != null){
-					if($power == $homePower){
+					if($power == $homePower && !Map::bolIsKey($spaceID)){
 						Map::removeControlToken($spaceID);
 					}else{
 						Tokens::setState($token_original['id'], TokenSides::FRONT);
 					}
-					$token_add = $token_original;
 				}
 			}
 		}
-		Notifications::notif_setReligion(Map::getName($spaceID), Map::strReligionIdToName($religion), $token_original, $token_add);
+		$token_add =Tokens::GetControlMarker($spaceID); 
+		Notifications::notif_setReligion(Map::getName($spaceID), $spaceID, Map::strReligionIdToName($religion), $token_original, $token_add);
     }
 
     public static function bolGetSpaceIsFortified($spaceID) : bool{

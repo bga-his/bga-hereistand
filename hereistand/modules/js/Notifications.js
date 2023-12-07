@@ -57,9 +57,15 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_setReligion(args){
-      console.log("Notifications::setReligion");
-      //this.fadeOutAndDestroy(args.args.token_weg);
-      //this.place('tplToken', args.args.token_add, `supply_other`);
+      console.log("Notifications::setReligion: args.args = " + JSON.stringify(args.args));
+      if(args.args.token_weg != null){
+        console.log("destroy existing token");
+        this.fadeOutAndDestroy(args.args.token_weg.id);
+      }
+      if(args.args.token_add != null){
+        console.log("place new token.")
+        this.place('tplToken', args.args.token_add, `space_${args.args.spaceID}`);
+      }
     },
 
     notif_buyUnit(args){

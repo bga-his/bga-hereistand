@@ -29,9 +29,10 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
-	public static function notif_setReligion($spaceName, $religion, $token_weg, $token_add) {
+	public static function notif_setReligion($spaceName, $spaceID, $religion, $token_weg, $token_add) {
 		self::notifyAll('setReligion', 'the religios control of ${spaceName} was set to ${religion}.', [
 			"spaceName" => $spaceName,
+			"spaceID" => $spaceID,
 			"religion" => $religion,
 			"token_weg" => $token_weg,
 			"token_add" => $token_add,
