@@ -50,7 +50,7 @@ define([
         ['playCardCP', 1000],
         ['moveFormation', 1000],
         ['buyUnit', 1000],
-        ['destroyUnits', 1000],
+        ['destroyUnit', 1000],
         ['setPoliticalControl', 1000],
         ['setReligion', 1000],
       ];

@@ -91,34 +91,52 @@ class hereistand extends Table {
 		$arrstr_args = explode(" ", $args);
 		if($arrstr_args[0] == "map"){
 			if($arrstr_args[1] == "get"){
-				if(count($arrstr_args) != 4){
-					Notifications::message("map-command has format map [get|set] [pol|rel] cityId [value to set city to]");
+				if($arrstr_args[2] == "pol"){
+					$spaceID = intval($arrstr_args[3]);
+					$power = Map::getPoliticalControl($spaceID);
+					Notifications::message("political control of city ".$spaceID." = ".$power);
 					return;
-				}else{
-					if($arrstr_args[2] == "pol"){
-						$power = Map::getPoliticalControl(intval($arrstr_args[3]));
-						Notifications::message("political control of city ".$arrstr_args[3]." = ".$power);
-						return;
-					}else{ // religios
-						$religionID = Map::getReligiosControl(intval($arrstr_args[3]));
-						Notifications::message("religius control of city ".$arrstr_args[3]." = ".$religionID);
-						return;
-					}
+				}else if($arrstr_args[2] == "rel"){
+					$spaceID = intval($arrstr_args[3]);
+					$religionID = Map::getReligiosControl($spaceID);
+					Notifications::message("religius control of city ".$spaceID." = ".$religionID);
+					return;
+				}else if($arrstr_args[2] == "isFort"){
+					$spaceID = intval($arrstr_args[3]);
+					$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
+					Notifications::message("The space ".Map::getName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
+					return;
+				}else if($arrstr_args[2] == "isUnrest"){
+					$spaceID = intval($arrstr_args[3]);
+					$bolIsFortifieded = Map::bolGetSpaceIsInUnrest($spaceID);
+					Notifications::message("The space ".Map::getName($spaceID)." is in Unrest = ".($bolIsFortifieded?"true":"false"));
+					return;
+				}else if($arrstr_args[2] == "isSieged"){
+					$spaceID = intval($arrstr_args[3]);
+					$bolIsFortifieded = Map::bolGetSpaceIsSieged($spaceID);
+					Notifications::message("The space ".Map::getName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
+					return;
 				}
 			}else{ // set
-				if(count($arrstr_args) != 5){
-					Notifications::message("map-command has format map [get|set] [pol|rel] cityId [value to set city to]");
+				if($arrstr_args[2] == "pol"){
+					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
+					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
 					return;
-				}else{
-					if($arrstr_args[2] == "pol"){
-						Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
-						Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
-						return;
-					}else{ // religios
-						Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
-						Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
-						return;
-					}
+				}else if($arrstr_args[2] == "rel"){
+					Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
+					Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
+					return;
+				}else if($arrstr_args[2] == "addLandUnits"){
+					$spaceID = intval($arrstr_args[3]);
+					$count = intval($arrstr_args[4]);
+					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+					$power = Map::getPoliticalControl($spaceID);
+					
+					Map::addLandunits($spaceID, $power, $count, $type);
+					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getName($spaceID));
+					return;
+				}else if($arrstr_args[2] == "unrest"){
+					
 				}
 			}
 		}

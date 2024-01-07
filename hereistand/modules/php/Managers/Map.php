@@ -11,10 +11,8 @@ use ReligionIDs;
 use UnitTypes;
 use TokenSides;
 use Locationtypes;
-use SpaceTest;
 use SpaceTypes;
 use tokenTypeIDs;
-use tokenIDs_CONTROL;
 
 class Map extends \HIS\Helpers\Pieces {
 	public static function getHomePower($spaceID){
@@ -218,16 +216,67 @@ class Map extends \HIS\Helpers\Pieces {
     public static function bolGetSpaceIsFortified($spaceID) : bool{
         // SpaceID -> boolean
         //returns true for keys, fortresses, elektrorates or spaces containing the fortress marker.
-        return false;
+
+		//TODO place fortress marker to test if this works.
+		
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+		foreach($tokens as $token){
+			if($token["type"] == tokenTypeIDs::FORTRESS_MARKER){
+				return true;
+			}
+		}
+
+		$space = Game::get()->spaces[$spaceID];
+		return $space["type"] == SpaceTypes::SPACE_CAPITAL || $space["type"] == SpaceTypes::SPACE_KEY || $space["type"] == SpaceTypes::SPACE_FORTRESS || $space["type"] == SpaceTypes::SPACE_ELECTORATE;
     }
 
     public static function bolGetSpaceIsInUnrest($spaceID) : bool{
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+		foreach($tokens as $token){
+			if($token["type"] == tokenTypeIDs::UNREST_MARKER){
+				return true;
+			}
+		}
         return false;
     }
 
     public static function bolGetSpaceIsSieged($spaceID) : bool{
+		//returns true if space is fortified and contains units that are at war with political owner.
+
+		//TODO test
+		if(!Map::bolGetSpaceIsFortified($spaceID)){
+			return false;
+		}
+		$power = Map::getPoliticalControl($spaceID);
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+		foreach($tokens as $token){
+			if($token["type"] == tokenTypeIDs::UNITS && Diplomacy::IsAtWar($power, $token["power"])){
+				return true;
+			}
+		}
         return false;
     }
+
+	public static function getLandUnits($spaceId) : array{
+		$res = array();
+		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		$num_reg = 0;
+		$num_merc = 0;
+		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = ".count($inLocation));
+		foreach($inLocation as $token){
+			//Notifications::message("token = ".Utils::varToString($token));
+			if(in_array(tokenTypeIDs::UNITS, $token["types"])){
+				$res[] = $token;
+				if($token["flipped"] == ""){
+					$num_reg += $token["strength"];
+				}else{
+					$num_merc += $token["strength"];
+				}
+			}
+		}
+		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = count(token) = ".count($res)."{reg =>".$num_reg.", merc=>".$num_merc.");");
+		return $res;
+	}
 
     public static function addLandunits($spaceId, $power, int $count, $type) : void{
 		//Add Landunits from supply to location
@@ -235,28 +284,86 @@ class Map extends \HIS\Helpers\Pieces {
 		//$power As String From constans::Powers
 		//$count As int, total strength of land units to add
 		//$type As int from constants::UnitTypes
+		Notifications::message("call Map::addLandUnits(".Map::getName($spaceId).", ".$power.", ".$count.", ".$type==UnitTypes::REGULAR?"regular":"merc");
+		$already_there = array(1=>0, 2=>0, 4=>0, 6=>0);
+		$already_there_units = Map::getLandUnits($spaceId);
+		$target_mix = array(1=>0, 2=>0, 4=>0, 6=>0);
+		$total_strength = $count;
+		$flipped = "";
 
-		$buy_id = strval(Game::get()->getPowerUnits()[$power][UnitTypes::REGULAR][$count]); // buy_id element of LandUnitTokens or NavalUnitTokens
+		//if minor power: select front/back to match the requested count, throw error if type != REGULAR
 		if($type == UnitTypes::REGULAR){//if major power.
 			$side = strval(TokenSides::FRONT);
+			$flipped = "";
 		}elseif($type == UnitTypes::MERC ||  $type == UnitTypes::CAV){
 			$side = strval(TokenSides::BACK);
+			$flipped = "flipped";
 		}else{
 			throw new UserException("invalid unit type in Map::addLandUnits: ".Utils::varToString($type));
 		}
-		//if minor power: select front/back to match the requested count, throw error if type != REGULAR
-		//$already_there = number of units with type=$type on $spaceId
-		//calculate "optimal" counter mix to represent $count + $already_there
-		//place these counters and remove the units already there.
-		$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], ['board', 'space', $spaceId], $side);
-		if ($token == null) {
-			throw new UserException("You are out of buy_id=" . Utils::varToString($buy_id) . " tokens.");
-		}
 
-		//Notification
+		foreach($already_there_units as $landUnit){
+			Notifications::message("LandUnit = ".Utils::varToString($landUnit));
+			if($landUnit["flipped"] == $flipped){
+				$already_there[$landUnit["strength"]] += 1;
+				$total_strength += $landUnit["strength"];
+			}
+		}
+		foreach(array(6, 4, 2, 1) as $denomination){
+			while($total_strength >= $denomination){
+				$target_mix[$denomination] += 1;
+				$total_strength -= $denomination;
+			}
+		}
 		
-		//Notifications::message("Space of id".$spaceId." = ".Utils::varToString(Spaces::getByID($spaceId)));
-		Notifications::notif_buyUnit(Players::getFromPower($power), $token, $type, Spaces::getByID($spaceId));
+		Notifications::message("addLandUnits: existing_mix = ".Utils::varToString($already_there).", target_mix = ".Utils::varToString($target_mix).", total_strength = ".$total_strength);
+
+		foreach(array(6, 4, 2, 1) as $denomination){
+			while($target_mix[$denomination] > $already_there[$denomination]){
+				$already_there[$denomination] += 1;
+				
+				Notifications::message("add unit of strength ".$denomination." to place ");
+				$buy_id = strval(Game::get()->getPowerUnits()[$power][$type][$denomination]); // buy_id element of LandUnitTokens or NavalUnitTokens
+
+				$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], Locationtypes::space."_".$spaceId, $side);
+				if ($token == null) {
+					//TODO try to use units of lower denomination instead.
+					if($denomination == 6){ //TODO does not work. e.g. already_there[4] = 1, $count = 2, and the 6-token already on board: 
+						$target_mix[6]--;
+						$target_mix[4] += 1;
+						$target_mix[2] += 1;
+					}
+					if($denomination == 4){
+						$target_mix[4]--;
+						$target_mix[2] += 2;
+					}
+					if($denomination == 2){
+						$target_mix[2]--;
+						$target_mix[1] += 2;
+					}
+					if($denomination == 1){
+						throw new UserException("You are out of Unit tokens. TODO show supply somewhere");
+					}
+					
+				}else{
+					Notifications::notif_buyUnit(Players::getFromPower($power), $token, Spaces::getByID($spaceId));
+				}
+			}
+			while($target_mix[$denomination] < $already_there[$denomination]){
+				$already_there[$denomination] -= 1;
+				// move a unit of strength $denomination and flipped fitting with $type from $spaceID to supply
+				// TODO notification to move token 
+				$buy_id = strval(Game::get()->getPowerUnits()[$power][$type][$denomination]);
+				
+				foreach($already_there_units as $landUnit){
+					if($landUnit["type"] == $buy_id && $landUnit["flipped"] == $flipped){
+						Tokens::move([$landUnit["id"]], ['supply', $power, $buy_id]);
+						Notifications::notif_destroyUnits(Players::getFromPower($power), $landUnit, Spaces::getByID($spaceId));
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	public static function removeLandUnits($spaceId, $power, $count, $type){

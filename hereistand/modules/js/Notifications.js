@@ -80,13 +80,10 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
     },
 
-    notif_destroyUnits(args){
+    notif_destroyUnit(args){
       const dest = `player_board_${args.args.player_id}`;
-      const tokens = args.args.tokens;
-      for(let token_id in tokens){
-        let token = tokens[token_id];
-        this.slide(token.id, dest, {destroy: true, scale: this.scalingFactor, phantomEnd: true});
-      }
+      const token = args.args.token;
+      this.slide(token.id, dest, {destroy: true, scale: this.scalingFactor, phantomEnd: true});
     },
   });
 });

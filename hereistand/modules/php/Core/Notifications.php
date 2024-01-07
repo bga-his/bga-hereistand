@@ -53,8 +53,17 @@ class Notifications {
 		]);
 	}
 
-	public static function notif_buyUnit($player, $token, $unit_type, $space) {
+	public static function notif_buyUnit($player, $token, $space) {
 		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${space_name}', [
+			"player" => $player,
+			"token" => $token,
+			"space" => $space,
+			"unit_name" => $token['name'],
+		]);
+	}
+
+	public static function notif_destroyUnits($player, $token, $space) {
+		self::notifyAll('destroyUnit', '${player_name} removed ${unit_name} from ${space_name}', [
 			"player" => $player,
 			"token" => $token,
 			"space" => $space,
