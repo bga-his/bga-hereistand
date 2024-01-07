@@ -12,6 +12,7 @@ use UnitTypes;
 use TokenSides;
 use Locationtypes;
 use SpaceTypes;
+use tokenIDs;
 use tokenTypeIDs;
 
 class Map extends \HIS\Helpers\Pieces {
@@ -209,7 +210,7 @@ class Map extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
-		$token_add =Tokens::GetControlMarker($spaceID); 
+		$token_add = Tokens::GetControlMarker($spaceID); 
 		Notifications::notif_setReligion(Map::getName($spaceID), $spaceID, Map::strReligionIdToName($religion), $token_original, $token_add);
     }
 
@@ -233,12 +234,35 @@ class Map extends \HIS\Helpers\Pieces {
     public static function bolGetSpaceIsInUnrest($spaceID) : bool{
 		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
 		foreach($tokens as $token){
-			if($token["type"] == tokenTypeIDs::UNREST_MARKER){
+			if($token["type"] == tokenIDs::UNREST){
 				return true;
 			}
 		}
         return false;
     }
+
+	public static function setUnrest($spaceID, $isInRest){
+		if($isInRest){
+			Tokens::pickForLocation(1, ['supply', 'other', tokenIDs::UNREST], ['map', 'space', $spaceID]);// 'supply_other_1070'
+			
+			$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+			foreach($tokens as $token){
+				if($token["type"] == tokenIDs::UNREST){
+					Notifications::notif_addUnrest($spaceID, $token);
+					return;
+				}
+			}
+		}else{
+			$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+			foreach($tokens as $token){
+				if($token["type"] == tokenIDs::UNREST){
+					Tokens::move($token['id'], ['supply', 'other', tokenIDs::UNREST]);
+					Notifications::notif_removeUnrest($spaceID, $token['id']);
+					return;
+				}
+			}
+		}
+	}
 
     public static function bolGetSpaceIsSieged($spaceID) : bool{
 		//returns true if space is fortified and contains units that are at war with political owner.
@@ -367,7 +391,7 @@ class Map extends \HIS\Helpers\Pieces {
 	}
 
 	public static function removeLandUnits($spaceId, $power, $count, $type){
-
+		Map::addLandunits($spaceId, $power, -$count, $type); // not realy neccesary, but might want to change the notifications or something in the future.
 	}
 
 	public static function moveFormation($spaceIdFrom, $spaceIdTo, $formation){

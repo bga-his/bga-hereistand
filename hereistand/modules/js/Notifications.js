@@ -68,6 +68,14 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       }
     },
 
+    notif_addUnrest(args){
+      this.place('tplToken', args.args.token_add, `space_${args.args.spaceID}`);
+    },
+
+    notif_removeUnrest(args){
+      this.fadeOutAndDestroy(args.args.unrestTokenID);
+    },
+
     notif_buyUnit(args){
       // place token on space
       console.log("Notifications::notif_buyUnit");

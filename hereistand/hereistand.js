@@ -53,6 +53,8 @@ define([
         ['destroyUnit', 1000],
         ['setPoliticalControl', 1000],
         ['setReligion', 1000],
+        ['addUnrest', 1000],
+        ['removeUnrest', 1000],
       ];
 
       // Fix mobile viewport (remove CSS zoom)

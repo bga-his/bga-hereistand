@@ -4,6 +4,7 @@ namespace HIS\Core;
 use HIS\Managers\Players;
 use HIS\Managers\Map;
 use tokenTypeIDs;
+use tokenIDs;
 
 class Notifications {
 	/*************************
@@ -50,6 +51,22 @@ class Notifications {
 			"player_id_add" => $token_add!=null?Players::getFromPower($token_add["power"])->getId():null,
 			"type" => ($token_add!=null && in_array(tokenTypeIDs::KEYS, $token_add["types"]))?"scm":"hex",
 			"scmLocation" => $scmLocation,
+		]);
+	}
+
+	public static function notif_addUnrest($spaceID, $token_add){
+		self::notifyAll('addUnrest', 'add Unrest to ${spaceName}', [
+			"spaceID" => $spaceID,
+			"spaceName" => Map::getName($spaceID),
+			"token_add" => $token_add
+		]);
+	}
+
+	public static function notif_removeUnrest($spaceID, $tokenID){
+		self::notifyAll('removeUnrest', 'remove Unrest from ${spaceName}', [
+			"spaceID" => $spaceID,
+			"spaceName" => Map::getName($spaceID),
+			"unrestTokenID" => $tokenID
 		]);
 	}
 

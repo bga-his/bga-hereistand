@@ -106,10 +106,10 @@ class hereistand extends Table {
 					$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
 					Notifications::message("The space ".Map::getName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
 					return;
-				}else if($arrstr_args[2] == "isUnrest"){
+				}else if($arrstr_args[2] == "unrest"){
 					$spaceID = intval($arrstr_args[3]);
-					$bolIsFortifieded = Map::bolGetSpaceIsInUnrest($spaceID);
-					Notifications::message("The space ".Map::getName($spaceID)." is in Unrest = ".($bolIsFortifieded?"true":"false"));
+					$bolIsUnrest = Map::bolGetSpaceIsInUnrest($spaceID);
+					Notifications::message("The space ".Map::getName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
 					return;
 				}else if($arrstr_args[2] == "isSieged"){
 					$spaceID = intval($arrstr_args[3]);
@@ -129,14 +129,26 @@ class hereistand extends Table {
 				}else if($arrstr_args[2] == "addLandUnits"){
 					$spaceID = intval($arrstr_args[3]);
 					$count = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR; // not the best readable inline-if, if you ask me.
 					$power = Map::getPoliticalControl($spaceID);
 					
 					Map::addLandunits($spaceID, $power, $count, $type);
 					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getName($spaceID));
 					return;
-				}else if($arrstr_args[2] == "unrest"){
+				}else if($arrstr_args[2] == "delLandUnits"){
+					$spaceID = intval($arrstr_args[3]);
+					$count = intval($arrstr_args[4]);
+					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+					$power = Map::getPoliticalControl($spaceID);
 					
+					Map::removeLandUnits($spaceID, $power, $count, $type);
+					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getName($spaceID));
+					return;
+				}else if($arrstr_args[2] == "unrest"){
+					$spaceID = intval($arrstr_args[3]);
+					Map::setUnrest($spaceID, $arrstr_args[4]=="true"?true:false);
+					Notifications::message("add Unrest to space ".Map::getName($spaceID));
+					return;
 				}
 			}
 		}
