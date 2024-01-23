@@ -146,14 +146,15 @@ class Notifications {
 
 	}
 
-	public static function moveFormation($player, $formation, $from_space, $to_space) {
-		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${space_name}', [
+	public static function notif_moveFormation($player, $formation, $from_space, $to_space, $from_space_Name, $to_space_Name, $strength) {
+		self::notifyAll('moveFormation', '${player_name} moved a formation of strength ${formation_strength} from ${from_name} to ${to_name}', [
 			"player" => $player,
-			"formation_count" => count($formation),
+			"formation_strength" => $strength,
 			"formation" => $formation,
-			"from_id" => $from_space['id'],
-			"from_name" => $from_space['name'],
-			"space" => $to_space,
+			"from_id" => $from_space,
+			"from_name" => $from_space_Name,
+			"to_id" => $to_space,
+			"to_name" => $to_space_Name,
 		]);
 	}
 

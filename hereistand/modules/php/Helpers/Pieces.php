@@ -339,9 +339,26 @@ class Pieces extends DB_Manager {
 		return self::getUpdateQuery($id, null, $state)->run();
 	}
 
+	public static function movePreserveState($ids, $location){
+		//ids: As array of numbers or strings: ids of the pices to move
+		//location: location to move to (e.g. map_space_3041 for Paris)
+		if (!is_array($ids)) {
+			$ids = [$ids];
+		}
+
+		//convert to string
+		for($i =0; $i < count($ids); $i++){
+			$ids[$i] = "".$ids[$i];
+		}
+
+		self::checkLocation($location);
+		self::checkIdArray($ids);
+		Notifications::message("Pieces::move(ids=".Utils::varToString($ids).",location=".Utils::varToString($location).")");
+		return self::getUpdateQuery($ids, $location)->run();
+	}
 	/*
 		   * Move one (or many) pieces to given location
-		   * move
+		   * resets state of all moved tokens.
 	*/
 	public static function move($ids, $location, $state = 0) {
 		//ids As array of numbericalStings: ids of the pices to move

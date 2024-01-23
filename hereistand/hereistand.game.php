@@ -149,6 +149,13 @@ class hereistand extends Table {
 					Map::setUnrest($spaceID, $arrstr_args[4]=="true"?true:false);
 					Notifications::message("add Unrest to space ".Map::getName($spaceID));
 					return;
+				}else if ($arrstr_args[2] == "move"){
+					$spaceID = intval($arrstr_args[3]);
+					$spaceIDTo = intval($arrstr_args[4]);
+					$unit_count = Map::getUnitCount($spaceID);
+					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
+					Map::moveFormation($formation, $spaceIDTo);
+					return;
 				}
 			}
 		}

@@ -12,7 +12,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_moveFormation(args){
-      const dest = `space_${args.args.space.id}`;
+      const dest = `space_${args.args.to_id}`;
       const formation = args.args.formation;
       for(let token of formation){
         this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});

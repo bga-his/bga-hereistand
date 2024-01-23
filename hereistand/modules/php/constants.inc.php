@@ -93,9 +93,13 @@ abstract class TokenSides{
     const name = "name";
     const power = "power"; //Element of Powers
     const style = "style";
+    const id = "id";
     const db_id = "db_id";
-    const types = "types";
-    const back = "BACK";
+    const types = "types"; // array of elements of tokenTypeIDs
+    const back = "BACK"; // null or token (with limit attributes)
+    const location_type = "location_type"; // element of {"space", TODO}
+    const location_id = "location_id";
+    const flipped = "flipped"; // "" or "flipped"
     const strength = "strength"; // only military unit
     const battle_rating = "battle_rating"; // only leader
     const command_rating = "command_rating"; // only leader
@@ -104,6 +108,60 @@ abstract class TokenSides{
     const explorer_value = "explorer_value"; // only exporer or conquistador
     const admin_rating = "admin_rating"; //only ruler
     const card_bonus = "card_bonus"; // only ruler
+
+    /*
+    e.g. 
+    4 french regulars in paris = array ( 
+        'id' => 'tbd_1019_0', 
+        'board' => 'map', 
+        'type' => '1019', 
+        'location_type' => 'space', 
+        'location_id' => '3041', 
+        'flipped' => '', 
+        'name' => 'French 4 Military Unit', 
+        'power' => 'france', 
+        'style' => 'Military Units france_4unit', 
+        'db_id' => 'tbd_1019_{INDEX}', 
+        'strength' => 4, 
+        'types' => array ( 0 => 2005, 1 => 2006, ), 
+        'BACK' => array ( 
+            'name' => 'French 4 Mercenary Unit', 
+            'style' => 'Military Units Mercenary france_4unit', 
+            'strength' => 4, 
+            'types' => array ( 0 => 2005, 1 => 2006, 2 => 2007, ), 
+        ), )
+
+    francisI in paris = array ( 
+        'id' => 'tbd_1047', 
+        'board' => 'map', 
+        'type' => '1047', 
+        'location_type' => 'space', 
+        'location_id' => '3041', 
+        'flipped' => '', 
+        'name' => 'Francis I', 
+        'power' => 'france', 
+        'style' => 'Military Leader Ruler francis_i', 
+        'db_id' => 'tbd_1047', 
+        'command_rating' => 8, 
+        'battle_rating' => 1, 
+        'admin_rating' => 1, 
+        'card_bonus' => 1, 
+        'types' => array ( 0 => 2005, 1 => 2009, 2 => 2010, ), )
+
+    french squadron in Ruon = array ( 
+        'id' => 'tbd_1058_0', 
+        'board' => 'map', 
+        'type' => '1058', 
+        'location_type' => 'space', 
+        'location_id' => '3043', 
+        'flipped' => '', 
+        'name' => 'French Squadron', 
+        'power' => 'france', 
+        'style' => 'Naval Units french_squadron', 
+        'db_id' => 'tbd_1058_{INDEX}', 
+        'strength' => 2, 
+        'types' => array ( 0 => 2011, 1 => 2006, ), )
+    */
  }
 
  abstract class Locationtypes{

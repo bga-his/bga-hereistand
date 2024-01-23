@@ -6,12 +6,15 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
+use locationIDs;
 use Powers;
 use ReligionIDs;
 use UnitTypes;
 use TokenSides;
 use Locationtypes;
+use SpaceIDs;
 use SpaceTypes;
+use TokenAttributes;
 use tokenIDs;
 use tokenTypeIDs;
 
@@ -281,25 +284,75 @@ class Map extends \HIS\Helpers\Pieces {
         return false;
     }
 
-	public static function getLandUnits($spaceId) : array{
+	public static function getLandUnits($spaceId, $power = "") : array{
 		$res = array();
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$num_reg = 0;
 		$num_merc = 0;
 		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = ".count($inLocation));
 		foreach($inLocation as $token){
-			//Notifications::message("token = ".Utils::varToString($token));
-			if(in_array(tokenTypeIDs::UNITS, $token["types"])){
-				$res[] = $token;
-				if($token["flipped"] == ""){
-					$num_reg += $token["strength"];
-				}else{
-					$num_merc += $token["strength"];
+			Notifications::message("token = ".Utils::varToString($token));
+			//TODO also returns naval units.
+
+			if(in_array(tokenTypeIDs::UNITS, $token["types"]) && in_array(tokenTypeIDs::MILITARY, $token["types"])){
+				if($power == "" || $token["power"] == $power){
+					$res[] = $token;
+					if($token["flipped"] == ""){
+						$num_reg += $token["strength"];
+					}else{
+						$num_merc += $token["strength"];
+					}
 				}
 			}
 		}
 		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = count(token) = ".count($res)."{reg =>".$num_reg.", merc=>".$num_merc.");");
 		return $res;
+	}
+
+	public static function getUnitCount($spaceId, $power = "") : array{
+		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		$num_reg = 0;
+		$num_merc = 0;
+		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = ".count($inLocation));
+		foreach($inLocation as $token){
+			//Notifications::message("token = ".Utils::varToString($token));
+			if(in_array(tokenTypeIDs::UNITS, $token["types"]) && in_array(tokenTypeIDs::MILITARY, $token["types"])){
+				if($power == "" || $token["power"] == $power){
+					if($token["flipped"] == ""){
+						$num_reg += $token["strength"];
+					}else{
+						$num_merc += $token["strength"];
+					}
+				}
+			}
+		}
+		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = {reg =>".$num_reg.", merc=>".$num_merc."};");
+		return [$num_reg, $num_merc];
+	}
+
+	public static function getLeader($spaceId, $power = "") : array{
+		$res = array();
+		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		$battleRating = 0;
+		$commandRating = [4, 0]; // here it is set that you can move 4 units without leader (and in one other location). Ever heard about good code quality?
+		Notifications::message("getLeader.inLocation(".Map::getName($spaceId).")");
+		foreach($inLocation as $token){
+			//Notifications::message("token = ".Utils::varToString($token));
+			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && ($power == "" || $power = $token["power"])){
+				$res[] = $token;
+				if($token["command_rating"] > $commandRating[0]){
+					$commandRating[1] = $commandRating[0];
+					$commandRating[0] = $token["command_rating"];
+				}else{
+					if($token["command_rating"] > $commandRating[1]){
+						$commandRating[1] = $token["command_rating"];
+					}
+				}
+				$battleRating = max($battleRating, $token["battle_rating"]);
+			}
+		}
+		Notifications::message("getLeader.inLocation(".Map::getName($spaceId).") = count(token) = ".count($res)."{combat =>".$battleRating.", command=>".($commandRating[0]+$commandRating[1]).");");
+		return [$res, $battleRating, $commandRating[0]+$commandRating[1]];
 	}
 
     public static function addLandunits($spaceId, $power, int $count, $type) : void{
@@ -351,8 +404,7 @@ class Map extends \HIS\Helpers\Pieces {
 
 				$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], Locationtypes::space."_".$spaceId, $side);
 				if ($token == null) {
-					//TODO try to use units of lower denomination instead.
-					if($denomination == 6){ //TODO does not work. e.g. already_there[4] = 1, $count = 2, and the 6-token already on board: 
+					if($denomination == 6){
 						$target_mix[6]--;
 						$target_mix[4] += 1;
 						$target_mix[2] += 1;
@@ -368,7 +420,6 @@ class Map extends \HIS\Helpers\Pieces {
 					if($denomination == 1){
 						throw new UserException("You are out of Unit tokens. TODO show supply somewhere");
 					}
-					
 				}else{
 					Notifications::notif_buyUnit(Players::getFromPower($power), $token, Spaces::getByID($spaceId));
 				}
@@ -391,11 +442,101 @@ class Map extends \HIS\Helpers\Pieces {
 	}
 
 	public static function removeLandUnits($spaceId, $power, $count, $type){
+		//TODO failed when 1 strg6, 1 strg4, 1 strg2 and 1 ship was in place. (removed 3)
 		Map::addLandunits($spaceId, $power, -$count, $type); // not realy neccesary, but might want to change the notifications or something in the future.
 	}
 
-	public static function moveFormation($spaceIdFrom, $spaceIdTo, $formation){
-        //TODO what datatype is $formation?
+	public static function getFormation($spaceId, $intRegularCount, $intMercCount, $power=""){
+		//returns an Formation from that space, containing all Leaders present.
+		if($power == ""){
+			$power = Map::getPoliticalControl($spaceId);
+		}
+		$landUnits = Map::getLandUnits($spaceId, $power);
+		$leaders = Map::getLeader($spaceId, $power);
+		if($leaders[2] < $intRegularCount + $intMercCount){
+			//cant make Formation
+			Notifications::message("cant create Formation: to many units.");
+			return null;
+		}
+		
+		$formation = array();
+		foreach($leaders[0] as $leader){
+			$formation[] = $leader;
+		}
+		//try to fill Land untis from already there, swap to lower denominations if neccesary.
+		foreach($landUnits as $Unit){
+			$formation[] = $Unit;
+		}
+		return $formation;
+	}
+
+	public static function isFormationValid($formation) : bool{
+		//$formation array of LandUnit|Leader
+		//formation is valid if: only land units and leaders, all in same space, all from same major power (plus minor power allies), strength of land units smaller or equal than max(4, admin rating of two leaders)
+		if(count($formation) == 0){
+			return true;
+		}
+		
+		$power = $formation[0][TokenAttributes::power]; // element of Powers
+		$location = $formation[0][TokenAttributes::location_id]; // element of SpaceIDs
+		$locationType = $formation[0][TokenAttributes::location_type]; // element of SpaceIDs
+		$strength = 0;
+		$admin = [4, 0];
+		foreach($formation as $munit){
+			if($munit[TokenAttributes::power] != $power){
+				//TODO minor power allied with major power
+				return false;
+			}
+			if($munit[TokenAttributes::location_id] != $location || $munit[TokenAttributes::location_type] != $locationType){
+				return false;
+			}
+			$types = $munit[TokenAttributes::types];
+			if(in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::UNITS, $types, true)){
+				//$munit is military unit
+				$strength += intval($munit[TokenAttributes::strength]);
+			}elseif(in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::LEADER, $types, true)){
+				//$muint is leader
+				if($munit[TokenAttributes::admin_rating] > $admin[0]){
+					$admin[1] = $admin[0];
+					$admin[0] = intval($munit[TokenAttributes::admin_rating]);
+				}elseif($munit[TokenAttributes::admin_rating] > $admin[1]){
+					$admin[1] = intval($munit[TokenAttributes::admin_rating]);
+				}
+			}else{
+				//token is invalid.
+				return false;
+			}
+		}
+		return $admin[0] + $admin[1] > $strength;
+	}
+
+	public static function isMoveValid($spaceIdFrom, $spaceIdTo, $power) : bool{
+		//TODO. realy big todo
+		return true;
+	}
+
+	public static function moveFormation($formation, $spaceIdTo){
+		//$spaceIdFrom element of SpaceIDs
+		//$spaceIdTo element of SpaceIDs
+        //$formation list of LandUnit|Leader ?
+		// this just moves the formation without any checks whatsoever.
+		// please check formation valid and move valid if applicable.
+		if($formation == null){
+			return;
+		}
+		$ids = array();
+		$strength = 0;
+		$from_location = $formation[0][TokenAttributes::location_id];
+		foreach($formation as $token){
+			$ids[] = $token[TokenAttributes::id];
+			$sides[$token[TokenAttributes::id]] = $token[TokenAttributes::flipped];
+			if(in_array(tokenTypeIDs::UNITS, $token[TokenAttributes::types])){
+				$strength += $token[TokenAttributes::strength];
+			}
+		}
+		Tokens::movePreserveState($ids, "map_space_".$spaceIdTo);
+		//TODO makes merc to reg?
+		Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
 	}
 
     public static function addLeader($spaceId, $leader){
