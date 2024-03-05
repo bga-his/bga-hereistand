@@ -2965,7 +2965,7 @@ tokenIDs::FRANCIS_I => [
 ],
 tokenIDs::HENRY_II => [
 "name" => "Henry II",
-"power" => Powers::ENGLAND,
+"power" => Powers::FRANCE,
 "style" => "Military Leader Ruler henry_ii",
 "db_id" => "tbd_1048",
 "command_rating" => 8,

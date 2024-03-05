@@ -156,6 +156,18 @@ class hereistand extends Table {
 					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
 					Map::moveFormation($formation, $spaceIDTo);
 					return;
+				}else if ($arrstr_args[2] == "addLeader"){
+					$spaceID = intval($arrstr_args[3]);
+					$leaderId = intval($arrstr_args[4]);
+					Notifications::message("add Leader ".$leaderId." to place ".Map::getName($spaceID));
+					Map::addLeader($spaceID, $leaderId);
+					return;
+				}else if($arrstr_args[2] == "captureLeaders"){
+					$spaceID = intval($arrstr_args[3]);
+					//Utils::cmdStrToPower($arrstr_args[4])
+					Notifications::message("capture Leader ".Map::getName($spaceID)." by ".Powers::HAPSBURG);
+					Map::captureLeader($spaceID, Powers::HAPSBURG);
+					return;
 				}
 			}
 		}

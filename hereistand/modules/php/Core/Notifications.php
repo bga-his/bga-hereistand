@@ -3,6 +3,7 @@ namespace HIS\Core;
 
 use HIS\Managers\Players;
 use HIS\Managers\Map;
+use TokenAttributes;
 use tokenTypeIDs;
 use tokenIDs;
 
@@ -76,6 +77,30 @@ class Notifications {
 			"token" => $token,
 			"space" => $space,
 			"unit_name" => $token['name'],
+		]);
+	}
+
+	
+	public static function notif_addLeader($spaceId, $leaderId, $spaceName, $leaderToken, $player){
+		self::notifyAll('addLeader', 'added Leader ${leader_name} to space ${space_name}', [
+			"spaceId" => $spaceId,
+			"leaderId" => $leaderId,
+			"leader_name" => $leaderToken[TokenAttributes::name],
+			"space_name" => $spaceName,
+			"token" => $leaderToken,
+			"player" => $player
+		]);
+	}
+
+	public static function notif_moveLeader($player, $leaderToken, $leader_Name, $from_space, $to_space, $from_space_Name, $to_space_Name) {
+		self::notifyAll('moveLeader', '${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
+			"player" => $player,
+			"leader" => $leaderToken,
+			"leader_Name" => $leader_Name,
+			"from_id" => $from_space,
+			"from_name" => $from_space_Name,
+			"to_id" => $to_space,
+			"to_name" => $to_space_Name,
 		]);
 	}
 
@@ -155,16 +180,6 @@ class Notifications {
 			"from_name" => $from_space_Name,
 			"to_id" => $to_space,
 			"to_name" => $to_space_Name,
-		]);
-	}
-
-	public static function moveLeader($player, $leader, $from_space, $to_space){
-		self::notifyAll('moveFormation', '${player_name} moved ${formation_count} formation from ${from_name} to ${space_name}', [
-			"player" => $player,
-			"leader" => $leader,
-			"from_id" => $from_space['id'],
-			"from_name" => $from_space['name'],
-			"space" => $to_space,
 		]);
 	}
 

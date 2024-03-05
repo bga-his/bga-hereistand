@@ -6,13 +6,13 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
+use HIS\Models\Player;
 use locationIDs;
 use Powers;
 use ReligionIDs;
 use UnitTypes;
 use TokenSides;
 use Locationtypes;
-use SpaceIDs;
 use SpaceTypes;
 use TokenAttributes;
 use tokenIDs;
@@ -338,7 +338,7 @@ class Map extends \HIS\Helpers\Pieces {
 		Notifications::message("getLeader.inLocation(".Map::getName($spaceId).")");
 		foreach($inLocation as $token){
 			//Notifications::message("token = ".Utils::varToString($token));
-			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && ($power == "" || $power = $token["power"])){
+			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && ($power == "" || $power == $token["power"])){
 				$res[] = $token;
 				if($token["command_rating"] > $commandRating[0]){
 					$commandRating[1] = $commandRating[0];
@@ -510,12 +510,135 @@ class Map extends \HIS\Helpers\Pieces {
 		return $admin[0] + $admin[1] > $strength;
 	}
 
-	public static function isMoveValid($spaceIdFrom, $spaceIdTo, $power) : bool{
+	public static function getMoveValidCost(int $spaceIdFrom, int $spaceIdTo, $power) : int{
+		//return -1 if move is invalid.
 		//TODO. realy big todo
-		return true;
+		$spaceFrom = Game::get()->spaces[$spaceIdFrom];
+		$spaceTo = Game::get()->spaces[$spaceIdTo];
+		$cp = -1;
+
+		//All land units and army leaders being moved must start the action
+		//in the same space and it must be permissible to move them in a
+		//single formation -> check with Map:.isFormationValid
+
+
+		// The destination must be adjacent to the formation’s current space. (Land movement procedure step 2) (kind of wird that this is not listed in 13.1 Land movement restrictions?)
+		if(in_array($spaceIdTo, $spaceFrom["connections"], true)){
+			$cp = 1;
+		}
+		if(in_array($spaceIdTo, $spaceFrom["passes"], true)){
+			$cp = 2;
+		}
+		//TODO check seazone
+		if($cp < 0){
+			return -1;
+		}
+
+		$powerControllingTargetSpace = Map::getPoliticalControl($spaceIdTo);
+		// Formations may always move into a space controlled by their power or into an independent space. 
+		if($powerControllingTargetSpace == $power || $powerControllingTargetSpace == Powers::OTHER){
+			return $cp;
+		}
+		//A formation may only move into a space controlled by another power if either:
+			//he active power is at war with the power controlling the destination space, or
+			//the active power is allied with the power controlling the destination space.
+			// is equivalent to: if not at war or not allied: may not move.
+			// Am Im the only one who finds it wird to talk about the active power here, instead of the power owning the formation? even though they are always the same.
+		if(!Diplomacy::IsAtWar($power, $powerControllingTargetSpace) && !Diplomacy::IsAllied($power, $powerControllingTargetSpace)){
+			return -1;
+		}
+
+		/*
+		No army leader or unit may participate in a Move action if it was
+		part of a formation that lost a field battle earlier in the impulse.
+		*/
+		//TODO it currently doesnt get stored if a formation lost a field battle in this turn.
+
+		/*
+		No army leader or unit may participate in a Move action if it
+		occupies an enemy fortified space that their power placed under
+		siege (Section 15) earlier in the impulse.
+		*/
+		//TODO it currently doesnt get stored if a formation put a space under siege in this turn.
+
+		//ormations may not move into a space containing land units from another power unless the space satisfies one of these conditions:
+		$landUnitsIntargetSpace = Map::getLandUnits($spaceIdTo);
+		if(count($landUnitsIntargetSpace) == 0){
+			return $cp;
+		}else{
+			if(!Map::bolGetSpaceIsSieged($spaceIdTo)){
+				//all units in the space are allies of the active power (and this is not a fortified space where one ally has another ally under siege),
+				$bolAllAllied = true;
+				foreach($landUnitsIntargetSpace as $landUnit){
+					if(!Diplomacy::IsAllied($power, $landUnit[TokenAttributes::power])){
+						$bolAllAllied = false;
+					}
+				}
+				if($bolAllAllied){
+					return $cp;
+				}
+				//all units in the space are enemies of the active power (and thisis not a fortified space where one enemy has another enemy under siege)
+				$bolAllAllied = true;
+				foreach($landUnitsIntargetSpace as $landUnit){
+					if(!Diplomacy::IsAtWar($power, $landUnit[TokenAttributes::power])){
+						$bolAllAllied = false;
+					}
+				}
+				if($bolAllAllied){
+					return $cp;
+				}
+			}
+			/*
+			This is a space controlled by an enemy power and all units in
+			the space are either from that enemy power or allied to them.
+			When resolving this movement, treat the units already in the
+			space as “enemy units” for all purposes. Adjacent units from
+			a power with units in the space are also considered as enemy
+			units and may intercept into the space if desired.
+			*/
+			if(Diplomacy::IsAtWar($power, $powerControllingTargetSpace)){
+				$bolAllEnemyOrAllied = true;
+				foreach($landUnitsIntargetSpace as $landUnit){
+					if($landUnit[TokenAttributes::power] != $powerControllingTargetSpace && !Diplomacy::IsAllied($landUnit[TokenAttributes::power], $powerControllingTargetSpace)){
+						$bolAllEnemyOrAllied = false;
+					}
+				}
+				if($bolAllEnemyOrAllied){
+					//TODO special case: all units in that space are treated as enemy
+					return $cp;
+				}
+			}
+			/*
+			this is a fortified space under siege where either: (a) all units
+			inside the fortification are allied to the active power and all
+			besieging units are enemies of the active power, or (b) all units
+			inside the fortification are enemies of the active power and all
+			besieging units are allied to the active power.
+			*/
+			//TODO we currently dont store witch units are inside the fortification and witch arent.
+			// But I think that can be reconstructed from the alliances and who controlls that place.
+
+			/*
+			Independent regulars in an independent key (Section 22.6) never
+			prevent the entry of a formation, though that formation might have
+			to fight off troops from an enemy power before being able to siege
+			the independent key.
+			*/
+
+			/*
+			One or more army leaders may move without accompanying land
+			units as long as they don’t enter a space controlled by an enemy
+			power or containing enemy units. If an army leader is ever alone
+			in an unfortified space when enemy land units enter due to enemy
+			movement, retreat, or interception, that leader is captured. Place
+			the captured leader on the enemy power card. He may be regained
+			in the Diplomacy Phase of an upcoming turn (see Section 9).
+			*/
+		}
+		return $cp;
 	}
 
-	public static function moveFormation($formation, $spaceIdTo){
+	public static function moveFormation($formation, int $spaceIdTo){
 		//$spaceIdFrom element of SpaceIDs
 		//$spaceIdTo element of SpaceIDs
         //$formation list of LandUnit|Leader ?
@@ -535,23 +658,59 @@ class Map extends \HIS\Helpers\Pieces {
 			}
 		}
 		Tokens::movePreserveState($ids, "map_space_".$spaceIdTo);
-		//TODO makes merc to reg?
 		Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
 	}
 
-    public static function addLeader($spaceId, $leader){
+    public static function addLeader(int $spaceId, $leaderId){
         // leader element of generated_constants::tokenIDs_LEADER
-
+		$leader = Game::get()->tokens[$leaderId];
+		$tokens = Tokens::pickForLocation(1, ['supply', $leader[TokenAttributes::power], $leaderId], ['map', 'space', $spaceId]);
+		// would be very surpried if $tokens was more than one.
+		// but might be 0 if leader is not in supply.
+		if(sizeof($tokens) == 0){
+			$leaderId = $leader[TokenAttributes::db_id];
+			//TODO adding leader from Prision or other map space doesnt work.
+			$leaderToken = Tokens::get($leaderId);
+			Notifications::message("leaderToken=".Utils::varToString($leaderToken));
+			
+			$bolMoveWasSuccess = Tokens::movePreserveState([$leaderId], "map_space_".$spaceId);
+			if(!$bolMoveWasSuccess){
+				Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getName($spaceId));
+			}
+			$prevSpaceId = $leaderToken[TokenAttributes::location_id];
+			//TODO notification doesnt work.
+			Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leaderToken, $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceId, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getName($prevSpaceId), Map::getName($spaceId));
+		}else{
+			// added from supply -> notif new leader.
+			foreach($tokens as $token){
+				Notifications::notif_addLeader($spaceId, $leaderId, Map::getName($spaceId), $token, Players::getFromPower($token[TokenAttributes::power]));
+			}
+		}
+		
 	}
 
     public static function captureLeader($spaceId, $power){
         //move all leaders ont that space that are not from $power to prision of $power. (they just won a field battle, siege or just moved there)
-
+		$ids = array();
+		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		foreach($inLocation as $token){
+			//Notifications::message("token = ".Utils::varToString($token));
+			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && $power != $token["power"]){
+				$ids[] = $token[TokenAttributes::id];
+				Notifications::notif_moveLeader(Players::getFromPower($token[TokenAttributes::power]), $token, $token[TokenAttributes::name], $spaceId, Locationtypes::prision[$power], Map::getName($spaceId), "prison of ".$power);
+			}
+		}
+		//sets locationId of token to NULL. (and location? to 'prision' and location_type to id of prision.)
+		Tokens::move($ids, Locationtypes::prision[$power]);
+		
 	}
 
-    public static function removeLeader($spaceId, $leader){
+    public static function removeLeader($leaderId){
         //when the leader gets removed from play (because of card effect.)
-
+		$leader = Game::get()->tokens[$leaderId];
+		$fromSpace = $leader[TokenAttributes::location_id];
+		Tokens::move([$leaderId], ['supply', $leader[TokenAttributes::power], $leaderId]);
+		//TODO Notifications.
 	}
 
 	public static function moveLeader($spaceIdFrom, $spaceIdTo, $leader){

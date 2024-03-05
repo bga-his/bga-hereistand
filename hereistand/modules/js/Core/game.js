@@ -190,7 +190,7 @@ define(['dojo', 'dojo/_base/declare', 'ebg/core/gamegui'], (dojo, declare) => {
         var functionName = 'notif_' + notif[0];
         console.log("game::setupNotifications notif=(" + notif[0]+", "+notif[1]+")");
         let wrapper = (args) => {
-          console.log("game::setupNotifications::wrapper is called");
+          console.log("game::setupNotifications::wrapper is called for "+functionName);
           let timing = this[functionName](args);
           if (timing === undefined) {
             if (notif[1] === undefined) {

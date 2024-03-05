@@ -15,6 +15,7 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const dest = `space_${args.args.to_id}`;
       const formation = args.args.formation;
       for(let token of formation){
+        console.log("Notifications::notif_moveFormation(token="+token+", dest="+dest+")");
         this.slide(token, dest, {scale: this.scalingFactor, phantomEnd: true});
       }
     },
@@ -82,9 +83,29 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
       const start = `player_board_${args.args.player_id}`;
       const dest = `space_${args.args.space.id}`;
       const token = args.args.token;
-      console.log("Notifications::notif_buyUnit: place(token="+token+", start="+start+")");
       this.place('tplToken', token, start);
-      console.log("Notifications::notif_buyUnit: slide(token.id="+token.id+", dest="+dest+")");
+      this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
+    },
+
+    notif_addLeader(args){
+      const start = `player_board_${args.args.player_id}`;
+      const dest = `space_${args.args.spaceId}`;
+      const token = args.args.token;
+      this.place('tplToken', token, start);
+      this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
+    },
+
+    notif_moveLeader(args){
+      const dest = `space_${args.args.to_id}`;
+      const token = args.args.leader;
+      if(args.args.from_id == null){
+        start = `space_${args.args.from_id}`;
+      }else{
+        start = `player_board_${args.args.player_id}`;
+      }
+      //this.place('tplToken', token, start);
+      console.log("Notifications::notif_moveLeader(token.id="+token.id+", dest="+dest+")");
+      // doesnt work. (token.id and dest are the same as in notif_moveFormation, and that works.)
       this.slide(token.id, dest, {scale: this.scalingFactor, phantomEnd: true});
     },
 

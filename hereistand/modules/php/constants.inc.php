@@ -168,7 +168,9 @@ abstract class TokenSides{
     const space = "map_space";
     const powercards = "powercards_location";
     const supply = [Powers::OTTOMAN => "supply_ottoman", Powers::HAPSBURG => "supply_hapsburg", Powers::ENGLAND => "supply_england", Powers::FRANCE => "supply_france", Powers::PAPACY => "supply_papacy", Powers::PROTESTANT => "supply_protestant", Powers::OTHER => "supply_other"];
-    //TODO supply has incrementing number appended. why?
+    const prision = [Powers::OTTOMAN => "prision_".locationIDs::OTTOMAN_PRISON, Powers::HAPSBURG => "prision_".locationIDs::HAPSBURG_PRISON, Powers::ENGLAND => "prision_".locationIDs::ENGLAND_PRISON, Powers::FRANCE => "prision_".locationIDs::FRANCE_PRISON, Powers::PAPACY => "prision_".locationIDs::PAPACY_PRISON, Powers::PROTESTANT => "prision_".locationIDs::PROTESTANT_PRISON];
+    const prision_name = [locationIDs::OTTOMAN_PRISON => Powers::OTTOMAN, locationIDs::HAPSBURG_PRISON => Powers::HAPSBURG, locationIDs::ENGLAND_PRISON => Powers::ENGLAND, locationIDs::FRANCE_PRISON => Powers::FRANCE, locationIDs::PAPACY_PRISON => Powers::PAPACY, locationIDs::PROTESTANT_PRISON => Powers::PROTESTANT];
+    //TODO supply has incrementing number appended. why?    
  }
 
  abstract class SpaceTypes{
