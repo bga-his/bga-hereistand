@@ -80,6 +80,15 @@ class Notifications {
 		]);
 	}
 
+	public static function notif_buyNavalUnit($player, $token, $space){
+		self::notifyAll('buyNavalUnit', '${player_name} bought ${unit_name} in ${space_name}', [
+			"player" => $player,
+			"token" => $token,
+			"space" => $space,
+			"unit_name" => $token['name'],
+		]);
+	}
+
 	
 	public static function notif_addLeader($spaceId, $leaderId, $spaceName, $leaderToken, $player){
 		self::notifyAll('addLeader', 'added Leader ${leader_name} to space ${space_name}', [
@@ -89,18 +98,6 @@ class Notifications {
 			"space_name" => $spaceName,
 			"token" => $leaderToken,
 			"player" => $player
-		]);
-	}
-
-	public static function notif_moveLeader($player, $leaderToken, $leader_Name, $from_space, $to_space, $from_space_Name, $to_space_Name) {
-		self::notifyAll('moveLeader', '${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
-			"player" => $player,
-			"leader" => $leaderToken,
-			"leader_Name" => $leader_Name,
-			"from_id" => $from_space,
-			"from_name" => $from_space_Name,
-			"to_id" => $to_space,
-			"to_name" => $to_space_Name,
 		]);
 	}
 
@@ -172,10 +169,23 @@ class Notifications {
 	}
 
 	public static function notif_moveFormation($player, $formation, $from_space, $to_space, $from_space_Name, $to_space_Name, $strength) {
+		//Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
 		self::notifyAll('moveFormation', '${player_name} moved a formation of strength ${formation_strength} from ${from_name} to ${to_name}', [
 			"player" => $player,
 			"formation_strength" => $strength,
 			"formation" => $formation,
+			"from_id" => $from_space,
+			"from_name" => $from_space_Name,
+			"to_id" => $to_space,
+			"to_name" => $to_space_Name,
+		]);
+	}
+
+	public static function notif_moveLeader($player, $leaderId, $leader_Name, $from_space, $to_space, $from_space_Name, $to_space_Name) {
+		self::notifyAll('moveLeader', '${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
+			"player" => $player,
+			"leader" => $leaderId,
+			"leader_Name" => $leader_Name,
 			"from_id" => $from_space,
 			"from_name" => $from_space_Name,
 			"to_id" => $to_space,

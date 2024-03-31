@@ -56,7 +56,8 @@ define([
         ['addUnrest', 1000],
         ['removeUnrest', 1000],
         ['addLeader', 1000],
-        ['moveLeader', 1000]
+        ['moveLeader', 1000],
+        ['buyNavalUnit', 1000]
       ];
 
       // Fix mobile viewport (remove CSS zoom)

@@ -117,7 +117,7 @@ class hereistand extends Table {
 					Notifications::message("The space ".Map::getName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
 					return;
 				}
-			}else{ // set
+			}else if($arrstr_args[1] == "set"){ // set
 				if($arrstr_args[2] == "pol"){
 					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
 					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
@@ -162,13 +162,40 @@ class hereistand extends Table {
 					Notifications::message("add Leader ".$leaderId." to place ".Map::getName($spaceID));
 					Map::addLeader($spaceID, $leaderId);
 					return;
+				}else if ($arrstr_args[2] == "moveLeader"){
+					$spaceID = intval($arrstr_args[3]);
+					$leaderId = intval($arrstr_args[4]);
+					Notifications::message("move Leader ".$leaderId." to place ".Map::getName($spaceID));
+					Map::moveLeader($spaceID, $leaderId);
+					return;
 				}else if($arrstr_args[2] == "captureLeaders"){
 					$spaceID = intval($arrstr_args[3]);
 					//Utils::cmdStrToPower($arrstr_args[4])
 					Notifications::message("capture Leader ".Map::getName($spaceID)." by ".Powers::HAPSBURG);
 					Map::captureLeader($spaceID, Powers::HAPSBURG);
 					return;
+				}else if($arrstr_args[2] == "addNavalUnits"){
+					$spaceID = intval($arrstr_args[3]);
+					$power = Utils::cmdStrToPower($arrstr_args[4]);
+					$count = intval($arrstr_args[5]);
+					Map::addShips($spaceID, $power, $count);
+					return;
+				}else if($arrstr_args[2] == "moveNavalUnits"){
+					$spaceIDFrom = intval($arrstr_args[3]);
+					$spaceIDTo = intval($arrstr_args[4]);
+					$power = Utils::cmdStrToPower($arrstr_args[5]);
+					$count = intval($arrstr_args[6]);
+					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
+					return;
 				}
+			}else if($arrstr_args[1] == "test"){
+				Map::testPolAndRel(3001, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(3001, Powers::FRANCE);
+				Map::testPolAndRel(3001, Powers::FRANCE, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(3001, Powers::PROTESTANT);
+				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::CATHOLIC);
+				Map::setReligiosControl(3001, ReligionIDs::REFORMED);
+				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::REFORMED);
 			}
 		}
 		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));
