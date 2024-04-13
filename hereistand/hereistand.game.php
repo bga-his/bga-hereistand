@@ -117,7 +117,7 @@ class hereistand extends Table {
 					Notifications::message("The space ".Map::getName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
 					return;
 				}
-			}else{ // set
+			}else if($arrstr_args[1] == "set"){ // set
 				if($arrstr_args[2] == "pol"){
 					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
 					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
@@ -188,6 +188,14 @@ class hereistand extends Table {
 					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
 				}
+			}else if($arrstr_args[1] == "test"){
+				Map::testPolAndRel(3001, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(3001, Powers::FRANCE);
+				Map::testPolAndRel(3001, Powers::FRANCE, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(3001, Powers::PROTESTANT);
+				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::CATHOLIC);
+				Map::setReligiosControl(3001, ReligionIDs::REFORMED);
+				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::REFORMED);
 			}
 		}
 		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));

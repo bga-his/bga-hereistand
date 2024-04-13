@@ -23,8 +23,11 @@ class Map extends \HIS\Helpers\Pieces {
 		//generated_constants::spaceIDs -> constants::Powers
 		return Game::get()->spaces[$spaceID]["home_power"];
 	}
-	public static function getName($spaceID){
+	public static function getSpaceName($spaceID){
 		return Game::get()->spaces[$spaceID]["name"];
+	}
+	public static function getSeazoneName($spaceID){
+		return Game::get()->seazones[$spaceID]["name"];
 	}
 	public static function bolIsKey($spaceID){
 		return Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_KEY;
@@ -40,6 +43,15 @@ class Map extends \HIS\Helpers\Pieces {
 			return "no religion";
 		}
 		return "invalid religion id: ".$relID;
+	}
+
+	public static function testPolAndRel($spaceId, $pol, $rel){
+		if(Map::getPoliticalControl($spaceId) != $pol){
+			Notifications::message("Politcal control of ".Map::getSpaceName($spaceId)." should be ".$pol.", but currently is ".Map::getPoliticalControl($spaceId));
+		}
+		if(Map::getReligiosControl($spaceId) != $rel){
+			Notifications::message("Religios control of ".Map::getSpaceName($spaceId)." should be ".$rel.", but currently is ".Map::getPoliticalControl($rel));
+		}
 	}
 
 	public static function getSCMPowerCardLocation($power, bool $firstOccupied){
@@ -119,7 +131,7 @@ class Map extends \HIS\Helpers\Pieces {
 	 * @param string $power element of constants::Powers
 	 */
 	public static function setPoliticalControl($spaceID, $power){
-		Notifications::message("Map::setPoliticalControl(".Map::getName($spaceID).", ".$power.");");
+		Notifications::message("Map::setPoliticalControl(".Map::getSpaceName($spaceID).", ".$power.");");
         $token_original = Tokens::GetControlMarker($spaceID);
 		if($token_original == null){
 			$flipped = Map::getHomePower($spaceID) == Powers::PROTESTANT; // $flipped <=> new token has to be flipped.
@@ -142,9 +154,9 @@ class Map extends \HIS\Helpers\Pieces {
 		$token_add = Tokens::GetControlMarker($spaceID);
 		Notifications::message("token_add = ".Utils::varToString($token_add));
 		if($token_original != null && in_array(tokenTypeIDs::KEYS, $token_original["types"])){
-			Notifications::notif_setPoliticalControl($spaceID, Map::getName($spaceID), $power, $token_original, $token_add, Map::getSCMPowerCardLocation($token_original["power"], true));
+			Notifications::notif_setPoliticalControl($spaceID, Map::getSpaceName($spaceID), $power, $token_original, $token_add, Map::getSCMPowerCardLocation($token_original["power"], true));
 		}else{
-			Notifications::notif_setPoliticalControl($spaceID, Map::getName($spaceID), $power, $token_original, $token_add, null);
+			Notifications::notif_setPoliticalControl($spaceID, Map::getSpaceName($spaceID), $power, $token_original, $token_add, null);
 		}
     }
 
@@ -155,7 +167,7 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 
 		$token = Tokens::GetControlMarker($spaceID);
-		//Notifications::message("control token on space ".Map::getName($spaceID)." = ".Utils::varToString($token));
+		//Notifications::message("control token on space ".Map::getSpaceName($spaceID)." = ".Utils::varToString($token));
 		if($token == null){
 			if(Map::getHomePower($spaceID) == Powers::PROTESTANT){
 				return ReligionIDs::REFORMED;
@@ -177,7 +189,7 @@ class Map extends \HIS\Helpers\Pieces {
 		$power = Map::getPoliticalControl($spaceID);
 		$homePower = Map::getHomePower($spaceID);
 		$token_original = Tokens::GetControlMarker($spaceID);
-		Notifications::message("Map::setReligiosControl(".Map::getName($spaceID).", ".Map::strReligionIdToName($religion).");");
+		Notifications::message("Map::setReligiosControl(".Map::getSpaceName($spaceID).", ".Map::strReligionIdToName($religion).");");
 		if($power == Powers::PROTESTANT && $homePower == Powers::PROTESTANT){
 			if($religion == ReligionIDs::REFORMED && $token_original != null){
 				Map::removeControlToken($spaceID);
@@ -214,7 +226,7 @@ class Map extends \HIS\Helpers\Pieces {
 			}
 		}
 		$token_add = Tokens::GetControlMarker($spaceID); 
-		Notifications::notif_setReligion(Map::getName($spaceID), $spaceID, Map::strReligionIdToName($religion), $token_original, $token_add);
+		Notifications::notif_setReligion(Map::getSpaceName($spaceID), $spaceID, Map::strReligionIdToName($religion), $token_original, $token_add);
     }
 
     public static function bolGetSpaceIsFortified($spaceID) : bool{
@@ -289,7 +301,7 @@ class Map extends \HIS\Helpers\Pieces {
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$num_reg = 0;
 		$num_merc = 0;
-		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = ".count($inLocation));
+		Notifications::message("getLandUnits.inLocation(".Map::getSpaceName($spaceId).") = ".count($inLocation));
 		foreach($inLocation as $token){
 			Notifications::message("token = ".Utils::varToString($token));
 			//TODO also returns naval units.
@@ -305,7 +317,7 @@ class Map extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
-		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = count(token) = ".count($res)."{reg =>".$num_reg.", merc=>".$num_merc.");");
+		Notifications::message("getLandUnits.inLocation(".Map::getSpaceName($spaceId).") = count(token) = ".count($res)."{reg =>".$num_reg.", merc=>".$num_merc.");");
 		return $res;
 	}
 
@@ -313,7 +325,7 @@ class Map extends \HIS\Helpers\Pieces {
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$num_reg = 0;
 		$num_merc = 0;
-		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = ".count($inLocation));
+		Notifications::message("getLandUnits.inLocation(".Map::getSpaceName($spaceId).") = ".count($inLocation));
 		foreach($inLocation as $token){
 			//Notifications::message("token = ".Utils::varToString($token));
 			if(in_array(tokenTypeIDs::UNITS, $token["types"]) && in_array(tokenTypeIDs::MILITARY, $token["types"])){
@@ -326,7 +338,7 @@ class Map extends \HIS\Helpers\Pieces {
 				}
 			}
 		}
-		Notifications::message("getLandUnits.inLocation(".Map::getName($spaceId).") = {reg =>".$num_reg.", merc=>".$num_merc."};");
+		Notifications::message("getLandUnits.inLocation(".Map::getSpaceName($spaceId).") = {reg =>".$num_reg.", merc=>".$num_merc."};");
 		return [$num_reg, $num_merc];
 	}
 
@@ -335,7 +347,7 @@ class Map extends \HIS\Helpers\Pieces {
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$battleRating = 0;
 		$commandRating = [4, 0]; // here it is set that you can move 4 units without leader (and in one other location). Ever heard about good code quality?
-		Notifications::message("getLeader.inLocation(".Map::getName($spaceId).")");
+		Notifications::message("getLeader.inLocation(".Map::getSpaceName($spaceId).")");
 		foreach($inLocation as $token){
 			//Notifications::message("token = ".Utils::varToString($token));
 			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && ($power == "" || $power == $token["power"])){
@@ -351,7 +363,7 @@ class Map extends \HIS\Helpers\Pieces {
 				$battleRating = max($battleRating, $token["battle_rating"]);
 			}
 		}
-		Notifications::message("getLeader.inLocation(".Map::getName($spaceId).") = count(token) = ".count($res)."{combat =>".$battleRating.", command=>".($commandRating[0]+$commandRating[1]).");");
+		Notifications::message("getLeader.inLocation(".Map::getSpaceName($spaceId).") = count(token) = ".count($res)."{combat =>".$battleRating.", command=>".($commandRating[0]+$commandRating[1]).");");
 		return [$res, $battleRating, $commandRating[0]+$commandRating[1]];
 	}
 
@@ -361,7 +373,7 @@ class Map extends \HIS\Helpers\Pieces {
 		//$power As String From constans::Powers
 		//$count As int, total strength of land units to add
 		//$type As int from constants::UnitTypes
-		Notifications::message("call Map::addLandUnits(".Map::getName($spaceId).", ".$power.", ".$count.", ".$type==UnitTypes::REGULAR?"regular":"merc");
+		Notifications::message("call Map::addLandUnits(".Map::getSpaceName($spaceId).", ".$power.", ".$count.", ".$type==UnitTypes::REGULAR?"regular":"merc");
 		$already_there = array(1=>0, 2=>0, 4=>0, 6=>0);
 		$already_there_units = Map::getLandUnits($spaceId);
 		$target_mix = array(1=>0, 2=>0, 4=>0, 6=>0);
@@ -658,7 +670,7 @@ class Map extends \HIS\Helpers\Pieces {
 			}
 		}
 		Tokens::movePreserveState($ids, "map_space_".$spaceIdTo);
-		Notifications::notif_moveFormation(Players::getFromPower($formation[0][TokenAttributes::power]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
+		Notifications::notif_moveFormation(Players::getFromPower($formation[0][TokenAttributes::power]), $ids, $from_location, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName(($spaceIdTo)), $strength);
 	}
 
 	public static function moveLeader($spaceIdTo, $leaderId){
@@ -672,10 +684,10 @@ class Map extends \HIS\Helpers\Pieces {
 		if($bolMoveWasSuccess){
 			$prevSpaceId = $leaderToken[TokenAttributes::location_id];
 			//TODO notification doesnt work.
-			//Notifications::notif_moveFormation(Players::getFromPower($leader[TokenAttributes::power]), [$leader[TokenAttributes::db_id]], $prevSpaceId, $spaceIdTo, Map::getName($prevSpaceId), Map::getName($spaceIdTo), 0);
-			Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leader[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceIdTo, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getName($prevSpaceId), Map::getName($spaceIdTo));
+			//Notifications::notif_moveFormation(Players::getFromPower($leader[TokenAttributes::power]), [$leader[TokenAttributes::db_id]], $prevSpaceId, $spaceIdTo, Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceIdTo), 0);
+			Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leader[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceIdTo, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceIdTo));
 		}else{
-			Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getName($spaceIdTo));
+			Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getSpaceName($spaceIdTo));
 		}
 	}
 
@@ -687,7 +699,7 @@ class Map extends \HIS\Helpers\Pieces {
 		// would be very surpried if $tokens was more than one.
 		// but might be 0 if leader is not in supply.
 		if(sizeof($tokens) == 0){
-			Notifications::message("cant add leader ".$leader[TokenAttributes::name]." to space ".Map::getName($spaceId).": not in supply.");
+			Notifications::message("cant add leader ".$leader[TokenAttributes::name]." to space ".Map::getSpaceName($spaceId).": not in supply.");
 			$leaderId = $leader[TokenAttributes::db_id];
 			//TODO adding leader from Prision or other map space doesnt work.
 			$leaderToken = Tokens::get($leaderId);
@@ -697,14 +709,14 @@ class Map extends \HIS\Helpers\Pieces {
 			if($bolMoveWasSuccess){
 				$prevSpaceId = $leaderToken[TokenAttributes::location_id];
 				//TODO notification doesnt work.
-				Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leaderToken[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceId, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getName($prevSpaceId), Map::getName($spaceId));
+				Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leaderToken[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceId, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceId));
 			}else{
-				Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getName($spaceId));
+				Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getSpaceName($spaceId));
 			}
 		}else{
 			// added from supply -> notif new leader.
 			foreach($tokens as $token){
-				Notifications::notif_addLeader($spaceId, $$leader[TokenAttributes::db_id], Map::getName($spaceId), $token, Players::getFromPower($token[TokenAttributes::power]));
+				Notifications::notif_addLeader($spaceId, $$leader[TokenAttributes::db_id], Map::getSpaceName($spaceId), $token, Players::getFromPower($token[TokenAttributes::power]));
 			}
 		}
 		
@@ -718,7 +730,7 @@ class Map extends \HIS\Helpers\Pieces {
 			//Notifications::message("token = ".Utils::varToString($token));
 			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && $power != $token["power"]){
 				$ids[] = $token[TokenAttributes::id];
-				Notifications::notif_moveLeader(Players::getFromPower($token[TokenAttributes::power]), $token[TokenAttributes::db_id], $token[TokenAttributes::name], $spaceId, Locationtypes::prision[$power], Map::getName($spaceId), "prison of ".$power);
+				Notifications::notif_moveLeader(Players::getFromPower($token[TokenAttributes::power]), $token[TokenAttributes::db_id], $token[TokenAttributes::name], $spaceId, Locationtypes::prision[$power], Map::getSpaceName($spaceId), "prison of ".$power);
 			}
 		}
 		//sets locationId of token to NULL. (and location? to 'prision' and location_type to id of prision.)
@@ -757,7 +769,7 @@ class Map extends \HIS\Helpers\Pieces {
 			$spaceName = Game::get()->seazones[$spaceOrSeazoneId]["name"];
 		}else{
 			$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceOrSeazoneId);
-			$spaceName = Map::getName($spaceOrSeazoneId);
+			$spaceName = Map::getSpaceName($spaceOrSeazoneId);
 		}
 		
 		//TODO $inLocation is empty.
@@ -767,7 +779,7 @@ class Map extends \HIS\Helpers\Pieces {
 			Notifications::message("token = ".Utils::varToString($token));
 			//TODO also returns naval units.
 
-			if(in_array(tokenTypeIDs::NAVAL, $token["types"]) && in_array(tokenTypeIDs::MILITARY, $token["types"])){
+			if(in_array(tokenTypeIDs::NAVAL, $token["types"]) && in_array(tokenTypeIDs::UNITS, $token["types"])){
 				if($power == "" || $token["power"] == $power){
 					$res[] = $token;
 					$num += 1;
@@ -802,18 +814,35 @@ class Map extends \HIS\Helpers\Pieces {
 		if(map::bolIsValidShipDestination($seazoneIdTo)){
 			$ships = Map::getShips($seazoneIdFrom, $power);
 			$ids = array();
+			$seazoneFromName = "";
+				if($seazoneIdFrom < 6000){
+					$seazoneFromName = Map::getSpaceName($seazoneIdFrom);
+				}else{
+					$seazoneFromName = Map::getSeazoneName($seazoneIdFrom);
+				}
+				$seazoneToName = "";
+				if($seazoneIdTo < 6000){
+					$seazoneToName = Map::getSpaceName($seazoneIdTo);
+				}else{
+					$seazoneToName = Map::getSeazoneName($seazoneIdTo);
+				}
+
 			Notifications::message("count(ships)".count($ships).", count=".$count);
-			for($intI=0; $intI<$count; $intI++){
-				$ids[] = $ships[$ids][TokenAttributes::id];
-			}
-			Notifications::message("ids=".Utils::varToString($ids));
-			if($seazoneIdTo >= 6000){
-				Tokens::movePreserveState($ids, "map_seazone_".$seazoneIdTo);
+			if($count <= count($ships)){
+				for($intI=0; $intI<$count; $intI++){
+					$ids[] = $ships[$intI][TokenAttributes::id];
+				}
+				Notifications::message("ids=".Utils::varToString($ids));
+				if($seazoneIdTo >= 6000){
+					Tokens::movePreserveState($ids, "map_seazone_".$seazoneIdTo);
+				}else{
+					Tokens::movePreserveState($ids, "map_space_".$seazoneIdTo);
+				}
+				// TODO ships in seazones cant be displayed (because seazones dont realy exist?)
+				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, $seazoneIdFrom, $seazoneIdTo, $seazoneFromName, $seazoneToName, $count);
 			}else{
-				Tokens::movePreserveState($ids, "map_space_".$seazoneIdTo);
+				Notifications::message("cant move ".$count." ships when only ".count($ships)." are present in ".$seazoneFromName);
 			}
-			//TODO notifications.
-			//Notifications::notif_moveFormation(Players::getFromPower($formation[0][TokenAttributes::power]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
 		}else{
 			Notifications::message("space/seazone ".$seazoneIdTo." is no valid place for ships.");
 		}

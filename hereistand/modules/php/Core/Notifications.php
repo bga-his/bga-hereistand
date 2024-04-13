@@ -181,6 +181,19 @@ class Notifications {
 		]);
 	}
 
+	public static function notif_moveNavalFormation($player, $formation, $from_space, $to_space, $from_space_Name, $to_space_Name, $strength) {
+		//Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
+		self::notifyAll('moveFormation', '${player_name} moved ${formation_strength} naval units from ${from_name} to ${to_name}', [
+			"player" => $player,
+			"formation_strength" => $strength,
+			"formation" => $formation,
+			"from_id" => $from_space,
+			"from_name" => $from_space_Name,
+			"to_id" => $to_space,
+			"to_name" => $to_space_Name,
+		]);
+	}
+
 	public static function notif_moveLeader($player, $leaderId, $leader_Name, $from_space, $to_space, $from_space_Name, $to_space_Name) {
 		self::notifyAll('moveLeader', '${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
 			"player" => $player,

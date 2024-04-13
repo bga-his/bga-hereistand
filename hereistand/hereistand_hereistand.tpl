@@ -7,6 +7,11 @@
 				        <div id="space_{ID}" class="map_node space" style="left: {X}px; top: {Y}px;" data-name="{NAME}"></div>
 				    <!-- END space -->
 				</div>
+				<div id='seazone'>
+				    <!-- BEGIN seazone -->
+				        <div id="seazone_{ID}" class="map_node seazone" style="left: {X}px; top: {Y}px;" data-name="{NAME}"></div>
+				    <!-- END seazone -->
+				</div>
 				<div id='map-locations'>
 				    <!-- BEGIN map_location -->
 				        <div id="location_{ID}" class="map_node location" style="left: {X}px; top: {Y}px;" data-id="{ID}"></div>

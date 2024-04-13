@@ -28,6 +28,15 @@ class view_hereistand_hereistand extends game_view {
 				'NAME' => $space['name'],
 			));
 		}
+		$this->page->begin_block("hereistand_hereistand", "seazone");
+		foreach ($this->game->seazones as $seazone_id => $seazone) {
+			$this->page->insert_block("seazone", array(
+				'X' => $seazone['x'],
+				'Y' => $seazone['y'],
+				'ID' => $seazone_id,
+				'NAME' => $seazone['name'],
+			));
+		}
 		$this->page->begin_block("hereistand_hereistand", "map_location");
 		foreach ($this->game->board_locations as $location_id => $location) {
 			if ($location['board'] == 'map') {

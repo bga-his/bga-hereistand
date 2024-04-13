@@ -12,8 +12,12 @@ define(['dojo', 'dojo/_base/declare'], (dojo, declare) => {
     },
 
     notif_moveFormation(args){
-      const dest = `space_${args.args.to_id}`;
       const formation = args.args.formation;
+
+      dest = `space_${args.args.to_id}`;
+      if(args.args.to_id >= 6000){
+        dest = `seazone_${args.args.to_id}`;
+      }
       for(let tokenId of formation){
         console.log("Notifications::notif_moveFormation(token="+tokenId+", dest="+dest+")");
         this.slide(tokenId, dest, {scale: this.scalingFactor, phantomEnd: true});
