@@ -162,11 +162,30 @@ class hereistand extends Table {
 					Notifications::message("add Leader ".$leaderId." to place ".Map::getName($spaceID));
 					Map::addLeader($spaceID, $leaderId);
 					return;
+				}else if ($arrstr_args[2] == "moveLeader"){
+					$spaceID = intval($arrstr_args[3]);
+					$leaderId = intval($arrstr_args[4]);
+					Notifications::message("move Leader ".$leaderId." to place ".Map::getName($spaceID));
+					Map::moveLeader($spaceID, $leaderId);
+					return;
 				}else if($arrstr_args[2] == "captureLeaders"){
 					$spaceID = intval($arrstr_args[3]);
 					//Utils::cmdStrToPower($arrstr_args[4])
 					Notifications::message("capture Leader ".Map::getName($spaceID)." by ".Powers::HAPSBURG);
 					Map::captureLeader($spaceID, Powers::HAPSBURG);
+					return;
+				}else if($arrstr_args[2] == "addNavalUnits"){
+					$spaceID = intval($arrstr_args[3]);
+					$power = Utils::cmdStrToPower($arrstr_args[4]);
+					$count = intval($arrstr_args[5]);
+					Map::addShips($spaceID, $power, $count);
+					return;
+				}else if($arrstr_args[2] == "moveNavalUnits"){
+					$spaceIDFrom = intval($arrstr_args[3]);
+					$spaceIDTo = intval($arrstr_args[4]);
+					$power = Utils::cmdStrToPower($arrstr_args[5]);
+					$count = intval($arrstr_args[6]);
+					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
 				}
 			}

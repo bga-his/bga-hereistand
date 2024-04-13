@@ -166,6 +166,7 @@ abstract class TokenSides{
 
  abstract class Locationtypes{
     const space = "map_space";
+    const seazone = "map_seazone";
     const powercards = "powercards_location";
     const supply = [Powers::OTTOMAN => "supply_ottoman", Powers::HAPSBURG => "supply_hapsburg", Powers::ENGLAND => "supply_england", Powers::FRANCE => "supply_france", Powers::PAPACY => "supply_papacy", Powers::PROTESTANT => "supply_protestant", Powers::OTHER => "supply_other"];
     const prision = [Powers::OTTOMAN => "prision_".locationIDs::OTTOMAN_PRISON, Powers::HAPSBURG => "prision_".locationIDs::HAPSBURG_PRISON, Powers::ENGLAND => "prision_".locationIDs::ENGLAND_PRISON, Powers::FRANCE => "prision_".locationIDs::FRANCE_PRISON, Powers::PAPACY => "prision_".locationIDs::PAPACY_PRISON, Powers::PROTESTANT => "prision_".locationIDs::PROTESTANT_PRISON];

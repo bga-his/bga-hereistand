@@ -54,6 +54,12 @@ hereistand
    7. Add something in Cards that triggers that transition if its card is played as event.
    8. I forgott something, didnt I?
   
+ Adding a new Notification name:
+   1. Add notif_name in Notifications.php
+     1.1. call self::notifyAll(name_of_jsFunction, displayText, array of arguments for the jsFunction)
+   2. Add notif_name_of_jsFunction in Notifications.js
+   3. Add [name_of_jsFunction, 1000] to hereistand.js this._notifications array (line 49). (no idea what the 1000 means).
+
 TODO
   \Active player and remaining CP should be stored in DB to be recoverd after reload?
     \CP is global, so it already is in DB?
