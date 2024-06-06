@@ -58,7 +58,7 @@ class Notifications {
 	public static function notif_addUnrest($spaceID, $token_add){
 		self::notifyAll('addUnrest', 'add Unrest to ${spaceName}', [
 			"spaceID" => $spaceID,
-			"spaceName" => Map::getName($spaceID),
+			"spaceName" => Map::getSpaceName($spaceID),
 			"token_add" => $token_add
 		]);
 	}
@@ -66,7 +66,7 @@ class Notifications {
 	public static function notif_removeUnrest($spaceID, $tokenID){
 		self::notifyAll('removeUnrest', 'remove Unrest from ${spaceName}', [
 			"spaceID" => $spaceID,
-			"spaceName" => Map::getName($spaceID),
+			"spaceName" => Map::getSpaceName($spaceID),
 			"unrestTokenID" => $tokenID
 		]);
 	}

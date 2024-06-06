@@ -6,6 +6,7 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
+use HIS\Helpers\Pieces;
 use TokenAttributes;
 use tokenIDs_EXPLORATION;
 use tokenIDs_HEX;
@@ -19,6 +20,7 @@ use Locationtypes;
  * Tokens: id, value, faction
  */
 class Tokens extends \HIS\Helpers\Pieces {
+	private static ?Tokens $instance = null;
 	protected static $table = 'tokens';
 	protected static $prefix = 'token_';
 	protected static $customFields = ['type'];
@@ -44,6 +46,15 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 		return $token;
 	}
+
+	public static function getInstance(): Tokens {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+	private function __construct() {
+    }
 
 	public static function getTrackPosition(int $token) : int{
 		//token element of TrackTokens
@@ -111,8 +122,12 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 	}
 
-	public static function dbIDIndex($db_id, $id) {
-		return preg_replace('/\{INDEX\}/', $id, $db_id);
+	/**
+	 * return $db_id.replace("{INDEX}", strval($id));
+	 * (assumes $db_id is token["db_id"])
+	 */
+	public static function dbIDIndex(String $db_id, int $id) {
+		return preg_replace('/\{INDEX\}/', strval($id), $db_id);
 	}
 
 	public static function inSpace($token, $space_id) {
@@ -149,7 +164,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 	/**
 	 * setupNewGame: create the tokens
 	 */
-	public function setupNewGame($players, $options) {
+	public static function setupNewGame($players, $options) {
 		$tokens = Game::get()->tokens;
 		foreach (Game::get()->starting_token_counts as $token_type => $num) {
 			$piece = [
@@ -157,12 +172,12 @@ class Tokens extends \HIS\Helpers\Pieces {
 				"nbr" => $num,
 				"type" => $token_type,
 			];
-			self::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
+			Tokens::getInstance()::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
 		}
 		foreach (Game::get()->getSetup() as $power => $spaces) {
 			foreach ($spaces as $spaceID => $space) {
 				foreach ($space as $tokenID) {
-					self::pickForLocation(1, ['supply', $tokens[$tokenID]['power'], $tokenID], ['map', 'space', $spaceID]); //locationtypes[$tokens[$unit]['power']]
+					Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$tokenID]['power'], $tokenID], ['map', 'space', $spaceID]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
 		}
@@ -171,13 +186,13 @@ class Tokens extends \HIS\Helpers\Pieces {
 			$token_id = $placement[0];
 			$location_id = $placement[1];
 			$location = $locations[$location_id];
-			self::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
+			Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
 		}
 
 		// Hack to flip starting units
-		$id = self::dbIDIndex($tokens[tokenIDs_UNITS::OTTOMAN_1UNIT]['db_id'], 1);
-		self::setState($id, TokenSides::BACK);
+		$id = Tokens::getInstance()::dbIDIndex($tokens[tokenIDs_UNITS::OTTOMAN_1UNIT]['db_id'], 1);
+		Tokens::getInstance()::setState($id, TokenSides::BACK);
 		$id = $tokens[tokenIDs_EXPLORATION::HAPSBURG_EXPLORATION]['db_id'];
-		self::setState($id, TokenSides::BACK);
+		Tokens::getInstance()::setState($id, TokenSides::BACK);
 	}
 }

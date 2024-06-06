@@ -160,7 +160,7 @@ abstract class Table extends APP_GameClass {
     /** Report gamename for translation function */
     abstract protected function getGameName( );
     
-    function getActivePlayerId() {
+    static function getActivePlayerId() {
         return $player = Players::getActive();
     }
     
@@ -187,7 +187,7 @@ abstract class Table extends APP_GameClass {
         return $values;
     }
     
-    protected function getCurrentPlayerId() {
+    protected static function getCurrentPlayerId() {
         return 0;
     }
     

@@ -41,6 +41,7 @@ use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
 use HIS\Managers\Map;
+use HIS\tests\TestMap;
 
 class hereistand extends Table {
 	use HIS\DebugTrait;
@@ -104,18 +105,29 @@ class hereistand extends Table {
 				}else if($arrstr_args[2] == "isFort"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
-					Notifications::message("The space ".Map::getName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
+					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
 					return;
 				}else if($arrstr_args[2] == "unrest"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsUnrest = Map::bolGetSpaceIsInUnrest($spaceID);
-					Notifications::message("The space ".Map::getName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
+					Notifications::message("The space ".Map::getSpaceName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
 					return;
 				}else if($arrstr_args[2] == "isSieged"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsFortifieded = Map::bolGetSpaceIsSieged($spaceID);
-					Notifications::message("The space ".Map::getName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
+					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
 					return;
+				}else if($arrstr_Args[2] = "supply"){
+					$power = Utils::cmdStrToPower($arrstr_args[3]);
+					$tokens = Map::getLandUnitsInSupply($power);
+					Notifications::message("Land units in supply of ".$power.": ".Utils::varToString($tokens));
+					return;
+				}else if($arrstr_Args[2] = "mayAddLandUnits"){
+					$power = Utils::cmdStrToPower($arrstr_args[3]);
+					$spaceID = intval($arrstr_args[3]);
+					$count = intval($arrstr_args[4]);
+					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+					Notifications::message("may add land units".Map::bolMayAddLandUnits($spaceID, $power, $count, $type));
 				}
 			}else if($arrstr_args[1] == "set"){ // set
 				if($arrstr_args[2] == "pol"){
@@ -133,7 +145,7 @@ class hereistand extends Table {
 					$power = Map::getPoliticalControl($spaceID);
 					
 					Map::addLandunits($spaceID, $power, $count, $type);
-					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getName($spaceID));
+					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
 					return;
 				}else if($arrstr_args[2] == "delLandUnits"){
 					$spaceID = intval($arrstr_args[3]);
@@ -142,12 +154,12 @@ class hereistand extends Table {
 					$power = Map::getPoliticalControl($spaceID);
 					
 					Map::removeLandUnits($spaceID, $power, $count, $type);
-					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getName($spaceID));
+					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
 					return;
 				}else if($arrstr_args[2] == "unrest"){
 					$spaceID = intval($arrstr_args[3]);
 					Map::setUnrest($spaceID, $arrstr_args[4]=="true"?true:false);
-					Notifications::message("add Unrest to space ".Map::getName($spaceID));
+					Notifications::message("add Unrest to space ".Map::getSpaceName($spaceID));
 					return;
 				}else if ($arrstr_args[2] == "move"){
 					$spaceID = intval($arrstr_args[3]);
@@ -159,19 +171,19 @@ class hereistand extends Table {
 				}else if ($arrstr_args[2] == "addLeader"){
 					$spaceID = intval($arrstr_args[3]);
 					$leaderId = intval($arrstr_args[4]);
-					Notifications::message("add Leader ".$leaderId." to place ".Map::getName($spaceID));
+					Notifications::message("add Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
 					Map::addLeader($spaceID, $leaderId);
 					return;
 				}else if ($arrstr_args[2] == "moveLeader"){
 					$spaceID = intval($arrstr_args[3]);
 					$leaderId = intval($arrstr_args[4]);
-					Notifications::message("move Leader ".$leaderId." to place ".Map::getName($spaceID));
+					Notifications::message("move Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
 					Map::moveLeader($spaceID, $leaderId);
 					return;
 				}else if($arrstr_args[2] == "captureLeaders"){
 					$spaceID = intval($arrstr_args[3]);
 					//Utils::cmdStrToPower($arrstr_args[4])
-					Notifications::message("capture Leader ".Map::getName($spaceID)." by ".Powers::HAPSBURG);
+					Notifications::message("capture Leader ".Map::getSpaceName($spaceID)." by ".Powers::HAPSBURG);
 					Map::captureLeader($spaceID, Powers::HAPSBURG);
 					return;
 				}else if($arrstr_args[2] == "addNavalUnits"){
@@ -189,13 +201,27 @@ class hereistand extends Table {
 					return;
 				}
 			}else if($arrstr_args[1] == "test"){
-				Map::testPolAndRel(3001, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
-				Map::setPoliticalControl(3001, Powers::FRANCE);
-				Map::testPolAndRel(3001, Powers::FRANCE, ReligionIDs::CATHOLIC);
-				Map::setPoliticalControl(3001, Powers::PROTESTANT);
-				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::CATHOLIC);
-				Map::setReligiosControl(3001, ReligionIDs::REFORMED);
-				Map::testPolAndRel(3001, Powers::PROTESTANT, ReligionIDs::REFORMED);
+
+				// set/get political/religios control
+				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(SpaceIDs::WITTENBERG, Powers::FRANCE);
+				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::FRANCE, ReligionIDs::CATHOLIC);
+				Map::setPoliticalControl(SpaceIDs::WITTENBERG, Powers::PROTESTANT);
+				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::PROTESTANT, ReligionIDs::CATHOLIC);
+				Map::setReligiosControl(SpaceIDs::WITTENBERG, ReligionIDs::REFORMED);
+				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::PROTESTANT, ReligionIDs::REFORMED);
+
+				// TODO test on key (including test that powercards are correct)
+				// test unit/ship building, movement and destruction.
+				// TODO test cav for otto
+
+				// Formation movement
+				TestMap::testFormation(SpaceIDs::PARIS, 4, 0);
+				Map::addLandunits(SpaceIds::PARIS, Powers::FRANCE, 3, UnitTypes::REGULAR);
+				TestMap::testFormation(SpaceIDs::PARIS, 7, 0); //3 tokens (4+2+1)
+				Map::addLandunits(SpaceIds::PARIS, Powers::FRANCE, 1, UnitTypes::REGULAR);
+				TestMap::testFormation(SpaceIDs::PARIS, 8, 0); // 2 tokens (6+2)
+				return;
 			}
 		}
 		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));
@@ -313,7 +339,7 @@ class hereistand extends Table {
 
 	// Exposing protected method getCurrentPlayerId
 	public static function getCurrentPId() {
-		return self::getCurrentPlayerId();
+		return Players::getActiveId();
 	}
 
 	// Exposing protected method translation

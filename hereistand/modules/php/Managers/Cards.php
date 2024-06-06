@@ -52,7 +52,7 @@ class Cards extends \HIS\Helpers\Pieces {
 	/**
 	 * setupNewGame: create the deck of cards
 	 */
-	public function setupNewGame($p_players, $options) : void {
+	public static function setupNewGame($p_players, $options) : void {
 		foreach (Game::get()->cards as $card_id => $card) {
 			$piece = [
 				"id" => $card_id,

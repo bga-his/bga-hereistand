@@ -105,7 +105,7 @@ class Pieces extends DB_Manager {
 	/****
 		   * Return a select query with a where condition
 	*/
-	protected function addWhereClause(&$query, $id = null, $location = null, $state = null) {
+	protected static function addWhereClause(&$query, $id = null, $location = null, $state = null) {
 		if (!is_null($id)) {
 			$whereOp = strpos($id, '%') !== false ? 'LIKE' : '=';
 			$query = $query->where(static::$prefix . 'id', $whereOp, $id);
@@ -179,7 +179,7 @@ class Pieces extends DB_Manager {
 		}
 	}
 
-	final function checkIdArray($arr) {
+	final static function checkIdArray($arr) {
 		if (is_null($arr)) {
 			throw new \BgaVisibleSystemException('Class Pieces: tokens cannot be null');
 		}
@@ -187,7 +187,7 @@ class Pieces extends DB_Manager {
 		if (!is_array($arr)) {
 			throw new \BgaVisibleSystemException('Class Pieces: tokens must be an array');
 			foreach ($arr as $id) {
-				self::checkId($id);
+				Pieces::checkId($id);
 			}
 		}
 	}
@@ -514,7 +514,7 @@ class Pieces extends DB_Manager {
 		   *     "state" => <state>             // Optional argument specifies integer state, if not specified and $token_state_global is not specified auto-increment is used
 	*/
 
-	function create($pieces, $globalLocation = null, $globalState = null, $globalId = null) {
+	static function create($pieces, $globalLocation = null, $globalState = null, $globalId = null) {
 		$pos = is_null($globalLocation) ? 0 : self::getExtremePosition(true, $globalLocation) + 1;
 
 		$values = [];

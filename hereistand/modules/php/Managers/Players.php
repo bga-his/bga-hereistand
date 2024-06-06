@@ -31,7 +31,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 		return new \HIS\Models\Player($row);
 	}
 
-	public function setupNewGame($players, $options) {
+	public static function setupNewGame($players, $options) {
 		// Create players
 		$gameInfos = Game::get()->getGameinfos();
 		$colors = $gameInfos['player_colors'];
@@ -66,7 +66,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 		Game::get()->reloadPlayersBasicInfos();
 	}
 
-	public function getActiveId() : int {
+	public static function getActiveId() : int {
 		return (int) Game::get()->getActivePlayerId();
 	}
 
@@ -78,13 +78,13 @@ class Players extends \HIS\Helpers\DB_Manager {
 		return Game::get()->gamestate->isPlayerActive(self::getCurrentId());
 	}
 
-	public function getAll() {
+	public static function getAll() {
 		$players = self::DB()->get(false);
 		return $players;
 	}
 
 	public static function getFromPower($power) {
-		//powe: elemt of Powers
+		//power: elemt of Powers
 		return self::DB()
 			->where('player_power', $power)
 			->getSingle();
@@ -141,7 +141,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 	/*
 		   * getUiData : get all ui data of all players
 	*/
-	public function getUiData($pId) {
+	public static function getUiData($pId) {
 		return self::getAll()->map(function ($player) use ($pId) {
 			return $player->jsonSerialize($pId);
 		});

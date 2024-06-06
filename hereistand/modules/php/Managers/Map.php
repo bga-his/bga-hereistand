@@ -6,6 +6,7 @@ use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
+use HIS\Models\Formation;
 use HIS\Models\Player;
 use locationIDs;
 use Powers;
@@ -19,20 +20,21 @@ use tokenIDs;
 use tokenTypeIDs;
 
 class Map extends \HIS\Helpers\Pieces {
-	public static function getHomePower($spaceID){
-		//generated_constants::spaceIDs -> constants::Powers
+	public static function getHomePower(int $spaceID) : String{
+		Notifications::message("spaceID=".$spaceID);
+		Notifications::message("place=".Utils::varToString(Game::get()->spaces[$spaceID]));
 		return Game::get()->spaces[$spaceID]["home_power"];
 	}
-	public static function getSpaceName($spaceID){
+	public static function getSpaceName(int $spaceID) : String{
 		return Game::get()->spaces[$spaceID]["name"];
 	}
-	public static function getSeazoneName($spaceID){
+	public static function getSeazoneName(int $spaceID) : String{
 		return Game::get()->seazones[$spaceID]["name"];
 	}
-	public static function bolIsKey($spaceID){
+	public static function bolIsKey(int $spaceID) : bool{
 		return Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_KEY;
 	}
-	public static function strReligionIdToName($relID){
+	public static function strReligionIdToName(int $relID) : String{
 		if($relID == ReligionIDs::CATHOLIC){
 			return "Catholic";
 		}
@@ -45,16 +47,10 @@ class Map extends \HIS\Helpers\Pieces {
 		return "invalid religion id: ".$relID;
 	}
 
-	public static function testPolAndRel($spaceId, $pol, $rel){
-		if(Map::getPoliticalControl($spaceId) != $pol){
-			Notifications::message("Politcal control of ".Map::getSpaceName($spaceId)." should be ".$pol.", but currently is ".Map::getPoliticalControl($spaceId));
-		}
-		if(Map::getReligiosControl($spaceId) != $rel){
-			Notifications::message("Religios control of ".Map::getSpaceName($spaceId)." should be ".$rel.", but currently is ".Map::getPoliticalControl($rel));
-		}
-	}
-
-	public static function getSCMPowerCardLocation($power, bool $firstOccupied){
+	/**
+	 * @return int element of constants.locationIDs
+	 */
+	public static function getSCMPowerCardLocation(String $power, bool $firstOccupied) : int{
 		// firstoccupied: false -> return last open scm place; true -> return first open scm place.
 		//returns first free location for SquareControlMarkers on power card of $power. (where the current VP and card draw stand, or where the next lost scm should go)
 		$scm_location_free = null;
@@ -75,7 +71,10 @@ class Map extends \HIS\Helpers\Pieces {
 		return $scm_location_free;
 	}
 
-	public static function addControlToken($spaceID, $power){
+	/**
+	 * add hex or square control marker of power $power to space $spaceID
+	 */
+	public static function addControlToken(int $spaceID, String $power) : void{
 		Notifications::message("Map::addControlToken(".$spaceID.", ".$power.");");
 		if(Map::bolIsKey($spaceID) && $power != Powers::PROTESTANT){
 			foreach (HomeCard_key_locations[$power] as $keyLocations) {
@@ -94,7 +93,10 @@ class Map extends \HIS\Helpers\Pieces {
 		
 	}
 
-	public static function removeControlToken($spaceID){
+	/**
+	 * remove one hex or square control marker from §spaceID
+	 */
+	public static function removeControlToken(int $spaceID) : void{
 		$token = Tokens::GetControlMarker($spaceID);
 		if($token != null){
 			if(in_array(tokenTypeIDs::KEYS, $token["types"])){ // if type($token) == scm
@@ -114,7 +116,11 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 	}
 
-    public static function getPoliticalControl($spaceID){
+	/**
+	 * Get the major power that has control of the space
+	 * @return string element of constants.Powers
+	 */
+    public static function getPoliticalControl(int $spaceID) : String{
         // SpaceIDs -> constants::Powers
 		$token = Tokens::GetControlMarker($spaceID);
 		//TODO Oran, Algiers, Tripoli?
@@ -130,8 +136,9 @@ class Map extends \HIS\Helpers\Pieces {
 	 * @param int $spaceID element of generated_constants::SpaceIDs
 	 * @param string $power element of constants::Powers
 	 */
-	public static function setPoliticalControl($spaceID, $power){
+	public static function setPoliticalControl(int $spaceID, String $power){
 		Notifications::message("Map::setPoliticalControl(".Map::getSpaceName($spaceID).", ".$power.");");
+		
         $token_original = Tokens::GetControlMarker($spaceID);
 		if($token_original == null){
 			$flipped = Map::getHomePower($spaceID) == Powers::PROTESTANT; // $flipped <=> new token has to be flipped.
@@ -141,7 +148,7 @@ class Map extends \HIS\Helpers\Pieces {
 		Notifications::message("flipped = ".$flipped);
 
 		Map::removeControlToken($spaceID);
-		if(Map::getHomePower($spaceID) != $power || $flipped || Map::bolIsKey($spaceID)){
+		if(Map::getHomePower($spaceID) != $power || $flipped || Map::bolIsKey($spaceID) || (!$flipped && Map::getHomePower($spaceID) == Powers::PROTESTANT && $power == Powers::PROTESTANT)){
 			Map::addControlToken($spaceID, $power);
 			$token_add = Tokens::GetControlMarker($spaceID);
 			//Notifications::message("Map::setPoliticalControl: added Control Marker ".Utils::varToString($token));
@@ -160,7 +167,12 @@ class Map extends \HIS\Helpers\Pieces {
 		}
     }
 
-    public static function getReligiosControl($spaceID){
+	/**
+	 * Get the religios control of $spaceID
+	 * @param int $spaceID element of generated_constants::SpaceIDs
+	 * @return int religionID element of constants::ReligionIDs
+	 */
+    public static function getReligiosControl(int $spaceID) : int{
         // SpaceIDs -> constants::ReligionIDs
 		if(map::bolGetSpaceIsInUnrest($spaceID) || Map::getHomePower($spaceID) == Powers::OTTOMAN){
 			return ReligionIDs::OTHER;
@@ -185,7 +197,12 @@ class Map extends \HIS\Helpers\Pieces {
 		}
     }
 
-    public static function setReligiosControl($spaceID, $religion) : void{
+	/**
+	 * change the religios control of $spaceID to $religion
+	 * @param int $spaceID element of generated_constants::SpaceIDs
+	 * @param int $religion element of constants::ReligionIDs
+	 */
+    public static function setReligiosControl(int $spaceID, int $religion) : void{
 		$power = Map::getPoliticalControl($spaceID);
 		$homePower = Map::getHomePower($spaceID);
 		$token_original = Tokens::GetControlMarker($spaceID);
@@ -229,7 +246,11 @@ class Map extends \HIS\Helpers\Pieces {
 		Notifications::notif_setReligion(Map::getSpaceName($spaceID), $spaceID, Map::strReligionIdToName($religion), $token_original, $token_add);
     }
 
-    public static function bolGetSpaceIsFortified($spaceID) : bool{
+	/**
+	 * Return True iff the space $spaceID is fortified (Key, Captial, Fortess, eloctrorate or Fortess marker.)
+	 * @param $sapceID element of generated_constants.SpaceIDs
+	 */
+    public static function bolGetSpaceIsFortified(int $spaceID) : bool{
         // SpaceID -> boolean
         //returns true for keys, fortresses, elektrorates or spaces containing the fortress marker.
 
@@ -246,7 +267,11 @@ class Map extends \HIS\Helpers\Pieces {
 		return $space["type"] == SpaceTypes::SPACE_CAPITAL || $space["type"] == SpaceTypes::SPACE_KEY || $space["type"] == SpaceTypes::SPACE_FORTRESS || $space["type"] == SpaceTypes::SPACE_ELECTORATE;
     }
 
-    public static function bolGetSpaceIsInUnrest($spaceID) : bool{
+	/**
+	 * Return true Iff the space $spaceID is in unrest (contains an unrest marker)
+	 * * @param $spaceID element of generated_constants.SpaceIDs
+	 */
+    public static function bolGetSpaceIsInUnrest(int $spaceID) : bool{
 		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
 		foreach($tokens as $token){
 			if($token["type"] == tokenIDs::UNREST){
@@ -256,7 +281,11 @@ class Map extends \HIS\Helpers\Pieces {
         return false;
     }
 
-	public static function setUnrest($spaceID, $isInRest){
+	/**
+	 * Set weather $spaceID is in unrest ($isInRest == True -> add unrest marker, else remove all unrest markers.)
+	 * @param $spaceID element of generated_constants.SpaceIDs
+	 */
+	public static function setUnrest(int $spaceID, bool $isInRest) : void{
 		if($isInRest){
 			Tokens::pickForLocation(1, ['supply', 'other', tokenIDs::UNREST], ['map', 'space', $spaceID]);// 'supply_other_1070'
 			
@@ -273,12 +302,15 @@ class Map extends \HIS\Helpers\Pieces {
 				if($token["type"] == tokenIDs::UNREST){
 					Tokens::move($token['id'], ['supply', 'other', tokenIDs::UNREST]);
 					Notifications::notif_removeUnrest($spaceID, $token['id']);
-					return;
 				}
 			}
 		}
 	}
 
+	/**
+	 * Return true if $spaceID is sieged (is Fortified and contains units that are at war with the Power that has political control of the key)
+	 * @param $spaceID element of generated_constants.SpaceIDs
+	 */
     public static function bolGetSpaceIsSieged($spaceID) : bool{
 		//returns true if space is fortified and contains units that are at war with political owner.
 
@@ -296,23 +328,67 @@ class Map extends \HIS\Helpers\Pieces {
         return false;
     }
 
-	public static function getLandUnits($spaceId, $power = "") : array{
+	/**
+	 * @param token a token. (Has constants.TokenAttributs::types defined.)
+	 */
+	public static function bolIsLandUnit(array $token) : bool{
+		$types = $token[TokenAttributes::types];
+		return in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::UNITS, $types, true);
+	}
+	/**
+	 * @return array [n -> number of strength n land units in supply] ' normally n in [1, 2, 4, 6]
+	 */
+	public static function getLandUnitsInSupply(String $power) : array{
+		$res = [1=>0, 2=>0, 4=>0, 6=>0];
+		$tokens = Tokens::getInLocation(Locationtypes::supply[$power]."_%");
+		foreach($tokens as $token){
+			if(Map::bolIsLandUnit($token)){
+				$res[$token[TokenAttributes::strength]] += 1;
+			}
+		}
+		return $res;
+	}
+
+	/**
+	 * @return array [n -> number of strength n land units of $power in $spaceID] ' normally n in [1, 2, 4, 6]
+	 */
+	public static function getLandUnitsInSpace(int $spaceID, String $power, int $unitType) : array{
+		$res = [1=>0, 2=>0, 4=>0, 6=>0];
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceID);
+		$flipped = "flipped";
+		if($unitType == UnitTypes::REGULAR){
+			$flipped = "";
+		}
+		foreach($tokens as $token){
+			if(Map::bolIsLandUnit($token) && $token[TokenAttributes::power] == $power && $token[TokenAttributes::flipped] == $flipped){
+				$res[$token[TokenAttributes::strength]] += 1;
+			}
+		}
+		return $res;
+	}
+
+	/**
+	* get all Land units of $power in space $spaceId;
+	* @param int $spaceID element of generated_constants.SpaceIDs
+	* @param String $power: element of Powers
+	* @return array of tokens of all land units of power $power in space $spaceId.
+	*   if power is the empty string "", land units of all powers are returned.
+	*/
+	public static function getLandUnits(int $spaceId, String $power = "") : array{
 		$res = array();
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$num_reg = 0;
 		$num_merc = 0;
 		Notifications::message("getLandUnits.inLocation(".Map::getSpaceName($spaceId).") = ".count($inLocation));
 		foreach($inLocation as $token){
-			Notifications::message("token = ".Utils::varToString($token));
-			//TODO also returns naval units.
 
-			if(in_array(tokenTypeIDs::UNITS, $token["types"]) && in_array(tokenTypeIDs::MILITARY, $token["types"])){
-				if($power == "" || $token["power"] == $power){
+			if(Map::bolIsLandUnit($token)){
+				if($power == "" || $token[TokenAttributes::power] == $power){
 					$res[] = $token;
-					if($token["flipped"] == ""){
-						$num_reg += $token["strength"];
+					if($token[TokenAttributes::flipped] == ""){
+						$num_reg += $token[TokenAttributes::strength];
 					}else{
-						$num_merc += $token["strength"];
+						$num_merc += $token[TokenAttributes::strength];
 					}
 				}
 			}
@@ -321,7 +397,11 @@ class Map extends \HIS\Helpers\Pieces {
 		return $res;
 	}
 
-	public static function getUnitCount($spaceId, $power = "") : array{
+	/**
+	 * @param int $spaceID element of generated_constants.SpaceIDs
+	 * @return [int $num_reg, int $num_merc] array with the summed unit strength of all (regular units, merc/cav units) that belong to $power (or all powers, when no $power is passed). 
+	 */
+	public static function getUnitCount(int $spaceId, String $power = "") : array{
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$num_reg = 0;
 		$num_merc = 0;
@@ -342,7 +422,12 @@ class Map extends \HIS\Helpers\Pieces {
 		return [$num_reg, $num_merc];
 	}
 
-	public static function getLeader($spaceId, $power = "") : array{
+	/**
+	 * @param int $spaceID element of generated_constants.SpaceIDs
+	 * @param string $power element of constants.Powers
+	 * @return [array of all leaders (of power $power or all powers) in $spaceId, max battle Rating of those leaders, total command rating of the two highest leaders];
+	 */
+	public static function getLeader(int $spaceId, String $power = "") : array{
 		$res = array();
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$battleRating = 0;
@@ -367,7 +452,68 @@ class Map extends \HIS\Helpers\Pieces {
 		return [$res, $battleRating, $commandRating[0]+$commandRating[1]];
 	}
 
-    public static function addLandunits($spaceId, $power, int $count, $type) : void{
+	/**
+	 * check if it possible to have a stack of $count land units with $supply tokens available
+	 * @param array $supply [$strength => number of $strength tokens] for $strength in [1, 2, 4, 6]
+	 */
+	private static function bolLandUnitCountPossible(array $supply, int $count) : bool{
+		foreach([6, 4, 2, 1] as $i){
+			while($count >= $i && $supply[$i] >= 0){
+				$count -= $i;
+				$supply[$i] -= 1;
+			}
+		}
+		return $count == 0;
+	}
+	/**
+	* check that enough land units tokens are in supply, and that $spaceId is valid target. (home power and no unrest or enemy units)
+	* @param int $spaceID element of generated_constants.SpaceIDs
+	* @param String $power element of constants.Powers
+	* @param int $count number of land units to add (might be negative to remove land units instead.)
+	* @param int $type element of constants.UnitTypes
+	* @return int maximum number of land units, so that adding that count to $space would be valid (and number not greater than $count).
+	*/
+	public static function bolMayAddLandUnits(int $spaceId, String $power, int $count, int $type) : int{
+		$space = Game::get()->spaces[$spaceId];
+		if($space["home_power"] != $power || Map::bolGetSpaceIsInUnrest($spaceId)){
+			return 0;
+		}
+		// contains enemy units
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		foreach($tokens as $token){
+			if($token["type"] == tokenTypeIDs::UNITS && Diplomacy::IsAtWar($power, $token["power"])){
+				return 0;
+			}
+		}
+
+		//supply contains enough land units:
+		$supply = Map::getLandUnitsInSupply($power);
+		//TODO getLandUnits returns array of all tokens.
+		//getUnitsCount gets count of regular/merc units
+		//dont now if there is a method to get the count i need here.
+		$already_there = Map::getLandUnitsInSpace($spaceId, $power, $type);
+		//TODO supply = [1=>0, 2=>1, 4=>1, 6=>0]
+		//already_there = [1=>0, 2=>1, 4=>0, 6=>0]
+		
+		foreach([1, 2, 4, 6] as $i){
+			$supply[$i] += $already_there[$i];
+			$count += $already_there[$i] * $i;
+		}
+		while(!map::bolLandUnitCountPossible($supply, $count)){
+			$count--;
+			
+		}
+		return $count;
+	}
+
+	/**
+	* moves tokens from supply to $spaceId, so that the total strength of $type units of $power in $spaceId increases by $count. Exchanges tokens to use the highest denomination possible
+	* @param int $spaceID element of generated_constants.SpaceIDs
+	* @param String $power element of constants.Powers
+	* @param int $count mumber of land units to add (may be negative to remove land units)
+	* @param int $type element of if($power <> Powers::Ottoman, {UnitTypes::REGULAR, UnitTypes::MERC}, {UnitTypes::REGULAR, UnitTypes::CAV})
+	*/
+    public static function addLandunits(int $spaceId, String $power, int $count, int $type) : void{
 		//Add Landunits from supply to location
 		//$spaceId As ?NumericString?
 		//$power As String From constans::Powers
@@ -392,7 +538,6 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 
 		foreach($already_there_units as $landUnit){
-			Notifications::message("LandUnit = ".Utils::varToString($landUnit));
 			if($landUnit["flipped"] == $flipped){
 				$already_there[$landUnit["strength"]] += 1;
 				$total_strength += $landUnit["strength"];
@@ -453,18 +598,34 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 	}
 
-	public static function removeLandUnits($spaceId, $power, $count, $type){
+	/**
+	* moves tokens from supply to $spaceId, so that the total strength of $type units of $power in $spaceId increases by $count. Exchanges tokens to use the highest denomination possible
+	* @param int $spaceID element of generated_constants.SpaceIDs
+	* @param String $power element of constants.Powers
+	* @param int $count mumber of land units to remove (may be positive to add land units)
+	* @param int $type element of if($power <> Powers::Ottoman, {UnitTypes::REGULAR, UnitTypes::MERC}, {UnitTypes::REGULAR, UnitTypes::CAV})
+	*/
+	public static function removeLandUnits(int $spaceId, String $power, int $count, int $type) : void{
 		//TODO failed when 1 strg6, 1 strg4, 1 strg2 and 1 ship was in place. (removed 3)
 		Map::addLandunits($spaceId, $power, -$count, $type); // not realy neccesary, but might want to change the notifications or something in the future.
 	}
 
-	public static function getFormation($spaceId, $intRegularCount, $intMercCount, $power=""){
+	/**
+	 * TODO always adds all land units and leaders to formation.
+	 * @param int $spaceID element of generated_constants.SpaceIDs
+	 * @param int $intRegularCount number of regulars to add to formation
+	 * @param int $intMercCount number of Mercenaries to add to formation
+	 * @param String $power the power owning the leaders and units of that formation
+	 * @return Formation a formation containing all leaders of $power in $spaceID and the correct number of regulars and Mercenaries
+	 */
+	public static function getFormation($spaceId, $intRegularCount, $intMercCount, $power="") : Formation{
 		//returns an Formation from that space, containing all Leaders present.
 		if($power == ""){
 			$power = Map::getPoliticalControl($spaceId);
 		}
 		$landUnits = Map::getLandUnits($spaceId, $power);
 		$leaders = Map::getLeader($spaceId, $power);
+
 		if($leaders[2] < $intRegularCount + $intMercCount){
 			//cant make Formation
 			Notifications::message("cant create Formation: to many units.");
@@ -475,51 +636,18 @@ class Map extends \HIS\Helpers\Pieces {
 		foreach($leaders[0] as $leader){
 			$formation[] = $leader;
 		}
+
 		//try to fill Land untis from already there, swap to lower denominations if neccesary.
 		foreach($landUnits as $Unit){
 			$formation[] = $Unit;
 		}
-		return $formation;
+		return new Formation($formation);
 	}
 
-	public static function isFormationValid($formation) : bool{
+	public static function isFormationValid(Formation $formation) : bool{
 		//$formation array of LandUnit|Leader
 		//formation is valid if: only land units and leaders, all in same space, all from same major power (plus minor power allies), strength of land units smaller or equal than max(4, admin rating of two leaders)
-		if(count($formation) == 0){
-			return true;
-		}
-		
-		$power = $formation[0][TokenAttributes::power]; // element of Powers
-		$location = $formation[0][TokenAttributes::location_id]; // element of SpaceIDs
-		$locationType = $formation[0][TokenAttributes::location_type]; // element of SpaceIDs
-		$strength = 0;
-		$admin = [4, 0];
-		foreach($formation as $munit){
-			if($munit[TokenAttributes::power] != $power){
-				//TODO minor power allied with major power
-				return false;
-			}
-			if($munit[TokenAttributes::location_id] != $location || $munit[TokenAttributes::location_type] != $locationType){
-				return false;
-			}
-			$types = $munit[TokenAttributes::types];
-			if(in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::UNITS, $types, true)){
-				//$munit is military unit
-				$strength += intval($munit[TokenAttributes::strength]);
-			}elseif(in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::LEADER, $types, true)){
-				//$muint is leader
-				if($munit[TokenAttributes::admin_rating] > $admin[0]){
-					$admin[1] = $admin[0];
-					$admin[0] = intval($munit[TokenAttributes::admin_rating]);
-				}elseif($munit[TokenAttributes::admin_rating] > $admin[1]){
-					$admin[1] = intval($munit[TokenAttributes::admin_rating]);
-				}
-			}else{
-				//token is invalid.
-				return false;
-			}
-		}
-		return $admin[0] + $admin[1] > $strength;
+		return $formation->isValid();
 	}
 
 	public static function getMoveValidCost(int $spaceIdFrom, int $spaceIdTo, $power) : int{
@@ -846,8 +974,6 @@ class Map extends \HIS\Helpers\Pieces {
 		}else{
 			Notifications::message("space/seazone ".$seazoneIdTo." is no valid place for ships.");
 		}
-		
-
 	}
 
     public static function addSeaLeader($SeazoneId, $tokenIDs_LEADER){
