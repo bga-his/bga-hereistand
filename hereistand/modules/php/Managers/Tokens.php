@@ -95,33 +95,6 @@ class Tokens extends \HIS\Helpers\Pieces {
 	//////////////////////////////////
 	//////////////////////////////////
 
-	public static function checkFormation(array $token_ids) : bool {
-		$formation = self::getMany($token_ids);
-		if ($formation->empty()) {
-			throw new UserException("Game error: no formation selected.");
-			return false;
-		}
-		$space_id = $formation->first()['location_id'];
-		foreach ($formation as $formation_id => $formation) {
-			if ($formation['location_id'] != $space_id) {
-				throw new UserException("All units in formation must start in same space");
-				return false;
-			}
-		}
-	}
-
-	public static function checkOwner($token_ids, $player) {
-		$formation = self::getMany($token_ids);
-		if ($formation->empty()) {
-			throw new UserException("Game error: no formation selected.");
-		}
-		foreach ($formation as $formation_id => $formation) {
-			if ($formation['power'] != $player->power) {
-				throw new UserException("All units in formation must be owned by player");
-			}
-		}
-	}
-
 	/**
 	 * return $db_id.replace("{INDEX}", strval($id));
 	 * (assumes $db_id is token["db_id"])
@@ -132,11 +105,6 @@ class Tokens extends \HIS\Helpers\Pieces {
 
 	public static function inSpace($token, $space_id) {
 		return ($token['location_id'] == $space_id) && ($token['location_type'] == 'space');
-	}
-
-	public static function bolIsSieged($space_id){
-		//return space_id contains units of two powers that are at war and current_state != field battle
-		return false;
 	}
 
 	public static function tokenGetLeader($leaderName){
@@ -168,16 +136,16 @@ class Tokens extends \HIS\Helpers\Pieces {
 		$tokens = Game::get()->tokens;
 		foreach (Game::get()->starting_token_counts as $token_type => $num) {
 			$piece = [
-				"id" => $tokens[$token_type]['db_id'],
+				"id" => $tokens[$token_type][TokenAttributes::db_id],
 				"nbr" => $num,
 				"type" => $token_type,
 			];
-			Tokens::getInstance()::create([$piece], ['supply', $tokens[$token_type]['power'], $token_type], 0);
+			Tokens::getInstance()::create([$piece], ['supply', $tokens[$token_type][TokenAttributes::power], $token_type], 0);
 		}
 		foreach (Game::get()->getSetup() as $power => $spaces) {
 			foreach ($spaces as $spaceID => $space) {
 				foreach ($space as $tokenID) {
-					Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$tokenID]['power'], $tokenID], ['map', 'space', $spaceID]); //locationtypes[$tokens[$unit]['power']]
+					Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$tokenID][TokenAttributes::power], $tokenID], [Locationtypes::space."_".$spaceID]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
 		}
@@ -190,9 +158,9 @@ class Tokens extends \HIS\Helpers\Pieces {
 		}
 
 		// Hack to flip starting units
-		$id = Tokens::getInstance()::dbIDIndex($tokens[tokenIDs_UNITS::OTTOMAN_1UNIT]['db_id'], 1);
+		$id = Tokens::getInstance()::dbIDIndex($tokens[tokenIDs_UNITS::OTTOMAN_1UNIT][TokenAttributes::db_id], 1);
 		Tokens::getInstance()::setState($id, TokenSides::BACK);
-		$id = $tokens[tokenIDs_EXPLORATION::HAPSBURG_EXPLORATION]['db_id'];
+		$id = $tokens[tokenIDs_EXPLORATION::HAPSBURG_EXPLORATION][TokenAttributes::db_id];
 		Tokens::getInstance()::setState($id, TokenSides::BACK);
 	}
 }

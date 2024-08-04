@@ -335,6 +335,11 @@ class Map extends \HIS\Helpers\Pieces {
 		$types = $token[TokenAttributes::types];
 		return in_array(tokenTypeIDs::MILITARY, $types, true) && in_array(tokenTypeIDs::UNITS, $types, true);
 	}
+
+	public static function bolIsShip(array $token) : bool{
+		$types = $token[TokenAttributes::types];
+		return in_array(tokenTypeIDs::NAVAL, $types, true) && in_array(tokenTypeIDs::UNITS, $types, true);
+	}
 	/**
 	 * @return array [n -> number of strength n land units in supply] ' normally n in [1, 2, 4, 6]
 	 */
@@ -344,6 +349,20 @@ class Map extends \HIS\Helpers\Pieces {
 		foreach($tokens as $token){
 			if(Map::bolIsLandUnit($token)){
 				$res[$token[TokenAttributes::strength]] += 1;
+			}
+		}
+		return $res;
+	}
+
+	/**
+	 * get the number of ships in the supply of $power. (so the number of ships that could be build this turn.)
+	 */
+	public static function intGetShipsInSupply(String $power) : int{
+		$res = 0;
+		$tokens = Tokens::getInLocation(Locationtypes::supply[$power]."_%");
+		foreach($tokens as $token){
+			if(Map::bolIsShip($token)){
+				$res += 1;
 			}
 		}
 		return $res;
@@ -432,20 +451,22 @@ class Map extends \HIS\Helpers\Pieces {
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		$battleRating = 0;
 		$commandRating = [4, 0]; // here it is set that you can move 4 units without leader (and in one other location). Ever heard about good code quality?
+		$intTokenCommandRating = 0;
 		Notifications::message("getLeader.inLocation(".Map::getSpaceName($spaceId).")");
 		foreach($inLocation as $token){
 			//Notifications::message("token = ".Utils::varToString($token));
-			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && ($power == "" || $power == $token["power"])){
+			if(in_array(tokenTypeIDs::LEADER, $token[TokenAttributes::types]) && ($power == "" || $power == $token[TokenAttributes::power])){
 				$res[] = $token;
-				if($token["command_rating"] > $commandRating[0]){
+				$intTokenCommandRating = intval($token[TokenAttributes::command_rating]);
+				if($intTokenCommandRating > $commandRating[0]){
 					$commandRating[1] = $commandRating[0];
-					$commandRating[0] = $token["command_rating"];
+					$commandRating[0] = $intTokenCommandRating;
 				}else{
-					if($token["command_rating"] > $commandRating[1]){
-						$commandRating[1] = $token["command_rating"];
+					if($intTokenCommandRating > $commandRating[1]){
+						$commandRating[1] = $intTokenCommandRating;
 					}
 				}
-				$battleRating = max($battleRating, $token["battle_rating"]);
+				$battleRating = max($battleRating, $token[TokenAttributes::battle_rating]);
 			}
 		}
 		Notifications::message("getLeader.inLocation(".Map::getSpaceName($spaceId).") = count(token) = ".count($res)."{combat =>".$battleRating.", command=>".($commandRating[0]+$commandRating[1]).");");
@@ -504,6 +525,34 @@ class Map extends \HIS\Helpers\Pieces {
 			
 		}
 		return $count;
+	}
+
+	/**
+	 * return true if $power can add $count naval squadrons in $spaceId
+	 */
+	public static function bolMayAddShips(int $spaceId, String $power, int $count){
+		$space = Game::get()->spaces[$spaceId];
+		$supply = Map::intGetShipsInSupply($power);
+
+		if(count($space["seazones"]) == 0){
+			// spaceId has no harbour -> cant build ships
+			return false;
+		}
+		if($supply < $count){
+			return false;
+		}
+		
+		if($space["home_power"] != $power || Map::bolGetSpaceIsInUnrest($spaceId)){
+			return false;
+		}
+		// contains enemy units
+		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		foreach($tokens as $token){
+			if($token["type"] == tokenTypeIDs::UNITS && Diplomacy::IsAtWar($power, $token["power"])){
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -611,14 +660,14 @@ class Map extends \HIS\Helpers\Pieces {
 	}
 
 	/**
-	 * TODO always adds all land units and leaders to formation.
+	 * TODO do not always add all leaders to formation.
 	 * @param int $spaceID element of generated_constants.SpaceIDs
 	 * @param int $intRegularCount number of regulars to add to formation
 	 * @param int $intMercCount number of Mercenaries to add to formation
 	 * @param String $power the power owning the leaders and units of that formation
 	 * @return Formation a formation containing all leaders of $power in $spaceID and the correct number of regulars and Mercenaries
 	 */
-	public static function getFormation($spaceId, $intRegularCount, $intMercCount, $power="") : Formation{
+	public static function getFormation(int $spaceId, int $intRegularCount, int $intMercCount, $power="") : ?Formation{
 		//returns an Formation from that space, containing all Leaders present.
 		if($power == ""){
 			$power = Map::getPoliticalControl($spaceId);
@@ -638,28 +687,36 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 
 		//try to fill Land untis from already there, swap to lower denominations if neccesary.
+		Notifications::message("getFormation from space ".$spaceId);
 		foreach($landUnits as $Unit){
 			$formation[] = $Unit;
+			Notifications::message(Utils::varToString($Unit));
 		}
-		return new Formation($formation);
+		if(Count($formation) > 0){
+			return new Formation($formation);
+		}else{
+			return null;
+		}
 	}
 
-	public static function isFormationValid(Formation $formation) : bool{
-		//$formation array of LandUnit|Leader
-		//formation is valid if: only land units and leaders, all in same space, all from same major power (plus minor power allies), strength of land units smaller or equal than max(4, admin rating of two leaders)
-		return $formation->isValid();
-	}
-
-	public static function getMoveValidCost(int $spaceIdFrom, int $spaceIdTo, $power) : int{
+	public static function getMoveValidCost(Formation $formation, int $spaceIdTo, $power) : int{
 		//return -1 if move is invalid.
 		//TODO. realy big todo
-		$spaceFrom = Game::get()->spaces[$spaceIdFrom];
+		$spaceFrom = Game::get()->spaces[$formation->getSpaceId()];
 		$spaceTo = Game::get()->spaces[$spaceIdTo];
 		$cp = -1;
 
-		//All land units and army leaders being moved must start the action
-		//in the same space and it must be permissible to move them in a
-		//single formation -> check with Map:.isFormationValid
+		/*
+		All land units and army leaders being moved must start the action
+		in the same space and it must be permissible to move them in a
+		single formation
+
+		No army leader or unit may participate in a Move action if it was
+		part of a formation that lost a field battle earlier in the impulse.
+		*/
+		if(!$formation->bolMayMove()){
+			return -1;
+		}
 
 
 		// The destination must be adjacent to the formation’s current space. (Land movement procedure step 2) (kind of wird that this is not listed in 13.1 Land movement restrictions?)
@@ -684,24 +741,12 @@ class Map extends \HIS\Helpers\Pieces {
 			//the active power is allied with the power controlling the destination space.
 			// is equivalent to: if not at war or not allied: may not move.
 			// Am Im the only one who finds it wird to talk about the active power here, instead of the power owning the formation? even though they are always the same.
-		if(!Diplomacy::IsAtWar($power, $powerControllingTargetSpace) && !Diplomacy::IsAllied($power, $powerControllingTargetSpace)){
+		if(Diplomacy::IsNeutral($power, $powerControllingTargetSpace)){
 			return -1;
 		}
 
-		/*
-		No army leader or unit may participate in a Move action if it was
-		part of a formation that lost a field battle earlier in the impulse.
-		*/
-		//TODO it currently doesnt get stored if a formation lost a field battle in this turn.
 
-		/*
-		No army leader or unit may participate in a Move action if it
-		occupies an enemy fortified space that their power placed under
-		siege (Section 15) earlier in the impulse.
-		*/
-		//TODO it currently doesnt get stored if a formation put a space under siege in this turn.
-
-		//ormations may not move into a space containing land units from another power unless the space satisfies one of these conditions:
+		//formations may not move into a space containing land units from another power unless the space satisfies one of these conditions:
 		$landUnitsIntargetSpace = Map::getLandUnits($spaceIdTo);
 		if(count($landUnitsIntargetSpace) == 0){
 			return $cp;
@@ -778,27 +823,26 @@ class Map extends \HIS\Helpers\Pieces {
 		return $cp;
 	}
 
-	public static function moveFormation($formation, int $spaceIdTo){
+	public static function moveFormation(Formation $formation, int $spaceIdTo) : void{
 		//$spaceIdFrom element of SpaceIDs
 		//$spaceIdTo element of SpaceIDs
-        //$formation list of LandUnit|Leader ?
+        //$formation Formation
 		// this just moves the formation without any checks whatsoever.
-		// please check formation valid and move valid if applicable.
+		// please check with Map::getMoveValidCost($formation, $spaceidTo) > 0 that the move is valid.
 		if($formation == null){
 			return;
 		}
-		$ids = array();
-		$strength = 0;
-		$from_location = $formation[0][TokenAttributes::location_id];
-		foreach($formation as $token){
-			$ids[] = $token[TokenAttributes::id];
-			$sides[$token[TokenAttributes::id]] = $token[TokenAttributes::flipped];
-			if(in_array(tokenTypeIDs::UNITS, $token[TokenAttributes::types])){
-				$strength += $token[TokenAttributes::strength];
-			}
-		}
+		$ids = $formation->getTokenIds();
+		$power = $formation->getPower();
+		$from_location = $formation->getSpaceId();
+
 		Tokens::movePreserveState($ids, "map_space_".$spaceIdTo);
-		Notifications::notif_moveFormation(Players::getFromPower($formation[0][TokenAttributes::power]), $ids, $from_location, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName(($spaceIdTo)), $strength);
+		if(Map::bolGetSpaceIsFortified($spaceIdTo) && Map::getPoliticalControl($spaceIdTo) != $power){
+			# set the mayMove to false
+			# todo state may not be null?
+			Tokens::setState($ids, mayMove:false);
+		}
+		Notifications::notif_moveFormation(Players::getFromPower($formation->power), $ids, $from_location, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName($spaceIdTo), $formation->unit_strength);
 	}
 
 	public static function moveLeader($spaceIdTo, $leaderId){

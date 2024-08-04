@@ -93,7 +93,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 	/*
 		   * get : returns the Player object for the given player ID
 	*/
-	public function get($pId = null) {
+	public static function get($pId = null) {
 		$pId = $pId ?: self::getActiveId();
 		return self::DB()
 			->where($pId)
@@ -107,7 +107,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 		return $players;
 	}
 
-	public function getActive() {
+	public static function getActive() {
 		return self::get();
 	}
 

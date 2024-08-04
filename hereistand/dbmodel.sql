@@ -18,6 +18,9 @@
 -- Note: The database schema is created from this file when the game starts. If you modify this file,
 --       you have to restart a game to see your changes in database.
 
+-- Tokens.token_location: "map_space_".spaceId, or "supply_".power or ...
+-- Tokens.type for land units: merc, regular or cavelary.
+-- Tokens.token_mayMove: set to ture if the token lost a field battle, or put a key udner sige earlier this impulse
 ALTER TABLE `player` ADD `player_power` varchar(10) NOT NULL;
 
 CREATE TABLE IF NOT EXISTS `global_variables` (
@@ -41,10 +44,10 @@ CREATE TABLE IF NOT EXISTS `cards` (
   PRIMARY KEY (`card_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `tokens` (
+CREATE TABLE `tokens` (
   `token_id` varchar(32) NOT NULL,
   `token_location` varchar(32) NOT NULL,
-  `token_state` int(10) DEFAULT 0,
+  `token_state` int(10) DEFAULT '0',
   `type` int(10) NOT NULL,
-  PRIMARY KEY (`token_id`)
+  `token_mayMove` tinyint(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

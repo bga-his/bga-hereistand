@@ -84,6 +84,9 @@ class Actions {
 		}
 	}
 
+	/**
+	 * move formation to $space
+	 */
 	public static function declareDestination($space) {
 		$destination_id = $space['id'];
 		$spaces = Game::get()->spaces;
@@ -97,6 +100,7 @@ class Actions {
 				throw new UserException("Attempt to move over pass with less than 2 CP remaining");
 			}
 			Globals::incRemainingCP(-2);
+			//TODO move over seazones using naval transport.
 		} else {
 			throw new UserException("Attempt to move to a non-connected space");
 		}
@@ -116,6 +120,7 @@ class Actions {
 	}
 
 	public static function declareFormation($token_ids) {
+		Notifications::message("Actions::declareFormation(token_ids=".Utils::varToString($token_ids).")");
 		$formation = new Formation(Tokens::getMany($token_ids)->toArray());
 		if ($formation->isValid() == false) {
 			throw new UserException("Invalid formation");
@@ -155,10 +160,15 @@ class Actions {
 		$unit_type = Globals::getUnitBuyType();
 		$player = Players::getActive();
 		$remainingCP = Globals::getRemainingCP();
-		if (($remainingCP < 1) || ($remainingCP < 2 && $unit_type == UnitTypes::REGULAR)) {
+		if (($remainingCP < 1) || ($remainingCP < 2 && ($unit_type == UnitTypes::REGULAR || $unit_type == UnitTypes::SHIP))) {
 			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
-		MAP::addLandunits($space['id'], $player->power, 1, $unit_type);
+		if($unit_type == UnitTypes::SHIP){
+			Map::addShips($space['id'], $player->power, 1);
+		}else{
+			MAP::addLandunits($space['id'], $player->power, 1, $unit_type);
+		}
+
 		if ($unit_type == UnitTypes::MERC || $unit_type == UnitTypes::CAV) {
 			$remainingCP -= 1;
 			Globals::incRemainingCP(-1);

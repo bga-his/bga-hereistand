@@ -83,13 +83,16 @@ class Pieces extends DB_Manager {
 		return $query;
 	}
 
-	final static function getUpdateQuery($ids = [], $location = null, $state = null) {
+	final static function getUpdateQuery($ids = [], $location = null, $state = null, bool $mayMove = null) {
 		$data = [];
 		if (!is_null($location)) {
 			$data[static::$prefix . 'location'] = $location;
 		}
 		if (!is_null($state)) {
 			$data[static::$prefix . 'state'] = $state;
+		}
+		if (!is_null($mayMove)) {
+			$data[static::$prefix . 'mayMove'] = intval($mayMove); # DB column is of type tinyint, not boolean.
 		}
 		//Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
 		$query = self::DB()->update($data);
@@ -333,10 +336,16 @@ class Pieces extends DB_Manager {
 		   ************** SETTERS **************
 		   *************************************
 	*/
-	public static function setState($id, $state) {
-		self::checkState($state);
-		self::checkId($id);
-		return self::getUpdateQuery($id, null, $state)->run();
+	public static function setState($ids, int $state = null, bool $mayMove = null) {
+		self::checkState($state, true);
+		if (!is_array($ids)) {
+			$ids = [$ids];
+		}
+		self::checkIdArray($ids);
+		if(is_null($state) && is_null($mayMove)){
+			throw new \BgaVisibleSystemException('Class Pieces::setState $state and $mayMove may not both be null.');
+		}
+		return self::getUpdateQuery($ids, null, $state, $mayMove)->run();
 	}
 
 	public static function movePreserveState($ids, $location){
@@ -353,7 +362,7 @@ class Pieces extends DB_Manager {
 
 		self::checkLocation($location);
 		self::checkIdArray($ids);
-		Notifications::message("Pieces::move(ids=".Utils::varToString($ids).",location=".Utils::varToString($location).")");
+		Notifications::message("Pieces::movePreserveState(ids=".Utils::varToString($ids).",location=".Utils::varToString($location).")");
 		return self::getUpdateQuery($ids, $location)->run();
 	}
 	/*

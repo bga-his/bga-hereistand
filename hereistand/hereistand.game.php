@@ -84,70 +84,77 @@ class hereistand extends Table {
 	}
 
 	public function cmd($args) {
-		//$keyLocations = $keyLocations;
-		//powercards_location_
-		//map_space_
-		//supply_england_
-		//supply_other_
 		$arrstr_args = explode(" ", $args);
-		if($arrstr_args[0] == "map"){
-			if($arrstr_args[1] == "get"){
-				if($arrstr_args[2] == "pol"){
+		if($arrstr_args[0] === "map"){
+			if($arrstr_args[1] === "get"){
+				if($arrstr_args[2] === "pol"){
 					$spaceID = intval($arrstr_args[3]);
 					$power = Map::getPoliticalControl($spaceID);
 					Notifications::message("political control of city ".$spaceID." = ".$power);
 					return;
-				}else if($arrstr_args[2] == "rel"){
+				}else if($arrstr_args[2] === "rel"){
 					$spaceID = intval($arrstr_args[3]);
 					$religionID = Map::getReligiosControl($spaceID);
 					Notifications::message("religius control of city ".$spaceID." = ".$religionID);
 					return;
-				}else if($arrstr_args[2] == "isFort"){
+				}else if($arrstr_args[2] === "isFort"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
 					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
 					return;
-				}else if($arrstr_args[2] == "unrest"){
+				}else if($arrstr_args[2] === "unrest"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsUnrest = Map::bolGetSpaceIsInUnrest($spaceID);
 					Notifications::message("The space ".Map::getSpaceName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
 					return;
-				}else if($arrstr_args[2] == "isSieged"){
+				}else if($arrstr_args[2] === "isSieged"){
 					$spaceID = intval($arrstr_args[3]);
 					$bolIsFortifieded = Map::bolGetSpaceIsSieged($spaceID);
 					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
 					return;
-				}else if($arrstr_Args[2] = "supply"){
+				}else if($arrstr_args[2] === "supply"){
 					$power = Utils::cmdStrToPower($arrstr_args[3]);
 					$tokens = Map::getLandUnitsInSupply($power);
 					Notifications::message("Land units in supply of ".$power.": ".Utils::varToString($tokens));
 					return;
-				}else if($arrstr_Args[2] = "mayAddLandUnits"){
+				}else if($arrstr_args[2] === "mayAddLandUnits"){
 					$power = Utils::cmdStrToPower($arrstr_args[3]);
 					$spaceID = intval($arrstr_args[3]);
 					$count = intval($arrstr_args[4]);
 					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
 					Notifications::message("may add land units".Map::bolMayAddLandUnits($spaceID, $power, $count, $type));
+				}else if($arrstr_args[2] === "formation"){
+					$spaceID = intval($arrstr_args[3]);
+					$unit_count = Map::getUnitCount($spaceID);
+					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
+					Notifications::message("formation in ".Map::getSpaceName($spaceID).": ".Utils::varToString($formation));
+				}else if($arrstr_args[2] === "tokens"){
+					$spaceID = intval($arrstr_args[3]);
+					$power = Map::getPoliticalControl($spaceID);
+					$landUnits = Map::getLandUnits($spaceID, $power);
+					$leaders = Map::getLeader($spaceID, $power);
+					Notifications::message("Land units in ".Map::getSpaceName($spaceID).": ".Utils::varToString($landUnits));
+					Notifications::message("Leaders in ".Map::getSpaceName($spaceID).": ".Utils::varToString($leaders));
 				}
-			}else if($arrstr_args[1] == "set"){ // set
-				if($arrstr_args[2] == "pol"){
+			}else if($arrstr_args[1] === "set"){ // set
+				if($arrstr_args[2] === "pol"){
 					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
 					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
 					return;
-				}else if($arrstr_args[2] == "rel"){
+				}else if($arrstr_args[2] === "rel"){
 					Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
 					Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
 					return;
-				}else if($arrstr_args[2] == "addLandUnits"){
+				}else if($arrstr_args[2] === "addLandUnits"){
 					$spaceID = intval($arrstr_args[3]);
 					$count = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR; // not the best readable inline-if, if you ask me.
+					$type = $arrstr_args[5]==="merc"?UnitTypes::MERC:UnitTypes::REGULAR; // not the best readable inline-if, if you ask me.
 					$power = Map::getPoliticalControl($spaceID);
 					
 					Map::addLandunits($spaceID, $power, $count, $type);
 					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
 					return;
-				}else if($arrstr_args[2] == "delLandUnits"){
+				}else if($arrstr_args[2] === "delLandUnits"){
 					$spaceID = intval($arrstr_args[3]);
 					$count = intval($arrstr_args[4]);
 					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
@@ -156,43 +163,52 @@ class hereistand extends Table {
 					Map::removeLandUnits($spaceID, $power, $count, $type);
 					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
 					return;
-				}else if($arrstr_args[2] == "unrest"){
+				}else if($arrstr_args[2] === "unrest"){
 					$spaceID = intval($arrstr_args[3]);
 					Map::setUnrest($spaceID, $arrstr_args[4]=="true"?true:false);
 					Notifications::message("add Unrest to space ".Map::getSpaceName($spaceID));
 					return;
-				}else if ($arrstr_args[2] == "move"){
+				}else if ($arrstr_args[2] === "move"){
 					$spaceID = intval($arrstr_args[3]);
 					$spaceIDTo = intval($arrstr_args[4]);
 					$unit_count = Map::getUnitCount($spaceID);
 					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
-					Map::moveFormation($formation, $spaceIDTo);
+					if($formation){
+						if($formation->isValid()){
+							Map::moveFormation($formation, $spaceIDTo);
+						}else{
+							Notifications::message("invalid formation: ".Utils::varToString($formation));
+						}
+						
+					}else{
+						Notifications::message("no formation found on space ".Map::getSpaceName($spaceID));
+					}
 					return;
-				}else if ($arrstr_args[2] == "addLeader"){
+				}else if ($arrstr_args[2] === "addLeader"){
 					$spaceID = intval($arrstr_args[3]);
 					$leaderId = intval($arrstr_args[4]);
 					Notifications::message("add Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
 					Map::addLeader($spaceID, $leaderId);
 					return;
-				}else if ($arrstr_args[2] == "moveLeader"){
+				}else if ($arrstr_args[2] === "moveLeader"){
 					$spaceID = intval($arrstr_args[3]);
 					$leaderId = intval($arrstr_args[4]);
 					Notifications::message("move Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
 					Map::moveLeader($spaceID, $leaderId);
 					return;
-				}else if($arrstr_args[2] == "captureLeaders"){
+				}else if($arrstr_args[2] === "captureLeaders"){
 					$spaceID = intval($arrstr_args[3]);
 					//Utils::cmdStrToPower($arrstr_args[4])
 					Notifications::message("capture Leader ".Map::getSpaceName($spaceID)." by ".Powers::HAPSBURG);
 					Map::captureLeader($spaceID, Powers::HAPSBURG);
 					return;
-				}else if($arrstr_args[2] == "addNavalUnits"){
+				}else if($arrstr_args[2] === "addNavalUnits"){
 					$spaceID = intval($arrstr_args[3]);
 					$power = Utils::cmdStrToPower($arrstr_args[4]);
 					$count = intval($arrstr_args[5]);
 					Map::addShips($spaceID, $power, $count);
 					return;
-				}else if($arrstr_args[2] == "moveNavalUnits"){
+				}else if($arrstr_args[2] === "moveNavalUnits"){
 					$spaceIDFrom = intval($arrstr_args[3]);
 					$spaceIDTo = intval($arrstr_args[4]);
 					$power = Utils::cmdStrToPower($arrstr_args[5]);
@@ -200,7 +216,7 @@ class hereistand extends Table {
 					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
 				}
-			}else if($arrstr_args[1] == "test"){
+			}else if($arrstr_args[1] === "test"){
 
 				// set/get political/religios control
 				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
