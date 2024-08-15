@@ -1037,4 +1037,12 @@ class Map extends \HIS\Helpers\Pieces {
 	public static function moveSeaLeader($SeazoneIdFrom, $SeazoneIdTo, $tokenIDs_LEADER){
 
 	}
+
+	/*
+	add a loan marker of $power to the ship $tokenNavalUnit
+	TODO how to store witch ships are loaned? have the tokenID of the ship as location of the loan marker?
+	*/
+	public static function addLoanMaker($power, $tokenNavalUnit){
+
+	}
 }

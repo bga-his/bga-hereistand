@@ -145,6 +145,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 		foreach (Game::get()->getSetup() as $power => $spaces) {
 			foreach ($spaces as $spaceID => $space) {
 				foreach ($space as $tokenID) {
+					Notifications::message("Tokens::setupNewGame(supply_".$tokens[$tokenID][TokenAttributes::power]."_".$tokenID.", to=".Locationtypes::space."_".$spaceID);
 					Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$tokenID][TokenAttributes::power], $tokenID], [Locationtypes::space."_".$spaceID]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
@@ -154,6 +155,7 @@ class Tokens extends \HIS\Helpers\Pieces {
 			$token_id = $placement[0];
 			$location_id = $placement[1];
 			$location = $locations[$location_id];
+			Notifications::message("Tokens::setupNewGame(supply_".$tokens[$token_id]['power']."_".$token_id.", to=".$location['board']."_location_".$location_id);
 			Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
 		}
 

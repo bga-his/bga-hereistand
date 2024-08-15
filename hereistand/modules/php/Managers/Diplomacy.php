@@ -89,6 +89,17 @@ class Diplomacy extends \HIS\Helpers\Pieces {
         }
     }
 
+    /*
+    Get the power that currently controls this ship.
+    If it is of a minor power that is currently not allied with a major power: returns Powers::Other
+    If it has a lona-maker, the power of that loan maker is returned.
+    else the power who owns that ship is returned.
+    */
+    public static function GetControllingPowerOfShip($tokenShip) : String{
+        //TODO loan makers
+        return Diplomacy::GetControllingPower($tokenShip[TokenAttributes::power]);
+    }
+
     public static function bolIsMinorPower(String $power) : bool{
         return in_array($power, Diplomacy::arrstr_minor_powers, true);
     }
