@@ -215,6 +215,9 @@ class hereistand extends Table {
 					$count = intval($arrstr_args[6]);
 					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
+				}else if($arrstr_args[2] === "addNavalLeader"){
+					Map::addNavalLeader(intval($arrstr_args[3]), intval($arrstr_args[4]));
+					return;
 				}
 			}else if($arrstr_args[1] === "test"){
 

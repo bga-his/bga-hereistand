@@ -867,7 +867,7 @@ class Map extends \HIS\Helpers\Pieces {
         // leader element of generated_constants::tokenIDs_LEADER
 		$leader = Game::get()->tokens[$leaderId];
 		Notifications::message("leader = ".Utils::varToString($leader));
-		$tokens = Tokens::pickForLocation(1, ['supply', $leader[TokenAttributes::power], $leaderId], ['map', 'space', $spaceId]);
+		$tokens = Tokens::pickForLocation(1, ['supply', $leader[TokenAttributes::power], $leaderId], Locationtypes::space."_".$spaceId);
 		// would be very surpried if $tokens was more than one.
 		// but might be 0 if leader is not in supply.
 		if(sizeof($tokens) == 0){
@@ -891,7 +891,6 @@ class Map extends \HIS\Helpers\Pieces {
 				Notifications::notif_addLeader($spaceId, $$leader[TokenAttributes::db_id], Map::getSpaceName($spaceId), $token, Players::getFromPower($token[TokenAttributes::power]));
 			}
 		}
-		
 	}
 
     public static function captureLeader($spaceId, $power){
@@ -920,7 +919,7 @@ class Map extends \HIS\Helpers\Pieces {
 
 
 	Public static function bolIsValidShipDestination($spaceOrSeazoneId){
-		if(6000 <=$spaceOrSeazoneId && $spaceOrSeazoneId <= 6013){
+		if(Locationtypes::min_seazone_id <=$spaceOrSeazoneId && $spaceOrSeazoneId <= 6013){
 			// seazone
 			return True;
 		}else if(3000 <= $spaceOrSeazoneId && $spaceOrSeazoneId <= 3133){
@@ -987,13 +986,13 @@ class Map extends \HIS\Helpers\Pieces {
 			$ships = Map::getShips($seazoneIdFrom, $power);
 			$ids = array();
 			$seazoneFromName = "";
-				if($seazoneIdFrom < 6000){
+				if($seazoneIdFrom < Locationtypes::min_seazone_id){
 					$seazoneFromName = Map::getSpaceName($seazoneIdFrom);
 				}else{
 					$seazoneFromName = Map::getSeazoneName($seazoneIdFrom);
 				}
 				$seazoneToName = "";
-				if($seazoneIdTo < 6000){
+				if($seazoneIdTo < Locationtypes::min_seazone_id){
 					$seazoneToName = Map::getSpaceName($seazoneIdTo);
 				}else{
 					$seazoneToName = Map::getSeazoneName($seazoneIdTo);
@@ -1005,10 +1004,10 @@ class Map extends \HIS\Helpers\Pieces {
 					$ids[] = $ships[$intI][TokenAttributes::id];
 				}
 				Notifications::message("ids=".Utils::varToString($ids));
-				if($seazoneIdTo >= 6000){
-					Tokens::movePreserveState($ids, "map_seazone_".$seazoneIdTo);
+				if($seazoneIdTo >= Locationtypes::min_seazone_id){
+					Tokens::movePreserveState($ids, Locationtypes::seazone."_".$seazoneIdTo);
 				}else{
-					Tokens::movePreserveState($ids, "map_space_".$seazoneIdTo);
+					Tokens::movePreserveState($ids, Locationtypes::space."_".$seazoneIdTo);
 				}
 				// TODO ships in seazones cant be displayed (because seazones dont realy exist?)
 				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, $seazoneIdFrom, $seazoneIdTo, $seazoneFromName, $seazoneToName, $count);
@@ -1020,21 +1019,25 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 	}
 
-    public static function addSeaLeader($SeazoneId, $tokenIDs_LEADER){
-
+	/*
+	* I think sea leaders are always added to ports
+	*/
+    public static function addNavalLeader($spaceId, $leaderId){
+		// leader element of generated_constants::tokenIDs_LEADER
+		Map::addLeader($spaceId, $leaderId);
 	}
 
-    public static function captureSeaLeader($SeazoneId, $power){
+    public static function captureNavalLeader($SeazoneId, $power){
         //move all leaders ont that space that are not from $power to prision of $power. (they just won a field battle, siege or just moved there)
         
 	}
 
-    public static function removeSeaLeader($SeazoneId, $tokenIDs_LEADER){
+    public static function removeNavalLeader($SeazoneId, $tokenIDs_LEADER){
         //when the leader gets removed from play (because of card effect.)
 
 	}
 
-	public static function moveSeaLeader($SeazoneIdFrom, $SeazoneIdTo, $tokenIDs_LEADER){
+	public static function moveNavalLeader($SeazoneIdFrom, $SeazoneIdTo, $tokenIDs_LEADER){
 
 	}
 
