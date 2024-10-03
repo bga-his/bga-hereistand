@@ -163,6 +163,19 @@ abstract class TokenSides{
         'types' => array ( 0 => 2011, 1 => 2006, ), )
     */
  }
+ 
+ abstract class SpaceTypes{
+    const SPACE_UNFORTIFIED = 100;
+    const SPACE_ELECTORATE = 101;
+    const SPACE_FORTRESS = 102;
+    const SPACE_KEY = 103;
+    const SPACE_CAPITAL = 104;
+ }
+ 
+ abstract class LocationAttributs{
+    const home_power = "home_power"; // element of Powers
+    const type = "type"; // element of SpaceTypes
+ }
 
  abstract class Locationtypes{
     const space = "map_space";
@@ -172,14 +185,6 @@ abstract class TokenSides{
     const prision = [Powers::OTTOMAN => "prision_".locationIDs::OTTOMAN_PRISON, Powers::HAPSBURG => "prision_".locationIDs::HAPSBURG_PRISON, Powers::ENGLAND => "prision_".locationIDs::ENGLAND_PRISON, Powers::FRANCE => "prision_".locationIDs::FRANCE_PRISON, Powers::PAPACY => "prision_".locationIDs::PAPACY_PRISON, Powers::PROTESTANT => "prision_".locationIDs::PROTESTANT_PRISON];
     const prision_name = [locationIDs::OTTOMAN_PRISON => Powers::OTTOMAN, locationIDs::HAPSBURG_PRISON => Powers::HAPSBURG, locationIDs::ENGLAND_PRISON => Powers::ENGLAND, locationIDs::FRANCE_PRISON => Powers::FRANCE, locationIDs::PAPACY_PRISON => Powers::PAPACY, locationIDs::PROTESTANT_PRISON => Powers::PROTESTANT];
     const min_seazone_id = 6000;
- }
-
- abstract class SpaceTypes{
-    const SPACE_UNFORTIFIED = 100;
-    const SPACE_ELECTORATE = 101;
-    const SPACE_FORTRESS = 102;
-    const SPACE_KEY = 103;
-    const SPACE_CAPITAL = 104;
  }
 
 abstract class ReligionIDs{

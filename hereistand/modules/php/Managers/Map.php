@@ -8,6 +8,7 @@ use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use HIS\Models\Formation;
 use HIS\Models\Player;
+use LocationAttributs;
 use locationIDs;
 use Powers;
 use ReligionIDs;
@@ -23,16 +24,19 @@ class Map extends \HIS\Helpers\Pieces {
 	public static function getHomePower(int $spaceID) : String{
 		Notifications::message("spaceID=".$spaceID);
 		Notifications::message("place=".Utils::varToString(Game::get()->spaces[$spaceID]));
-		return Game::get()->spaces[$spaceID]["home_power"];
+		return Game::get()->spaces[$spaceID][LocationAttributs::home_power];
 	}
 	public static function getSpaceName(int $spaceID) : String{
-		return Game::get()->spaces[$spaceID]["name"];
+		return Game::get()->spaces[$spaceID][TokenAttributes::name];
+	}
+	public static function getTokenName(int $tokenID) : string{
+		return Game::get()->tokens[$tokenID][TokenAttributes::name];
 	}
 	public static function getSeazoneName(int $spaceID) : String{
-		return Game::get()->seazones[$spaceID]["name"];
+		return Game::get()->seazones[$spaceID][TokenAttributes::name];
 	}
 	public static function bolIsKey(int $spaceID) : bool{
-		return Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID]["type"] == SpaceTypes::SPACE_KEY;
+		return Game::get()->spaces[$spaceID][LocationAttributs::type] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID][LocationAttributs::type] == SpaceTypes::SPACE_KEY;
 	}
 	public static function strReligionIdToName(int $relID) : String{
 		if($relID == ReligionIDs::CATHOLIC){

@@ -84,6 +84,7 @@ class hereistand extends Table {
 	}
 
 	public function cmd($args) {
+		Notifications::message("called cmd with args".$args);
 		$arrstr_args = explode(" ", $args);
 		if($arrstr_args[0] === "map"){
 			if($arrstr_args[1] === "get"){
@@ -216,7 +217,10 @@ class hereistand extends Table {
 					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
 				}else if($arrstr_args[2] === "addNavalLeader"){
-					Map::addNavalLeader(intval($arrstr_args[3]), intval($arrstr_args[4]));
+					$spaceID = intval($arrstr_args[3]);
+					$navalLeaderId = intval($arrstr_args[4]);
+					Notifications::message("add naval leader ");
+					Map::addNavalLeader($spaceID, $navalLeaderId);
 					return;
 				}
 			}else if($arrstr_args[1] === "test"){
