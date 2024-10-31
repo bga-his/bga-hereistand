@@ -318,7 +318,7 @@ abstract class Table extends APP_GameClass {
         return 0;
     }
     
-    function _($s) {
+    public static function _($s) {
         return $s;
     }
     

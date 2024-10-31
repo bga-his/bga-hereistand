@@ -3,6 +3,7 @@ namespace HIS\Core;
 
 use HIS\Managers\Players;
 use HIS\Managers\Map;
+use SpaceAttributs;
 use TokenAttributes;
 use tokenTypeIDs;
 use tokenIDs;
@@ -31,178 +32,207 @@ class Notifications {
 		self::notify($pId, 'message', $txt, $args);
 	}
 
+	public static function js_createToken($token_add, string $addLocation) : void{
+		self::notifyAll("createToken", "", ["token_add" => $token_add, "dest" => $addLocation]);
+	}
+  
+	public static function js_moveToken(string $tokenId, string $dest) : void{
+		self::notifyAll("moveToken", "", ["tokenId" => $tokenId, "dest"=> $dest]);
+	}
+
+	public static function js_moveTokens(array $tokenIds, string $dest) : void{
+		self::notifyAll("moveTokens", "", ["tokenId" => $tokenIds, "dest"=> $dest]);
+	}
+  
+	public static function js_createAndMoveToken($token_add, string $addLocation, string $dest) : void{
+		self::notifyAll("createAndMoveToken", "", ["token_add" => $token_add, "addLocation" => $addLocation, "dest" => $dest]);
+	}
+  
+	public static function js_destroyToken(string $tokenId) : void{
+		self::notifyAll("destroyToken", "", ["tokenId" => $tokenId]);
+	}
+  
+	public static function js_moveAndDestroyToken(string $tokenId, string $dest) : void{
+		self::notifyAll("moveAndDestroyToken", "", ["tokenId" => $tokenId, "dest" => $dest]);
+	}
+
 	public static function notif_setReligion($spaceName, $spaceID, $religion, $token_weg, $token_add) {
-		self::notifyAll('setReligion', 'the religios control of ${spaceName} was set to ${religion}.', [
+		if($token_weg !== null){
+			self::js_destroyToken($token_weg[TokenAttributes::id]);
+		}
+		if($token_add !== null){
+			self::js_createToken($token_add, "space_".$spaceID);
+		}
+		self::message('the religios control of ${spaceName} was set to ${religion}.', [
 			"spaceName" => $spaceName,
-			"spaceID" => $spaceID,
-			"religion" => $religion,
-			"token_weg" => $token_weg,
-			"token_add" => $token_add,
+			"religion" => $religion
 		]);
 	}
 	
 	public static function notif_setPoliticalControl($spaceID, $spaceName, $power, $token_weg, $token_add, $scmLocation) {
-		self::notifyAll('setPoliticalControl', 'the political control of ${spaceName} was set to ${power}', [
+		if($token_weg !== null){
+			if(in_array(tokenTypeIDs::KEYS, $token_weg["types"])){
+				self::js_moveToken($token_weg[TokenAttributes::id], "location_".$scmLocation);
+			}else{
+				self::js_moveAndDestroyToken($token_weg[TokenAttributes::id], "player_board_".Players::getFromPower($token_weg[TokenAttributes::power])->getId());
+			}
+		}
+		if($token_add !== null){
+			if(in_array(tokenTypeIDs::KEYS, $token_add["types"])){
+				self::js_moveToken($token_add[TokenAttributes::id], "space_".$spaceID);
+			}else{
+				self::js_createAndMoveToken($token_add, "player_board_".Players::getFromPower($token_add[TokenAttributes::power])->getId(), "space_".$spaceID);
+			}
+		}
+		self::message('the political control of ${spaceName} was set to ${power}', [
 			"spaceName" => $spaceName,
-			"spaceID" => $spaceID,
-			"power" => $power,
-			"token_weg" => $token_weg,
-			"token_add" => $token_add,
-			"player_id_weg" => $token_weg!=null?Players::getFromPower($token_weg["power"])->getId():null,
-			"player_id_add" => $token_add!=null?Players::getFromPower($token_add["power"])->getId():null,
-			"type" => ($token_add!=null && in_array(tokenTypeIDs::KEYS, $token_add["types"]))?"scm":"hex",
-			"scmLocation" => $scmLocation,
+			"power" => $power
 		]);
 	}
 
 	public static function notif_addUnrest($spaceID, $token_add){
-		self::notifyAll('addUnrest', 'add Unrest to ${spaceName}', [
-			"spaceID" => $spaceID,
-			"spaceName" => Map::getSpaceName($spaceID),
-			"token_add" => $token_add
+		self::js_createToken($token_add, "space_".$spaceID);
+		self::message('addUnrest', 'add Unrest to ${spaceName}', [
+			"spaceName" => Map::getSpaceName($spaceID)
 		]);
 	}
 
 	public static function notif_removeUnrest($spaceID, $tokenID){
-		self::notifyAll('removeUnrest', 'remove Unrest from ${spaceName}', [
-			"spaceID" => $spaceID,
-			"spaceName" => Map::getSpaceName($spaceID),
-			"unrestTokenID" => $tokenID
+		self::js_destroyToken($tokenID);
+		self::message('removeUnrest', 'remove Unrest from ${spaceName}', [
+			"spaceName" => Map::getSpaceName($spaceID)
 		]);
 	}
 
 	public static function notif_buyUnit($player, $token, $space) {
-		self::notifyAll('buyUnit', '${player_name} bought ${unit_name} in ${space_name}', [
-			"player" => $player,
-			"token" => $token,
-			"space" => $space,
-			"unit_name" => $token['name'],
+		self::js_createAndMoveToken($token, "player_board_".$player->getId(), "space_".$space[SpaceAttributs::id]);
+		self::message('${player_name} bought ${unit} in ${space_name}', [
+			"player_name" => $player->getName(),
+			"space_name" => $space[SpaceAttributs::name],
+			"unit" => $token['name'],
 		]);
 	}
 
 	public static function notif_buyNavalUnit($player, $token, $space){
-		self::notifyAll('buyNavalUnit', '${player_name} bought ${unit_name} in ${space_name}', [
-			"player" => $player,
-			"token" => $token,
-			"space" => $space,
-			"unit_name" => $token['name'],
-		]);
+		self::notif_buyUnit($player, $token, $space);
 	}
 
 	
-	public static function notif_addLeader($spaceId, $leaderId, $spaceName, $leaderToken, $player){
-		self::notifyAll('addLeader', 'added Leader ${leader_name} to space ${space_name}', [
-			"spaceId" => $spaceId,
-			"leaderId" => $leaderId,
+	public static function notif_addLeader($spaceId, $spaceName, $leaderToken, $player){
+		self::js_createAndMoveToken($leaderToken, "player_board_".$player->getId(), "space_".$spaceId);
+		self::message('added Leader ${leader_name} to space ${space_name}', [
 			"leader_name" => $leaderToken[TokenAttributes::name],
-			"space_name" => $spaceName,
-			"token" => $leaderToken,
-			"player" => $player
+			"space_name" => $spaceName
 		]);
 	}
 
 	public static function notif_destroyUnits($player, $token, $space) {
-		self::notifyAll('destroyUnit', '${player_name} removed ${unit_name} from ${space_name}', [
-			"player" => $player,
-			"token" => $token,
-			"space" => $space,
-			"unit_name" => $token['name'],
+		self::js_moveAndDestroyToken($token[TokenAttributes::id], "player_board_".Players::getFromPower($token[TokenAttributes::power])->getId());
+		self::message('${player_name} removed ${unit_name} from ${space_name}', [
+			"player_name" => $player->getName(),
+			"space_name" => $space[SpaceAttributs::name],
+			"unit_name" => $token['name']
 		]);
 	}
 
 	public static function notif_playCardCP($player, $card) {
-		self::notifyAll('playCard', '${player_name} played ${card_name} for ${card_cp}CP', [
-			"player" => $player,
-			"card" => $card,
-			"card_cp" => $card['cp'],
+		self::js_destroyToken($card["id"]);
+		self::message('${player_name} played ${card_name} for ${card_cp} CP', [
+			"player_name" => $player->getName(),
+			"card_name" => $card['name'],
+			"card_cp" => $card['cp']
 		]);
 	}
 
 	public static function notif_disardCard($player, $card){
-		self::notifyAll('discardCard', '${player_name} Discarded ${card_name}', [
-			"player" => $player,
-			"card" => $card,
+		self::js_destroyToken($card["id"]);
+		self::message('${player_name} Discarded ${card_name}', [
+			"player_name" => $player->getName(),
+			"card_name" => $card["name"]
 		]);
 	}
 
 	public static function notif_playCardEvent($player, $card){
-		self::notifyAll('playCard', '${player_name} played ${card_name} as Event', [
-			"player" => $player,
-			"card" => $card,
+		self::js_destroyToken($card["id"]);
+		self::message('${player_name} played ${card_name} as Event', [
+			"player_name" => $player->getName(),
+			"card_name" => $card["name"]
 		]);
 	}
 
 	public static function notif_drawCards($power, $num){
-		self::notifyAll('drawCard', '${player_name} drew ${num} cards', [
-			"player" => Players::getFromPower($power),
-			"num" => $num,
+		self::message('${player_name} drew ${num} cards', [
+			"player_name" => Players::getFromPower($power)->getName(),
+			"num" => $num
 		]);
 	}
 
 	public static function notif_discard($player, $cardId){
-		self::notifyAll('discardCard', '${player_name} discarded ${card_name} as Event', [
-			"player" => $player,
-			"card" => $cardId,
+		self::js_destroyToken($cardId);
+		self::message('discardCard', '${player_name} discarded ${card_name}', [
+			"player_name" => $player->getName(),
+			"card_name" => $cardId["name"],
 		]);
 	}
 
 	public static function battleRolls($attacker_dice, $defender_dice) {
-		self::notifyAll('battleRolls', 'Attacker rolls: [${attacker_rolls}], Defender rolls: [${defender_rolls}]', [
+		self::message('Attacker rolls: [${attacker_rolls}], Defender rolls: [${defender_rolls}]', [
 			"attacker_rolls" => implode(',', $attacker_dice),
 			"defender_rolls" => implode(',', $defender_dice),
 		]);
 	}
 
-	public static function destroyUnits($player, $tokens) {
-		self::notifyAll('destroyUnits', '${player_name} took casualties', [
-			"player" => $player,
-			"tokens" => $tokens,
-		]);
-	}
+	public static function notif_moveFormation($player, $formation, $space_toId, $from_space_Name, $to_space_Name, $strength) {
+		//$formation is array of IDs (not an actual formation class)
 
-	public static function retreatUnits($token_ids, $space) {
-		self::notifyAll('moveFormation', 'Units retreat to ${space_name}', [
-			'formation' => $token_ids,
-			'space' => $space,
-		]);
+		$dest = "space_".$space_toId;
+		self::js_moveTokens($formation, $dest);
 
-	}
-
-	public static function notif_moveFormation($player, $formation, $from_space, $to_space, $from_space_Name, $to_space_Name, $strength) {
-		//Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
-		self::notifyAll('moveFormation', '${player_name} moved a formation of strength ${formation_strength} from ${from_name} to ${to_name}', [
-			"player" => $player,
+		self::message('${player_name} moved a formation of strength ${formation_strength} from ${from_name} to ${to_name}', [
+			"player_name" => $player->getName(),
 			"formation_strength" => $strength,
-			"formation" => $formation,
-			"from_id" => $from_space,
 			"from_name" => $from_space_Name,
-			"to_id" => $to_space,
 			"to_name" => $to_space_Name,
 		]);
 	}
 
-	public static function notif_moveNavalFormation($player, $formation, $from_space, $to_space, $from_space_Name, $to_space_Name, $strength) {
-		//Notifications::notif_moveFormation(Players::getFromPower($formation[0]["power"]), $ids, $from_location, $spaceIdTo, Map::getName($from_location), Map::getName(($spaceIdTo)), $strength);
-		self::notifyAll('moveFormation', '${player_name} moved ${formation_strength} naval units from ${from_name} to ${to_name}', [
-			"player" => $player,
+	public static function notif_moveNavalFormation($player, $formation, $seazoneIdTo, $from_space_Name, $to_space_Name, $strength) {
+		$dest = "seazone_".$seazoneIdTo;
+		foreach($formation as $token){
+		  self::js_moveToken($token[TokenAttributes::id], $dest);
+		}
+		self::message('${player_name} moved ${formation_strength} naval units from ${from_name} to ${to_name}', [
+			"player_name" => $player->getName(),
 			"formation_strength" => $strength,
 			"formation" => $formation,
-			"from_id" => $from_space,
 			"from_name" => $from_space_Name,
-			"to_id" => $to_space,
-			"to_name" => $to_space_Name,
+			"to_name" => $to_space_Name
 		]);
 	}
 
-	public static function notif_moveLeader($player, $leaderId, $leader_Name, $from_space, $to_space, $from_space_Name, $to_space_Name) {
-		self::notifyAll('moveLeader', '${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
-			"player" => $player,
-			"leader" => $leaderId,
+	public static function notif_moveLeader($player, string $leaderId, string $leader_Name, int $spaceToId, string $from_space_Name, string $to_space_Name) : void {
+		self::js_moveToken($leaderId, "space_".$spaceToId);
+		self::message('${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
+			"player_name" => $player->getName(),
 			"leader_Name" => $leader_Name,
-			"from_id" => $from_space,
 			"from_name" => $from_space_Name,
-			"to_id" => $to_space,
-			"to_name" => $to_space_Name,
+			"to_name" => $to_space_Name
+		]);
+	}
+
+	public static function notif_captureLeader(string $leaderId, string $prision, string $leader_Name, string $capturer, string $from_space_Name) : void {
+		self::js_moveToken($leaderId, $prision);
+		self::message('${leader_Name} was captured by ${capturer} on ${from_name}.', [
+			"leader_Name" => $leader_Name,
+			"from_name" => $from_space_Name,
+			"capturer" => $capturer
+		]);
+	}
+	
+	public static function notif_removeLeader(string $leaderId, string $leaderName) : void{
+		self::js_destroyToken($leaderId);
+		self::message('removed leader ${leader_name} from play.', [
+			"leader_name" => $leaderName
 		]);
 	}
 

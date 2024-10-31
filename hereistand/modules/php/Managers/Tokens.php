@@ -145,17 +145,35 @@ class Tokens extends \HIS\Helpers\Pieces {
 		foreach (Game::get()->getSetup() as $power => $spaces) {
 			foreach ($spaces as $spaceID => $space) {
 				foreach ($space as $tokenID) {
-					Notifications::message("Tokens::setupNewGame(supply_".$tokens[$tokenID][TokenAttributes::power]."_".$tokenID.", to=".Locationtypes::space."_".$spaceID);
+					#Notifications::message("Tokens::setupNewGame(supply_".$tokens[$tokenID][TokenAttributes::power]."_".$tokenID.", to=".Locationtypes::space."_".$spaceID);
 					Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$tokenID][TokenAttributes::power], $tokenID], [Locationtypes::space."_".$spaceID]); //locationtypes[$tokens[$unit]['power']]
 				}
 			}
 		}
+		
+		# getTokenSetup is defined in SetupTrait.php
+		#foreach (Game::get()->getPlayerBoardSetup() as $placement) {
+		#	$token_id = $placement[0];
+		#	$location_id = $placement[1];
+		#	Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [Locationtypes::powercards, $location_id]);
+		#}
+		#foreach (Game::get()->getMapLocationSetup() as $placement) {
+		#	$token_id = $placement[0];
+		#	$location_id = $placement[1];
+		#	Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [Locationtypes::mapLocations, $location_id]);
+		#}
+		#foreach (Game::get()->getReligiusStruggleSetup() as $placement) {
+		#	$token_id = $placement[0];
+		#	$location_id = $placement[1];
+		#	Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [Locationtypes::religiusStruggle, $location_id]);
+		#}
+
 		$locations = Game::get()->board_locations;
 		foreach (Game::get()->getTokenSetup() as $placement) {
 			$token_id = $placement[0];
 			$location_id = $placement[1];
 			$location = $locations[$location_id];
-			Notifications::message("Tokens::setupNewGame(supply_".$tokens[$token_id]['power']."_".$token_id.", to=".$location['board']."_location_".$location_id);
+			#Notifications::message("Tokens::setupNewGame(supply_".$tokens[$token_id]['power']."_".$token_id.", to=".$location['board']."_location_".$location_id);
 			Tokens::getInstance()::pickForLocation(1, ['supply', $tokens[$token_id]['power'], $token_id], [$location['board'], 'location', $location_id]);
 		}
 

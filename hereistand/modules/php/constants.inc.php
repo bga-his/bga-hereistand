@@ -172,17 +172,26 @@ abstract class TokenSides{
     const SPACE_CAPITAL = 104;
  }
  
- abstract class LocationAttributs{
-    const home_power = "home_power"; // element of Powers
+ //Attributs of Spaces
+ abstract class SpaceAttributs{
+    const name = "name"; // Display name of that space
     const type = "type"; // element of SpaceTypes
+    const home_power = "home_power"; // element of Powers
+    const language = "language"; // element of LanguageZones
+    const id = "id"; // element of SpaceIDs.
+    const connections = "connections"; //array of elements of SpaceIDs
+    const passes = "passes"; //array of elements of SpaceIDs
+    const seazones = "seazones"; // array of elements of SeazoneIds
  }
 
  abstract class Locationtypes{
     const space = "map_space";
     const seazone = "map_seazone";
     const powercards = "powercards_location";
+    const religiusStruggle = "religious_struggle_location";
+    const mapLocations = "map_location";
     const supply = [Powers::OTTOMAN => "supply_ottoman", Powers::HAPSBURG => "supply_hapsburg", Powers::ENGLAND => "supply_england", Powers::FRANCE => "supply_france", Powers::PAPACY => "supply_papacy", Powers::PROTESTANT => "supply_protestant", Powers::OTHER => "supply_other"];
-    const prision = [Powers::OTTOMAN => "prision_".locationIDs::OTTOMAN_PRISON, Powers::HAPSBURG => "prision_".locationIDs::HAPSBURG_PRISON, Powers::ENGLAND => "prision_".locationIDs::ENGLAND_PRISON, Powers::FRANCE => "prision_".locationIDs::FRANCE_PRISON, Powers::PAPACY => "prision_".locationIDs::PAPACY_PRISON, Powers::PROTESTANT => "prision_".locationIDs::PROTESTANT_PRISON];
+    const prision = [Powers::OTTOMAN => locationIDs::OTTOMAN_PRISON, Powers::HAPSBURG => locationIDs::HAPSBURG_PRISON, Powers::ENGLAND => locationIDs::ENGLAND_PRISON, Powers::FRANCE => locationIDs::FRANCE_PRISON, Powers::PAPACY => locationIDs::PAPACY_PRISON, Powers::PROTESTANT => locationIDs::PROTESTANT_PRISON];
     const prision_name = [locationIDs::OTTOMAN_PRISON => Powers::OTTOMAN, locationIDs::HAPSBURG_PRISON => Powers::HAPSBURG, locationIDs::ENGLAND_PRISON => Powers::ENGLAND, locationIDs::FRANCE_PRISON => Powers::FRANCE, locationIDs::PAPACY_PRISON => Powers::PAPACY, locationIDs::PROTESTANT_PRISON => Powers::PROTESTANT];
     const min_seazone_id = 6000;
  }
@@ -371,6 +380,16 @@ const keyControlMarkers = [
     Powers::FRANCE => tokenIDs_CONTROL::FRANCE_KEY,
     Powers::PAPACY => tokenIDs_CONTROL::PAPACY_KEY
 ];
+
+const bonusVPLocations = [
+    Powers::OTTOMAN => [locationIDs::OTT_VP_TOKEN_1, locationIDs::OTT_VP_TOKEN_2, locationIDs::OTT_VP_TOKEN_3, locationIDs::OTT_VP_TOKEN_4, locationIDs::OTT_VP_TOKEN_5, locationIDs::OTT_VP_TOKEN_6],
+    Powers::HAPSBURG => [locationIDs::HAP_VP_TOKEN_1, locationIDs::HAP_VP_TOKEN_2, locationIDs::HAP_VP_TOKEN_3, locationIDs::HAP_VP_TOKEN_4, locationIDs::HAP_VP_TOKEN_5, locationIDs::HAP_VP_TOKEN_6],
+    Powers::ENGLAND => [locationIDs::ENG_VP_TOKEN_1, locationIDs::ENG_VP_TOKEN_2, locationIDs::ENG_VP_TOKEN_3, locationIDs::ENG_VP_TOKEN_4, locationIDs::ENG_VP_TOKEN_5, locationIDs::ENG_VP_TOKEN_6],
+    Powers::FRANCE => [locationIDs::FRA_VP_TOKEN_1, locationIDs::FRA_VP_TOKEN_2, locationIDs::FRA_VP_TOKEN_3, locationIDs::FRA_VP_TOKEN_4, locationIDs::FRA_VP_TOKEN_5, locationIDs::FRA_VP_TOKEN_6],
+    Powers::PAPACY => [locationIDs::PAP_VP_TOKEN_1, locationIDs::PAP_VP_TOKEN_2, locationIDs::PAP_VP_TOKEN_3, locationIDs::PAP_VP_TOKEN_4, locationIDs::PAP_VP_TOKEN_5, locationIDs::PAP_VP_TOKEN_6],
+    Powers::PROTESTANT => [locationIDs::PRO_VP_TOKEN_1, locationIDs::PRO_VP_TOKEN_2, locationIDs::PRO_VP_TOKEN_3, locationIDs::PRO_VP_TOKEN_4, locationIDs::PRO_VP_TOKEN_5, locationIDs::PRO_VP_TOKEN_6]
+];
+
 /*
  * Game options
  */

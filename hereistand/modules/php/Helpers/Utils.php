@@ -58,22 +58,22 @@ abstract class Utils extends \APP_DbObject {
 	}
 
 	public static function cmdStrToPower($strPower){
-		if(strtolower($strPower) == 'otto'){
+		if(strtolower($strPower) === 'otto'){
 			return Powers::OTTOMAN;
 		}
-		if(strtolower($strPower) == 'haps'){
+		if(strtolower($strPower) === 'haps'){
 			return Powers::HAPSBURG;
 		}
-		if(strtolower($strPower) == 'england'){
+		if(strtolower($strPower) === 'england'){
 			return Powers::ENGLAND;
 		}
-		if(strtolower($strPower) == "france"){
+		if(strtolower($strPower) === "france"){
 			return Powers::FRANCE;
 		}
-		if(strtolower($strPower) == 'papacy'){
+		if(strtolower($strPower) === 'papacy'){
 			return Powers::PAPACY;
 		}
-		if(strtolower($strPower) == 'prot'){
+		if(strtolower($strPower) === 'prot'){
 			return Powers::PROTESTANT;
 		}
 		Notifications::message("unkown power: ".$strPower);

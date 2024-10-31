@@ -198,10 +198,13 @@ class hereistand extends Table {
 					Map::moveLeader($spaceID, $leaderId);
 					return;
 				}else if($arrstr_args[2] === "captureLeaders"){
+					#cmd(map set captureLeaders 3041 france haps)
+					# TODO update does not work, addLeader on captured leader does not work, captured leaders are not displayed in the prision.
 					$spaceID = intval($arrstr_args[3]);
-					//Utils::cmdStrToPower($arrstr_args[4])
-					Notifications::message("capture Leader ".Map::getSpaceName($spaceID)." by ".Powers::HAPSBURG);
-					Map::captureLeader($spaceID, Powers::HAPSBURG);
+					$powerFrom = Utils::cmdStrToPower($arrstr_args[4]);
+					$powerBy = Utils::cmdStrToPower($arrstr_args[5]);
+					Notifications::message("capture Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
+					Map::captureLeader($spaceID, $powerFrom, $powerBy);
 					return;
 				}else if($arrstr_args[2] === "addNavalUnits"){
 					$spaceID = intval($arrstr_args[3]);
@@ -222,6 +225,17 @@ class hereistand extends Table {
 					Notifications::message("add naval leader ");
 					Map::addNavalLeader($spaceID, $navalLeaderId);
 					return;
+				}else if($arrstr_args[2] === "captureNavalLeaders"){
+					$spaceID = intval($arrstr_args[3]);
+					$powerFrom = Utils::cmdStrToPower($arrstr_args[4]);
+					$powerBy = Utils::cmdStrToPower($arrstr_args[5]);
+					Notifications::message("capture naval Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
+					Map::captureNavalLeader($spaceID, $powerFrom, $powerBy);
+					return;
+				}else if($arrstr_args[2] === "removeNavalLeaders"){
+					$leaderId = intval($arrstr_args[3]);
+					Map::removeNavalLeader($leaderId);
+					return;
 				}
 			}else if($arrstr_args[1] === "test"){
 
@@ -237,6 +251,7 @@ class hereistand extends Table {
 				// TODO test on key (including test that powercards are correct)
 				// test unit/ship building, movement and destruction.
 				// TODO test cav for otto
+				// TODO test leaders
 
 				// Formation movement
 				TestMap::testFormation(SpaceIDs::PARIS, 4, 0);

@@ -1417,7 +1417,7 @@
 
 #map {
   position: relative;
-  width: 5100px;
+  width: 5100px; 
   height: 3300px;
   background-image: url("img/board.jpg");
   background-size: 5100px;

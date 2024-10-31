@@ -1,4 +1,5 @@
 {OVERALL_GAME_HEADER}
+<div id="hereistand-wrapper">
 	<div id="board-wrapper">
 		<div id='board'>
 			<div id='map'>

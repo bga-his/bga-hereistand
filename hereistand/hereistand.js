@@ -18,6 +18,7 @@
 var isDebug = window.location.host == 'studio.boardgamearena.com' || window.location.hash.indexOf('debug') > -1;
 var debug = isDebug ? console.info.bind(window.console) : function () {};
 
+
 define([
   'dojo',
   'dojo/_base/declare',
@@ -33,7 +34,8 @@ define([
   g_gamethemeurl + 'modules/js/States.js',
   g_gamethemeurl + 'modules/js/ActionButtons.js',
   g_gamethemeurl + 'modules/js/Actions.js',
-], function (dojo, declare, noUiSlider) {
+], 
+function (dojo, declare, noUiSlider) {
   return declare('bgagame.hereistand', [customgame.game, hereistand.players, hereistand.board,
                                         hereistand.cards, hereistand.actionbuttons, hereistand.notifications,
                                         hereistand.states, hereistand.actions], {// Imports the setup[Players,Board,Cards] methods from modules/js/*,
@@ -47,17 +49,12 @@ define([
         'takeFieldBattleCasualties',
       ];
       this._notifications = [
-        ['playCardCP', 1000],
-        ['moveFormation', 1000],
-        ['buyUnit', 1000],
-        ['destroyUnit', 1000],
-        ['setPoliticalControl', 1000],
-        ['setReligion', 1000],
-        ['addUnrest', 1000],
-        ['removeUnrest', 1000],
-        ['addLeader', 1000],
-        ['moveLeader', 1000],
-        ['buyNavalUnit', 1000]
+        ['createToken', 1000],
+        ['moveToken', 1000],
+        ['moveTokens', 1000],
+        ['createAndMoveToken', 1000],
+        ['destroyToken', 1000],
+        ['moveAndDestroyToken', 1000]
       ];
 
       // Fix mobile viewport (remove CSS zoom)

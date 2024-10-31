@@ -11,6 +11,7 @@ use tokenIDs_NAVAL;
 use tokenIDs_CONTROL;
 
 trait SetupTrait {
+
 	public function getTokenSetup() {
 		return [
 			[TokenIDs::VP_OTTOMAN, LocationIDS::VICTORY_TRACK_8],

@@ -7,9 +7,7 @@ use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use HIS\Models\Formation;
-use HIS\Models\Player;
-use LocationAttributs;
-use locationIDs;
+use SpaceAttributs;
 use Powers;
 use ReligionIDs;
 use UnitTypes;
@@ -24,19 +22,20 @@ class Map extends \HIS\Helpers\Pieces {
 	public static function getHomePower(int $spaceID) : String{
 		Notifications::message("spaceID=".$spaceID);
 		Notifications::message("place=".Utils::varToString(Game::get()->spaces[$spaceID]));
-		return Game::get()->spaces[$spaceID][LocationAttributs::home_power];
+		return Game::get()->spaces[$spaceID][SpaceAttributs::home_power];
 	}
 	public static function getSpaceName(int $spaceID) : String{
 		return Game::get()->spaces[$spaceID][TokenAttributes::name];
 	}
-	public static function getTokenName(int $tokenID) : string{
+	public static function getTokenName(string $tokenID) : string{
 		return Game::get()->tokens[$tokenID][TokenAttributes::name];
 	}
 	public static function getSeazoneName(int $spaceID) : String{
 		return Game::get()->seazones[$spaceID][TokenAttributes::name];
 	}
 	public static function bolIsKey(int $spaceID) : bool{
-		return Game::get()->spaces[$spaceID][LocationAttributs::type] == SpaceTypes::SPACE_CAPITAL || Game::get()->spaces[$spaceID][LocationAttributs::type] == SpaceTypes::SPACE_KEY;
+		$strLocType = Game::get()->spaces[$spaceID][SpaceAttributs::type];
+		return $strLocType == SpaceTypes::SPACE_CAPITAL || $strLocType == SpaceTypes::SPACE_KEY;
 	}
 	public static function strReligionIdToName(int $relID) : String{
 		if($relID == ReligionIDs::CATHOLIC){
@@ -61,7 +60,7 @@ class Map extends \HIS\Helpers\Pieces {
 		foreach (HomeCard_key_locations[$power] as $keyLocation) {
 			$scm = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocation);
 			if(count($scm) > 0){
-				Notifications::message("First free scm location of ".$power." = ".$scm_location_free);
+				Notifications::message("First free scm location of ".$power." = ".$scm);
 				if($firstOccupied){
 					return $keyLocation;
 				}else{
@@ -73,6 +72,28 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 		Notifications::message("no free key location of power card of ".$power." (This shouldnt be possible)");
 		return $scm_location_free;
+	}
+
+	/**
+	 * get the index of a player_board location inside of the bonus-VP area that does not contain anything.
+	 */
+	public static function getNextBonusVPSlot(String $power, bool $firstOccupied) : int{
+		$bonusVP_location_free = null;
+		foreach (bonusVPLocations[$power] as $keyLocation) {
+			$tokens = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocation);
+			if(count($tokens) > 0){
+				Notifications::message("First free bonusVP location of ".$power." = ".$keyLocation);
+				if($firstOccupied){
+					return $keyLocation;
+				}else{
+					return $bonusVP_location_free;
+				}
+			}
+			$bonusVP_location_free = $keyLocation;
+			//autowin.
+		}
+		Notifications::message("no free bonusVP location on power card of ".$power." (Why havent you already won? I dont wanna have to handle this case.)");
+		return $bonusVP_location_free;
 	}
 
 	/**
@@ -109,7 +130,7 @@ class Map extends \HIS\Helpers\Pieces {
 					$keyLocation = HomeCard_key_locations[$token["power"]][$intI];
 					if(count(Tokens::getInLocation(Locationtypes::powercards."_".$keyLocation)) == 0){
 						Notifications::message("move scm of ".$token["power"]." to ".$keyLocation);
-						Tokens::move($token["id"], "powercards_location_".$keyLocation);
+						Tokens::move($token["id"], Locationtypes::powercards."_".$keyLocation);
 						//TODO update VP track.
 						return;
 					}
@@ -846,7 +867,7 @@ class Map extends \HIS\Helpers\Pieces {
 			# todo state may not be null?
 			Tokens::setState($ids, mayMove:false);
 		}
-		Notifications::notif_moveFormation(Players::getFromPower($formation->power), $ids, $from_location, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName($spaceIdTo), $formation->unit_strength);
+		Notifications::notif_moveFormation(Players::getFromPower($formation->power), $ids, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName($spaceIdTo), $formation->unit_strength);
 	}
 
 	public static function moveLeader($spaceIdTo, $leaderId){
@@ -858,16 +879,23 @@ class Map extends \HIS\Helpers\Pieces {
 		
 		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderDbId], "map_space_".$spaceIdTo);
 		if($bolMoveWasSuccess){
-			$prevSpaceId = $leaderToken[TokenAttributes::location_id];
+			$prevSpaceId = intval($leaderToken[TokenAttributes::location_id]);
 			//TODO notification doesnt work.
 			//Notifications::notif_moveFormation(Players::getFromPower($leader[TokenAttributes::power]), [$leader[TokenAttributes::db_id]], $prevSpaceId, $spaceIdTo, Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceIdTo), 0);
-			Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leader[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceIdTo, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceIdTo));
+
+			$player = Players::getFromPower($leader[TokenAttributes::power]);
+			$leaderId = $leader[TokenAttributes::db_id];
+			$leader_name = $leaderToken[TokenAttributes::name];
+			$spaceFromName = ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId);
+			$spaceToName = Map::getSpaceName($spaceIdTo);
+
+			Notifications::notif_moveLeader($player, $leaderId, $leader_name, $spaceIdTo, $spaceFromName, $spaceToName);
 		}else{
 			Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getSpaceName($spaceIdTo));
 		}
 	}
 
-    public static function addLeader(int $spaceId, $leaderId){
+    public static function addLeader(int $spaceId, int $leaderId){
         // leader element of generated_constants::tokenIDs_LEADER
 		$leader = Game::get()->tokens[$leaderId];
 		Notifications::message("leader = ".Utils::varToString($leader));
@@ -883,42 +911,53 @@ class Map extends \HIS\Helpers\Pieces {
 			
 			$bolMoveWasSuccess = Tokens::movePreserveState([$leaderId], "map_space_".$spaceId);
 			if($bolMoveWasSuccess){
-				$prevSpaceId = $leaderToken[TokenAttributes::location_id];
+				$prevSpaceId = intval($leaderToken[TokenAttributes::location_id]);
 				//TODO notification doesnt work.
-				Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leaderToken[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $prevSpaceId, $spaceId, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceId));
+				Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leaderToken[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], $spaceId, ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::getSpaceName($spaceId));
 			}else{
 				Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::getSpaceName($spaceId));
 			}
 		}else{
 			// added from supply -> notif new leader.
+			$player = null;
 			foreach($tokens as $token){
-				Notifications::notif_addLeader($spaceId, $$leader[TokenAttributes::db_id], Map::getSpaceName($spaceId), $token, Players::getFromPower($token[TokenAttributes::power]));
+				if($token[TokenAttributes::power] == Powers::OTHER){
+					$player = Players::getActive(); // the leader is slided in from the playerboard of this player. And there exists no playerboard for "Other"
+				}else{
+					$player = Players::getFromPower(Diplomacy::GetControllingPower($token[TokenAttributes::power]));  // wrap into GetControllingPower, just in case minor power leaders get added.
+				}
+				Notifications::notif_addLeader($spaceId, Map::getSpaceName($spaceId), $token, $player);
 			}
 		}
 	}
 
-    public static function captureLeader($spaceId, $power){
-        //move all leaders ont that space that are not from $power to prision of $power. (they just won a field battle, siege or just moved there)
+	/*
+	* move all leaders from $powerToCaptureFrom that are in space $spaceId to prision of $powerThatCaptures
+	*/
+    public static function captureLeader($spaceId, $powerToCaptureFrom, $powerThatCaptures){
+        //move all leaders on that space that are not from $power to prision of $power. (they just won a field battle, siege or just moved there)
 		$ids = array();
 		$inLocation = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
+		$prision = Locationtypes::powercards."_".Locationtypes::prision[$powerThatCaptures];
 		foreach($inLocation as $token){
 			//Notifications::message("token = ".Utils::varToString($token));
-			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && $power != $token["power"]){
+			if(in_array(tokenTypeIDs::LEADER, $token["types"]) && $powerToCaptureFrom == $token["power"]){
 				$ids[] = $token[TokenAttributes::id];
-				Notifications::notif_moveLeader(Players::getFromPower($token[TokenAttributes::power]), $token[TokenAttributes::db_id], $token[TokenAttributes::name], $spaceId, Locationtypes::prision[$power], Map::getSpaceName($spaceId), "prison of ".$power);
+
+				//TODO why does the javascript notifications needs location_prisionID, but the DB needs powercard_locations_prisionID? I tried to change javascript to also use the more descriptive location name, but then the game setup failed.
+				#string $leaderId, string $prision, string $leader_Name, string $capturer, string $from_space_Name
+				Notifications::notif_captureLeader($token[TokenAttributes::db_id], "location_".Locationtypes::prision[$powerThatCaptures], $token[TokenAttributes::name], $powerThatCaptures, Map::getSpaceName($spaceId));
 			}
 		}
 		//sets locationId of token to NULL. (and location? to 'prision' and location_type to id of prision.)
-		Tokens::move($ids, Locationtypes::prision[$power]);
-		
+		Tokens::move($ids, $prision);
 	}
 
     public static function removeLeader($leaderId){
         //when the leader gets removed from play (because of card effect.)
 		$leader = Game::get()->tokens[$leaderId];
-		$fromSpace = $leader[TokenAttributes::location_id];
 		Tokens::move([$leaderId], ['supply', $leader[TokenAttributes::power], $leaderId]);
-		//TODO Notifications.
+		Notifications::notif_removeLeader($leaderId, $leader[TokenAttributes::name]);
 	}
 
 
@@ -933,6 +972,22 @@ class Map extends \HIS\Helpers\Pieces {
 		}else{
 			Notifications::message("Invalid space or seazone ID".$spaceOrSeazoneId);
 			return False;
+		}
+	}
+
+	public static function strGetSpaceOrSeazoneDBName(int $spaceOrSeazoneid) : string{
+		if($spaceOrSeazoneid < Locationtypes::min_seazone_id){
+			return Locationtypes::space."_".Map::getSpaceName($spaceOrSeazoneid);
+		}else{
+			return Locationtypes::seazone."_".Map::getSeazoneName($spaceOrSeazoneid);
+		}
+	}
+
+	public static function strGetSpaceOrSeazoneName(int $spaceOrSeazoneid) : string{
+		if($spaceOrSeazoneid < Locationtypes::min_seazone_id){
+			return Map::getSpaceName($spaceOrSeazoneid);
+		}else{
+			return Map::getSeazoneName($spaceOrSeazoneid);
 		}
 	}
 
@@ -1014,7 +1069,7 @@ class Map extends \HIS\Helpers\Pieces {
 					Tokens::movePreserveState($ids, Locationtypes::space."_".$seazoneIdTo);
 				}
 				// TODO ships in seazones cant be displayed (because seazones dont realy exist?)
-				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, $seazoneIdFrom, $seazoneIdTo, $seazoneFromName, $seazoneToName, $count);
+				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, $seazoneIdTo, $seazoneFromName, $seazoneToName, $count);
 			}else{
 				Notifications::message("cant move ".$count." ships when only ".count($ships)." are present in ".$seazoneFromName);
 			}
@@ -1024,25 +1079,52 @@ class Map extends \HIS\Helpers\Pieces {
 	}
 
 	/*
-	* I think sea leaders are always added to ports
+	* I think sea leaders are always added to ports, never to seazones?
 	*/
     public static function addNavalLeader($spaceId, $leaderId){
 		// leader element of generated_constants::tokenIDs_LEADER
+		//maybe check that spaceId is a port, and that leader-id is naval leader?
+		if(count(Game::get()->spaces[$spaceId][SpaceAttributs::seazones]) == 0){
+			throw new UserException("Can not add a sealeader to a space that is no harbour.");
+		}
 		Map::addLeader($spaceId, $leaderId);
 	}
 
-    public static function captureNavalLeader($SeazoneId, $power){
+    public static function captureNavalLeader($spaceOrSeazoneId, $powerToCaptureFrom, $powerThatCaptures){
         //move all leaders ont that space that are not from $power to prision of $power. (they just won a field battle, siege or just moved there)
-        
+        $ids = array();
+		$inLocation = Tokens::getInLocation(Map::strGetSpaceOrSeazoneDBName($spaceOrSeazoneId));
+		foreach($inLocation as $token){
+			//Notifications::message("token = ".Utils::varToString($token));
+			if(in_array(tokenTypeIDs::LEADER, $token[TokenAttributes::types]) && $powerToCaptureFrom == $token[TokenAttributes::power]){
+				$ids[] = $token[TokenAttributes::id];
+				Notifications::notif_moveLeader(Players::getFromPower($token[TokenAttributes::power]), $token[TokenAttributes::db_id], $token[TokenAttributes::name], Locationtypes::prision[$powerThatCaptures], Map::strGetSpaceOrSeazoneDBName($spaceOrSeazoneId), "prison of ".$powerThatCaptures);
+			}
+		}
+		//sets locationId of token to NULL. (and location? to 'prision' and location_type to id of prision.)
+		Tokens::move($ids, Locationtypes::prision[$powerThatCaptures]);
 	}
 
-    public static function removeNavalLeader($SeazoneId, $tokenIDs_LEADER){
+    public static function removeNavalLeader(string $navalLeaderId){
         //when the leader gets removed from play (because of card effect.)
-
+		Map::removeLeader($navalLeaderId);
 	}
 
-	public static function moveNavalLeader($SeazoneIdFrom, $SeazoneIdTo, $tokenIDs_LEADER){
-
+	public static function moveNavalLeader(string $navalLeaderId, int $SeazoneIdFrom, int $SeazoneIdTo){
+		$leader = Game::get()->tokens[$navalLeaderId];
+		$leaderDbId = $leader[TokenAttributes::db_id];
+		
+		$leaderToken = Tokens::get($leaderDbId);
+		Notifications::message("leaderToken=".Utils::varToString($leaderToken));
+		
+		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderDbId], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo));
+		if($bolMoveWasSuccess){
+			$prevSpaceId = $leaderToken[TokenAttributes::location_id];
+			//TODO notification doesnt work.
+			//Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leader[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo), ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
+		}else{
+			Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
+		}
 	}
 
 	/*
