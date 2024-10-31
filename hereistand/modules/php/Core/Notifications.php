@@ -41,7 +41,7 @@ class Notifications {
 	}
 
 	public static function js_moveTokens(array $tokenIds, string $dest) : void{
-		self::notifyAll("moveTokens", "", ["tokenId" => $tokenIds, "dest"=> $dest]);
+		self::notifyAll("moveTokens", "", ["tokenIds" => $tokenIds, "dest"=> $dest]);
 	}
   
 	public static function js_createAndMoveToken($token_add, string $addLocation, string $dest) : void{
@@ -126,11 +126,11 @@ class Notifications {
 		]);
 	}
 
-	public static function notif_destroyUnits($player, $token, $space) {
-		self::js_moveAndDestroyToken($token[TokenAttributes::id], "player_board_".Players::getFromPower($token[TokenAttributes::power])->getId());
+	public static function notif_destroyUnits($player, $token, string $spaceName) {
+		self::js_moveAndDestroyToken($token[TokenAttributes::id], "player_board_".$player->getId());
 		self::message('${player_name} removed ${unit_name} from ${space_name}', [
 			"player_name" => $player->getName(),
-			"space_name" => $space[SpaceAttributs::name],
+			"space_name" => $spaceName,
 			"unit_name" => $token['name']
 		]);
 	}
@@ -196,15 +196,15 @@ class Notifications {
 		]);
 	}
 
-	public static function notif_moveNavalFormation($player, $formation, $seazoneIdTo, $from_space_Name, $to_space_Name, $strength) {
-		$dest = "seazone_".$seazoneIdTo;
-		foreach($formation as $token){
-		  self::js_moveToken($token[TokenAttributes::id], $dest);
-		}
+	public static function notif_moveNavalFormation($player, array $ids, string $seazoneIdTo, string $from_space_Name, string $to_space_Name) {
+		#foreach($ids as $tokenId){
+		#  self::js_moveToken($tokenId, $seazoneIdTo);
+		#}
+		self::js_moveTokens($ids, $seazoneIdTo);
 		self::message('${player_name} moved ${formation_strength} naval units from ${from_name} to ${to_name}', [
 			"player_name" => $player->getName(),
-			"formation_strength" => $strength,
-			"formation" => $formation,
+			"formation_strength" => count($ids),
+			"formation" => $ids,
 			"from_name" => $from_space_Name,
 			"to_name" => $to_space_Name
 		]);
@@ -212,6 +212,16 @@ class Notifications {
 
 	public static function notif_moveLeader($player, string $leaderId, string $leader_Name, int $spaceToId, string $from_space_Name, string $to_space_Name) : void {
 		self::js_moveToken($leaderId, "space_".$spaceToId);
+		self::message('${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
+			"player_name" => $player->getName(),
+			"leader_Name" => $leader_Name,
+			"from_name" => $from_space_Name,
+			"to_name" => $to_space_Name
+		]);
+	}
+
+	public static function notif_moveNavalLeader($player, string $leaderId, string $leader_Name, string $spaceToId, string $from_space_Name, string $to_space_Name) : void {
+		self::js_moveToken($leaderId, $spaceToId);
 		self::message('${player_name} moved ${leader_Name} from ${from_name} to ${to_name}', [
 			"player_name" => $player->getName(),
 			"leader_Name" => $leader_Name,

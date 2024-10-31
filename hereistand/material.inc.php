@@ -3170,7 +3170,7 @@ tokenIDs::ANDREA_DORIA => [
 ],
 tokenIDs::BARBAROSSA => [
 "name" => "Barbarossa",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Naval Leader barbarossa",
 "db_id" => "tbd_1066",
 "battle_rating" => 2,
@@ -3181,7 +3181,7 @@ tokenIDs::BARBAROSSA => [
 ],
 tokenIDs::DRAGUT => [
 "name" => "Dragut",
-"power" => Powers::OTHER,
+"power" => Powers::OTTOMAN,
 "style" => "Naval Leader dragut",
 "db_id" => "tbd_1067",
 "battle_rating" => 1,
@@ -8171,80 +8171,80 @@ CardIDs::DIP_SPANISH_INQUISITION => [
 
 $this->seazones = [
 SeazoneIds::BALTIC_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 3200,
+"y" => 350,
 "name" => "Baltic Sea",
 "connections" => [
   SeazoneIds::NORTH_SEA],
 "id" => SeazoneIds::BALTIC_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::STETTIN, SpaceIDs::LUBECK]
 ],
 SeazoneIds::NORTH_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 2200,
+"y" => 380,
 "name" => "North Sea",
 "connections" => [
   SeazoneIds::BALTIC_SEA,
   SeazoneIds::IRISH_SEA,
   SeazoneIds::ENGLISH_CHANNEL],
 "id" => SeazoneIds::NORTH_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::HAMBURG,SpaceIDs::BREMEN,SpaceIDs::AMSTERDAM, SpaceIDs::ANTWERP, SpaceIDs::CALAIS, SpaceIDs::LONDON, SpaceIDs::NORWICH, SpaceIDs::BERWICK, SpaceIDs::EDINBURGH]
 ],
 SeazoneIds::IRISH_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 1250,
+"y" => 1023,
 "name" => "Irish Sea",
 "connections" => [
   SeazoneIds::NORTH_SEA,
   SeazoneIds::ENGLISH_CHANNEL,
   SeazoneIds::BAY_OF_BISCAY],
 "id" => SeazoneIds::IRISH_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::BRISTOL, SpaceIDs::GLASGOW]
 ],
 SeazoneIds::ENGLISH_CHANNEL => [
-"x" => 0,
-"y" => 0,
+"x" => 1656,
+"y" => 1122,
 "name" => "English Channel",
 "connections" => [
   SeazoneIds::NORTH_SEA,
   SeazoneIds::IRISH_SEA,
   SeazoneIds::BAY_OF_BISCAY],
 "id" => SeazoneIds::ENGLISH_CHANNEL,
-"harbours" => []
+"harbours" => [SpaceIDs::CALAIS, SpaceIDs::BOULOGNE, SpaceIDs::ROUEN, SpaceIDs::BREST, SpaceIDs::PORTSMOUTH, SpaceIDs::PLYMOUTH]
 ],
 SeazoneIds::BAY_OF_BISCAY => [
-"x" => 0,
-"y" => 0,
+"x" => 1332,
+"y" => 1647,
 "name" => "Bay of Biscay",
 "connections" => [
   SeazoneIds::IRISH_SEA,
   SeazoneIds::ENGLISH_CHANNEL,
   SeazoneIds::ATLANTIC_OCEAN],
 "id" => SeazoneIds::BAY_OF_BISCAY,
-"harbours" => []
+"harbours" => [SpaceIDs::BREST, SpaceIDs::NANTES, SpaceIDs::BORDEAUX, SpaceIDs::CORUNNA]
 ],
 SeazoneIds::ATLANTIC_OCEAN => [
-"x" => 0,
-"y" => 0,
+"x" => 1400,
+"y" => 2945,
 "name" => "Atlantic Ocean",
 "connections" => [
   SeazoneIds::BAY_OF_BISCAY],
 "id" => SeazoneIds::ATLANTIC_OCEAN,
-"harbours" => []
+"harbours" => [SpaceIDs::CORUNNA, SpaceIDs::SEVILLE, SpaceIDs::GIBRALTAR]
 ],
 SeazoneIds::GULF_OF_LYON => [
-"x" => 0,
-"y" => 0,
+"x" => 2622,
+"y" => 2172,
 "name" => "Gulf of Lyon",
 "connections" => [
   SeazoneIds::BARBARY_COAST,
   SeazoneIds::TYRRHENIAN_SEA],
 "id" => SeazoneIds::GULF_OF_LYON,
-"harbours" => []
+"harbours" => [SpaceIDs::CARTAGENA, SpaceIDs::VALENCIA, SpaceIDs::BARCELONA, SpaceIDs::MARSEILLE, SpaceIDs::NICE, SpaceIDs::GENOA, SpaceIDs::BASTIA, SpaceIDs::PALMA]
 ],
 SeazoneIds::BARBARY_COAST => [
-"x" => 0,
-"y" => 0,
+"x" => 2368,
+"y" => 2586,
 "name" => "Barbary Coast",
 "connections" => [
   SeazoneIds::GULF_OF_LYON,
@@ -8252,21 +8252,21 @@ SeazoneIds::BARBARY_COAST => [
   SeazoneIds::IONIAN_SEA,
   SeazoneIds::NORTH_AFRICAN_COAST],
 "id" => SeazoneIds::BARBARY_COAST,
-"harbours" => []
+"harbours" => [SpaceIDs::GIBRALTAR, SpaceIDs::CARTAGENA, SpaceIDs::PALMA, SpaceIDs::CAGLIARI, SpaceIDs::ORAN, SpaceIDs::ALGIERS, SpaceIDs::TUNIS]
 ],
 SeazoneIds::TYRRHENIAN_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 3212,
+"y" => 2331,
 "name" => "Tyrrhenian Sea",
 "connections" => [
   SeazoneIds::GULF_OF_LYON,
   SeazoneIds::BARBARY_COAST],
 "id" => SeazoneIds::TYRRHENIAN_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::GENOA, SpaceIDs::BASTIA, SpaceIDs::ROME, SpaceIDs::NAPLES, SpaceIDs::MESSINA, SpaceIDs::PALERMO, SpaceIDs::CAGLIARI]
 ],
 SeazoneIds::IONIAN_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 3929,
+"y" => 2594,
 "name" => "Ionian Sea",
 "connections" => [
   SeazoneIds::ADRIATIC_SEA,
@@ -8274,46 +8274,46 @@ SeazoneIds::IONIAN_SEA => [
   SeazoneIds::NORTH_AFRICAN_COAST,
   SeazoneIds::AEGEAN_SEA],
 "id" => SeazoneIds::IONIAN_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::TARANTO, SpaceIDs::MESSINA, SpaceIDs::MALTA, SpaceIDs::CORFU, SpaceIDs::LEPANTO, SpaceIDs::CORON]
 ],
 SeazoneIds::ADRIATIC_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 3518,
+"y" => 1869,
 "name" => "Adriatic Sea",
 "connections" => [
   SeazoneIds::IONIAN_SEA],
 "id" => SeazoneIds::ADRIATIC_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::VENICE, SpaceIDs::TRIESTE, SpaceIDs::RAVENNA, SpaceIDs::ANCONA, SpaceIDs::RAGUSA, SpaceIDs::SCUTARI, SpaceIDs::DURAZZO, SpaceIDs::CORFU]
 ],
 SeazoneIds::NORTH_AFRICAN_COAST => [
-"x" => 0,
-"y" => 0,
+"x" => 3467,
+"y" => 2996,
 "name" => "North African Coast",
 "connections" => [
   SeazoneIds::BARBARY_COAST,
   SeazoneIds::IONIAN_SEA,
   SeazoneIds::AEGEAN_SEA],
 "id" => SeazoneIds::NORTH_AFRICAN_COAST,
-"harbours" => []
+"harbours" => [SpaceIDs::TUNIS, SpaceIDs::MALTA, SpaceIDs::TRIPOLI, SpaceIDs::CANDIA, SpaceIDs::RHODES]
 ],
 SeazoneIds::AEGEAN_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 4528,
+"y" => 2217,
 "name" => "Aegean Sea",
 "connections" => [
   SeazoneIds::BLACK_SEA,
   SeazoneIds::IONIAN_SEA,
   SeazoneIds::NORTH_AFRICAN_COAST],
 "id" => SeazoneIds::AEGEAN_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::ISTANBUL, SpaceIDs::SALONIKA, SpaceIDs::ATHENS, SpaceIDs::CANDIA, SpaceIDs::RHODES]
 ],
 SeazoneIds::BLACK_SEA => [
-"x" => 0,
-"y" => 0,
+"x" => 4832,
+"y" => 1881,
 "name" => "Black Sea",
 "connections" => [
   SeazoneIds::AEGEAN_SEA],
 "id" => SeazoneIds::BLACK_SEA,
-"harbours" => []
+"harbours" => [SpaceIDs::ISTANBUL, SpaceIDs::VARNA]
 ]
 ];

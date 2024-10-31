@@ -7,6 +7,7 @@ use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use HIS\Models\Formation;
+use HIS\Models\Player;
 use SpaceAttributs;
 use Powers;
 use ReligionIDs;
@@ -870,7 +871,7 @@ class Map extends \HIS\Helpers\Pieces {
 		Notifications::notif_moveFormation(Players::getFromPower($formation->power), $ids, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName($spaceIdTo), $formation->unit_strength);
 	}
 
-	public static function moveLeader($spaceIdTo, $leaderId){
+	public static function moveLeader(int $spaceIdTo, int $leaderId){
 		$leader = Game::get()->tokens[$leaderId];
 		$leaderDbId = $leader[TokenAttributes::db_id];
 		//TODO adding leader from Prision or other map space doesnt work.
@@ -977,9 +978,17 @@ class Map extends \HIS\Helpers\Pieces {
 
 	public static function strGetSpaceOrSeazoneDBName(int $spaceOrSeazoneid) : string{
 		if($spaceOrSeazoneid < Locationtypes::min_seazone_id){
-			return Locationtypes::space."_".Map::getSpaceName($spaceOrSeazoneid);
+			return Locationtypes::space."_".$spaceOrSeazoneid;
 		}else{
-			return Locationtypes::seazone."_".Map::getSeazoneName($spaceOrSeazoneid);
+			return Locationtypes::seazone."_".$spaceOrSeazoneid;
+		}
+	}
+
+	public static function strGetSpaceOrSeazoneJSName(int $spaceOrSeazoneid) : string{
+		if($spaceOrSeazoneid < Locationtypes::min_seazone_id){
+			return "space_".$spaceOrSeazoneid;
+		}else{
+			return "seazone_".$spaceOrSeazoneid;
 		}
 	}
 
@@ -991,7 +1000,7 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 	}
 
-	public static function getShips($spaceOrSeazoneId, $power){
+	public static function getShips(int $spaceOrSeazoneId, string $power) : array{
 		$res = array();
 		$spaceName = "";
 		if($spaceOrSeazoneId >= 6000){
@@ -1032,30 +1041,27 @@ class Map extends \HIS\Helpers\Pieces {
 		}
 	}
 
-    public static function removeShips($seazoneId, $power, int $count){
+    public static function removeShips(int $seazoneId, string $power, int $count) : void{
 		$ships = Map::getShips($seazoneId, $power);
 		$buy_id = strval(Game::get()->getPowerUnits()[$power][UnitTypes::SHIP]); // buy_id element of LandUnitTokens or NavalUnitTokens
-		$ship = $ships(0);
-		Tokens::move([$ship["id"]], ['supply', $power, $buy_id]);
-		Notifications::notif_destroyUnits(Players::getFromPower($power), $ship, Spaces::getByID($seazoneId));
+		$ids = array();
+		$spaceName = Map::strGetSpaceOrSeazoneName($seazoneId);
+		$player = Players::getFromPower($power); # TODO loaned ships.
+		for($intI=0; $intI<$count; $intI++){
+			$ids[] = $ships[$intI][TokenAttributes::id];
+			Notifications::notif_destroyUnits($player, $ships[$intI], $spaceName);
+		}
+		Tokens::move($ids, ['supply', $power, $buy_id]);
 	}
 
-    public static function moveShips($seazoneIdFrom, $seazoneIdTo, $power, int $count){
+    public static function moveShips(int $seazoneIdFrom, int $seazoneIdTo, string $power, int $count) : void{
 		if(map::bolIsValidShipDestination($seazoneIdTo)){
 			$ships = Map::getShips($seazoneIdFrom, $power);
 			$ids = array();
-			$seazoneFromName = "";
-				if($seazoneIdFrom < Locationtypes::min_seazone_id){
-					$seazoneFromName = Map::getSpaceName($seazoneIdFrom);
-				}else{
-					$seazoneFromName = Map::getSeazoneName($seazoneIdFrom);
-				}
-				$seazoneToName = "";
-				if($seazoneIdTo < Locationtypes::min_seazone_id){
-					$seazoneToName = Map::getSpaceName($seazoneIdTo);
-				}else{
-					$seazoneToName = Map::getSeazoneName($seazoneIdTo);
-				}
+
+			$seazoneFromName = Map::strGetSpaceOrSeazoneName($seazoneIdFrom);
+			$seazoneToName = Map::strGetSpaceOrSeazoneName($seazoneIdTo);
+			$seazoneToDBName = Map::strGetSpaceOrSeazoneDBName($seazoneIdTo);
 
 			Notifications::message("count(ships)".count($ships).", count=".$count);
 			if($count <= count($ships)){
@@ -1063,13 +1069,10 @@ class Map extends \HIS\Helpers\Pieces {
 					$ids[] = $ships[$intI][TokenAttributes::id];
 				}
 				Notifications::message("ids=".Utils::varToString($ids));
-				if($seazoneIdTo >= Locationtypes::min_seazone_id){
-					Tokens::movePreserveState($ids, Locationtypes::seazone."_".$seazoneIdTo);
-				}else{
-					Tokens::movePreserveState($ids, Locationtypes::space."_".$seazoneIdTo);
-				}
-				// TODO ships in seazones cant be displayed (because seazones dont realy exist?)
-				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, $seazoneIdTo, $seazoneFromName, $seazoneToName, $count);
+				
+				Tokens::movePreserveState($ids, $seazoneToDBName);
+				Notifications::notif_moveNavalFormation(Players::getFromPower($power), $ids, Map::strGetSpaceOrSeazoneJSName($seazoneIdTo), $seazoneFromName, $seazoneToName);
+				
 			}else{
 				Notifications::message("cant move ".$count." ships when only ".count($ships)." are present in ".$seazoneFromName);
 			}
@@ -1105,25 +1108,32 @@ class Map extends \HIS\Helpers\Pieces {
 		Tokens::move($ids, Locationtypes::prision[$powerThatCaptures]);
 	}
 
-    public static function removeNavalLeader(string $navalLeaderId){
+    public static function removeNavalLeader(string $navalLeaderId) : void{
         //when the leader gets removed from play (because of card effect.)
 		Map::removeLeader($navalLeaderId);
 	}
 
-	public static function moveNavalLeader(string $navalLeaderId, int $SeazoneIdFrom, int $SeazoneIdTo){
-		$leader = Game::get()->tokens[$navalLeaderId];
-		$leaderDbId = $leader[TokenAttributes::db_id];
-		
-		$leaderToken = Tokens::get($leaderDbId);
+	public static function moveNavalLeader(string $navalLeaderId, int $SeazoneIdTo) : void{
+		$leaderToken = Game::get()->tokens[$navalLeaderId];
 		Notifications::message("leaderToken=".Utils::varToString($leaderToken));
 		
-		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderDbId], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo));
+		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderToken[TokenAttributes::db_id]], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo));
 		if($bolMoveWasSuccess){
-			$prevSpaceId = $leaderToken[TokenAttributes::location_id];
+			$prevSpaceId = null;#$leaderToken[TokenAttributes::location_id];
+			Notifications::message("Naval leader token: ".Utils::varToString($leaderToken));
 			//TODO notification doesnt work.
-			//Notifications::notif_moveLeader(Players::getFromPower($leader[TokenAttributes::power]), $leader[TokenAttributes::db_id], $leaderToken[TokenAttributes::name], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo), ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId), Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
+			$player = Players::getFromPower($leaderToken[TokenAttributes::power]);
+			if($player === null){
+				$player = Players::getActive(); // TODO some naval leaders have power as "Other", get the major power allied with Genoa
+			}
+			$leaderId = $leaderToken[TokenAttributes::db_id];
+			$leader_name = $leaderToken[TokenAttributes::name];
+			$spaceToId = Map::strGetSpaceOrSeazoneJSName($SeazoneIdTo);
+			$from_space_name = ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId);
+			$to_space_name = Map::strGetSpaceOrSeazoneName($SeazoneIdTo);
+			Notifications::notif_moveNavalLeader($player, $leaderId, $leader_name, $spaceToId, $from_space_name, $to_space_name);
 		}else{
-			Notifications::message("Could not add Leader".$leader[TokenAttributes::name]." to space ".Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
+			Notifications::message("Could not add Leader".$leaderToken[TokenAttributes::name]." to space ".Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
 		}
 	}
 

@@ -192,6 +192,7 @@ class hereistand extends Table {
 					Map::addLeader($spaceID, $leaderId);
 					return;
 				}else if ($arrstr_args[2] === "moveLeader"){
+					#cmd(map set moveLeader 3051 1047)
 					$spaceID = intval($arrstr_args[3]);
 					$leaderId = intval($arrstr_args[4]);
 					Notifications::message("move Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
@@ -207,23 +208,40 @@ class hereistand extends Table {
 					Map::captureLeader($spaceID, $powerFrom, $powerBy);
 					return;
 				}else if($arrstr_args[2] === "addNavalUnits"){
+					#cmd(map set addNavalUnits 3057 france 2)
 					$spaceID = intval($arrstr_args[3]);
 					$power = Utils::cmdStrToPower($arrstr_args[4]);
 					$count = intval($arrstr_args[5]);
 					Map::addShips($spaceID, $power, $count);
 					return;
 				}else if($arrstr_args[2] === "moveNavalUnits"){
+					#cmd(map set moveNavalUnits 3057 6004 france 1)
 					$spaceIDFrom = intval($arrstr_args[3]);
 					$spaceIDTo = intval($arrstr_args[4]);
 					$power = Utils::cmdStrToPower($arrstr_args[5]);
 					$count = intval($arrstr_args[6]);
 					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
 					return;
+				}else if($arrstr_args[2] === "removeNavalUnits"){
+					#cmd(map set removeNavalUnits 3057 france 1)
+					$spaceID = intval($arrstr_args[3]);
+					$power = Utils::cmdStrToPower($arrstr_args[4]);
+					$count = intval($arrstr_args[5]);
+					Map::removeShips($spaceID, $power, $count);
+					return;
 				}else if($arrstr_args[2] === "addNavalLeader"){
+					#cmd(map set addNavalLeader 3057 1067)
 					$spaceID = intval($arrstr_args[3]);
 					$navalLeaderId = intval($arrstr_args[4]);
 					Notifications::message("add naval leader ");
 					Map::addNavalLeader($spaceID, $navalLeaderId);
+					return;
+				}else if($arrstr_args[2] === "moveNavalLeader"){
+					#cmd(map set moveNavalLeader 1067 6004)
+					$spaceID = intval($arrstr_args[3]);
+					$navalLeaderId = intval($arrstr_args[4]);
+					Notifications::message("add naval leader ");
+					Map::moveNavalLeader($navalLeaderId, $spaceID);
 					return;
 				}else if($arrstr_args[2] === "captureNavalLeaders"){
 					$spaceID = intval($arrstr_args[3]);
