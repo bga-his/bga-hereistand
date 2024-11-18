@@ -19,7 +19,7 @@ use TokenAttributes;
 use tokenIDs;
 use tokenTypeIDs;
 
-class Map extends \HIS\Helpers\Pieces {
+class Map{
 	public static function getHomePower(int $spaceID) : String{
 		Notifications::message("spaceID=".$spaceID);
 		Notifications::message("place=".Utils::varToString(Game::get()->spaces[$spaceID]));
@@ -1115,12 +1115,12 @@ class Map extends \HIS\Helpers\Pieces {
 
 	public static function moveNavalLeader(string $navalLeaderId, int $SeazoneIdTo) : void{
 		$leaderToken = Game::get()->tokens[$navalLeaderId];
-		Notifications::message("leaderToken=".Utils::varToString($leaderToken));
-		
-		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderToken[TokenAttributes::db_id]], Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo));
+		$to_space_name = Map::strGetSpaceOrSeazoneDBName($SeazoneIdTo);
+		$from_space_id = Tokens::getTokenById($leaderToken[TokenAttributes::db_id])[TokenAttributes::location_id];
+
+		$bolMoveWasSuccess = Tokens::movePreserveState([$leaderToken[TokenAttributes::db_id]], $to_space_name);
+
 		if($bolMoveWasSuccess){
-			$prevSpaceId = null;#$leaderToken[TokenAttributes::location_id];
-			Notifications::message("Naval leader token: ".Utils::varToString($leaderToken));
 			//TODO notification doesnt work.
 			$player = Players::getFromPower($leaderToken[TokenAttributes::power]);
 			if($player === null){
@@ -1129,11 +1129,10 @@ class Map extends \HIS\Helpers\Pieces {
 			$leaderId = $leaderToken[TokenAttributes::db_id];
 			$leader_name = $leaderToken[TokenAttributes::name];
 			$spaceToId = Map::strGetSpaceOrSeazoneJSName($SeazoneIdTo);
-			$from_space_name = ($prevSpaceId == null)?'prision of '.Locationtypes::prision_name[$leaderToken[TokenAttributes::location_type]]:Map::getSpaceName($prevSpaceId);
-			$to_space_name = Map::strGetSpaceOrSeazoneName($SeazoneIdTo);
+			$from_space_name = Map::strGetSpaceOrSeazoneDBName($from_space_id);
 			Notifications::notif_moveNavalLeader($player, $leaderId, $leader_name, $spaceToId, $from_space_name, $to_space_name);
 		}else{
-			Notifications::message("Could not add Leader".$leaderToken[TokenAttributes::name]." to space ".Map::strGetSpaceOrSeazoneName($SeazoneIdTo));
+			Notifications::message("Could not add Leader".$leaderToken[TokenAttributes::name]." to space ".$to_space_name);
 		}
 	}
 

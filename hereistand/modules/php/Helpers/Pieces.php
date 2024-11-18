@@ -298,6 +298,15 @@ class Pieces extends DB_Manager {
 			->get($returnValueIfOnlyOneRow);
 	}
 
+	/*
+	get the single token with that ID
+	*/
+	public static function getTokenById(string $id) : array {
+		return self::getSelectWhere($id, null, null)
+			->get(true);
+	}
+
+
 	/**
 	 * Return all pieces in specific location
 	 * note: if "order by" is used, result object is NOT indexed by ids

@@ -237,10 +237,10 @@ class hereistand extends Table {
 					Map::addNavalLeader($spaceID, $navalLeaderId);
 					return;
 				}else if($arrstr_args[2] === "moveNavalLeader"){
-					#cmd(map set moveNavalLeader 1067 6004)
+					#cmd(map set moveNavalLeader 6004 1067)
 					$spaceID = intval($arrstr_args[3]);
 					$navalLeaderId = intval($arrstr_args[4]);
-					Notifications::message("add naval leader ");
+					Notifications::message("move naval leader ");
 					Map::moveNavalLeader($navalLeaderId, $spaceID);
 					return;
 				}else if($arrstr_args[2] === "captureNavalLeaders"){
