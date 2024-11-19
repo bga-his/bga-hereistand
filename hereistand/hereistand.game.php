@@ -143,6 +143,9 @@ class hereistand extends Table {
 					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
 					return;
 				}else if($arrstr_args[2] === "rel"){
+					//TODO test set religion on independent and minor powers home spaces.
+					//cmd(map set rel 3129 2003)
+					//cmd(map set rel 3061 2003)
 					Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
 					Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
 					return;

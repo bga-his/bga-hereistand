@@ -952,8 +952,9 @@ const DIP_SIEGE_OF_VIENNA = 5133;
 const DIP_SPANISH_INQUISITION = 5134;
 }
 
-/* token types by type*/abstract class tokenIDs_CONTROL
-{const ENGLAND_KEY = 1000;
+/* token types by type*/
+abstract class tokenIDs_CONTROL{
+const ENGLAND_KEY = 1000;
 const FRANCE_KEY = 1001;
 const HAPSBURG_KEY = 1002;
 const OTTOMAN_KEY = 1003;

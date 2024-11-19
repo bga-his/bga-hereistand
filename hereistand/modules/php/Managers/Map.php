@@ -103,18 +103,24 @@ class Map{
 	public static function addControlToken(int $spaceID, String $power) : void{
 		Notifications::message("Map::addControlToken(".$spaceID.", ".$power.");");
 		if(Map::bolIsKey($spaceID) && $power != Powers::PROTESTANT){
-			foreach (HomeCard_key_locations[$power] as $keyLocations) {
-				$scm = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocations);
-				if(count($scm) > 0){
-					Notifications::message("move scm ".$scm->first()["id"]." to map_space_".$spaceID.".");
-					Tokens::move($scm->first()["id"], "map_space_".$spaceID);
-					//TODO update VP track.
-					return;
+
+			if(array_key_exists($power, HomeCard_key_locations)){
+				foreach (HomeCard_key_locations[$power] as $keyLocations) {
+					$scm = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocations);
+					if(count($scm) > 0){
+						Notifications::message("move scm ".$scm->first()["id"]." to map_space_".$spaceID.".");
+						Tokens::move($scm->first()["id"], "map_space_".$spaceID);
+						//TODO update VP track.
+						return;
+					}
+					//autowin.
 				}
-				//autowin.
+			}else{
+				Tokens::pickForLocation(1, Locationtypes::supply[$power]."_".keyControlMarkers[$power], ['map', 'space', $spaceID]);
 			}
 		}else{
-			Tokens::pickForLocation(1, ['supply',$power, hexControlMarkers[$power]], ['map', 'space', $spaceID]);
+			Notifications::message("add hexControlMarker from ".Locationtypes::supply[$power]."_".hexControlMarkers[$power]." to map_space_".$spaceID);
+			Tokens::pickForLocation(1, Locationtypes::supply[$power]."_".hexControlMarkers[$power], ['map', 'space', $spaceID]);
 		}
 		
 	}
@@ -243,9 +249,9 @@ class Map{
 					$token_add = Tokens::GetControlMarker($spaceID);
 				}
 				if($religion == ReligionIDs::REFORMED){
-					Tokens::setState($token_add['id'], TokenSides::BACK);
+					Tokens::setState($token_add[TokenAttributes::id], TokenSides::BACK);
 				}else{
-					Tokens::setState($token_add['id'], TokenSides::FRONT);
+					Tokens::setState($token_add[TokenAttributes::id], TokenSides::FRONT);
 				}
 			}
 		}else{
@@ -257,13 +263,13 @@ class Map{
 				}else{
 					$token_add = $token_original;
 				}
-				Tokens::setState($token_add['id'], TokenSides::BACK);
+				Tokens::setState($token_add[TokenAttributes::id], TokenSides::BACK);
 			}else{
 				if($token_original != null){
 					if($power == $homePower && !Map::bolIsKey($spaceID)){
 						Map::removeControlToken($spaceID);
 					}else{
-						Tokens::setState($token_original['id'], TokenSides::FRONT);
+						Tokens::setState($token_original[TokenAttributes::id], TokenSides::FRONT);
 					}
 				}
 			}
