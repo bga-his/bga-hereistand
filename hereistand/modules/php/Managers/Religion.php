@@ -9,6 +9,13 @@ use SeazoneAttributs;
 use SpaceAttributs;
 use TokenAttributes;
 use tokenTypeIDs;
+use Powers;
+use tokenIDs_TURN_MARKER;
+use tokenIDs_EVENT_REMINDER;
+use GameStates;
+use HIS\Core\Notifications;
+use HIS\Helpers\Utils;
+use TokenSides;
 
 class Religion{
 
@@ -30,22 +37,80 @@ class Religion{
     }
 
     private static function bolIsReformedUnitPresent(int $spaceId) : bool{
+        if(count(Map::getLandUnits($spaceId, Powers::PROTESTANT)) > 0){
+            return true;
+        }
+        //TODO English regulars and mercenaries if either Edward VI or Elizabeth I rules England.
+        //Exception: While Scotland is allied with England, Scottish units are treated the same as English ones.
         return false;
     }
     private static function bolIsCatolicunitPresent(int $spaceId) : bool{
+        if(count(Map::getLandUnits($spaceId, Powers::PAPACY)) > 0){
+            return true;
+        }
+        if(count(Map::getLandUnits($spaceId, Powers::HAPSBURG)) > 0){
+            return true;
+        }
+        if(count(Map::getLandUnits($spaceId, Powers::FRANCE)) > 0){
+            return true;
+        }
+        //TODO only if MaryI rules england
+        //if(count(Map::getLandUnits($spaceId, Powers::ENGLAND)) > 0){
+        //    return true;
+        //}
+        if(count(Map::getLandUnits($spaceId, Powers::MINOR_GENOA)) > 0){
+            return true;
+        }
+        if(count(Map::getLandUnits($spaceId, Powers::MINOR_HUNGARY)) > 0){
+            return true;
+        }
+        if(Diplomacy::IsAllied(Powers::ENGLAND, Powers::MINOR_SCOTLAND)){
+            //Exception: While Scotland is allied with England, Scottish units are treated the same as English ones.
+        }else{
+            if(count(Map::getLandUnits($spaceId, Powers::MINOR_SCOTLAND)) > 0){
+                return true;
+            }
+        }
+        
+        if(count(Map::getLandUnits($spaceId, Powers::MINOR_VENICE)) > 0){
+            return true;
+        }
+        if(count(Map::getLandUnits($spaceId, Powers::INDEPENDENT)) > 0){
+            return true;
+        }
+        if(count(Map::getLandUnits($spaceId, Powers::OTHER)) > 0){
+            return true;
+        }
         return false;
     }
-    private static function bolIsPrintingPressActive() : bool{
-        return false;
+    /*
+    * get weather the card printing press was played erlier this turn. TODO untested.
+    */
+    public static function bolIsPrintingPressActive() : bool{
+        //TurnMarker.token_location == PrintingPressActiveMarker.token_location
+        $turnTrackToken = Tokens::getTokenById(Tokens::getDBId(tokenIDs_TURN_MARKER::TURN));
+        $ppActiveToken = Tokens::getTokenById(Tokens::getDBId(tokenIDs_EVENT_REMINDER::PRINTING_PRESS));
+
+        return $turnTrackToken[TokenAttributes::location_type] == $ppActiveToken[TokenAttributes::location_type] && $turnTrackToken[TokenAttributes::location_id] == $ppActiveToken[TokenAttributes::location_id];
     }
     private static function bolIs95ThesisActive() : bool{
+        // is special game state, check that
+        //TODO there is currently no way to get into the gamestate ST_EVT_95Thesis. TODO untested.
+        if(game::get()->getStateName() == GameStates::ST_EVT_95Thesis){
+            return true;
+        }
         return false;
     }
     /*
     * make printing press bonus be active for the rest of this turn.
     */
     public static function SetPrintingPressActive(){
+        $turnTrackToken = Tokens::getTokenById(Tokens::getDBId(tokenIDs_TURN_MARKER::TURN));
+        $strPPDbId = Tokens::getDBId(tokenIDs_EVENT_REMINDER::PRINTING_PRESS);
+        $strLocationTurnTrack = $turnTrackToken[TokenAttributes::location_type]."_".$turnTrackToken[TokenAttributes::location_id];
 
+        Tokens::move([$strPPDbId], "map_".$strLocationTurnTrack);
+        Notifications::notif_SetPrintingPressActive(Tokens::getTokenById($strPPDbId), Players::getFromPower(Powers::PROTESTANT)->getId(), $strLocationTurnTrack);
     }
 
     /*
@@ -122,17 +187,16 @@ class Religion{
     }
 
     public static function bolIsCommited(int $debatorId) : bool{
-        return false;
+        return Tokens::getTokenById(Tokens::getDBId($debatorId))[TokenAttributes::flipped] != '';
     }
     public static function SetIsCommited(int $debatorId, bool $isCommitted) : void{
-
+        Tokens::setState(Tokens::getDBId($debatorId), $isCommitted?TokenSides::BACK:TokenSides::FRONT); // TODO set to flip
     }
 
     /*
     * get how many dice the debator has when in a debate.
     */
     public static function getDebatorDice(int $debatorId, bool $IsAttacker) : int{
-
         return 1;
     }
 

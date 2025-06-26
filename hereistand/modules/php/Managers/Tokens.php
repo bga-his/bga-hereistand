@@ -95,6 +95,12 @@ class Tokens extends \HIS\Helpers\Pieces {
 	//////////////////////////////////
 	//////////////////////////////////
 
+	/*
+	* get the db id of the token that has the Tokens:: id of $tokenId
+	*/
+	public static function getDBId(int $tokenId) : string{
+		return Game::get()->tokens[$tokenId][TokenAttributes::db_id];
+	}
 	/**
 	 * return $db_id.replace("{INDEX}", strval($id));
 	 * (assumes $db_id is token["db_id"])

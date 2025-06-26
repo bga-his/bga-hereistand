@@ -6,7 +6,6 @@ use HIS\Helpers\Utils;
 use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
-use HIS\Managers\Diplomancy;
 use HIS\Managers\Map;
 use HIS\Models\Formation;
 use HIS\Core\Notifications;

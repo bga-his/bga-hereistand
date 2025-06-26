@@ -1,12 +1,15 @@
 <?php
 namespace HIS\Core;
 
+use HIS\Managers\Diplomacy;
 use HIS\Managers\Players;
 use HIS\Managers\Map;
+use Powers;
 use SpaceAttributs;
 use TokenAttributes;
 use tokenTypeIDs;
 use tokenIDs;
+use TokenSides;
 
 class Notifications {
 	/*************************
@@ -74,11 +77,24 @@ class Notifications {
 			if(in_array(tokenTypeIDs::KEYS, $token_weg["types"])){
 				self::js_moveToken($token_weg[TokenAttributes::id], "location_".$scmLocation);
 			}else{
-				self::js_moveAndDestroyToken($token_weg[TokenAttributes::id], "player_board_".Players::getFromPower($token_weg[TokenAttributes::power])->getId());
+				if(Diplomacy::bolisMajorPower($token_weg[TokenAttributes::power])){
+					self::js_moveAndDestroyToken($token_weg[TokenAttributes::id], "player_board_".Players::getFromPower($token_weg[TokenAttributes::power])->getId());
+				}else{
+					// does not make much sense to move the removed tokens of minor powers ot OTTO, but at least it wont crash, right?
+					self::js_moveAndDestroyToken($token_weg[TokenAttributes::id], "player_board_".Players::getFromPower(Powers::OTTOMAN)->getId());
+				}
+				
 			}
 		}
 		if($token_add !== null){
 			if(in_array(tokenTypeIDs::KEYS, $token_add["types"])){
+				
+				if($token_add[TokenAttributes::flipped] != ""){
+					if($token_weg !== null){
+						self::js_destroyToken($token_weg[TokenAttributes::id]);
+					}
+					self::js_createToken($token_add, $token_add[TokenAttributes::location_type]."_".$token_add[TokenAttributes::location_id]);
+				}
 				self::js_moveToken($token_add[TokenAttributes::id], "space_".$spaceID);
 			}else{
 				self::js_createAndMoveToken($token_add, "player_board_".Players::getFromPower($token_add[TokenAttributes::power])->getId(), "space_".$spaceID);
@@ -244,6 +260,11 @@ class Notifications {
 		self::message('removed leader ${leader_name} from play.', [
 			"leader_name" => $leaderName
 		]);
+	}
+
+	public static function notif_SetPrintingPressActive(array $ppActiveToken, int $protPlayerId, string $turnTrackLocationid) {
+		self::js_createAndMoveToken($ppActiveToken, "player_board_".$protPlayerId, $turnTrackLocationid);
+		self::message('Printing press will be active for the remainder of this turn.', []);
 	}
 
 	/*********************

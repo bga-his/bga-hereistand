@@ -42,6 +42,7 @@ abstract class GameStates{
     const ST_CP_REFORMATION_ATTEMPS = 37;
     const ST_DISCARD = 38;
     const ST_END_GAME = 99;
+    const ST_EVT_95Thesis = 100;
     const ST_EVT_Janissaries = 101;
     const ST_EVT_HOLYROMAN = 102;
     const ST_EVT_SIXWIVESOFHENRY = 103;
@@ -390,6 +391,7 @@ const keyControlMarkers = [
     Powers::ENGLAND => tokenIDs_CONTROL::ENGLAND_KEY,
     Powers::FRANCE => tokenIDs_CONTROL::FRANCE_KEY,
     Powers::PAPACY => tokenIDs_CONTROL::PAPACY_KEY,
+    Powers::PROTESTANT => tokenIDs_CONTROL::INDEPENDENT_KEY,
     Powers::MINOR_GENOA => tokenIDs_CONTROL::INDEPENDENT_KEY,
     Powers::MINOR_HUNGARY => tokenIDs_CONTROL::INDEPENDENT_KEY,
     Powers::MINOR_SCOTLAND => tokenIDs_CONTROL::INDEPENDENT_KEY,

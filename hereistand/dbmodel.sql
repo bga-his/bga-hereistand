@@ -49,5 +49,6 @@ CREATE TABLE `tokens` (
   `token_location` varchar(32) NOT NULL,
   `token_state` int(10) DEFAULT '0',
   `type` int(10) NOT NULL,
-  `token_mayMove` tinyint(3) UNSIGNED NOT NULL
+  `toggle_impulseId` int(10) unsigned NOT NULL , -- for land units: if they may not move this impuls, debators: imupse that they are committed for their effect
+  PRIMARY KEY (`token_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

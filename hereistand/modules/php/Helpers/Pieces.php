@@ -28,10 +28,10 @@ use LandUnitTokens;
  */
 
 class Pieces extends DB_Manager {
-	protected static $table = null;
+	//protected static $table = null;
 	protected static $cast = null;
 
-	protected static $prefix = 'piece_';
+	//protected static $prefix = 'piece_';
 	protected static $autoIncrement = true;
 	protected static $primary;
 	protected static $autoremovePrefix = true;
@@ -45,6 +45,7 @@ class Pieces extends DB_Manager {
 
 	public static function DB($table = null) {
 		static::$primary = static::$prefix . 'id';
+		//Notifications::message("table=".static::$table.", prefix=".static::$prefix);//table=tokens, prefix=token_ // wtf, why/where are these two variables set?
 		return parent::DB(static::$table);
 	}
 
@@ -83,7 +84,7 @@ class Pieces extends DB_Manager {
 		return $query;
 	}
 
-	final static function getUpdateQuery($ids = [], $location = null, $state = null, bool $mayMove = null) {
+	final static function getUpdateQuery($ids = [], $location = null, $state = null, bool $toggleImpulseid = null) {
 		$data = [];
 		if (!is_null($location)) {
 			$data[static::$prefix . 'location'] = $location;
@@ -91,8 +92,8 @@ class Pieces extends DB_Manager {
 		if (!is_null($state)) {
 			$data[static::$prefix . 'state'] = $state;
 		}
-		if (!is_null($mayMove)) {
-			$data[static::$prefix . 'mayMove'] = intval($mayMove); # DB column is of type tinyint, not boolean.
+		if (!is_null($toggleImpulseid)) {
+			$data[static::$prefix . 'toggle_impulseId'] = intval($toggleImpulseid); # DB column is of type tinyint, not int.
 		}
 		//Notifications::message("Pieces::getUpdateQuers: data=".Utils::varToString($data));
 		$query = self::DB()->update($data);
@@ -345,16 +346,16 @@ class Pieces extends DB_Manager {
 		   ************** SETTERS **************
 		   *************************************
 	*/
-	public static function setState($ids, int $state = null, bool $mayMove = null) {
+	public static function setState($ids, int $state = null, int $toggleImpulseid = null) {
 		self::checkState($state, true);
 		if (!is_array($ids)) {
 			$ids = [$ids];
 		}
 		self::checkIdArray($ids);
-		if(is_null($state) && is_null($mayMove)){
-			throw new \BgaVisibleSystemException('Class Pieces::setState $state and $mayMove may not both be null.');
+		if(is_null($state) && is_null($toggleImpulseid)){
+			throw new \BgaVisibleSystemException('Class Pieces::setState $state and $toggleImpulseid may not both be null.');
 		}
-		return self::getUpdateQuery($ids, null, $state, $mayMove)->run();
+		return self::getUpdateQuery($ids, null, $state, $toggleImpulseid)->run();
 	}
 
 	public static function movePreserveState($ids, $location){
@@ -390,7 +391,7 @@ class Pieces extends DB_Manager {
 
 		//convert to string
 		for($i =0; $i < count($ids); $i++){
-			$ids[$i] = "".$ids[$i];
+			$ids[$i] = strval($ids[$i]);
 		}
 
 		self::checkLocation($location);

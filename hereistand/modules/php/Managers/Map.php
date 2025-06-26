@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace HIS\Managers;
 
 use HIS\Core\Game;
+use HIS\Core\Globals;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
@@ -21,8 +22,6 @@ use tokenTypeIDs;
 
 class Map{
 	public static function getHomePower(int $spaceID) : String{
-		Notifications::message("spaceID=".$spaceID);
-		Notifications::message("place=".Utils::varToString(Game::get()->spaces[$spaceID]));
 		return Game::get()->spaces[$spaceID][SpaceAttributs::home_power];
 	}
 	public static function getSpaceName(int $spaceID) : String{
@@ -61,7 +60,7 @@ class Map{
 		foreach (HomeCard_key_locations[$power] as $keyLocation) {
 			$scm = Tokens::getInLocation(Locationtypes::powercards."_".$keyLocation);
 			if(count($scm) > 0){
-				Notifications::message("First free scm location of ".$power." = ".$scm);
+				Notifications::message("First free scm location of ".$power." = ".Utils::varToString($scm));
 				if($firstOccupied){
 					return $keyLocation;
 				}else{
@@ -184,13 +183,18 @@ class Map{
 			Map::addControlToken($spaceID, $power);
 			$token_add = Tokens::GetControlMarker($spaceID);
 			//Notifications::message("Map::setPoliticalControl: added Control Marker ".Utils::varToString($token));
+			
 			if($flipped){
-				Tokens::setState($token_add['id'], TokenSides::BACK);
+				Notifications::message("Set flipped to BACK");
+				Tokens::setState($token_add[TokenAttributes::id], TokenSides::BACK);
 			}else{
-				Tokens::setState($token_add['id'], TokenSides::FRONT);
+				Notifications::message("Set flipped to FRONT");
+				Tokens::setState($token_add[TokenAttributes::id], TokenSides::FRONT);
 			}
 		}
-		$token_add = Tokens::GetControlMarker($spaceID);
+		
+		$token_add = Tokens::get($token_add[TokenAttributes::id]);
+		Notifications::message("token.flipped=".$token_add[TokenAttributes::flipped]);
 		Notifications::message("token_add = ".Utils::varToString($token_add));
 		if($token_original != null && in_array(tokenTypeIDs::KEYS, $token_original["types"])){
 			Notifications::notif_setPoliticalControl($spaceID, Map::getSpaceName($spaceID), $power, $token_original, $token_add, Map::getSCMPowerCardLocation($token_original["power"], true));
@@ -522,41 +526,39 @@ class Map{
 	* check that enough land units tokens are in supply, and that $spaceId is valid target. (home power and no unrest or enemy units)
 	* @param int $spaceID element of generated_constants.SpaceIDs
 	* @param String $power element of constants.Powers
-	* @param int $count number of land units to add (might be negative to remove land units instead.)
 	* @param int $type element of constants.UnitTypes
-	* @return int maximum number of land units, so that adding that count to $space would be valid (and number not greater than $count).
+	* @return array(Of int) maximum number of land units, so that adding that count to $space would be valid.
 	*/
-	public static function bolMayAddLandUnits(int $spaceId, String $power, int $count, int $type) : int{
+	public static function arrintMaxAddableLandUnits(int $spaceId, String $power, int $type) : array{
 		$space = Game::get()->spaces[$spaceId];
 		if($space["home_power"] != $power || Map::bolGetSpaceIsInUnrest($spaceId)){
-			return 0;
+			return [0];
 		}
 		// contains enemy units
 		$tokens = Tokens::getInLocation(Locationtypes::space."_".$spaceId);
 		foreach($tokens as $token){
 			if($token["type"] == tokenTypeIDs::UNITS && Diplomacy::IsAtWar($power, $token["power"])){
-				return 0;
+				return [0];
 			}
 		}
 
 		//supply contains enough land units:
 		$supply = Map::getLandUnitsInSupply($power);
-		//TODO getLandUnits returns array of all tokens.
-		//getUnitsCount gets count of regular/merc units
-		//dont now if there is a method to get the count i need here.
 		$already_there = Map::getLandUnitsInSpace($spaceId, $power, $type);
-		//TODO supply = [1=>0, 2=>1, 4=>1, 6=>0]
-		//already_there = [1=>0, 2=>1, 4=>0, 6=>0]
-		
+		$already_there_sum = 0;
+		$supply_sum = 0;
 		foreach([1, 2, 4, 6] as $i){
+			$already_there_sum += $already_there[$i] * $i;
+			$supply_sum += $supply[$i] * $i;
 			$supply[$i] += $already_there[$i];
-			$count += $already_there[$i] * $i;
 		}
-		while(!map::bolLandUnitCountPossible($supply, $count)){
-			$count--;
-			
+		$result = [$already_there_sum];
+		for($intI = $already_there_sum+1; $intI <= $supply_sum + $already_there_sum; $intI++){
+			if(map::bolLandUnitCountPossible($supply, $intI)){
+				$result[] = $intI;
+			}
 		}
-		return $count;
+		return $result;
 	}
 
 	/**
@@ -872,7 +874,7 @@ class Map{
 		if(Map::bolGetSpaceIsFortified($spaceIdTo) && Map::getPoliticalControl($spaceIdTo) != $power){
 			# set the mayMove to false
 			# todo state may not be null?
-			Tokens::setState($ids, mayMove:false);
+			Tokens::setState($ids, Globals::intGetImpulseId());
 		}
 		Notifications::notif_moveFormation(Players::getFromPower($formation->power), $ids, $spaceIdTo, Map::getSpaceName($from_location), Map::getSpaceName($spaceIdTo), $formation->unit_strength);
 	}

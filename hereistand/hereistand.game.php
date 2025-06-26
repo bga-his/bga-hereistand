@@ -41,6 +41,7 @@ use HIS\Managers\Cards;
 use HIS\Managers\Players;
 use HIS\Managers\Tokens;
 use HIS\Managers\Map;
+use HIS\Managers\Religion;
 use HIS\tests\TestMap;
 
 class hereistand extends Table {
@@ -96,7 +97,7 @@ class hereistand extends Table {
 				}else if($arrstr_args[2] === "rel"){
 					$spaceID = intval($arrstr_args[3]);
 					$religionID = Map::getReligiosControl($spaceID);
-					Notifications::message("religius control of city ".$spaceID." = ".$religionID);
+					Notifications::message("religius control of city ".$spaceID." = ".($religionID==ReligionIDs::CATHOLIC?"CATHOLIC":($religionID==ReligionIDs::REFORMED?"REFORMED":"other")));
 					return;
 				}else if($arrstr_args[2] === "isFort"){
 					$spaceID = intval($arrstr_args[3]);
@@ -120,15 +121,16 @@ class hereistand extends Table {
 					return;
 				}else if($arrstr_args[2] === "mayAddLandUnits"){
 					$power = Utils::cmdStrToPower($arrstr_args[3]);
-					$spaceID = intval($arrstr_args[3]);
-					$count = intval($arrstr_args[4]);
+					$spaceID = intval($arrstr_args[4]);
 					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
-					Notifications::message("may add land units".Map::bolMayAddLandUnits($spaceID, $power, $count, $type));
+					Notifications::message("may add land ".Utils::varToString(Map::arrintMaxAddableLandUnits($spaceID, $power, $type))." land units");
+					return;
 				}else if($arrstr_args[2] === "formation"){
 					$spaceID = intval($arrstr_args[3]);
 					$unit_count = Map::getUnitCount($spaceID);
 					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
 					Notifications::message("formation in ".Map::getSpaceName($spaceID).": ".Utils::varToString($formation));
+					return;
 				}else if($arrstr_args[2] === "tokens"){
 					$spaceID = intval($arrstr_args[3]);
 					$power = Map::getPoliticalControl($spaceID);
@@ -136,11 +138,13 @@ class hereistand extends Table {
 					$leaders = Map::getLeader($spaceID, $power);
 					Notifications::message("Land units in ".Map::getSpaceName($spaceID).": ".Utils::varToString($landUnits));
 					Notifications::message("Leaders in ".Map::getSpaceName($spaceID).": ".Utils::varToString($leaders));
+					return;
 				}
 			}else if($arrstr_args[1] === "set"){ // set
 				if($arrstr_args[2] === "pol"){
 					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
 					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
+					//TODO set pol of a key displays the wrong side of the scm (until site reload)
 					return;
 				}else if($arrstr_args[2] === "rel"){
 					//TODO test set religion on independent and minor powers home spaces.
@@ -152,7 +156,7 @@ class hereistand extends Table {
 				}else if($arrstr_args[2] === "addLandUnits"){
 					$spaceID = intval($arrstr_args[3]);
 					$count = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]==="merc"?UnitTypes::MERC:UnitTypes::REGULAR; // not the best readable inline-if, if you ask me.
+					$type = $arrstr_args[5]==="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
 					$power = Map::getPoliticalControl($spaceID);
 					
 					Map::addLandunits($spaceID, $power, $count, $type);
@@ -281,6 +285,35 @@ class hereistand extends Table {
 				Map::addLandunits(SpaceIds::PARIS, Powers::FRANCE, 1, UnitTypes::REGULAR);
 				TestMap::testFormation(SpaceIDs::PARIS, 8, 0); // 2 tokens (6+2)
 				return;
+			}
+		}else if($arrstr_args[0] === "rel"){
+			if($arrstr_args[1] === "get"){
+				if($arrstr_args[2] === "pp"){
+					//cmd(rel get pp)
+					$bolRes = Religion::bolIsPrintingPressActive();
+					Notifications::message("Printing Press is active: ".Utils::varToString($bolRes));
+					return;
+				}else if($arrstr_args[2] === "IsValidtargetRef"){
+					//cmd(rel get IsValidtargetRef 3000)
+					$intSpaceId = intval($arrstr_args[3]);
+					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." Is valid target for reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForReformationAttempt($intSpaceId)));
+					return;
+				}else if($arrstr_args[2] === "IsValidtargetCounterRef"){
+					$intSpaceId = intval($arrstr_args[3]);
+					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." Is valid target for counter reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForCounterRefAttempt($intSpaceId)));
+					return;
+				}else if($arrstr_args[2] === "numDiceRef"){
+					//cmd(rel get numDiceRef 3000)
+					$intSpaceId = intval($arrstr_args[3]);
+					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." would get ".Religion::intGetNumberOfReformationAttemptAttackDice($intSpaceId)." dice in a reformation attempt.");
+					return;
+				}
+			}else if($arrstr_args[1] === "set"){
+				if($arrstr_args[2] === "pp"){
+					Religion::SetPrintingPressActive();
+					Notifications::message("Set printing press active.");
+					return;
+				}
 			}
 		}
 		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));
