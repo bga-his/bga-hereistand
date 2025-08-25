@@ -130,7 +130,9 @@ class Map{
 	public static function removeControlToken(int $spaceID) : void{
 		$token = Tokens::GetControlMarker($spaceID);
 		if($token != null){
-			if(in_array(tokenTypeIDs::KEYS, $token["types"])){ // if type($token) == scm
+			if($token["power"] === Powers::INDEPENDENT){
+				Tokens::move($token['id'], Locationtypes::supply[Powers::INDEPENDENT]);
+			}elseif(in_array(tokenTypeIDs::KEYS, $token["types"])){ // if type($token) == scm
 				// move scm to power card, not supply.
 				for($intI = count(HomeCard_key_locations[$token["power"]])-1; $intI >= 0; $intI--){
 					$keyLocation = HomeCard_key_locations[$token["power"]][$intI];
@@ -142,7 +144,7 @@ class Map{
 					}
 				}
 			}else{
-				Tokens::move($token['id'], Locationtypes::supply[$token["power"]]); //TODO supply seems to have other name
+				Tokens::move($token['id'], Locationtypes::supply[$token["power"]]);
 			}
 		}
 	}
@@ -194,7 +196,7 @@ class Map{
 		}
 		
 		$token_add = Tokens::get($token_add[TokenAttributes::id]);
-		Notifications::message("token.flipped=".$token_add[TokenAttributes::flipped]);
+		Notifications::message("token.flipped=".$token_add[TokenAttributes::flipped]); // flipped has either the value "" or "flipped".
 		Notifications::message("token_add = ".Utils::varToString($token_add));
 		if($token_original != null && in_array(tokenTypeIDs::KEYS, $token_original["types"])){
 			Notifications::notif_setPoliticalControl($spaceID, Map::getSpaceName($spaceID), $power, $token_original, $token_add, Map::getSCMPowerCardLocation($token_original["power"], true));
@@ -643,6 +645,7 @@ class Map{
 				$buy_id = strval(Game::get()->getPowerUnits()[$power][$type][$denomination]); // buy_id element of LandUnitTokens or NavalUnitTokens
 
 				$token = Tokens::pickOneForLocation(['supply', $power, $buy_id], Locationtypes::space."_".$spaceId, $side);
+				Notifications::message("token[".$power." strength=".$denomination." type=".$type." buyId=".Utils::varToString($buy_id)." token=".Utils::varToString($token));
 				if ($token == null) {
 					if($denomination == 6){
 						$target_mix[6]--;
@@ -658,6 +661,8 @@ class Map{
 						$target_mix[1] += 2;
 					}
 					if($denomination == 1){
+						Notifications::message("You are out of unit tokens.");
+						return;
 						throw new UserException("You are out of Unit tokens. TODO show supply somewhere");
 					}
 				}else{

@@ -84,6 +84,13 @@ class hereistand extends Table {
 		return $player = Players::getActive();
 	}
 
+	
+	public function debug_getpol($space_id){
+		$power = Map::getPoliticalControl($space_id);
+		Notifications::message("political control of city ".$space_id." = ".$power);
+	}
+
+	//CTRL+SHIPF+P
 	public function cmd($args) {
 		Notifications::message("called cmd with args".$args);
 		$arrstr_args = explode(" ", $args);
