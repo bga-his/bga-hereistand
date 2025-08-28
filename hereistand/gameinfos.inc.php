@@ -15,15 +15,6 @@ $gameinfos = array(
 // Name of the game in English (will serve as the basis for translation)
 	'game_name' => "Here I Stand: 500th Anniversary Edition",
 
-// Game designer (or game designers, separated by commas)
-	'designer' => 'Ed Beach',
-
-// Game artist (or game artists, separated by commas)
-	'artist' => 'Rodger B. MacGowan, Mark Simonitch',
-
-// Year of FIRST publication of this game. Can be negative.
-	'year' => 2017,
-
 // Game publisher (use empty string if there is no publisher)
 	'publisher' => 'GMT Games',
 
@@ -124,25 +115,6 @@ $gameinfos = array(
 		//  minimum possible value: 740
 		'max' => null,
 	),
-
-// Game presentation
-	// Short game presentation text that will appear on the game description page, structured as an array of paragraphs.
-	// Each paragraph must be wrapped with totranslate() for translation and should not contain html (plain text without formatting).
-	// A good length for this text is between 100 and 150 words (about 6 to 9 lines on a standard display)
-	'presentation' => array(
-		totranslate("Here I Stand: Wars of the Reformation 1517-1555 is the first game in over 25 years to cover the political and religious conflicts of early 16th Century Europe. Few realize that the greatest feats of Martin Luther, Jean Calvin, Ignatius Loyola, Henry VIII, Charles V, Francis I, Suleiman the Magnificent, Ferdinand Magellan, Hernando Cortes, and Nicolaus Copernicus all fall within this narrow 40-year period of history. "),
-		totranslate("This game covers all the action of the period using a unique card-driven game system that models both the political and religious conflicts of the period on a single point-to-point map."),
-
-	),
-
-// Games categories
-	//  You can attribute a maximum of FIVE "tags" for your game.
-	//  Each tag has a specific ID (ex: 22 for the category "Prototype", 101 for the tag "Science-fiction theme game")
-	//  Please see the "Game meta information" entry in the BGA Studio documentation for a full list of available tags:
-	//  http://en.doc.boardgamearena.com/Game_meta-information:_gameinfos.inc.php
-	//  IMPORTANT: this list should be ORDERED, with the most important tag first.
-	//  IMPORTANT: it is mandatory that the FIRST tag is 1, 2, 3 and 4 (= game category)
-	'tags' => array(4, 12, 20, 102),
 
 //////// BGA SANDBOX ONLY PARAMETERS (DO NOT MODIFY)
 

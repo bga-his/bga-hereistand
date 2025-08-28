@@ -20,12 +20,18 @@
 
 -- Tokens.token_location: "map_space_".spaceId, or "supply_".power or ...
 -- Tokens.type for land units: merc, regular or cavelary.
--- Tokens.token_mayMove: set to ture if the token lost a field battle, or put a key udner sige earlier this impulse
+-- Tokens.token_toggle_impulseId: set to current impulse ID if the token may not move this impulse (lost field battle or put fortified space under siege)
 ALTER TABLE `player` ADD `player_power` varchar(10) NOT NULL;
 
 CREATE TABLE IF NOT EXISTS `global_variables` (
   `name` varchar(255) NOT NULL,
-  `value` JSON,
+  `value` int(10),
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `global_strings` (
+  `name` varchar(255) NOT NULL,
+  `value` varchar(255),
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

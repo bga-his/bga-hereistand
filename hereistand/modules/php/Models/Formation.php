@@ -1,15 +1,18 @@
 <?php
 namespace HIS\Models;
 
+use HIS\Core\Game;
 use HIS\Core\Notifications;
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
 use HIS\Managers\Diplomacy;
+use HIS\Managers\Tokens;
 use Locationtypes;
+use Powers;
 use ReturnTypeWillChange;
 use tokenTypeIDs;
 use TokenAttributes;
-
+use HIS\Helpers\Collection;
 /*
  * Formation: all utility functions concerning a formation
  */
@@ -25,15 +28,8 @@ class Formation {
 	public int $unit_strength;
 	public string $power;
 
-	public function __construct($tokens) {
-		if(Count($tokens) == 0){
-			$this->tokens = null;
-			$this->landUnits = null;
-			$this->leaders = null;
-			$this->admin_rating = 0;
-			$this->unit_strength = 0;
-			$this->power = null;
-		}else{
+	public function __construct(array $tokens) {
+		if(Count($tokens) > 0){
 			$this->tokens = $tokens;
 			$this->landUnits = [];
 			$this->leaders = [];
@@ -43,7 +39,7 @@ class Formation {
 			$types = [];
 			$admin = [4, 0];
 			$intTokenCommandRation = 0;
-			Notifications::message("new Formation(tokens=".Utils::varToString($tokens).")");
+			Notifications::warn("new Formation(tokens=".Utils::varToString($tokens).")");
 			foreach ($this->tokens as $token) {
 
 				$types = $token[TokenAttributes::types];
@@ -66,16 +62,19 @@ class Formation {
 					throw new UserException("cant add token with type ".Utils::varToString($types)." to Formation.");
 				}
 			}
+			Notifications::warn("new Formation: tokens = ".Utils::varToString($this->tokens));
 			$this->admin_rating = $admin[0]+$admin[1];
 			$this->power = Diplomacy::GetControllingPower($this->tokens[0][TokenAttributes::power]);
+			Notifications::message("new Formation2(tokens=".Utils::varToString($this->tokens));
+		}else{
+			$this->MakeExceptionThatShowsStacktrace();
 		}
-		
 	}
 
 	public function isValid() : bool {
 		# a formation must have units
 		if (Count($this->tokens) == 0) {
-			Notifications::message("Format is invalid: Count(tokens) = 0");
+			Notifications::warn("Formation is invalid: Count(tokens) = 0");
 			return false;
 		}
 
@@ -83,26 +82,26 @@ class Formation {
 		$spaceId = $this->tokens[0][TokenAttributes::location_id];
 		foreach ($this->tokens as $token) {
 			if ($token[TokenAttributes::location_id] != $spaceId || $token[TokenAttributes::location_type] != 'space') { # TODO why are the tokens in location_type 'space' instead of 'map_space'?
-				Notifications::message("Format is invalid: token ".$token[TokenAttributes::name]."should be in ".Locationtypes::space.".".$spaceId.", but is in ".$token[TokenAttributes::location_type].".".$token[TokenAttributes::location_id]);
+				Notifications::warn("Formation is invalid: token ".$token[TokenAttributes::name]."should be in ".Locationtypes::space.".".$spaceId.", but is in ".$token[TokenAttributes::location_type].".".$token[TokenAttributes::location_id]);
 				return false;
 			}
 		}
 
 		# all tokens must be from same major power
 		if(!Diplomacy::bolisMajorPower($this->power)){
-			Notifications::message("Formation is invalid: the power of this formation ".$this->power." is not a major powe.");
+			Notifications::warn("Formation is invalid: the power of this formation ".$this->power." is not a major powe.");
 			return  false;
 		}
 		foreach ($this->tokens as $token) {
 			if (Diplomacy::GetControllingPower($token[TokenAttributes::power]) != $this->power) {
-				Notifications::message("Formation is invalid: the power of this formation is ".$this->power.", but one pice is controlled by ".Diplomacy::GetControllingPower($token[TokenAttributes::power]));
+				Notifications::warn("Formation is invalid: the power of this formation is ".$this->power.", but one pice is controlled by ".Diplomacy::GetControllingPower($token[TokenAttributes::power]));
 				return false;
 			}
 		}
 
 		# total unit strength is not greater than admin rating of the leaders.
 		if($this->admin_rating < $this->unit_strength){
-			Notifications::message("Formation is invalid: admin rating ".$this->admin_rating." should be at greater or equal than unit strength ".$this->unit_strength);
+			Notifications::warn("Formation is invalid: admin rating ".$this->admin_rating." should be at greater or equal than unit strength ".$this->unit_strength);
 			return false;
 		}
 		return true;
@@ -114,7 +113,7 @@ class Formation {
 		}
 		return null;
 	}
-	public function getSpaceId() : ?int {
+	public function getSpaceID() : ?int {
 		if ($this->isValid()){
 			return $this->tokens[0][TokenAttributes::location_id];
 		}else{
@@ -137,13 +136,40 @@ class Formation {
 				return false;
 			}
 			foreach ($this->tokens as $token) {
-				if (!$token['mayMove']) {
-					return false;
-				}
+				Notifications::message("token of formation: ".Utils::varToString($token));
+				#if (!$token['mayMove']) {
+				#	return false;
+				#}
 			}
 			return true;
 		}else{
 			return false;
 		}
+	}
+
+	public function ToString() : string {
+		if($this->isValid()){
+			$strValue = "";
+			foreach($this->tokens as $token){
+				$strValue .= strval($token[TokenAttributes::id]).",";
+			}
+			Notifications::message("Formation fromString: ".Utils::varToString($this->tokens));
+			$strValue = rtrim($strValue, ",");
+			Notifications::message("Formation to string is".$strValue);
+			return $strValue;
+		}else{
+			return "";
+		}
+	}
+
+	public static function FromString($strValue) : ?Formation {
+		$tokenIDs = explode(",", $strValue);
+		Notifications::message("Formation from string is".$strValue);
+		Notifications::message("Formation fromString: ".Utils::varToString($tokenIDs));
+		$tokens = Tokens::getMany($tokenIDs, false);
+		if (count($tokens) != count($tokenIDs)){
+			return null;
+		}
+		return new Formation($tokens->toArray());
 	}
 }

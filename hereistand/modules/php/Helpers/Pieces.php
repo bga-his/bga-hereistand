@@ -43,10 +43,10 @@ class Pieces extends DB_Manager {
 	protected static $customFields = [];
 	protected static $gIndex = [];
 
-	public static function DB($table = null) {
+	public static function DB($table = null, $primary = null) : QueryBuilder {
 		static::$primary = static::$prefix . 'id';
 		//Notifications::message("table=".static::$table.", prefix=".static::$prefix);//table=tokens, prefix=token_ // wtf, why/where are these two variables set?
-		return parent::DB(static::$table);
+		return parent::DB(static::$table, $primary);
 	}
 
 	// TODO : putDeckOnTop
@@ -253,7 +253,7 @@ class Pieces extends DB_Manager {
 			->whereIn(static::$prefix . 'id', $ids)
 			->get(false);
 		if (count($result) != count($ids) && $raiseExceptionIfNotEnough) {
-			throw new \feException('Class Pieces: getMany, some pieces have not been found !' . json_encode($ids));
+			throw new \feException('Class Pieces: getMany, some pieces have not been found ! count IDs: '.count($ids).", count Result: ".count($result)."IDs = ".json_encode($ids));
 		}
 
 		return $result;

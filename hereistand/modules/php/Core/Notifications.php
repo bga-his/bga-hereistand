@@ -30,6 +30,9 @@ class Notifications {
 		self::notifyAll('message', $txt, $args);
 	}
 
+	public static function warn($txt) {
+		Game::get()->warn($txt);
+	}
 	public static function messageTo($player, $txt, $args = []) {
 		$pId = is_int($player) ? $player : $player->getId();
 		self::notify($pId, 'message', $txt, $args);

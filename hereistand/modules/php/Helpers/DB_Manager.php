@@ -9,12 +9,18 @@ class DB_Manager extends \APP_DbObject {
 		return $row;
 	}
 
-	public static function DB($table = null) {
+	public static function DB($table = null, $primary = null) : QueryBuilder {
 		if (is_null($table)) {
 			if (is_null(static::$table)) {
 				throw new \feException('You must specify the table you want to do the query on');
 			}
 			$table = static::$table;
+		}
+		if (is_null($primary)) {
+			if (is_null(static::$primary)) {
+				throw new \feException('You must specify the primary Key of the table that you want to do the query on');
+			}
+			$primary = static::$primary;
 		}
 
 		$log = null;
@@ -28,7 +34,7 @@ class DB_Manager extends \APP_DbObject {
 			function ($row) {
 				return static::cast($row);
 			},
-			static::$primary,
+			$primary,
 			$log
 		);
 	}

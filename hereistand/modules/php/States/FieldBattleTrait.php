@@ -8,22 +8,23 @@ use HIS\Managers\Tokens;
 use HIS\Models\FieldBattle;
 use HIS\Notifications\Battle;
 
+//why is this a trait?
 trait FieldBattleTrait {
 	function stFindBattle() {
-		$destination = Globals::getDestination();
+		$destination = Globals::intGetDestination();
 		$tokens = Tokens::getInLocation(['map', 'space', $destination]);
 		$active_power = Players::getActive()->power;
 		$field = [];
 		// Get list of units from opposing powers
 		$field['powers'] = FieldBattle::findOpposingPowers($destination, $tokens, $active_power);
-		Globals::setFieldBattle($field);
+		//Globals::setFieldBattle($field);
 		if (count($field['powers']) > 1) {
 			$field['attacking_power'] = $active_power;
 			$field['defending_powers'] = FieldBattle::getDefendingPowers($destination, $tokens, $active_power);
-			Globals::setFieldBattle($field);
+			//Globals::setFieldBattle($field);
 			$this->gamestate->nextState("found");
 		} else {
-			if (Globals::getRemainingCP() > 0) {
+			if (Globals::intGetRemainingCP() > 0) {
 				$this->gamestate->nextState("more");
 			} else {
 				$this->gamestate->nextState("none");

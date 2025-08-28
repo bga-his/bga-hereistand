@@ -70,6 +70,8 @@ class Tokens extends \HIS\Helpers\Pieces {
 				return -1;
 			}
 		}
+		Notifications::message("error: token ".Utils::varToString(($token))." isnt on any track.");
+		return -1;
 	}
 
 	public static function incCounter(int $counterId, int $intAmount) : void{

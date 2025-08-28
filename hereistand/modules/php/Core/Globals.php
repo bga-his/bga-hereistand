@@ -3,78 +3,105 @@ namespace HIS\Core;
 
 use HIS\Helpers\UserException;
 use HIS\Helpers\Utils;
-
+use HIS\Helpers\QueryBuilder;
+use HIS\Models\Formation;
+use \HIS\Helpers\DB_Manager;
 /*
  * Globals
  */
-class Globals extends \HIS\Helpers\DB_Manager {
+class Globals {
 	protected static $initialized = false;
+	protected static $initialized_str = false;
 
+	protected static string $colImpulseID = "impulseId";
 	protected static int $impulseId;//number that increments for each impulse, to "timestamp" stuff that only has effect for one impulse (formation may not move, debator comitted bonus)
-	protected static int $remainingCP;//used to track how many CP the active player can spend in their impulse
+	protected static string $colRemainingCP = "remainingCP";
+	protected static int $intRemainingCP;//used to track how many CP the active player can spend in their impulse
+	protected static string $colDestination = "destination";
 	protected static int $destination;
-	protected static object $formation;
-	protected static object $interceptFormation;
+	protected static string $colOrigin = "origin";
 	protected static int $origin;
-	protected static int $unitByType;
+	protected static string $colUnitBuyType = "UnitBuyType";
 	protected static int $unitBuyType;
-	protected static object $fieldBattle;
-	protected static object $retreats;
 
+	protected static string $colFormation = "formation";
+	protected static ?Formation $formation; // the formation that shall be moved.
 
-	protected static $table = 'global_variables';
+	protected static $table_int = 'global_variables';
+	protected static $table_str = "global_strings";
 	protected static $primary = 'name';
 
+	private static function DB_int() : QueryBuilder {
+		return DB_Manager::DB(Globals::$table_int, Globals::$primary);
+	}
+	private static function DB_str() : QueryBuilder {
+		return DB_Manager::DB(Globals::$table_str, Globals::$primary);
+	}
 	/*
 		   * Fetch all existings variables from DB
 	*/
 	public static function fetch() {
+		Notifications::message("Globals.fetch: ".Utils::varToString(self::$initialized));
 		if (!self::$initialized) {
 			// Turn of LOG to avoid infinite loop (Globals::isLogging() calling itself for fetching)
-			$tmp = self::$log;
-			self::$log = false;
 
+			Notifications::message("Globals.fetch");
 			foreach (
-				self::DB()
+				Globals::DB_int()
 				->select(['value', 'name'])
 				->get(false) as $name => $variable
 			) {
+				$value = intval($variable['value']);
 				switch($name){
-					case "impulseId":
-						self::$impulseId = $variable;
+					case Globals::$colImpulseID:
+						Globals::$impulseId = $value;
 						break;
-					case "remainingCP":
-						self::$remainingCP = $variable;
+					case Globals::$colRemainingCP:
+						Globals::$intRemainingCP = $value;
 						break;
-					case "destination":
-						self::$destination = $variable;
+					case Globals::$colDestination:
+						Globals::$destination = $value;
 						break;
-					case "formation":
-						self::$formation = $variable;
+					case Globals::$colOrigin:
+						Globals::$origin = $value;
 						break;
-					case "interceptFormation":
-						self::$interceptFormation = $variable;
-						break;
-					case "origin":
-						self::$origin = $variable;
-						break;
-					case "unitBuyType":
-						self::$unitBuyType = $variable;
-						break;
-					case "fieldBattle":
-						self::$fieldBattle = $variable;
-						break;
-					case "retreats":
-						self::$retreats = $variable;
+					case Globals::$colUnitBuyType:
+						Globals::$unitBuyType = $value;
 						break;
 					default:
-						throw new UserException("Unkown globals variable name: ".$name);
+						throw new UserException("Unkown globals int variable name: ".$name);
 				}
 
 			}
 
 			self::$initialized = true;
-			self::$log = $tmp;
+		}
+	}
+
+	public static function fetch_str() {
+		Notifications::message("Globals.fetch: ".Utils::varToString(self::$initialized_str));
+		if (!self::$initialized_str) {
+			// Turn of LOG to avoid infinite loop (Globals::isLogging() calling itself for fetching)
+
+			Notifications::message("Globals.fetch");
+			foreach (
+				Globals::DB_str()
+				->select(['value', 'name'])
+				->get(false) as $name => $variable
+			) {
+				$value = strval($variable['value']);
+				switch($name){
+					case Globals::$colFormation:
+						Notifications::message("Globals::fetch_str: Formation=".$value);
+						Globals::$formation = Formation::fromString($value);
+						break;
+					default:
+						throw new UserException("Unkown globals str variable name: ".$name);
+				}
+
+			}
+
+			self::$initialized_str = true;
 		}
 	}
 
@@ -84,16 +111,22 @@ class Globals extends \HIS\Helpers\DB_Manager {
 	}
 	public static function setImpulseId(int $impulse_id) : void{
 		self::$impulseId = $impulse_id;
-		self::DB()->update(['value' => \addslashes(\json_encode($impulse_id))], "impulseId");
+		Globals::DB_int()->update(['value' => Globals::$impulseId], Globals::$colImpulseID);
+	}
+	public static function incImpulseId(int $amount) : void{
+		self::setImpulseId(self::intGetImpulseId() + $amount);
 	}
 
-	public static function intGetRemainingCp() : int{
+	public static function intGetRemainingCP() : int{
 		self::fetch();
-		return self::$remainingCP;
+		return self::$intRemainingCP;
 	}
 	public static function setRemainingCp(int $value) : void{
-		self::$remainingCP = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "remainingCP");
+		self::$intRemainingCP = $value;
+		Globals::DB_int()->update(['value' => Globals::$intRemainingCP], Globals::$colRemainingCP);
+	}
+	public static function incRemainingCP(int $value) : void{
+		self::setRemainingCp(self::intGetRemainingCP() + $value);
 	}
 
 	public static function intGetDestination() : int{
@@ -102,25 +135,7 @@ class Globals extends \HIS\Helpers\DB_Manager {
 	}
 	public static function setDestination(int $value) : void{
 		self::$destination = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "destination");
-	}
-
-	public static function intGetFormation() : object{
-		self::fetch();
-		return self::$formation;
-	}
-	public static function setFormation(object $value) : void{
-		self::$formation = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "formation");
-	}
-
-	public static function intGetInterceptFormation() : object{
-		self::fetch();
-		return self::$interceptFormation;
-	}
-	public static function setInterceptFormation(object $value) : void{
-		self::$interceptFormation = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "interceptFormation");
+		Globals::DB_int()->update(['value' => Globals::$destination], Globals::$colDestination);
 	}
 
 	public static function intGetOrigin() : int{
@@ -129,7 +144,7 @@ class Globals extends \HIS\Helpers\DB_Manager {
 	}
 	public static function setOrigin(int $value) : void{
 		self::$origin = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "origin");
+		Globals::DB_int()->update(['value' => Globals::$origin], Globals::$colOrigin);
 	}
 
 	public static function intGetUnitBuyType() : int{
@@ -137,87 +152,20 @@ class Globals extends \HIS\Helpers\DB_Manager {
 		return self::$unitBuyType;
 	}
 	public static function setUnitBuyType(int $value) : void{
-		self::$unitBuyType = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "unitBuyType");
+		Globals::$unitBuyType = $value;
+		Globals::DB_int()->update(['value' => Globals::$unitBuyType], Globals::$colUnitBuyType);
 	}
 
-	public static function intGetFieldBattle() : object{
-		self::fetch();
-		return self::$fieldBattle;
+	public static function setFormation(Formation $formation) : void{
+		Globals::$formation = $formation;
+		Notifications::message("Globals::setFormation: ".Utils::varToString($formation));
+		Globals::DB_str()->update(['value' => Globals::$formation->ToString()], Globals::$colFormation);
+		//TODO store in/get from DB
 	}
-	public static function setFieldBattle(object $value) : void{
-		self::$fieldBattle = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "fieldBattle");
+	public static function getFormation() : ?Formation{
+		self::fetch_str();
+		return self::$formation;
 	}
-
-	public static function intGetRetreats() : object{
-		self::fetch();
-		return self::$retreats;
-	}
-	public static function setRetreats(object $value) : void{
-		self::$retreats = $value;
-		self::DB()->update(['value' => \addslashes(\json_encode($value))], "retreats");
-	}
-
-	/*
-		   * Magic method that intercept not defined static method and do the appropriate stuff
-	*/
-	public static function __callStatic($method, $args) {
-		throw new UserException("Do NOT call Globals::__callStatic: method".$method." args".Utils::varToString($args));
-		if (!self::$initialized) {
-			self::fetch();
-		}
-
-		if (preg_match('/^([gs]et|inc|is)([A-Z])(.*)$/', $method, $match)) {
-			// Sanity check : does the name correspond to a declared variable ?
-			$name = strtolower($match[2]) . $match[3];
-			if (!\array_key_exists($name, self::$variables)) {
-				throw new \InvalidArgumentException("Property {$name} doesn't exist");
-			}
-
-			// Create in DB if don't exist yet
-			if (!\array_key_exists($name, self::$data)) {
-				self::create($name);
-			}
-
-			if ($match[1] == 'get') {
-				// Basic getters
-				return self::$data[$name];
-			} elseif ($match[1] == 'is') {
-				// Boolean getter
-				if (self::$variables[$name] != 'bool') {
-					throw new \InvalidArgumentException("Property {$name} is not of type bool");
-				}
-				return (bool) self::$data[$name];
-			} elseif ($match[1] == 'set') {
-				// Setters in DB and update cache
-				$value = $args[0];
-				if (self::$variables[$name] == 'int') {
-					$value = (int) $value;
-				}
-				if (self::$variables[$name] == 'bool') {
-					$value = (bool) $value;
-				}
-
-				self::$data[$name] = $value;
-				self::DB()->update(['value' => \addslashes(\json_encode($value))], $name);
-				return $value;
-			} elseif ($match[1] == 'inc') {
-				if (self::$variables[$name] != 'int') {
-					throw new \InvalidArgumentException("Trying to increase {$name} which is not an int");
-				}
-
-				$getter = 'get' . $match[2] . $match[3];
-				$setter = 'set' . $match[2] . $match[3];
-				return self::$setter(self::$getter() + (empty($args) ? 1 : $args[0]));
-			}
-		} else {
-			throw new \feException('unknown method ' . $method);
-			return null;
-		}
-		// return undefined;
-	}
-
 	/*
 		   * Create and store a global variable declared in this file but not present in DB yet
 		   *  (only happens when adding globals while a game is running)
@@ -248,5 +196,17 @@ class Globals extends \HIS\Helpers\DB_Manager {
 		   * Setup new game
 	*/
 	public static function setupNewGame($players, $options) {
+		//multipleInsert(['field1', 'field2'])->values([ [1, 'test'], [2, 'tester'], ....])
+		Globals::DB_int()->multipleInsert(['name', 'value'])->values([
+			[Globals::$colDestination, 0],
+			[Globals::$colImpulseID, 0],
+			[Globals::$colOrigin, 0],
+			[Globals::$colRemainingCP, 0],
+			[Globals::$colUnitBuyType, 0],
+		]);
+		Globals::DB_str()->multipleInsert(['name', 'value'])->values([
+			[Globals::$colFormation, ""],
+		]);
+		self::$intRemainingCP = 0;
 	}
 }

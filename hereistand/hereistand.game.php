@@ -32,6 +32,7 @@ spl_autoload_register($swdNamespaceAutoload, true, true);
 
 require_once APP_GAMEMODULE_PATH . 'module/table/table.game.php';
 
+use Dom\Notation;
 use HIS\Core\Actions;
 use HIS\Core\Globals;
 use HIS\Core\Notifications;
@@ -84,195 +85,152 @@ class hereistand extends Table {
 		return $player = Players::getActive();
 	}
 
-	
-	public function debug_getpol($space_id){
-		$power = Map::getPoliticalControl($space_id);
-		Notifications::message("political control of city ".$space_id." = ".$power);
-	}
-
 	//CTRL+SHIPF+P
-	public function cmd($args) {
-		Notifications::message("called cmd with args".$args);
-		$arrstr_args = explode(" ", $args);
-		if($arrstr_args[0] === "map"){
-			if($arrstr_args[1] === "get"){
-				if($arrstr_args[2] === "pol"){
-					$spaceID = intval($arrstr_args[3]);
-					$power = Map::getPoliticalControl($spaceID);
-					Notifications::message("political control of city ".$spaceID." = ".$power);
-					return;
-				}else if($arrstr_args[2] === "rel"){
-					$spaceID = intval($arrstr_args[3]);
-					$religionID = Map::getReligiosControl($spaceID);
-					Notifications::message("religius control of city ".$spaceID." = ".($religionID==ReligionIDs::CATHOLIC?"CATHOLIC":($religionID==ReligionIDs::REFORMED?"REFORMED":"other")));
-					return;
-				}else if($arrstr_args[2] === "isFort"){
-					$spaceID = intval($arrstr_args[3]);
-					$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
-					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
-					return;
-				}else if($arrstr_args[2] === "unrest"){
-					$spaceID = intval($arrstr_args[3]);
-					$bolIsUnrest = Map::bolGetSpaceIsInUnrest($spaceID);
-					Notifications::message("The space ".Map::getSpaceName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
-					return;
-				}else if($arrstr_args[2] === "isSieged"){
-					$spaceID = intval($arrstr_args[3]);
-					$bolIsFortifieded = Map::bolGetSpaceIsSieged($spaceID);
-					Notifications::message("The space ".Map::getSpaceName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
-					return;
-				}else if($arrstr_args[2] === "supply"){
-					$power = Utils::cmdStrToPower($arrstr_args[3]);
-					$tokens = Map::getLandUnitsInSupply($power);
-					Notifications::message("Land units in supply of ".$power.": ".Utils::varToString($tokens));
-					return;
-				}else if($arrstr_args[2] === "mayAddLandUnits"){
-					$power = Utils::cmdStrToPower($arrstr_args[3]);
-					$spaceID = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
-					Notifications::message("may add land ".Utils::varToString(Map::arrintMaxAddableLandUnits($spaceID, $power, $type))." land units");
-					return;
-				}else if($arrstr_args[2] === "formation"){
-					$spaceID = intval($arrstr_args[3]);
-					$unit_count = Map::getUnitCount($spaceID);
-					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
-					Notifications::message("formation in ".Map::getSpaceName($spaceID).": ".Utils::varToString($formation));
-					return;
-				}else if($arrstr_args[2] === "tokens"){
-					$spaceID = intval($arrstr_args[3]);
-					$power = Map::getPoliticalControl($spaceID);
-					$landUnits = Map::getLandUnits($spaceID, $power);
-					$leaders = Map::getLeader($spaceID, $power);
-					Notifications::message("Land units in ".Map::getSpaceName($spaceID).": ".Utils::varToString($landUnits));
-					Notifications::message("Leaders in ".Map::getSpaceName($spaceID).": ".Utils::varToString($leaders));
-					return;
-				}
-			}else if($arrstr_args[1] === "set"){ // set
-				if($arrstr_args[2] === "pol"){
-					Map::setPoliticalControl(intval($arrstr_args[3]), Utils::cmdStrToPower($arrstr_args[4]));
-					Notifications::message("set political control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
-					//TODO set pol of a key displays the wrong side of the scm (until site reload)
-					return;
-				}else if($arrstr_args[2] === "rel"){
-					//TODO test set religion on independent and minor powers home spaces.
-					//cmd(map set rel 3129 2003)
-					//cmd(map set rel 3061 2003)
-					Map::setReligiosControl(intval($arrstr_args[3]), intval($arrstr_args[4]));
-					Notifications::message("set religius control of city ".$arrstr_args[3]." to ".$arrstr_args[4]);
-					return;
-				}else if($arrstr_args[2] === "addLandUnits"){
-					$spaceID = intval($arrstr_args[3]);
-					$count = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]==="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
-					$power = Map::getPoliticalControl($spaceID);
-					
-					Map::addLandunits($spaceID, $power, $count, $type);
-					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
-					return;
-				}else if($arrstr_args[2] === "delLandUnits"){
-					$spaceID = intval($arrstr_args[3]);
-					$count = intval($arrstr_args[4]);
-					$type = $arrstr_args[5]=="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
-					$power = Map::getPoliticalControl($spaceID);
-					
-					Map::removeLandUnits($spaceID, $power, $count, $type);
-					Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
-					return;
-				}else if($arrstr_args[2] === "unrest"){
-					$spaceID = intval($arrstr_args[3]);
-					Map::setUnrest($spaceID, $arrstr_args[4]=="true"?true:false);
-					Notifications::message("add Unrest to space ".Map::getSpaceName($spaceID));
-					return;
-				}else if ($arrstr_args[2] === "move"){
-					$spaceID = intval($arrstr_args[3]);
-					$spaceIDTo = intval($arrstr_args[4]);
-					$unit_count = Map::getUnitCount($spaceID);
-					$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
-					if($formation){
-						if($formation->isValid()){
-							Map::moveFormation($formation, $spaceIDTo);
-						}else{
-							Notifications::message("invalid formation: ".Utils::varToString($formation));
-						}
-						
-					}else{
-						Notifications::message("no formation found on space ".Map::getSpaceName($spaceID));
-					}
-					return;
-				}else if ($arrstr_args[2] === "addLeader"){
-					$spaceID = intval($arrstr_args[3]);
-					$leaderId = intval($arrstr_args[4]);
-					Notifications::message("add Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
-					Map::addLeader($spaceID, $leaderId);
-					return;
-				}else if ($arrstr_args[2] === "moveLeader"){
-					#cmd(map set moveLeader 3051 1047)
-					$spaceID = intval($arrstr_args[3]);
-					$leaderId = intval($arrstr_args[4]);
-					Notifications::message("move Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
-					Map::moveLeader($spaceID, $leaderId);
-					return;
-				}else if($arrstr_args[2] === "captureLeaders"){
-					#cmd(map set captureLeaders 3041 france haps)
-					# TODO update does not work, addLeader on captured leader does not work, captured leaders are not displayed in the prision.
-					$spaceID = intval($arrstr_args[3]);
-					$powerFrom = Utils::cmdStrToPower($arrstr_args[4]);
-					$powerBy = Utils::cmdStrToPower($arrstr_args[5]);
-					Notifications::message("capture Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
-					Map::captureLeader($spaceID, $powerFrom, $powerBy);
-					return;
-				}else if($arrstr_args[2] === "addNavalUnits"){
-					#cmd(map set addNavalUnits 3057 france 2)
-					$spaceID = intval($arrstr_args[3]);
-					$power = Utils::cmdStrToPower($arrstr_args[4]);
-					$count = intval($arrstr_args[5]);
-					Map::addShips($spaceID, $power, $count);
-					return;
-				}else if($arrstr_args[2] === "moveNavalUnits"){
-					#cmd(map set moveNavalUnits 3057 6004 france 1)
-					$spaceIDFrom = intval($arrstr_args[3]);
-					$spaceIDTo = intval($arrstr_args[4]);
-					$power = Utils::cmdStrToPower($arrstr_args[5]);
-					$count = intval($arrstr_args[6]);
-					Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
-					return;
-				}else if($arrstr_args[2] === "removeNavalUnits"){
-					#cmd(map set removeNavalUnits 3057 france 1)
-					$spaceID = intval($arrstr_args[3]);
-					$power = Utils::cmdStrToPower($arrstr_args[4]);
-					$count = intval($arrstr_args[5]);
-					Map::removeShips($spaceID, $power, $count);
-					return;
-				}else if($arrstr_args[2] === "addNavalLeader"){
-					#cmd(map set addNavalLeader 3057 1067)
-					$spaceID = intval($arrstr_args[3]);
-					$navalLeaderId = intval($arrstr_args[4]);
-					Notifications::message("add naval leader ");
-					Map::addNavalLeader($spaceID, $navalLeaderId);
-					return;
-				}else if($arrstr_args[2] === "moveNavalLeader"){
-					#cmd(map set moveNavalLeader 6004 1067)
-					$spaceID = intval($arrstr_args[3]);
-					$navalLeaderId = intval($arrstr_args[4]);
-					Notifications::message("move naval leader ");
-					Map::moveNavalLeader($navalLeaderId, $spaceID);
-					return;
-				}else if($arrstr_args[2] === "captureNavalLeaders"){
-					$spaceID = intval($arrstr_args[3]);
-					$powerFrom = Utils::cmdStrToPower($arrstr_args[4]);
-					$powerBy = Utils::cmdStrToPower($arrstr_args[5]);
-					Notifications::message("capture naval Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
-					Map::captureNavalLeader($spaceID, $powerFrom, $powerBy);
-					return;
-				}else if($arrstr_args[2] === "removeNavalLeaders"){
-					$leaderId = intval($arrstr_args[3]);
-					Map::removeNavalLeader($leaderId);
-					return;
-				}
-			}else if($arrstr_args[1] === "test"){
+	public function debug_getpol(int $spaceID){
+		$power = Map::getPoliticalControl($spaceID);
+		Notifications::message("political control of city ".$spaceID." = ".$power);
+	}
+	public function debug_getrel(int $spaceID){
+		$religionID = Map::getReligiosControl($spaceID);
+		Notifications::message("religius control of city ".$spaceID." = ".($religionID==ReligionIDs::CATHOLIC?"CATHOLIC":($religionID==ReligionIDs::REFORMED?"REFORMED":"other")));
+	}
+	public function debug_IsFort(int $spaceID){
+		$bolIsFortifieded = Map::bolGetSpaceIsFortified($spaceID);
+		Notifications::message("The space ".Map::getSpaceName($spaceID)." is Fortified = ".($bolIsFortifieded?"true":"false"));
+	}
+	public function debug_IsUnrest(int $spaceID){
+		$bolIsUnrest = Map::bolGetSpaceIsInUnrest($spaceID);
+		Notifications::message("The space ".Map::getSpaceName($spaceID)." is in Unrest = ".($bolIsUnrest?"true":"false"));
+	}
+	public function debug_IsSieged(int $spaceID){
+		$bolIsFortifieded = Map::bolGetSpaceIsSieged($spaceID);
+		Notifications::message("The space ".Map::getSpaceName($spaceID)." is Sieged = ".($bolIsFortifieded?"true":"false"));
+	}
+	public function debug_Supply(string $strPower){
+		$power = Utils::cmdStrToPower($strPower);
+		$tokens = Map::getLandUnitsInSupply($power);
+		Notifications::message("Land units in supply of ".$power.": ".Utils::varToString($tokens));
+	}
+	public function debug_MayAddLandUnits(string $strPower,int $spaceID, bool $mercs){
+		$power = Utils::cmdStrToPower($strPower);
+		$type = $mercs?UnitTypes::MERC:UnitTypes::REGULAR;
+		Notifications::message("may add land ".Utils::varToString(Map::arrintMaxAddableLandUnits($spaceID, $power, $type))." land units");
+	}
+	public function debug_GetFormation(int $spaceID){
+		$unit_count = Map::getUnitCount($spaceID);
+		$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
+		Notifications::message("formation in ".Map::getSpaceName($spaceID).": ".Utils::varToString($formation));
+	}
+	public function debug_GetTokens(int $spaceID){
+		$power = Map::getPoliticalControl($spaceID);
+		$landUnits = Map::getLandUnits($spaceID, $power);
+		$leaders = Map::getLeader($spaceID, $power);
+		Notifications::message("Land units in ".Map::getSpaceName($spaceID).": ".Utils::varToString($landUnits));
+		Notifications::message("Leaders in ".Map::getSpaceName($spaceID).": ".Utils::varToString($leaders));
+	}
+	public function debug_SetPol(string $strPower, int $spaceID){
+		Map::setPoliticalControl($spaceID, Utils::cmdStrToPower($strPower));
+		Notifications::message("set political control of city ".$spaceID." to ".$strPower);
+	}
+	public function debug_SetRel(int $spaceID, int $religion){
+		Map::setReligiosControl($spaceID, $religion);
+		Notifications::message("set religius control of city ".$spaceID." to ".$religion);
+	}
+	public function debug_AddLandUnits(int $spaceID, int $count, bool $merc){
+		$type = $merc==="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+		$power = Map::getPoliticalControl($spaceID);
+		
+		Map::addLandunits($spaceID, $power, $count, $type);
+		Notifications::message("Added ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
+	}
+	public function debug_DelLandUnits(int $spaceID, int $count, bool $merc){
+		$type = $merc==="merc"?UnitTypes::MERC:UnitTypes::REGULAR;
+		$power = Map::getPoliticalControl($spaceID);
 
-				// set/get political/religios control
-				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
+		Map::removeLandUnits($spaceID, $power, $count, $type);
+		Notifications::message("Removed ".$count." ".$type."'s of ".$power." to space ".Map::getSpaceName($spaceID));
+	}
+	public function debug_SetUnrest(int $spaceID, bool $IsUnrest){
+		Map::setUnrest($spaceID, $IsUnrest);
+		Notifications::message("add Unrest to space ".Map::getSpaceName($spaceID));
+	}
+	public function debug_setMove(int $spaceID, int $spaceIDTo, string $strPower){
+		$unit_count = Map::getUnitCount($spaceID);
+		$formation = Map::getFormation($spaceID, $unit_count[0], $unit_count[1]);
+		if($formation){
+			if($formation->isValid()){
+				Map::moveFormation($formation, $spaceIDTo);
+			}else{
+				Notifications::message("invalid formation: ".Utils::varToString($formation));
+			}
+
+		}else{
+			Notifications::message("no formation found on space ".Map::getSpaceName($spaceID));
+		}
+	}
+	public function debug_AddLeader(int $spaceID, int $leaderId){
+		Map::addLeader($spaceID, $leaderId);
+		Notifications::message("add Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
+	}
+	public function debug_MoveLeader(int $spaceID, int $leaderId){
+		Map::moveLeader($spaceID, $leaderId);
+		Notifications::message("move Leader ".$leaderId." to place ".Map::getSpaceName($spaceID));
+	}
+	public function debug_captureLeader(int $spaceID, string $strPowerFrom, string $strPowerBy){
+		# TODO update does not work, addLeader on captured leader does not work, captured leaders are not displayed in the prision.
+		$powerFrom = Utils::cmdStrToPower($strPowerFrom);
+		$powerBy = Utils::cmdStrToPower($strPowerBy);
+		Notifications::message("capture Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
+		Map::captureLeader($spaceID, $powerFrom, $powerBy);
+	}
+	public function debug_addShips(int $spaceID, string $strPower, int $count){
+		$power = Utils::cmdStrToPower($strPower);
+		Map::addShips($spaceID, $power, $count);
+	}
+	public function debug_moveNavalUnits(int $spaceIDFrom, int $spaceIDTo, string $strPower, int $count){
+		$power = Utils::cmdStrToPower($strPower);
+		Map::moveShips($spaceIDFrom, $spaceIDTo, $power, $count);
+	}
+	public function debug_DelNavalUnits(int $spaceID, string $strPower, int $count){
+		$power = Utils::cmdStrToPower($strPower);
+		Map::removeShips($spaceID, $power, $count);
+	}
+	public function debug_AddNavalLeader(int $spaceID, int $navalLeaderID){
+		Notifications::message("add naval leader ");
+		Map::addNavalLeader($spaceID, $navalLeaderID);
+	}
+	public function debug_MoveNavalLeader(int $navalLeaderID, int $spaceIDTo){
+		Map::moveNavalLeader($navalLeaderID, $spaceIDTo);
+		Notifications::message("move naval leader ");
+	}
+	public function debug_CaptureNavalLeader(int $spaceID, string $strPowerFrom, string $strPowerBy){
+		$powerFrom = Utils::cmdStrToPower($strPowerFrom);
+		$powerBy = Utils::cmdStrToPower($strPowerBy);
+		Notifications::message("capture naval Leader(s) of ".$powerFrom." on ".Map::getSpaceName($spaceID)." by ".$powerBy);
+		Map::captureNavalLeader($spaceID, $powerFrom, $powerBy);
+	}
+	public function debug_DelNavalLeader(int $navalLeaderID){
+		Map::removeNavalLeader($navalLeaderID);
+	}
+	public function debug_IsPrintingPressActive(){
+		$bolRes = Religion::bolIsPrintingPressActive();
+		Notifications::message("Printing Press is active: ".Utils::varToString($bolRes));
+	}
+	public function debug_IsValidRefTarget(int $spaceID){
+		Notifications::message("Space ".Map::getSpaceName($spaceID)." Is valid target for reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForReformationAttempt($spaceID)));
+	}
+	public function debug_IsValidCounterRefTarget(int $spaceID){
+		Notifications::message("Space ".Map::getSpaceName($spaceID)." Is valid target for counter reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForCounterRefAttempt($spaceID)));
+	}
+	public function debug_RefDice(int $spaceID){
+		Notifications::message("Space ".Map::getSpaceName($spaceID)." would get ".Religion::intGetNumberOfReformationAttemptAttackDice($spaceID)." dice in a reformation attempt.");
+	}
+	public function debug_SetPrintingPressActive(){
+		Religion::SetPrintingPressActive();
+		Notifications::message("Set printing press to active.");
+	}
+	public function debug_Test(){
+		TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::HAPSBURG, ReligionIDs::CATHOLIC);
 				Map::setPoliticalControl(SpaceIDs::WITTENBERG, Powers::FRANCE);
 				TestMap::testPolAndRel(SpaceIDs::WITTENBERG, Powers::FRANCE, ReligionIDs::CATHOLIC);
 				Map::setPoliticalControl(SpaceIDs::WITTENBERG, Powers::PROTESTANT);
@@ -291,39 +249,6 @@ class hereistand extends Table {
 				TestMap::testFormation(SpaceIDs::PARIS, 7, 0); //3 tokens (4+2+1)
 				Map::addLandunits(SpaceIds::PARIS, Powers::FRANCE, 1, UnitTypes::REGULAR);
 				TestMap::testFormation(SpaceIDs::PARIS, 8, 0); // 2 tokens (6+2)
-				return;
-			}
-		}else if($arrstr_args[0] === "rel"){
-			if($arrstr_args[1] === "get"){
-				if($arrstr_args[2] === "pp"){
-					//cmd(rel get pp)
-					$bolRes = Religion::bolIsPrintingPressActive();
-					Notifications::message("Printing Press is active: ".Utils::varToString($bolRes));
-					return;
-				}else if($arrstr_args[2] === "IsValidtargetRef"){
-					//cmd(rel get IsValidtargetRef 3000)
-					$intSpaceId = intval($arrstr_args[3]);
-					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." Is valid target for reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForReformationAttempt($intSpaceId)));
-					return;
-				}else if($arrstr_args[2] === "IsValidtargetCounterRef"){
-					$intSpaceId = intval($arrstr_args[3]);
-					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." Is valid target for counter reformationa attempt: ".Utils::varToString(Religion::bolIsValidTargetForCounterRefAttempt($intSpaceId)));
-					return;
-				}else if($arrstr_args[2] === "numDiceRef"){
-					//cmd(rel get numDiceRef 3000)
-					$intSpaceId = intval($arrstr_args[3]);
-					Notifications::message("Space ".Map::getSpaceName($intSpaceId)." would get ".Religion::intGetNumberOfReformationAttemptAttackDice($intSpaceId)." dice in a reformation attempt.");
-					return;
-				}
-			}else if($arrstr_args[1] === "set"){
-				if($arrstr_args[2] === "pp"){
-					Religion::SetPrintingPressActive();
-					Notifications::message("Set printing press active.");
-					return;
-				}
-			}
-		}
-		Notifications::message("unknown command: ".Utils::varToString($arrstr_args));
 	}
 
 	/*

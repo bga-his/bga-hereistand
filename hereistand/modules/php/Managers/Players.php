@@ -150,7 +150,7 @@ class Players extends \HIS\Helpers\DB_Manager {
 	/**
 	 * This activate next player
 	 */
-	public function activeNext() {
+	public static function activeNext() {
 		$pId = self::getActiveId();
 		$nextPlayer = self::getNextId((int) $pId);
 

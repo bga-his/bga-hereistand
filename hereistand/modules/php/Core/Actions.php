@@ -15,6 +15,7 @@ use Powers;
 use tokenIDs_VP_MARKER;
 use UnitTypes;
 use CardIDs;
+use Dom\Notation;
 
 class Actions {
 
@@ -89,9 +90,9 @@ class Actions {
 	public static function declareDestination($space) {
 		$destination_id = $space['id'];
 		$spaces = Game::get()->spaces;
-		$origin = Globals::getOrigin();
+		$origin = Globals::intGetOrigin();
 		$origin_space = $spaces[$origin];
-		$remainingCP = Globals::getRemainingCP();
+		$remainingCP = Globals::intGetRemainingCP();
 		if (in_array($destination_id, $origin_space['connections'])) {
 			Globals::incRemainingCP(-1);
 		} elseif (in_array($destination_id, $origin_space['passes'])) {
@@ -109,7 +110,7 @@ class Actions {
 
 	public static function pickLocation($location_id) {
 		$spaces = Game::get()->spaces;
-		$remainingCP = Globals::getRemainingCP();
+		$remainingCP = Globals::intGetRemainingCP();
 		Game::get()->gamestate->nextState("declare");
 	}
 
@@ -122,12 +123,12 @@ class Actions {
 		Notifications::message("Actions::declareFormation(token_ids=".Utils::varToString($token_ids).")");
 		$formation = new Formation(Tokens::getMany($token_ids)->toArray());
 		if ($formation->isValid() == false) {
-			throw new UserException("Invalid formation");
+			throw new UserException("Invalid formation"); //TODO gets pritned after single unit is selected.
 		}
 		if ($formation->getPower() != Players::getActive()->power) {
 			throw new UserException("Formation is " . $formation->getPower() . " troops, you are: " . Players::getActive()->power);
 		}
-		Globals::setFormation($token_ids);
+		Globals::setFormation($formation);
 		Game::get()->gamestate->nextState("declare");
 	}
 
@@ -156,9 +157,9 @@ class Actions {
 	}
 
 	public static function pickBuySpace($space) {
-		$unit_type = Globals::getUnitBuyType();
+		$unit_type = Globals::intGetUnitBuyType();
 		$player = Players::getActive();
-		$remainingCP = Globals::getRemainingCP();
+		$remainingCP = Globals::intGetRemainingCP();
 		if (($remainingCP < 1) || ($remainingCP < 2 && ($unit_type == UnitTypes::REGULAR || $unit_type == UnitTypes::SHIP))) {
 			throw new UserException("You cannot afford " . $unit_type . ".");
 		}
